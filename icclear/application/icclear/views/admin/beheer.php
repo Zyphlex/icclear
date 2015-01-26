@@ -11,10 +11,10 @@
                     <h4>Algemeen</h4>
 
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Hotels Beheren</a></li>
-                        <li><a href="#">Landen Beheren</a></li>
-                        <li><a href="#">Gebruikers Beheren</a></li>
-                        <li><a href="#">F.A.Q. Beheren</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Landen</a></li>
+                        <li><a href="#">Gebruikers</a></li>
+                        <li><a href="#">F.A.Q.</a></li>
                     </ul>
 
                 </div>
