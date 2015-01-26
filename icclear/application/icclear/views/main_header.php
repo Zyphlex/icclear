@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-8">
+        <img src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
+    </div>
+    
+<?php if ($user == null) { // niet aangemeld ?>  
+    
+    <div class="col-md-4">
+        <p><span class="logon"><a href="<?php echo base_url(); ?>index.php/logon/login" data-toggle="modal" data-target="#myModal">LOGIN</a> / <a href="<?php echo base_url(); ?>index.php/logon/register" data-toggle="modal" data-target="#myModal1">REGISTER</a></span></p>
+    </div>
+    
+<?php } else {  // wel aangemeld ?>
+    
+    <div class="col-md-4">
+            <div class="dropdown logon">Welkom, 
+                <a data-toggle="dropdown">
+                    <span class="login-user"><?php echo strtoupper($user->gebruikersnaam) ?></span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">                    
+                    <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Settings</a></li>  
+                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profile</a></li>     
+                    <li class="divider"></li>
+                    <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
+                </ul>
+            </div>
+
+    </div>
+    
+<?php } ?>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content"></div></div>
+</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"><div class="modal-content"></div></div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content"></div></div>
+</div>
