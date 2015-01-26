@@ -1,3 +1,9 @@
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Admin Dashboard</h1>
+        </div>
+    </div>
+
     <div class="col-md-2">  
         
         <div class="panel panel-default">
