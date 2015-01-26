@@ -14,10 +14,7 @@ class Admin extends CI_Controller {
         } else {
             $user = $this->authex->getUserInfo();
             if ($user->typeId < 3) {
-                $data['errorTitel'] = 'Toegang geweigerd';        
-                $data['errorBericht'] = 'U moet aangemeld zijn als een admin!';      
-                $this->view->load('error', $data);
-                
+                redirect('logon/aanmelden');
                 //voorlopig
             }
         }
