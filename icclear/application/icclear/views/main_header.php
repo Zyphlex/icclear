@@ -6,7 +6,7 @@
 <?php if ($user == null) { // niet aangemeld ?>  
     
     <div class="col-md-4">
-        <p><span class="logon"><a href="<?php echo base_url(); ?>index.php/logon/login" data-toggle="modal" data-target="#myModal">LOGIN</a> / <a href="<?php echo base_url(); ?>index.php/logon/register" data-toggle="modal" data-target="#myModal1">REGISTER</a></span></p>
+        <p><span class="logon"><a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">LOGIN</a> / <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal1">REGISTER</a></span></p>
     </div>
     
 <?php } else {  // wel aangemeld ?>
