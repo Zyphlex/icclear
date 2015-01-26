@@ -14,10 +14,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li <?php if ($active == 'home'){ echo 'class="active"'; } ?>><?php echo anchor('home', 'HOME'); ?></li>
-                    <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('../inschrijven', 'INSCHRIJVEN'); ?></li>
-                    <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('home/programma', 'PROGRAMMA'); ?></li>
-                    <li <?php if ($active == 'sprekers'){ echo 'class="active"'; } ?>><?php echo anchor('home/sprekers', 'SPREKERS'); ?></li>
-                    <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><?php echo anchor('home/locatie', 'LOCATIE'); ?></li>
+                    <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
+                    <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
+                    <li <?php if ($active == 'sprekers'){ echo 'class="active"'; } ?>><?php echo anchor('sprekers/', 'SPREKERS'); ?></li>
+                    <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'LOCATIE'); ?></li>
                     <?php
                 if ($user != null) {
                     switch ($user->typeId) {                        
