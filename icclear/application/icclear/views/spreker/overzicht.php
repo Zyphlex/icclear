@@ -16,8 +16,8 @@ and open the template in the editor.
                 echo '<div class="col-md-4">' . "\n";
                 echo '<div class="panel panel-default">' . "\n";
                 echo '<div class="panel-body">' . "\n";
-                echo '<h4> Basic panel example </h4>' . "\n";
-                echo '   <p>' . $spreker->voornaam . '</p> ' . "\n";
+                echo '<h4>' . $spreker->voornaam . ' ' . $spreker->familienaam .  '</h4>' . "\n";
+                echo '   <p>' . $spreker->biografie.  '</p> ' . "\n";
                 echo '</div>' . "\n";
                 echo '</div>  ' . "\n";
                 echo '</div>' . "\n";
