@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-2 col-sm-2">
+    <div class="col-md-2">
         
         
         <div class="row">
@@ -28,11 +28,8 @@
     </div>
 
     
-    <div class="col-md-10 col-sm-10">
+    <div class="col-md-10">
 
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
 
 
                 <div class="panel panel-default" role="tablist">
@@ -88,10 +85,6 @@
 
                 </div>
 
-
-
-            </div>
-        </div>
         
         
     </div>
