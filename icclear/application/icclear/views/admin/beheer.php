@@ -30,36 +30,6 @@
     
     <div class="col-md-10">
 
-        
-        <div class="row">  
-            <div class="col-md-4">        
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4> Basic panel example </h4>
-                        <p>Extra text</p>
-                    </div>
-                </div>  
-            </div>
-
-            <div class="col-md-4">        
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4> Basic panel example </h4>
-                        <p>Extra text</p>
-                    </div>
-                </div>  
-            </div>
-
-            <div class="col-md-4">        
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <h4> Basic panel example </h4>
-                        <p>Extra text</p>
-                    </div>
-                </div>  
-            </div>
-        </div>
-
 
         <div class="row">
             <div class="col-md-12">
@@ -69,7 +39,7 @@
 
                         <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                             <h4 class="panel-title">
-                                <span class="collapsed pointer" data-toggle="collapse" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
+                                <span class="pointer" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
                                     Beheer Conferenties
                                 <span class="glyphicon glyphicon-folder-open"></span>
                                 </span>
@@ -122,63 +92,6 @@
 
             </div>
         </div>
-        
-        
-        
-        <div class="row">
-            <div class="col-md-12">
-
-
-                <div class="panel panel-default">
-
-                        <div class="panel-heading"id="collapseListGroupHeading2">
-                            <h4 class="panel-title">
-                                <span class="collapsed pointer" data-toggle="collapse" href="#collapseListGroup2"">
-                                    Beheer Algemene Tabellen
-                                <span class="glyphicon glyphicon-folder-open"></span>
-                                </span>
-                            </h4>
-                        </div>
-                        <div id="collapseListGroup2" class="panel-collapse collapse">
-                            
-                            <div class="panel-body">
-                            <div class="col-md-4">        
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <h4> Basic panel example </h4>
-                                        <p>Extra text</p>
-                                    </div>
-                                </div>  
-                            </div>
-
-                            <div class="col-md-4">        
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <h4> Basic panel example </h4>
-                                        <p>Extra text</p>
-                                    </div>
-                                </div>  
-                            </div>
-
-                            <div class="col-md-4">        
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <h4> Basic panel example </h4>
-                                        <p>Extra text</p>
-                                    </div>
-                                </div>  
-                            </div>
-                            </div>
-                            
-                        </div>
-
-                </div>
-
-
-
-            </div>
-        </div>
-        
         
         
     </div>
