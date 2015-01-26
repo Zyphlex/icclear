@@ -56,7 +56,7 @@
                                 <td><?php echo $conferentie->naam ?></td>
                                 <td><?php echo $conferentie->stad ?></td>
                                 <td><?php echo $conferentie->beginDatum ?></td>
-                                <td><a class="btn btn-default">Beheren</a></td>
+                                <td><?php echo anchor('dashboard', 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
                             </tr>
                             <?php $teller++; } ?>
                         </tbody>
