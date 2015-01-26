@@ -7,9 +7,13 @@
 <div class="row">
     <div class="col-md-2">        
             <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+                    <h4 class="panel-title">
+                        Algemeen
+                    </h4>
+                </div>
+                
                 <div class="panel-body">
-                    <h4>Algemeen</h4>
-
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="#">Hotels</a></li>
                         <li><a href="#">Landen</a></li>
