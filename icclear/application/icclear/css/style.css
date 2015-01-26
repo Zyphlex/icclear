@@ -28,8 +28,6 @@ a:hover { color: #b60717; text-decoration: none;}
 .border-left {border-left: 1px solid #e5e5e5;}
 
 .content {padding-bottom: 60px;}
-.content a {border-bottom: 1px dotted;}
-.content a:hover {border-bottom: 1px solid #b60717;}
 
 .logon { float:right; clear:both; padding:2px 15px; font-family:estrangelo;font-size:14px;border-radius:5px;margin-top:10px;
 background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
