@@ -16,6 +16,12 @@ class Gebruiker_model extends CI_Model {
         else
             return true;
     }
+    
+    function getSprekers(){
+        $this->db->where('typeId', 2);
+        $query = $this->db->get('gebruiker');
+        return $query->result();                
+    }
 
 }
 

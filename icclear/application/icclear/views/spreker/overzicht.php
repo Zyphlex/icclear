@@ -11,7 +11,9 @@ and open the template in the editor.
     </head>
     <body>        
         <?php
-        echo "Rob is crazy";
+        foreach($sprekers as $spreker){
+            echo '<p>' . $spreker->voornaam . '</p>';
+        }
         ?>
     </body>
 </html>

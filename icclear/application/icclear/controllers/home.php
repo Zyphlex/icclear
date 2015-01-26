@@ -17,9 +17,9 @@ class Home extends CI_Controller {
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'welcome_message', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
-    }
+    }       
 
-    // TEST
+    
 }
 
 /* End of file welcome.php */
