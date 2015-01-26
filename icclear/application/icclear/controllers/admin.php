@@ -24,41 +24,25 @@ class Admin extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';
-        
-        $this->load->model('faq_model');
-        $data['vragen'] = $this->faq_model->getFaq();
+        $data['active'] = 'admin';        
+                
+        $this->load->model('conferentie_model');
+        $data['conferenties'] = $this->conferentie_model->getAll();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
     
-    public function algemeen() {
+
+     public function dashboard($id) {
         $data['user']  = $this->authex->getUserInfo();
         
-        $data['title'] = 'IC Clear - Algemeen';        
+        $data['title'] = 'IC Clear - ';         
         $data['active'] = 'admin';
         
-        $this->load->model('faq_model');
-        $data['vragen'] = $this->faq_model->getFaq();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/algemeen/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
-    public function conferentie() {
-        $data['user']  = $this->authex->getUserInfo();
-        
-        $data['title'] = 'IC Clear - Conferentie';         
-        $data['active'] = 'admin';
-        
-        $this->load->model('faq_model');
-        $data['vragen'] = $this->faq_model->getFaq();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/conferentie/overzicht', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
-    }
-
     // TEST
 }
 

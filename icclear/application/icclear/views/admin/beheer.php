@@ -50,27 +50,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach($conferenties as $conferentie) {?>
                             <tr>
-                                <td>1</td>
-                                <td>John</td>
-                                <td>Carter</td>
-                                <td>johncarter@mail.com</td>
-                                <td><span class="btn btn-default">Beheren</span></td>
+                                <td><?php echo $conferentie->id ?></td>
+                                <td><?php echo $conferentie->naam ?></td>
+                                <td><?php echo $conferentie->stad ?></td>
+                                <td><?php echo $conferentie->beginDatum ?></td>
+                                <td><a class="btn btn-default">Beheren</a></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Peter</td>
-                                <td>Parker</td>
-                                <td>peterparker@mail.com</td>
-                                <td><span class="btn btn-default">Beheren</span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>John</td>
-                                <td>Rambo</td>
-                                <td>johnrambo@mail.com</td>
-                                <td><span class="btn btn-default">Beheren</span></td>
-                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
