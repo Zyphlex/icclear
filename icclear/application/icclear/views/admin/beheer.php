@@ -14,10 +14,10 @@
                     <h4>Algemeen</h4>
                     
                     <ul class="">
-                    <li><a href="#">Hotels</a></li>
-                    <li><a href="#">Landen</a></li>
-                    <li><a href="#">Gebruikers</a></li>
-                    <li><a href="#">REGISTER</a></li>
+                    <li><a href="#">Hotels Beheren</a></li>
+                    <li><a href="#">Landen Beheren</a></li>
+                    <li><a href="#">Gebruikers Beheren</a></li>
+                    <li><a href="#">F.A.Q. Beheren</a></li>
                     </ul>
                     
                 </div>
