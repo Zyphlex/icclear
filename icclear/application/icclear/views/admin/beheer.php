@@ -11,7 +11,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h4> side-nav </h4>
+                    <h4>Algemeen</h4>
                     
                     <ul class="">
                     <li><a href="#">Hotels</a></li>
@@ -37,8 +37,7 @@
                         <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                             <h4 class="panel-title">
                                 <span class="pointer" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                                    Beheer Conferenties
-                                <span class="glyphicon glyphicon-folder-open"></span>
+                                    Conferentie selecteren om te beheren
                                 </span>
                             </h4>
                         </div>
