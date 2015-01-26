@@ -1,5 +1,4 @@
 
-<div class="row">
     <div class="col-md-10">        
            
         <p>DASHBOARD</p>
@@ -7,4 +6,3 @@
         <?php echo $conferentie->naam ?>
 
     </div>
-</div>

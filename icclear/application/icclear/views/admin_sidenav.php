@@ -1,4 +1,3 @@
-<div class="row">
     <div class="col-md-2">  
         
         <div class="panel panel-default">
@@ -21,4 +20,3 @@
         </div>
         
     </div>
-</div>

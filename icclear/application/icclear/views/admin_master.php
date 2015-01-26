@@ -36,8 +36,10 @@
     <div id="container">
         <div id="hoofding"><?php echo $header; ?></div>
         <div id="navigatie"><?php echo $nav; ?></div>
-        <div class="sidenav" id="sidenav"><?php echo $sidenav; ?></div>
-        <div class="content" id="inhoud"><?php echo $content; ?></div>
+        <div class="row">
+            <div class="sidenav" id="sidenav"><?php echo $sidenav; ?></div>
+            <div class="content" id="inhoud"><?php echo $content; ?></div>
+        </div>
         <div class="footer" id="footer"><?php echo $footer; ?></div>
     </div>
     
