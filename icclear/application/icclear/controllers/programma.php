@@ -15,10 +15,10 @@ class Programma extends CI_Controller {
         $data['title'] = 'IC Clear - Programma';         
         $data['active'] = '';
         
-        $this->load->model('faq_model');
-        $data['vragen'] = $this->faq_model->getFaq();
+        $this->load->model('planning_model');
+        $data['planningen'] = $this->planning_model->getAll();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'programma/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
 
