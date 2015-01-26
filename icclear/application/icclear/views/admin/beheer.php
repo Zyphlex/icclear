@@ -50,7 +50,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $teller = 0; foreach($conferenties as $conferentie) {?>
+                            <?php $teller = 1; foreach($conferenties as $conferentie) {?>
                             <tr>
                                 <td><?php echo $teller ?></td>
                                 <td><?php echo $conferentie->naam ?></td>
