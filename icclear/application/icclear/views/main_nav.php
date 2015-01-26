@@ -13,24 +13,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li <?php echo $active_home ?>><?php echo anchor('home', 'HOME'); ?></li>
-                    <li <?php echo $active_register ?>><a href="food/index.html">REGISTER</a></li>
-                    <li <?php echo $active_programme ?>><a href="kleding/index.html">PROGRAMME</a></li>
-                    <li <?php echo $active_speakers ?>><a href="gallerij/index.html">SPEAKERS</a></li>
-                    <li <?php echo $active_venue ?>><a href="gallerij/index.html">VENUE</a></li>
+                    <li <?php if ($active == 'home'){ echo 'class="active"'; } ?>><?php echo anchor('home', 'HOME'); ?></li>
+                    <li <?php if ($active == 'registreren'){ echo 'class="active"'; } ?>><a href="food/index.html">REGISTREREN</a></li>
+                    <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><a href="kleding/index.html">PROGRAMMA</a></li>
+                    <li <?php if ($active == 'sprekers'){ echo 'class="active"'; } ?>><a href="gallerij/index.html">SPREKERS</a></li>
+                    <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><a href="gallerij/index.html">LOCATIE</a></li>
                     <?php
                 if ($user != null) {
                     switch ($user->typeId) {                        
-                        case 3: // administrator
-                            echo '<li> ' . anchor('admin', 'ADMIN') . '</li>' . "\n";
-                            echo "\t\t".'<li class="dropdown">' . "\n";
-                            echo "\t\t".'<a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>' . "\n";
-                            echo "\t\t".'<ul class="dropdown-menu">';
-                            echo "\t\t".'<li> ' . anchor('admin/algemeen', 'BEHEER ALGEMEEN') . '</li>' . "\n";
-                            echo "\t\t".'<li> ' . anchor('admin/conferentie', 'BEHEER CONFERENTIE') . '</li>' . "\n";
-                            echo "\t\t".'</ul>' . "\n";
-                            echo "\t\t".'</li>' . "\n";
-                            break;
+                        case 3: // administrator ?>
+                            <li <?php if ($active == 'admin'){ echo 'class="active"'; } ?>><?php echo anchor('admin', 'ADMIN'); ?></li>
+                        <?php break;
                     }
                 }
                 ?>
@@ -40,3 +33,5 @@
         </nav>
 </div>
 
+
+                    
