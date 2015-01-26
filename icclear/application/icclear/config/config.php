@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url'] = 'https://subversion.khk.be/projecten/TI1415project/icclear';
+$config['base_url'] = 'https://subversion.khk.be/projecten/TI1415project23/icclear';
 
 /*
 |--------------------------------------------------------------------------
