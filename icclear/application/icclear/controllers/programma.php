@@ -13,7 +13,7 @@ class Programma extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Programma';         
-        $data['active'] = '';
+        $data['active'] = 'programma';
         
         $this->load->model('planning_model');
         $data['planningen'] = $this->planning_model->getAll();
