@@ -45,7 +45,7 @@
                                 </span>
                             </h4>
                         </div>
-                        <div id="collapseListGroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                        <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
                             
                             <div class="panel-body">
                             <table class="table">
