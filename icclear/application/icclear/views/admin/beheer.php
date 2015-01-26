@@ -42,6 +42,7 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Naam</th>
                                 <th>Stad</th>
                                 <th>Begin datum</th>
@@ -49,14 +50,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($conferenties as $conferentie) {?>
+                            <?php $teller = 0; foreach($conferenties as $conferentie) {?>
                             <tr>
+                                <td><?php echo $teller ?></td>
                                 <td><?php echo $conferentie->naam ?></td>
                                 <td><?php echo $conferentie->stad ?></td>
                                 <td><?php echo $conferentie->beginDatum ?></td>
                                 <td><a class="btn btn-default">Beheren</a></td>
                             </tr>
-                            <?php } ?>
+                            <?php $teller++; } ?>
                         </tbody>
                     </table>
                 </div>
