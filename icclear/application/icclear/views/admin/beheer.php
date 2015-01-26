@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <h4>Algemeen</h4>
 
-                    <ul class="">
+                    <ul class="nav nav-pills nav-stacked">
                         <li><a href="#">Hotels Beheren</a></li>
                         <li><a href="#">Landen Beheren</a></li>
                         <li><a href="#">Gebruikers Beheren</a></li>
