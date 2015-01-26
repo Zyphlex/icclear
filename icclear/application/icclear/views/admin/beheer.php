@@ -42,17 +42,15 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Row</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
+                                <th>Naam</th>
+                                <th>Stad</th>
+                                <th>Begin datum</th>
                                 <th>Beheer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($conferenties as $conferentie) {?>
                             <tr>
-                                <td><?php echo $conferentie->id ?></td>
                                 <td><?php echo $conferentie->naam ?></td>
                                 <td><?php echo $conferentie->stad ?></td>
                                 <td><?php echo $conferentie->beginDatum ?></td>
