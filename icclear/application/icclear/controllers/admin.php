@@ -29,8 +29,8 @@ class Admin extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferenties'] = $this->conferentie_model->getAll();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
     
 
