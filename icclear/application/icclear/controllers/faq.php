@@ -12,12 +12,8 @@ class Faq extends CI_Controller {
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
         
-        $data['title'] = 'IC Clear - F.A.Q.';        
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['title'] = 'IC Clear - F.A.Q.';         
+        $data['active'] = '';
         
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getFaq();

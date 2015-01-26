@@ -24,11 +24,7 @@ class Admin extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Beheer';        
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['active'] = 'admin';
         
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getFaq();
@@ -41,11 +37,7 @@ class Admin extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Algemeen';        
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['active'] = 'admin';
         
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getFaq();
@@ -57,12 +49,8 @@ class Admin extends CI_Controller {
     public function conferentie() {
         $data['user']  = $this->authex->getUserInfo();
         
-        $data['title'] = 'IC Clear - Conferentie';        
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['title'] = 'IC Clear - Conferentie';         
+        $data['active'] = 'admin';
         
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getFaq();

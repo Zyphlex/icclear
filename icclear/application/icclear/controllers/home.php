@@ -12,12 +12,8 @@ class Home extends CI_Controller {
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
         
-        $data['title'] = 'IC Clear - Home';
-        $data['active_home'] = 'class="active"';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['title'] = 'IC Clear - Home'; 
+        $data['active'] = 'home';
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'welcome_message', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

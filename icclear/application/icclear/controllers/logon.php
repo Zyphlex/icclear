@@ -13,18 +13,8 @@ class Logon extends CI_Controller {
     }
 
     public function login() {
-//        $data['title'] = 'IC Clear - Logon';
-//        $data['active_home'] = '';
-//        $data['active_register'] = '';
-//        $data['active_programme'] = '';
-//        $data['active_speakers'] = '';
-//        $data['active_venue'] = '';
-//
         $data['user'] = $this->authex->getUserInfo();
-//
-//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/login', 'footer' => 'main_footer');
-//        $this->template->load('main_master', $partials, $data);
-
+        
         $this->load->view('logon/login', $data);
     }
 
@@ -53,19 +43,10 @@ class Logon extends CI_Controller {
     public function register() {
         $data['user'] = '';
 
-//        $data['title'] = 'IC Clear - Register';
-//        $data['active_home'] = '';
-//        $data['active_register'] = '';
-//        $data['active_programme'] = '';
-//        $data['active_speakers'] = '';
-//        $data['active_venue'] = '';
-
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getLand();
 
         $this->load->view('logon/registreer', $data);
-//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/registreer', 'footer' => 'main_footer');
-//        $this->template->load('main_master', $partials, $data);
     }
 
     public function add() {
@@ -95,12 +76,8 @@ class Logon extends CI_Controller {
 
     public function nieuwPass() {
 
-        $data['user'] = '';
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['user'] = ''; 
+        $data['active'] = '';
         $data['title'] = 'IC Clear - Wachtwoord aangepast';
 
         $wachtwoord = $this->input->post('wachtwoord');
@@ -122,12 +99,8 @@ class Logon extends CI_Controller {
         
         $data['user'] = '';
         $data['generatedKey'] = $generatedKey;
-        $data['title'] = 'IC Clear - Register';
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['title'] = 'IC Clear - Register'; 
+        $data['active'] = '';
 
         if ($this->logon_model->correct($generatedKey) == false) {
             $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/foutKey', 'footer' => 'main_footer');
@@ -139,13 +112,8 @@ class Logon extends CI_Controller {
 
     public function bestaat() {
         $data['title'] = 'IC Clear - Register';
-        $data['user'] = '';
-
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['user'] = ''; 
+        $data['active'] = '';
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_bestaat', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -153,13 +121,8 @@ class Logon extends CI_Controller {
 
     public function klaar() {
         $data['title'] = 'IC Clear - Register';
-        $data['user'] = $this->authex->getUserInfo();
-
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['user'] = $this->authex->getUserInfo(); 
+        $data['active'] = '';
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_klaar', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -176,12 +139,8 @@ class Logon extends CI_Controller {
 
         $this->authex->activate($generatedKey);
 
-        $data['user'] = null;
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+        $data['user'] = null; 
+        $data['active'] = '';
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_geactiveerd', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
@@ -195,13 +154,8 @@ class Logon extends CI_Controller {
     }
 
     public function resetPass() {
-
-
-        $data['active_home'] = '';
-        $data['active_register'] = '';
-        $data['active_programme'] = '';
-        $data['active_speakers'] = '';
-        $data['active_venue'] = '';
+ 
+        $data['active'] = '';
         $data['title'] = 'IC Clear - Email verzonden';
 
 
