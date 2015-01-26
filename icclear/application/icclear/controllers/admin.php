@@ -38,7 +38,10 @@ class Admin extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - ';         
-        $data['active'] = 'admin';
+        $data['active'] = 'admin';        
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->get($id);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

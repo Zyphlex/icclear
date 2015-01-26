@@ -26,6 +26,12 @@ class Conferentie_model extends CI_Model {
         return $query->result();
     }
     
+    function get($id)
+    {        
+        $this->db->where('id', $id);
+        $query = $this->db->get('conferentie');
+        return $query->row();
+    }
 
     
 }

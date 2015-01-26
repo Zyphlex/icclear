@@ -8,6 +8,8 @@
     <div class="col-md-12">        
            
         <p>DASHBOARD</p>
+        <?php echo $conferentie->id ?>
+        <?php echo $conferentie->naam ?>
 
     </div>
 </div>
