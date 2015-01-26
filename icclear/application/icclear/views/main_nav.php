@@ -18,14 +18,22 @@
                     <li <?php echo $active_programme ?>><a href="kleding/index.html">PROGRAMME</a></li>
                     <li <?php echo $active_speakers ?>><a href="gallerij/index.html">SPEAKERS</a></li>
                     <li <?php echo $active_venue ?>><a href="gallerij/index.html">VENUE</a></li>
-                    <li <?php ?>><?php echo anchor('admin', 'ADMIN'); ?></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><?php echo anchor('admin/algemeen', 'BEHEER ALGEMEEN'); ?></li>
-                            <li><?php echo anchor('admin/conferentie', 'BEHEER CONFERENTIE'); ?></li>
-                        </ul>
-                    </li>
+                    <?php
+                if ($user != null) {
+                    switch ($user->typeId) {                        
+                        case 3: // administrator
+                            echo '<li> ' . anchor('admin', 'ADMIN') . '</li>' . "\n";
+                            echo "\t\t".'<li class="dropdown">' . "\n";
+                            echo "\t\t".'<a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>' . "\n";
+                            echo "\t\t".'<ul class="dropdown-menu">';
+                            echo "\t\t".'<li> ' . anchor('admin/algemeen', 'BEHEER ALGEMEEN') . '</li>' . "\n";
+                            echo "\t\t".'<li> ' . anchor('admin/conferentie', 'BEHEER CONFERENTIE') . '</li>' . "\n";
+                            echo "\t\t".'</ul>' . "\n";
+                            echo "\t\t".'</li>' . "\n";
+                            break;
+                    }
+                }
+                ?>
                 </ul>
 
             </div><!-- /.navbar-collapse -->
