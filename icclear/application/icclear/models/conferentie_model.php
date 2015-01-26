@@ -21,7 +21,7 @@ class Conferentie_model extends CI_Model {
        
     function getAll()
     {        
-        $this->db->order('beginDatum');
+        $this->db->order_by('beginDatum');
         $query = $this->db->get('conferentie');
         return $query->result();
     }
