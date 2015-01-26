@@ -1,6 +1,6 @@
 <?php
 
-class Faq_model extends CI_Model {
+class Planning_model extends CI_Model {
 
     // +----------------------------------------------------------
     // | Beershop - product_model
