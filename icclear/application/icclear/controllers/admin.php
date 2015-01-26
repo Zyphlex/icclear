@@ -7,6 +7,17 @@ class Admin extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
+        $this->load->helper(array('form', 'url'));
+        if (!$this->authex->loggedIn()) {
+            redirect('logon/aanmelden');
+            //voorlopig
+        } else {
+            $user = $this->authex->getUserInfo();
+            if ($user->typeId < 3) {
+                redirect('logon/aanmelden');
+                //voorlopig
+            }
+        }
     }
     
     public function index() {
