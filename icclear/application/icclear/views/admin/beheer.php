@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-3">        
+    <div class="col-md-2">        
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h4>Algemeen</h4>
@@ -22,12 +22,12 @@
     </div>
 
 
-    <div class="col-md-9">
+    <div class="col-md-10">
         <div class="panel panel-default" role="tablist">
 
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                 <h4 class="panel-title">
-                    <span class="pointer" href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
+                    <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
                         Conferentie selecteren om te beheren
                     </span>
                 </h4>
