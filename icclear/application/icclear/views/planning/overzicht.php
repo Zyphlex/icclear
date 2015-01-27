@@ -12,14 +12,17 @@
     </thead>
     <tbody>
         <?php
+        $teller = 1;
         foreach ($sessies as $sessie) {
             echo '<tr>';
+            echo '<td>' . $teller . '</td>';
             echo '<td>' . $sessie->onderwerp . '</td>';
             echo '<td>' . $sessie->omschrijving . '</td>';
             echo '<td>' . $sessie->planning->beginUur . '</td>';
             echo '<td>' . $sessie->planning->eindUur . '</td>'; 
             echo '<td>' . $sessie->zaal->naam .'</td>';
             echo '</tr>';
+            $teller++;
         }
         ?>                                         
     </tbody>
