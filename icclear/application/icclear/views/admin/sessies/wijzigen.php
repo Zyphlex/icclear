@@ -31,11 +31,20 @@
     
     <div class="row">
         <div class="col-md-3">
-        <label for="onderwerp">Zaal:</label>   
+        <label for="zaal">Zaal:</label>   
         </div>
         
         <div class="col-md-5">
         <input type="text" name="onderwerp" value="<?php echo $sessie->zaal->naam ?>" id="onderwerp" size="30" class="form-control"  />    
+        <select name="zaal" id="zaal">
+            <?php foreach($zalen as $z) { 
+            if ($zalen->id == $sessie->zaalId) {?>
+            <option selected="selected"><?php echo $z->naam ?></option>
+            <?php } else { ?>
+                <option><?php echo $z->naam ?></option>
+            <?php }} ?>
+        </select>
+        
         </div>
     </div>
     

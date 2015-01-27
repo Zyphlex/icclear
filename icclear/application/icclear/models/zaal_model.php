@@ -12,6 +12,10 @@ class Zaal_model extends CI_Model {
         return $query->row();
     }
     
+    function getAll() {
+        $query = $this->db->get('zaal');
+        return $query->result();
+    }
 
 }
 ?>

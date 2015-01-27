@@ -14,9 +14,6 @@ class Sessies_model extends CI_Model {
         $this->load->model('gebruiker_model');   
         $sessie->spreker = $this->gebruiker_model->getSpreker($sessie->gebruikerIdSpreker);
         
-        $this->load->model('zaal_model');   
-        $sessie->zaal = $this->zaal_model->get($sessie->zaalId);
-        
         return $sessie;
     }
 
