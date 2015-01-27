@@ -12,10 +12,6 @@ class Inschrijven extends CI_Controller {
     }
 
     public function index() {
-        if (! $this->authex->loggedIn())
-        {
-            redirect('logon/login');
-        } else {
         $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - Inschrijven'; 
         $data['active'] = 'inschrijven';
@@ -31,7 +27,6 @@ class Inschrijven extends CI_Controller {
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/inschrijving', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
-        }
     }
     
     public function inschrijven() {
