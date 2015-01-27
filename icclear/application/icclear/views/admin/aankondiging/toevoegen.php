@@ -52,8 +52,8 @@
 
                     <?php echo form_close(); ?>
                 </div>
-                <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer','class="btn btn-default"'); ?> 
-                <?php echo anchor('gebruiker/toevoegen', 'Opslaan','class="btn btn-primary"'); ?> 
+                <?php echo anchor('admin/', 'Annuleer','class="btn btn-default"'); ?> 
+                <?php echo anchor('aankondiging/insert', 'Toevoegen','class="btn btn-primary"'); ?> 
             </div>
 
         </div>
