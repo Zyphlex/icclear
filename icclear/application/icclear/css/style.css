@@ -73,6 +73,6 @@ button:focus {outline:none;}
 #ddtitel :focus{
     color: white;
 }
-#ddtitel a:focus{
+#ddtitel > .open > a:focus{
     color: #b60717;
 }
