@@ -298,8 +298,8 @@
     </div>
 
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" name="mysubmit" value="Submit" class="btn btn-primary"  />
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
+        <input type="submit" name="mysubmit" value="Verzend" class="btn btn-primary"  />
 
     </div>
     
