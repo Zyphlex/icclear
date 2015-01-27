@@ -55,7 +55,7 @@
         <br/>
         
         <div class="row">            
-            <label for="maxinschrijvingen" class="control-label col-md-2">Max inschrijvingen:</label>
+            <label for="maxinschrijvingen" class="control-label col-md-3">Max inschrijvingen:</label>
             <div class="col-md-2">
                 <input class="form-control" type="number" id="maxinschrijvingen" name="maxinschrijvingen"/>                
             </div>
