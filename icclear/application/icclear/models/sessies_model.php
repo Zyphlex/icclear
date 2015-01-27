@@ -24,6 +24,13 @@ class Sessies_model extends CI_Model {
                  $this->planning_model->getSessie($sessie->id);
         }
         
+        $this->load->model('zaal_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->zaal = 
+                 $this->zaal_model->get($sessie->zaalId);
+        }
+        
         return $sessies;
     }
     
