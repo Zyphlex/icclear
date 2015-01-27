@@ -61,7 +61,7 @@ class Sessies_model extends CI_Model {
         
         foreach ($sessies as $sessie) {
             $sessie->spreker = 
-                 $this->gebruiker_model->getSpreker($sessie->sprekerId);
+                 $this->gebruiker_model->getSpreker($sessie->gebruikerIdSpreker);
         }
         
         return $sessies;
