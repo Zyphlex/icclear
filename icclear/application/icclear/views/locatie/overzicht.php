@@ -25,20 +25,20 @@ and open the template in the editor.
             }
             ?>
         </div>
-        <h2>Hotels</h2>
+        <h2>Routes</h2>
         <div class="row">  
             <?php
-            foreach ($hotels as $hotel) {
-                echo '<div class="col-md-4">';
+            foreach ($routes as $route) {
+                echo '<div class="col-md-6">';
                 echo '<div class="panel panel-default">';
                 echo '<div class="panel-body">';
-                echo '<h4>' . $hotel->naam . ' </h4>';
+                echo '<h4>' . $route->beschrijving . ' </h4>';
                 echo '   <p>Extra text</p> ';
                 echo '</div>';
                 echo '</div>  ';
                 echo '</div>';
             }
             ?>
-        </div>
+        </div>  
     </body>
 </html>
