@@ -32,7 +32,7 @@ class Sessies_model extends CI_Model {
         $this->load->model('conferentiedag_model');        
         foreach ($sessies as $sessie) {
             $sessie->conferentiedag = 
-                 $this->conferentiedag_model->get($sessie->conferentieId);
+                 $this->conferentiedag_model->get($sessie->conferentiedagId);
         }
         
         return $sessies;
