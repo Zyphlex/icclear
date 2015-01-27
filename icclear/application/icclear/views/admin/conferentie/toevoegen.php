@@ -61,7 +61,6 @@
             <div class="col-md-12">
                <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
             </div>
-            </div>
         </div>
         
         
