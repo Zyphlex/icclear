@@ -22,7 +22,7 @@
             </div>
             
             <div class="form-group">
-                <label for="einddatum" class="form-label col-md-2 border-left">Eind datum:</label>
+                <label for="einddatum" class="control-label col-md-2 border-left">Eind datum:</label>
                 <div class="col-md-4">
                     <input type="date" id="einddatum" name="einddatum" class="form-control"/>
                 </div>
