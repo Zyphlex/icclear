@@ -120,7 +120,7 @@ class Gebruiker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
 
-        $this->gebruiker_model->update($gebruiker);
+        $this->gebruiker_model->insert($gebruiker);
 
         $this->overzichtGebruikers();
     }
