@@ -1,3 +1,12 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#addRow").click(function() {
+          $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
+          return false;
+        });
+    });
+</script>
+
 <div class="col-md-10">
     <h1>Conferentie toevoegen.</h1>
 
@@ -79,7 +88,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <table class="table">
+                        <table id="mytable" class="table">
                             <thead>
                                 <tr>
                                     <th><label for="formule">Formule</label></th>
