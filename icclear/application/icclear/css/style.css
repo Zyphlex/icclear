@@ -69,8 +69,3 @@ button:focus {outline:none;}
 
 
 .login-user { font-family:estrangelo;font-size:14px;color:#b60717;cursor:pointer;}
-
-
-#ddtitel > .open > a:focus{
-    color: white;
-}
