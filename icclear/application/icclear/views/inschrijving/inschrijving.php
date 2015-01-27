@@ -78,6 +78,9 @@ and open the template in the editor.
         
         <h3>Betaling</h3>
         
+        <input type="checkbox" name="factuur" id="factuur"/>
+        <label>Ja, ik wil een factuur ontvangen.</label>
+        
         <a href="<?php echo base_url();?>icclear.php/home">Annuleren</a>
         <input type="submit" value="Bevestigen en betalen"/>
     </body>
