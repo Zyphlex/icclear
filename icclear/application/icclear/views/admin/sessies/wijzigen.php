@@ -23,7 +23,7 @@
         </div>
         
         <div class="col-md-5">
-        <input type="text" name="omschrijving" value="<?php echo $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
+        <input type="textarea" rows="10" cols="5" name="omschrijving" value="<?php echo $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
         </div>
     </div>
     
@@ -33,7 +33,7 @@
         </div>
         
         <div class="col-md-5">
-            <p><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?>"</p>    
+            <p><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
         </div>
     </div>
     
