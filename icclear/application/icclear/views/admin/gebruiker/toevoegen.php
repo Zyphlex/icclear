@@ -63,7 +63,6 @@
                                 <div class="col-md-4">   
                                     <label for="emailadres">
                                         Emailadres: 
-                                        <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>
                                     </label>
                                 </div>  
 
@@ -83,10 +82,7 @@
                                     <input type="date" class="form-control" id="field7" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
                                 </div>
                             </div>
-                        </div>
 
-
-                        <div class="col-md-6 border-left">  
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geslacht">
@@ -142,6 +138,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+
+                        <div class="col-md-6 border-left"> 
 
                             <div class="row">
                                 <div class="col-md-4">   
