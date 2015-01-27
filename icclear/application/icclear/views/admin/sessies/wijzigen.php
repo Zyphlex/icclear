@@ -17,7 +17,7 @@
         <input type="hidden" name="sessieId" id="sessieId" value="<?php $sessie->id ?>"/>
 
         <p>
-            <input type="submit" value="Opslaan"/>
+            <input type="submit" value="Opslaan" class="btn btn-default"/>
             <a href="javascript:history.go(-1);" class="btn btn-danger">Annuleren</a>
         </p>
 
