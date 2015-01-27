@@ -47,7 +47,7 @@ class Gebruiker extends CI_Controller {
         $data['gebruiker'] = $this->gebruiker_model->get($id);
         
         $this->load->model('land_model');
-        $data['landen'] = $this->gebruiker_model->getLand();
+        $data['landen'] = $this->land_model->getLand();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
