@@ -37,9 +37,9 @@ foreach ($sessies as $dag) {
         $teller++;
         }        
         }
-        ?>
-      </tbody>
-    </table>
+        ?>      
         <?php
 }
 ?>
+</tbody>
+    </table>
