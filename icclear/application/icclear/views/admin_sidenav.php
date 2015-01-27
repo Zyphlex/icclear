@@ -10,7 +10,7 @@
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                 <h4 class="panel-title">
-                    Algemeen
+                    Beheren
                 </h4>
             </div>
 
@@ -20,28 +20,19 @@
                     <li><a href="#">Landen</a></li>
                     <li><?php echo anchor('gebruiker/overzichtGebruikers' , 'Gebruikers'); ?></li>
                     <li><a href="#">F.A.Q.</a></li>
+            
+            
+            <?php if($conferentieId != null) { ?>
+                    
+                    <li><?php echo anchor('gebruiker', 'Gebruikers'); ?></li>
+                    <li><?php echo anchor('sessies', 'Sessies'); ?></li>
+                
+            <?php } ?>            
+            
                 </ul>
             </div>
-            
         </div>
         
-        <?php if($conferentieId != null) { ?>
-        <div class="panel panel-default">
-            
-            <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-                <h4 class="panel-title">
-                    Conferentie
-                </h4>
-            </div>
-
-            <div class="panel-body">
-                <ul class="nav nav-pills nav-stacked">
-                    <li><?php echo anchor('gebruiker', 'GEBRUIKERS'); ?></li>
-                    <li><?php echo anchor('sessies', 'SESSIES'); ?></li>
-                </ul>
-            </div>
-            
-        </div>
-        <?php } ?>
+        
         
     </div>
