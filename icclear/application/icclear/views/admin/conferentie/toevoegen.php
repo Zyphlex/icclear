@@ -1,13 +1,3 @@
-<script type="text/javascript">
-    $("#add, .check ").click(function() {
-        $('#mytable tbody>tr:last')
-            .clone(true)
-            .insertAfter('#mytable tbody>tr:last').find('input').each(function() {
-            $(this).val('');
-        });
-    });
-</script>
-
 <div class="col-md-10">
     <h1>Conferentie toevoegen.</h1>
 
@@ -149,15 +139,3 @@
 
 
 </div>
-
-<table id="mytable">
-    <tbody>
-        <tr>
-            <td>this is one <input /></td>
-            <td>this is two<input /></td>
-        </tr>
-   <tbody>
-
-        </table>
-       
-<div id="add">add</div>
