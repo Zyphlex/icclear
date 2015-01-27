@@ -9,7 +9,9 @@
         echo '<h3 class = "panel-title">' . $hotel->naam   . '</h3>';
         echo '</div>';
         echo '<div class="panel-body">';
-        echo '<p>' . $hotel->straat . ' ' . $hotel->nummer . ' </p>';        
+        echo '<p>' . $hotel->straat . ' ' . $hotel->nummer . ' </p>';   
+        echo '<p>' . $hotel->postcode . ' ' . $hotel->gemeente . ' </p>';   
+        echo '<p>' . $hotel->website . ' </p>';   
         echo '</div>';
         echo '</div>  ';
         echo '</div>';
