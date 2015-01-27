@@ -1,7 +1,7 @@
 <div class="col-md-10">
     <h1>Conferentie toevoegen.</h1>
 
-    <form action="conferentie/opslaan" method="post">
+    <form class="form-horizontal" action="conferentie/opslaan" method="post">
 
         <div class="row">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
