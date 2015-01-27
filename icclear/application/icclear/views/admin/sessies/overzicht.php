@@ -28,7 +28,7 @@
                                 <td><?php echo $sessie->onderwerp ?></td>
                                 <td><?php // echo $sessie->sessie->beginUur ?></td>
                                 <td><?php echo $sessie->zaalId ?></td>
-                                <td><?php echo anchor('admin/dashboard/' . $gebruiker->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
+                                <td><?php echo anchor('admin/dashboard/' . $sessie->id, 'Beheren','class="btn btn-default'); ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
