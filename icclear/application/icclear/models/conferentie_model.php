@@ -13,40 +13,32 @@ class Conferentie_model extends CI_Model {
     // | K. Vangeel
     // +----------------------------------------------------------
 
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
     }
 
-       
-    function getAll()
-    {        
+    function getAll() {
         $this->db->order_by('beginDatum');
         $query = $this->db->get('conferentie');
         return $query->result();
     }
-    
-    function get($id)
-    {        
+
+    function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('conferentie');
         return $query->row();
     }
-    
-    function getActieveConferentie()
+
+    function getActieveConferentie($id)
     {
         $this->db->where('statusId', '2');
         $query = $this->db->get('conferentie');
         return $query->row();
+        
+        /*$this->load->model('conferentieOnderdeel_model');
+        $this->conferentieOnderdeel_model->getOnderdelenPerConferentie();*/
     }
-    
-    function getOnderdelenPerConferentie($id)
-    {
-        $this->db->where('conferentieId', $id);
-        $query = $this->db->get('conferentieOnderdeel');
-        return $query->result();
-    }
-    
+
 }
 
 ?>
