@@ -1,6 +1,6 @@
 <?php
 foreach ($sessies as $sessie) {
-    echo '<h1>' . $sessie->conferentiedagId. '</h1>';
+    echo '<h1>Dag ' . $sessie->conferentiedagId. '</h1>';
     echo '<table class = "table">';
     echo '<thead>';
     echo '<tr>';
