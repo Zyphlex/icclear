@@ -114,6 +114,48 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4">   
+                                    <label for="type">
+                                        Type:
+                                    </label>  
+                                </div>  
+
+                                <div class="col-md-8">        
+                                    <div class="my-radio">
+                                        <?php
+                                        if ($gebruiker->typeId == 2) {
+                                            echo '<div class="">
+                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" checked="checked" value="Spreker">
+                                            <span class="option-title">
+                                                Spreker
+                                            </span>
+                                        </div> 
+                                        <div class="">
+                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="Bezoeker">
+                                            <span class="option-title">
+                                                Bezoeker
+                                            </span>
+                                        </div>';
+                                        } elseif ($gebruiker->typeId == 1) {
+                                           echo '<div class="">
+                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal"  value="Spreker">
+                                            <span class="option-title">
+                                                Spreker
+                                            </span>
+                                        </div> 
+                                        <div class="">
+                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" checked="checked" value="Bezoeker">
+                                            <span class="option-title">
+                                                Bezoeker
+                                            </span>
+                                        </div>';
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
