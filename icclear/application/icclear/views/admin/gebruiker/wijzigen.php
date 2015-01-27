@@ -3,13 +3,9 @@
 
     $(function () {
 
-
-
-        $("#opslaan").click(function (e) {
+        $("#annuleer").click(function (e) {
             e.preventDefault();
-            if (validatieOK()) {
-                $("#myform").submit();
-            }
+            history.go(-1);
         });
 
     });
