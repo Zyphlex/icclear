@@ -72,7 +72,8 @@
         <br/><br/>
         
         <div class="row">
-            <div class="col-md-12 panel panel-default">
+            <div class="col-md-12">
+                <div class=" panel panel-default">
                 <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                     <h4 class="panel-title">
                         <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
@@ -100,6 +101,7 @@
                                 </tr>
                         </tbody>
                     </table>
+                </div>
                 </div>
             </div>
         </div>        
