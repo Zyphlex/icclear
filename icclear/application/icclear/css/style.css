@@ -70,6 +70,9 @@ button:focus {outline:none;}
 
 .login-user { font-family:estrangelo;font-size:14px;color:#b60717;cursor:pointer;}
 
-#ddtitel a:focus{
+#ddtitel :focus{
     color: white;
+}
+#ddtitel a:focus{
+    color: #b60717;
 }
