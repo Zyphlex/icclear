@@ -46,42 +46,7 @@
                                 <div class="col-md-8">   
                                     <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control" required="required">
                                 </div>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="emailadres">
-                                        Emailadres: 
-                                    </label>
-                                </div>  
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" required="required">      
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="geboortedatum">
-                                        Geboortedatum:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <input type="date" class="form-control" value="<?php echo $gebruiker->geboortedatum; ?>" id="field7" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="geslacht">
-                                        Geslacht:
-                                    </label>  
-                                </div>                                 
-                            </div>
-
+                            </div>                         
                         </div>      
                     </div>
 
