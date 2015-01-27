@@ -28,7 +28,7 @@
         <div class="row">            
             <div class="col-md-6">
                 <label for="land">Stad</label>
-                <select id="land" name="land" class="form-controls">
+                <select id="land" name="land" class="form-control">
                     <option>België</option>
                 </select>
             </div>            
