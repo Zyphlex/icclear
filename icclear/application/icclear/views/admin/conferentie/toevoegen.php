@@ -67,19 +67,7 @@
                 <label class="radio"><input type="radio" name="seminariedag">Ja</label>
                 <label class="radio"><input type="radio" name="seminariedag">Nee</label>               
             </div>
-        </div>
-        
-        <br/><br/>
-        
-        <div class="row">
-            <div class="col-md-12">
-                <label for="beschrijving">Beschrijving:</label>    
-            </div>
-
-            <div class="col-md-12">
-               <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
-            </div>
-        </div>        
+        </div>       
         
         <br/><br/>
         
@@ -104,8 +92,20 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>        
         
+        <br/><br/>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <label for="beschrijving">Beschrijving:</label>    
+            </div>
+
+            <div class="col-md-12">
+               <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
+            </div>
+        </div>        
+                
         <br/><br/>
         
         <div class="row">
