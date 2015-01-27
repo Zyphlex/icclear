@@ -109,7 +109,7 @@ class Gebruiker extends CI_Controller {
         $gebruiker->familienaam = $this->input->post('familienaam');
         $gebruiker->geboortedatum = $this->input->post('geboortedatum');
         $gebruiker->emailadres = $this->input->post('emailadres');
-         $gebruiker->gemeente = $this->input->post('gemeente');
+        $gebruiker->gemeente = $this->input->post('gemeente');
         $gebruiker->postcode = $this->input->post('postcode');
         $gebruiker->straat = $this->input->post('straat');
         $gebruiker->nummer = $this->input->post('huisnummer');
