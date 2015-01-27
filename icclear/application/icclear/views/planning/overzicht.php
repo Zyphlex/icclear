@@ -18,7 +18,7 @@ foreach ($sessies as $dag) {
         </thead>  
         <tbody>
     <?php            
-    }    
+        
     $id = $dag->conferentiedagId;
     ?>                
             <?php                
@@ -36,7 +36,7 @@ foreach ($sessies as $dag) {
             echo '</tr>';
         $teller++;
         }        
-        }
+        }}
         ?> 
         </tbody>
      
