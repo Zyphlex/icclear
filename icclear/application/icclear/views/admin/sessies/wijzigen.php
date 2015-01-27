@@ -12,7 +12,7 @@
         <label for="onderwerp">Onderwerp:</label>   
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-5">
         <input type="text" name="onderwerp" value="<?php echo $sessie->onderwerp ?>" id="onderwerp" size="30" class="form-control"  />    
         </div>
     </div>
@@ -22,14 +22,18 @@
         <label for="omschrijving">Omschrijving:</label>    
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-5">
         <input type="text" name="omschrijving" value="<?php echo $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-3">
-            <p>Spreker:<?php echo $sessie->id ?></p>
+            <p>Spreker:</p>
+        </div>
+        
+        <div class="col-md-5">
+        <input type="text" name="omschrijving" value="<?php echo $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
         </div>
     </div>
     
