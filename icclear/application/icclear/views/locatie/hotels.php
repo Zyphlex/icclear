@@ -4,7 +4,7 @@
     <?php
     foreach ($hotels as $hotel) {
         echo '<div class="col-md-6">';
-        echo '<div class="panel panel-info">';
+        echo '<div class="panel panel-default">';
         echo '<div class = "panel-heading">';
         echo '<h3 class = "panel-title">' . $hotel->naam   . '</h3>';
         echo '</div>';
