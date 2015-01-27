@@ -17,7 +17,7 @@
                     <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
-                    <li class="dropdown" <?php if ($active == 'locrout'){ echo 'class="active"'; } ?>>
+                    <li <?php if ($active == 'locrout'){ echo 'class="active"'; } echo 'class="dropdown"'; ?>>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENUES/ROUTES<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li><?php echo anchor('locatie/', 'VENUE'); ?></li>                            
