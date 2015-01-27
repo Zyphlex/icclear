@@ -82,21 +82,35 @@
 
                                 <div class="col-md-8">        
                                     <div class="my-radio">
-                                        
-                                        <div class="">
-                                            <input type="radio" name="geslacht" id="field8-1" <?php if (strtolower($gebruiker->geslacht) == "man") echo 'checked="checked"'; ?> class="form-horizontal" checked="checked" value="Man">
+                                        <?php
+                                        if ($gebruiker->geslacht == strtolower("man")) {
+                                            echo '<div class="">
+                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
                                             <span class="option-title">
                                                 Man
                                             </span>
                                         </div> 
-                                        
                                         <div class="">
-                                            <input type="radio" name="geslacht" id="field8-2" <?php if (strtolower($gebruiker->geslacht) == "vrouw") echo 'checked="checked"'; ?> class="form-horizontal" value="Vrouw">
+                                            <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" value="Vrouw">
                                             <span class="option-title">
                                                 Vrouw
                                             </span>
-                                        </div>
-                                        
+                                        </div>';
+                                        } else {
+                                            echo '<div class="">
+                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
+                                            <span class="option-title">
+                                                Man
+                                            </span>
+                                        </div> 
+                                                <div class="">
+                                            <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" checked="checked" value="Vrouw">
+                                            <span class="option-title">
+                                                Vrouw
+                                            </span>
+                                        </div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
