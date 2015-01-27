@@ -48,7 +48,7 @@
             </div>
             
             <label for="nr" class="control-label col-md-2 border-left">Nr:</label>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
         </div>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="col-md-12">
-               <textarea cols="50" rows="15" name="beschrijving" class="form-control"><?php echo $sessie->omschrijving ?></textarea>    
+               <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
             </div>
             </div>
         </div>
