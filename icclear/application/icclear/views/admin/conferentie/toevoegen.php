@@ -3,7 +3,7 @@
 
     
 
-    <form action="conferentie/opslaan" method="post">
+    <form class="form-horizontal" action="conferentie/opslaan" method="post">
 
         <div class="row">            
             <div class="col-md-6">
