@@ -38,7 +38,7 @@ and open the template in the editor.
             {
                 if ($conferentieOnderdeel->conferentie->statusId == '2')
                 {
-                    ;echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
+                    echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
                     echo '<td>' . $conferentieOnderdeel->prijs . '</td>';
                     echo '<td>' . $conferentieOnderdeel->korting . ' %</td>';
                     echo '<td><input type="radio" name="formule" value="' . $conferentieOnderdeel->id . '"/></td></tr>';
