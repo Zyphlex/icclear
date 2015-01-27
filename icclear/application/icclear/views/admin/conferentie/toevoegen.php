@@ -10,6 +10,7 @@
             </div>
         </div>
 
+        <br/>
         
         <div class="row">            
             <label for="begindatum" class="control-label col-md-2">Begin datum:</label>    
@@ -23,6 +24,7 @@
             </div>
         </div>
         
+        <br/>
         
         <div class="row">            
             <label for="land" class="control-label col-md-2">Land:</label>
@@ -62,11 +64,13 @@
             </div>
         </div>
         
+        <br/><br/>
         
-        
-        
-        
-        
+        <div class="row">
+            <div class="col-md-12">
+            
+            </div>
+        </div>
         
         
         
