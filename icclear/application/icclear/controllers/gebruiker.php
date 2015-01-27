@@ -82,7 +82,7 @@ class Gebruiker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
 
-        $this->brouwerij_model->update($gebruiker);
+        $this->gebruiker_model->update($gebruiker);
 
         $this->overzichtGebruikers();
     }
