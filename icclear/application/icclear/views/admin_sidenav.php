@@ -25,4 +25,23 @@
             
         </div>
         
+        <?php if($conferentieId != null) { ?>
+        <div class="panel panel-default">
+            
+            <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+                <h4 class="panel-title">
+                    Algemeen
+                </h4>
+            </div>
+
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="#">Gebruikers</a></li>
+                    <li><a href="#">Sessies</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        <?php } ?>
+        
     </div>
