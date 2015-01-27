@@ -43,7 +43,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('betaling_model');
         $betalingId = $this->betaling_model->insert('$betaling');
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/inschrijving', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'welcome_message', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
     }
     
