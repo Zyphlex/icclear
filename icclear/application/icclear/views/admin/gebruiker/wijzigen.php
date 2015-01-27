@@ -5,7 +5,7 @@
         <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
             <h4 class="panel-title">
                 <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Geselecteerde gebruiker om te beheren
+                    Geselecteerde gebruiker wijzigen
                 </span>
             </h4>
         </div>
