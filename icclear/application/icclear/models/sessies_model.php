@@ -16,12 +16,12 @@ class Sessies_model extends CI_Model {
         $this->db->where('isGoedgekeurd', '1');
         $sessies = $this->db->get('sessie');
         
-        $this->load->model('planning_model');
-        
-        foreach ($sessies as $sessie) {
-            $sessie->planning = 
-                 $this->planning_model->getSessie($sessie->id);
-        }
+//        $this->load->model('planning_model');
+//        
+//        foreach ($sessies as $sessie) {
+//            $sessie->planning = 
+//                 $this->planning_model->getSessie($sessie->id);
+//        }
         
         return $sessies;
     }

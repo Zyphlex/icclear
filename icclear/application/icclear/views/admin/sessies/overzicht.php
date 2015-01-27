@@ -23,10 +23,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($gebruikers as $gebruiker) { ?>
+                        <?php foreach ($sessies as $sessie) { ?>
                             <tr>
                                 <td><?php echo $sessie->onderwerp ?></td>
-                                <td><?php echo $sessie->sessie->beginUur ?></td>
+                                <td><?php // echo $sessie->sessie->beginUur ?></td>
                                 <td><?php echo $sessie->zaalId ?></td>
                                 <td><?php echo anchor('admin/dashboard/' . $gebruiker->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
                             </tr>
