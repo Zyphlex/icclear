@@ -18,7 +18,7 @@
                     <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
                     <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUE'); ?></li>
-                    <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
+                    <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
                     <?php
                 if ($user != null) {
                     switch ($user->typeId) {                        
