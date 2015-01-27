@@ -40,8 +40,8 @@ and open the template in the editor.
                 {
                     ;echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
                     echo '<td>' . $conferentieOnderdeel->prijs . '</td>';
-                    echo '<td>' . $conferentieOnderdeel->korting . ' %</td></tr>';
-                    echo '<td><input type="radio" name="formule" value="' . $conferentieOnderdeel->id . '"/></td>';
+                    echo '<td>' . $conferentieOnderdeel->korting . ' %</td>';
+                    echo '<td><input type="radio" name="formule" value="' . $conferentieOnderdeel->id . '"/></td></tr>';
                     
                 }
             }
