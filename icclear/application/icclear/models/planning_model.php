@@ -25,6 +25,11 @@ class Planning_model extends CI_Model {
         return $query->result();
     }
     
+    function getSessie($id) {
+        $this->db->where('sessieId', $id);
+        $query = $this->db->get('planning');
+        return $query->row();
+    }
 
     
 }

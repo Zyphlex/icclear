@@ -36,8 +36,8 @@
 
             <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Gebruikers</a></li>
-                    <li><a href="#">Sessies</a></li>
+                    <li><?php echo anchor('gebruiker', 'GEBRUIKERS'); ?></li>
+                    <li><?php echo anchor('sessies', 'SESSIES'); ?></li>
                 </ul>
             </div>
             
