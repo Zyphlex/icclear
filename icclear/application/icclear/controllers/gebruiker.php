@@ -67,16 +67,23 @@ class Gebruiker extends CI_Controller {
         $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
+        $gebruiker->gebruikersnaam = $gebruiker->gebruikersnaam;
         $gebruiker->voornaam = $this->input->post('voornaam');
         $gebruiker->familienaam = $this->input->post('famnaam');
         $gebruiker->geboortedatum = toYYYYMMDD($this->input->post('geboortedatum'));
+        $gebruiker->biografie = $gebruiker->biografie;
+        $gebruiker->foto = $gebruiker->foto;
         $gebruiker->emailadres = $this->input->post('emailadres');
-        $gebruiker->geslacht = $this->input->post('geslacht');
-        $gebruiker->landId = $this->input->post('land');
         $gebruiker->gemeente = $this->input->post('gemeente');
         $gebruiker->postcode = $this->input->post('postcode');
         $gebruiker->straat = $this->input->post('straat');
         $gebruiker->nummer = $this->input->post('huisnummer');
+        $gebruiker->paswoord = $gebruiker->paswoord;
+        $gebruiker->geslacht = $this->input->post('geslacht');
+        $gebruiker->typeId = $gebruiker->typeId;
+        $gebruiker->landId = $this->input->post('land');
+        $gebruiker->generatedKey = $gebruiker->generatedKey;
+        $gebruiker->activatie = $gebruiker->activatie;        
 
         $this->load->model('gebruiker_model');
 
