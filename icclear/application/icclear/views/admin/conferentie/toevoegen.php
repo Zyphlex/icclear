@@ -79,17 +79,9 @@
             <div class="col-md-12">
                <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
             </div>
-        </div>
+        </div>        
         
         <br/><br/>
-        
-        <div class="row">
-            <div class="col-md-12">
-            
-            </div>
-        </div>
-        
-        <br/>
         
         <div class="row">
             <div class="col-md-12">
@@ -113,6 +105,17 @@
                 </table>
             </div>
         </div>
+        
+        <br/><br/>
+        
+        <div class="row">
+            <div class="col-md-12">
+            
+            </div>
+        </div>
+        
+        
+        
         
         
         <br/>
