@@ -39,8 +39,9 @@ foreach ($sessies as $dag) {
         }
         ?> 
         </tbody>
-    </table>   
+     
         <?php
 }
 ?>
 
+</table>  
