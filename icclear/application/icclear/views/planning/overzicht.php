@@ -4,8 +4,8 @@
             <th>#</th>
             <th>Onderwerp</th>
             <th>Omschrijving</th>
-            <th>Begin datum</th>
-            <th>Eind datum</th>
+            <th>Beginuur</th>
+            <th>Einduur</th>
             <th>Zaal</th>
             <th>Spreker</th>
         </tr>
