@@ -1,9 +1,9 @@
     <div class="row">
         <div class="col-md-12">
-            <h1>Admin Dashboard</h1>
+            <h1>Dashboard <?php if($conferentieId != null) { echo ': ' . $conferentie->naam; } ?></h1>            
         </div>
     </div>
-
+    
     <div class="col-md-2">  
         
         <div class="panel panel-default">
@@ -30,7 +30,7 @@
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                 <h4 class="panel-title">
-                    Conferentie: <?php echo $conferentie->naam; ?>
+                    Conferentie
                 </h4>
             </div>
 
