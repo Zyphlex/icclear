@@ -16,8 +16,7 @@ class Locatie extends CI_Controller {
         $data['active'] = 'locatie';
         
         $this->load->model('locatie_model');
-        $data['gebouwen'] = $this->locatie_model->getGebouwen();
-        $data['routes'] = $this->locatie_model->getRoutes();        
+        $data['gebouwen'] = $this->locatie_model->getGebouwen();                
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -36,7 +35,18 @@ class Locatie extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
-    // TEST
+    public function route() {
+        $data['user']  = $this->authex->getUserInfo();
+        
+        $data['title'] = 'IC Clear - Routes';         
+        $data['active'] = 'route';
+        
+        $this->load->model('locatie_model');        
+        $data['routes'] = $this->locatie_model->getRoutes();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/routes', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
 }
 
 /* End of file welcome.php */
