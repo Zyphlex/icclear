@@ -20,6 +20,15 @@ class Aankondiging_model extends CI_Model {
         return $aankondigingen;
     }
     
+    function insert($titel, $inhoud, $gepostDoor, $conferentieId){
+        $aankondiging->titel = $titel;
+        $aankondiging->inhoud = $inhoud;
+        $aankondiging->gepostDoor = $gepostDoor;
+        $aankondiging->conferentieId = $conferentieId;
+        $this->db->insert('aankondiging', $aankondiging);
+        return $this->db->insert_id();
+    }
+    
     
 }
 
