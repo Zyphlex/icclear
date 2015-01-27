@@ -31,7 +31,7 @@
             <input type="hidden" name="conferentie" value=""/>
         </div>      
     </div>
-    <input tpye="submit" value="Toevoegen"/>
+    <input type="submit" value="Toevoegen"/>
     <?php echo form_close(); ?>                
     <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>                 
 </div>
