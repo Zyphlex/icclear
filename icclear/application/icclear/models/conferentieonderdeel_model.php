@@ -34,7 +34,7 @@ class Conferentieonderdeel_model extends CI_Model {
     
     function getOnderdelenPerConferentie($id){
         $this->db->where('conferentieId', $id);
-        $this->query->get('conferentieOnderdeel');
+        $query = $this->db->get('conferentieOnderdeel');
         return $query->result();
     }
     
