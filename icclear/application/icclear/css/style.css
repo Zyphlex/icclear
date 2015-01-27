@@ -28,6 +28,7 @@ a:hover { color: #b60717; text-decoration: none;}
 .border-left {border-left: 1px solid #e5e5e5;}
 
 .content {padding-bottom: 60px;}
+.content { margin-top:0; }
 
 .content .row {margin:0;}
 .logon { float:right; clear:both; padding:2px 15px; font-family:estrangelo;font-size:14px;border-radius:5px;margin-top:10px;

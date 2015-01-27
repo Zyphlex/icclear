@@ -35,7 +35,7 @@
                                 <td><?php echo $sessie->planning->beginUur ?></td>
                                 <td><?php echo $sessie->planning->eindUur ?></td>
                                 <td><?php echo $sessie->zaal->naam ?></td>
-                                <td><?php echo anchor('admin/dashboard/' . $sessie->id, 'Beheren','class="btn btn-default"'); ?></td>
+                                <td><?php echo anchor('sessies/wijzigen' . $sessie->id, 'Beheren','class="btn btn-default"'); ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -44,4 +44,8 @@
         </div>
 
     </div>
+    
+    <?php echo anchor('sessies/toevoegen' . $sessie->id, 'Beheren','class="btn btn-default"'); ?>                           
+    
+    
 </div>
