@@ -12,14 +12,27 @@ class Locatie extends CI_Controller {
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
         
-        $data['title'] = 'IC Clear - Programma';         
+        $data['title'] = 'IC Clear - Venues';         
         $data['active'] = 'locatie';
         
         $this->load->model('locatie_model');
         $data['gebouwen'] = $this->locatie_model->getGebouwen();
-        $data['hotels'] = $this->locatie_model->getHotels();
+        $data['routes'] = $this->locatie_model->getRoutes();        
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/overzicht', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
+    
+    public function hotel() {
+        $data['user']  = $this->authex->getUserInfo();
+        
+        $data['title'] = 'IC Clear - Hotels';         
+        $data['active'] = 'hotel';
+        
+        $this->load->model('locatie_model');        
+        $data['hotels'] = $this->locatie_model->getHotels();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/hotels', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
 

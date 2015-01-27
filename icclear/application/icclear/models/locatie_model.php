@@ -31,6 +31,12 @@ class Locatie_model extends CI_Model {
         return $query->result();
     }
     
+    function getRoutes()
+    {        
+        $query = $this->db->get('route');
+        return $query->result();
+    }
+    
 
     
 }
