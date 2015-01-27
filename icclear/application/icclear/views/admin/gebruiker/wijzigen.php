@@ -1,4 +1,20 @@
 
+<script type="text/javascript">
+
+    $(function(){
+
+       
+
+        $( "#opslaan" ).click(function(e) {
+            e.preventDefault();
+            if (validatieOK()) {
+                $( "#myform" ).submit();
+            }
+        });
+        
+    });
+    
+</script> 
 
 <div class="col-md-10">
     <div class="panel panel-default" role="tablist">
@@ -198,8 +214,8 @@
 
                     <?php echo form_close(); ?>
                 </div>
-                <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer','class="btn btn-default"'); ?> 
-                <?php echo anchor('gebruiker/toevoegen', 'Opslaan','class="btn btn-primary"'); ?> 
+                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
+                <?php echo form_button('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
             </div>
 
         </div>
