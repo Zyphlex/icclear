@@ -65,13 +65,19 @@ class Aankondiging extends CI_Controller {
     }
     
     public function insert(){
-        $titel = $this->input->get('titel');
-        $inhoud = $this->input->get('inhoud'); 
-        $gepostDoorId = $this->input->get('gebruiker');
-        $conferentieId = $this->input->get('conferentie');
+        $titel = $this->input->post('titel');
+        $inhoud = $this->input->post('inhoud'); 
+        $gepostDoorId = $this->input->post('gebruiker');
+        $conferentieId = $this->input->post('conferentie');
         $this->load->model('aankondiging_model');
-        $this->aankondiging_model->insert($titel, $inhoud, $gepostDoorId, $conferentieId);
-        $this->index();
+        $id = $this->aankondiging_model->insert($titel, $inhoud, $gepostDoorId, $conferentieId);
+        if($id != 0){
+            redirect('aankondiging/index');
+        }
+//        error
+//        else{
+//            redirect('aankondiging/index');
+//        }
     }
 
 
