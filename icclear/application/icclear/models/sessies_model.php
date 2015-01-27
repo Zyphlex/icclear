@@ -14,19 +14,19 @@ class Sessies_model extends CI_Model {
 
     function getAll() {
         $this->db->where('isGoedgekeurd', '1');
-        $sessies = $this->db->get('sessie');
+        $query = $this->db->get('sessie');
+        $sessies = $query-result();
         
-//        $this->load->model('planning_model');
-//        
-//        foreach ($sessies as $sessie) {
-//            $sessie->planning = 
-//                 $this->planning_model->getSessie($sessie->id);
-//        }
+        $this->load->model('planning_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->planning = 
+                 $this->planning_model->getSessie($sessie->id);
+        }
         
         return $sessies;
     }
     
 
 }
-
 ?>
