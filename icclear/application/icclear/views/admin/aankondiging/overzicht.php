@@ -15,8 +15,7 @@
                         echo '<tr>' . "\n";
                         echo '<td>' . $teller . '</td>' . "\n";
                         echo '<td>' . $aankondiging->titel . '</td>' . "\n";
-                        echo '<td>' . $aankondiging->inhoud . '</td>' . "\n";
-                        echo '<td>' . $aankondiging->gepostDoor . '</td>' . "\n";                                                
+                        echo '<td>' . $aankondiging->inhoud . '</td>' . "\n";                                                                      
                         echo '<td>' . $aankondiging->poster->voornaam . ' ' . $aankondiging->poster->familienaam . '</td>' . "\n";
                         echo '</tr>' . "\n";
                         $teller++;                    
