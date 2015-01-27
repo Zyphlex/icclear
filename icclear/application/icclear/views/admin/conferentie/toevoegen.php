@@ -5,16 +5,15 @@
 
     <form class="form-horizontal" action="conferentie/opslaan" method="post">
 
-        <div class="row">            
+        <div class="row form-group">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>
-                
+                <input class="form-control" type="text" id="naam" name="naam"/>                
             </div>
-            
         </div>
 
-        <div class="row">            
+        
+        <div class="row form-group">            
             <label for="begindatum" class="control-label col-md-2">Begin datum:</label>    
             <div class="col-md-4">            
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
@@ -26,7 +25,8 @@
             </div>
         </div>
         
-        <div class="row">            
+        
+        <div class="row form-group">            
             <label for="land" class="control-label col-md-2">Stad</label>
             <div class="col-md-4">
                 <select id="land" name="land" class="form-control">
@@ -35,7 +35,8 @@
             </div>            
         </div>
         
-        <div class="row"> 
+        
+        <div class="row form-group"> 
             <label for="stad" class="control-label col-md-1">Stad</label>
             <div class="col-md-3">
                 <input type="text" id="stad" name="stad" class="form-control"/>
