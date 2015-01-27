@@ -1,5 +1,3 @@
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="<?php echo base_url() . APPPATH; ?>/js/bootstrap.js"></script>
 
 <div class="col-md-10">
     <div class="panel panel-default" role="tablist">
@@ -16,7 +14,7 @@
             <div class="panel-body">
                 <?php
                 $attributes = array('name' => 'myform', 'id' => 'myform');
-                echo form_open('gebruiker/update', $attributes);
+                echo form_open('gebruiker/toevoegen', $attributes);
                 echo form_hidden('id', $gebruiker->id);
                 ?>
 
@@ -40,7 +38,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="familienaam">
-                                        <?php echo form_label('Familienaam:', 'familienaam'); ?>
+                                        Familienaam:
                                     </label>
                                 </div>
 
@@ -54,7 +52,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="emailadres">
-                                        <?php echo form_label('Email:', 'emailadres'); ?>
+                                        Emailadres: 
                                     </label>
                                 </div>  
 
@@ -66,7 +64,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geboortedatum">
-                                        <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>
+                                        Geboortedatum:
                                     </label>
                                 </div>
 
@@ -78,7 +76,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geslacht">
-                                        <?php echo form_label('Geslacht:', 'geslacht'); ?>
+                                        Geslacht:
                                     </label>  
                                 </div>  
 
@@ -124,7 +122,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="land">
-                                       <?php echo form_label('Land:', 'land'); ?>
+                                        Land:
                                     </label>
                                 </div>
 
@@ -142,7 +140,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="gemeente">
-                                            <?php echo form_label('Gemeente:', 'gemeente'); ?>
+                                            Gemeente:
                                         </label>
                                     </div>
 
@@ -156,7 +154,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="postcode">
-                                            <?php echo form_label('Postcode:', 'postcode'); ?>
+                                            Postcode:
                                         </label>
                                     </div>
 
@@ -170,7 +168,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="straat">
-                                            <?php echo form_label('Straat:', 'straat'); ?>
+                                            Straat:
                                         </label>
                                     </div>
 
@@ -184,7 +182,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="huisnummer">
-                                            <?php echo form_label('Huisnummer:', 'huisnummer'); ?>
+                                            Huisnummer:
                                         </label>
                                     </div>
 
@@ -199,9 +197,8 @@
 
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"', 'javascript:history.go(-1)'); ?>
-                <?php $class = 'class = "btn btn-priamary"';
-                echo form_submit('opslaan', 'Opslaan', $class); ?>
+                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
+                <?php echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>
             </div>
