@@ -7,8 +7,10 @@
 
         <div class="row">            
             <div class="col-md-6">
-                <label for="naam">Naam:</label>
-                <input class="form-control" type="text" id="naam" name="naam"/>
+                <p>
+                    <label for="naam">Naam:</label>
+                    <input class="form-control" type="text" id="naam" name="naam"/>
+                </p>
             </div>
             
         </div>
