@@ -1,7 +1,4 @@
-<div class="col-md-10">
-    <?php
-    echo "ID: $conferentieId";    
-        ?>            
+<div class="col-md-10">               
         <table class = "table">
             <thead>
                 <tr>
