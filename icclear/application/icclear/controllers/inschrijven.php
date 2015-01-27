@@ -13,9 +13,18 @@ class Inschrijven extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - Inschrijven'; 
         $data['active'] = 'inschrijven';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieve();
+        
+        
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => '', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/inschrijving', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
+    }
+    
+    public function inschrijven() {
+        
     }
     
   
