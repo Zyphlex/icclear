@@ -23,6 +23,9 @@
                 }
                 ?>
             </tbody>
-        </table>                   
+        </table>
+    <p>
+        <?php echo anchor('aankondiging/toevoegen', 'Nieuwe aankondiging', 'class="btn btn-default"'); ?>
+    </p>
 </div>
 
