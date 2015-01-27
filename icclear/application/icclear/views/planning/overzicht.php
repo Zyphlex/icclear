@@ -15,13 +15,13 @@ foreach ($sessies as $dag) {
                 <th>Zaal</th>
                 <th>Spreker</th>
             </tr>
-        </thead>    
+        </thead>  
+        <tbody>
     <?php            
     }    
     $id = $dag->conferentiedagId;
-    ?>    
-    
-        <tbody>
+    ?>        
+        
             <?php                
         $teller = 1;
         foreach ($sessies as $sessie) {
