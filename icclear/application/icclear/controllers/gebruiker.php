@@ -64,8 +64,6 @@ class Gebruiker extends CI_Controller {
     }
 
     public function toevoegen() {
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
         $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
@@ -85,6 +83,20 @@ class Gebruiker extends CI_Controller {
         $this->gebruiker_model->update($gebruiker);
 
         $this->overzichtGebruikers();
+    }
+
+    public function nieuw() {
+        $data['user'] = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getLand();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
 
     // TEST
