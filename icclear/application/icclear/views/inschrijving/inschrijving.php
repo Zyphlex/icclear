@@ -81,6 +81,11 @@ and open the template in the editor.
         <input type="checkbox" name="factuur" id="factuur"/>
         <label>Ja, ik wil een factuur ontvangen.</label>
         
+        <input type="radio" name="methode" value="VISA"/>
+        <input type="radio" name="methode" value="Mastercard"/>
+        <input type="radio" name="methode" value="PayPal"/>
+        <input type="radio" name="methode" value="Overschrijving"/>
+        
         <a href="<?php echo base_url();?>icclear.php/home">Annuleren</a>
         <input type="submit" value="Bevestigen en betalen"/>
     </body>
