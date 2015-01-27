@@ -15,7 +15,7 @@
             <div class="panel-body">
                 <?php
                 $attributes = array('name' => 'myform', 'id' => 'myform');
-                echo form_open('gebruiker/registreer', $attributes);
+                echo form_open('gebruiker/toevoegen', $attributes);
                 echo form_hidden('id', $gebruiker->id);
                 ?>
 
