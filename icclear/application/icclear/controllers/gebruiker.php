@@ -67,7 +67,7 @@ class Gebruiker extends CI_Controller {
         $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
-//        $gebruiker->voornaam = $this->input->post('voornaam');
+        $gebruiker->voornaam = $this->input->post('voornaam');
 //        $gebruiker->familienaam = $this->input->post('famnaam');
 //        $gebruiker->geboortedatum = toYYYYMMDD($this->input->post('geboortedatum'));
 //        $gebruiker->emailadres = $this->input->post('emailadres');
