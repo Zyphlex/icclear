@@ -63,7 +63,7 @@ class Gebruiker extends CI_Controller {
         $this->overzichtGebruikers();
     }
 
-    public function toevoegen() {        
+    public function update() {        
         $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
