@@ -1,6 +1,6 @@
 <?php
 
-class Conferentieonderdeel_model extends CI_Model {
+class Onderdeel_model extends CI_Model {
 
     function __construct()
     {
