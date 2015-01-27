@@ -2,7 +2,7 @@
 
 <div class="col-md-10">
     
-    <h1><?php echo $conferentie->naam ?>: Sessies beheren.</h1>   
+    <h1>Sessies beheren.</h1>   
     
     <div class="panel panel-default" role="tablist">
 
