@@ -1,8 +1,10 @@
 <script type="text/javascript">
-        $("#addRow").click(function() {
-          $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
+    $(document).ready(function() {
+        $(".add").click(function() {
+          $('tbody').add('#mytable tbody>tr:last');
           return false;
         });
+    });
 </script>
 
 <div class="col-md-10">
@@ -100,7 +102,7 @@
                                         <td><input type="text" class="form-control" name="formule"></td>
                                         <td><input type="text" class="form-control" name="prijs"></td>
                                         <td><input type="text" class="form-control" name="korting"></td>
-                                        <td><a id="addRow" href="" class="glyphicon glyphicon-plus btn btn-default"></a></td>
+                                        <td><a class="addRow" href="" class="glyphicon glyphicon-plus btn btn-default"></a></td>
                                     </tr>
                             </tbody>
                         </table>
