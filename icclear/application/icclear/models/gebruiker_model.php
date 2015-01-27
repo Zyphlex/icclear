@@ -34,6 +34,12 @@ class Gebruiker_model extends CI_Model {
         $query = $this->db->get('gebruiker');
         return $query->result();                
     }
+    
+    function getSpreker($sprekerId){
+        $this->db->where('id', $sprekerId);
+        $query = $this->db->get('gebruiker');
+        return $query->row();                
+    }
 
 }
 
