@@ -26,13 +26,11 @@
 
                             <div class="row">
                                 <div class="col-md-4">   
-                                    <label for="voornaam">
-                                        Voornaam:
-                                    </label>
+                                    <?php echo form_label('Voornnaam:', 'voornaam'); ?>
                                 </div>
 
-                                <div class="col-md-8">   
-                                    <input type="text" name="voornaam" value="<?php echo $gebruiker->voornaam; ?>" id="field2" class="form-control" required="required">
+                                <div class="col-md-8">
+                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control', 'required' => 'required')); ?>
                                 </div>
                             </div>
 
