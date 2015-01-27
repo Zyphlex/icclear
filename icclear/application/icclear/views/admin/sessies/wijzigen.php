@@ -4,7 +4,7 @@
         <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
             <h4 class="panel-title">
                 <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Sessie
+                    Sessie wijzigen.
                 </span>
             </h4>
         </div>
@@ -13,11 +13,9 @@
             <div class="panel-body">
                 
                 <div class="modal-body">
-                    <?php if (isset($sessie)) {?>
-                    <p><?php  echo $sessie?></p>
-                    <?php } else { ?>
-                    <p>oops</p>
-                    <?php } ?>
+                   
+                    
+                    
                 </div>
                 
             </div>
