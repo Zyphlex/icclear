@@ -1,17 +1,4 @@
 
-<script type="text/javascript">
-
-    $(function () {
-
-        $("#annuleer").click(function (e) {
-            e.preventDefault();
-            history.go(-1);
-        });
-
-    });
-
-</script> 
-
 <div class="col-md-10">
     <div class="panel panel-default" role="tablist">
 
@@ -210,8 +197,9 @@
 
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
+                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"', 'javascript:history.go(-1)'); ?>
+                <?php $class = 'class = "btn btn-priamary"';
+                echo form_submit('opslaan', 'Opslaan', $class); ?>
 
                 <?php echo form_close(); ?>
             </div>
