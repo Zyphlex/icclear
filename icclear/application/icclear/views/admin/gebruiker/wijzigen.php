@@ -97,9 +97,21 @@
                                             <span class="option-title">
                                                 Man
                                             </span>
-                                        </div> ';
+                                        </div> 
+                                        <div class="">
+                                            <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" value="Vrouw">
+                                            <span class="option-title">
+                                                Vrouw
+                                            </span>
+                                        </div>';
                                         } else {
                                             echo '<div class="">
+                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
+                                            <span class="option-title">
+                                                Man
+                                            </span>
+                                        </div> 
+                                                <div class="">
                                             <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" checked="checked" value="Vrouw">
                                             <span class="option-title">
                                                 Vrouw
