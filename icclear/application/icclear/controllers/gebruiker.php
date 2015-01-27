@@ -100,6 +100,30 @@ class Gebruiker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function insert() {
+        $gebruiker = new stdClass();
+
+        $gebruiker->gebruikersnaam = $this->input->post('gebruikersnaam');
+        $gebruiker->voornaam = $this->input->post('voornaam');
+        $gebruiker->familienaam = $this->input->post('familienaam');
+        $gebruiker->geboortedatum = $this->input->post('geboortedatum');
+        $gebruiker->emailadres = $this->input->post('emailadres');
+         $gebruiker->gemeente = $this->input->post('gemeente');
+        $gebruiker->postcode = $this->input->post('postcode');
+        $gebruiker->straat = $this->input->post('straat');
+        $gebruiker->nummer = $this->input->post('huisnummer');
+        $gebruiker->geslacht = $this->input->post('geslacht');
+        $gebruiker->typeId = $this->input->post('type');
+        $gebruiker->landId = $this->input->post('land');
+       
+
+        $this->load->model('gebruiker_model');
+
+        $this->gebruiker_model->update($gebruiker);
+
+        $this->overzichtGebruikers();
+    }
 
     // TEST
 }
