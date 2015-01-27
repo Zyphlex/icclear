@@ -15,7 +15,7 @@ class Programma extends CI_Controller {
         $data['title'] = 'IC Clear - Programma';         
         $data['active'] = 'programma';
         
-        $this->load->model('planning_model');
+        $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAll();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
