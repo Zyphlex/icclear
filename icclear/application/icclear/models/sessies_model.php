@@ -15,7 +15,7 @@ class Sessies_model extends CI_Model {
     function getAll() {
         $this->db->where('isGoedgekeurd', '1');
         $query = $this->db->get('sessie');
-        $sessies = $query-result();
+        $sessies = $query->result();
         
         $this->load->model('planning_model');
         
