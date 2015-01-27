@@ -107,37 +107,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="type">
-                                        Type:
-                                    </label>  
-                                </div>  
-
-                                <div class="col-md-8">        
-                                    <div class="my-radio">
-                                        <div class="">
-                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" value="1">
-                                            <span class="option-title">
-                                                Bezoeker
-                                            </span>
-                                        </div>                                
-                                        <div class="">
-                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="2">
-                                            <span class="option-title">
-                                                Spreker
-                                            </span>
-                                        </div>
-                                        <div class="">
-                                            <input type="radio" name="type" id="field9-3" class="form-horizontal" value="3">
-                                            <span class="option-title">
-                                                Admin
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
 
@@ -216,6 +185,37 @@
 
                                 <div class="col-md-8">   
                                     <input type="text" name="huisnummer" id="field12" class="form-control" required="required">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">   
+                                    <label for="type">
+                                        Type:
+                                    </label>  
+                                </div>  
+
+                                <div class="col-md-8">        
+                                    <div class="my-radio">
+                                        <div class="">
+                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" value="1">
+                                            <span class="option-title">
+                                                Bezoeker
+                                            </span>
+                                        </div>                                
+                                        <div class="">
+                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="2">
+                                            <span class="option-title">
+                                                Spreker
+                                            </span>
+                                        </div>
+                                        <div class="">
+                                            <input type="radio" name="type" id="field9-3" class="form-horizontal" value="3">
+                                            <span class="option-title">
+                                                Admin
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
