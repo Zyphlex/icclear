@@ -21,13 +21,6 @@
             echo '<td>' . $sessie->zaal->naam .'</td>';
             echo '</tr>';
         }
-        ?>
-        <tr>
-            <td>1</td>
-            <td>Social Media</td>
-            <td>Berlijn</td>
-            <td>2014-12-24</td>
-            <td><a href="https://subversion.khk.be/projecten/TI1415project23/icclear/icclear.php/admin/dashboard/2">Beheren</a><a class="btn btn-default">Beheren</a></td>
-        </tr>                                  
+        ?>                                         
     </tbody>
 </table>
