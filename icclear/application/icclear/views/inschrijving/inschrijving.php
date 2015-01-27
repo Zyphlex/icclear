@@ -8,6 +8,11 @@ and open the template in the editor.
     <head>
         <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
         <title><?php echo $title ?></title>
+        <style>
+            #waarschuwing{
+                color:red
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -20,7 +25,7 @@ and open the template in the editor.
         <?php
         if ($user == null)
         {
-            echo '<p><style color:red>Opgelet! U moet aangemeld zijn om dit formulier in te dienen!</style></p>';
+            echo '<p id="waarschuwing">Opgelet! U moet aangemeld zijn om dit formulier in te dienen.</p>';
         }
         ?>
         
