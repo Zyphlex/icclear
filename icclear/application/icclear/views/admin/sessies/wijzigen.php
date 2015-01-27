@@ -23,7 +23,7 @@
         </div>
         
         <div class="col-md-5">
-            <textarea cols="30" rows="10" name="omschrijving" class="form-control"><?php echo $sessie->omschrijving ?>"/></textarea>    
+            <textarea cols="10" rows="10" name="omschrijving" class="form-control"><?php echo $sessie->omschrijving ?></textarea>    
         </div>
     </div>
     
