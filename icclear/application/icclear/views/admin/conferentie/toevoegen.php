@@ -19,7 +19,7 @@
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
             </div>
             
-            <div class="col-md-6">
+            <div class="col-md-6  border-left">
                 <label for="einddatum">Eind datum:</label>
                 <input type="date" id="einddatum" name="einddatum" class="form-control"/>
             </div>
