@@ -2,7 +2,7 @@
 $id = 0;
 foreach ($sessies as $dag) {
     if($dag->conferentiedagId != $id){
-        echo '<h1>Dag ' . $dag->conferentiedagId  . '</h1>';
+        echo "\n" . '<h1>Dag ' . $dag->conferentiedagId  . '</h1>' . "\n";
         ?>
         <table class = "table">
         <thead>
