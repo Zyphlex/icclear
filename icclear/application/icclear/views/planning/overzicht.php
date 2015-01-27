@@ -33,7 +33,7 @@ foreach ($sessies as $dag) {
             echo '<td>' . $sessie->planning->eindUur . '</td>'. "\n";
             echo '<td>' . $sessie->zaal->naam . '</td>'. "\n";
             echo '<td>' . $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam . '</td>'. "\n";
-            echo '</tr>';
+            echo '</tr>'. "\n";
         $teller++;
         }        
         }
