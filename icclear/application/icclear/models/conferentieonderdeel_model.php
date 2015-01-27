@@ -19,24 +19,20 @@ class Conferentieonderdeel_model extends CI_Model {
     }
     
     
-    function getOnderdelenPerConferentie($id)
+    function getOnderdelenPerConferentie()
     {
         $query = $this->db->get('conferentieOnderdeel');
         $conferentieOnderdelen = $query->result();
         
         $this->load->model('conferentie_model');
          foreach ($conferentieOnderdelen as $conferentieOnderdeel){
-             $conferentieOnderdeel->conferentie = $this->conferentie_model->getActieveConferentie($conferentieOnderdeel->conferentieId);
+             $conferentieOnderdeel->conferentie = $this->conferentie_model->getConferentie($conferentieOnderdeel->conferentieId);
          }
          
          return $conferentieOnderdelen;
     }
     
-    /*function getOnderdelenPerConferentie($id){
-        $this->db->where('conferentieId', $id);
-        $query = $this->db->get('conferentieOnderdeel');
-        return $query->result();
-    }*/
+    
     
 }
 
