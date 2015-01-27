@@ -21,6 +21,7 @@
             echo '<td>' . $sessie->planning->beginUur . '</td>';
             echo '<td>' . $sessie->planning->eindUur . '</td>'; 
             echo '<td>' . $sessie->zaal->naam .'</td>';
+            echo '<td>' . $sessie->spreker->naam .'</td>';
             echo '</tr>';
             $teller++;
         }
