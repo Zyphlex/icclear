@@ -7,7 +7,7 @@ class Gebruiker extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->helper(array('form', 'url', 'notation'));
+        $this->load->helper(array('form', 'url'));
         if (!$this->authex->loggedIn()) {
             redirect('logon/aanmelden');
             //voorlopig
