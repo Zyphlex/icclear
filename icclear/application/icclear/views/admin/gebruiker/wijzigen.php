@@ -148,7 +148,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="text" name="gemeente" id="field10" class="form-control" required="required">
+                                        <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control" required="required">
                                     </div>
                                 </div>
 
@@ -162,7 +162,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="text" name="postcode" id="field10-b" class="form-control" required="required">
+                                        <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control" required="required">
                                     </div>
                                 </div>
 
@@ -176,7 +176,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="text" name="straat" id="field11" class="form-control" required="required">
+                                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control" required="required">
                                     </div>
                                 </div>
 
@@ -190,7 +190,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="text" name="huisnummer" id="field12" class="form-control" required="required">
+                                        <input type="text" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
                                     </div>
                                 </div>
                             </div>
