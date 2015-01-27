@@ -42,8 +42,6 @@ class Conferentie extends CI_Controller {
         $data['title'] = 'IC Clear - ';         
         $data['active'] = 'admin';                
         
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->get($id);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
