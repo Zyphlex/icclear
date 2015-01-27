@@ -17,11 +17,11 @@
                     <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
-                    <li class="dropdown">
+                    <li class="dropdown" <?php if ($active == 'locrout'){ echo 'class="active"'; } ?>>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENUES/ROUTES<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                            <li <?php if ($active == 'locrout'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUE'); ?></li>                            
-                            <li <?php if ($active == 'locrout'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/route', 'ROUTES'); ?></li>
+                            <li><?php echo anchor('locatie/', 'VENUE'); ?></li>                            
+                            <li><?php echo anchor('locatie/route', 'ROUTES'); ?></li>
                             </ul>
                             </li>
                     <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
