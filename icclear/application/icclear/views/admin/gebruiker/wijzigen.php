@@ -1,19 +1,19 @@
 
 <script type="text/javascript">
 
-    $(function(){
+    $(function () {
 
-       
 
-        $( "#opslaan" ).click(function(e) {
+
+        $("#opslaan").click(function (e) {
             e.preventDefault();
             if (validatieOK()) {
-                $( "#myform" ).submit();
+                $("#myform").submit();
             }
         });
-        
+
     });
-    
+
 </script> 
 
 <div class="col-md-10">
@@ -212,10 +212,12 @@
 
                     </div>
 
-                    <?php echo form_close(); ?>
                 </div>
+
                 <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
                 <?php echo form_button('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
+
+                <?php echo form_close(); ?>
             </div>
 
         </div>
