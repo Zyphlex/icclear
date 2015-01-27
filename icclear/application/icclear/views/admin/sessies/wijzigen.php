@@ -4,7 +4,7 @@
     
     <?php
         $attributes = array('name' => 'myform');
-        echo form_open('home/aanmelden', $attributes);
+        echo form_open('sessie/opslaan', $attributes);
     ?>
         <label for="onderwerp">Onderwerp:</label>    
         <input type="text" name="onderwerp" value="<?php $sessie->onderwerp ?>" id="onderwerp" size="30" class="form-control"  />    
