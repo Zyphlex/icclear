@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'required' => 'required')); ?>     
+                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => toDDMMYYYY($gebruiker->geboortedatum) , 'class' => 'form-control', 'required' => 'required')); ?>     
                                 </div>
                             </div>
 
