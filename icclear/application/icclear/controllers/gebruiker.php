@@ -57,7 +57,7 @@ class Gebruiker extends CI_Controller {
         $this->overzichtGebruikers();
     }
 
-    public function registreer() {
+    public function toevoegen() {
         $brouwerij->id = $this->input->post('id');
         $brouwerij->naam = $this->input->post('naam');
         $brouwerij->stichter = $this->input->post('stichter');
