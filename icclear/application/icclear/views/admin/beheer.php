@@ -1,6 +1,8 @@
 
 
-    <div class="col-md-10">
+    <div class="col-md-10">        
+        <h1>Admin dashboard</h1>  
+        
         <div class="panel panel-default" role="tablist">
 
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
