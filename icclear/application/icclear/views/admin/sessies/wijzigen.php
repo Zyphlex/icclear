@@ -37,7 +37,7 @@
         <div class="col-md-5">
         <select name="zaal" id="zaal" class="form-control">
             <?php foreach($zalen as $z) { 
-            if ($zalen->id == $sessie->zaalId) { ?>
+            if ($z->id == $sessie->zaalId) { ?>
                 <option selected="selected"><?php echo $z->naam ?></option>
             <?php } else { ?>
                 <option><?php echo $z->naam ?></option>
