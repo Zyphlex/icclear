@@ -64,6 +64,17 @@ class Aankondiging extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    public function insert(){
+        $titel = $this->input->get('titel');
+        $inhoud = $this->input->get('inhoud'); 
+        $gepostDoorId = $this->input->get('gebruiker');
+        $conferentieId = $this->input->get('conferentie');
+        $this->load->model('aankondiging_model');
+        $this->aankondiging_model->insert($titel, $inhoud, $gepostDoorId, $conferentieId);
+        $this->index();
+    }
+
+
     public function verwijderen() {
         $data['user']  = $this->authex->getUserInfo();
         
