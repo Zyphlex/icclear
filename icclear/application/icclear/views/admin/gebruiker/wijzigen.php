@@ -133,14 +133,12 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <div class="form-control"  name="land" id="field9" required="required">
                                         <?php
                                         foreach ($landen as $land) {
                                             $options[$land->id] = $land->naam;
                                         }
                                         echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
                                         ?>
-                                </div>
                             </div>
 
 
