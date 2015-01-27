@@ -29,13 +29,12 @@ class Conferentie_model extends CI_Model {
         return $query->row();
     }
 
-    function getActieveConferentie($id)
+    /*function getActieveConferentie()
     {
-        $this->db->where('id', $id);
         $this->db->where('statusId', '2');
         $query = $this->db->get('conferentie');
         return $query->row();
-    }
+    }*/
 
 }
 
