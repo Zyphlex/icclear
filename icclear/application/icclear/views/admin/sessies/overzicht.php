@@ -26,7 +26,7 @@
                         <?php foreach ($sessies as $sessie) { ?>
                             <tr>
                                 <td><?php echo $sessie->onderwerp ?></td>
-                                <td><?php echo $sessie->sessie->beginUur ?></td>
+                                <td><?php echo $sessie->planning->beginUur ?></td>
                                 <td><?php echo $sessie->zaalId ?></td>
                                 <td><?php echo anchor('admin/dashboard/' . $sessie->id, 'Beheren','class="btn btn-default"'); ?></td>
                             </tr>
