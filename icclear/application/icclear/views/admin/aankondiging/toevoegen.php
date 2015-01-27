@@ -32,7 +32,7 @@
         </div>      
     </div>
     <input type="submit" value="Toevoegen" class="btn btn-default"/>
-    <?php echo form_close(); ?>                
-    <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>                 
+    <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>
+    <?php echo form_close(); ?>                                     
 </div>
 
