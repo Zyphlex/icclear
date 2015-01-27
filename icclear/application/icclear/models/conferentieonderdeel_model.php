@@ -26,7 +26,7 @@ class Conferentieonderdeel_model extends CI_Model {
         
         $this->load->model('conferentie_model');
          foreach ($conferentieOnderdelen as $conferentieOnderdeel){
-             $conferentieOnderdeel->conferentie = $this->conferentie_model->getConferentie($conferentieOnderdeel->conferentieId);
+             $conferentieOnderdeel->conferentie = $this->conferentie_model->get($conferentieOnderdeel->conferentieId);
          }
          
          return $conferentieOnderdelen;
