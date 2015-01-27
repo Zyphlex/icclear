@@ -42,9 +42,7 @@ class Sessies extends CI_Controller {
         $data['active'] = 'admin'; 
                 
         $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAll();
-        
-        $data['sessie'] = 'test';
+        $data['sessie'] = $this->sessies_model->get($id);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
