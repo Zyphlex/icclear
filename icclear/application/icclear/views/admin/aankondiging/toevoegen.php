@@ -27,8 +27,8 @@
                     </textarea>
                 </div>
             </div>
-            <input type="hidden" name="gebruiker" value=""/>
-            <input type="hidden" name="conferentie" value=""/>
+            <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>
+            <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>
         </div>      
     </div>
     <div class="row" style="margin-top: 15px;">
