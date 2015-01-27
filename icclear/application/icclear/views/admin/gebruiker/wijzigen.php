@@ -200,6 +200,7 @@
 
                     <?php echo form_close(); ?>
                 </div>
+                <?php echo anchor('gebruiker/toevoegen', 'Opslaan','class="btn btn-default"'); ?> 
             </div>
 
         </div>
