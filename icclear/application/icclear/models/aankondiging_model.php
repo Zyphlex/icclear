@@ -25,8 +25,7 @@ class Aankondiging_model extends CI_Model {
         $aankondiging->inhoud = $inhoud;
         $aankondiging->gepostDoor = $gepostDoor;
         $aankondiging->conferentieId = $conferentieId;
-        $this->db->insert('aankondiging', $aankondiging);
-        return $this->db->insert_id();
+        $this->db->insert('aankondiging', $aankondiging);        
     }
     
     
