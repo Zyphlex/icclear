@@ -17,15 +17,6 @@
         </div>
     </div>
     
-    <div class="row">
-        <div class="col-md-3">
-        <label for="omschrijving">Omschrijving:</label>    
-        </div>
-        
-        <div class="col-md-5">
-            <textarea cols="10" rows="10" name="omschrijving" class="form-control"><?php echo $sessie->omschrijving ?></textarea>    
-        </div>
-    </div>
     
     <div class="row">
         <div class="col-md-3">
@@ -33,7 +24,18 @@
         </div>
         
         <div class="col-md-5">
-            <p><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
+            <p class="form-control"><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-3">
+        <label for="omschrijving">Omschrijving:</label>    
+        </div>
+        
+        <div class="col-md-5">
+            <textarea cols="10" rows="10" name="omschrijving" class="form-control"><?php echo $sessie->omschrijving ?></textarea>    
         </div>
     </div>
     
