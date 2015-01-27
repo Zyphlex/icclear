@@ -31,11 +31,8 @@
                     <option>België</option>
                 </select>
             </div>            
-        </div>
-        
-        
-        <div class="row"> 
-            <label for="stad" class="control-label col-md-2">Stad:</label>
+            
+            <label for="stad" class="control-label col-md-2 border-left">Stad:</label>
             <div class="col-md-4">
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
