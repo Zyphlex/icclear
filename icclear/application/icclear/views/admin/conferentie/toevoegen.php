@@ -74,34 +74,30 @@
         <div class="row">
             <div class="col-md-12">
                 <div class=" panel panel-default">
-                <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-                    <h4 class="panel-title">
-                        <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                            Conferentie selecteren om te beheren
-                        </span>
-                    </h4>
-                </div>
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Conferentie</h4>
+                    </div>
 
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Formule</th>
-                                <th>Prijs</th>
-                                <th>Korting</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <th>Formule</th>
+                                    <th>Prijs</th>
+                                    <th>Korting</th>
+                                    <th></th>
                                 </tr>
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td>Test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                        <td>test</td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>        
