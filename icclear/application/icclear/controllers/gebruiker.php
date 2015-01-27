@@ -88,7 +88,7 @@ class Gebruiker extends CI_Controller {
     
     public function nieuw()
     {
-         $data['user'] = $this->authex->getUserInfo();
+        $data['user'] = $this->authex->getUserInfo();
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $data['title'] = 'IC Clear - Beheer';
@@ -97,7 +97,7 @@ class Gebruiker extends CI_Controller {
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getLand();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
 
