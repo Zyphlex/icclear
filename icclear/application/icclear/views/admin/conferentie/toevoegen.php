@@ -6,7 +6,7 @@
     <form class="form-horizontal" action="conferentie/opslaan" method="post">
 
         <div class="row">            
-            <label for="naam" class="control-label col-md-2 border-left">Naam:</label>
+            <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
                 <input class="form-control" type="text" id="naam" name="naam"/>
                 
@@ -15,8 +15,8 @@
         </div>
 
         <div class="row">            
-            <div class="col-md-6">
-                <label for="begindatum" class="form-label">Begin datum:</label>                
+            <label for="begindatum" class="control-label col-md-2">Begin datum:</label>    
+            <div class="col-md-4">            
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
             </div>
             
