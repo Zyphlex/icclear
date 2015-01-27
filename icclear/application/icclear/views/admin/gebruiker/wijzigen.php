@@ -83,7 +83,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="date" class="form-control" id="field7" value="<?php echo toDDMMYYYY($gebruiker->geboortedatum) ?>" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                                        <input type="date" class="form-control" id="field7" value="<?php echo toDDMMYYYY($gebruiker->geboortedatum); ?>" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
                                     </div>
                                 </div>
 
