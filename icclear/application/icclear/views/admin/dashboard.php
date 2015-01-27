@@ -4,8 +4,8 @@
         <h1>Conferentie <?php echo $conferentie->naam ?> beheren.</h1>     
         
         <h4>DASHBOARD</h4>
-        <?php echo $conferentie->id ?>
-        <?php echo $conferentie->naam ?>
+        <h5>ID: <?php echo $conferentie->id ?></h5>
+        <h5>NAAM: <?php echo $conferentie->naam ?></h5>
         
         <form action="">
             <input type="button" value="Emails" class="btn btn-default"/>
