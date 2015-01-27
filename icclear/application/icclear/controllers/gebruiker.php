@@ -46,7 +46,7 @@ class Gebruiker extends CI_Controller {
         $this->load->model('gebruiker_model');
         $data['gebruiker'] = $this->gebruiker_model->get($id);
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/beheer', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
 
@@ -58,21 +58,21 @@ class Gebruiker extends CI_Controller {
     }
 
     public function toevoegen() {
-        $brouwerij->id = $this->input->post('id');
-        $brouwerij->naam = $this->input->post('naam');
-        $brouwerij->stichter = $this->input->post('stichter');
-        $brouwerij->plaats = $this->input->post('plaats');
-        $brouwerij->oprichting = toYYYYMMDD($this->input->post('oprichting'));
-        $brouwerij->werknemers = $this->input->post('werknemers');
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->naam = $this->input->post('naam');
+        $gebruiker->stichter = $this->input->post('stichter');
+        $gebruiker->plaats = $this->input->post('plaats');
+        $gebruiker->oprichting = toYYYYMMDD($this->input->post('oprichting'));
+        $gebruiker->werknemers = $this->input->post('werknemers');
 
         $this->load->model('brouwerij_model');
-        if ($brouwerij->id == 0) {
-            $this->brouwerij_model->insert($brouwerij);
+        if ($gebruiker->id == 0) {
+            $this->brouwerij_model->insert($gebruiker);
         } else {
-            $this->brouwerij_model->update($brouwerij);
+            $this->brouwerij_model->update($gebruiker);
         }
 
-        $this->lijst();
+        $this->overzichtGebruikers();
     }
 
     // TEST
