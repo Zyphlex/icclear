@@ -32,7 +32,7 @@
                     </label>
                 </div>
                 <div class="col-md-8">   
-                    <textarea name="inhoud" id="inhoud" class="form-control" required="required" rows="10" cols="50">
+                    <textarea name="inhoud" id="inhoud" class="form-control" required="required" rows="10" cols="150">
                         
                     </textarea>
                 </div>
