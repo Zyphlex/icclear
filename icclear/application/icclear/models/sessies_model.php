@@ -38,6 +38,35 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
     
-
+    function getAllMetSpreker() {
+        $this->db->where('isGoedgekeurd', '1');
+        $query = $this->db->get('sessie');
+        $sessies = $query->result();
+        
+        $this->load->model('planning_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->planning = 
+                 $this->planning_model->getSessie($sessie->id);
+        }
+        
+        $this->load->model('zaal_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->zaal = 
+                 $this->zaal_model->get($sessie->zaalId);
+        }
+        
+        $this->load->model('gebruiker_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->spreker = 
+                 $this->gebruiker_model->getSprekers($sessie->sprekerId);
+        }
+        
+        return $sessies;
+    }
+       
+    
 }
 ?>
