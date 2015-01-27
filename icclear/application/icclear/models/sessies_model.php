@@ -9,7 +9,12 @@ class Sessies_model extends CI_Model {
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('sessie');
-        return $query->row();
+        $sessie = $query->row();
+        
+        $this->load->model('planning_model');   
+        $sessie->spreker = getSpreker($sessie->gebruikerIdSpreker);
+        
+        return sessie;
     }
 
     function getAll() {
