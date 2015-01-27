@@ -8,19 +8,16 @@ class Aankondiging_model extends CI_Model {
     }
     
     
-    function getPerConferentie()
-    {
-        $this->db->where('id',$id);
-        $this->db->get('aankondiging');
+    function getAll()
+    {        
+        $aankondigingen = $query = $this->db->get('aankondiging');        
         
-        $aankondigingen = $query->result();
+        $this->load->model('gebruiker_model');
         
-        $this->load->model('conferentie_model');
-         foreach ($aankondigingen as $aankondiging){
-             $aankondiging->conferentie = $this->conferentie_model->get($activiteit->conferentieId);
-         }
-         
-         return $aankondigingen;
+        foreach ($aankondigingen as $aankondiging){
+            $aankondiging->poster = $this->gebruiker_model->get($aankondiging->gepostDoor);
+        }                
+        return $aankondigingen;
     }
     
     
