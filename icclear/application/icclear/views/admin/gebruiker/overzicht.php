@@ -29,7 +29,7 @@
                                 <td><?php echo $gebruiker->familienaam ?></td>
                                 <td><?php echo $gebruiker->voornaam ?></td>
                                 <td><?php echo $gebruiker->emailadres ?></td>
-                                <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
+                                <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Beheren','class="btn btn-default"'); ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>

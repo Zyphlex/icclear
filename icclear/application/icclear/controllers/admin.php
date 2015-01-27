@@ -51,22 +51,6 @@ class Admin extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
-    public function overzichtGebruikers() {
-        
-        $data['user']  = $this->authex->getUserInfo();
-        
-        $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';        
-                
-        $this->load->model('gebruiker_model');
-        $data['gebruikers'] = $this->gebruiker_model->getAll();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-        
-        
-    }
-    
     
     // TEST
 }
