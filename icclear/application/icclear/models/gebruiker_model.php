@@ -41,6 +41,12 @@ class Gebruiker_model extends CI_Model {
         return $query->row();                
     }
     
+    function insert($gebruiker)
+    {
+        $this->db->insert('gebruiker', $gebruiker);
+        return $this->db->insert_id();
+    }
+    
     function update($gebruiker)
     {
         $this->db->where('id', $gebruiker->id);
