@@ -15,7 +15,7 @@
             </div>
 
             <div class="panel-body">
-                <h5>Algemeen</h5>
+                <h4>Algemeen</h4>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#">Hotels</a></li>
                     <li><a href="#">Landen</a></li>
@@ -25,7 +25,7 @@
             
             <?php if($conferentieId != null) { ?>
                     
-                <h5>Conferentie</h5>
+                <h4>Conferentie</h4>
                     <li><?php echo anchor('gebruiker', 'Gebruikers'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
                 
