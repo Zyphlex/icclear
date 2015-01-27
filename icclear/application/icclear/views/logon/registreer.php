@@ -14,7 +14,7 @@
             $('#validate-username').show();
             var u = $('#username').val();
             if(u.length > 3){
-            $.post("<?php echo base_url() ?>index.php/logon/check_username_availablity", {
+            $.post("<?php echo base_url() ?>icclear.php/logon/check_username_availablity", {
                 username: $("#username").val()
             }, function (response) {
                 $('#validate-username').hide();
@@ -31,7 +31,7 @@
             // check if email is valid
             if (filter.test(a)) {
                 // show loader                 
-                $.post("<?php echo base_url() ?>index.php/logon/check_email_availablity", {
+                $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                     email: $('#email').val()
                 }, function (response) {
                     //#emailInfo is a span which will show you message
