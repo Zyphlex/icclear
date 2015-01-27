@@ -93,7 +93,7 @@
                                         <td><input type="text" class="form-control" name="formule"></td>
                                         <td><input type="text" class="form-control" name="prijs"></td>
                                         <td><input type="text" class="form-control" name="korting"></td>
-                                        <td><a href="#" class="glyphicon glyphicon-plus form-control"></a></td>
+                                        <td><a href="#" class="glyphicon glyphicon-plus form-control btn btn-default"></a></td>
                                     </tr>
                             </tbody>
                         </table>
