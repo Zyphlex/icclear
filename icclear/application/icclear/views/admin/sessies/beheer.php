@@ -14,8 +14,9 @@
                 
                 <div class="modal-body">
                     <?php if (isset($sessie)) {?>
-                    <p>EH?</p>
+                    <p><?php  echo $sessie?></p>
                     <?php } else { ?>
+                    <p>oops</p>
                     <?php } ?>
                 </div>
                 
