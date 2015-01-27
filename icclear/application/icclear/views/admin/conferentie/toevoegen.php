@@ -47,7 +47,7 @@
             </div>
             
             <label for="nr" class="control-label col-md-2 border-left">Nr:</label>
-            <div class="col-md-1">
+            <div class="col-md-2">
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
         </div>
@@ -89,10 +89,30 @@
             </div>
         </div>
         
+        <br/>
         
-        
-        
-        
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Formule</th>
+                            <th>Prijs</th>
+                            <th>Korting</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         
         
         <br/>
