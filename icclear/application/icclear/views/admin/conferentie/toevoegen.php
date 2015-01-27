@@ -53,6 +53,8 @@
             </div>
         </div>
         
+        <br/><br/>
+        
         <div class="row">
             <div class="col-md-12">
                 <label for="beschrijving">Beschrijving:</label>    
@@ -75,7 +77,7 @@
         
         
         
-        
+        <br/>
         
         <div class="row">
             <div class="col-md-12">
