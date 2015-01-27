@@ -224,7 +224,7 @@
                 </div>
 
                 <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('toevoegen', 'Toevoegen', 'id="toevoegen"', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>
             </div>
