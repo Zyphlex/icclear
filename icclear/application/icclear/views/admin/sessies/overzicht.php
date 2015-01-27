@@ -24,7 +24,7 @@
                             <th>Beginuur</th>
                             <th>Einduur</th>
                             <th>Zaal</th>
-                            <th>Beheer</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,7 @@
                                 <td><?php echo $sessie->planning->eindUur ?></td>
                                 <td><?php echo $sessie->zaal->naam ?></td>
                                 <td>
-                                    <?php echo anchor('sessies/wijzigen/' . $sessie->id, 'Beheren','class="btn btn-default"'); ?>
+                                    <?php echo anchor('sessies/wijzigen/' . $sessie->id, 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('sessies/verwijderen' , 'Verwijderen','class="btn btn-default"'); ?>
                                 </td>
                             </tr>
@@ -48,7 +48,7 @@
 
     </div>
     
-    <?php echo anchor('sessies/toevoegen' . $sessie->id, 'Toevoegen','class="btn btn-default"'); ?>                           
+    <?php echo anchor('sessies/toevoegen' . $sessie->id, 'Nieuwe Toevoegen','class="btn btn-default"'); ?>                           
     
     
 </div>
