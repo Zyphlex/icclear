@@ -3,10 +3,8 @@ $id = 0;
 foreach ($sessies as $dag) {
     if($dag->conferentiedagId != $id){
         echo '<h1>Dag ' . $dag->conferentiedagId  . '</h1>';
-    }    
-    $id = $dag->conferentiedagId;
-    ?>    
-    <table class = "table">
+        ?>
+        <table class = "table">
         <thead>
             <tr>
                 <th>#</th>
@@ -17,7 +15,12 @@ foreach ($sessies as $dag) {
                 <th>Zaal</th>
                 <th>Spreker</th>
             </tr>
-        </thead>
+        </thead>    
+    <?php            
+    }    
+    $id = $dag->conferentiedagId;
+    ?>    
+    
         <tbody>
             <?php                
         $teller = 1;
