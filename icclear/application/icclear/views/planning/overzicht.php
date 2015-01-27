@@ -36,12 +36,13 @@ foreach ($sessies as $dag) {
             echo '</tr>';
         $teller++;
         }        
-        }}
+        }        
+        }
         ?> 
         </tbody>
-     
+     </table>
         <?php
 }
 ?>
 
-</table>  
+  
