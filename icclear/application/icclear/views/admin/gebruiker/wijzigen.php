@@ -98,7 +98,7 @@
                                         </div>';
                                         } else {
                                             echo '<div class="">
-                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
+                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" value="Man">
                                             <span class="option-title">
                                                 Man
                                             </span>
