@@ -200,7 +200,8 @@
 
                     <?php echo form_close(); ?>
                 </div>
-                <?php echo anchor('gebruiker/toevoegen', 'Opslaan','class="btn btn-default"'); ?> 
+                <?php echo anchor('gebruiker/toevoegen', 'Annuleer','class="btn btn-primary"'); ?> 
+                <?php echo anchor('gebruiker/toevoegen', 'Opslaan','class="btn btn-primary"'); ?> 
             </div>
 
         </div>
