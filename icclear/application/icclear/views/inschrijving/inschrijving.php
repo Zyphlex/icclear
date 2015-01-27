@@ -21,6 +21,13 @@ and open the template in the editor.
         
         <h3>Selecteer formule</h3>
         
+        <?php
+        foreach ($conferentieOnderdelen as $conferentieOnderdeel)
+        {
+            echo 'lol';
+        }
+        ?>
+        
         <h3>Extra activiteiten</h3>
         
         <h3>Betaling</h3>
