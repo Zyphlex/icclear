@@ -17,18 +17,22 @@ class Sessies_model extends CI_Model {
         $query = $this->db->get('sessie');
         $sessies = $query->result();
         
-        $this->load->model('planning_model');
-        
+        $this->load->model('planning_model');        
         foreach ($sessies as $sessie) {
             $sessie->planning = 
                  $this->planning_model->getSessie($sessie->id);
         }
         
-        $this->load->model('zaal_model');
-        
+        $this->load->model('zaal_model');        
         foreach ($sessies as $sessie) {
             $sessie->zaal = 
                  $this->zaal_model->get($sessie->zaalId);
+        }
+        
+        $this->load->model('conferentiedag_model');        
+        foreach ($sessies as $sessie) {
+            $sessie->conferentiedag = 
+                 $this->conferentiedag_model->get($sessie->conferentieId);
         }
         
         return $sessies;
