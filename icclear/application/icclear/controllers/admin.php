@@ -23,6 +23,7 @@ class Admin extends CI_Controller {
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
         
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';        
                 
@@ -35,10 +36,13 @@ class Admin extends CI_Controller {
     
 
      public function dashboard($id) {
-        $data['user']  = $this->authex->getUserInfo();
+        $this->session->set_userdata('conferentieId', $id);  
         
+        $data['user']  = $this->authex->getUserInfo();    
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - ';         
-        $data['active'] = 'admin';        
+        $data['active'] = 'admin';                
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->get($id);
