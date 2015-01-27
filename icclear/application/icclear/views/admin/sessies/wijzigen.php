@@ -7,14 +7,13 @@
         echo form_open('sessie/opslaan', $attributes);
     ?>
         <label for="onderwerp">Onderwerp:</label>    
-        <input type="text" name="onderwerp" value="<?php $sessie->onderwerp ?>" id="onderwerp" size="30" class="form-control"  />    
-
+        <input type="text" name="onderwerp" value="<?php echo $sessie->onderwerp ?>" id="onderwerp" size="30" class="form-control"  />    
 
         <label for="omschrijving">Omschrijving:</label>    
 
-        <input type="text" name="omschrijving" value="<?php $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
+        <input type="text" name="omschrijving" value="<?php echo $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
 
-        <input type="hidden" name="sessieId" id="sessieId" value="<?php $sessie->id ?>"/>
+        <input type="hidden" name="sessieId" id="sessieId" value="<?php echo $sessie->id ?>"/>
 
         <p>
             <input type="submit" value="Opslaan" class="btn btn-default"/>
