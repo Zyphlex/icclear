@@ -90,6 +90,6 @@ and open the template in the editor.
         <input type="radio" name="methode" value="Overschrijving"/><label>Overschrijving</label><br/>
         
         <a href="<?php echo base_url();?>icclear.php/home" class="btn btn-default">Annuleren</a>
-        <input type="submit" value="Bevestigen en betalen"/>
+        <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
     </body>
 </html>
