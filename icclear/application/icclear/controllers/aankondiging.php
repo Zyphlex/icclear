@@ -22,7 +22,7 @@ class Aankondiging extends CI_Controller {
     
     public function index() {                  
         $data['user']  = $this->authex->getUserInfo();            
-//        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
 //        $data['conferentie'] = $this->session->userdata('conferentie');
         
         $this->load->model('aankondiging_model');
