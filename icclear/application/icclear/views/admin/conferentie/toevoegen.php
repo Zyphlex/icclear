@@ -15,18 +15,18 @@
             
         </div>
 
-        <div class="row">     
-            <p>
+        <div class="row">            
             <div class="col-md-2">
                 <label for="begindatum">Begin datum:</label>
             </div>            
             <div class="col-md-4">
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
             </div>
-        </p>
             
-            <div class="col-md-6  border-left">
+            <div class="col-md-2  border-left">
                 <label for="einddatum">Eind datum:</label>
+            </div>            
+            <div class="col-md-4">
                 <input type="date" id="einddatum" name="einddatum" class="form-control"/>
             </div>
         </div>
