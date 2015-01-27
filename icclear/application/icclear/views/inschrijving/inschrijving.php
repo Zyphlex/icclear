@@ -51,6 +51,31 @@ and open the template in the editor.
         
         <h3>Extra activiteiten</h3>
         
+        <table class="table">
+            <tr>
+                <th>Activiteit</th>
+                <th>Prijs per persoon</th>
+                <th></th>
+                <th>Aantal Personen</th>
+            </tr>
+        <?php
+            foreach ($activiteiten as $activiteit)
+            {
+                if ($activiteit->conferentie->statusId == '2')
+                {
+                    ;echo '<tr><td>' . $activiteit->naam . '</td>';
+                    echo '<td>' . $activiteit->prijs . '</td>';
+                    ?>
+            <td><input type="checkbox" name="aanwezig<?php echo $activiteit->id;?>" id="aanwezig<?php echo $activiteit->id;?>" value ="<?php echo $activiteit->id;?>"/></td>
+            <td><input type="number" name="aantalPersonen" id="aantalPersonen" max="10"/></td>
+                    <?php
+                    
+                }
+            }
+        ?>
+            
+        </table>
+        
         <h3>Betaling</h3>
         
         <a href="<?php echo base_url();?>icclear.php/home">Annuleren</a>
