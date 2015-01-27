@@ -18,10 +18,11 @@
                     <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
                     <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENUES/ROUTES<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li <?php if ($active == 'locatie'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUE'); ?></li>
                             <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
+                            <li <?php if ($active == 'route'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/route', 'ROUTES'); ?></li>
                             </ul>
                             </li>                    
                     <?php
