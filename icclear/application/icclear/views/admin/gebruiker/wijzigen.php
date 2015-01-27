@@ -136,8 +136,9 @@
                                     <select class="form-control"  name="land" id="field9" required="required">
                                         <?php
                                         foreach ($landen as $land) {
-                                            echo '<option value="' . $land->id . '">' . $land->naam . '</option>';
+                                            $options[$land->id] = $land->naam;
                                         }
+                                        echo form_dropdown('land', $options, $gebruiker->landId);
                                         ?>
                                     </select>
                                 </div>
