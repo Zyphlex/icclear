@@ -1,4 +1,3 @@
-Ons voorbeeld <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/1/000/08f/3a5/1fde5b0.jpg"/>
 <table class="table">
     <thead>
         <tr>
