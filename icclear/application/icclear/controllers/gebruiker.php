@@ -66,19 +66,23 @@ class Gebruiker extends CI_Controller {
     public function toevoegen() {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
-        $gebruiker->id = $this->input->post('id');
-        $gebruiker->naam = $this->input->post('naam');
-        $gebruiker->stichter = $this->input->post('stichter');
-        $gebruiker->plaats = $this->input->post('plaats');
-        $gebruiker->oprichting = toYYYYMMDD($this->input->post('oprichting'));
-        $gebruiker->werknemers = $this->input->post('werknemers');
+        $gebruiker = new stdClass();
 
-        $this->load->model('brouwerij_model');
-        if ($gebruiker->id == 0) {
-            $this->brouwerij_model->insert($gebruiker);
-        } else {
-            $this->brouwerij_model->update($gebruiker);
-        }
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->voornaam = $this->input->post('voornaam');
+        $gebruiker->familienaam = $this->input->post('famnaam');
+        $gebruiker->geboortedatum = toYYYYMMDD($this->input->post('geboortedatum'));
+        $gebruiker->emailadres = $this->input->post('emailadres');
+        $gebruiker->geslacht = $this->input->post('geslacht');
+        $gebruiker->landId = $this->input->post('land');
+        $gebruiker->gemeente = $this->input->post('gemeente');
+        $gebruiker->postcode = $this->input->post('postcode');
+        $gebruiker->straat = $this->input->post('straat');
+        $gebruiker->nummer = $this->input->post('huisnummer');
+
+        $this->load->model('gebruiker_model');
+
+        $this->brouwerij_model->update($gebruiker);
 
         $this->overzichtGebruikers();
     }
