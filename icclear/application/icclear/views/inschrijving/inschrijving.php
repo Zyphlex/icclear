@@ -26,15 +26,25 @@ and open the template in the editor.
         
         <h3>Selecteer formule</h3>
         
+        <table>
+            <tr>
+                <th>Formule</th>
+                <th>Prijs</th>
+                <th>Early-bird korting</th>
+            </tr>
         <?php
             foreach ($conferentieOnderdelen as $conferentieOnderdeel)
             {
                 if ($conferentieOnderdeel->conferentie->statusId == '2')
                 {
-                    echo 'lol';
+                    ;echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
+                    echo '<td>' . $conferentieOnderdeel->prijs . '</td>';
+                    echo '<td>' . $conferentieOnderdeel->korting . ' %</td></tr>';
                 }
             }
         ?>
+            
+        </table>
         
         <h3>Extra activiteiten</h3>
         
