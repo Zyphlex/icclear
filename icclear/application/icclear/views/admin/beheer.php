@@ -41,4 +41,9 @@
             </div>
 
         </div>
+        
+        
+        <?php echo anchor('conferentie/toevoegen', 'Nieuwe conferentie toevoegen','class="btn btn-default"'); ?>  
+        
+        
     </div>
