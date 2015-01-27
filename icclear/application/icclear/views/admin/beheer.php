@@ -26,13 +26,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $teller = 1; foreach($conferenties as $conferentie) {?>
+                            <?php $teller = 1; foreach($conferenties as $gebruiker) {?>
                             <tr>
                                 <td><?php echo $teller ?></td>
-                                <td><?php echo $conferentie->naam ?></td>
-                                <td><?php echo $conferentie->stad ?></td>
-                                <td><?php echo $conferentie->beginDatum ?></td>
-                                <td><?php echo anchor('admin/dashboard/' . $conferentie->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
+                                <td><?php echo $gebruiker->naam ?></td>
+                                <td><?php echo $gebruiker->stad ?></td>
+                                <td><?php echo $gebruiker->beginDatum ?></td>
+                                <td><?php echo anchor('admin/dashboard/' . $gebruiker->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
                             </tr>
                             <?php $teller++; } ?>
                         </tbody>

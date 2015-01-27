@@ -18,7 +18,7 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#">Hotels</a></li>
                     <li><a href="#">Landen</a></li>
-                    <li><a href="#">Gebruikers</a></li>
+                    <li><?php echo anchor('gebruiker/overzichtGebruikers' , 'Gebruikers'); ?></li>
                     <li><a href="#">F.A.Q.</a></li>
                 </ul>
             </div>

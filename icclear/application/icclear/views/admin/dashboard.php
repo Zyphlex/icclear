@@ -4,7 +4,7 @@
             <h1>Conferentie <?php echo $conferentie->naam ?> beheren.</h1>     
         
         <p>DASHBOARD</p>
-        <?php echo $conferentie->id ?>
-        <?php echo $conferentie->naam ?>
+        <?php echo $gebruiker->id ?>
+        <?php echo $gebruiker->naam ?>
 
     </div>
