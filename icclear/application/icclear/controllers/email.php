@@ -38,7 +38,7 @@ class Email extends CI_Controller {
         $inhoud = $this->input->post('inhoud');
         $conferentie = $this->session->userdata('conferentie');        
         
-        $subject = $conferentie + ' - ' + $onderwerp;         
+        $subject = $conferentie . ' - ' . $onderwerp;         
         
         $this->email->from('donotreply@icclear.com');
         $this->email->to($ontvanger);
