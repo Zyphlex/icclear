@@ -4,7 +4,7 @@
     
     <h1>Sessies beheren.</h1>   
     
-    <div class="panel panel-default" role="tablist">
+<!--    <div class="panel panel-default" role="tablist">
 
         <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
             <h4 class="panel-title">
@@ -15,7 +15,7 @@
         </div>
 
         <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
-            <div class="panel-body">
+            <div class="panel-body">-->
                 <table class="table">
                     <thead>
                         <tr>
@@ -43,10 +43,10 @@
                         <?php } ?>
                     </tbody>
                 </table>
-            </div>
+<!--            </div>
         </div>
 
-    </div>
+    </div>-->
     
     <?php echo anchor('sessies/toevoegen', 'Nieuwe sessie toevoegen','class="btn btn-default"'); ?>                           
     
