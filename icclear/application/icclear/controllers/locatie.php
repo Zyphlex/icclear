@@ -13,7 +13,7 @@ class Locatie extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Venues';         
-        $data['active'] = 'locatie';
+        $data['active'] = 'locrout';
         
         $this->load->model('locatie_model');
         $data['gebouwen'] = $this->locatie_model->getGebouwen();                
@@ -39,7 +39,7 @@ class Locatie extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Routes';         
-        $data['active'] = 'route';
+        $data['active'] = 'locrout';
         
         $this->load->model('locatie_model');        
         $data['routes'] = $this->locatie_model->getRoutes();
