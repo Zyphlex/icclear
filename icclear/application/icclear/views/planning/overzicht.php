@@ -1,6 +1,6 @@
        
         <?php 
-        foreach ($planningen as $planning){
-            echo "Van $planning->beginUur tot $planning->eindUur";
+        foreach ($sessies as $sessie){
+            echo "Van $sessie->planning->beginUur tot $sessie->planning->eindUur";
         }
         ?>
