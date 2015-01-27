@@ -7,12 +7,12 @@
         <div class="col-md-8">  
             <div class="row">
                 <div class="col-md-4">   
-                    <label for="titel">
-                        Titel:
+                    <label for="onderwerp">
+                        Onderwerp:
                     </label>
                 </div>
                 <div class="col-md-8">   
-                    <input type="text" name="titel" id="titel" class="form-control" required="required">
+                    <input type="text" name="onderwerp" id="onderwerp" class="form-control" required="required">
                 </div>
             </div>
             <div class="row">
