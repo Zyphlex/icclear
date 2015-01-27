@@ -40,7 +40,7 @@ and open the template in the editor.
         
         <h3>Betaling</h3>
         
-        <a href="<?php echo base_url() . APPPATH;?>/home">Annuleren</a>
+        <a href="<?php echo base_url();?>home">Annuleren</a>
         <input type="submit" value="Bevestigen en betalen"/>
     </body>
 </html>
