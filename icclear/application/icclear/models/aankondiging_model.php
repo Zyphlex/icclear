@@ -10,7 +10,8 @@ class Aankondiging_model extends CI_Model {
     
     function getAll()
     {        
-        $aankondigingen = $query = $this->db->get('aankondiging');        
+        $query = $this->db->get('aankondiging');        
+        $aankondigingen = $query->result();
         
         $this->load->model('gebruiker_model');
         
