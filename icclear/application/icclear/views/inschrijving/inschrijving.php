@@ -24,7 +24,13 @@ and open the template in the editor.
         <?php
         foreach ($conferentieOnderdelen as $conferentieOnderdeel)
         {
-            echo 'lol';
+            foreach ($conferentieOnderdelen as $conferentieOnderdeel)
+            {
+                if ($conferentieOnderdeel->conferentie->statusId == '2')
+                {
+                    echo 'lol';
+                }
+            }
         }
         ?>
         
