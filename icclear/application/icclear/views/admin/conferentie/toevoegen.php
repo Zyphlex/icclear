@@ -1,6 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        $(".add").click(function() {
+        $("#add").click(function() {
           $('tbody').add('#mytable tbody>tr:last');
           return false;
         });
