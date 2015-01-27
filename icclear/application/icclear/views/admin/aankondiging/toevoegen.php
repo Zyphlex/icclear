@@ -33,7 +33,7 @@
     </div>
     <div class="row" style="margin-top: 15px;">
         <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-md-8">
             <input type="submit" value="Toevoegen" class="btn btn-default"/>
     <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>
         </div>
