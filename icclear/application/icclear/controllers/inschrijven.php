@@ -37,8 +37,8 @@ class Inschrijven extends CI_Controller {
         
         $betaling = new stdClass();
         
-        $betaling->gebruikerId = $this->authex->getUserInfo();
-        $betaling->methode = $this->input-get('methode');
+        $betaling->gebruikerId = $this->authex->getUserInfo('user_id');
+        $betaling->methode = $this->input->get('methode');
         
         $this->load->model('betaling_model');
         $betalingId = $this->betaling_model->insert('$betaling');
