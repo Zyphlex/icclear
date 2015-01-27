@@ -17,6 +17,12 @@ and open the template in the editor.
         
         <h1>Inschrijven conferentie</h1>
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
+        
+        <p>
+            De conferentie vindt plaats van
+            <?php echo $conferentie ?>
+        </p>
+        
         <p>U gaat akkoord met de voorwaarden en prijzen.</p>
         
         <h3>Selecteer formule</h3>
