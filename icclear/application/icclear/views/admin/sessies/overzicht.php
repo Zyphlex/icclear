@@ -31,7 +31,7 @@
                         <?php foreach ($sessies as $sessie) { ?>
                             <tr>
                                 <td><?php echo $sessie->onderwerp ?></td>
-                                <td><?php echo $sessie->conferentiedag->datum ?></td>
+                                <td><?php echo date($sessie->conferentiedag->datum, 'l') ?></td>
                                 <td><?php echo $sessie->planning->beginUur ?></td>
                                 <td><?php echo $sessie->planning->eindUur ?></td>
                                 <td><?php echo $sessie->zaal->naam ?></td>
