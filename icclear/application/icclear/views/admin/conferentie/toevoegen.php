@@ -40,12 +40,12 @@
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
-            <div class="col-md-4 ">
+            <div class="col-md-4 border-left">
                 <label for="straat">Straat</label>
                 <input type="text" id="straat" name="straat" class="form-control"/>
             </div>
             
-            <div class="col-md-4  border-left">
+            <div class="col-md-4">
                 <label for="nr">Nr.</label>
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
