@@ -32,8 +32,8 @@
         </div>      
     </div>
     <div class="row" style="margin-top: 15px;">
-        <div class="col-md-2"> </div>
-        <div class="col-md-2">
+        <div class="col-md-1"> </div>
+        <div class="col-md-3">
             <input type="submit" value="Toevoegen" class="btn btn-default"/>
     <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>
         </div>
