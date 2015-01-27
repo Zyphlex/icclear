@@ -93,7 +93,7 @@
                                         <td>Test</td>
                                         <td>test</td>
                                         <td>test</td>
-                                        <td>test</td>
+                                        <td><span class="glyphicon glyphicon-plus"></span></td>
                                     </tr>
                             </tbody>
                         </table>
