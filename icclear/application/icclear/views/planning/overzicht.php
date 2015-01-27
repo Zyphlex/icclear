@@ -1,10 +1,10 @@
 <?php
 $id = 0;
-foreach ($sessies as $sessie) {
-    if($sessie->conferentiedagId != $id){
-        echo '<h1>Dag ' . $sessie->conferentiedagId  . '</h1>';
+foreach ($sessies as $dag) {
+    if($dag->conferentiedagId != $id){
+        echo '<h1>Dag ' . $dag->conferentiedagId  . '</h1>';
     }    
-    $id = $sessie->conferentiedagId;
+    $id = $dag->conferentiedagId;
     ?>    
     <table class = "table">
         <thead>
@@ -22,7 +22,8 @@ foreach ($sessies as $sessie) {
             <?php                
         $teller = 1;
         foreach ($sessies as $sessie) {
-        echo '<tr>';
+            if($dag->conferentiedagId == $sessie->conferentiedagId){                            
+            echo '<tr>';
             echo '<td>' . $teller . '</td>';
             echo '<td>' . $sessie->onderwerp . '</td>';
             echo '<td>' . $sessie->omschrijving . '</td>';
@@ -32,6 +33,7 @@ foreach ($sessies as $sessie) {
             echo '<td>' . $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam . '</td>';
             echo '</tr>';
         $teller++;
+        }
         }
         ?>
       </tbody>
