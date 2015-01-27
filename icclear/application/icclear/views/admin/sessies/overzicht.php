@@ -19,7 +19,7 @@
                             <th>Naam</th>
                             <th>Dag</th>
                             <th>Beginuur</th>
-                            <th>Einduur>/th>
+                            <th>Einduur</th>
                             <th>Zaal</th>
                             <th>Beheer</th>
                         </tr>
