@@ -36,18 +36,18 @@
         </div>
         
         <div class="row"> 
-            <label for="stad" class="control-label col-md-2">Stad</label>
-            <div class="col-md-4">
+            <label for="stad" class="control-label col-md-1">Stad</label>
+            <div class="col-md-">
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
-            <label for="straat" class="control-label col-md-2 border-left">Straat</label>
+            <label for="straat" class="control-label col-md-1 border-left">Straat</label>
             <div class="col-md-4">
                 <input type="text" id="straat" name="straat" class="form-control"/>
             </div>
             
-            <label for="nr" class="control-label col-md-2">Nr.</label>
-            <div class="col-md-4">
+            <label for="nr" class="control-label col-md-1">Nr.</label>
+            <div class="col-md-2">
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
         </div>
