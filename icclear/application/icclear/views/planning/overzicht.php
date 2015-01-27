@@ -1,6 +1,7 @@
        
         <?php 
         foreach ($sessies as $sessie){
-            echo 'Van ' . $sessie->planning->beginUur . ' tot ' .  $sessie->planning->eindUur;
+            echo '<p>Van ' . $sessie->planning->beginUur . ' tot ' .  $sessie->planning->eindUur . '</p>';
+            echo '<p>' . $sessie->omschrijving . '</p>';
         }
         ?>
