@@ -2,16 +2,18 @@
 
     <h1>Sessies wijzigen.</h1>   
     
-                <label for="naam">Gebruikersnaam:</label>    
+                <label for="onderwerp">Onderwerp:</label>    
             
-                <input type="text" name="naam" value="" id="naam" size="30" class="form-control"  />    
+                <input type="text" name="onderwerp" value="<?php $sessie->onderwerp ?>" id="onderwerp" size="30" class="form-control"  />    
             
 
-                <label for="password">Wachtwoord:</label>    
+                <label for="omschrijving">Omschrijving:</label>    
            
-                <input type="password" name="password" value="" id="password" size="30" class="form-control"  />    
+                <input type="text" name="omschrijving" value="<?php $sessie->omschrijving ?>" id="omschrijving" size="30" class="form-control"  />    
            
-                <a href="<?php echo base_url(); ?>index.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
-           
+                <input type="hidden" name="sessieId" id="sessieId" value="<?php $sessie->id ?>"/>
+                
+                <inut type="submit" value="Opslaan"/>
+                <a href="javascript:history.go(-1);">Annuleren</a>
     
 </div>
