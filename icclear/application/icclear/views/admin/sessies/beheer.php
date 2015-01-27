@@ -11,15 +11,10 @@
 
         <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
             <div class="panel-body">
-                <?php
-                $attributes = array('name' => 'myform', 'id' => 'myform');
-                echo form_open('gebruiker/registreer', $attributes);
-                echo form_hidden('id', $gebruiker->id);
-                ?>
-
+                
                 <div class="modal-body">
                     <?php if (isset($sessie)) {?>
-                    <p>TEST</p>
+                    <p>EH?</p>
                     <?php } else { ?>
                     <?php } ?>
                 </div>
