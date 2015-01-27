@@ -71,7 +71,7 @@ class Gebruiker extends CI_Controller {
         $gebruiker->familienaam = $this->input->post('familienaam');
         $gebruiker->geboortedatum = $this->input->post('geboortedatum');
         $gebruiker->emailadres = $this->input->post('emailadres');
-        if (isset($_POST["geslacht"])) {
+        if (isset($this->input->post('geslacht'))) {
             $gebruiker->geslacht = $this->input->post('geslacht');
         }        
         $gebruiker->landId = $this->input->post('land');
