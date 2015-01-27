@@ -30,7 +30,7 @@
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                 <h4 class="panel-title">
-                    Algemeen
+                    Conferentie: <?php echo $conferentie->naam; ?>
                 </h4>
             </div>
 
