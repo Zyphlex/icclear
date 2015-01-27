@@ -17,24 +17,33 @@
             </div>
             <div class="row">
                 <div class="col-md-4">   
+                    <label for="Ontvanger">
+                        Ontvanger(s):
+                    </label>
+                </div>
+                <div class="col-md-8">   
+                    <input type="text" name="ontvanger" id="ontvanger" class="form-control" required="required">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">   
                     <label for="inhoud">
                         Inhoud:
                     </label>
                 </div>
                 <div class="col-md-8">   
-                    <textarea name="inhoud" id="inhoud" class="form-control" required="required" rows="4" cols="50">
+                    <textarea name="inhoud" id="inhoud" class="form-control" required="required" rows="10" cols="50">
                         
                     </textarea>
                 </div>
             </div>
-            <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>
-            <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>
+<!--            <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>            -->
         </div>      
     </div>
     <div class="row" style="margin-top: 15px;">
         <div class="col-md-1"> </div>
         <div class="col-md-3">
-            <input type="submit" value="Toevoegen" class="btn btn-default"/>
+            <input type="submit" value="Verzenden" class="btn btn-default"/>
     <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>
         </div>
     </div>    
