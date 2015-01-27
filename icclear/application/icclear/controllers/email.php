@@ -22,6 +22,7 @@ class Email extends CI_Controller {
 
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         $data['title'] = 'IC Clear - Emails.';         
         $data['active'] = 'admin';
