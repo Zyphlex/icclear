@@ -1,3 +1,18 @@
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="<?php echo base_url() . APPPATH; ?>/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+
+    $(function() {
+        
+        $( "button" ).button();
+        $( "#geboortedatum" ).datepicker({ dateFormat: 'dd/mm/yy', 
+                                        changeMonth: true, 
+                                        changeYear: true });
+        
+    });
+    
+</script>
 
 <div class="col-md-10">
     <div class="panel panel-default" role="tablist">
@@ -38,13 +53,12 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="familienaam">
-                                        Familienaam:
+                                        <?php echo form_label('Familienaam:', 'familienaam'); ?>
                                     </label>
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control" required="required">
-                                </div>
+                                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'field1', 'value' => $gebruiker->familienaam, 'class' => 'form-control', 'required' => 'required')); ?>
                             </div>
 
 
@@ -52,31 +66,31 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="emailadres">
-                                        Emailadres: 
+                                        <?php echo form_label('Email:', 'emailadres'); ?>
                                     </label>
                                 </div>  
 
-                                <div class="col-md-8">   
-                                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" required="required">      
+                                <div class="col-md-8"> 
+                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'required' => 'required')); ?>     
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geboortedatum">
-                                        Geboortedatum:
+                                        <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>
                                     </label>
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <input type="date" class="form-control" value="<?php echo $gebruiker->geboortedatum; ?>" id="field7" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'required' => 'required')); ?>     
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geslacht">
-                                        Geslacht:
+                                        <?php echo form_label('Geslacht:', 'geslacht'); ?>
                                     </label>  
                                 </div>  
 
@@ -122,7 +136,7 @@
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="land">
-                                        Land:
+                                       <?php echo form_label('Land:', 'land'); ?>
                                     </label>
                                 </div>
 
@@ -140,7 +154,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="gemeente">
-                                            Gemeente:
+                                            <?php echo form_label('Gemeente:', 'gemeente'); ?>
                                         </label>
                                     </div>
 
@@ -154,7 +168,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="postcode">
-                                            Postcode:
+                                            <?php echo form_label('Postcode:', 'postcode'); ?>
                                         </label>
                                     </div>
 
@@ -168,7 +182,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="straat">
-                                            Straat:
+                                            <?php echo form_label('Straat:', 'straat'); ?>
                                         </label>
                                     </div>
 
@@ -182,7 +196,7 @@
                                 <div class="row">
                                     <div class="col-md-4">   
                                         <label for="huisnummer">
-                                            Huisnummer:
+                                            <?php echo form_label('Huisnummer:', 'huisnummer'); ?>
                                         </label>
                                     </div>
 
