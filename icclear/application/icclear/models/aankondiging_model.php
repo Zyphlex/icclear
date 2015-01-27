@@ -8,8 +8,9 @@ class Aankondiging_model extends CI_Model {
     }
     
     
-    function getAll()
+    function getAllPerConferentie($id)
     {        
+        $this->db->where('conferentieId',$id);
         $query = $this->db->get('aankondiging');        
         $aankondigingen = $query->result();        
         $this->load->model('gebruiker_model');        
