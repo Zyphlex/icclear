@@ -61,6 +61,14 @@
             </div>
         </div>
         
+        <div class="row">            
+            <label for="seminariedag" class="control-label col-md-3">Seminariedag:</label>
+            <div class="col-md-2">                
+                <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+                <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>               
+            </div>
+        </div>
+        
         <br/><br/>
         
         <div class="row">
