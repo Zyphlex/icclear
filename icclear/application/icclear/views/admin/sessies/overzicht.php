@@ -48,7 +48,7 @@
 
     </div>-->
     
-    <?php echo anchor('sessies/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
+    <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
     
     
 </div>
