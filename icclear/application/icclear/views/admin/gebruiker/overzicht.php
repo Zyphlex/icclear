@@ -29,11 +29,13 @@
                                 <td><?php echo $gebruiker->familienaam ?></td>
                                 <td><?php echo $gebruiker->voornaam ?></td>
                                 <td><?php echo $gebruiker->emailadres ?></td>
-                                <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Beheren','class="btn btn-default"'); ?></td>
+                                <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen','class="btn btn-default"'); ?><?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen','class="btn btn-default"'); ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
+                    
+                    
                 </div>
             </div>
 

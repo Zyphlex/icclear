@@ -26,6 +26,8 @@ class Gebruiker extends CI_Controller {
 
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();
@@ -48,7 +50,7 @@ class Gebruiker extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
-    public function verwijderen($id) {
+    public function verwijder($id) {
         $this->load->model('gebruiker_model');
         $data['gebruiker'] = $this->gebruiker_model->delete($id);
 
