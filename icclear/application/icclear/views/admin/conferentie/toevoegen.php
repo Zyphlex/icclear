@@ -21,7 +21,7 @@
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
             </div>
             
-            <div class="col-md-2  border-left">
+            <div class="col-md-6  border-left  form-group">
                 <label for="einddatum" class="form-label">Eind datum:</label>
                 <input type="date" id="einddatum" name="einddatum" class="form-control"/>
             </div>
