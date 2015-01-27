@@ -1,8 +1,9 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#add").click(function() {
-          $('tbody').add('#mytable tbody>tr:last');
-          return false;
+    $("#add, .check ").click(function() {
+        $('#mytable tbody>tr:last')
+            .clone(true)
+            .insertAfter('#mytable tbody>tr:last').find('input').each(function() {
+            $(this).val('');
         });
     });
 </script>
@@ -88,7 +89,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <table id="mytable" class="table">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th><label for="formule">Formule</label></th>
@@ -148,3 +149,15 @@
 
 
 </div>
+
+<table id="mytable">
+    <tbody>
+        <tr>
+            <td>this is one <input /></td>
+            <td>this is two<input /></td>
+        </tr>
+   <tbody>
+
+        </table>
+       
+<div id="add">add</div>
