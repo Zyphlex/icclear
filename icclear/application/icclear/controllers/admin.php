@@ -51,8 +51,22 @@ class Admin extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    public function aankondiging() {                  
+        $data['user']  = $this->authex->getUserInfo();            
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->get($this->session->userdata('conferentieId'));
+        
+        $data['title'] = 'IC Clear - aankondigingen';         
+        $data['active'] = 'admin';                
+        
+        
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/algemeen/aankondigingen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
     
-    // TEST
+    
 }
 
 /* End of file welcome.php */
