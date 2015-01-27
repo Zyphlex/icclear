@@ -65,6 +65,8 @@ class Gebruiker extends CI_Controller {
 
     public function toevoegen() {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
         $gebruiker->voornaam = $this->input->post('voornaam');
@@ -79,11 +81,8 @@ class Gebruiker extends CI_Controller {
         $gebruiker->nummer = $this->input->post('huisnummer');
 
         $this->load->model('gebruiker_model');
-        if ($gebruiker->id == 0) {
-            $this->gebruiker_model->insert($gebruiker);
-        } else {
-            $this->gebruiker_model->update($gebruiker);
-        }
+
+        $this->gebruiker_model->update($gebruiker);
 
         $this->overzichtGebruikers();
     }
