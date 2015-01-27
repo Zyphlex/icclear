@@ -239,8 +239,10 @@
 
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
+                <?php $cl2 = 'class="btn btn-default"';
+                echo form_button('annuleer', 'Annuleer', 'id="annuleer"', $cl2); ?>
+                <?php $cl = 'class="btn btn-primary"'; 
+                echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', $cl); ?>
 
                 <?php echo form_close(); ?>
             </div>
