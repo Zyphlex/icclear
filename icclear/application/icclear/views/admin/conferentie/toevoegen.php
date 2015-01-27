@@ -16,13 +16,13 @@
         </div>
 
         <div class="row">            
-            <div class="col-md-6 form-group">
+            <div class="col-md-6">
                 <label for="begindatum" class="form-label">Begin datum:</label>                
                 <input type="date" id="begindatum" name="begindatum" class="form-control"/>
             </div>
             
-            <div class="col-md-6  border-left  form-group">
-                <label for="einddatum" class="form-label">Eind datum:</label>
+                <label for="einddatum" class="form-label col-md-2 border-left">Eind datum:</label>
+            <div class="col-md-4">
                 <input type="date" id="einddatum" name="einddatum" class="form-control"/>
             </div>
         </div>
