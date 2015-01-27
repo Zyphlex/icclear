@@ -1,7 +1,5 @@
 <div class="col-md-10">
-    <h1>Conferentie wijzigen</h1>
-
-    
+    <h1>Conferentie toevoegen.</h1>
 
     <form action="conferentie/opslaan" method="post">
 
@@ -42,16 +40,24 @@
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
-            <label for="straat" class="control-label col-md-2 border-left">Straat:</label>
+            <label for="straat" class="control-label col-md-2">Straat:</label>
             <div class="col-md-4">
                 <input type="text" id="straat" name="straat" class="form-control"/>
             </div>
             
-            <label for="nr" class="control-label col-md-2">Nr:</label>
+            <label for="nr" class="control-label col-md-2 border-left">Nr:</label>
             <div class="col-md-2">
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="col-md-3">
+                    <input type="submit" value="Opslaan" class="btn btn-default"/>
+                    <a href="javascript:history.go(-1);" class="btn btn-danger">Annuleren</a>
+                
+            </div>
+    </div>
         
     </form>
 
