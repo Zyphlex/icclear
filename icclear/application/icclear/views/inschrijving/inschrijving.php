@@ -89,7 +89,7 @@ and open the template in the editor.
         <input type="radio" name="methode" value="PayPal"/><label>PayPal</label><br/>
         <input type="radio" name="methode" value="Overschrijving"/><label>Overschrijving</label><br/>
         
-        <a href="<?php echo base_url();?>icclear.php/home">Annuleren</a>
+        <a href="<?php echo base_url();?>icclear.php/home" class="button">Annuleren</a>
         <input type="submit" value="Bevestigen en betalen"/>
     </body>
 </html>
