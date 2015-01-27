@@ -36,8 +36,6 @@ class Conferentie extends CI_Controller {
     
 
      public function toevoegen() {
-        $this->session->set_userdata('conferentieId', $id);  
-        
         $data['user']  = $this->authex->getUserInfo();    
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
