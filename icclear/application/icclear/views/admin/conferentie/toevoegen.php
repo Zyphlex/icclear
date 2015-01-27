@@ -3,7 +3,7 @@
 
     
 
-    <form class="form-horizontal" action="conferentie/opslaan" method="post">
+    <form action="conferentie/opslaan" method="post">
 
         <div class="row form-group">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
