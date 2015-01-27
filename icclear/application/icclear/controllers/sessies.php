@@ -30,7 +30,7 @@ class Sessies extends CI_Controller {
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAll();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
     
