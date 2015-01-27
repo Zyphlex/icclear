@@ -6,11 +6,10 @@
     <form class="form-horizontal" action="conferentie/opslaan" method="post">
 
         <div class="row">            
-            <div class="col-md-6">
-                <p>
-                    <label for="naam" class="form-label">Naam:</label>
-                    <input class="form-control" type="text" id="naam" name="naam"/>
-                </p>
+            <label for="naam" class="control-label col-md-2 border-left">Naam:</label>
+            <div class="col-md-4">
+                <input class="form-control" type="text" id="naam" name="naam"/>
+                
             </div>
             
         </div>
@@ -28,8 +27,8 @@
         </div>
         
         <div class="row">            
-            <div class="col-md-6">
-                <label for="land" class="form-label">Stad</label>
+            <label for="land" class="control-label col-md-2">Stad</label>
+            <div class="col-md-4">
                 <select id="land" name="land" class="form-control">
                     <option>België</option>
                 </select>
@@ -37,18 +36,18 @@
         </div>
         
         <div class="row"> 
+            <label for="stad" class="control-label col-md-2">Stad</label>
             <div class="col-md-4">
-                <label for="stad" class="form-label">Stad</label>
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
-            <div class="col-md-4 border-left">
-                <label for="straat" class="form-label">Straat</label>
+            <label for="straat" class="control-label col-md-2 border-left">Straat</label>
+            <div class="col-md-4">
                 <input type="text" id="straat" name="straat" class="form-control"/>
             </div>
             
+            <label for="nr" class="control-label col-md-2">Nr.</label>
             <div class="col-md-4">
-                <label for="nr" class="form-label">Nr.</label>
                 <input type="number" id="nr" name="nr" class="form-control"/>
             </div>
         </div>
