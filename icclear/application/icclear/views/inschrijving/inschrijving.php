@@ -56,7 +56,7 @@ and open the template in the editor.
                 <th>Activiteit</th>
                 <th>Prijs per persoon</th>
                 <th></th>
-                <th>Aantal Personen</th>
+                <th>Aantal Personen (max. 10)</th>
             </tr>
         <?php
             foreach ($activiteiten as $activiteit)
