@@ -1,6 +1,6 @@
     <div class="row">
         <div class="col-md-12">
-            <h1>Dashboard <?php if($conferentieId != null) { echo ': ' . $conferentie->naam; } ?></h1>            
+            <h1>Dashboard <?--php if($conferentieId != null) { echo ': ' . $conferentie->naam; } --?></h1>            
         </div>
     </div>
     
