@@ -48,8 +48,7 @@
 
     </div>-->
     
-    
-    <p><a href="javascript:history.go(-1);" class="btn btn-danger">Annuleren</a></p>                       
+    <?php echo anchor('sessies/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
     
     
 </div>
