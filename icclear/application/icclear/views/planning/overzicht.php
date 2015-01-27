@@ -35,11 +35,10 @@ foreach ($sessies as $dag) {
             echo '<td>' . $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam . '</td>';
             echo '</tr>';
         $teller++;
-        }
-        echo "</tbody>";
+        }        
         }
         ?>
-      
+      </tbody>
     </table>
         <?php
 }
