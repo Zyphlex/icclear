@@ -15,7 +15,7 @@ class Email extends CI_Controller {
         $data['title'] = 'IC Clear - Emails.';         
         $data['active'] = 'admin';
                 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'email/opstellen', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/email/opstellen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
 
