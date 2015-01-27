@@ -82,17 +82,17 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Formule</th>
-                                    <th>Prijs</th>
-                                    <th>Korting</th>
+                                    <th><label for="formule">Formule</label></th>
+                                    <th><label for="prijs">Prijs</label></th>
+                                    <th><label for="korting">Korting</label></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                     <tr>
-                                        <td>Test</td>
-                                        <td>test</td>
-                                        <td>test</td>
+                                        <td><input type="text" class="form-control" name="formule"></td>
+                                        <td><input type="text" class="form-control" name="prijs"></td>
+                                        <td><input type="text" class="form-control" name="korting"></td>
                                         <td><a href="#" class="glyphicon glyphicon-plus btn btn-default"></a></td>
                                     </tr>
                             </tbody>
