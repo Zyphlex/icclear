@@ -19,7 +19,7 @@ and open the template in the editor.
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
         
         <p>
-            De conferentie vindt plaats van <?php echo toDDMMYYYY($conferentie->beginDatum); ?> tot en met <?php echo $conferentie->eindDatum; ?>.
+            De conferentie vindt plaats van <?php echo toDDMMYYYY($conferentie->beginDatum); ?> tot en met <?php echo toDDMMYYYY($conferentie->eindDatum); ?>.
         </p>
         
         <p>U gaat akkoord met de voorwaarden en prijzen.</p>
