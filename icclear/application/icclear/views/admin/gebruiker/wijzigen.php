@@ -83,7 +83,7 @@
                                 <div class="col-md-8">        
                                     <div class="my-radio">
                                         <?php
-                                        if ($gebruiker->geslacht == strtolower("man")) {
+                                        if (strtolower($gebruiker->geslacht) == "man") {
                                             echo '<div class="">
                                             <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
                                             <span class="option-title">
