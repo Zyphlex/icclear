@@ -55,6 +55,31 @@
         
         <div class="row">
             <div class="col-md-12">
+                <label for="beschrijving">Beschrijving:</label>    
+            </div>
+
+            <div class="col-md-12">
+               <textarea cols="50" rows="15" name="beschrijving" class="form-control"><?php echo $sessie->omschrijving ?></textarea>    
+            </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="row">
+            <div class="col-md-12">
                 <input type="submit" value="Opslaan" class="btn btn-default"/>
                 <a href="javascript:history.go(-1);" class="btn btn-danger">Annuleren</a>                
             </div>
