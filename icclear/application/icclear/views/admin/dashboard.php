@@ -6,5 +6,9 @@
         <p>DASHBOARD</p>
         <?php echo $conferentie->id ?>
         <?php echo $conferentie->naam ?>
-
+        
+        <form action="">
+            <input type="button" value="Emails"/>
+            <input type="button" value="Aankondigingen" />
+        </form>
     </div>
