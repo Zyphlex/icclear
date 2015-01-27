@@ -16,7 +16,7 @@ class Programma extends CI_Controller {
         $data['active'] = 'programma';
         
         $this->load->model('planning_model');
-        $data['planningen'] = $this->planning_model->getAll();
+        $data['sessies'] = $this->sessies_model->getAll();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
