@@ -48,7 +48,7 @@
 
     </div>
     
-    <?php echo anchor('sessies/toevoegen' . $sessie->id, 'Nieuwe Toevoegen','class="btn btn-default"'); ?>                           
+    <?php echo anchor('sessies/toevoegen' . $sessie->id, 'Nieuwe sessie toevoegen','class="btn btn-default"'); ?>                           
     
     
 </div>
