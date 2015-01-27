@@ -17,8 +17,10 @@
                     <thead>
                         <tr>
                             <th>Naam</th>
-                            <th>Stad</th>
-                            <th>Begin datum</th>
+                            <th>Dag</th>
+                            <th>Beginuur</th>
+                            <th>Einduur>/th>
+                            <th>Zaal</th>
                             <th>Beheer</th>
                         </tr>
                     </thead>
@@ -26,7 +28,9 @@
                         <?php foreach ($sessies as $sessie) { ?>
                             <tr>
                                 <td><?php echo $sessie->onderwerp ?></td>
+                                <td><?php echo $sessie->conferentiedagId ?></td>
                                 <td><?php echo $sessie->planning->beginUur ?></td>
+                                <td><?php echo $sessie->planning->eindUur ?></td>
                                 <td><?php echo $sessie->zaalId ?></td>
                                 <td><?php echo anchor('admin/dashboard/' . $sessie->id, 'Beheren','class="btn btn-default"'); ?></td>
                             </tr>
