@@ -3,15 +3,15 @@
 
 <script type="text/javascript">
 
-    $(function() {
-        
-        $( "button" ).button();
-        $( "#geboortedatum" ).datepicker({ dateFormat: 'dd/mm/yy', 
-                                        changeMonth: true, 
-                                        changeYear: true });
-        
+    $(function () {
+
+        $("button").button();
+        $("#field7").datepicker({dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true});
+
     });
-    
+
 </script>
 
 <div class="col-md-10">
@@ -59,46 +59,46 @@
 
                                 <div class="col-md-8">   
                                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'field1', 'value' => $gebruiker->familienaam, 'class' => 'form-control', 'required' => 'required')); ?>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="emailadres">
-                                        <?php echo form_label('Email:', 'emailadres'); ?>
-                                    </label>
-                                </div>  
-
-                                <div class="col-md-8"> 
-                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'required' => 'required')); ?>     
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="geboortedatum">
-                                        <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>
-                                    </label>
                                 </div>
 
-                                <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => toDDMMYYYY($gebruiker->geboortedatum) , 'class' => 'form-control', 'required' => 'required')); ?>     
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="emailadres">
+                                            <?php echo form_label('Email:', 'emailadres'); ?>
+                                        </label>
+                                    </div>  
+
+                                    <div class="col-md-8"> 
+                                        <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'required' => 'required')); ?>     
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="geslacht">
-                                        <?php echo form_label('Geslacht:', 'geslacht'); ?>
-                                    </label>  
-                                </div>  
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="geboortedatum">
+                                            <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>
+                                        </label>
+                                    </div>
 
-                                <div class="col-md-8">        
-                                    <div class="my-radio">
-                                        <?php
-                                        if ($gebruiker->geslacht == strtolower("man")) {
-                                            echo '<div class="">
+                                    <div class="col-md-8">   
+                                        <input type="date" class="form-control" id="field7" value="<?php echo toDDMMYYYY($gebruiker->geboortedatum) ?>" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="geslacht">
+                                            <?php echo form_label('Geslacht:', 'geslacht'); ?>
+                                        </label>  
+                                    </div>  
+
+                                    <div class="col-md-8">        
+                                        <div class="my-radio">
+                                            <?php
+                                            if ($gebruiker->geslacht == strtolower("man")) {
+                                                echo '<div class="">
                                             <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
                                             <span class="option-title">
                                                 Man
@@ -110,8 +110,8 @@
                                                 Vrouw
                                             </span>
                                         </div>';
-                                        } else {
-                                            echo '<div class="">
+                                            } else {
+                                                echo '<div class="">
                                             <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
                                             <span class="option-title">
                                                 Man
@@ -123,101 +123,103 @@
                                                 Vrouw
                                             </span>
                                         </div>';
-                                        }
-                                        ?>
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+
+
+                            <div class="col-md-6 border-left">      
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="land">
+                                            <?php echo form_label('Land:', 'land'); ?>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <?php
+                                        foreach ($landen as $land) {
+                                            $options[$land->id] = $land->naam;
+                                        }
+                                        echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
+                                        ?>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="gemeente">
+                                                <?php echo form_label('Gemeente:', 'gemeente'); ?>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control" required="required">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="postcode">
+                                                <?php echo form_label('Postcode:', 'postcode'); ?>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control" required="required">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="straat">
+                                                <?php echo form_label('Straat:', 'straat'); ?>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control" required="required">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="huisnummer">
+                                                <?php echo form_label('Huisnummer:', 'huisnummer'); ?>
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
 
                         </div>
 
-
-                        <div class="col-md-6 border-left">      
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="land">
-                                       <?php echo form_label('Land:', 'land'); ?>
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <?php
-                                    foreach ($landen as $land) {
-                                        $options[$land->id] = $land->naam;
-                                    }
-                                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
-                                    ?>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="gemeente">
-                                            <?php echo form_label('Gemeente:', 'gemeente'); ?>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="postcode">
-                                            <?php echo form_label('Postcode:', 'postcode'); ?>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="straat">
-                                            <?php echo form_label('Straat:', 'straat'); ?>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="huisnummer">
-                                            <?php echo form_label('Huisnummer:', 'huisnummer'); ?>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>         
-
                     </div>
 
+                    <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"', 'javascript:history.go(-1)'); ?>
+                    <?php
+                    $class = 'class = "btn btn-priamary"';
+                    echo form_submit('opslaan', 'Opslaan', $class);
+                    ?>
+
+<?php echo form_close(); ?>
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"', 'javascript:history.go(-1)'); ?>
-                <?php $class = 'class = "btn btn-priamary"';
-                echo form_submit('opslaan', 'Opslaan', $class); ?>
-
-                <?php echo form_close(); ?>
             </div>
-
         </div>
     </div>
-</div>
