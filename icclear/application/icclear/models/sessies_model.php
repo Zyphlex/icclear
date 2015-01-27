@@ -39,6 +39,7 @@ class Sessies_model extends CI_Model {
     }
     
     function getAllMetSpreker() {
+        $this->db->order_by('conferentiedagId');
         $this->db->where('isGoedgekeurd', '1');
         $query = $this->db->get('sessie');
         $sessies = $query->result();
