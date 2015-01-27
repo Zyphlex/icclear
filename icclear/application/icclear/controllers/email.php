@@ -8,6 +8,7 @@ class Email extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
+        $this->load->library('email');
         if (!$this->authex->loggedIn()) {
             redirect('logon/aanmelden');
             //voorlopig
@@ -30,6 +31,19 @@ class Email extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/email/opstellen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
-    // TEST
+    
+    public function verzend(){
+        $onderwerp = $this->input->post('onderwerp');
+        $ontvanger = $this->input->post('ontvanger');
+        $inhoud = $this->input->post('inhoud');
+        
+        $this->email->from('donotreply@icclear.com');
+        $this->email->to($ontvanger);
+        $this->email->subject($onderwerp);
+        $this->email->message($inhoud);
+        $this->email->send();
+        
+        redirect('admin/index');
+    }        
+    
 }
