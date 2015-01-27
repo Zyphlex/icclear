@@ -16,6 +16,14 @@ and open the template in the editor.
         ?>        
         
         <h1>Inschrijven conferentie</h1>
+        
+        <?php
+        if ($user == null)
+        {
+            echo '<p><style color:red>Opgelet! U moet aangemeld zijn om dit formulier in te dienen!</style></p>';
+        }
+        ?>
+        
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
         
         <p>
