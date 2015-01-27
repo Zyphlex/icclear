@@ -27,9 +27,9 @@
         
         <div class="row">            
             <div class="col-md-6">
-                <label for="land">Begin datum:</label>
+                <label for="land">Stad</label>
                 <select id="land" name="land" class="form-controls">
-                    <option></option>
+                    <option>België</option>
                 </select>
             </div>            
         </div>
@@ -40,7 +40,7 @@
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
-            <div class="col-md-4  border-left">
+            <div class="col-md-4 ">
                 <label for="straat">Straat</label>
                 <input type="text" id="straat" name="straat" class="form-control"/>
             </div>
