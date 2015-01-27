@@ -37,7 +37,7 @@
         
         <div class="row"> 
             <label for="stad" class="control-label col-md-1">Stad</label>
-            <div class="col-md-3s">
+            <div class="col-md-3">
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
             
