@@ -31,6 +31,17 @@
     
     <div class="row">
         <div class="col-md-3">
+        <label for="onderwerp">Zaal:</label>   
+        </div>
+        
+        <div class="col-md-5">
+        <input type="text" name="onderwerp" value="<?php echo $sessie->zaal->naam ?>" id="onderwerp" size="30" class="form-control"  />    
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-3">
         <label for="omschrijving">Omschrijving:</label>    
         </div>
         
