@@ -1,7 +1,11 @@
 <?php
+$id = 0;
 foreach ($sessies as $sessie) {
-    ?>
-    <h1>Dag  <?php echo $sessie->conferentiedagId; ?> </h1>
+    if($sessie->conferentiedagId != $id){
+        echo '<h1>Dag ' . $sessie->conferentiedagId  . '</h1>';
+    }    
+    $id = $sessie->conferentiedagId;
+    ?>    
     <table class = "table">
         <thead>
             <tr>
