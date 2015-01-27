@@ -72,7 +72,15 @@
         <br/><br/>
         
         <div class="row panel panel-default">
-            <div class="col-md-12">
+            <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+                <h4 class="panel-title">
+                    <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
+                        Conferentie selecteren om te beheren
+                    </span>
+                </h4>
+            </div>
+            
+            <div class="col-md-12 panel-body">
                 <table class="table">
                     <thead>
                         <tr>
