@@ -71,7 +71,7 @@
         
         <br/><br/>
         
-        <div class="row">
+        <div class="row panel">
             <div class="col-md-12">
                 <table class="table">
                     <thead>
