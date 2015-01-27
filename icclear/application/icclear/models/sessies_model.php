@@ -23,7 +23,7 @@ class Sessies_model extends CI_Model {
 //                 $this->planning_model->getSessie($sessie->id);
 //        }
         
-        return $sessies;
+        return $sessies->result();
     }
     
 
