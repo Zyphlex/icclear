@@ -15,7 +15,7 @@ class Inschrijven extends CI_Controller {
         $data['active'] = 'inschrijven';
         
         $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieve();
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         
 
