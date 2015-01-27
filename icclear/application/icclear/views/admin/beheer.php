@@ -32,7 +32,7 @@
                                 <td><?php echo $gebruiker->naam ?></td>
                                 <td><?php echo $gebruiker->stad ?></td>
                                 <td><?php echo $gebruiker->beginDatum ?></td>
-                                <td><?php echo anchor('admin/dashboard/' . $gebruiker->id, 'Beheren'); ?><a class="btn btn-default">Beheren</a></td>
+                                <td><?php echo anchor('admin/dashboard/' . $gebruiker->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                             </tr>
                             <?php $teller++; } ?>
                         </tbody>
