@@ -22,8 +22,6 @@ and open the template in the editor.
         <h3>Selecteer formule</h3>
         
         <?php
-        foreach ($conferentieOnderdelen as $conferentieOnderdeel)
-        {
             foreach ($conferentieOnderdelen as $conferentieOnderdeel)
             {
                 if ($conferentieOnderdeel->conferentie->statusId == '2')
@@ -31,7 +29,6 @@ and open the template in the editor.
                     echo 'lol';
                 }
             }
-        }
         ?>
         
         <h3>Extra activiteiten</h3>
