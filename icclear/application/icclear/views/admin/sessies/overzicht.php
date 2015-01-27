@@ -46,9 +46,7 @@
 <!--            </div>
         </div>
 
-    </div>-->
-    
-    <?php echo anchor('sessies/toevoegen', 'Nieuwe sessie toevoegen','class="btn btn-default"'); ?>                           
+    </div>-->                      
     
     
 </div>
