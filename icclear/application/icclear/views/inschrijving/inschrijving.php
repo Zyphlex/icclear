@@ -10,7 +10,8 @@ and open the template in the editor.
         <title><?php echo $title ?></title>
         <style>
             #waarschuwing{
-                color:red
+                color:red;
+                font-weight: bold;
             }
         </style>
     </head>
