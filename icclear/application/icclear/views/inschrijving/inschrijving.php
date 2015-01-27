@@ -26,11 +26,12 @@ and open the template in the editor.
         
         <h3>Selecteer formule</h3>
         
-        <table>
+        <table class="table">
             <tr>
                 <th>Formule</th>
                 <th>Prijs</th>
                 <th>Early-bird korting</th>
+                <td></td>
             </tr>
         <?php
             foreach ($conferentieOnderdelen as $conferentieOnderdeel)
@@ -40,6 +41,8 @@ and open the template in the editor.
                     ;echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
                     echo '<td>' . $conferentieOnderdeel->prijs . '</td>';
                     echo '<td>' . $conferentieOnderdeel->korting . ' %</td></tr>';
+                    echo '<td><input type="radio" name="formule" value="' . $conferentieOnderdeel->id . '"/></td>';
+                    
                 }
             }
         ?>
