@@ -21,7 +21,7 @@ class Inschrijven extends CI_Controller {
         $conferentie = $this->conferentie_model->getActieveConferentie();
         
         $this->load->model('conferentieonderdeel_model');
-        $data['conferentieOnderdelen'] = $this->conferentieonderdeel_model->getOnderdelenPerConferentie($conferentie->id);
+        $data['conferentieOnderdelen'] = $this->conferentieonderdeel_model->getOnderdelenPerConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/inschrijving', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
