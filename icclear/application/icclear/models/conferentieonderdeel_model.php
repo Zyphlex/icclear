@@ -1,6 +1,6 @@
 <?php
 
-class Conferentie_model extends CI_Model {
+class Conferentieonderdeel_model extends CI_Model {
 
     // +----------------------------------------------------------
     // | Beershop - product_model
