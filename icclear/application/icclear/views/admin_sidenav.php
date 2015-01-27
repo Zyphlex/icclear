@@ -6,8 +6,6 @@
     
     <div class="col-md-2">  
         
-        <h1></h1>
-        
         <div class="panel panel-default">
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
@@ -17,7 +15,7 @@
             </div>
 
             <div class="panel-body">
-                <h3>Algemeen</h3>
+                <h5>Algemeen</h5>
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="#">Hotels</a></li>
                     <li><a href="#">Landen</a></li>
@@ -27,7 +25,7 @@
             
             <?php if($conferentieId != null) { ?>
                     
-                <h3>Conferentie</h3>
+                <h5>Conferentie</h5>
                     <li><?php echo anchor('gebruiker', 'Gebruikers'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
                 
