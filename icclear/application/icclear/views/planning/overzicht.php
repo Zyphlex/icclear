@@ -25,14 +25,14 @@ foreach ($sessies as $dag) {
         $teller = 1;
         foreach ($sessies as $sessie) {
             if($dag->conferentiedagId == $sessie->conferentiedagId){                            
-            echo '<tr>';
-            echo '<td>' . $teller . '</td>';
-            echo '<td>' . $sessie->onderwerp . '</td>';
-            echo '<td>' . $sessie->omschrijving . '</td>';
-            echo '<td>' . $sessie->planning->beginUur . '</td>';
-            echo '<td>' . $sessie->planning->eindUur . '</td>';
-            echo '<td>' . $sessie->zaal->naam . '</td>';
-            echo '<td>' . $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam . '</td>';
+            echo '<tr>' . "\n";
+            echo '<td>' . $teller . '</td>'. "\n";
+            echo '<td>' . $sessie->onderwerp . '</td>'. "\n";
+            echo '<td>' . $sessie->omschrijving . '</td>'. "\n";
+            echo '<td>' . $sessie->planning->beginUur . '</td>'. "\n";
+            echo '<td>' . $sessie->planning->eindUur . '</td>'. "\n";
+            echo '<td>' . $sessie->zaal->naam . '</td>'. "\n";
+            echo '<td>' . $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam . '</td>'. "\n";
             echo '</tr>';
         $teller++;
         }        
