@@ -16,10 +16,6 @@ class Inschrijven extends CI_Controller {
         $data['title'] = 'IC Clear - Inschrijven'; 
         $data['active'] = 'inschrijven';
         
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        $conferentie = $this->conferentie_model->getActieveConferentie();
-        
         $this->load->model('conferentieonderdeel_model');
         $data['conferentieOnderdelen'] = $this->conferentieonderdeel_model->getOnderdelenPerConferentie();
 
