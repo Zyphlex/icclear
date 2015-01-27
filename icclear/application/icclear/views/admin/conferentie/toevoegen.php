@@ -52,6 +52,15 @@
             </div>
         </div>
         
+        <br/>
+        
+        <div class="row">            
+            <label for="maxinschrijvingen" class="control-label col-md-2">Max inschrijvingen:</label>
+            <div class="col-md-2">
+                <input class="form-control" type="number" id="maxinschrijvingen" name="maxinschrijvingen"/>                
+            </div>
+        </div>
+        
         <br/><br/>
         
         <div class="row">
