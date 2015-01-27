@@ -76,11 +76,6 @@
                                 </div>
                             </div>
 
-                        </div>
-
-
-                        <div class="col-md-6 border-left">               
-
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="geslacht">
@@ -123,8 +118,10 @@
                                 </div>
                             </div>
 
+                        </div>
 
 
+                        <div class="col-md-6 border-left">      
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="land">
@@ -133,78 +130,78 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                        <?php
-                                        foreach ($landen as $land) {
-                                            $options[$land->id] = $land->naam;
-                                        }
-                                        echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
-                                        ?>
+                                    <?php
+                                    foreach ($landen as $land) {
+                                        $options[$land->id] = $land->naam;
+                                    }
+                                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
+                                    ?>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="gemeente">
+                                            Gemeente:
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="text" name="gemeente" id="field10" class="form-control" required="required">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="postcode">
+                                            Postcode:
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="text" name="postcode" id="field10-b" class="form-control" required="required">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="straat">
+                                            Straat:
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="text" name="straat" id="field11" class="form-control" required="required">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="huisnummer">
+                                            Huisnummer:
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="text" name="huisnummer" id="field12" class="form-control" required="required">
+                                    </div>
+                                </div>
                             </div>
+                        </div>         
 
+                    </div>
 
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="gemeente">
-                                        Gemeente:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="gemeente" id="field10" class="form-control" required="required">
-                                </div>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="postcode">
-                                        Postcode:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="postcode" id="field10-b" class="form-control" required="required">
-                                </div>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="straat">
-                                        Straat:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="straat" id="field11" class="form-control" required="required">
-                                </div>
-                            </div>
-
-
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="huisnummer">
-                                        Huisnummer:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="huisnummer" id="field12" class="form-control" required="required">
-                                </div>
-                            </div>
-                        </div>
-                    </div>         
-
+                    <?php echo form_close(); ?>
                 </div>
-
-                <?php echo form_close(); ?>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 </div>
