@@ -127,26 +127,26 @@
                                         <?php
                                         if ($gebruiker->typeId == 2) {
                                             echo '<div class="">
-                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" checked="checked" value="Spreker">
+                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" checked="checked" value="2">
                                             <span class="option-title">
                                                 Spreker
                                             </span>
                                         </div> 
                                         <div class="">
-                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="Bezoeker">
+                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="1">
                                             <span class="option-title">
                                                 Bezoeker
                                             </span>
                                         </div>';
                                         } elseif ($gebruiker->typeId == 1) {
                                            echo '<div class="">
-                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal"  value="Spreker">
+                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal"  value="2">
                                             <span class="option-title">
                                                 Spreker
                                             </span>
                                         </div> 
                                         <div class="">
-                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" checked="checked" value="Bezoeker">
+                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" checked="checked" value="1">
                                             <span class="option-title">
                                                 Bezoeker
                                             </span>
