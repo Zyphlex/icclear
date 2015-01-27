@@ -12,6 +12,7 @@ and open the template in the editor.
             #waarschuwing{
                 color:red;
                 font-weight: bold;
+                font-size: 16px;
             }
         </style>
     </head>
