@@ -190,7 +190,7 @@
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <input type="text" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
+                                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
                                     </div>
                                 </div>
                             </div>
