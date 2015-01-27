@@ -20,11 +20,11 @@
     
     <div class="row">
         <div class="col-md-3">
-            <p>Spreker:</p>
+            <label for="sprekernaam">Spreker:</label>
         </div>
         
         <div class="col-md-5">
-            <p class="form-control"><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
+            <p name="sprekernaam" class="form-control"><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
         </div>
     </div>
     
