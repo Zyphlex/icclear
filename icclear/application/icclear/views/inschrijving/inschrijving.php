@@ -79,7 +79,10 @@ and open the template in the editor.
         <h3>Betaling</h3>
         
         <input type="checkbox" name="factuur" id="factuur"/>
-        <label>Ja, ik wil een factuur ontvangen.</label><br/>
+        <label>Ja, ik wil een factuur ontvangen.</label>
+        
+        <br/>
+        <br/>
         
         <input type="radio" name="methode" value="VISA"/><label>VISA</label><br/>
         <input type="radio" name="methode" value="Mastercard"/><label>Mastercard</label><br/>
