@@ -11,8 +11,8 @@ class Sessies_model extends CI_Model {
         $query = $this->db->get('sessie');
         $sessie = $query->row();
         
-        $this->load->model('planning_model');   
-        $sessie->spreker = getSpreker($sessie->gebruikerIdSpreker);
+        $this->load->model('gebruiker_model');   
+        $sessie->spreker = $this->gebruiker_model->getSpreker($sessie->gebruikerIdSpreker);
         
         return sessie;
     }
