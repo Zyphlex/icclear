@@ -39,7 +39,9 @@
             <div class="col-md-4">
                 <input type="text" id="stad" name="stad" class="form-control"/>
             </div>
-            
+        </div>
+        
+        <div class="row">            
             <label for="straat" class="control-label col-md-2">Straat:</label>
             <div class="col-md-4">
                 <input type="text" id="straat" name="straat" class="form-control"/>
