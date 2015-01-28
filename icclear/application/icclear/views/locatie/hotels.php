@@ -19,7 +19,7 @@
 
                             <p><?php echo $hotel->hotel->straat . ' ' . $hotel->hotel->nummer ?></p>   
                             <p><?php echo $hotel->hotel->postcode . ' ' . $hotel->hotel->gemeente ?></p>   
-                            <p><?php echo anchor($hotel->hotel->website, $hotel->hotel->website) ?></p>  
+                            <p><?php echo anchor($hotel->hotel->website, 'Naar de website') ?></p>  
                         </div>
                     </div>      
                 </div> 
