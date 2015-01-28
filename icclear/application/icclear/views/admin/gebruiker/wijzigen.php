@@ -2,12 +2,10 @@
 <div class="col-md-10">
     <div class="panel panel-default" role="tablist">
 
-        <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-            <h4 class="panel-title">
-                <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Geselecteerde gebruiker wijzigen
-                </span>
-            </h4>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Gebruiker wijzigen</h1>
+            </div>
         </div>
 
         <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
@@ -114,7 +112,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-4">   
                                     <label for="type">
@@ -139,7 +137,7 @@
                                             </span>
                                         </div>';
                                         } elseif ($gebruiker->typeId == 1) {
-                                           echo '<div class="">
+                                            echo '<div class="">
                                             <input type="radio" name="type" id="field9-1"  class="form-horizontal"  value="2">
                                             <span class="option-title">
                                                 Spreker
@@ -240,7 +238,7 @@
                 </div>
 
                 <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-default"'); ?>
 
                 <?php echo form_close(); ?>
             </div>
