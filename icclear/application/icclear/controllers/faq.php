@@ -13,7 +13,7 @@ class Faq extends CI_Controller {
         $data['user'] = $this->authex->getUserInfo();
 
         $data['title'] = 'IC Clear - F.A.Q.';
-        $data['active'] = 'admin';
+        $data['active'] = '';
 
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getAll();
