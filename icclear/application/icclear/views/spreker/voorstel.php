@@ -15,7 +15,7 @@
         <label for="foto" class="control-label">Foto: </label>
     </div>
     <div class="col-md-4">
-        <input id="foto" type="file" name="foto" size="20" class="form-control file"/>
+        <input id="foto" type="file" name="foto" size="20" class="btn-file"/>
     </div>
 </div>
     
