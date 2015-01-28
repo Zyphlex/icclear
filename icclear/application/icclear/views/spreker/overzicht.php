@@ -12,7 +12,7 @@
             Nullam vulputate imperdiet sem ornare porta. Nunc eget lectus a metus consectetur suscipit in in urna. 
             Quisque vestibulum erat in convallis faucibus. Aliquam sed placerat dolor.
         </p>
-        <p><?php echo anchor('spreker', 'Voorstel indienen', 'class="btn btn-default"'); ?></p>
+        <p><?php echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"'); ?></p>
     </div>
 </div>
 
