@@ -8,8 +8,9 @@
         echo '<div class = "panel-heading">';
         echo '</div>';
         echo '<div class="panel-body">';        
-        echo '<p>' . $gebouw->zaal->gebouwId . ' ' . '</p>';
-        echo '<p>' . $gebouw->gebouw->postcode . '</p>';
+        echo '<p>' . $gebouw->zaal->naam . ' ' . '</p>';
+        echo '<p>' . $gebouw->onderwerp . '</p>';
+        echo '<p>' . $gebouw->gebouw->naam . '</p>';
         echo '</div>';
         echo '</div>  ';
         echo '</div>';
