@@ -89,7 +89,6 @@ echo form_open('inschrijven/inschrijven', $attributes);
         <?php } else { ?>
             <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
         <?php } ?>
-        ?>
         </form>
     </div>
 </div>
