@@ -24,6 +24,3 @@
         </div>
     <?php } ?>
 </div>
-<script>
-    $(document).foundation();
-  </script>
