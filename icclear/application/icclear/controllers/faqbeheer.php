@@ -36,7 +36,7 @@ class Beheerfaq extends CI_Controller {
     public function wijzig($id) {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - F.A.Q. wijzigen';
-        $data['active'] = '';
+        $data['active'] = 'admin';
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('faq_model');
         $data['vraag'] = $this->faq_model->get($id);
