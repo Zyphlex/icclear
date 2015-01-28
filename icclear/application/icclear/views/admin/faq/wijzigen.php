@@ -14,7 +14,7 @@
             <div class="panel-body">
                 <?php
                 $attributes = array('name' => 'myform', 'id' => 'myform');
-                echo form_open('gebruiker/update', $attributes);
+                echo form_open('faqbeheer/update', $attributes);
                 echo form_hidden('id', $gebruiker->id);
                 ?>
 
@@ -46,101 +46,16 @@
                                     </textarea>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="emailadres">
-                                        Emailadres: 
-                                    </label>
-                                </div>  
-
-                                <div class="col-md-8">   
-                                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" required="required">      
-                                </div>
-                            </div>
+                            
                         </div>
 
-
-                        <div class="col-md-6 border-left">      
-                            <div class="row">
-                                <div class="col-md-4">   
-                                    <label for="land">
-                                        Land:
-                                    </label>
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <?php
-                                    foreach ($landen as $land) {
-                                        $options[$land->id] = $land->naam;
-                                    }
-                                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
-                                    ?>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="gemeente">
-                                            Gemeente:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="postcode">
-                                            Postcode:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="straat">
-                                            Straat:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control" required="required">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="huisnummer">
-                                            Huisnummer:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>         
+        
 
                     </div>
 
                 </div>
 
-                <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer', 'class="btn btn-default"'); ?>
+                <?php echo anchor('faq/beheer', 'Annuleer', 'class="btn btn-default"'); ?>
                 <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>

@@ -17,8 +17,8 @@
                                 <td><?php echo $vraag->antwoord ?></td>
                                 <td>
                                     <p>                                        
-                                        <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzig','class="btn btn-default"'); ?>
-                                        <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijder','class="btn btn-default"'); ?>   
+                                        <?php echo anchor('faqbeheer/wijzig/' . $vraag->id, 'Wijzig','class="btn btn-default"'); ?>
+                                        <?php echo anchor('faqbeheer/verwijder/' . $vraag->id, 'Verwijder','class="btn btn-default"'); ?>   
                                     </p>                                 
                                 </td>
                             </tr>
@@ -28,6 +28,6 @@
                     
         
         <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>
-        <?php echo anchor('faq/toevoegen/', 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?> 
+        <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?> 
         
     </div>
