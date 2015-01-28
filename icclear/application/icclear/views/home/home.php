@@ -1,6 +1,12 @@
 <div class="row">
+    <div class="col-md-12">
+        <h1><?php echo $conferentie->naam ?></h1>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-8">
-        <h1>Wat is IC Clear?</h1>
+        <h2>Wat is IC Clear?</h2>
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     

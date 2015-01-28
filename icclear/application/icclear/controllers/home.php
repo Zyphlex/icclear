@@ -14,6 +14,9 @@ class Home extends CI_Controller {
         $data['title'] = 'IC Clear - Home'; 
         $data['active'] = 'home';        
         
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $this->load->model('algemeneinfo_model');
         $data['algemeneinfo'] = $this->algemeneinfo_model-> get();
         
