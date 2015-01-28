@@ -40,7 +40,7 @@ class Faqbeheer extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('faq_model');
         $data['vraag'] = $this->faq_model->get($id);
-        $data['$id'] = $id;        
+        $data['id'] = $id;        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
