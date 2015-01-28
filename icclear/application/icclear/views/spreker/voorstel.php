@@ -26,7 +26,7 @@
     <div class="col-md-2 fileUpload btn btn-default">
         <span>Bestand selecteren</span>
         <input id="foto" type="file" name="foto" class="upload"/>
-        <span id="bestandsnaam"></span>
+        <span id="bestandsnaam">bestandsnaam</span>
     </div>
 </div>
     
