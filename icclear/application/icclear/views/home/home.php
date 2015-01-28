@@ -15,7 +15,7 @@
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-md-4">
             <div class="panel panel-default" data-equalizer-watch>
-                 <div class="panel-body">
+                <div class="panel-body" data-equalizer-watch>
                 <h1><?php echo $aankondiging->titel; ?></h1>
 
                 <p><?php echo $aankondiging->inhoud; ?></p>
@@ -25,3 +25,6 @@
     <?php } ?>
 </div>
 
+
+  <script src="<?php echo base_url() . APPPATH; ?>js/foundation/foundation.js"></script>
+  <script src="<?php echo base_url() . APPPATH; ?>js/foundation/foundation.equalizer.js"></script>
