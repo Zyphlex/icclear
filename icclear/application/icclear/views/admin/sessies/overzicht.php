@@ -24,7 +24,7 @@
                             <th>Beginuur</th>
                             <th>Einduur</th>
                             <th>Zaal</th>
-                            <th></th>
+                            <th>Beheer</th>
                         </tr>
                     </thead>
                     <tbody>

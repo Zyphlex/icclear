@@ -21,7 +21,7 @@
                         <tr>
                             <th>Naam</th>
                             <th>Gemeente</th>
-                            <th></th>
+                            <th>Beheer</th>
                         </tr>
                     </thead>
                     <tbody>

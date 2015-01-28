@@ -22,7 +22,7 @@
                             <th>Gebruiker ID</th>
                             <th>Familienaam</th>
                             <th>Voornaam</th>
-                            <th></th>
+                            <th>Beheer</th>
                         </tr>
                     </thead>
                     <tbody>
