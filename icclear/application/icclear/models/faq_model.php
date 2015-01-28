@@ -32,6 +32,11 @@ class Faq_model extends CI_Model {
         return $query->row();
     }
     
+    function update()
+    {
+        
+    }
+    
     
     
 

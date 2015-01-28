@@ -45,8 +45,15 @@ class Faqbeheer extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
-    public function update($id) {
+    public function update() {
+        $id = $this->input->post('id');
+        $vraag = $this->input->post('vraag');
+        $antwoord = $this->input->post('antwoord');
         
+        $this->load->model('faq_model');
+        $this->faq_model->update($id, $vraag, $antwoord);
+        
+        redirect('faqbeheer/index');
     }
 
     public function verwijder($id) {
