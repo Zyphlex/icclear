@@ -124,6 +124,16 @@ class Gebruiker extends CI_Controller {
 
         $this->overzichtGebruikers();
     }
+    
+    public function gebruikersConferentie()
+    {
+        $data['user'] = $this->authex->getUserInfo();
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruikerConferentie/overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
 
     // TEST
 }
