@@ -1,9 +1,7 @@
 <div class="row">
     <div class="col-md-8">
         <h1>Wat is IC Clear?</h1>
-        <p>
-            <?php echo $algemeneinfo->omschrijving ?>
-        </p>
+        <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
     <div class="col-md-4">
@@ -17,13 +15,9 @@
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-md-4">
             <h1><?php echo $aankondiging->titel; ?></h1>
-            <div class="panel">
-
-                <div id="body">
-                    <?php echo $aankondiging->inhoud; ?>
-                </div>
-
-            </div>
+            
+            <p><?php echo $aankondiging->inhoud; ?></p>
+               
         </div>
     <?php } ?>
 </div>
