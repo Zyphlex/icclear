@@ -45,11 +45,16 @@ class Sessies_model extends CI_Model {
     }
     
     function getAllMetSpreker() {
+        
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        
         $this->db->order_by('conferentiedagId');
         $this->db->where('isGoedgekeurd', '1');
+        $this->db->where('conferentieId', $actieveConferentie->id);
         $query = $this->db->get('sessie');
         $sessies = $query->result();
-        
+                        
         $this->load->model('planning_model');
         
         foreach ($sessies as $sessie) {
