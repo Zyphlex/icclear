@@ -8,6 +8,9 @@
         <?php foreach ($gebouwen as $gebouw) { ?>
             <div class="col-md-6">
                 <div class="panel panel-default">
+                    <div class = "panel-heading">
+                        
+                    </div>
                     <div class = "panel-body">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
