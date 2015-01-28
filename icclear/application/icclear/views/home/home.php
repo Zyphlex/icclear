@@ -1,11 +1,12 @@
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-8">
+        <h1>Wat is IC Clear?</h1>
         <p>
             <?php echo $algemeneinfo->omschrijving ?>
         </p>
     </div> 
     
-    <div class="col-md-5">
+    <div class="col-md-4">
         <div class="thumbnail">
             <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
         </div>
