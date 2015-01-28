@@ -32,12 +32,12 @@ class Faq extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
-    public function wijzig()
+    public function wijzig($id)
     {
         
     }
     
-    public function verwijder()
+    public function verwijder($id)
     {
         
     }

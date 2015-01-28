@@ -7,7 +7,7 @@
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
                 <h4 class="panel-title">
                     <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                        Landen
+                        Vragen
                     </span>
                 </h4>
             </div>
@@ -17,8 +17,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Naam</th>
+                                <th>Vraag</th>
+                                <th>Antwoord</th>
                                 <th>Beheer</th>
                             </tr>
                         </thead>
