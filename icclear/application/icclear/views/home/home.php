@@ -11,11 +11,11 @@
     </div>
 </div>
 
-<div class="row" data-equalizer>
+<div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <div class="col-md-4">
-            <div class="panel panel-default" data-equalizer-watch>
-                <div class="panel-body" data-equalizer-watch>
+        <div class="col-md-4 row-eq-height">
+            <div class="panel panel-default">
+                <div class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
 
                 <p><?php echo $aankondiging->inhoud; ?></p>
