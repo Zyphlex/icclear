@@ -16,7 +16,7 @@
             <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om een voorstel te kunnen indienen.</div>
             <div type="button" class="btn btn-default disabled">Voorstel indienen</div>
         <?php } else { ?>
-            <p><?php anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"')?></p>
+            <p><?php echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"')?></p>
         <?php } ?>
     </div>
 </div>
