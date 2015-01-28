@@ -6,12 +6,14 @@
 
 <div class='row'>
     <div class='col-md-12'>
+        <h3>Sessies</h3>
+        
         <?php
         $id = 0;
         $counter = 1;
         foreach ($sessies as $dag) {
             if ($dag->conferentiedagId != $id) {
-                echo "\n" . '<h3>Dag ' . $counter . '</h3>' . "\n";
+                echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
                 $counter++;
                 ?>
                 <table class = "table">
