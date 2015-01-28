@@ -44,8 +44,7 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
     
-    function getAllMetSpreker() {
-        
+    function getAllMetSpreker() {        
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
         
