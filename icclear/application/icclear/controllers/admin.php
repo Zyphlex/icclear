@@ -41,12 +41,14 @@ class Admin extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();    
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - ';         
+        $data['title'] = 'IC Clear - Dashboard';         
         $data['active'] = 'admin';                
         
         $this->load->model('conferentie_model');
+        $conferentie = $this->conferentie_model->get($id);
         
-        $this->session->set_userdata('conferentie',$this->conferentie_model->get($id));  
+        
+        $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
