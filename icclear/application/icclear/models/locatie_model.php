@@ -97,7 +97,7 @@ class Locatie_model extends CI_Model {
         }  
         
         foreach ($sessies as $sessie) {
-            $sessie->gebouw = $this->get($sessie->zaal->gebouwId);
+            $sessie->gebouw = $this->getGebouw($sessie->zaal->gebouwId);
         }
         
         return $query->result();
