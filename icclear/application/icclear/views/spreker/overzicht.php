@@ -13,7 +13,7 @@
                         <div class="panel-body">
                             <div class="col-md-5">
                                 <div class="thumbnail">
-                                    <img src="http://dummyimage.com/300x300/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
+                                    <img src="http://dummyimage.com/60x60/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                                 </div>
                             </div>
                             <div class="col-md-7">
