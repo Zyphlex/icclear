@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
 document.getElementById("foto").onchange = function () {
     document.getElementById("bestandsnaam").value = this.value;
 };
