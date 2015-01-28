@@ -13,13 +13,6 @@
 
 }
 
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-}
-
 #hoofding {background: url(../img/default/banner.jpg); height:150px;}
 #container {width:1100px;display:block;margin:0 auto;}
 .row {margin:0;}

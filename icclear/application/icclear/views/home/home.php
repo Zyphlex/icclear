@@ -13,7 +13,7 @@
 
 <div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <div class="col-md-4 row-eq-height">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
