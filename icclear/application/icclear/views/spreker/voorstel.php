@@ -1,8 +1,6 @@
 <script type="text/javascript">
-    $( document ).ready(function() {
-        document.getElementById("foto").onchange = function() {
-            document.getElementById("bestandsnaam").value = this.value;
-        };
+    $( "#foto" ).onchange(function() {
+        $( "#bestandsnaam" ).html($(this).value);
     });
 </script>
 
