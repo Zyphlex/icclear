@@ -2,7 +2,7 @@
 
 <div class="col-md-10">
     
-    <h1>Sessies beheren.</h1>   
+    <h1>Hotels beheren.</h1>   
     
 <!--    <div class="panel panel-default" role="tablist">
 
@@ -25,10 +25,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($sessies as $sessie) { ?>
+                        <?php foreach ($hotels as $hotel) { ?>
                             <tr>
-                                <td><?php echo $hotels->naam ?></td>
-                                <td><?php echo $hotels->gemeente ?></td>
+                                <td><?php echo $hotel->naam ?></td>
+                                <td><?php echo $hotel->gemeente ?></td>
                                 <td>
                                     <?php echo anchor('#', 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('#', 'Verwijderen','class="btn btn-default"'); ?>
