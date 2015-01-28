@@ -33,8 +33,6 @@ class Inschrijving_model extends CI_Model {
 
     function getInschrijvingen($id)
     {
-	$this->load->model('gebruiker_model');
-	$this->load->model('conferentie_model');
 	
         $this->db->where('conferentieId',$id);
 	$query = $this->db->get('conferentieOnderdeel');
@@ -42,16 +40,10 @@ class Inschrijving_model extends CI_Model {
 
 	foreach ($onderdelen as $onderdeel)
 	{	
-		$onderdeel->inschrijving = $this->getPerOnderdeel($onderdeel->id);
-		
-//		if ($conferentie->id == $inschrijving->onderdeel_model->get($inschrijving->conferentieOnderdeelId)->conferentieId)
-//		{
-//			$inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
-//			$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-//			$inschrijving->conferentie = $this->conferentie_model->get($inschrijving->onderdeel->conferentieId);
-//		}
+		$onderdeel->inschrijving = $this->getPerOnderdeel($onderdeel->id);		
 	}
         
+	$this->load->model('gebruiker_model');
         foreach ($onderdelen as $onderd) {
             $onderd->gebruiker = $this->gebruiker_model->get($onderd->inschrijving->gebruikerId);
         }
