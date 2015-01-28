@@ -13,10 +13,15 @@
 <div class="row">
     <div class="col-md-8">
         <label>Foto: </label>
-        <input type="file" name="userfile" size="20" />
+        <input type="file" name="foto" size="20" />
 
         <br /><br />
 
         <input type="submit" value="Uploaden" class="btn btn-default" />
+    </div>
+    
+    <div class="col-md-4">
+        <label>Biografie: </label>
+        <textarea name="biografie" rows="5"></textarea>
     </div>
 </div>
