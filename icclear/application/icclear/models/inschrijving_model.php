@@ -44,8 +44,8 @@ class Inschrijving_model extends CI_Model {
 	}
         
 	$this->load->model('gebruiker_model');
-        foreach ($onderdelen as $onderd) {
-            $onderd->gebruiker = $this->gebruiker_model->get($onderd->inschrijving->gebruikerId);
+        foreach ($onderdelen as $onderdeel) {
+            $onderdeel->gebruiker = $this->gebruiker_model->get($onderdeel->inschrijving->gebruikerId);
         }
         
         return $onderdelen;
