@@ -8,7 +8,7 @@ foreach ($aankondigingen as $aankondiging){
         <div class="panel">
 
             <div id="body">
-                
+                <?php echo $aankondiging->inhoud; ?>
             </div>
 
         </div>
