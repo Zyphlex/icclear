@@ -1,11 +1,3 @@
-<style>
-    #waarschuwing{
-        color:red;
-        font-weight: bold;
-        font-size: 16px;
-    }
-</style>
-
 <div class="row">
     <div class="col-md-12">
         <h1>Zelf spreker worden</h1>
@@ -28,6 +20,13 @@
                 echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"');
             }
             ?></p>
+        
+        <?php if ($user == null) { ?>            
+            <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om een voorstel te kunnen indienen.</div>
+            <input type="button" value="Voorstel indienen" class="btn btn-default disabled"/>
+        <?php } else { ?>
+            <input type="submit" value="Voorstel indienen" class="btn btn-default"/>
+        <?php } ?>
     </div>
 </div>
 
