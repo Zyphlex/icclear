@@ -1,10 +1,3 @@
-<script type="text/javascript">
-    $( "#foto" ).onchange(function() {
-        $( "#bestandsnaam" ).html($(this).value);
-    });
-</script>
-
-
 <div class="row">
     <div class="col-md-12">
         <h1>Conferentie <?php echo $conferentie->naam ?> - Voorstel voor sessie indienen</h1>
