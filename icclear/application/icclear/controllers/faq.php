@@ -22,7 +22,13 @@ class Faq extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
-    // TEST
+    public function beheer(){
+        $data['user']  = $this->authex->getUserInfo();        
+        $data['title'] = 'IC Clear - F.A.Q.';         
+        $data['active'] = '';
+        $this->load->model('faq_model');
+        $data['vragen'] = $this->faq_model->getAll();
+    }
 }
 
 /* End of file welcome.php */

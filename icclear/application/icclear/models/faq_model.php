@@ -19,7 +19,7 @@ class Faq_model extends CI_Model {
     }
 
        
-    function getFaq()
+    function getAll()
     {        
         $query = $this->db->get('faq');
         return $query->result();
