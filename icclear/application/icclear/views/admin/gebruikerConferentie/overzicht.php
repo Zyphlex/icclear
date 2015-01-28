@@ -28,8 +28,8 @@
                     <tbody>
                         <?php foreach ($inschrijvingen as $inschrijving) { ?>
                             <tr>
-                                <td><?php echo $inschrijving->gebruiker->id; ?></td>
-                                <td><?php echo $inschrijving->gebruiker->familienaam; ?></td>
+                                <td><?php echo $inschrijving->omschrijving; ?></td>
+                                <td><?php echo $inschrijving->inschrijving->gebruikerId; ?></td>
                                 <td><?php echo $inschrijving->gebruiker->voornaam; ?></td>
                                 <td>
                                     <?php echo anchor('sessies/wijzigen/' . $sessie->id, 'Wijzigen','class="btn btn-default"'); ?>
