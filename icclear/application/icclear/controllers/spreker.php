@@ -21,6 +21,10 @@ class Spreker extends CI_Controller {
         $this->template->load('main_master', $partials, $data); 
     }
     
+    public function voorstel() {
+        
+    }
+    
   
     
 }
