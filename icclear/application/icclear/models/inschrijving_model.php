@@ -33,7 +33,7 @@ function getInschrijvingenPerGebruiker()
 	
 	$conferentie = $this->conferentie_model->getActieveConferentie();
 
-	foreach ($inschrijvingen as $inschrijving)
+	/*foreach ($inschrijvingen as $inschrijving)
 	{	
 		$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
 		if ($conferentie->id == $inschrijving->onderdeel_model->get($inschrijving->conferentieOnderdeelId)->conferentieId)
@@ -42,7 +42,7 @@ function getInschrijvingenPerGebruiker()
 			$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
 			$inschrijving->conferentie = $this->conferentie_model->get($inschrijving->onderdeel->conferentieId);
 		}
-	}
+	}*/
         
         return $inschrijvingen;
 }
