@@ -42,6 +42,6 @@
 
         </div>
         
-        <?php echo anchor('land/nieuw', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?> 
+        <?php echo anchor('land/nieuw', 'Nieuw land toevoegen','class="btn btn-default"'); ?> 
         
     </div>
