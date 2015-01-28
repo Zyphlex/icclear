@@ -19,7 +19,7 @@
                             <tr>
                                 <th>Vraag</th>
                                 <th>Antwoord</th>
-                                <th></th>
+                                <th>Beheer</th>
                             </tr>
                         </thead>
                         <tbody>
