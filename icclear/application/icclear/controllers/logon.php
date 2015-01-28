@@ -151,6 +151,7 @@ class Logon extends CI_Controller {
         $this->email->subject('Geregistreerd bij IC Clear');
         $this->email->message('U bent geregistreerd! Klik op onderstaande link om uw registratie te activeren ' . "\n" . "\n " . site_url("logon/activeer/$generatedKey"));
         $this->email->send();
+         echo $this->email->print_debugger();
     }
 
     public function resetPass() {
