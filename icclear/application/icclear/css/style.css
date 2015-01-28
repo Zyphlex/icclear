@@ -12,6 +12,13 @@
     font-style: normal;
 
 }
+a.morelink {
+    text-decoration:none;
+    outline: none;
+}
+.morecontent span {
+    display: none;
+}
 
 #hoofding {background: url(../img/default/banner.jpg); height:150px;}
 #container {width:1100px;display:block;margin:0 auto;}

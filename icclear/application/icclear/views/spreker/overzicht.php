@@ -1,3 +1,6 @@
+<script type="text/javascript" src="http://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script>
+
+
 <div class="row">
     <div class="col-md-12">
         <h1>Sprekers tijdens de conferentie</h1>
@@ -15,8 +18,8 @@
                                 <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                             </div>
                             <div class="col-md-7">
-                               <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
-                                <p><?php echo $spreker->biografie ?></p>  
+                                <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
+                                <p class="shorten"><?php echo $spreker->biografie ?></p>  
                             </div>                        
                         </div>      
                     </div> 
@@ -25,3 +28,15 @@
        <?php } ?>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".shorten").shorten();}            
+    );
+
+    $(".comment").shorten({
+        "showChars" : 50,
+        "moreText"  : "Meer",
+        "lessText"  : "Minder",
+    });
+</script>
