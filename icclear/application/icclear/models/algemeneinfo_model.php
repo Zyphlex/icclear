@@ -13,7 +13,7 @@ class Algemeneinfo_model extends CI_Model {
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
         
-        $this->db->where('conferentieId',$actieveConferentie->id);
+        $this->db->where('id',$actieveConferentie->id);
         $query = $this->db->get('algemeneInfo');        
         return $query->row();        
     }
