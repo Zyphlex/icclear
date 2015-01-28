@@ -1,32 +1,21 @@
-<html>
-    <head>
-        <meta http-equiv="Conten-Type" content="text-html; charset=UTF-8">
-        <title>Deel x Oefening y</title>
-    </head>
-    <body>
-        <?php
-        // -------------------------------------------------------------------------------
-        // Deel x Oefening y
-        // -------------------------------------------------------------------------------
-        // Thomas More Kempen 2 TI 3
-        // -------------------------------------------------------------------------------
-        // php pagina: oefeningyy.php
-        //
-        // doel van de oefening:
-        //
-        // -------------------------------------------------------------------------------
-        // auteur: Abderrahmane Ikrou
-        // -------------------------------------------------------------------------------
-        
-        if ($user == null) {
-            echo '<p>je moet aangemeld zijn!</p>';
-        }
-        else
-        {
-            echo '<p>goed zo</p>';
-        }
-        ?>
-        
-        
-    </body>
-</html>
+<div class="row">
+    <div class="col-md-12">
+        <h1>Conferentie - <?php echo $conferentie->naam ?></h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Profielfoto en biografie</h2>
+    </div> 
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <input type="file" name="userfile" size="20" />
+
+        <br /><br />
+
+        <input type="submit" value="upload" />
+    </div>
+</div>
