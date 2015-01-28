@@ -15,13 +15,8 @@
                                 <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                             </div>
                             <div class="col-md-7">
-                                <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>                                
-                                <?php foreach ($sprekers as $sessie) { ?>  
-                                <?php if ($spreker->id == $sessie->gebruikerIdSpreker) { ?>
-                                <p><?php echo $sessie->onderwerp ?></p>
-                                <?php } ?>
-                                <?php } ?>
-                            </div>                        
+                                <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>        
+                                <p><?php echo $spreker->sessie->onderwerp ?></p>
                         </div>      
                     </div> 
                 </div>  
