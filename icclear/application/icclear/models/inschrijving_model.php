@@ -22,7 +22,7 @@ class Inschrijving_model extends CI_Model {
 
 }
 
-function getPerOnderdeel($id) {
+    function getPerOnderdeel($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('inschrijving');
         $sessie = $query->row();
@@ -31,8 +31,8 @@ function getPerOnderdeel($id) {
     }
 
 
-function getInschrijvingen($id)
-{
+    function getInschrijvingen($id)
+    {
 	$this->load->model('gebruiker_model');
 	$this->load->model('conferentie_model');
 	
