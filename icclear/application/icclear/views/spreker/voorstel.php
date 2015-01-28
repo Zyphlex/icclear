@@ -11,10 +11,6 @@
 </div>
 
 <div class="row">
-    
-</div>
-
-<div class="row">
     <div class="col-md-8">
         <label>Foto: </label>
         <input type="file" name="userfile" size="20" />
