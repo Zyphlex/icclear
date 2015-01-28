@@ -14,7 +14,7 @@ class Algemeneinfo_model extends CI_Model {
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId',$actieveConferentie->id);
-        $query = $this->db->get('algemeneinfo');        
+        $query = $this->db->get('algemeneInfo');        
         return $query->row();        
     }
     
