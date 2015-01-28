@@ -6,7 +6,7 @@
     
     <div class="col-md-4">
         <div class="thumbnail">
-            <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
+            <img src="http://dummyimage.com/300x300/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
         </div>
     </div>
 </div>
