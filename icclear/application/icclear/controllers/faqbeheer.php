@@ -20,7 +20,7 @@ class Beheerfaq extends CI_Controller {
         }
     }
     
-    public function beheer() {
+    public function index() {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - F.A.Q.';
         $data['active'] = 'admin';        
