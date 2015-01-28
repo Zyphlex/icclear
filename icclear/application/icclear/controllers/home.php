@@ -15,7 +15,7 @@ class Home extends CI_Controller {
         $data['title'] = 'IC Clear - Home'; 
         $data['active'] = 'home';
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'welcome_message', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => '', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }       
 
