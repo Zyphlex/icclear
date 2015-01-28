@@ -1,24 +1,13 @@
-
-<div class="col-md-10">
-    <div class="panel panel-default" role="tablist">
-
-        <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-            <h4 class="panel-title">
-                <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Geselecteerde FAQ toevoegen
-                </span>
-            </h4>
-        </div>
-
-        <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
-            <div class="panel-body">
+<div class="row">
+    <div class="col-md-12">
+        <h1>Geselecteerde FAQ toevoegen</h1>
+    </div>
+</div>
+<div class="col-md-10">                      
                 <?php
                 $attributes = array('name' => 'myform', 'id' => 'myform');
                 echo form_open('faqbeheer/insert', $attributes);                
-                ?>
-                
-                <div class="modal-body">
-
+                ?>           
                     <div class="row">
                         <div class="col-md-6">  
 
@@ -48,14 +37,9 @@
 
                     </div>
 
-                </div>
-
                 <?php echo anchor('faq/beheer', 'Annuleer', 'class="btn btn-default"'); ?>
                 <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>
-            </div>
-
-        </div>
-    </div>
+           
 </div>
