@@ -18,7 +18,6 @@
         <span>Bestand selecteren</span>
         <input id="foto" type="file" name="foto" class="upload"/>
     </div>
-    <span id="bestandsnaam">bestandsnaam</span>
 </div>
     
     <br/>
