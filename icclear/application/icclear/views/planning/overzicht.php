@@ -11,7 +11,7 @@
         $counter = 1;
         foreach ($sessies as $dag) {
             if ($dag->conferentiedagId != $id) {
-                echo "\n" . '<h1>Dag ' . $counter . '</h1>' . "\n";
+                echo "\n" . '<h3>Dag ' . $counter . '</h3>' . "\n";
                 $counter++;
                 ?>
                 <table class = "table">
