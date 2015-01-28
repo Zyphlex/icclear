@@ -16,7 +16,6 @@
                             </div>
                             <div class="col-md-7">
                                 <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
-                                <div class="comment"><?php echo $spreker->biografie ?></div>  
                             </div>                        
                         </div>      
                     </div> 
