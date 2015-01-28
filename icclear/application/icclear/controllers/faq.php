@@ -26,6 +26,7 @@ class Faq extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - F.A.Q.';         
         $data['active'] = '';
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getAll();
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/overzicht', 'footer' => 'main_footer');
