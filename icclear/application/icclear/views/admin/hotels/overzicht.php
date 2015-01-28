@@ -27,7 +27,7 @@
                 </table>
     
     <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>      
-    <?php echo anchor('hotels', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?>                      
+    <?php echo anchor('hotels', 'Nieuwe hotel toevoegen','class="btn btn-default"'); ?>                      
     
     
 </div>
