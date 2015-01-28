@@ -16,8 +16,10 @@
                             </div>
                             <div class="col-md-7">
                                 <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>                                
-                                <?php foreach ($sprekers->sessie as $sessie) { ?>   
+                                <?php foreach ($sprekers as $sessie) { ?>  
+                                <?php if ($spreker->id == $sessie->gebruikerIdSpreker) { ?>
                                 <p><?php echo $sessie->onderwerp ?></p>
+                                <?php } ?>
                                 <?php } ?>
                             </div>                        
                         </div>      
