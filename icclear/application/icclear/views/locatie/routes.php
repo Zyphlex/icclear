@@ -1,18 +1,22 @@
+<div class='row'>
+    <div class='col-md-12'>
+        <h1>Routes</h1>
+    </div>
+</div>
 
-<h2>Routes</h2>
 <div class="row">  
-    <?php
-    foreach ($routes as $route) {
-        echo '<div class="col-md-6">';
-        echo '<div class="panel panel-default">';
-        echo '<div class = "panel-heading">';
-        echo '<h3 class = "panel-title">' . $route->vertrekPunt . '</h3>';
-        echo '</div>';
-        echo '<div class="panel-body">';
-        echo '<p>' . $route->beschrijving . ' </p>';        
-        echo '</div>';
-        echo '</div>  ';
-        echo '</div>';
-    }
-    ?>
+    <div class="col-md-12">
+        <?php foreach ($routes as $route) { ?>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class = "panel-heading">
+                        <h3><?php $route->vertrekPunt ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php $route->beschrijving ?></p>        
+                    </div>
+                </div>  
+            </div>
+        <?php } ?>
+    </div>
 </div>
