@@ -22,7 +22,7 @@ class Programma extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $this->load->model('activiteit_model');
-        $data['sessies'] = $this->activiteit_model->getActiviteitenActieve();
+        $data['activiteiten'] = $this->activiteit_model->getActiviteitenActieve();
         
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
