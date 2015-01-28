@@ -1,7 +1,9 @@
 <script type="text/javascript">
-document.getElementById("foto").onchange = function () {
-    document.getElementById("bestandsnaam").value = this.value;
-};
+    $( document ).ready(function() {
+        document.getElementById("foto").onchange = function() {
+            document.getElementById("bestandsnaam").value = this.value;
+        };
+    });
 </script>
 
 
