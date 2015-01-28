@@ -18,6 +18,9 @@ class Programma extends CI_Controller {
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAllMetSpreker();
         
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $this->load->model('activiteit_model');
         $data['sessies'] = $this->activiteit_model->getActiviteitenActieve();
         
