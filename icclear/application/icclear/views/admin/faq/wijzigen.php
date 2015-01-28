@@ -37,16 +37,16 @@
                             
                         </div>
 
-        
+          <?php echo anchor('faq/beheer', 'Annuleer', 'class="btn btn-default"'); ?>
+                <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
+
+                <?php echo form_close(); ?>
 
                     </div>
 
             
 
-                <?php echo anchor('faq/beheer', 'Annuleer', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
-
-                <?php echo form_close(); ?>
+              
            
 
        
