@@ -14,10 +14,11 @@
 <div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-md-4">
-            <h1><?php echo $aankondiging->titel; ?></h1>
-            
-            <p><?php echo $aankondiging->inhoud; ?></p>
-               
+            <div class="panel panel-default">
+                <h1><?php echo $aankondiging->titel; ?></h1>
+
+                <p><?php echo $aankondiging->inhoud; ?></p>
+            </div>
         </div>
     <?php } ?>
 </div>
