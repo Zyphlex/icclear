@@ -1,28 +1,47 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
-        <title>Deel x oefening y</title>
-    </head>
-    <body>
-        <?php
-        //--------------------------------------------------------------------------------
-        // Deel x oefening y
-        //--------------------------------------------------------------------------------
-        // Thomas More Kempen 2TI
-        //--------------------------------------------------------------------------------
-        // php pagina: oefeningyy.php
-        //
-        // Doel van de oefening:
-        //
-        //--------------------------------------------------------------------------------
-        // Auteur: Leslie Milants
-        //--------------------------------------------------------------------------------
-        ?>
-    </body>
-</html>
+
+
+    <div class="col-md-10">
+        
+        <h1>Landen beheren</h1>  
+        
+        <div class="panel panel-default" role="tablist">
+
+            <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
+                <h4 class="panel-title">
+                    <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
+                        Landen
+                    </span>
+                </h4>
+            </div>
+            
+            <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Naam</th>
+                                <th>Beheer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($landen as $land) {?>
+                            <tr>
+                                <td><?php echo $gebruiker->id ?></td>
+                                <td><?php echo $land->naam ?></td>
+                                <td><?php echo anchor('land/wijzig/' . $land->id, 'Wijzigen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('land/verwijder/' . $land->id, 'Verwijderen','class="btn btn-default"'); ?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                    
+                    
+                </div>
+            </div>
+
+        </div>
+        
+        <?php echo anchor('land/nieuw', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?> 
+        
+    </div>
