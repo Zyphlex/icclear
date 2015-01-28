@@ -27,7 +27,7 @@
                     
                 <h4>Conferentie</h4>
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
-                    <li><?php echo anchor('gebruiker', 'Gebruikers'); ?></li>
+                    <li><?php echo anchor('gebruiker/overzichtConferentie', 'Gebruikers'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
                 
             <?php } ?>            
