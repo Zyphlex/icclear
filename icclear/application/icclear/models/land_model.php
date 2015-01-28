@@ -19,12 +19,11 @@ class Land_model extends CI_Model {
     }
 
        
-    function getLand()
+    function getAll()
     {        
         $query = $this->db->get('land');
         return $query->result();
-    }
-    
+    }    
 
     
 }

@@ -44,7 +44,7 @@ class Logon extends CI_Controller {
         $data['user'] = '';
 
         $this->load->model('land_model');
-        $data['landen'] = $this->land_model->getLand();
+        $data['landen'] = $this->land_model->getAll();
 
         $this->load->view('logon/registreer', $data);
     }
