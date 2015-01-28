@@ -11,16 +11,7 @@
             Phasellus suscipit felis sed nibh euismod, vel varius velit porttitor. 
             Nullam vulputate imperdiet sem ornare porta. Nunc eget lectus a metus consectetur suscipit in in urna. 
             Quisque vestibulum erat in convallis faucibus. Aliquam sed placerat dolor.
-        </p>
-        <p><?php
-            if ($user == null) {
-
-                echo '<p id="waarschuwing">Je moet eerst aangemeld zijn om een voorstel te kunnen indienen.</p>';
-            } else {
-                echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"');
-            }
-            ?></p>
-        
+        </p>        
         <?php if ($user == null) { ?>            
             <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om een voorstel te kunnen indienen.</div>
             <input type="button" value="Voorstel indienen" class="btn btn-default disabled"/>
