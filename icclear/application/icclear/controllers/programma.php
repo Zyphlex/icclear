@@ -17,6 +17,12 @@ class Programma extends CI_Controller {
         
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAllMetSpreker();
+        
+        $this->load->model('activiteit_model');
+        $data['sessies'] = $this->activiteit_model->getActiviteitenActieve();
+        
+        $this->load->model('aankondiging_model');
+        $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

@@ -1,6 +1,6 @@
 <div class='row'>
     <div class='col-md-12'>
-        <h1>Programma overzicht</h1>
+        <h1>Programma overzicht - <?php echo $conferentie->naam ?></h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Curabitur finibus tortor at erat sodales ornare. 
@@ -39,20 +39,19 @@
                             <th>Spreker</th>
                         </tr>
                     </thead>  
-                    <tbody>
-                        <?php $id = $dag->conferentiedagId;?>                
+                    <tbody>            
                         <?php
                         $teller = 1;
                         foreach ($sessies as $sessie) {
                             if ($dag->conferentiedagId == $sessie->conferentiedagId) { ?>
                                 <tr>
-                                <td><?php echo $teller ?></td>
-                                <td><?php echo $sessie->onderwerp ?></td>
-                                <td><?php echo $sessie->omschrijving ?></td>
-                                <td><?php echo $sessie->planning->beginUur ?></td>
-                                <td><?php echo $sessie->planning->eindUur ?></td>
-                                <td><?php echo $sessie->zaal->naam ?></td>
-                                <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>
+                                    <td><?php echo $teller ?></td>
+                                    <td><?php echo $sessie->onderwerp ?></td>
+                                    <td><?php echo $sessie->omschrijving ?></td>
+                                    <td><?php echo $sessie->planning->beginUur ?></td>
+                                    <td><?php echo $sessie->planning->eindUur ?></td>
+                                    <td><?php echo $sessie->zaal->naam ?></td>
+                                    <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>
                                 </tr>
                                 <?php $teller++;?>
                             <?php } ?>
@@ -74,8 +73,30 @@
         <h3>Activiteiten</h3>
         
         <div class="panel panel-default">
-            <div class="panel-body">
-                
+            <div class="panel-body">                
+                <table class = "table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Naam</th>
+                            <th>Omschrijving</th>
+                            <th>Prijs</th>
+                        </tr>
+                    </thead>  
+                    <tbody>            
+                        <?php
+                        $teller = 1;
+                        foreach ($activiteiten as $activiteit) { ?>
+                                <tr>
+                                    <td><?php echo $teller ?></td>
+                                    <td><?php echo $activiteit->naam ?></td>
+                                    <td><?php echo $activiteit->omschrijving ?></td>
+                                    <td><?php echo toKomma($activiteit->prijs) ?> EUR</td>
+                                </tr>
+                                <?php $teller++;?>
+                        <?php } ?>
+                    </tbody>
+                </table>         
                 
             </div>
         </div>

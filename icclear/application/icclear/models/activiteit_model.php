@@ -21,6 +21,14 @@ class Activiteit_model extends CI_Model {
          return $activiteiten;
     }
     
+    function getActiviteitenActieve() {
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->where('conferentieId',$actieveConferentie->id);
+        $query = $this->db->get('activiteit');
+        return $query->result();
+    }
     
 }
 
