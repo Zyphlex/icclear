@@ -41,7 +41,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <textarea name="antwoord" id="antwoord" class="form-control" required="required" rows="4"><?php echo $vraag->antwoord; ?>
+                                    <textarea name="antwoord" id="antwoord" class="form-control" required="required" rows="3"><?php echo $vraag->antwoord; ?>
                                     </textarea>
                                 </div>
                             </div>
