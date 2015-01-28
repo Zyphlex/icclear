@@ -56,7 +56,7 @@ class Locatie_model extends CI_Model {
         
         foreach ($hotelConferenties as $hotelConferentie)
         {
-            $hotelConferentie->conferentie = $this->conferentie_model->get($hotelConferentie->conferentieId);
+            //$hotelConferentie->conferentie = $this->conferentie_model->get($hotelConferentie->conferentieId);
             $hotelConferentie->hotel = $this->getHotel($hotelConferentie->hotelId);
         }
         
