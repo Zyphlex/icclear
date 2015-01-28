@@ -29,6 +29,20 @@ class Aankondiging_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    function getAankondigingenActieve(){
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        
+       $this->db->where('conferentieId',$actieveConferentie->id);
+        $query = $this->db->get('aankondiging');        
+        $aankondigingen = $query->result();        
+        $this->load->model('gebruiker_model');        
+        foreach ($aankondigingen as $aankondiging){
+            $aankondiging->poster = $this->gebruiker_model->get($aankondiging->gepostDoor);
+        }                
+        return $aankondigingen; 
+    }
+    
     
 }
 
