@@ -32,8 +32,8 @@
                                 <td><?php echo $inschrijving->gebruiker->familienaam; ?></td>
                                 <td><?php echo $inschrijving->gebruiker->voornaam; ?></td>
                                 <td>
-                                    <?php echo anchor('sessies/wijzigen/' . $inschrijving->gebruiker->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('sessies/verwijderen' . $inschrijving->gebruiker->id, 'Verwijderen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('gebruiker/gebruikersConferentie', 'Wijzigen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('gebruiker/gebruikersConferentie', 'Verwijderen','class="btn btn-default"'); ?>
                                 </td>
                             </tr>
                         <?php } ?>
