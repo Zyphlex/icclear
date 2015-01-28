@@ -28,9 +28,9 @@
                                 <td><?php echo $vraag->vraag ?></td>
                                 <td><?php echo $vraag->antwoord ?></td>
                                 <td>
-                                    <?php echo anchor('faq/wijzig/' . $faq->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/verwijder/' . $faq->id, 'Verwijderen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/toevoegen/' . $faq->id, 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzigen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijderen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/toevoegen/' . $vraag->id, 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?>
                                 </td>
                             </tr>
                             <?php } ?>
