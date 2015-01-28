@@ -7,6 +7,14 @@ class Onderdeel_model extends CI_Model {
         parent::__construct();
     }
     
+    function get($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('conferentieOnderdeel');
+        return $query->result();
+        
+    }
+     
     
     function getOnderdelenPerConferentie()
     {
