@@ -40,7 +40,7 @@ function getInschrijvingenPerGebruiker()
 		{
 			$inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
 			$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-			$inschrijving->conferentie = $this->onderdeel_model->getConferentieVanOnderdeel($inschrijving->onderdeel->conferentieId);
+			$inschrijving->conferentie = $this->conferentie_model->get($inschrijving->onderdeel->conferentieId);
 		}
 	}
         
