@@ -223,8 +223,8 @@
 
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('toevoegen', 'Toevoegen', 'id="toevoegen"', 'class="btn btn-primary"'); ?>
+                <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer', 'class="btn btn-default"'); ?>
+                <?php echo form_submit('toevoegen', 'Toevoegen', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>
             </div>
