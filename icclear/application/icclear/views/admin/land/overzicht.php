@@ -27,7 +27,7 @@
                         <tbody>
                             <?php foreach($landen as $land) {?>
                             <tr>
-                                <td><?php echo $gebruiker->id ?></td>
+                                <td><?php echo $land->id ?></td>
                                 <td><?php echo $land->naam ?></td>
                                 <td><?php echo anchor('land/wijzig/' . $land->id, 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('land/verwijder/' . $land->id, 'Verwijderen','class="btn btn-default"'); ?></td>
