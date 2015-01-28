@@ -1,6 +1,3 @@
-<script type="text/javascript" src="http://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script>
-
-
 <div class="row">
     <div class="col-md-12">
         <h1>Sprekers tijdens de conferentie</h1>
@@ -28,13 +25,3 @@
        <?php } ?>
     </div>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function(){     
-        $(".comment").shorten({
-            "showChars" : 50,
-            "moreText"  : "Meer",
-            "lessText"  : "Minder",
-        });
-    );
-</script>
