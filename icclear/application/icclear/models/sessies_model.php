@@ -55,7 +55,7 @@ class Sessies_model extends CI_Model {
         $sessies = $query->result();
                         
         $this->load->model('planning_model');
-        
+       
         foreach ($sessies as $sessie) {
             $sessie->planning = 
                  $this->planning_model->getSessie($sessie->id);
