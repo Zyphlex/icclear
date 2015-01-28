@@ -89,10 +89,12 @@
         <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
     </div>
         
-    <div class="col-md-12" class="italic">
+    <div class="col-md-4">
+        <p class="italic">
         Vestibulum in velit at nibh euismod commodo. 
         Aliquam vitae urna consectetur metus convallis sodales. 
         Donec suscipit eu velit ac tempor. 
+        </p>
     </div>
 </div>
 
