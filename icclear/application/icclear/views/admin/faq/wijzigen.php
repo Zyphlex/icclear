@@ -15,7 +15,7 @@
                 <?php
                 $attributes = array('name' => 'myform', 'id' => 'myform');
                 echo form_open('faqbeheer/update', $attributes);
-                echo form_hidden('id', $gebruiker->id);
+                echo form_hidden('id', $user->id);
                 ?>
 
                 <div class="modal-body">
