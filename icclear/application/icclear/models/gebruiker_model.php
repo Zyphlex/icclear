@@ -34,9 +34,9 @@ class Gebruiker_model extends CI_Model {
         $query = $this->db->get('gebruiker');
         $sprekers = $query->result();    
         
-        $this->load->model('sessie_model');
+        $this->load->model('sessies_model');
         foreach ($sprekers as $spreker) {
-            $spreker->sessie = $this->sessie_model->getSessiesVanSpreker($spreker->id);
+            $spreker->sessie = $this->sessies_model->getSessiesVanSpreker($spreker->id);
         }
     }
     
