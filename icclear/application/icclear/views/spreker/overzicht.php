@@ -5,7 +5,6 @@
 </div>
 
 <div class="row"> 
-    <div class="col-md-12">
         <?php foreach ($sprekers as $spreker) { ?>   
         <div class="col-md-4">
                 <div class="panel panel-default">
@@ -24,5 +23,4 @@
                 </div>  
             </div>
         <?php } ?>
-    </div>
 </div>
