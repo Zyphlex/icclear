@@ -2,9 +2,11 @@
     <div class='col-md-12'>
         <?php
         $id = 0;
+        $counter = 1;
         foreach ($sessies as $dag) {
             if ($dag->conferentiedagId != $id) {
-                echo "\n" . '<h1>Dag ' . $dag->conferentiedagId . '</h1>' . "\n";
+                echo "\n" . '<h1>Dag ' . $counter . '</h1>' . "\n";
+                $counter++;
                 ?>
                 <table class = "table">
                     <thead>
