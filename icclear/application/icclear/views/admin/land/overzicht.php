@@ -25,6 +25,6 @@
                     </table>
         
         <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>
-        <?php echo anchor('land/nieuw', 'Nieuw land toevoegen','class="btn btn-default"'); ?> 
+        <?php echo anchor('land/nieuw', 'Nieuwe land toevoegen','class="btn btn-default"'); ?> 
         
     </div>
