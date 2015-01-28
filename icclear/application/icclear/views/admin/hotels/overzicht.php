@@ -2,20 +2,8 @@
 
 <div class="col-md-10">
     
-    <h1>Hotels beheren</h1>   
-    
-<!--    <div class="panel panel-default" role="tablist">
+    <h1>Hotels beheren</h1>      
 
-        <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-            <h4 class="panel-title">
-                <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Sessies
-                </span>
-            </h4>
-        </div>
-
-        <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
-            <div class="panel-body">-->
                 <table class="table">
                     <thead>
                         <tr>
@@ -37,10 +25,6 @@
                         <?php } ?>
                     </tbody>
                 </table>
-<!--            </div>
-        </div>
-
-    </div>-->
     
     <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>      
     <?php echo anchor('hotels', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?>                      

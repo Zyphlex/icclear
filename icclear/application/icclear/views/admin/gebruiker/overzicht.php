@@ -3,10 +3,6 @@
     <div class="col-md-10">
         
         <h1>Gebruikers beheren.</h1>  
-        
-        <div class="panel panel-default" role="tablist">
-            <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
-                <div class="panel-body">
                     <table class="table">
                         <thead>
                             <tr>
@@ -28,12 +24,6 @@
                             <?php } ?>
                         </tbody>
                     </table>
-                    
-                    
-                </div>
-            </div>
-
-        </div>
         
         <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?> 
         <?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?> 
