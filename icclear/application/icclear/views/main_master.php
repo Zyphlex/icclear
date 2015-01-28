@@ -42,6 +42,9 @@
     
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="<?php echo base_url() . APPPATH; ?>js/bootstrap.js"></script>  
+
+  <script src="<?php echo base_url() . APPPATH; ?>js/foundation.js"></script>
+  <script src="<?php echo base_url() . APPPATH; ?>js/foundation.equalizer.js"></script>
   
   
 </body>
