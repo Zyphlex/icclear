@@ -181,9 +181,9 @@ class Logon extends CI_Controller {
         $get_result = $this->email_model->check_email_availablity();
 
         if (!$get_result)
-            echo '<p class="form-note form-note-used">Email Already Used</p>';
+            echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
         else
-            echo '<p class="form-note form-note-ok">Email Available</p>';
+            echo '<p class="form-note form-note-ok">Beschikbaar</p>';
     }
 
     function check_username_availablity() {
@@ -191,9 +191,9 @@ class Logon extends CI_Controller {
         $get_result = $this->gebruiker_model->check_username_availablity();
 
         if (!$get_result)
-            echo '<p class="form-note form-note-used">Username Taken</p>';
+            echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
         else
-            echo '<p class="form-note form-note-ok">Username Available</p>';
+            echo '<p class="form-note form-note-ok">Beschikbaar</p>';
     }
 
     // TEST
