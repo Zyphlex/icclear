@@ -5,7 +5,9 @@
 </div>
     
 <div class='row'>
+        <?php $venue = "" ?>
         <?php foreach ($gebouwen as $gebouw) { ?>
+        <?php if($venue != $gebouw->gebouw->naam) { ?>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                        
@@ -20,6 +22,8 @@
                     </div>
                 </div>  
             </div>
+        <?php $venue = $gebouw->gebouw->naam ?>
+        <?php } ?>
         <?php } ?>
 </div>
   
