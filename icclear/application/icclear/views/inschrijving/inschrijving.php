@@ -12,8 +12,8 @@ echo form_open('inschrijven/inschrijven', $attributes);
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
         <p> 
-            De conferentie vindt plaats van <?php echo toDDMMYYYY($conferentie->beginDatum); ?> 
-            tot en met <?php echo toDDMMYYYY($conferentie->eindDatum); ?>.
+            De conferentie vindt plaats van <span class="bold"><?php echo toDDMMYYYY($conferentie->beginDatum); ?></span>
+            tot en met <span class="bold"><?php echo toDDMMYYYY($conferentie->eindDatum); ?></span>.
         </p>
         <p>U gaat akkoord met de voorwaarden en prijzen.</p>
     </div>
