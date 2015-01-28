@@ -29,8 +29,7 @@
                                 <td><?php echo $vraag->antwoord ?></td>
                                 <td>
                                     <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijderen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/toevoegen/' . $vraag->id, 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijderen','class="btn btn-default"'); ?>                                    
                                 </td>
                             </tr>
                             <?php } ?>
@@ -44,6 +43,6 @@
         </div>
         
         <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>
-        <?php echo anchor('land/nieuw', 'Nieuw land toevoegen','class="btn btn-default"'); ?> 
+        <?php echo anchor('faq/toevoegen/', 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?> 
         
     </div>
