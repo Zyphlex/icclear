@@ -14,8 +14,8 @@
     <div class="col-md-2">
         <label for="foto" class="control-label">Foto: </label>
     </div>
-    <div class="col-md-4 form-control">
-        <input id="foto" type="file" name="foto" size="20"/>
+    <div class="col-md-4">
+        <input id="foto" type="file" name="foto" size="20" class="form-control file"/>
     </div>
 </div>
     
@@ -26,6 +26,6 @@
         <label for="biografie">Biografie: </label>
     </div>
     <div class="col-md-8">
-        <textarea id="biografie" name="biografie" rows="20" cols="50" class="form-control"></textarea>
+        <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
     </div>
 </div>
