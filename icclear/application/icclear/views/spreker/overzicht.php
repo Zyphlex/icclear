@@ -12,11 +12,11 @@
                     <div class="row">
                         <div class="panel-body">
                             <div class="col-md-5">
-                                <img src="http://dummyimage.com/60x60/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
+                                <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                             </div>
                             <div class="col-md-7">
-                               <h4><?php $spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
-                                <p><?php $spreker->biografie ?></p>  
+                               <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
+                                <p><?php echo $spreker->biografie ?></p>  
                             </div>                        
                         </div>      
                     </div> 
