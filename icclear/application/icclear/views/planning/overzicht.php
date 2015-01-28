@@ -57,7 +57,8 @@
                             <?php } ?>
                         <?php } ?>
                     </tbody>
-                </table>                        
+                </table>   
+                <br/>
                 <?php
             }
         }
