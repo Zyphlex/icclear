@@ -60,7 +60,7 @@ class Locatie_model extends CI_Model {
             $hotelConferentie->hotel = $this->getHotel($hotelConferentie->hotelId);
         }
         
-        return $hotels;
+        return $hotelConferenties;
     }
     
 
