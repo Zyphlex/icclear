@@ -10,6 +10,8 @@
     </div> 
 </div>
 
+
+<form action="spreker/indienen">
 <div class="row">
     <div class="col-md-2">
         <label for="foto" class="control-label">Foto: </label>
@@ -66,6 +68,8 @@
     </div>
 </div>
     
+<br/>
+
 <div class="row">
     <div class="col-md-2">
         <label for="sessiebijlage" class="control-label">Bijlage: </label>
@@ -74,4 +78,18 @@
         <span>Bestand selecteren</span>
         <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
     </div>
+    <p class="italic">
+        Vestibulum in velit at nibh euismod commodo. 
+        Aliquam vitae urna consectetur metus convallis sodales. 
+        Donec suscipit eu velit ac tempor. 
+    </p>
 </div>
+
+<div class="row">
+    <div class="col-md-12">        
+        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>     
+        <input type="submit" class="btn btn-default" value="Voorstel versturen">
+    </div>
+</div>
+
+</form>
