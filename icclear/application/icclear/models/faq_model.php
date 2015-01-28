@@ -25,6 +25,13 @@ class Faq_model extends CI_Model {
         return $query->result();
     }
     
+    function get($id)
+    {        
+        $this->db->where('id',$id);
+        $query = $this->db->get('faq');
+        return $query->result();
+    }
+    
     
     
 
