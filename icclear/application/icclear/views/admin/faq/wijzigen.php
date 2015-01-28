@@ -42,7 +42,7 @@
     </div>
 
     <?php echo anchor('faqbeheer', 'Annuleer', 'class="btn btn-default"'); ?>
-    <?php echo form_submit('faqbeheer/opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
+    <?php echo form_submit('faqbeheer/opslaan', 'Opslaan', 'class="btn btn-default"'); ?>
 
     <?php echo form_close(); ?>
 
