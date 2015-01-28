@@ -48,6 +48,8 @@
     </div> 
 </div>
 
+<br/>
+
 <div class="row">
     <div class="col-md-2">
         <label for="sessieonderwerp" class="control-label">Onderwerp: </label>
