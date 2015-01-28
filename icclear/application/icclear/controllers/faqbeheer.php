@@ -56,12 +56,19 @@ class Faqbeheer extends CI_Controller {
         redirect('faqbeheer/index');
     }
 
-    public function verwijder($id) {
-        
+    public function verwijder($id) {       
+        $this->load->model('faq_model');
+        $this->faq_model->delete($id); 
+        redirect('faqbeheer/index');        
     }
 
     public function toevoegen() {
-        
+        $data['user'] = $this->authex->getUserInfo();
+        $data['title'] = 'IC Clear - F.A.Q. toevoegen';
+        $data['active'] = 'admin';
+        $data['conferentieId'] = $this->session->userdata('conferentieId');                
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/toevoegen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
 
 }

@@ -13,38 +13,33 @@ class Faq_model extends CI_Model {
     // | K. Vangeel
     // +----------------------------------------------------------
 
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
     }
 
-       
-    function getAll()
-    {        
+    function getAll() {
         $query = $this->db->get('faq');
         return $query->result();
     }
-    
-    function get($id)
-    {        
-        $this->db->where('id',$id);
+
+    function get($id) {
+        $this->db->where('id', $id);
         $query = $this->db->get('faq');
         return $query->row();
     }
-    
-    function update($id, $vraag, $antwoord)
-    {
+
+    function update($id, $vraag, $antwoord) {
         $faq->vraag = $vraag;
         $faq->antwoord = $antwoord;
-        
         $this->db->where('id', $id);
         $this->db->update('faq', $faq);
     }
-    
-    
-    
 
-    
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('faq');
+    }
+
 }
 
 ?>
