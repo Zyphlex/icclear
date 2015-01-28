@@ -5,7 +5,7 @@
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-         <h4 class="modal-title">Inloggen</h4>
+         <h4 class="modal-title">Aanmelden</h4>
     </div>
 
 
