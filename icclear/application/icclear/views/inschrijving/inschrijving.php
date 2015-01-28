@@ -7,7 +7,7 @@ echo form_open('inschrijven/inschrijven', $attributes);
         <h1>Inschrijven conferentie</h1>
 
         <?php if ($user == null) { ?>            
-            <div class="alert alert-danger alert-dismissible" role="alert">Opgelet! U moet aangemeld zijn om dit formulier in te dienen.</p>
+            <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om dit formulier in te dienen.</div>
         <?php } ?>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
