@@ -14,7 +14,7 @@
         </p>        
         <?php if ($user == null) { ?>            
             <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om een voorstel te kunnen indienen.</div>
-            <input type="button" value="Voorstel indienen" class="btn btn-danger disabled"/>
+            <input type="button" value="Voorstel indienen" class="btn btn-default disabled"/>
         <?php } else { ?>
             <input type="submit" value="Voorstel indienen" class="btn btn-default"/>
         <?php } ?>
