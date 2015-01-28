@@ -27,8 +27,8 @@
                     <tbody>
                         <?php foreach ($hotels as $hotel) { ?>
                             <tr>
-                                <td><?php echo $hotel->naam ?></td>
-                                <td><?php echo $hotel->gemeente ?></td>
+                                <td><?php echo $hotel->hotel->naam ?></td>
+                                <td><?php echo $hotel->hotel->gemeente ?></td>
                                 <td>
                                     <?php echo anchor('#', 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('#', 'Verwijderen','class="btn btn-default"'); ?>
