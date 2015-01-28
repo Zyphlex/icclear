@@ -1,3 +1,11 @@
+<style>
+    #waarschuwing{
+        color:red;
+        font-weight: bold;
+        font-size: 16px;
+    }
+</style>
+
 <div class="row">
     <div class="col-md-12">
         <h1>Zelf spreker worden</h1>
@@ -15,7 +23,7 @@
         <p><?php
             if ($user == null) {
 
-                echo '<p>Je moet eerst aangemeld zijn om een voorstel te kunnen indienen</p>';
+                echo '<p id="waarschuwing">Je moet eerst aangemeld zijn om een voorstel te kunnen indienen</p>';
             } else {
                 echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"');
             }
@@ -31,7 +39,7 @@
 </div>
 
 <div class="row"> 
-<?php foreach ($sprekers as $spreker) { ?>   
+    <?php foreach ($sprekers as $spreker) { ?>   
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="row">
@@ -48,5 +56,5 @@
                 </div> 
             </div>  
         </div>
-<?php } ?>
+    <?php } ?>
 </div>
