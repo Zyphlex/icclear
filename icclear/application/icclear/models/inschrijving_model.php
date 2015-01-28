@@ -22,29 +22,37 @@ class Inschrijving_model extends CI_Model {
 
 }
 
-function getInschrijvingenPerGebruiker()
+function getPerOnderdeel($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('inschrijving');
+        $sessie = $query->row();
+        
+        return $inschrijving;
+    }
+
+
+function getInschrijvingenPerGebruiker($id)
 {
 	$this->load->model('gebruiker_model');
-	$this->load->model('onderdeel_model');
 	$this->load->model('conferentie_model');
 	
-	$query = $this->db->get('inschrijving');
-	$inschrijvingen = $query->result();
-	
-	$conferentie = $this->conferentie_model->getActieveConferentie();
+        $this->db->where('conferentieId',$id);
+	$query = $this->db->get('conferentieOnderdeel');
+	$onderdelen = $query->result();
 
-	/*foreach ($inschrijvingen as $inschrijving)
+	foreach ($onderdelen as $onderdeel)
 	{	
-		$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-		if ($conferentie->id == $inschrijving->onderdeel_model->get($inschrijving->conferentieOnderdeelId)->conferentieId)
-		{
-			$inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
-			$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-			$inschrijving->conferentie = $this->conferentie_model->get($inschrijving->onderdeel->conferentieId);
-		}
-	}*/
+		$onderdeel->inschrijving = $this->getPerOnderdeel($onderdeel->id);
+//		
+//		if ($conferentie->id == $inschrijving->onderdeel_model->get($inschrijving->conferentieOnderdeelId)->conferentieId)
+//		{
+//			$inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
+//			$inschrijving->onderdeel = $this->onderdeel_model->get($inschrijving->conferentieOnderdeelId);
+//			$inschrijving->conferentie = $this->conferentie_model->get($inschrijving->onderdeel->conferentieId);
+//		}
+	}
         
-        return $inschrijvingen;
+        return $onderdelen;
 }
 
 ?>
