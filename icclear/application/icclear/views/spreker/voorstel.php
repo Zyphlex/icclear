@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Conferentie - <?php echo $conferentie->naam ?></h1>
+        <h1>Voorstel voor sessie indienen - Conferentie <?php echo $conferentie->naam ?></h1>
     </div>
 </div>
 
@@ -11,17 +11,21 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8">
-        <label>Foto: </label>
-        <input type="file" name="foto" size="20" />
-
-        <br /><br />
-
-        <input type="submit" value="Uploaden" class="btn btn-default" />
+    <div class="col-md-2">
+        <label for="foto" class="control-label">Foto: </label>
     </div>
-    
     <div class="col-md-4">
-        <label>Biografie: </label>
-        <textarea name="biografie" rows="5"></textarea>
+        <input id="foto" type="file" name="foto" size="20" class="form-control"/>
+    </div>
+</div>
+    
+    <br/>
+    
+<div class="row">
+    <div class="col-md-4">
+        <label for="biografie">Biografie: </label>
+    </div>
+    <div class="col-md-8">
+        <textarea id="biografie" name="biografie" rows="20" cols="20"></textarea>
     </div>
 </div>
