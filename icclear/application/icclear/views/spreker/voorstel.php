@@ -88,13 +88,13 @@
         <span>Bestand selecteren</span>
         <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
     </div>
+</div>
         
-    <div class="col-md-4">
-        <p class="italic">
+<div class="row">
+    <div class="col-md-4 italic">
         Vestibulum in velit at nibh euismod commodo. 
         Aliquam vitae urna consectetur metus convallis sodales. 
         Donec suscipit eu velit ac tempor. 
-        </p>
     </div>
 </div>
 
