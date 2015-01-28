@@ -75,8 +75,8 @@
         <label for="sessiebijlage" class="control-label">Bijlage: </label>
     </div>
     <div class="col-md-2 fileUpload btn btn-default">
-        <span>Bestand selecteren</span>
-        <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
+        <p><span>Bestand selecteren</span>
+            <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/></p>
     </div>
     <p class="italic">
         Vestibulum in velit at nibh euismod commodo. 
@@ -84,6 +84,8 @@
         Donec suscipit eu velit ac tempor. 
     </p>
 </div>
+
+<br/><br/>
 
 <div class="row">
     <div class="col-md-12">        
