@@ -22,16 +22,19 @@
                                 <th>Beheer</th>
                             </tr>
                         </thead>
-<!--                        <tbody>
-                            <?php foreach($landen as $land) {?>
+                        <tbody>
+                            <?php foreach($vragen as $vraag) {?>
                             <tr>
-                                <td><?php echo $land->id ?></td>
-                                <td><?php echo $land->naam ?></td>
-                                <td><?php echo anchor('land/wijzig/' . $land->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('land/verwijder/' . $land->id, 'Verwijderen','class="btn btn-default"'); ?></td>
+                                <td><?php echo $vraag->vraag ?></td>
+                                <td><?php echo $vraag->antwoord ?></td>
+                                <td>
+                                    <?php echo anchor('faq/wijzig/' . $faq->id, 'Wijzigen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/verwijder/' . $faq->id, 'Verwijderen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/toevoegen/' . $faq->id, 'Nieuwe FAQ toevoegen','class="btn btn-default"'); ?>
+                                </td>
                             </tr>
                             <?php } ?>
-                        </tbody>-->
+                        </tbody>
                     </table>
                     
                     
