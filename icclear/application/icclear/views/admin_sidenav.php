@@ -17,10 +17,10 @@
             <div class="panel-body">
                 <h4>Algemeen</h4>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Hotels</a></li>
-                    <li><a href="#">Landen</a></li>
+                    <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
+                    <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('gebruiker/overzichtGebruikers' , 'Gebruikers'); ?></li>
-                    <li><a href="#">F.A.Q.</a></li>
+                    <li><?php echo anchor('faq' , 'F.A.Q.'); ?></li>
             
             
             <?php if($conferentieId != null) { ?>

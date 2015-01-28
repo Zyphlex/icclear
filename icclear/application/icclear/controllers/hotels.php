@@ -30,7 +30,7 @@ class Hotels extends CI_Controller {
         $this->load->model('locatie_model');
         $data['hotels'] = $this->locatie_model->getHotels();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/hotels/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
     
