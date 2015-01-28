@@ -4,7 +4,6 @@
     </div>
 </div>
 
-<h2>Hotels</h2>
 <div class="row">  
     <?php foreach ($hotels as $hotel) { ?>        
         <div class="col-md-6">
