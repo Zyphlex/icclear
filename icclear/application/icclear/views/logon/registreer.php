@@ -78,7 +78,7 @@
 
 </script>
 
-<form action="logon/add" class="registreer" method="post" onsubmit="return validateMyForm();">     
+<form action="icclear.php/logon/add" class="registreer" method="post" onsubmit="return validateMyForm();">     
     
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
