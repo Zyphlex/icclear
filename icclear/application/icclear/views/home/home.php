@@ -11,6 +11,8 @@
     </div>
 </div>
 
+<br/><br/>
+
 <div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-md-4">
