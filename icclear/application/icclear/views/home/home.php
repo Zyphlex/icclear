@@ -7,7 +7,7 @@
     
     <div class="col-md-5">
         <div class="thumbnail">
-            <img data-src="holder.js/100%x180" alt="Generic placeholder thumbnail">
+            <img src="..." alt="...">
         </div>
     </div>
 </div>
