@@ -29,7 +29,7 @@ class Faq_model extends CI_Model {
     {        
         $this->db->where('id',$id);
         $query = $this->db->get('faq');
-        return $query->result();
+        return $query->row();
     }
     
     

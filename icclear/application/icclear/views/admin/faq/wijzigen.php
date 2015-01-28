@@ -25,23 +25,25 @@
 
                             <div class="row">
                                 <div class="col-md-4">   
-                                    <?php echo form_label('Voornnaam:', 'voornaam'); ?>
+                                    <?php echo form_label('Vraag:', 'vraag'); ?>
                                 </div>
 
                                 <div class="col-md-8">
-                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control', 'required' => 'required')); ?>
+                                    <?php echo form_input(array('name' => 'vraag', 'id' => 'vraag', 'value' => $vraag->vraag, 'class' => 'form-control', 'required' => 'required')); ?>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-4">   
-                                    <label for="familienaam">
-                                        Familienaam:
+                                    <label for="antwoord">
+                                        Antwoord:
                                     </label>
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control" required="required">
+                                    <textarea name="antwoord" value="<?php echo $vraag->antwoord; ?>" id="antwoord" class="form-control" required="required">
+
+                                    </textarea>
                                 </div>
                             </div>
 
