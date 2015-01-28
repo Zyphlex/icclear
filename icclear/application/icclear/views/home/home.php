@@ -26,5 +26,4 @@
 </div>
 
 
-  <script src="<?php echo base_url() . APPPATH; ?>js/foundation/foundation.js"></script>
-  <script src="<?php echo base_url() . APPPATH; ?>js/foundation/foundation.equalizer.js"></script>
+  <script src="<?php echo base_url() . APPPATH; ?>js/foundation.equalizer.js"></script>
