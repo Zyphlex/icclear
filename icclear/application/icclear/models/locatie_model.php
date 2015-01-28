@@ -29,7 +29,7 @@ class Locatie_model extends CI_Model {
     {        
         $this->db->where('id', $id);
         $query = $this->db->get('gebouw');
-        return $query->result();
+        return $query->row();
     }
     
     function getHotels()
