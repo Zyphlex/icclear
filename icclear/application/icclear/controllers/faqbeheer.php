@@ -70,6 +70,20 @@ class Faqbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function insert() {        
+        $faq->vraag = $this->input->post('vraag');
+        $faq->antwoord = $this->input->post('antwoord');
+        
+        $this->load->model('faq_model');
+        $id = $this->faq_model->insert($faq);
+        
+        if($id != 0){
+            redirect('faqbeheer/index');
+        }
+        
+        
+    }
 
 }
 

@@ -39,6 +39,12 @@ class Faq_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete('faq');
     }
+    
+    function insert($faq)
+    {
+        $this->db->insert('faq', $faq);
+        return $this->db->insert_id();
+    }
 
 }
 
