@@ -6,7 +6,7 @@
         <div class="row">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>                
+                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $conferentie->naam ?>"/>                
             </div>
         </div>
 
@@ -15,12 +15,12 @@
         <div class="row">            
             <label for="begindatum" class="control-label col-md-2">Begin datum:</label>    
             <div class="col-md-4">            
-                <input type="date" id="begindatum" name="begindatum" class="form-control"/>
+                <input type="date" id="begindatum" name="begindatum" class="form-control" value="<?php echo $conferentie->beginDatum ?>"/>
             </div>
             
             <label for="einddatum" class="control-label col-md-2 border-left">Eind datum:</label>
             <div class="col-md-4">
-                <input type="date" id="einddatum" name="einddatum" class="form-control"/>
+                <input type="date" id="einddatum" name="einddatum" class="form-control" value="<?php echo $conferentie->eindDatum ?>"/>
             </div>
         </div>
         

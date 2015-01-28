@@ -26,9 +26,9 @@ class Conferentie extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';        
-                
-        $this->load->model('status_model');
-        $data['status'] = $this->status_model->getAll();
+                        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->get($this->session->userdata('conferentieId'));
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -40,8 +40,7 @@ class Conferentie extends CI_Controller {
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - ';         
-        $data['active'] = 'admin';                
-        
+        $data['active'] = 'admin'; 
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
