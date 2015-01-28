@@ -31,7 +31,7 @@ function getPerOnderdeel($id) {
     }
 
 
-function getInschrijvingenPerGebruiker($id)
+function getInschrijvingen($id)
 {
 	$this->load->model('gebruiker_model');
 	$this->load->model('conferentie_model');

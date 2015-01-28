@@ -132,7 +132,7 @@ class Gebruiker extends CI_Controller {
         $data['active'] = 'admin';
         
         $this->load->model('inschrijving_model');
-        $data['inschrijvingen'] = $this->inschrijving_model->getInschrijvingenPerGebruiker($this->session->userdata('conferentieId'));
+        $data['inschrijvingen'] = $this->inschrijving_model->getInschrijvingen($this->session->userdata('conferentieId'));
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruikerConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
