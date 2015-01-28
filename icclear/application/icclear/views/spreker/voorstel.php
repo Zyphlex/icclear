@@ -1,3 +1,10 @@
+<script>
+document.getElementById("foto").onchange = function () {
+    document.getElementById("bestandsnaam").value = this.value;
+};
+</script>
+
+
 <div class="row">
     <div class="col-md-12">
         <h1>Conferentie <?php echo $conferentie->naam ?> - Voorstel voor sessie indienen</h1>
@@ -17,6 +24,7 @@
     <div class="col-md-2 fileUpload btn btn-default">
         <span>Bestand selecteren</span>
         <input id="foto" type="file" name="foto" class="upload"/>
+        <span id="bestandsnaam"></span>
     </div>
 </div>
     
