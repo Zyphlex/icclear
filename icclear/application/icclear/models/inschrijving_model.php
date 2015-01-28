@@ -43,6 +43,8 @@ function getInschrijvingenPerGebruiker()
 			$inschrijving->conferentie = $this->onderdeel_model->getConferentieVanOnderdeel($inschrijving->onderdeel->conferentieId);
 		}
 	}
+        
+        return $inschrijvingen;
 }
 
 ?>
