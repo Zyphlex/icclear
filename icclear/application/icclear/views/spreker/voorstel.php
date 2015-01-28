@@ -26,6 +26,6 @@
         <label for="biografie">Biografie: </label>
     </div>
     <div class="col-md-8">
-        <textarea id="biografie" name="biografie" rows="20" cols="20"></textarea>
+        <textarea id="biografie" name="biografie" rows="20" cols="50" class="form-control"></textarea>
     </div>
 </div>
