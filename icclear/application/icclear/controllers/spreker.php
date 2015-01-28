@@ -20,11 +20,9 @@ class Spreker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
     }
-    
     public function voorstel() {
         
     }
-    
   
     
 }
