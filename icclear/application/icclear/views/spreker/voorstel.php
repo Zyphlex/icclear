@@ -24,7 +24,7 @@
     
 <div class="row">
     <div class="col-md-2">
-        <label for="biografie">Biografie: </label>
+        <label for="biografie" class="control-label">Biografie: </label>
     </div>
     <div class="col-md-8">
         <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
@@ -59,7 +59,7 @@
     
 <div class="row">
     <div class="col-md-2">
-        <label for="biografie">Biografie: </label>
+        <label for="biografie" class="control-label">Omschrijving: </label>
     </div>
     <div class="col-md-8">
         <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
