@@ -6,6 +6,7 @@
         echo '<div class="col-md-6">';
         echo '<div class="panel panel-default">';
         echo '<div class = "panel-heading">';
+        echo 'TEST';
         echo '</div>';
         echo '<div class="panel-body">';        
         echo '<p>' . $gebouw->zaal->naam . ' ' . '</p>';
