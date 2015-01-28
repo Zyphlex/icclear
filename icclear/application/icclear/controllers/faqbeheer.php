@@ -19,7 +19,20 @@ class Beheerfaq extends CI_Controller {
             }
         }
     }
-       
+    
+    public function beheer() {
+        $data['user'] = $this->authex->getUserInfo();
+        $data['title'] = 'IC Clear - F.A.Q.';
+        $data['active'] = 'admin';        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        $this->load->model('faq_model');        
+        $data['vragen'] = $this->faq_model->getAll();
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+  
     public function wijzig($id) {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - F.A.Q. wijzigen';
