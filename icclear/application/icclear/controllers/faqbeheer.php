@@ -44,6 +44,10 @@ class Faqbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function update($id) {
+        
+    }
 
     public function verwijder($id) {
         
