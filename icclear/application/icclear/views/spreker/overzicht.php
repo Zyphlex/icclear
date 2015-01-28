@@ -23,7 +23,7 @@
         <p><?php
             if ($user == null) {
 
-                echo '<p id="waarschuwing">Je moet eerst aangemeld zijn om een voorstel te kunnen indienen</p>';
+                echo '<p id="waarschuwing">Je moet eerst aangemeld zijn om een voorstel te kunnen indienen.</p>';
             } else {
                 echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"');
             }
