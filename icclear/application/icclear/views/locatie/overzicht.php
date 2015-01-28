@@ -9,8 +9,8 @@
         echo '<h3 class = "panel-title">' . $gebouw->naam . '</h3>';
         echo '</div>';
         echo '<div class="panel-body">';        
-        echo '<p>' . $gebouw->gebouw->straat . ' ' . $gebouw->nummer . ' </p>';
-        echo '<p>' . $gebouw->postcode . ' ' . $gebouw->gemeente . ' </p>';
+        echo '<p>' . $gebouw->gebouw->straat . ' ' . $gebouw->gebouw->nummer . ' </p>';
+        echo '<p>' . $gebouw->gebouw->postcode . ' ' . $gebouw->gebouw->gemeente . ' </p>';
         echo '</div>';
         echo '</div>  ';
         echo '</div>';
