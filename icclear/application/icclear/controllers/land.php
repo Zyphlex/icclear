@@ -17,7 +17,7 @@ class Land extends CI_Controller {
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'land/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/land/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }       
 
