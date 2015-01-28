@@ -17,7 +17,8 @@ class Sessies_model extends CI_Model {
         return $sessie;
     }
 
-    function getAll() {
+    function getAll($id) {
+        $this->where('conferentieId',$id);
         $this->db->where('isGoedgekeurd', '1');
         $query = $this->db->get('sessie');
         $sessies = $query->result();
