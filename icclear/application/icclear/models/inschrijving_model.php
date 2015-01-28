@@ -20,7 +20,7 @@ class Inschrijving_model extends CI_Model {
         return $inschrijvingen;
     }
 
-}*/
+    }*/
 
     function getPerOnderdeel($id) {
         $this->db->where('id', $id);
@@ -53,6 +53,6 @@ class Inschrijving_model extends CI_Model {
 	}
         
         return $onderdelen;
-}
+    }
 }
 ?>
