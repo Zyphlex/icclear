@@ -38,6 +38,8 @@ class Gebruiker_model extends CI_Model {
         foreach ($sprekers as $spreker) {
             $spreker->sessie = $this->sessies_model->getSessiesVanSpreker($spreker->id);
         }
+        
+        return $sprekers;
     }
     
     function getSpreker($sprekerId){

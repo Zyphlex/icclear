@@ -20,7 +20,7 @@ class Sessies_model extends CI_Model {
     function getSessiesVanSpreker($id) {
         $this->db->where('gebruikerIdSpreker', $id);
         $query = $this->db->get('sessie');
-        return $query->row();
+        return $query->result();
     }
     
     function getAll($id) {
