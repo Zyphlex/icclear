@@ -9,7 +9,7 @@
         <h2>Profielfoto en biografie</h2>
     </div> 
 </div>
-
+<br>
 <div class="row">
     <div class="col-md-8">
         <input type="file" name="userfile" size="20" />
