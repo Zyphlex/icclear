@@ -16,7 +16,13 @@ class Sessies_model extends CI_Model {
         
         return $sessie;
     }
-
+    
+    function getSessiesVanSpreker($id) {
+        $this->db->where('gebruikerIdSpreker', $id);
+        $query = $this->db->get('sessie');
+        return $query->result();
+    }
+    
     function getAll($id) {
         $this->db->where('conferentieId',$id);
         $this->db->where('isGoedgekeurd', '1');

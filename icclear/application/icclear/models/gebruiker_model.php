@@ -29,10 +29,15 @@ class Gebruiker_model extends CI_Model {
         return $query->result();
     }
     
-    function getSprekers(){
+    function getSprekersActieve(){
         $this->db->where('typeId', 2);
         $query = $this->db->get('gebruiker');
-        return $query->result();                
+        $sprekers = $query->result();    
+        
+        $this->load->model('sessie_model');
+        foreach ($sprekers as $spreker) {
+            $spreker->sessie = $this->sessie_model->getSessiesVanSpreker($spreker->id);
+        }
     }
     
     function getSpreker($sprekerId){
