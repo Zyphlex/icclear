@@ -12,12 +12,12 @@
     font-style: normal;
 
 }
-.file {
+.fileUpload {
 	position: relative;
 	overflow: hidden;
 	margin: 10px;
 }
-.file input.upload {
+.fileUpload input.upload {
 	position: absolute;
 	top: 0;
 	right: 0;
