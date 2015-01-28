@@ -29,7 +29,7 @@ class Locatie extends CI_Controller {
         $data['active'] = 'hotel';
         
         $this->load->model('locatie_model');        
-        $data['hotels'] = $this->locatie_model->getHotels();
+        $data['hotels'] = $this->locatie_model->getHotelsConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/hotels', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
