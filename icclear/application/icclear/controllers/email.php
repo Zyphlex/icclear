@@ -40,13 +40,11 @@ class Email extends CI_Controller {
         
         $subject = $conferentie . ' - ' . $onderwerp;         
         
-        $this->email->from('donotreply@icclear.com');
+        $this->email->from('donotreply@thomasmore.be');
         $this->email->to($ontvanger);
         $this->email->subject($subject);
         $this->email->message($inhoud);
-        $this->email->send();
-        
-        echo $this->email->print_debugger();
+        $this->email->send();                
         
 //        redirect('admin/index');
     }        
