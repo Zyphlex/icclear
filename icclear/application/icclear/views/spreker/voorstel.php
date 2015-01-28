@@ -14,8 +14,8 @@
     <div class="col-md-2">
         <label for="foto" class="control-label">Foto: </label>
     </div>
-    <div class="col-md-4">
-        <input id="foto" type="file" name="foto" size="20" class="btn-file"/>
+    <div class="col-md-4 file btn btn-primary">
+        <input id="foto" type="file" name="foto" size="20" class="upload"/>
     </div>
 </div>
     
