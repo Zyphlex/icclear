@@ -46,7 +46,7 @@ class Email extends CI_Controller {
         $this->email->message($inhoud);
         $this->email->send();                
         
-//        redirect('admin/index');
+        redirect('admin/index');
     }        
     
 }
