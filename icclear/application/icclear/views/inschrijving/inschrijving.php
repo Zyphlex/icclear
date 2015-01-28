@@ -108,7 +108,7 @@ and open the template in the editor.
         
         <?php
         if ($user == null) {
-            echo '<input type="button" value="U bent niet aangemeld" class="disabled"/>';
+            echo '<input type="button" value="U bent niet aangemeld" class="btn btn-default disabled"/>';
         } else {
             echo '<input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>';
         }
