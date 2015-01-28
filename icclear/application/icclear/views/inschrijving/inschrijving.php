@@ -78,7 +78,7 @@ and open the template in the editor.
             {
                 if ($activiteit->conferentie->statusId == '2')
                 {
-                    ;echo '<tr><td>' . $activiteit->naam . '</td>';
+                    echo '<tr><td>' . $activiteit->naam . '</td>';
                     echo '<td>' . $activiteit->prijs . '</td>';
                     ?>
             <td><input type="checkbox" name="aanwezig<?php echo $activiteit->id;?>" id="aanwezig<?php echo $activiteit->id;?>" value ="<?php echo $activiteit->id;?>"/></td>
