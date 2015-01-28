@@ -15,7 +15,7 @@ class Home extends CI_Controller {
         $data['active'] = 'home';        
         
         $this->load->model('algemeneinfo_model');
-        $data['algemeneinfo'] = $this->algemeneinfo_model-> getAankondigingenActieve();
+        $data['algemeneinfo'] = $this->algemeneinfo_model-> get();
         
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
