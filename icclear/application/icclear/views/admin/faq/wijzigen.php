@@ -41,8 +41,8 @@
         
     </div>
 
-    <?php echo anchor('faq/beheer', 'Annuleer', 'class="btn btn-default"'); ?>
-    <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
+    <?php echo anchor('faqbeheer', 'Annuleer', 'class="btn btn-default"'); ?>
+    <?php echo form_submit('faqbeheer/opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
 
     <?php echo form_close(); ?>
 
