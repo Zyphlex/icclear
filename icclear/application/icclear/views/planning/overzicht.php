@@ -1,6 +1,15 @@
 <div class='row'>
     <div class='col-md-12'>
         <h1>Programma overzicht</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Curabitur finibus tortor at erat sodales ornare. 
+            Donec eget tellus sit amet purus blandit varius ac a dui. Sed lobortis laoreet eleifend. 
+            Morbi tristique velit non tristique ultrices. In posuere libero malesuada porta blandit. 
+            Etiam vestibulum, velit nec consequat faucibus, nisi lectus tincidunt mi, in mattis eros mauris lobortis felis. 
+            Sed nec tincidunt tortor, ac fermentum sem. 
+            Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
+        </p>
     </div>
 </div>
 
@@ -54,6 +63,20 @@
             }
         }
         ?>
+            </div>
+        </div>
+
+    </div>    
+</div>
+
+<div class='row'>
+    <div class='col-md-12'>
+        <h3>Activiteiten</h3>
+        
+        <div class="panel panel-default">
+            <div class="panel-body">
+                
+                
             </div>
         </div>
 
