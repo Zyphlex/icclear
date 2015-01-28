@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-8">
-        <img src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
+        <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
     </div>
     
 <?php if ($user == null) { // niet aangemeld ?>  
