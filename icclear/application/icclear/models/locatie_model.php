@@ -100,7 +100,7 @@ class Locatie_model extends CI_Model {
             $sessie->gebouw = $this->getGebouw($sessie->zaal->gebouwId);
         }
         
-        return $query->result();
+        return $sessies;
     }
     
 }
