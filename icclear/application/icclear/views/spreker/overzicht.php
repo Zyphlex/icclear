@@ -19,7 +19,7 @@
                             </div>
                             <div class="col-md-7">
                                 <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>
-                                <p class="shorten"><?php echo $spreker->biografie ?></p>  
+                                <div class="comment"><?php echo $spreker->biografie ?></div>  
                             </div>                        
                         </div>      
                     </div> 
@@ -30,13 +30,11 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $(".shorten").shorten();}            
+    $(document).ready(function(){     
+        $(".comment").shorten({
+            "showChars" : 50,
+            "moreText"  : "Meer",
+            "lessText"  : "Minder",
+        });
     );
-
-    $(".comment").shorten({
-        "showChars" : 50,
-        "moreText"  : "Meer",
-        "lessText"  : "Minder",
-    });
 </script>
