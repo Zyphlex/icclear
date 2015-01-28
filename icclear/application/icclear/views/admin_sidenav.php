@@ -20,7 +20,7 @@
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('gebruiker/overzichtGebruikers' , 'Gebruikers'); ?></li>
-                    <li><?php echo anchor('faq' , 'F.A.Q.'); ?></li>
+                    <li><?php echo anchor('faq/beheer' , 'F.A.Q.'); ?></li>
             
             
             <?php if($conferentieId != null) { ?>
