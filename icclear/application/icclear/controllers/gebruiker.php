@@ -131,7 +131,7 @@ class Gebruiker extends CI_Controller {
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
         
-//        $this->load->model('inschrijving_model');
+        $this->load->model('inschrijving_model');
 //        $data['inschrijvingen'] = $this->inschrijving_model->getInschrijvingen($this->session->userdata('conferentieId'));
         
         $this->load->model('sessies_model');
