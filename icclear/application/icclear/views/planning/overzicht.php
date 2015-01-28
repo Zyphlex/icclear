@@ -9,6 +9,7 @@
         <h3>Sessies</h3>
         
         <div class="panel panel-default">
+            <div class="panel-body">
         <?php
         $id = 0;
         $counter = 1;
@@ -53,6 +54,7 @@
             }
         }
         ?>
+            </div>
         </div>
 
     </div>    
