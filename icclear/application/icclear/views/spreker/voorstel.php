@@ -7,6 +7,14 @@
 <div class="row">
     <div class="col-md-8">
         <h2>Profielfoto en biografie</h2>
+        <p>
+            Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
+            Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
+            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
+            Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
+            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
+            Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
+        </p> 
     </div> 
 </div>
 
