@@ -28,8 +28,23 @@ class Faq extends CI_Controller {
         $data['active'] = '';
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getAll();
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin/faq/overzicht', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
+    }
+    
+    public function wijzig()
+    {
+        
+    }
+    
+    public function verwijder()
+    {
+        
+    }
+    
+    public function toevoegen()
+    {
+        
     }
 }
 
