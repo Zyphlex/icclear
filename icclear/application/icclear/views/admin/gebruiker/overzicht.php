@@ -35,6 +35,7 @@
 
         </div>
         
+        <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?> 
         <?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen','class="btn btn-default"'); ?> 
         
     </div>

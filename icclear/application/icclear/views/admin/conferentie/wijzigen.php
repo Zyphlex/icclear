@@ -130,8 +130,8 @@
         
         <div class="row">
             <div class="col-md-12">
-                <input type="submit" value="Opslaan" class="btn btn-default"/>
-                <a href="javascript:history.go(-1);" class="btn btn-danger">Annuleren</a>                
+                <a href="javascript:history.go(-1);" class="btn btn-default">Annuleren</a>   
+                <input type="submit" value="Opslaan" class="btn btn-default"/>             
             </div>
         </div>
         
