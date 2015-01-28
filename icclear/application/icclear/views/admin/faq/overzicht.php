@@ -19,7 +19,7 @@
                             <tr>
                                 <th>Vraag</th>
                                 <th>Antwoord</th>
-                                <th>Beheer</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,8 +28,10 @@
                                 <td><?php echo $vraag->vraag ?></td>
                                 <td><?php echo $vraag->antwoord ?></td>
                                 <td>
-                                    <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzig','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijder','class="btn btn-default"'); ?>                                    
+                                    <p>                                        
+                                        <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzig','class="btn btn-default"'); ?>
+                                        <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijder','class="btn btn-default"'); ?>   
+                                    </p>                                 
                                 </td>
                             </tr>
                             <?php } ?>
