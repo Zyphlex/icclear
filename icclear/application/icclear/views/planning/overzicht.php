@@ -24,7 +24,7 @@
         $counter = 1;
         foreach ($sessies as $dag) {
             if ($dag->conferentiedagId != $id) {
-                echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
+                echo "\n" . '<h4>Dag- ' . $counter . '</h4>' . "\n";
                 $counter++;
                 ?>
                 <table class = "table">
