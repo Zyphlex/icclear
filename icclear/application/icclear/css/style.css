@@ -15,7 +15,7 @@
 .fileUpload {
 	position: relative;
 	overflow: hidden;
-	margin: 15px;
+	margin:0 15px;
 }
 .fileUpload input.upload {
 	position: absolute;
