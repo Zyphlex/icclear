@@ -37,6 +37,21 @@ class Locatie_model extends CI_Model {
         return $query->result();
     }
     
+    function getHotelsConferentie()
+    {
+        $query = $this->db->get('hotel');
+        $hotels = $query->result();
+        
+        $this->load->model('conferentie_model');
+        
+        foreach ($hotels as $hotel)
+        {
+            $hotel->conferentie = $this->conferentie_model->get($hotel->conferentieId);
+        }
+        
+        return $hotels;
+    }
+    
 
     
 }
