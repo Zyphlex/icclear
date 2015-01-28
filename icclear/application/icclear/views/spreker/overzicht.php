@@ -17,6 +17,7 @@
                             <div class="col-md-7">
                                 <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4>        
                                 <p><?php echo $spreker->sessie->onderwerp ?></p>
+                            </div>
                         </div>      
                     </div> 
                 </div>  
