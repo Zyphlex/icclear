@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <textarea name="antwoord" id="antwoord" class="form-control" required="required" rows="3"></textarea>
+                    <textarea name="antwoord" id="antwoord" class="form-control" required="required" rows="5" cols="10"></textarea>
                 </div>
             </div>
 
