@@ -27,12 +27,11 @@ class Inschrijving_model extends CI_Model {
         $query = $this->db->get('inschrijving');
         $sessie = $query->row();
         
-        return $inschrijving;
+        return $sessie;
     }
 
 
-    function getInschrijvingen($id)
-    {
+    function getInschrijvingen($id)    {
 	
         $this->db->where('conferentieId',$id);
 	$query = $this->db->get('conferentieOnderdeel');
