@@ -16,7 +16,7 @@ class Locatie extends CI_Controller {
         $data['active'] = '';
         
         $this->load->model('locatie_model');
-        $data['gebouwen'] = $this->locatie_model->getGebouwen();                
+        $data['gebouwen'] = $this->locatie_model->getGebouwenConferentie();                
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

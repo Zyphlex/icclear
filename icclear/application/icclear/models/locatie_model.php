@@ -25,6 +25,13 @@ class Locatie_model extends CI_Model {
         return $query->result();
     }
     
+    function getGebouw($id)
+    {        
+        $this->db->where('id', $id);
+        $query = $this->db->get('gebouw');
+        return $query->result();
+    }
+    
     function getHotels()
     {        
         $query = $this->db->get('hotel');
@@ -74,7 +81,28 @@ class Locatie_model extends CI_Model {
         return $query->result();
     }
     
-
+    function getGebouwenConferentie()
+    {
+        $this->load->model('conferentie_model');        
+        $conferentie = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->where('conferentieId', $conferentie->id);
+        $query = $this->db->get('sessie');   
+        $sessies = $query->result();
+        
+        $this->load->model('zaal_model');        
+        foreach ($sessies as $sessie)
+        {
+            $sessie->zaal = $this->zaal_model->get($sessie->zaalId);
+        }  
+        
+        $this->load->model('gebouw_model');
+        foreach ($sessies as $sessie) {
+            $sessie->gebouw = $this->gebouw_model->get($sessie->zaal->gebouwId);
+        }
+        
+        return $query->result();
+    }
     
 }
 
