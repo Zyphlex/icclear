@@ -30,7 +30,6 @@ function getInschrijvingenPerGebruiker()
 	
 	$query = $this->db->get('inschrijving');
 	$inschrijvingen = $query->result();
-	$inschrijvingenWerk = $query->result();
 	
 	$conferentie = $this->conferentie_model->getActieveConferentie();
 
