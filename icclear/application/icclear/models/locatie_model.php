@@ -63,6 +63,17 @@ class Locatie_model extends CI_Model {
         return $hotelConferenties;
     }
     
+    function getRoutesConferentie()
+    {
+        $this->load->model('conferentie_model');        
+        $conferentie = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->where('conferentieId', $conferentie->id);
+        $query = $this->db->get('route');        
+                        
+        return $query->result();
+    }
+    
 
     
 }

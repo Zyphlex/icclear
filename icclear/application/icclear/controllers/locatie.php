@@ -42,7 +42,7 @@ class Locatie extends CI_Controller {
         $data['active'] = '';
         
         $this->load->model('locatie_model');        
-        $data['routes'] = $this->locatie_model->getRoutes();
+        $data['routes'] = $this->locatie_model->getRoutesConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/routes', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
