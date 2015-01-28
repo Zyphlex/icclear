@@ -239,8 +239,8 @@
 
                 </div>
 
-                <?php echo form_button('annuleer', 'Annuleer', 'id="annuleer"', 'class="btn btn-default"'); ?>
-                <?php echo form_submit('opslaan', 'Opslaan', 'id="opslaan"', 'class="btn btn-primary"'); ?>
+                <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer', 'class="btn btn-default"'); ?>
+                <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
 
                 <?php echo form_close(); ?>
             </div>
