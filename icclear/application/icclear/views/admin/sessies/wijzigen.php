@@ -24,7 +24,7 @@
         </div>
         
         <div class="col-md-5">
-            <p name="sprekernaam" class="list-group-item-warning form-control"><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
+            <p name="sprekernaam" class="disabled form-control"><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></p>    
         </div>
     </div>
     
