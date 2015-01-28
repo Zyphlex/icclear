@@ -16,10 +16,10 @@
 
 <div class="row">
     <div class="col-md-8">
-        <input type="file" name="userfile" size="20" />
+        <input type="file" name="userfile" size="20" class="btn btn-default" />
 
         <br /><br />
 
-        <input type="submit" value="Uploaden" />
+        <input type="submit" value="Uploaden" class="btn btn-default" />
     </div>
 </div>
