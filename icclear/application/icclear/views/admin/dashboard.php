@@ -1,7 +1,7 @@
 
 <div class="col-md-10">       
 
-    <h1>Conferentie <?php echo $conferentie->naam ?> beheren.</h1>     
+    <h1>Conferentie <?php echo $conferentie ?> beheren.</h1>     
 
     <h4>DASHBOARD</h4>
     <h5>ID: <?php echo $conferentieId ?></h5>
