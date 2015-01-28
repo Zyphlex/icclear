@@ -28,8 +28,8 @@
                                 <td><?php echo $vraag->vraag ?></td>
                                 <td><?php echo $vraag->antwoord ?></td>
                                 <td>
-                                    <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijderen','class="btn btn-default"'); ?>                                    
+                                    <?php echo anchor('faq/wijzig/' . $vraag->id, 'Wijzig','class="btn btn-default"'); ?>
+                                    <?php echo anchor('faq/verwijder/' . $vraag->id, 'Verwijder','class="btn btn-default"'); ?>                                    
                                 </td>
                             </tr>
                             <?php } ?>
