@@ -2,7 +2,7 @@
 
 <div class="col-md-10">
     
-    <h1>Hotels beheren.</h1>   
+    <h1>Hotels beheren</h1>   
     
 <!--    <div class="panel panel-default" role="tablist">
 
