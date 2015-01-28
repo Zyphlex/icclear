@@ -78,7 +78,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Naam1</th>
+                            <th>Naam</th>
                             <th>Omschrijving</th>
                             <th>Prijs</th>
                         </tr>
