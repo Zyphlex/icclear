@@ -57,7 +57,7 @@
     <div class="col-md-2">
         <label for="sessieonderwerp" class="control-label">Onderwerp: </label>
     </div>
-    <div class="col-md-2 fileUpload btn btn-default">
+    <div class="col-md-2">
         <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
     </div>
 </div>
