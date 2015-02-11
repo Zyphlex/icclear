@@ -35,7 +35,7 @@
             <div class="col-md-4"></div>
 
             <div class="col-md-8">  
-                <a href="<?php echo base_url(); ?>index.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
+                <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
             </div>
         </div>
         
