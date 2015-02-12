@@ -19,10 +19,7 @@ class Programma extends CI_Controller {
         $data['planningen'] = $this->planning_model->getAllPlanningen();
         
         $this->load->model('conferentie_model');
-        $data['actieveId']  = $this->conferentie_model->getActieveConferentie();
-        
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        $data['actieveId']  = $this->conferentie_model->getActieveConferentie();                
         
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getActiviteitenActieve();
