@@ -30,8 +30,7 @@
                     <thead>
                         <tr>
                             <th style="width:50px;">Tijdstip</th>
-                            <th>Onderwerp</th>
-                            <th>Omschrijving</th>                                                                                    
+                            <th>Onderwerp</th>                                                                                                                
                             <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
                         </tr>
                     </thead>  
@@ -42,8 +41,7 @@
                             if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) { ?>
                                 <tr>
                                     <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
-                                    <td><?php echo $planning->sessie->onderwerp ?></td>
-                                    <td><?php echo $planning->sessie->omschrijving ?></td>                                                                        
+                                    <td><?php echo $planning->sessie->onderwerp ?></td>                                    
                                     <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                 </tr>
                                <?php 
