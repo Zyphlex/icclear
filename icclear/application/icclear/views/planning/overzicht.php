@@ -29,9 +29,9 @@
                 <table class = "table">
                     <thead>
                         <tr>
-                            <th style="width:50px;">Tijdstip</th>
-                            <th>Onderwerp</th>                                                                                                                
-                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
+                            <th><span class="glyphicon glyphicon-time"></span>Tijdstip</th>
+                            <th><span class="glyphicon glyphicon-paperclip"></span>Onderwerp</th>                                                                                                                
+                            <th><span class="glyphicon glyphicon-bullhorn"></span>Spreker</th>
                         </tr>
                     </thead>  
                     <tbody>            
