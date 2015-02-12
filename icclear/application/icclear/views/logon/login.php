@@ -20,7 +20,7 @@
                 <input type="text" name="naam" value="" id="naam" size="30" class="form-control"  />    
             </div>
         </div>
-
+      
         <div class="row">     
             <div class="col-md-4">
                 <label for="password">Wachtwoord:</label>    
