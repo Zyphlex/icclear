@@ -19,6 +19,20 @@
                                 <td><?php echo $inschrijving->gebruiker->familienaam . " " . $inschrijving->gebruiker->voornaam?></td>
                                 
                                 <td><?php echo "€ " . $inschrijving->confonderdeel->prijs ?></td>
+                                <?php if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") {
+     
+                                    echo "<td>Ja</td>";
+                                    
+                                }
+                                else if($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving")
+                                {
+                                    echo "<td>Nee</td>";
+                                }
+                                else if($inschrijving->confonderdeel->prijs < 0)
+                                {
+                                    echo "<td>Nee</td>";
+                                }
+                                ?>
                                 <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                                 <td><?php echo $inschrijving->betaling->methode ?></td>
                                 <td><?php echo anchor('gebruiker/wijzig/' . $inschrijving->id, 'Wijzigen','class="btn btn-default"'); ?>
