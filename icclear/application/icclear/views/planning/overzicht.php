@@ -40,19 +40,17 @@
                     </thead>  
                     <tbody>            
                         <?php $id = $dag->conferentiedagId; ?>                
-                        <?php
-                        $teller = 1;
+                        <?php                        
                         foreach ($sessies as $sessie) {
                             if ($dag->conferentiedagId == $sessie->conferentiedagId) { ?>
                                 <tr>
-                                    <td><?php echo $teller ?></td>
-                                    <td><?php echo $sessie->onderwerp ?></td>
-                                    <td><?php echo $sessie->omschrijving ?></td>
                                     <td><?php echo $sessie->planning->beginUur . ' - ' . $sessie->planning->eindUur ?></td>                                    
+                                    <td><?php echo $sessie->onderwerp ?></td>
+                                    <td><?php echo $sessie->omschrijving ?></td>                                    
                                     <td><?php echo $sessie->zaal->naam ?></td>
                                     <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>
                                 </tr>
-                               <?php $teller++;
+                               <?php 
                             }
                         }
                         ?>
