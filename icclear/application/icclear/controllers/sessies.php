@@ -93,6 +93,16 @@ class Sessies extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    public function toonDetails($sessieId) {
+        $data['user']  = $this->authex->getUserInfo();
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['title'] = 'IC Clear - Beheer';        
+        $data['active'] = 'admin';  
+        
+        $this->load->view('keur_detail', $data);
+    }
+    
 
     
     
