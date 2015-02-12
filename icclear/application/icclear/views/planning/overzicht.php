@@ -15,15 +15,14 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3>Sessies</h3>
-        
+        <h3>Sessies</h3>        
         <div class="panel panel-default">
             <div class="panel-body">
         <?php
         $id = 0;
         $counter = 1;
         foreach ($planningen as $dag) {
-            if ($dag->conferentiedag->id != $id)  {
+            if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id)  {
                 echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
                 $counter++;
                 ?>
