@@ -22,7 +22,7 @@
         <label for="sessieonderwerp" class="control-label">Onderwerp: </label>
     </div>
     <div class="col-md-4">
-        <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control" size="100" />
+        <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control" size="50" />
     </div>
 </div>
     
