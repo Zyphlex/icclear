@@ -30,7 +30,7 @@
                 <table class = "table">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Tijdstip</th>
                             <th>Onderwerp</th>
                             <th>Omschrijving</th>
                             <th>Tijdstip</th>                            
