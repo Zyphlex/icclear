@@ -7,7 +7,8 @@
     <div class="modal-body">        
         
         <div class="row">
-            <h3><?php echo $sessie->onderwerp; ?></h3>
+            <div class="col-md-12"><h3><?php echo $sessie->onderwerp; ?></h3></div>
+            
         </div>
 
         <div class="row">     
