@@ -101,7 +101,7 @@ class Sessies extends CI_Controller {
         $data['active'] = 'admin';
         
         $this->load->model('sessies_model');
-        $this->sessies_model->get($sessieId);
+        $data['sessie'] = $this->sessies_model->get($sessieId);
         
         $this->load->view('keur_detail', $data);
     }
