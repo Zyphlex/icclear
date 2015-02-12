@@ -33,7 +33,7 @@
                             <th>Tijdstip</th>
                             <th>Onderwerp</th>
                             <th>Omschrijving</th>                                                                                    
-                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
+<!--                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>-->
                         </tr>
                     </thead>  
                     <tbody>            
