@@ -120,7 +120,7 @@ class Sessies extends CI_Controller {
         
         $this->sessies_model->update($sessie);
         
-        $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
+        $generatedKey = sha1(mt_rand(10000, 99999) . time() . $$sessie->spreker->emailadres);
         $this->sendmail($sessie->spreker->emailadres, $generatedKey);
         
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
