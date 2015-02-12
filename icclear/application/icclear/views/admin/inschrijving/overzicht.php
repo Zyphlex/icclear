@@ -18,7 +18,7 @@
                             <tr>
                                 <td><?php echo $inschrijving->gebruiker->familienaam ?></td>
                                 <td><?php echo $inschrijving->gebruiker->voornaam ?></td>
-                                <td><?php echo $inschrijving->conferentieOnderdeelId ?></td>
+                                <td><?php echo $inschrijving->confonderdeel->omschrijving ?></td>
                                 <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                                 <td><?php echo $inschrijving->betaling->methode ?></td>
                                 <td><?php echo anchor('gebruiker/wijzig/' . $inschrijving->id, 'Wijzigen','class="btn btn-default"'); ?>
