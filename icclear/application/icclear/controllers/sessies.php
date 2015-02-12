@@ -79,6 +79,19 @@ class Sessies extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    public function keuren() {
+        $data['user']  = $this->authex->getUserInfo();
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['title'] = 'IC Clear - Beheer';        
+        $data['active'] = 'admin';  
+        
+        $this->load->model('sessie_model');
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/beheer', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+    
 
     
     
