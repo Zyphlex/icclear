@@ -46,7 +46,7 @@ class Spreker extends CI_Controller {
         $sessie->gebruikerIdSpreker = $this->input->post($this->authex->getUserInfo());
         $sessie->conferentieId = $this->input->post($this->conferentie_model->getActieveConferentie());       
 
-        $this->load->model('sessie_model');
+        $this->load->model('sessies_model');
         $this->gebruiker_model->insert($sessie);
         
         redirect('home');
