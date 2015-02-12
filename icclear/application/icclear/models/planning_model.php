@@ -30,6 +30,25 @@ class Planning_model extends CI_Model {
         $query = $this->db->get('planning');
         return $query->row();
     }
+    
+    function getAllPlanningen() {               
+        $query = $this->db->get('planning');
+        $planningen = $query->result();
+        
+        $this->load->model('sessie_model');        
+        foreach ($planningen as $planning) {
+            $planning->sessie = 
+                 $this->sessie_model->planningenPerStatus($planning->sessieId);
+        }
+                        
+        $this->load->model('conferentiedag_model');        
+        foreach ($planningen as $planning) {
+            $planning->conferentiedag = 
+                 $this->conferentiedag_model->get($planning->conferentiedagId);
+        }
+        
+        return $planningen;
+    }
 
     
 }
