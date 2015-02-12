@@ -51,7 +51,7 @@ class Spreker extends CI_Controller {
         $this->load->model('sessies_model');
         $this->sessies_model->insert($sessie);
         
-        redirect('home');
+        redirect('spreker');
     }
   
     
