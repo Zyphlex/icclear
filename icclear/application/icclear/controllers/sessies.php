@@ -111,7 +111,12 @@ class Sessies extends CI_Controller {
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';  
+        $data['active'] = 'admin';
+        
+        $this->load->model('sessies_model');
+        $sessie = $this->sessies_model->get($sessieId);
+        
+        $sessie->isGoedgekeurd = 1;
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
