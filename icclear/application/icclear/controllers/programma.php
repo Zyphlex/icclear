@@ -15,8 +15,8 @@ class Programma extends CI_Controller {
         $data['title'] = 'IC Clear - Programma';         
         $data['active'] = 'programma';
         
-        $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAllMetSpreker();
+        $this->load->model('planning_model');
+        $data['planningen'] = $this->sessies_model->getAllMetSpreker();
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -30,9 +30,8 @@ class Programma extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-
-    // TEST
+    
 }
 
 /* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* Location: ./application/models/planning_model */
