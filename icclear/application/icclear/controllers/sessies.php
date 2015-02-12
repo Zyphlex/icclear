@@ -98,7 +98,10 @@ class Sessies extends CI_Controller {
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';  
+        $data['active'] = 'admin';
+        
+        $this->load->model('sessies_model');
+        $this->sessies_model->get($sessieId);
         
         $this->load->view('keur_detail', $data);
     }
