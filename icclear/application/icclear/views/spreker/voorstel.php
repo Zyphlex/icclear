@@ -3,7 +3,12 @@
         <h1>Conferentie <?php echo $conferentie->naam ?> - Voorstel voor sessie indienen</h1>
     </div>
 </div>    
-    
+
+<?php
+$attributes = array('name' => 'myform', 'id' => 'myform');
+echo form_open('spreker/indienen', $attributes);
+?>
+
 <div class="row">
     <div class="col-md-8">
         <h2>Sessie voorstel</h2>
@@ -25,9 +30,9 @@
         <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
     </div>
 </div>
-    
+
 <br/>
-    
+
 <div class="row">
     <div class="col-md-2">
         <label for="biografie" class="control-label">Omschrijving: </label>
@@ -36,7 +41,7 @@
         <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
     </div>
 </div>
-    
+
 <br/>
 
 <div class="row">
@@ -48,7 +53,7 @@
         <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
     </div>
 </div>
-        
+
 <div class="row">
     <div class="col-md-4 italic">
         Als u bestanden hebt die u later zal gebruiken, dan kan u ze hier uploaden.
@@ -59,8 +64,11 @@
 
 <div class="row">
     <div class="col-md-12">        
-        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>     
-        <input type="submit" class="btn btn-default" value="Voorstel versturen">
+        <?php echo anchor('spreker', 'Annuleren', 'class="btn btn-default"'); ?>     
+
+        <?php echo form_submit('indienen', 'Voorstel versturen', 'class="btn btn-default"'); ?>
+
+        <?php echo form_close(); ?>
     </div>
 </div>
 
