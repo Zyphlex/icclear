@@ -37,10 +37,10 @@
                         </tr>
                     </thead>  
                     <tbody>            
-                        <?php $id = $dag->conferentiedag->conferentiedagId; ?>                
+                        <?php $id = $dag->conferentiedag->id; ?>                
                         <?php                        
                         foreach ($planningen as $planning) {
-                            if ($dag->conferentiedagId == $planning->conferentiedagId) { ?>
+                            if ($dag->conferentiedag->id == $planning->conferentiedag->id) { ?>
                                 <tr>
                                     <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
                                     <td><?php echo $planning->sessie->onderwerp ?></td>
