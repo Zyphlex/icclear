@@ -37,13 +37,13 @@ class Spreker extends CI_Controller {
     public function indienen()
     {
         $this->load->model('conferentie_model');
-        
+        $gebruiker = $this->authex->getUserInfo();
         $sessie = new stdClass();
         $sessie->conferentiedagId = 1;
         $sessie->onderwerp = $this->input->post('onderwerp');
         $sessie->omschrijving = $this->input->post('omschrijving');
         $sessie->isGoedgekeurd = 0;
-        $sessie->gebruikerIdSpreker = $this->authex->getUserInfo();
+        $sessie->gebruikerIdSpreker = $gebruiker->id;
         $sessie->conferentieId = $this->conferentie_model->getActieveConferentie();    
 
         $this->load->model('sessies_model');
