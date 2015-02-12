@@ -100,7 +100,8 @@
 
 <div class="row">
     <div class="col-md-12">        
-        <?php echo anchor('spreker', 'Annuleren', 'class="btn btn-default"'); ?>  
+        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>     
+        <input type="submit" class="btn btn-default" value="Voorstel versturen">
     </div>
 </div>
 
