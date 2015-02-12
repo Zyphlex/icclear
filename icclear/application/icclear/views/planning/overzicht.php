@@ -32,7 +32,7 @@
                             <th style="width:50px;">Tijdstip</th>
                             <th>Onderwerp</th>
                             <th>Omschrijving</th>                                                                                    
-<!--                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>-->
+                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
                         </tr>
                     </thead>  
                     <tbody>            
@@ -44,7 +44,7 @@
                                     <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
                                     <td><?php echo $planning->sessie->onderwerp ?></td>
                                     <td><?php echo $planning->sessie->omschrijving ?></td>                                                                        
-<!--                                    <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>-->
+                                    <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                 </tr>
                                <?php 
                             }
