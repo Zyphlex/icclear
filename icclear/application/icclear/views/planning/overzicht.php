@@ -22,7 +22,7 @@
         <?php
         $id = 0;
         $counter = 1;
-        foreach ($sessies as $dag) {
+        foreach ($planningen as $dag) {
             if ($dag->conferentiedagId != $id) {
                 echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
                 $counter++;
@@ -32,22 +32,20 @@
                         <tr>
                             <th>Tijdstip</th>
                             <th>Onderwerp</th>
-                            <th>Omschrijving</th>                                                        
-                            <th>Zaal</th>
+                            <th>Omschrijving</th>                                                                                    
                             <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
                         </tr>
                     </thead>  
                     <tbody>            
                         <?php $id = $dag->conferentiedagId; ?>                
                         <?php                        
-                        foreach ($sessies as $sessie) {
-                            if ($dag->conferentiedagId == $sessie->conferentiedagId) { ?>
+                        foreach ($planningen as $planning) {
+                            if ($dag->conferentiedagId == $planning->conferentiedagId) { ?>
                                 <tr>
-                                    <td><?php echo $sessie->planning->beginUur . ' - ' . $sessie->planning->eindUur ?></td>                                    
-                                    <td><?php echo $sessie->onderwerp ?></td>
-                                    <td><?php echo $sessie->omschrijving ?></td>                                    
-                                    <td><?php echo $sessie->zaal->naam ?></td>
-                                    <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>
+                                    <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
+                                    <td><?php echo $planning->sessie->onderwerp ?></td>
+                                    <td><?php echo $planning->sessie->omschrijving ?></td>                                                                        
+<!--                                    <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>-->
                                 </tr>
                                <?php 
                             }
