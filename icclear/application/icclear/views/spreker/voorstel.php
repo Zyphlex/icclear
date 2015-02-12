@@ -4,10 +4,6 @@
     </div>
 </div>    
 
-<?php
-$attributes = array('name' => 'myform', 'id' => 'myform');
-echo form_open('spreker/indienen', $attributes);
-?>
 
 <div class="row">
     <div class="col-md-8">
@@ -64,11 +60,7 @@ echo form_open('spreker/indienen', $attributes);
 
 <div class="row">
     <div class="col-md-12">        
-        <?php echo anchor('spreker', 'Annuleren', 'class="btn btn-default"'); ?>     
-
-        <?php echo form_submit('indienen', 'Voorstel versturen', 'class="btn btn-default"'); ?>
-
-        <?php echo form_close(); ?>
+        <?php echo anchor('spreker', 'Annuleren', 'class="btn btn-default"'); ?>  
     </div>
 </div>
 
