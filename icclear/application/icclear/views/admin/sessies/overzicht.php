@@ -2,7 +2,8 @@
 
 <div class="col-md-10">
     
-    <h1>Sessies beheren.</h1>   
+    <h1>Sessies beheren.</h1>
+    <p><?php echo anchor('sessies/keuren', 'Wijzigen','class="btn btn-default"'); ?></p>
     
 <!--    <div class="panel panel-default" role="tablist">
 
