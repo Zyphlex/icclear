@@ -4,10 +4,10 @@
     </div>
 </div>  
 
-<?php
-$attributes = array('name' => 'myform', 'id' => 'myform');
-echo \form_open('spreker/indienen', $attributes);
-?>
+//<?php
+//$attributes = array('name' => 'myform', 'id' => 'myform');
+//echo form_open('spreker/indienen', $attributes);
+//?>
 
 <div class="row">
     <div class="col-md-8">
