@@ -11,13 +11,9 @@
             Phasellus suscipit felis sed nibh euismod, vel varius velit porttitor. 
             Nullam vulputate imperdiet sem ornare porta. Nunc eget lectus a metus consectetur suscipit in in urna. 
             Quisque vestibulum erat in convallis faucibus. Aliquam sed placerat dolor.
-        </p>        
-        <?php if ($user == null) { ?>            
-            <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om een voorstel te kunnen indienen.</div>
-            <div type="button" class="btn btn-default disabled">Voorstel indienen</div>
-        <?php } else { ?>
-            <p><?php echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"')?></p>
-        <?php } ?>
+        </p>  
+        <p><?php echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"') ?></p>
+
     </div>
 </div>
 
