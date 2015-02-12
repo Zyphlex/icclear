@@ -2,13 +2,13 @@
 
     <div class="col-md-10">
         
-        <h1>Inschijvingen beheren.</h1>  
+        <h1>Betalingen opvolgeb.</h1>  
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Familienaam</th>
-                                <th>Voornaam</th>
-                                <th>ConfOnderdeel</th>
+                                <th>Naam</th>
+                                <th>Te betalen</th>
+                                <th>Betaald</th>
                                 <th>Datum</th>
                                 <th>Betaling</th>
                             </tr>
@@ -16,9 +16,9 @@
                         <tbody>
                             <?php foreach($inschrijvingen as $inschrijving) {?>
                             <tr>
-                                <td><?php echo $inschrijving->gebruiker->familienaam ?></td>
-                                <td><?php echo $inschrijving->gebruiker->voornaam ?></td>
-                                <td><?php echo $inschrijving->confonderdeel->omschrijving ?></td>
+                                <td><?php echo $inschrijving->gebruiker->familienaam . " " . $inschrijving->gebruiker->voornaam?></td>
+                                
+                                <td><?php echo "€ " . $inschrijving->confonderdeel->prijs ?></td>
                                 <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                                 <td><?php echo $inschrijving->betaling->methode ?></td>
                                 <td><?php echo anchor('gebruiker/wijzig/' . $inschrijving->id, 'Wijzigen','class="btn btn-default"'); ?>
