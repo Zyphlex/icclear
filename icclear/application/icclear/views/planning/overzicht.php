@@ -23,7 +23,7 @@
         $id = 0;
         $counter = 1;
         foreach ($planningen as $dag) {
-            if ($dag->conferentiedag->id != $id) {
+            if ($dag->conferentiedag->id != $id)  {
                 echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
                 $counter++;
                 ?>
