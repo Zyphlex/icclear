@@ -86,7 +86,7 @@ class Sessies extends CI_Controller {
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';  
         
-        $this->load->model('sessie_model');
+        $this->load->model('sessies_model');
         $data['sessies'] = $this->sessie_model->getAllOngekeurdeMetSpreker();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
