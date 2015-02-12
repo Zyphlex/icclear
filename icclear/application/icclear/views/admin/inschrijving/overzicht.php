@@ -28,10 +28,6 @@
                                 {
                                     echo "<td>Nee</td>";
                                 }
-                                else if($inschrijving->confonderdeel->prijs < 0)
-                                {
-                                    echo "<td>Nee</td>";
-                                }
                                 ?>
                                 <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                                 <td><?php echo $inschrijving->betaling->methode ?></td>
