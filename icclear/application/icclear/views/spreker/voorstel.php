@@ -8,7 +8,9 @@
     <div class="col-md-8">
         <h2>Sessie voorstel</h2>
         <p>
-            Als u bestanden hebt die u later zal gebruiken, dan kan u ze hier uploaden.
+            Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
+            Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
+            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
         </p>        
     </div> 
 </div>
@@ -19,7 +21,7 @@
     <div class="col-md-2">
         <label for="sessieonderwerp" class="control-label">Onderwerp: </label>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
         <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
     </div>
 </div>
@@ -49,9 +51,7 @@
         
 <div class="row">
     <div class="col-md-4 italic">
-        Vestibulum in velit at nibh euismod commodo. 
-        Aliquam vitae urna consectetur metus convallis sodales. 
-        Donec suscipit eu velit ac tempor. 
+        Als u bestanden hebt die u later zal gebruiken, dan kan u ze hier uploaden.
     </div>
 </div>
 
