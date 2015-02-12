@@ -30,6 +30,7 @@
                                 <td><?php echo $sessie->onderwerp; ?></td>
                                 <td><?php echo $sessie->spreker->familienaam . ' ' . $sessie->spreker->voornaam; ?></td>
                                 <td>
+                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails" data-toggle="modal" data-target="#myModal">Details</a>
                                     <?php echo anchor('sessies/wijzigen/' . $sessie->id, 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('sessies/verwijderen' . $sessie->id, 'Verwijderen','class="btn btn-default"'); ?>
                                 </td>
@@ -45,4 +46,9 @@
     <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
     
     
+</div>
+
+<!--      Modal        -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content"></div></div>
 </div>
