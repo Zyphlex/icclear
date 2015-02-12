@@ -8,7 +8,7 @@
                             <tr>
                                 <th>Familienaam</th>
                                 <th>Voornaam</th>
-                                <th>ConfOnderdeel</th>
+                                <th>ConfOmschijving</th>
                                 <th>Datum</th>
                                 <th>Betaling</th>
                             </tr>
