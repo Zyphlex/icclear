@@ -32,10 +32,9 @@
                         <tr>
                             <th>Tijdstip</th>
                             <th>Onderwerp</th>
-                            <th>Omschrijving</th>
-                            <th>Tijdstip</th>                            
+                            <th>Omschrijving</th>                                                        
                             <th>Zaal</th>
-                            <th>Spreker</th>
+                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>
                         </tr>
                     </thead>  
                     <tbody>            
