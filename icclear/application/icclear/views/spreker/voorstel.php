@@ -6,7 +6,7 @@
 
 <?php
 $attributes = array('name' => 'myform', 'id' => 'myform');
-echo form_open('spreker/indienen', $attributes);
+echo form_open('spreker/voorstel', $attributes);
 ?>
 
 <div class="row">
