@@ -7,5 +7,5 @@
     <h5>NAAM: <?php echo $conferentie ?></h5>                 
     <?php echo anchor('email/', 'Emails', 'class="btn btn-default"'); ?>
     <?php echo anchor('aankondiging/', 'Aankondigingen', 'class="btn btn-default"'); ?>
-    <?php echo anchor('inschrijven/', 'Betalingen Opvolgen', 'class="btn btn-default"'); ?>
+    <?php echo anchor('inschrijven/opvolgen', 'Betalingen Opvolgen', 'class="btn btn-default"'); ?>
 </div>
