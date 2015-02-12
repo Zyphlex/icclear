@@ -37,7 +37,7 @@
                         </tr>
                     </thead>  
                     <tbody>            
-                        <?php $id = $dag->conferentiedagId; ?>                
+                        <?php $id = $dag->conferentiedag->conferentiedagId; ?>                
                         <?php                        
                         foreach ($planningen as $planning) {
                             if ($dag->conferentiedagId == $planning->conferentiedagId) { ?>
