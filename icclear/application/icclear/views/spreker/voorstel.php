@@ -60,8 +60,6 @@
 <div class="row">
     <div class="col-md-12">        
         <?php echo anchor('spreker', 'Annuleren', 'class="btn btn-default"'); ?>     
-        <?php echo form_submit('indienen', 'Voorstel versturen', 'class="btn btn-default"'); ?>
-
-        <?php echo form_close(); ?>
+        
     </div>
 </div>
