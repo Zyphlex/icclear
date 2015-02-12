@@ -41,10 +41,9 @@ class Spreker extends CI_Controller {
         $conferentie = $this->conferentie_model->getActieveConferentie();
         
         $sessie = new stdClass();
-        $sessie->conferentiedagId = 1;
         $sessie->onderwerp = $this->input->post('sessieonderwerp');
         $sessie->omschrijving = $this->input->post('sessieomschrijving');
-        $sessie->isGoedgekeurd = 0;
+        $sessie->isGoedgekeurd = '0';
         $sessie->gebruikerIdSpreker = $gebruiker->id;
         $sessie->conferentieId = $conferentie;    
 
