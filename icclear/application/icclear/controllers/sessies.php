@@ -120,10 +120,22 @@ class Sessies extends CI_Controller {
         
         $this->sessies_model->update($sessie);
         
+        $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
+        $this->email($sessie->spreker->emailadres, $generatedKey);
+        
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
+    }
+    
+    private function sendmail($to, $generatedKey) {
+        $this->email->from('donotreply@icclear.com');
+        $this->email->to($to);
+        $this->email->subject('Sessievoorstel goedgekeurd');
+        $this->email->message('Het sessievoorstel dat u heeft ingediend is goedgekeurd. De precieze planning wordt later bekend gemaakt. '
+                . 'Volg alstublieft deze link om uw profiel te vervolledigen. ' . "\n" . "\n " . site_url("logon/activeer/$generatedKey"));
+        $this->email->send();         
     }
     
 
