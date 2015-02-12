@@ -48,7 +48,7 @@
                                     <td><?php echo $teller ?></td>
                                     <td><?php echo $sessie->onderwerp ?></td>
                                     <td><?php echo $sessie->omschrijving ?></td>
-                                    <td><?php echo $sessie->planning->beginUur . ' ' . $sessie->planning->eindUur ?></td>                                    
+                                    <td><?php echo $sessie->planning->beginUur . ' - ' . $sessie->planning->eindUur ?></td>                                    
                                     <td><?php echo $sessie->zaal->naam ?></td>
                                     <td><?php echo $sessie->spreker->voornaam . ' ' . $sessie->spreker->familienaam ?></td>
                                 </tr>
