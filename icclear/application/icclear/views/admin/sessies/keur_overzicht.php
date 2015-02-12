@@ -30,7 +30,7 @@
                                 <td><?php echo $sessie->onderwerp; ?></td>
                                 <td><?php echo $sessie->spreker->familienaam . ' ' . $sessie->spreker->voornaam; ?></td>
                                 <td>
-                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails" data-toggle="modal" data-target="#myModal">Details</a>
+                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-default">Details</a>
                                     <?php echo anchor('sessies/wijzigen/' . $sessie->id, 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('sessies/verwijderen' . $sessie->id, 'Verwijderen','class="btn btn-default"'); ?>
                                 </td>
