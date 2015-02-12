@@ -56,7 +56,7 @@ class Inschrijven extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $this->load->model('inschrijving_model');
-        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie();
+        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie();       
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
