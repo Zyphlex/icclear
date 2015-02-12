@@ -23,11 +23,14 @@ class Inschrijving_model extends CI_Model {
 
         $this->load->model('gebruiker_model');
         $this->load->model('betaling_model');
+        $this->load->model('conferentie_onderdeel_model');
 
 
         foreach ($inschrijvingen as $inschrijving) {
             $inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
             $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
+            $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
+            
         }
         return $inschrijvingen;
     }
