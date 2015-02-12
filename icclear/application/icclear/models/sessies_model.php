@@ -109,5 +109,11 @@ class Sessies_model extends CI_Model {
         $query = $this->db->get('sessie');
         return $query->row();            
     }
+    
+    function update($sessie)
+    {
+        $this->db->where('id', $sessie->id);
+        $this->db->update('sessie', $sessie);
+    }
 }
 ?>
