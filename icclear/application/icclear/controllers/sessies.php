@@ -18,6 +18,7 @@ class Sessies extends CI_Controller {
                 //voorlopig
             }
         }
+        $this->load->library('email');
     }
     
     public function index() {
