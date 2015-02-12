@@ -103,5 +103,11 @@ class Sessies_model extends CI_Model {
         
         return $sessies;
     }
+    
+    function planningenPerStatus($sessieId){
+        $this->db->where('id', $sessieId);
+        $query = $this->db->get('sessie');
+        return $query->row();            
+    }
 }
 ?>
