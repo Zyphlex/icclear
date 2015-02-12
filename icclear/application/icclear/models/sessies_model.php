@@ -84,6 +84,24 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
        
-    
+    function getAllOngekeurdeMetSpreker() {        
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->order_by('conferentiedagId');
+        $this->db->where('isGoedgekeurd', '0');
+        $this->db->where('conferentieId', $actieveConferentie->id);
+        $query = $this->db->get('sessie');
+        $sessies = $query->result();
+        
+        $this->load->model('gebruiker_model');
+        
+        foreach ($sessies as $sessie) {
+            $sessie->spreker = 
+                 $this->gebruiker_model->getSpreker($sessie->gebruikerIdSpreker);
+        }
+        
+        return $sessies;
+    }
 }
 ?>
