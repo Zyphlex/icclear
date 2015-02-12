@@ -49,7 +49,17 @@ class Inschrijven extends CI_Controller {
     
     public function opvolgen(){
         
+        $data['user']  = $this->authex->getUserInfo();        
+        $data['title'] = 'IC Clear - Beheer'; 
+        $data['active'] = 'admin';
         
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+        $this->load->model('inschrijving_model');
+        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
     
   
