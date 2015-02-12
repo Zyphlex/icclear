@@ -118,6 +118,8 @@ class Sessies extends CI_Controller {
         
         $sessie->isGoedgekeurd = 1;
         
+        $this->sessies_model->update($sessie);
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
