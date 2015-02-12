@@ -30,7 +30,7 @@
                 <table class = "table">
                     <thead>
                         <tr>
-                            <th>Tijdstip</th>
+                            <th style="width:25px;">Tijdstip</th>
                             <th>Onderwerp</th>
                             <th>Omschrijving</th>                                                                                    
 <!--                            <th><span class="glyphicon glyphicon-user"></span>Spreker</th>-->
