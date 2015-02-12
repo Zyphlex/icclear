@@ -6,10 +6,6 @@ echo form_open('inschrijven/inschrijven', $attributes);
     <div class="col-md-12">
         <h1>Inschrijven conferentie</h1>
 
-        <?php if ($user == null) { ?>            
-            <div class="alert alert-danger" role="alert">Opgelet! U moet aangemeld zijn om dit formulier in te dienen.</div>
-        <?php } ?>
-
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
         <p> 
             De conferentie vindt plaats van <span class="bold"><?php echo toDDMMYYYY($conferentie->beginDatum); ?></span>
@@ -86,6 +82,7 @@ echo form_open('inschrijven/inschrijven', $attributes);
 
         <?php if ($user == null) { ?>
             <input type="button" value="Bevestigen en betalen" class="btn btn-default disabled"/>
+            <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a>
         <?php } else { ?>
             <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
         <?php } ?>
