@@ -19,7 +19,7 @@
 </div>
 
 
-<form action="spreker/indienen">
+<form name="FormVoorstel" action="indienen" method="POST">
 <div class="row">
     <div class="col-md-2">
         <label for="foto" class="control-label">Foto: </label>
