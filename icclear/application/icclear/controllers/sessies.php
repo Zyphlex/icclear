@@ -120,7 +120,7 @@ class Sessies extends CI_Controller {
         
         $this->sessies_model->update($sessie);
         
-        $data['sessie'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
+        $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
