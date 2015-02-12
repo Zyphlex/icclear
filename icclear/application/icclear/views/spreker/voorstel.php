@@ -19,7 +19,6 @@
 </div>
 
 
-<form name="FormVoorstel" action="indienen" method="POST">
 <div class="row">
     <div class="col-md-2">
         <label for="foto" class="control-label">Foto: </label>
@@ -45,6 +44,7 @@
 <br/><br/>
     
     
+<form action="indienen" method="POST">
 <div class="row">
     <div class="col-md-8">
         <h2>Sessie voorstel</h2>
@@ -71,10 +71,10 @@
 
 <div class="row">
     <div class="col-md-2">
-        <label for="biografie" class="control-label">Omschrijving: </label>
+        <label for="sessieomschrijving" class="control-label">Omschrijving: </label>
     </div>
     <div class="col-md-8">
-        <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
+        <textarea id="sessieomschrijving" name="sessieomschrijving" rows="10" class="form-control"></textarea>
     </div>
 </div>
 
