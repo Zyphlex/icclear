@@ -199,6 +199,17 @@ class Gebruiker extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);    
     }
     
+    public function biografie($id, $key)
+    {
+        $data['user'] = $this->authex->getUserInfo();        
+        
+        $data['title'] = 'IC Clear - Biografie';
+        $data['active'] = '';
+         
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);    
+    }
+    
     // TEST
 }
 

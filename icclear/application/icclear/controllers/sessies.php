@@ -139,7 +139,7 @@ class Sessies extends CI_Controller {
         $this->email->to($to);
         $this->email->subject('Sessievoorstel goedgekeurd');
         $this->email->message('Het sessievoorstel dat u heeft ingediend is goedgekeurd. De precieze planning wordt later bekend gemaakt. '
-                . 'Volg alstublieft deze link om uw profiel te vervolledigen. ' . "\n" . "\n " . site_url("logon/activeer/$generatedKey"));
+                . 'Volg alstublieft deze link om uw profiel te vervolledigen. ' . "\n" . "\n " . site_url("gebruiker/biografie/tiveer/$generatedKey"));
         $this->email->send();         
     }
     
