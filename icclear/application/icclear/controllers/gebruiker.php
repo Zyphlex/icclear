@@ -187,11 +187,15 @@ class Gebruiker extends CI_Controller {
     
     public function instellingen()
     {
-        $data['user'] = $this->authex->getUserInfo();        
-        
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+                
         $data['title'] = 'IC Clear - Profielinstellingen';
         $data['active'] = '';
-                               
+                
+        $this->load->model('gebruiker_model');
+        $data['gebruiker'] = $this->gebruiker_model->get($user->id);
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav',  'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);    
     }
