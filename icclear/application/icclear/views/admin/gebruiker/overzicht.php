@@ -25,7 +25,7 @@
                         <td>Spreker</td>
                     <?php } ?>
 
-                    <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
+                    <td><?php echo anchor('gebruiker/wijzigAdmin/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
                         <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
