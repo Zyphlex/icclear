@@ -2,7 +2,7 @@
 
     <div class="col-md-10">
         
-        <h1>Gebruikers beheren.</h1>  
+        <h1>Gebruikers beheren(is nog enkel bezoekers)</h1>  
                     <table class="table">
                         <thead>
                             <tr>
@@ -20,15 +20,6 @@
                                 <td><?php echo $gebruiker->emailadres ?></td>
                                 <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen','class="btn btn-default"'); ?>
                                     <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen','class="btn btn-default"'); ?></td>
-                            </tr>
-                            <?php } ?>
-                            <?php foreach($sprekers as $spreker) {?>
-                            <tr>
-                                <td><?php echo $spreker->familienaam ?></td>
-                                <td><?php echo $spreker->voornaam ?></td>
-                                <td><?php echo $spreker->emailadres ?></td>
-                                <td><?php echo anchor('gebruiker/wijzig/' . $spreker->id, 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('gebruiker/verwijder/' . $spreker->id, 'Verwijderen','class="btn btn-default"'); ?></td>
                             </tr>
                             <?php } ?>
                         </tbody>
