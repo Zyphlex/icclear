@@ -115,11 +115,15 @@ class Sessies extends CI_Controller {
         $data['active'] = 'admin';
         
         $this->load->model('sessies_model');
+        $this->load->model('gebruiker_model');
+        
         $sessie = $this->sessies_model->get($sessieId);
         
         $sessie->isGoedgekeurd = 1;
+        $sessie->spreker->typeId = 2;
         
         $this->sessies_model->update($sessie);
+        $this->gebruiker_model->update($sessie->spreker);
         
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $sessie->spreker->emailadres);
         $this->sendmail($sessie->spreker->emailadres, $generatedKey);
