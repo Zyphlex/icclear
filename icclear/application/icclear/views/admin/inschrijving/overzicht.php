@@ -6,6 +6,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Prijs</th>
                 <th>Naam</th>
                 <th>Te betalen</th>
                 <th>Betaald</th>
@@ -14,8 +15,12 @@
             </tr>
         </thead>
         <tbody>
-                <?php foreach ($inschrijvingen as $inschrijving) { ?>
+            <?php foreach ($inschrijvingen as $inschrijving) { ?>
                 <tr>
+                    <?php foreach ($gebactiviteiten as $gebactiviteit) { ?>
+                        <td><?php echo "€ " . $gebactiviteit->activiteit->prijs ?></td>
+                    <?php } ?>
+
                     <td><?php echo $inschrijving->gebruiker->familienaam . " " . $inschrijving->gebruiker->voornaam ?></td>
 
                     <td><?php echo "€ " . $inschrijving->confonderdeel->prijs ?></td>
@@ -30,13 +35,13 @@
                     <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                     <td><?php echo $inschrijving->betaling->methode ?></td>
                     <td><?php echo anchor('gebruiker/wijzig/' . $inschrijving->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                <?php echo anchor('gebruiker/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                        <?php echo anchor('gebruiker/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
                 </tr>
-<?php } ?>
+            <?php } ?>
         </tbody>
     </table>
 
-<?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
-<?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen', 'class="btn btn-default"'); ?> 
+    <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
+    <?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen', 'class="btn btn-default"'); ?> 
 
 </div>
