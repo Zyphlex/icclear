@@ -21,12 +21,12 @@ class Gebruiker_activiteit_model extends CI_Model {
         $query = $this->db->get('gebruikerActiviteit');
         $gebActiviteiten = $query->result();
 
-        $this->load->model('gebruiker_model');
+        $this->load->model('betaling_model');
         $this->load->model('activiteit_model');
 
 
         foreach ($gebActiviteiten as $gebActiviteit) {
-            $gebActiviteit->gebruiker = $this->gebruiker_model->get($gebActiviteit->gebruikerId);
+            $gebActiviteit->betaling = $this->betaling_model->get($gebActiviteit->gebruikerId);
             $gebActiviteit->activiteit = $this->activiteit_model->get($gebActiviteit->activiteitId);
         }
         return $gebActiviteiten;
