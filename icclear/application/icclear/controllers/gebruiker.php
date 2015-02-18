@@ -159,6 +159,7 @@ class Gebruiker extends CI_Controller {
         $admin->gebruikersnaam = $this->input->post('gebruikersnaam');
         $admin->voornaam = $this->input->post('voornaam');
         $admin->familienaam = $this->input->post('familienaam');
+        $admin->emailadres = $this->input->post('emailadres');
         $admin->typeId = $this->input->post('type'); 
         $admin->landId = 1; 
 
