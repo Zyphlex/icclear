@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Conferentie <?php echo $conferentie->naam ?> - Voorstel voor sessie indienen</h1>
+        <h1><?php echo $spreker->familienaam . ' ' . $spreker->voornaam ?> - Biografie en foto</h1>
     </div>
 </div>    
 

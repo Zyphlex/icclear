@@ -63,7 +63,9 @@ class Spreker extends CI_Controller {
          
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        $data['spreker'] = $id;
+        
+        $this->load->model('gebruiker_model');
+        $data['spreker'] = $this->gebruiker_model->get($id);
         
         if ($id == $id) {
             $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
