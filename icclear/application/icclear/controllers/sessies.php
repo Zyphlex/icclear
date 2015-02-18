@@ -132,8 +132,8 @@ class Sessies extends CI_Controller {
         
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
     
     private function sendmail($to, $id, $generatedKey) {
