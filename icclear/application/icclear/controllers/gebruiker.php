@@ -46,7 +46,7 @@ class Gebruiker extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $this->load->model('gebruiker_model');
-        $data['gebruikers'] = $this->gebruiker_model->getAllAdmins();
+        $data['admins'] = $this->gebruiker_model->getAllAdmins();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
