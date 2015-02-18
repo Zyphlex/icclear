@@ -226,6 +226,9 @@ class Gebruiker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['gebruiker'] = $this->gebruiker_model->get($user->id);
+        
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getAll();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
