@@ -18,7 +18,6 @@ class Inschrijving_model extends CI_Model {
     }
 
     function getAllInschijvingByConferentie() {
-        $this->db->where('typeId !=', 3);
         $query = $this->db->get('inschrijving');
         $inschrijvingen = $query->result();
 
