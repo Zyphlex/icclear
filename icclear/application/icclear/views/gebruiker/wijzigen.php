@@ -230,7 +230,7 @@
     </div>
 
     <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
-    <?php echo form_submit('gebruiker/opslaan', 'Opslaan', 'class="btn btn-default"'); ?>
+    <?php echo form_submit('gebruiker/update', 'Opslaan', 'class="btn btn-default"'); ?>
 
     <?php echo form_close(); ?>
 </div>
