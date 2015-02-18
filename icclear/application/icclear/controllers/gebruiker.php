@@ -191,11 +191,8 @@ class Gebruiker extends CI_Controller {
         
         $data['title'] = 'IC Clear - Profielinstellingen';
         $data['active'] = '';
-        
-        $this->load->model('inschrijving_model');
-        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($this->session->userdata('conferentieId'));
-                
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav',  'content' => 'gebruiker/wijzig', 'footer' => 'main_footer');
+                               
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav',  'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);    
     }
     
