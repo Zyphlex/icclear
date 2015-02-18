@@ -24,7 +24,8 @@ class Gebruiker_model extends CI_Model {
     }
 
     function getAll() {
-        $this->db->where('typeId', !3);
+        $this->db->where('typeId', 1);
+        $this->db->and('typeId', 2);
         $this->db->order_by('familienaam', 'asc');
         $query = $this->db->get('gebruiker');
         return $query->result();
