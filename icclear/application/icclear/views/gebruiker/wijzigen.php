@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control', 'disabled' => 'disabled')); ?>
+                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control', 'disabled' => 'true')); ?>
                 </div>
             </div>
 
