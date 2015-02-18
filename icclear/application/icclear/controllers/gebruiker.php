@@ -125,9 +125,6 @@ class Gebruiker extends CI_Controller {
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
 
-        $this->load->model('land_model');
-        $data['landen'] = $this->land_model->getAll();
-
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/toevoegen_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
@@ -162,7 +159,7 @@ class Gebruiker extends CI_Controller {
         $admin->gebruikersnaam = $this->input->post('gebruikersnaam');
         $admin->voornaam = $this->input->post('voornaam');
         $admin->familienaam = $this->input->post('familienaam');
-        $admin->typeId = $this->input->post('type');       
+        $admin->typeId = $this->input->post('type'); 
 
         $this->load->model('gebruiker_model');
 
