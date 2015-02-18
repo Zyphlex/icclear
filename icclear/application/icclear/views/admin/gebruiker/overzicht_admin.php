@@ -2,7 +2,7 @@
 
     <div class="col-md-10">
         
-        <h1>Admins beheren.</h1>  
+        <h1>Admins beheren</h1>  
                     <table class="table">
                         <thead>
                             <tr>
