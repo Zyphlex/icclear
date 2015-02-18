@@ -6,7 +6,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Prijs</th>
                 <th>Naam</th>
                 <th>Te betalen</th>
                 <th>Betaald</th>
@@ -17,10 +16,6 @@
         <tbody>
             <?php foreach ($inschrijvingen as $inschrijving) { ?>
                 <tr>
-                    <?php foreach ($gebactiviteiten as $gebactiviteit) { ?>
-                        <td><?php echo "€ " . $gebactiviteit->activiteit->prijs ?></td>
-                    <?php } ?>
-
                     <td><?php echo $inschrijving->gebruiker->familienaam . " " . $inschrijving->gebruiker->voornaam ?></td>
 
                     <td><?php echo "€ " . $inschrijving->confonderdeel->prijs ?></td>
