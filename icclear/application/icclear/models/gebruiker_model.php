@@ -29,6 +29,13 @@ class Gebruiker_model extends CI_Model {
         return $query->result();
     }
     
+    function getAllAdmins() {
+        $this->db->where('typeId', 3);
+        $this->db->order_by('familienaam', 'asc');
+        $query = $this->db->get('gebruiker');
+        return $query->result();
+    }
+    
     function getSprekersActieve(){
         $this->db->where('typeId', 2);
         $query = $this->db->get('gebruiker');
