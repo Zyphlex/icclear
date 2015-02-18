@@ -2,7 +2,7 @@
 
     <div class="col-md-10">
         
-        <h1>Betalingen opvolgeb.</h1>  
+        <h1>Betalingen opvolgen <?php $teller = 0; foreach($inschrijvingen as $inschrijving) { $teller++;} $teller?></h1>  
                     <table class="table">
                         <thead>
                             <tr>
