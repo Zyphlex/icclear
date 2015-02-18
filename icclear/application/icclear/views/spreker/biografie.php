@@ -10,7 +10,7 @@
             Van alle sprekers voor onze conferenties wordt verwacht dat ze een profielfoto uploaden. Ook een biografie
             is van elke spreker gewenst.
         </p>
-        <div>Gelieve deze informatie hier in te geven.</div>
+        <p>Gelieve deze informatie hier in te geven.</p>
     </div> 
 </div>
 
