@@ -186,7 +186,7 @@ class Gebruiker extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
-    public function profiel()
+    public function instellingen()
     {
         
     }
