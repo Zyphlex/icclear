@@ -17,7 +17,7 @@
 
             <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Voornnaam:', 'voornaam'); ?>
+                    <?php echo form_label('Voornaam:', 'voornaam'); ?>
                 </div>
 
                 <div class="col-md-8">
