@@ -131,7 +131,7 @@ class Sessies extends CI_Controller {
     }
     
     private function sendmail($to, $generatedKey) {
-        $this->email->from('donotreply@icclear.com');
+        $this->email->from('donotreply@thomasmore.com');
         $this->email->to($to);
         $this->email->subject('Sessievoorstel goedgekeurd');
         $this->email->message('Het sessievoorstel dat u heeft ingediend is goedgekeurd. De precieze planning wordt later bekend gemaakt. '
