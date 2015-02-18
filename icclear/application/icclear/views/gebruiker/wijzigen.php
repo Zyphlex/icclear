@@ -49,7 +49,7 @@
                 </div>  
 
                 <div class="col-md-8">   
-                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control">      
+                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" disabled="true">      
                 </div>
             </div>
 
