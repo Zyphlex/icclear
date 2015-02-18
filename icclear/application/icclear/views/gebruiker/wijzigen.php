@@ -8,7 +8,7 @@
     </div>
     <?php
     $attributes = array('name' => 'myform', 'id' => 'myform');
-    echo form_open('gebruiker/update', $attributes);
+    echo form_open('profiel/update', $attributes);
     echo form_hidden('id', $gebruiker->id);
     ?>
 
