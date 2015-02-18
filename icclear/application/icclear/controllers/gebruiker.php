@@ -156,6 +156,21 @@ class Gebruiker extends CI_Controller {
         $this->overzichtGebruikers();
     }
     
+    public function insertAdmin() {
+        $admin = new stdClass();
+
+        $admin->gebruikersnaam = $this->input->post('gebruikersnaam');
+        $admin->voornaam = $this->input->post('voornaam');
+        $admin->familienaam = $this->input->post('familienaam');
+        $admin->typeId = $this->input->post('type');       
+
+        $this->load->model('gebruiker_model');
+
+        $this->gebruiker_model->insert($admin);
+
+        $this->overzichtAdmins();
+    }
+    
     public function gebruikersConferentie()
     {
         $data['user'] = $this->authex->getUserInfo();
