@@ -53,6 +53,20 @@ class Spreker extends CI_Controller {
         
         redirect('spreker');
     }
+        
+    public function biografie($id, $key)
+    {
+        $data['user'] = $this->authex->getUserInfo();        
+        
+        $data['title'] = 'IC Clear - Biografie';
+        $data['active'] = '';
+         
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);    
+    }
   
     
 }
