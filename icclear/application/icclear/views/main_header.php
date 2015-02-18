@@ -19,7 +19,7 @@
                 </a>
                 <ul class="dropdown-menu">                    
                     <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Settings</a></li>  
-                    <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profile</a></li>     
+                    <li><a href="gebruiker/profiel"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Profile</a></li>     
                     <li class="divider"></li>
                     <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
                 </ul>
