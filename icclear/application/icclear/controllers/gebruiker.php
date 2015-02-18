@@ -35,7 +35,7 @@ class Gebruiker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
+
     public function overzichtAdmins() {
 
         $data['user'] = $this->authex->getUserInfo();
@@ -69,8 +69,24 @@ class Gebruiker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-      
+
+    public function wijzigAdmin($id) {
+
+        $data['user'] = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
+        $this->load->model('gebruiker_model');
+        $data['gebruiker'] = $this->gebruiker_model->get($id);
+
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getAll();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen_admin', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
 
     public function verwijder($id) {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
@@ -81,7 +97,7 @@ class Gebruiker extends CI_Controller {
         $this->overzichtGebruikers();
     }
 
-    public function update() {        
+    public function update() {
         $gebruiker = new stdClass();
 
         $gebruiker->id = $this->input->post('id');
@@ -103,9 +119,8 @@ class Gebruiker extends CI_Controller {
 
         $this->overzichtGebruikers();
     }
-    
-    public function nieuw()
-    {
+
+    public function nieuw() {
         $data['user'] = $this->authex->getUserInfo();
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
@@ -118,9 +133,8 @@ class Gebruiker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function nieuwAdmin()
-    {
+
+    public function nieuwAdmin() {
         $data['user'] = $this->authex->getUserInfo();
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
@@ -130,7 +144,7 @@ class Gebruiker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/toevoegen_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
+
     public function insert() {
         $gebruiker = new stdClass();
 
@@ -146,7 +160,7 @@ class Gebruiker extends CI_Controller {
         $gebruiker->geslacht = $this->input->post('geslacht');
         $gebruiker->typeId = $this->input->post('type');
         $gebruiker->landId = $this->input->post('land');
-       
+
 
         $this->load->model('gebruiker_model');
 
@@ -154,7 +168,7 @@ class Gebruiker extends CI_Controller {
 
         $this->overzichtGebruikers();
     }
-    
+
     public function insertAdmin() {
         $admin = new stdClass();
 
@@ -162,8 +176,8 @@ class Gebruiker extends CI_Controller {
         $admin->voornaam = $this->input->post('voornaam');
         $admin->familienaam = $this->input->post('familienaam');
         $admin->emailadres = $this->input->post('emailadres');
-        $admin->typeId = $this->input->post('type'); 
-        $admin->landId = 1; 
+        $admin->typeId = $this->input->post('type');
+        $admin->landId = 1;
 
         $this->load->model('gebruiker_model');
 
@@ -171,37 +185,35 @@ class Gebruiker extends CI_Controller {
 
         $this->overzichtAdmins();
     }
-    
-    public function gebruikersConferentie()
-    {
+
+    public function gebruikersConferentie() {
         $data['user'] = $this->authex->getUserInfo();
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
-        
+
         $this->load->model('inschrijving_model');
         $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($this->session->userdata('conferentieId'));
-                
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruikerConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function instellingen()
-    {
+
+    public function instellingen() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-                
+
         $data['title'] = 'IC Clear - Profielinstellingen';
         $data['active'] = '';
-                
+
         $this->load->model('gebruiker_model');
         $data['gebruiker'] = $this->gebruiker_model->get($user->id);
-        
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav',  'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);    
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
     }
-    
+
     // TEST
 }
 
