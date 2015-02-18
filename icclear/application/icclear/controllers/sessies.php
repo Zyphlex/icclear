@@ -123,10 +123,12 @@ class Sessies extends CI_Controller {
         $sessie->spreker->typeId = 2;
         
         $this->sessies_model->update($sessie);
-        $this->gebruiker_model->update($sessie->spreker);
         
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $sessie->spreker->emailadres);
-        $this->sendmail($sessie->spreker->emailadres, $generatedKey);
+        $this->sendmail($sessie->spreker->emailadres, $this->spreker->id, $generatedKey);
+        
+        $sessie->spreker->generatedKey = $generatedKey;
+        $this->gebruiker_model->update($sessie->spreker);
         
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
         
@@ -134,7 +136,7 @@ class Sessies extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
-    private function sendmail($to, $generatedKey) {
+    private function sendmail($to, $id, $generatedKey) {
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($to);
         $this->email->subject('Sessievoorstel goedgekeurd');
