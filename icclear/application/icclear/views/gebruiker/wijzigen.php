@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control', 'disabled' => 'true')); ?>
+                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control" required="required">
+                    <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control">
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 </div>  
 
                 <div class="col-md-8">   
-                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" required="required">      
+                    <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control">      
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="date" class="form-control" value="<?php echo $gebruiker->geboortedatum; ?>" id="field7" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                    <input type="date" class="form-control" value="<?php echo $gebruiker->geboortedatum; ?>" id="field7" maxlength="524288" name="geboortedatum" style="width: 158px;" tabindex="0" title="">
                 </div>
             </div>
 
@@ -165,7 +165,7 @@
                     foreach ($landen as $land) {
                         $options[$land->id] = $land->naam;
                     }
-                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9" required="required"');
+                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
                     ?>
                 </div>
 
@@ -179,7 +179,7 @@
                     </div>
 
                     <div class="col-md-8">   
-                        <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control" required="required">
+                        <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control">
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@
                     </div>
 
                     <div class="col-md-8">   
-                        <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control" required="required">
+                        <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control">
                     </div>
                 </div>
 
@@ -207,7 +207,7 @@
                     </div>
 
                     <div class="col-md-8">   
-                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control" required="required">
+                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@
                     </div>
 
                     <div class="col-md-8">   
-                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control" required="required">
+                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
                     </div>
                 </div>
             </div>
