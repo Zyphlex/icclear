@@ -66,13 +66,13 @@ class Spreker extends CI_Controller {
         $data['spreker'] = $id;
         
         if ($id == $id) {
-            $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
+            $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
         }
         else
         {
             
         }
-        $this->template->load('admin_master', $partials, $data);    
+        $this->template->load('main_master', $partials, $data);    
     }
   
     
