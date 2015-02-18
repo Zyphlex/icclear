@@ -59,7 +59,7 @@ class Spreker extends CI_Controller {
         $data['user'] = $this->authex->getUserInfo();        
         
         $data['title'] = 'IC Clear - Biografie';
-        $data['active'] = '';
+        $data['active'] = 'spreker';
          
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
