@@ -57,6 +57,9 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('inschrijving_model');
         $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie();       
+        
+        $this->load->model('gebruiker_activiteit_model');
+        $data['gebactiviteiten'] = $this->gebruiker_activiteit_model->getActiviteitPrijs(); 
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
