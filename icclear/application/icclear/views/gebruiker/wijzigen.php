@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Gebruiker wijzigen</h1>
+            <h1>Profiel wijzigen</h1>
         </div>
     </div>
     <?php
