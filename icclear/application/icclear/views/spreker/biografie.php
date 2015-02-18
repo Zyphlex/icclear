@@ -6,15 +6,11 @@
 
 <div class="row">
     <div class="col-md-8">
-        <h2>Profielfoto en biografie</h2>
         <p>
-            Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
-            Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
-            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
-            Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
-            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
-            Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
-        </p> 
+            Van alle sprekers voor onze conferenties wordt verwacht dat ze een profielfoto uploaden. Ook een biografie
+            is van elke spreker gewenst.
+        </p>
+        <div>Gelieve deze informatie hier in te geven.</div>
     </div> 
 </div>
 
