@@ -7,6 +7,12 @@ class Activiteit_model extends CI_Model {
         parent::__construct();
     }
     
+     function get($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('activiteit');
+        return $query->row();
+    }
+    
     
     function getActiviteitenPerConferentie()
     {
