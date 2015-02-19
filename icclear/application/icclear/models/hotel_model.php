@@ -1,6 +1,6 @@
 <?php
 
-class Locatie_model extends CI_Model {
+class Hotel_model extends CI_Model {
 
     // +----------------------------------------------------------
     // | Beershop - product_model

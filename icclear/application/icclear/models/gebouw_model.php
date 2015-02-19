@@ -1,6 +1,6 @@
 <?php
 
-class Locatie_model extends CI_Model {
+class Gebouw_model extends CI_Model {
 
     // +----------------------------------------------------------
     // | Beershop - product_model
