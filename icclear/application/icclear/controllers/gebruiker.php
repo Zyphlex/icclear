@@ -117,7 +117,7 @@ class Gebruiker extends CI_Controller {
 
         $this->gebruiker_model->update($gebruiker);
 
-        redirect('home');
+        $this->overzichtGebruikers();
     }
     
     public function updateAdmin() {
