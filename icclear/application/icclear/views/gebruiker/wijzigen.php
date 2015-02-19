@@ -233,7 +233,7 @@ echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" i
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control">
+                    <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control" disabled="true">
                 </div>
             </div>
         </div>
