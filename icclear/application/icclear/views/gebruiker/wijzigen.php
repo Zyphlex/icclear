@@ -25,8 +25,6 @@
                 </div>
             </div>
 
-
-
             <div class="row">
                 <div class="col-md-4">   
                     <label for="familienaam">
@@ -229,8 +227,9 @@
 
     </div>
 
-    <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+    
+</div>
+<?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
     <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
 
     <?php echo form_close(); ?>
-</div>
