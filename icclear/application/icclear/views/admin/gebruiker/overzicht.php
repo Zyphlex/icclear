@@ -1,4 +1,4 @@
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             
@@ -30,7 +30,7 @@
             
             $('.debug-url').html('Delete URL: <strong>' + $(this).find('.danger').attr('href') + '</strong>');
         })
-    </script>
+    </script>-->
 
 <div class="col-md-10">
 
@@ -58,7 +58,7 @@
                     <?php } ?>
 
                     <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                        <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                        <a href="<?php echo base_url(); ?>icclear.php/gebruiker/verwijder/30" data-toggle="modal" data-target="#myModal" class="btn btn-default">Aanmelden</a></td>
                 </tr>
             <?php } ?>
         </tbody>
@@ -67,4 +67,16 @@
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
     <?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen', 'class="btn btn-default"'); ?> 
 
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content"></div></div>
+</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"><div class="modal-content"></div></div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content"></div></div>
 </div>
