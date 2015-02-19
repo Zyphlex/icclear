@@ -28,7 +28,7 @@ class Routes_model extends CI_Model {
     {        
         $this->db->where('id', $id);
         $query = $this->db->get('route');
-        return $query->result();
+        return $query->row();
     }
     
     function getRoutesConferentie()
