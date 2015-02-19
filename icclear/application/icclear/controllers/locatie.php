@@ -16,7 +16,7 @@ class Locatie extends CI_Controller {
         $data['active'] = '';
         
         $this->load->model('locatie_model');
-        $data['gebouwen'] = $this->locatie_model->getGebouwenConferentie();                
+        $data['gebouwen'] = $this->gebouw_model->getGebouwenConferentie();                
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -29,7 +29,7 @@ class Locatie extends CI_Controller {
         $data['active'] = 'hotel';
         
         $this->load->model('locatie_model');        
-        $data['hotels'] = $this->locatie_model->getHotelsConferentie();
+        $data['hotels'] = $this->hotel_model->getHotelsConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/hotels', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -42,7 +42,7 @@ class Locatie extends CI_Controller {
         $data['active'] = '';
         
         $this->load->model('locatie_model');        
-        $data['routes'] = $this->locatie_model->getRoutesConferentie();
+        $data['routes'] = $this->routes_model->getRoutesConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/routes', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
