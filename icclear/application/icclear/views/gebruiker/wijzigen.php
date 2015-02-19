@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-
+            <?php if ($gebruiker->typeId != 3) { ?>
             <div class="row">
                 <div class="col-md-4">   
                     <label for="type">
@@ -143,6 +143,7 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
 
         </div>
 
