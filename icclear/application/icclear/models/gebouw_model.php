@@ -38,21 +38,15 @@ class Gebouw_model extends CI_Model {
         $conferentie = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId', $conferentie->id);
-        $query = $this->db->get('sessie');   
-        $sessies = $query->result();
-        
-        $this->load->model('zaal_model');        
-        foreach ($sessies as $sessie)
-        {
-            $sessie->zaal = $this->zaal_model->get($sessie->zaalId);
-        }  
-        
-        $this->load->model('gebouw_model');    
-        foreach ($sessies as $sessie) {
-            $sessie->gebouw = $this->gebouw_model->getGebouw($sessie->zaal->gebouwId);
+        $this->db->order_by('gebouwId', 'asc');
+        $query = $this->db->get('conferentieDag');   
+        $dagen = $query->result();
+                  
+        foreach ($dagen as $dag) {
+            $dag->gebouw = $this->getGebouw($dag->gebouwId);
         }
         
-        return $sessies;
+        return $dagen;
     }
     
 }
