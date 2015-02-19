@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" class="form-control" value="<?php echo $inschrijving->betaling; ?>" id="betaling" name="betaling">
+                    <input type="text" class="form-control" value="<?php echo $inschrijving->confonderdeel; ?>" id="betaling" name="betaling">
                 </div>
             </div>
             <?php if ($gebruiker->typeId == 2) { ?>
