@@ -29,14 +29,14 @@
                     ?>
                     <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
                     <td><?php echo $inschrijving->betaling->methode ?></td>
-                    <td><?php echo anchor('gebruiker/wijzig/' . $inschrijving->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                        <?php echo anchor('gebruiker/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                    <td><?php echo anchor('inschrijving/wijzig/' . $inschrijving->id, 'Wijzigen', 'class="btn btn-default"'); ?>
+                        <?php echo anchor('inschrijving/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
-    <?php echo anchor('gebruiker/nieuw', 'Nieuwe gebruiker toevoegen', 'class="btn btn-default"'); ?> 
+    <?php echo anchor('inschrijving/nieuw', 'Nieuwe betaling toevoegen', 'class="btn btn-default"'); ?> 
 
 </div>
