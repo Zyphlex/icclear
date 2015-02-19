@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <?php if ($gebruiker->typeId != 3) { ?>
+            <?php if ($gebruiker->typeId == 2) { ?>
             <div class="row">
                 <div class="col-md-4">   
                     <label for="type">
