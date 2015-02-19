@@ -19,7 +19,7 @@
                 </a>
                 <ul class="dropdown-menu">                    
                     <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Sessie voorkeuren</a></li>  
-                    <li><a href="profiel/instellingen"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Instellingen</a></li>     
+                    <li><a href="icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Instellingen</a></li>     
                     <li class="divider"></li>
                     <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
                 </ul>
