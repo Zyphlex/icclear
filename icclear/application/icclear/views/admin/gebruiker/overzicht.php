@@ -60,7 +60,7 @@
 
                     <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
                         <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"', 'data-toggle="modal"', 'data-target="#confirm-delete"'); ?></td>
-                
+                <a data-href="gebruiker/verwijder/<?php $gebruiker->id ?>" data-toggle="modal" data-target="#confirm-delete" href="#">Verwijder</a>
                 </tr>
             <?php } ?>
         </tbody>
