@@ -21,8 +21,7 @@
         </div>
     </div>
 
-    <a data-href="delete.php?id=23" data-toggle="modal" data-target="#confirm-delete" href="#">Delete record #23</a><br>
-    <a data-href="delete.php?id=54" data-toggle="modal" data-target="#confirm-delete" href="#">Delete record #54</a>
+    <a data-href="gebruiker/verwijder/30" data-toggle="modal" data-target="#confirm-delete" href="#">Delete record #23</a>
 
 
     <script>
