@@ -125,19 +125,6 @@
                                                 Bezoeker
                                             </span>
                                         </div>';
-                        } elseif ($gebruiker->typeId == 1) {
-                            echo '<div class="">
-                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal"  value="2">
-                                            <span class="option-title">
-                                                Spreker
-                                            </span>
-                                        </div> 
-                                        <div class="">
-                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" checked="checked" value="1">
-                                            <span class="option-title">
-                                                Bezoeker
-                                            </span>
-                                        </div>';
                         }
                         ?>
                     </div>
