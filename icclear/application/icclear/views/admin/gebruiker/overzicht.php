@@ -4,18 +4,18 @@
             
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                    <h4 class="modal-title" id="myModalLabel">Gebruiker Verwijderen</h4>
                 </div>
             
                 <div class="modal-body">
-                    <p>You are about to delete one track url, this procedure is irreversible.</p>
-                    <p>Do you want to proceed?</p>
+                    <p>Deze gebruiker wordt verwijderd.</p>
+                    <p>Ben je zeker?</p>
                     <p class="debug-url"></p>
                 </div>
                 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <a href="#" class="btn btn-danger danger">Delete</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
+                    <a href="#" class="btn btn-danger danger">Verwijder</a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,8 @@
                     <?php } ?>
 
                     <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                        <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                        <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"', 'data-toggle="modal"', 'data-target="#confirm-delete"'); ?></td>
+                
                 </tr>
             <?php } ?>
         </tbody>
