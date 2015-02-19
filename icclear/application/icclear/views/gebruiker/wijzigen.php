@@ -227,9 +227,8 @@
 
     </div>
 
-    
-</div>
-<?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+    <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
     <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
 
     <?php echo form_close(); ?>
+</div>
