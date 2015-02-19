@@ -14,7 +14,7 @@
     </div> 
 </div>
 
-<form action="spreker/biografie" method="post">
+<form action="spreker/updateBiografie" method="post">
     <div class="row">
         <div class="col-md-2">
             <label for="foto" class="control-label">Foto: </label>
