@@ -9,10 +9,9 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                        
-                        <h3>Dag <?php echo $teller .  '   <span class="italic">(' . $gebouw->datum . ')</span>' ?></h3>
+                        <h3>Dag <?php echo $teller .  '  ' . $gebouw->gebouw->naam ?></h3>
                     </div>
                     <div class = "panel-body">  
-                        <h4><?php echo $gebouw->gebouw->naam ?></h4>
                             <div class="thumbnail">
                                 <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
                             </div>
