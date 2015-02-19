@@ -38,7 +38,6 @@ class Gebouw_model extends CI_Model {
         $conferentie = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId', $conferentie->id);
-        $this->db->order_by('gebouwId', 'asc');
         $query = $this->db->get('conferentieDag');   
         $dagen = $query->result();
                   
