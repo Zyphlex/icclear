@@ -77,6 +77,26 @@ class Spreker extends CI_Controller {
         }
         $this->template->load('main_master', $partials, $data);    
     }
+    
+    public function updateBiografie()
+    {
+        $data['user'] = $this->authex->getUserInfo();        
+        
+        $data['title'] = 'IC Clear - Biografie';
+        $data['active'] = 'spreker';
+        
+        $id = $this->session->userdata('user_id');
+        $biografie = $this->input->post("biografie");
+        
+        $this->load->model('gebruiker_model');
+        $spreker = $this->gebruiker_model->get($id);
+        
+        $spreker->biografie = $biografie;
+        
+        $this->gebruiker_model->update($spreker);
+        
+        redirect('profiel/instellingen');
+    }
   
     
 }
