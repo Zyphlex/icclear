@@ -15,7 +15,7 @@
                 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
-                    <a href="#" class="btn btn-danger danger">Verwijder</a>
+                    <a href="https://www.google.be/" class="btn btn-danger danger">Verwijder</a>
                 </div>
             </div>
         </div>
@@ -60,7 +60,7 @@
 
                     <td><?php echo anchor('gebruiker/wijzig/' . $gebruiker->id, 'Wijzigen', 'class="btn btn-default"'); ?>
                         <?php echo anchor('gebruiker/verwijder/' . $gebruiker->id, 'Verwijderen', 'class="btn btn-default"', 'data-toggle="modal"', 'data-target="#confirm-delete"'); ?></td>
-                <a data-href="gebruiker/verwijder/<?php $gebruiker->id ?>" data-toggle="modal" data-target="#confirm-delete" href="#">Verwijder</a>
+                <a data-href="https://subversion.khk.be/projecten/TI1415project23/icclear/icclear.php/gebruiker/verwijder/30" data-toggle="modal" data-target="#confirm-delete" href="#">Verwijder</a>
                 </tr>
             <?php } ?>
         </tbody>
