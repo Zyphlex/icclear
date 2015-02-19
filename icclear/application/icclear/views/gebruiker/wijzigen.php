@@ -109,7 +109,18 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" class="form-control" value="<?php echo $inschrijving->confonderdeel->prijs; ?>" id="betaling" name="betaling">
+                    <input type="text" class="form-control" value="€ <?php echo $inschrijving->confonderdeel->prijs;                     
+ if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") 
+ {
+ echo " - Betaald";
+ } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") 
+ {
+   echo " - Niet betaald";
+ }
+?>
+                    
+                    
+                    ?>" id="betaling" name="betaling">
                 </div>
             </div>
             <?php if ($gebruiker->typeId == 2) { ?>
