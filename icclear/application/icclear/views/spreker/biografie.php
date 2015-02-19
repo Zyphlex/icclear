@@ -14,7 +14,10 @@
     </div> 
 </div>
 
-<form action="spreker/updateBiografie" method="post">
+<?php 
+    $attributes = array('name' => 'myform');
+    echo form_open('spreker/updateBiografie', $attributes);
+?>
     <div class="row">
         <div class="col-md-2">
             <label for="foto" class="control-label">Foto: </label>
