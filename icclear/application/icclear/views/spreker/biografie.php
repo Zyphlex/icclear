@@ -16,7 +16,7 @@
 
 <?php 
     $attributes = array('name' => 'myform');
-    echo form_open(base_url() . APPPATH . 'icclear.php/spreker/updateBiografie', $attributes);
+    echo form_open('spreker/updateBiografie', $attributes);
 ?>
     <div class="row">
         <div class="col-md-2">
