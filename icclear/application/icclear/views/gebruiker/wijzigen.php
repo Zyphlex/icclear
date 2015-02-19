@@ -116,7 +116,7 @@ echo form_hidden('id', $gebruiker->id);
                 } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") {
                     echo " - Niet betaald";
                 }
-                ?>" id="betaling" name="betaling">
+                ?>" id="betaling" name="betaling" disabled="true">
             </div>
         </div>
                 <?php if ($gebruiker->typeId == 2) { ?>
