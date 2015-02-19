@@ -225,6 +225,17 @@ echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" i
                     <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4">   
+                    <label for="methode">
+                        Betaalmethode:
+                    </label>
+                </div>
+
+                <div class="col-md-8">   
+                    <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control">
+                </div>
+            </div>
         </div>
     </div>         
 
