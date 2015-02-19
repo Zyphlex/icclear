@@ -37,9 +37,16 @@ class Routes_model extends CI_Model {
         $conferentie = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId', $conferentie->id);
-        $query = $this->db->get('route');        
+        $query = $this->db->get('conferentiedag');   
+        $routes = $query->result();
+        
+        foreach ($routes as $route) {
+            $route->route = $this->getRoute($route->routeId);
+        }
+        
+        $this->db->where('conferentieId', $conferentie->id); 
                         
-        return $query->result();
+        return $routes;
     }    
 }
 
