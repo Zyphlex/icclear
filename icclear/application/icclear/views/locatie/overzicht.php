@@ -5,13 +5,14 @@
 </div>
     
 <div class='row'>
-        <?php foreach ($gebouwen as $gebouw) { ?>
+        <?php $teller = 1; foreach ($gebouwen as $gebouw) { ?>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                        
-                        <h3><?php echo $gebouw->gebouw->naam ?></h3>
+                        <h3>Dag <?php echo $teller .  '<span class="italic">(' . $gebouw->datum . ')</span>' ?></h3>
                     </div>
-                    <div class = "panel-body">
+                    <div class = "panel-body">  
+                        <h4><?php echo $gebouw->gebouw->naam ?></h4>
                             <div class="thumbnail">
                                 <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
                             </div>
@@ -20,6 +21,6 @@
                     </div>
                 </div>  
             </div>
-        <?php } ?>
+        <?php $teller++; } ?>
 </div>
   
