@@ -34,6 +34,21 @@ class Inschrijving_model extends CI_Model {
         }
         return $inschrijvingen;
     }
+    
+    function getInschijvingByConferentie($id) {
+        $this->db->where('gebruikerId',$id);
+        $query = $this->db->get('inschrijving');
+        $inschrijving = $query->row();
+        
+        $this->load->model('betaling_model');
+        $this->load->model('conferentie_onderdeel_model');
+                
+        $inschrijving->betaling = $this->betaling_model->get($id);
+        $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
+                    
+        return $inschrijving;
+    }
+    
 
 }
 
