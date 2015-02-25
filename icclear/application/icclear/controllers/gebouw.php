@@ -74,6 +74,12 @@ class Gebouw extends CI_Controller {
         $this->gebouw_model->insert($gebouw);
         redirect('gebouw'); 
     }
+    
+    public function verwijder($id){
+        $this->load->model('gebouw_model');
+        $this->gebouw_model->delete($id);
+        redirect('gebouw');
+    }
 
 }
 
