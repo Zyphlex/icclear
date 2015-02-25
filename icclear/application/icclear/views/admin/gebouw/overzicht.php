@@ -3,20 +3,24 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Titel</th>
-                    <th>Inhoud</th>
-                    <th>Gepost door</th>                    
+                    <th>Naam</th>
+                    <th>Postcode</th>
+                    <th>Gemeente</th>                    
+                    <th>Straat</th>                    
+                    <th>Nummer</th>                    
                 </tr>
             </thead>  
             <tbody>                              
                 <?php
                 $teller = 1;
-                foreach ($aankondigingen as $aankondiging) {                    
+                foreach ($gebouwen as $gebouw) {                    
                         echo '<tr>' . "\n";
                         echo '<td>' . $teller . '</td>' . "\n";
-                        echo '<td>' . $aankondiging->titel . '</td>' . "\n";
-                        echo '<td>' . $aankondiging->inhoud . '</td>' . "\n";                                                                      
-                        echo '<td>' . $aankondiging->poster->voornaam . ' ' . $aankondiging->poster->familienaam . '</td>' . "\n";
+                        echo '<td>' . $gebouw->naam . '</td>' . "\n";
+                        echo '<td>' . $gebouw->postcode . '</td>' . "\n";                                                                      
+                        echo '<td>' . $gebouw->gemeente . '</td>' . "\n";
+                        echo '<td>' . $gebouw->straat . '</td>' . "\n";
+                        echo '<td>' . $gebouw->nummer . '</td>' . "\n";
                         echo '</tr>' . "\n";
                         $teller++;                    
                 }
