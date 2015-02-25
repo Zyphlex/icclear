@@ -49,6 +49,13 @@ class Gebouw_model extends CI_Model {
         return $dagen;
     }
     
+    function update($gebouw)
+    {
+        $this->db->where('id', $gebouw->id);
+        $this->db->update('gebouw', $gebouw);
+    }
+       
+    
 }
 
 ?>
