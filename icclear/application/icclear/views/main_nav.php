@@ -25,6 +25,7 @@
                             </ul>
                             </li>
                     <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
+                    <li <?php if ($active == 'sponsors'){ echo 'class="active"'; } ?>><?php echo anchor('sponsor/', 'SPONSORS'); ?></li>
                     <?php
                 if ($user != null) {
                     switch ($user->typeId) {                        
