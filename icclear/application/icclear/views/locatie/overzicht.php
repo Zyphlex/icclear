@@ -14,14 +14,15 @@
         $( "#resultaat" ).hide();
         $( ".zoekRoutes" ).click(function() {
             haaloverzicht( $(this).data("id") );
-            if ( $(this).val() == "Toon routes" )
+            if ( $(this).html() == "Toon routes" )
             {                
                 $( "#resultaat" ).show(1000);
-                $(this).val("Verberg routes");
+                $(this).html("Verberg routes");
             }
             else
             {                
                 $( "#resultaat" ).hide(1000);
+                $(this).html("Toon routes");
             }
         });
         
