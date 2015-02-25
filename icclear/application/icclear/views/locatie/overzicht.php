@@ -16,12 +16,12 @@
             haaloverzicht( $(this).data("id") );
             if ( $(this).html() == "Toon routes" )
             {                
-                $( "#resultaat" ).show(1000);
+                $( "#resultaat" ).slideDown(400);
                 $(this).html("Verberg routes");
             }
             else
             {                
-                $( "#resultaat" ).hide(1000);
+                $( "#resultaat" ).slideUp(400);
                 $(this).html("Toon routes");
             }
         });
