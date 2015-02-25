@@ -48,5 +48,7 @@
 </div>
 
 <div class="row">    
-    <div id="resultaat"></div>
+    <div class="col-md-12">
+        <div id="resultaat"></div>
+    </div>
 </div> 
