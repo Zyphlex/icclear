@@ -56,7 +56,7 @@ class Inschrijven extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $this->load->model('inschrijving_model');
-        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie();       
+        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($data['conferentieId']);       
         
         $this->load->model('gebruiker_activiteit_model');
         $data['gebactiviteiten'] = $this->gebruiker_activiteit_model->getActiviteitPrijs(); 
