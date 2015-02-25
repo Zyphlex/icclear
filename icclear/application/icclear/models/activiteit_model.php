@@ -13,6 +13,12 @@ class Activiteit_model extends CI_Model {
         return $query->row();
     }
     
+     function getAllActiviteiten()
+    {        
+        $query = $this->db->get('activiteit');
+        return $query->result();
+    }
+    
     
     function getActiviteitenPerConferentie()
     {
