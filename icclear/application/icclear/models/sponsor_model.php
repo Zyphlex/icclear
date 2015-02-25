@@ -22,7 +22,7 @@ class Sponsor_model extends CI_Model {
         
         foreach ($sponsors as $sponsor)
         {
-            $sponsor->land = $this->land_model->get($sponsor->landid);
+            $sponsor->land = $this->land_model->get($sponsor->landId);
         }
         
         return $sponsors;
