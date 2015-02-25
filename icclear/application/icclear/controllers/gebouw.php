@@ -23,7 +23,7 @@ class Gebouw extends CI_Controller {
     public function index() {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Gebouw';
-        $data['active'] = 'Admin';        
+        $data['active'] = 'admin';        
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getGebouwen();
@@ -34,7 +34,7 @@ class Gebouw extends CI_Controller {
     public function wijzig($id){
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Gebouw wijzigen';
-        $data['active'] = 'Admin';        
+        $data['active'] = 'admin';        
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('gebouw_model');
         $data['gebouw'] = $this->gebouw_model->getGebouw($id);
@@ -45,7 +45,7 @@ class Gebouw extends CI_Controller {
     public function toevoegen(){
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Gebouw toevoegen';
-        $data['active'] = 'Admin';        
+        $data['active'] = 'admin';        
         $data['conferentieId'] = $this->session->userdata('conferentieId');        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
