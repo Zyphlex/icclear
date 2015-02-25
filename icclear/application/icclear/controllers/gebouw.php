@@ -41,6 +41,15 @@ class Gebouw extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function toevoegen(){
+        $data['user'] = $this->authex->getUserInfo();
+        $data['title'] = 'IC Clear - Gebouw toevoegen';
+        $data['active'] = 'Admin';        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/toevoegen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
 
 }
 
