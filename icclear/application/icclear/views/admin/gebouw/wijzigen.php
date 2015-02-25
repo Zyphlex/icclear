@@ -10,27 +10,27 @@
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Postcode:</label>
+            <label for="postcode" class="control-label col-md-2">Postcode:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $gebouw->postcode ?>"/>                
+                <input class="form-control" type="text" id="postcode" name="postcode" value="<?php echo $gebouw->postcode ?>"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Gemeente:</label>
+            <label for="gemeente" class="control-label col-md-2">Gemeente:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $gebouw->gemeente ?>"/>                
+                <input class="form-control" type="text" id="gemeente" name="gemeente" value="<?php echo $gebouw->gemeente ?>"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Straat:</label>
+            <label for="straat" class="control-label col-md-2">Straat:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $gebouw->straat ?>"/>                
+                <input class="form-control" type="text" id="straat" name="straat" value="<?php echo $gebouw->straat ?>"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Nummer:</label>
+            <label for="nummer" class="control-label col-md-2">Nummer:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $gebouw->nummer ?>"/>                
+                <input class="form-control" type="text" id="nummer" name="nummer" value="<?php echo $gebouw->nummer ?>"/>                
             </div>
         </div>        
 
