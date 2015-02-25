@@ -29,7 +29,7 @@ class Gebouw extends CI_Controller {
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getGebouwen();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }   
 
