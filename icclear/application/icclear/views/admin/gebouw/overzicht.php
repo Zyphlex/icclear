@@ -7,7 +7,8 @@
                     <th>Postcode</th>
                     <th>Gemeente</th>                    
                     <th>Straat</th>                    
-                    <th>Nummer</th>                    
+                    <th>Nummer</th>       
+                    <th>Beheer</th>
                 </tr>
             </thead>  
             <tbody>                              
@@ -21,6 +22,7 @@
                         echo '<td>' . $gebouw->gemeente . '</td>' . "\n";
                         echo '<td>' . $gebouw->straat . '</td>' . "\n";
                         echo '<td>' . $gebouw->nummer . '</td>' . "\n";
+                        echo '<td>' . anchor('gebouw/wijzig/' . $gebouw->id, 'Wijzigen', 'class="btn btn-default"') . ' ' . anchor('gebouw/verwijder/' . $gebouw->id, 'Verwijderen', 'class="btn btn-default"') . ' </td> ' ;
                         echo '</tr>' . "\n";
                         $teller++;                    
                 }
