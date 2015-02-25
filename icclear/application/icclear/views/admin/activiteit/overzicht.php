@@ -15,7 +15,7 @@
                 <tr>
                     <td><?php echo $inschrijving->naam ?></td>
                     <td><?php echo $inschrijving->conferentie->naam ?></td>
-                    <td><?php echo $inschrijving->prijs ?></td>
+                    <td><?php echo "€ " . $inschrijving->prijs ?></td>
 
                     <td><?php echo anchor('activiteit/wijzig/' . $inschrijving->id, 'Wijzigen', 'class="btn btn-default"'); ?>
                     <?php echo anchor('activiteit/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?>
