@@ -17,7 +17,8 @@ class Inschrijving_model extends CI_Model {
         parent::__construct();
     }
 
-    function getAllInschijvingByConferentie() {
+    function getAllInschijvingByConferentie($id) {
+        $this->db->where('conferentieId', $id);
         $query = $this->db->get('inschrijving');
         $inschrijvingen = $query->result();
 
