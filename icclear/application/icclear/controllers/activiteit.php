@@ -27,7 +27,7 @@ class Activiteit extends CI_Controller {
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';        
                 
-        $this->load->model('locatie_model');
+        $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/overzicht', 'footer' => 'main_footer');
