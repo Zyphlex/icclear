@@ -47,6 +47,15 @@ class Locatie extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'locatie/routes', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
+    
+    public function overzichtRoutes() {        
+            $gebouwId = $this->input->get('gebouwId');
+            
+            $this->load->model('routes_model');
+            $data['routes'] = $this->routes_model->getRoutesGebouw($gebouwId);
+
+            $this->load->view('locatie/overzichtroutes', $data);
+    }
 }
 
 /* End of file welcome.php */
