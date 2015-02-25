@@ -18,6 +18,13 @@ class Sessies_model extends CI_Model {
         $query = $this->db->get('sponsor');
         $sponsors = $query->result();
         
+        $this->load->model('land_model');
+        
+        foreach ($sponsors as $sponsor)
+        {
+            $sponsor->land = $this->land_model->get($sponsor->landid);
+        }
+        
         return $sponsors;
     }
     
