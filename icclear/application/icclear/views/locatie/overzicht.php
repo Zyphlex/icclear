@@ -43,6 +43,8 @@
                 </div>  
             </div>
         <?php $teller++; } ?>
+    
+                <div id="resultaat"></div>
 </div>
 
 <div class="modal fade" id="routesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
