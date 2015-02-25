@@ -10,10 +10,10 @@
         });
     }
     
-    $(function() {
+    $(document).ready(function() {
+        alert("show");
         $( "#zoekRoutes" ).click(function() {
-            alert("show");
-            haaloverzicht($("#gebouw").val());
+            haaloverzicht("1");
         });
         
     });
@@ -45,28 +45,8 @@
             </div>
         <?php $teller++; } ?>
     
-                <div id="resultaat"></div>
 </div>
 
-<div class="modal fade" id="routesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Routes naar <?php echo $gebouw->gebouw->naam ?></h4>
-            </div>
-
-
-            <div class="modal-body"> 
-                <div id="resultaat"></div>
-            </div>
-            
-             <div class="modal-footer">
-                 <input type="hidden" value="<?php $gebouw->gebouw->id ?>" id="gebouw"/>
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
-            </div>
-            
-        </div>            
-    </div>
-</div>  
+<div class="row">    
+    <div id="resultaat"></div>
+</div> 
