@@ -5,7 +5,6 @@
                 url : site_url + "/locatie/overzichtRoutes",
                 data : { gebouwId : gebouwId },
                 success : function(result){
-                    alert(result);
                     $("#resultaat").html(result);
                 }
         });
@@ -15,7 +14,15 @@
         $( "#resultaat" ).hide();
         $( ".zoekRoutes" ).click(function() {
             haaloverzicht( $(this).data("id") );
-            $( "#resultaat" ).show(500);
+            if ( $(this).val() == "Toon routes" )
+            {                
+                $( "#resultaat" ).show(1000);
+                $(this).val("Verberg routes");
+            }
+            else
+            {                
+                $( "#resultaat" ).hide(1000);
+            }
         });
         
     });
@@ -41,7 +48,7 @@
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
                     
-                        <button class="zoekRoutes" data-id="<?php echo $gebouw->gebouw->id ?>" class="btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
+                        <button data-id="<?php echo $gebouw->gebouw->id ?>" class="zoekRoutes btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
                     </div>
                 </div>  
             </div>
