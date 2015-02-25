@@ -18,10 +18,31 @@
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
                     
-                        <a href="" class="btn btn-default">Toon routes</a>
+                        <a href="" class="btn btn-default" data-toggle="modal" data-target="#routesModal">Toon routes</a>
                     </div>
                 </div>  
             </div>
         <?php $teller++; } ?>
 </div>
-  
+
+<div class="modal fade" id="routesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Aanmelden</h4>
+            </div>
+
+
+            <div class="modal-body">  
+            </div>
+            
+             <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
+                <input type="submit" name="mysubmit" value="Aanmelden" class="btn btn-primary"  />
+            </div>
+            
+        </div>            
+    </div>
+</div>  
