@@ -52,6 +52,14 @@ class Gebouw extends CI_Controller {
     }
     
     public function opslaan(){
+        $gebouw->id = $this->input->post('id');
+        $gebouw->naam =  $this->input->post('naam');
+        $gebouw->postcode = $this->input->post('postcode');
+        $gebouw->gemeente = $this->input->post('gemeente');
+        $gebouw->straat = $this->input->post('straat');
+        $gebouw->nummer = $this->input->post('nummer');
+        $this->load->model('gebouw_model');
+        $this->gebouw_model->update($gebouw);
         
     }
 
