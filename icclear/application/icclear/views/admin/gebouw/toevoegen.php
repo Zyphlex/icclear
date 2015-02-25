@@ -39,7 +39,7 @@
 <div class="row">
     <div class="col-md-12">                
         <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
-        <input type="submit" value="Opslaan" class="btn btn-default"/>             
+        <input type="submit" value="Toevoegen" class="btn btn-default"/>             
     </div>
 </div>
 
@@ -48,8 +48,3 @@
 
 </div>
     
-    
-
-input type="submit" value="Toevoegen" class="btn btn-default"/>
-    <?php echo anchor('admin/', 'Annuleer', 'class="btn btn-default"'); ?>
-        </div>
