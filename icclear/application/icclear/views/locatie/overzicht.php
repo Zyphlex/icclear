@@ -1,19 +1,17 @@
 <script type="text/javascript">
-    function haaloverzicht ( gebouwId ) {
-        $.ajax({type : "GET",
-                url : site_url + "/locatie/overzichtRoutes",
-                data : { gebouwId : gebouwId },
-                success : function(result){
-                    $("#resultaat").html(result);
-                }
-        });
-    }
+//    function haaloverzicht ( gebouwId ) {
+//        $.ajax({type : "GET",
+//                url : site_url + "/locatie/overzichtRoutes",
+//                data : { gebouwId : gebouwId },
+//                success : function(result){
+//                    $("#resultaat").html(result);
+//                }
+//        });
+//    }
     
     $(document).ready(function() {
             alert("show");
-        $( "#zoekRoutes" ).click(function() {
-            haaloverzicht($("#gebouw").val());
-        });
+        
         
     });
 </script>
