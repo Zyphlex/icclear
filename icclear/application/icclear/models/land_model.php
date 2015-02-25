@@ -23,7 +23,14 @@ class Land_model extends CI_Model {
     {        
         $query = $this->db->get('land');
         return $query->result();
-    }    
+    }
+    
+    function get($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get('land');
+        return $query->row();
+    }
 
     
 }
