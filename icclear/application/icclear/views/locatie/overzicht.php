@@ -12,8 +12,10 @@
     }
     
     $(document).ready(function() {
+        $( "#resultaat" ).hide();
         $( ".zoekRoutes" ).click(function() {
             haaloverzicht( $(this).data("id") );
+            $( "#resultaat" ).show(500);
         });
         
     });
