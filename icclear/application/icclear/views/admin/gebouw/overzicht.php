@@ -28,8 +28,8 @@
             </tbody>
         </table>
     <p>
-        <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>     
-        <?php echo anchor('aankondiging/toevoegen', 'Nieuwe aankondiging', 'class="btn btn-default"'); ?>
+        <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>     
+        <?php echo anchor('gebouw/toevoegen', 'Nieuw gebouw', 'class="btn btn-default"'); ?>
     </p>
 </div>
 
