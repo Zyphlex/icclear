@@ -17,6 +17,8 @@
                             </div>
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
+                    
+                        <a href="" class="btn btn-default">Toon routes</a>
                     </div>
                 </div>  
             </div>
