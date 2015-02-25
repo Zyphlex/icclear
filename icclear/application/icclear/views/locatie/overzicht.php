@@ -1,6 +1,5 @@
 <script type="text/javascript">
     function haaloverzicht ( gebouwId ) {
-                    alert("show");
         $.ajax({type : "GET",
                 url : site_url + "/locatie/overzichtRoutes",
                 data : { gebouwId : gebouwId },
@@ -12,6 +11,7 @@
     
     $(function() {
         $( "#zoekRoutes" ).click(function() {
+                    alert("show");
             haaloverzicht($("#gebouw").val());
         });
         
