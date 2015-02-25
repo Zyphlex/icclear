@@ -54,7 +54,12 @@ class Gebouw_model extends CI_Model {
         $this->db->where('id', $gebouw->id);
         $this->db->update('gebouw', $gebouw);
     }
-       
+    
+    function insert($gebouw)
+    {
+        $this->db->insert('gebouw', $gebouw);
+        return $this->db->insert_id();
+    }
     
 }
 
