@@ -16,7 +16,15 @@ class Activiteit_model extends CI_Model {
      function getAllActiviteiten()
     {        
         $query = $this->db->get('activiteit');
-        return $query->result();
+        $activiteiten = $query->result();
+        
+        $this->load->model('conferentie_model');
+        
+        foreach ($activiteiten as $activiteit) {
+           $activiteit->conferentie = $this->conferentie_model->get($activiteit->conferentieId);
+        }
+        
+        return $activiteiten;
     }
     
     
