@@ -5,7 +5,8 @@
 </div>
 
 <div class="row">  
-    <?php foreach ($sponsors as $sponsor) { ?>        
+    <?php foreach ($sponsors as $sponsor) { 
+        if ($sponsor->type == 'sponsor'){?>        
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="row">
@@ -21,5 +22,5 @@
                 </div> 
             </div>  
         </div>
-    <?php } ?>
+        <?php }} ?>
 </div>
