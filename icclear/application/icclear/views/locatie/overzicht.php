@@ -1,4 +1,3 @@
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
     function haaloverzicht ( gebouwId ) {
         $.ajax({type : "GET",
@@ -12,7 +11,6 @@
     }
     
     $(document).ready(function() {
-        alert("show");
         $( "#zoekRoutes" ).click(function() {
             alert("klik");
             haaloverzicht("1");
