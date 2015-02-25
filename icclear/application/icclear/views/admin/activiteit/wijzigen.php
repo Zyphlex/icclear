@@ -36,7 +36,7 @@
 
                 <div class="col-md-8">   
                     
-                    <textarea name="omschrijving" id="field1" class="form-control" required="required" id="omschrijving">
+                    <textarea cols="5" rows="5" name="omschrijving" id="field1" class="form-control" required="required" id="omschrijving">
                     <?php echo $activiteit->omschrijving; ?>
                     </textarea>
                 </div>
