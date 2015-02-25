@@ -1,7 +1,7 @@
 <div class="col-md-10">
     <h1>Gebouw toevoegen</h1>
 
-    <form action="gebouw/voegtoe" method="post">
+    <form action="gebouw/insert" method="post">
 
         <div class="row">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
