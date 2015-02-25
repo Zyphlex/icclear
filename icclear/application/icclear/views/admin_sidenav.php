@@ -17,6 +17,7 @@
             <div class="panel-body">
                 <h4>Algemeen</h4>
                 <ul class="nav nav-pills nav-stacked">
+                    <li><?php echo anchor('activeit' , 'Activiteiten'); ?></li>
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
