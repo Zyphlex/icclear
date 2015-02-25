@@ -11,7 +11,7 @@
     
     $(function() {
         $( "#zoekRoutes" ).click(function() {
-                    alert("show");
+            alert("show");
             haaloverzicht($("#gebouw").val());
         });
         
@@ -38,7 +38,7 @@
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
                     
-                        <a id="zoekRoutes" href="" class="btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</a>
+                        <button id="zoekRoutes" class="btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
                     </div>
                 </div>  
             </div>
