@@ -5,6 +5,7 @@
                 url : site_url + "/locatie/overzichtRoutes",
                 data : { gebouwId : gebouwId },
                 success : function(result){
+                    alert(result);
                     $("#resultaat").html(result);
                 }
         });
