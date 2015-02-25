@@ -10,8 +10,8 @@
     }
     
     $(document).ready(function() {
-        $( "#zoekRoutes" ).click(function() {
             alert("show");
+        $( "#zoekRoutes" ).click(function() {
             haaloverzicht($("#gebouw").val());
         });
         
