@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" 
           href="<?php echo base_url() . APPPATH; ?>img/default/favicon.png"/>
     
-    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
         var site_url = '<?php echo site_url();?>';
 	var img_url = '<?php echo base_url() . APPPATH; ?>';
