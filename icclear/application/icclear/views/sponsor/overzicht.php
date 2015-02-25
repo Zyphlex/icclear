@@ -15,10 +15,7 @@
                         </div>
                         <div class="col-md-9">
                             <h4><?php echo $sponsor->naam ?></h4>        
-
-                            <p><?php echo $sponsor->land->naam; ?></p>   
-                            <p><?php echo $sponsor->straat . ' ' . $sponsor->nummer; ?></p>   
-                            <p><?php echo $sponsor->postcode . ' ' . $sponsor->gemeente; ?></p>  
+ 
                         </div>
                     </div>      
                 </div> 
