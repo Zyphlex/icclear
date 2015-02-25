@@ -28,10 +28,6 @@
     <script type="text/javascript">
         var site_url = '<?php echo site_url();?>';
 	var img_url = '<?php echo base_url() . APPPATH; ?>';
-        
-        $(document).ready(function() {
-            alert("show");        
-        });
     </script>
 </head>
 
