@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
     public function index() {
         $data['user']  = $this->authex->getUserInfo();
-        $data['title'] = 'IC Clear - Home'; 
+        $data['title'] = 'IC Clear - Sponsors'; 
         $data['active'] = 'sponsors';        
         
         $this->load->model('conferentie_model');
