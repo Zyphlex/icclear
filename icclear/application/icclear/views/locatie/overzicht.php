@@ -31,7 +31,7 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                        
-                        <h3>Dag <?php echo $teller .  '  ' . $gebouw->gebouw->naam ?></h3>
+                        <h3>Dag <?php echo $teller .  '  ' . $gebouw->gebouw->naam . '     ' . $gebouw->gebouw->id ?></h3>
                     </div>
                     <div class = "panel-body">  
                             <div class="thumbnail">
