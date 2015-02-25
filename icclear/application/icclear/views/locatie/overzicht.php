@@ -9,7 +9,7 @@
         });
     }
     
-    $(function() {
+    $(document).ready(function() {
         $( "#zoekRoutes" ).click(function() {
             alert("show");
             haaloverzicht($("#gebouw").val());
