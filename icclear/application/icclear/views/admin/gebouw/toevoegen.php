@@ -10,27 +10,27 @@
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Postcode:</label>
+            <label for="postcode" class="control-label col-md-2">Postcode:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>                
+                <input class="form-control" type="text" id="postcode" name="postcode"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Gemeente:</label>
+            <label for="gemeente" class="control-label col-md-2">Gemeente:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>                
+                <input class="form-control" type="text" id="gemeente" name="gemeente"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Straat:</label>
+            <label for="straat" class="control-label col-md-2">Straat:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>                
+                <input class="form-control" type="text" id="straat" name="straat"/>                
             </div>
         </div>
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Nummer:</label>
+            <label for="nummer" class="control-label col-md-2">Nummer:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam"/>                
+                <input class="form-control" type="text" id="nummer" name="nummer"/>                
             </div>
         </div>        
 
