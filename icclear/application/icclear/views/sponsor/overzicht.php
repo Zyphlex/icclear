@@ -14,7 +14,7 @@
                             <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                         </div>
                         <div class="col-md-9">
-                            <h4><?php echo $sponsor->naam ?></h4>        
+                            <h1><?php echo $sponsor->naam ?></h1>        
  
                         </div>
                     </div>      
