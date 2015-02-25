@@ -13,8 +13,8 @@
     
     $(document).ready(function() {
         $( "#zoekRoutes" ).click(function() {
-            alert("klik");
-            haaloverzicht("1");
+            alert("klik" + $(this).data("id"));
+            haaloverzicht($(this).data("id") );
         });
         
     });
@@ -40,7 +40,7 @@
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
                     
-                        <button id="zoekRoutes" class="btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
+                        <button id="zoekRoutes" data-id="<?php $gebouw->gebouw->id ?>" class="btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
                     </div>
                 </div>  
             </div>
