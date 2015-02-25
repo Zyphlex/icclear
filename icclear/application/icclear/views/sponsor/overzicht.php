@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">  
-    <?php foreach ($hotels as $hotel) { ?>        
+    <?php foreach ($sponsors as $sponsor) { ?>        
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="row">
@@ -14,11 +14,11 @@
                             <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
                         </div>
                         <div class="col-md-9">
-                            <h4><?php echo $hotel->hotel->naam ?></h4>        
+                            <h4><?php echo $sponsor->naam ?></h4>        
 
-                            <p><?php echo $hotel->hotel->straat . ' ' . $hotel->hotel->nummer ?></p>   
-                            <p><?php echo $hotel->hotel->postcode . ' ' . $hotel->hotel->gemeente ?></p>   
-                            <p><?php echo anchor($hotel->hotel->website, 'Naar de website') ?></p>  
+                            <p><?php echo $sponsor->land->naam; ?></p>   
+                            <p><?php echo $sponsor->straat . ' ' . $sponsor->nummer; ?></p>   
+                            <p><?php echo $sponsor->postcode . ' ' . $sponsor->gemeente; ?></p>  
                         </div>
                     </div>      
                 </div> 
