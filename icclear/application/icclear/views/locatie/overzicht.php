@@ -1,10 +1,10 @@
 <script type="text/javascript">
     function haaloverzicht ( gebouwId ) {
+                    alert("show");
         $.ajax({type : "GET",
                 url : site_url + "/locatie/overzichtRoutes",
                 data : { gebouwId : gebouwId },
                 success : function(result){
-                    alert("show");
                     $("#resultaat").html(result);
                 }
         });
