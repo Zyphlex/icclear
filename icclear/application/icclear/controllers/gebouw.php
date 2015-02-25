@@ -25,6 +25,8 @@ class Gebouw extends CI_Controller {
 
         $data['title'] = 'IC Clear - Gebouw';
         $data['active'] = '';
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getGebouwen();
