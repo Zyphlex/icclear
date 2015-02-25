@@ -14,6 +14,7 @@
     $(document).ready(function() {
         alert("show");
         $( "#zoekRoutes" ).click(function() {
+            alert("klik");
             haaloverzicht("1");
         });
         
