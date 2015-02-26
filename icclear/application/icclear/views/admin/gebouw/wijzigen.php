@@ -4,7 +4,12 @@
     <form action="<?php echo base_url(); ?>icclear.php/gebouw/opslaan" method="post">
 
         <div class="row">            
-            <label for="naam" class="control-label col-md-2">Naam:</label>
+            
+            <?php
+//            $attributesLabel = array('style' => 'control-label col-md-2');
+//            echo form_label('Naam:', 'naam', $attributesLabel);
+            echo form_label(array('for' => 'email' , 'class' => 'control-label col-md-2', 'value' => 'Naam:'));
+            ?>
             <div class="col-md-4">
                 <?php echo form_input(array('id' => 'naam', 'name' => 'naam', 'class' => 'form-control', 'value' => $gebouw->naam)) ?>                     
             </div>
@@ -34,15 +39,15 @@
             </div>
         </div>        
 
-<div class="row">
-    <div class="col-md-12">
-        <input type="hidden" value="<?php echo $gebouw->id;?>" name="id"/>
-        <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
-        <input type="submit" value="Opslaan" class="btn btn-default"/>             
-    </div>
-</div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="hidden" value="<?php echo $gebouw->id; ?>" name="id"/>
+                <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
+                <input type="submit" value="Opslaan" class="btn btn-default"/>             
+            </div>
+        </div>
 
-</form>
+    </form>
 
 
 </div>
