@@ -27,7 +27,8 @@ class Sponsor extends CI_Controller {
     public function overzicht() {
         $data['user']  = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Sponsors'; 
-        $data['active'] = 'admin';        
+        $data['active'] = 'admin';
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
