@@ -15,14 +15,14 @@
     }
     
     function maakDeleteClick() {
-        $(".verwijderFaq").click(function(e) {
+        $(".verwijderFaq").click(function() {
             deleteid = $(this).data("id");
             $( "#faqDelete" ).modal('show');
         });        
     }
     
     function maakDetailClick() {
-          $(".wijzigFaq").click(function(e) {
+          $(".wijzigFaq").click(function() {
             var iddb = $(this).data("id");
             $( "#id" ).val( iddb );
             if (iddb != 0) {
@@ -86,7 +86,6 @@
         
         $(".deleteFaq").click(function() {
         // gegevens wegschrijven via ajax (doorgeven naar server via json)
-            deleteid = $(this).data("id");
                       $.ajax({
                         type: "GET",
                         url: site_url + "/faqbeheer/faqdelete",
