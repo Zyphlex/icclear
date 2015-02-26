@@ -50,6 +50,12 @@ class Activiteit_model extends CI_Model {
         return $query->result();
     }
     
+    function update($activiteit)
+    {
+        $this->db->where('id', $activiteit->id);
+        $this->db->update('activiteit', $activiteit);
+    }
+    
 }
 
 ?>
