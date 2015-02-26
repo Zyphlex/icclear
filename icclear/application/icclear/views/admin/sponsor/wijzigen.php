@@ -28,7 +28,7 @@
             foreach ($landen as $land) {
                 $optionsLand[$land->id] = $land->naam;
             }
-            echo form_dropdown('land', $optionsLand, $sponsor->land->id)
+            echo form_dropdown('land', $optionsLand, $sponsor->land->id, 'class="form-control"');
             ?>
         </div>
     </div>
