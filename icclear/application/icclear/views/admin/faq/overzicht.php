@@ -5,6 +5,7 @@
                 url : site_url + "/faqbeheer/overzicht",
                 success : function(result){
                     $("#resultaat").html(result);
+                    maakDetailClick();
                 }
         });
     }
@@ -14,18 +15,7 @@
     }
     
     function maakDetailClick() {
-          
-    }
-    
-    $(document).ready(function() {
-        maakDetailClick();
-        haaloverzicht();
-        $( ".opslaanFaq" ).click(function() {    
-            haaloverzicht ();
-        });
-        
-        $(".wijzigFaq").click(function(e) {
-            $( "#faqModal" ).modal('show'); 
+          $(".wijzigFaq").click(function(e) {
             var iddb = $(this).data("id");
             $( "#id" ).val( iddb );
             if (iddb != 0) {
@@ -49,7 +39,26 @@
             $( "#vraag" ).removeClass( "" );
             $( "#antwoord" ).removeClass( "" );
             // dialoogvenster openen
+            $( "#faqModal" ).modal('show'); 
         }); 
+    }
+    
+    $(function(){
+        maakDetailClick();        
+    });
+        
+    $(document).ready(function() {
+        maakDetailClick();
+        haaloverzicht();
+        $( ".opslaanFaq" ).click(function() {    
+            haaloverzicht ();
+        });
+        
+        $( ".wijzigFaq" ).click(function() {    
+            haaloverzicht ();
+        });
+        
+        
         
     });
 </script>
