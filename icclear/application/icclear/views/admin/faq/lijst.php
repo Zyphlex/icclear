@@ -13,7 +13,7 @@
                 <td><?php echo $vraag->antwoord ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigFaq btn btn-primary" data-toggle="modal" data-id="<?php echo $vraag->id ?>" data-target="#faqModal">Wijzigen</button>
+                        <button class="wijzigFaq btn btn-primary" data-toggle="modal" data-id="<?php echo $vraag->id ?>" data-target="">Wijzigen</button>
                         <?php echo anchor('faqbeheer/verwijder/' . $vraag->id, 'Verwijder', 'class="btn btn-default"'); ?>   
                     </p>                                 
                 </td>

@@ -13,6 +13,36 @@
         haaloverzicht ();
     }
     
+    function maakDetailClick() {
+        $(".wijzigFaq").click(function(e) {
+            e.preventDefault();
+            var iddb = $(this).data("id");
+            $( "#id" ).val( iddb );
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type : "GET",
+                    url : site_url + "/faqbeheer/faqdetail",
+                    async: false,
+                    data : { id : iddb },
+                    success : function(result){
+                        var jobject = jQuery.parseJSON(result);
+                        $( "#vraag" ).val(jobject.naam);
+                        $( "#antwoord" ).val(jobject.email);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $( "#vraag" ).val("");
+                $( "#antwoord" ).val("");
+            }
+            // eventuele fouten van vorig dialoogvenster wegdoen
+            $( "#vraag" ).removeClass( "" );
+            $( "#antwoord" ).removeClass( "" );
+            // dialoogvenster openen
+            $( "#faqModal" ).dialog( "open" ); 
+        });   
+    }
+    
     $(document).ready(function() {
         haaloverzicht();
         $( ".opslaanFaq" ).click(function() {    
@@ -57,7 +87,8 @@
             </div>
             
              <div class="modal-footer">
-                <button type="button" class="opslaanFaq btn btn-default" data-dismiss="modal">Sluiten</button>
+                <button type="button" class="opslaanFaq btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
             
         </div>            

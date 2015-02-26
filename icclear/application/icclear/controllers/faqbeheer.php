@@ -89,6 +89,10 @@ class Faqbeheer extends CI_Controller {
 
         $this->load->view('admin/faq/lijst', $data);
     }
+    
+    public function faqdetail() {
+        
+    }
 
 }
 
