@@ -92,8 +92,13 @@
                         async: false,
                         data : { id : deleteid },
                         success : function(result){
-                            refreshData();
-                            $( "#faqDelete" ).modal('hide');                            
+                            if (result == '0') {
+                                // verwijderen is mislukt, foutmelding tonen
+                                alert("error");
+                            } else {
+                                refreshData();
+                                $( "#faqDelete" ).modal('hide');
+                            }                            
                         }
                     });
         });
