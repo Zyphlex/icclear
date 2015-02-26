@@ -90,7 +90,7 @@
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
     
-    <button class="wijzigFaq btn btn-primary">Nieuwe Toevoegen</button>
+    <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe Toevoegen</button>
     <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="wijzigFaq btn btn-default"'); ?> 
 
 </div>
