@@ -15,7 +15,7 @@
     
     $(document).ready(function() {
         haaloverzicht();
-        $( ".wijzigFaq" ).click(function() {    
+        $( ".opslaanFaq" ).click(function() {    
             haaloverzicht ();
         });
         
@@ -26,8 +26,7 @@
 <div class="col-md-10">
 
     <h1>FAQ beheren</h1>  
-    <button class="wijzigFaq btn btn-primary" data-toggle="modal" data-target="#faqModal">Wijzigen</button>
-               
+            
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
@@ -52,7 +51,7 @@
             </div>
             
              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                <button type="button" class="opslaanFaq btn btn-default" data-dismiss="modal">Sluiten</button>
             </div>
             
         </div>            
