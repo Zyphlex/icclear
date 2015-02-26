@@ -56,6 +56,12 @@ class Activiteit_model extends CI_Model {
         $this->db->update('activiteit', $activiteit);
     }
     
+    function insert($activiteit)
+    {
+        $this->db->insert('activiteit', $activiteit);
+        return $this->db->insert_id();
+    }
+    
 }
 
 ?>
