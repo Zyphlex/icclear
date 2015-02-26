@@ -65,11 +65,7 @@
         maakDetailClick();
         maakDeleteClick();
         haaloverzicht();
-        
-        $( ".opslaanFaq" ).click(function() {    
-            haaloverzicht ();
-        });
-        
+                
         $(".opslaanFaq").click(function() {
         // gegevens wegschrijven via ajax (doorgeven naar server via json)
               var dataString = $("#JqAjaxForm:eq(0)").serialize();
