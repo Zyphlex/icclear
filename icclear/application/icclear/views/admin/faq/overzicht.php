@@ -96,6 +96,7 @@
                                 // verwijderen is mislukt, foutmelding tonen
                                 alert("error");
                             } else {
+                                alert("success");
                                 refreshData();
                                 $( "#faqDelete" ).modal('hide');
                             }                            
