@@ -17,18 +17,22 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Land:', 'land', $attributesLabel);
         ?>
         <div class="col-md-4">
             <?php
-            echo form_input(array('id' => 'land', 'name' => 'land', 'class' => 'form-control', 'value' => $sponsor->land->naam));
+            $optionsLand = array();
+            foreach ($landen as $land) {
+                $optionsLand[$land->id] = $land->naam;
+            }
+            echo form_dropdown('land', $optionsLand, $sponsor->land->id)
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Postcode:', 'postcode', $attributesLabel);
@@ -39,7 +43,7 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Gemeente:', 'gemeente', $attributesLabel);
@@ -50,7 +54,7 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Straat:', 'straat', $attributesLabel);
@@ -61,7 +65,7 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Nuumer:', 'nummer', $attributesLabel);
@@ -72,7 +76,7 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Naam:', 'naam', $attributesLabel);
@@ -83,14 +87,19 @@
             ?>
         </div>
     </div>
-    
+
     <div class="row">
         <?php
         echo form_label('Type:', 'type', $attributesLabel);
         ?>
         <div class="col-md-4">
             <?php
-            //dropdown
+            $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
+            if ($sponsor->type == 'Sponsor') {
+                echo form_dropdown('type', $optionsType, 'Sponsor');
+            } else {
+                echo form_dropdown('type', $optionsType, 'Partner');
+            }
             ?>
         </div>
     </div>
@@ -99,7 +108,7 @@
     <div class="row">
         <div class="col-md-12">
             <input type="hidden" value="<?php echo $gebouw->id; ?>" name="id"/>
-<?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
+            <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
             <input type="submit" value="Opslaan" class="btn btn-default"/>             
         </div>
     </div>
