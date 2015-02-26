@@ -14,8 +14,8 @@
     
     $(document).ready(function() {
         haaloverzicht();
-        $( ".opslaanFaq" ).click(function() {
-            
+        $( ".toevoegenFaq" ).click(function() {            
+            haaloverzicht ();
         });
         
     });
@@ -40,7 +40,7 @@
     </table>
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-    <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="btn btn-default"'); ?> 
+    <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="toevoegenFaq btn btn-default"'); ?> 
 
 </div>
 
