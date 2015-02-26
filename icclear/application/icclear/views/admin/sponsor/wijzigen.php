@@ -108,7 +108,7 @@
     <div class="row">
         <div class="col-md-12">
             <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"');
-            echo form_submit('mysubmit', 'Opslaan', 'class="btn btn-default"')?>         
+            echo form_submit('mysubmit', 'Opslaan', 'class="btn btn-default"');?>         
                         
         </div>
     </div>
