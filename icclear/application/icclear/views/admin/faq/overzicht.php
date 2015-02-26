@@ -42,10 +42,6 @@
             $( "#faqModal" ).modal('show'); 
         }); 
     }
-    
-    $(function(){
-        maakDetailClick();        
-    });
         
     $(document).ready(function() {
         maakDetailClick();
