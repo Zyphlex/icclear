@@ -26,8 +26,8 @@
                     data : { id : iddb },
                     success : function(result){
                         var jobject = jQuery.parseJSON(result);
-                        $( "#vraag" ).val(jobject.naam);
-                        $( "#antwoord" ).val(jobject.email);
+                        $( "#vraag" ).val(jobject.vraag);
+                        $( "#antwoord" ).val(jobject.antwoord);
                     }
                 });
             } else {
