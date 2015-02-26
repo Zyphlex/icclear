@@ -36,9 +36,7 @@
 
                 <div class="col-md-8">   
                     
-                    <textarea cols="5" rows="5" name="omschrijving" id="field1" class="form-control" required="required" id="omschrijving">
-                    <?php echo $activiteit->omschrijving; ?>
-                    </textarea>
+                    <textarea cols="5" rows="5" name="omschrijving" class="form-control" required="required" id="omschrijving"><?php echo $activiteit->omschrijving; ?></textarea>
                 </div>
             </div>
 
@@ -80,7 +78,7 @@
 
     </div>
 
-    <?php echo anchor('gebruiker/overzichtGebruikers', 'Annuleer', 'class="btn btn-default"'); ?>
+    <?php echo anchor('activiteit/overzicht', 'Annuleer', 'class="btn btn-default"'); ?>
     <?php echo form_submit('opslaan', 'Opslaan', 'class="btn btn-default"'); ?>
 
     <?php echo form_close(); ?>
