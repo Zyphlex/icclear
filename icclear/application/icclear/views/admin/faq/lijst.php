@@ -14,7 +14,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigFaq btn btn-primary" data-id="<?php echo $vraag->id ?>">Wijzigen</button>
-                        <?php echo anchor('faqbeheer/verwijder/' . $vraag->id, 'Verwijder', 'class="btn btn-default"'); ?>   
+                        <button class="verwijderFaq btn btn-danger" data-id="<?php echo $vraag->id ?>">Verwijderen</button> 
                     </p>                                 
                 </td>
             </tr>

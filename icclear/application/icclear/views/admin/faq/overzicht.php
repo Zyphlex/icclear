@@ -5,12 +5,20 @@
                 success : function(result){
                     $("#resultaat").html(result);
                     maakDetailClick();
+                    maakDeleteClick();
                 }
         });
     }
     
     function refreshData () {
         haaloverzicht ();
+    }
+    
+    function maakDeleteClick() {
+        $(".verwijderFaq").click(function(e) {
+            deleteid = $(this).data("id");
+            $( "#faqDelete" ).modal('show');
+        });        
     }
     
     function maakDetailClick() {
@@ -55,16 +63,15 @@
         
     $(document).ready(function() {
         maakDetailClick();
+        maakDeleteClick();
         haaloverzicht();
+        
         $( ".opslaanFaq" ).click(function() {    
             haaloverzicht ();
         });
         
-        $( ".wijzigFaq" ).click(function() {  
-        });
-        
         $(".opslaanFaq").click(function() {
-    // gegevens wegschrijven via ajax (doorgeven naar server via json)
+        // gegevens wegschrijven via ajax (doorgeven naar server via json)
               var dataString = $("#JqAjaxForm:eq(0)").serialize();
                       $.ajax({
                       type: "POST",
@@ -75,7 +82,21 @@
                       });
                       refreshData();
                       $( "#faqModal" ).modal('hide');
-    });
+        });
+        
+        $(".deleteFaq").click(function() {
+        // gegevens wegschrijven via ajax (doorgeven naar server via json)
+                      $.ajax({
+                        type: "GET",
+                        url: site_url + "/faqbeheer/faqdelete",
+                        async: false,
+                        data : { id : deleteid },
+                        success : function(result){
+                            refreshData();
+                            $( "#faqDelete" ).modal('hide');                            
+                        }
+                    });
+        });
         
     });
 </script>
@@ -90,7 +111,6 @@
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
     
     <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe Toevoegen</button>
-    <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="wijzigFaq btn btn-default"'); ?> 
 
 </div>
 
@@ -119,6 +139,29 @@
             
              <div class="modal-footer">
                 <button type="button" class="opslaanFaq btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+            
+        </div>            
+    </div>
+</div>  
+
+<div class="modal fade" id="faqDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">OPGELET!</h4>
+            </div>
+
+            <div class="modal-body">                  
+                <p>Bent u zeker dat u deze vraag wilt verwijderen?</p>  
+                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+            </div>
+            
+             <div class="modal-footer">
+                <button type="button" class="deleteFaq btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
             
