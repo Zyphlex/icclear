@@ -11,6 +11,9 @@ class Sponsor_model extends CI_Model {
         $query = $this->db->get('sponsor');
         $sponsor = $query->row();
         
+        $this->load->model('land_model');
+        $sponsor->land = $this->land_model->get($sponsor->landId);
+        
         return $sponsor;
     }
     
