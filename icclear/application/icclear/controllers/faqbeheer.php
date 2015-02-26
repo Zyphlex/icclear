@@ -90,8 +90,13 @@ class Faqbeheer extends CI_Controller {
         $this->load->view('admin/faq/lijst', $data);
     }
     
-    public function faqdetail() {
-        
+    public function faqdetail() {        
+            $id = $this->input->get('id');
+                        
+            $this->load->model('faq_model');
+            $vraag = $this->faq_model->get($id);
+            
+            echo json_encode($vraag); 
     }
 
 }
