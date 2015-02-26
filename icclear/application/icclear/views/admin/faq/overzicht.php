@@ -89,10 +89,8 @@
                         data : { id : deleteid },
                         success : function(result){
                             if (result == '0') {
-                                // verwijderen is mislukt, foutmelding tonen
-                                alert(result + "fout");
+                                alert("fout");
                             } else {
-                                alert(result + "succes");
                                 refreshData();
                                 $( "#faqDelete" ).modal('hide');
                             }                            
