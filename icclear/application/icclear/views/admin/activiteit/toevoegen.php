@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <select class="form-control"  name="land" id="field9" required="required">
+                    <select class="form-control"  name="conferentie" id="conferentie" required="required">
                         <?php
                         foreach ($conferenties as $conferentie) {
                             echo '<option value="' . $conferentie->id . '">' .
