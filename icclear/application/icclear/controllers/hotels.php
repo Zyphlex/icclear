@@ -34,6 +34,21 @@ class Hotels extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+     public function wijzig($id) {
+
+        $data['user'] = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
+        $this->load->model('hotel_model');
+        $data['hotel'] = $this->hotel_model->get($id);
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/hotels/wijzigen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+    
 
     
     
