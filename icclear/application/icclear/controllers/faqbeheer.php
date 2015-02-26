@@ -114,10 +114,11 @@ class Faqbeheer extends CI_Controller {
         echo $id;
     }
     
-    public function faqdelete($id) {       
+    public function faqdelete() {       
+        $id = $this->input->post('id');
+        
         $this->load->model('faq_model');
-        $this->faq_model->delete($id); 
-        redirect('faqbeheer/index');        
+        echo $this->faq_model->delete($id); 
     }
 
 }
