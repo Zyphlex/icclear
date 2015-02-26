@@ -28,9 +28,8 @@
 <div class="col-md-10">
 
     <h1>FAQ beheren</h1>  
-
-    <?php echo anchor('/#' , 'Wijzig', 'class="wijzigFaq btn btn-default"', 'data-toggle="modal"', 'data-target="#faqModal"'); ?>
-                
+    <button data-id="<?php echo $gebouw->gebouw->id ?>" class="wijzigFaq btn btn-primary" data-toggle="modal" data-target="#faqModal">Wijzigen</button>
+               
     <table class="table">
         <thead>
             <tr>
