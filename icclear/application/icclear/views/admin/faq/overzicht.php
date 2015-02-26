@@ -14,6 +14,16 @@
     }
     
     function maakDetailClick() {
+          
+    }
+    
+    $(document).ready(function() {
+        maakDetailClick();
+        haaloverzicht();
+        $( ".opslaanFaq" ).click(function() {    
+            haaloverzicht ();
+        });
+        
         $(".wijzigFaq").click(function(e) {
             e.preventDefault();
             var iddb = $(this).data("id");
@@ -40,15 +50,7 @@
             $( "#antwoord" ).removeClass( "" );
             // dialoogvenster openen
             $( "#faqModal" ).modal('show'); 
-        });   
-    }
-    
-    $(document).ready(function() {
-        maakDetailClick();
-        haaloverzicht();
-        $( ".opslaanFaq" ).click(function() {    
-            haaloverzicht ();
-        });
+        }); 
         
     });
 </script>
