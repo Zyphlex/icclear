@@ -35,12 +35,24 @@
                 $( "#vraag" ).val("");
                 $( "#antwoord" ).val("");
             }
-            // eventuele fouten van vorig dialoogvenster wegdoen
-            $( "#vraag" ).removeClass( "" );
-            $( "#antwoord" ).removeClass( "" );
             // dialoogvenster openen
             $( "#faqModal" ).modal('show'); 
         }); 
+    }
+    
+    $(".opslaanFaq").click(function() {
+    // gegevens wegschrijven via ajax (doorgeven naar server via json)
+              var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                      $.ajax({
+                      type: "POST",
+                              url: site_url + "/faqbeheer/faqupdate",
+                              async: false,
+                              data: dataString,
+                              dataType: "json"
+                      });
+                      dialogmagtoe = true;
+                      refreshData();
+                      $( "#faqModal" ).modal('hide');
     }
         
     $(document).ready(function() {
