@@ -39,7 +39,7 @@
             $( "#vraag" ).removeClass( "" );
             $( "#antwoord" ).removeClass( "" );
             // dialoogvenster openen
-            $( "#faqModal" ).modal( "show" ); 
+            $( "#faqModal" ).modal('show'); 
         });   
     }
     
