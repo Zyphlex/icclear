@@ -32,7 +32,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type : "GET",
-                    url : site_url + "/faqbeheer/faqdetail",
+                    url : site_url + "/faqbeheer/detail",
                     async: false,
                     data : { id : iddb },
                     success : function(result){
@@ -63,7 +63,7 @@
               var dataString = $("#JqAjaxForm:eq(0)").serialize();
                       $.ajax({
                       type: "POST",
-                              url: site_url + "/faqbeheer/faqupdate",
+                              url: site_url + "/faqbeheer/update",
                               async: false,
                               data: dataString,
                               dataType: "json"
@@ -76,7 +76,7 @@
         $(".deleteFaq").click(function() {
                       $.ajax({
                         type: "POST",
-                        url: site_url + "/faqbeheer/faqdelete",
+                        url: site_url + "/faqbeheer/delete",
                         async: false,
                         data : { id : deleteid },
                         success : function(result){
@@ -102,7 +102,7 @@
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
     
-    <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe Toevoegen</button>
+    <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe FAQ Toevoegen</button>
 
 </div>
 

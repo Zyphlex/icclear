@@ -40,7 +40,7 @@ class Faqbeheer extends CI_Controller {
         $this->load->view('admin/faq/lijst', $data);
     }
     
-    public function faqdetail() {        
+    public function detail() {        
             $id = $this->input->get('id');
                         
             $this->load->model('faq_model');
@@ -49,7 +49,7 @@ class Faqbeheer extends CI_Controller {
             echo json_encode($vraag); 
     }
     
-    public function faqupdate() {   
+    public function update() {   
         $faq->id = $this->input->post('id');
         $faq->vraag = $this->input->post('vraag');
         $faq->antwoord = $this->input->post('antwoord');
@@ -64,7 +64,7 @@ class Faqbeheer extends CI_Controller {
         echo $id;
     }
     
-    public function faqdelete() {       
+    public function delete() {       
         $id = $this->input->post('id');
         
         $this->load->model('faq_model');
