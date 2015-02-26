@@ -32,7 +32,7 @@
                     echo '<td>' . $sponsor->gemeente . '</td>' . "\n";
                     echo '<td>' . $sponsor->straat . '</td>' . "\n";
                     echo '<td>' . $sponsor->nummer . '</td>' . "\n";
-                    echo '<td>' . anchor('sponsor/wijzig/' . $sponsor->id, 'Wijzigen', 'class="btn btn-default"') . ' ' . anchor('sponsor/verwijder/' . $sponsor->id, 'Verwijderen', 'class="btn btn-default"') . ' </td> ';
+                    echo '<td>' . anchor('sponsor/wijzigen/' . $sponsor->id, 'Wijzigen', 'class="btn btn-default"') . ' ' . anchor('sponsor/verwijderen/' . $sponsor->id, 'Verwijderen', 'class="btn btn-default"') . ' </td> ';
                     echo '</tr>' . "\n";
                     $teller++;
                 }
@@ -69,7 +69,7 @@
                     echo '<td>' . $sponsor->gemeente . '</td>' . "\n";
                     echo '<td>' . $sponsor->straat . '</td>' . "\n";
                     echo '<td>' . $sponsor->nummer . '</td>' . "\n";
-                    echo '<td>' . anchor('sponsor/wijzig/' . $sponsor->id, 'Wijzigen', 'class="btn btn-default"') . ' ' . anchor('sponsor/verwijder/' . $sponsor->id, 'Verwijderen', 'class="btn btn-default"') . ' </td> ';
+                    echo '<td>' . anchor('sponsor/wijzigen/' . $sponsor->id, 'Wijzigen', 'class="btn btn-default"') . ' ' . anchor('sponsor/verwijderen/' . $sponsor->id, 'Verwijderen', 'class="btn btn-default"') . ' </td> ';
                     echo '</tr>' . "\n";
                     $teller++;
                 }
