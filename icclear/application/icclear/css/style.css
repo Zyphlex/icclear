@@ -88,6 +88,6 @@ button:focus {outline:none;}
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {  color: #b60717;  background-color: transparent;}
 
-
+table td:nth-last-child() { width:200px; }
 
 .login-user { font-family:estrangelo;font-size:14px;color:#b60717;cursor:pointer;}
