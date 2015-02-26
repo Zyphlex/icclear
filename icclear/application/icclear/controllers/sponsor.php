@@ -39,6 +39,18 @@ class Sponsor extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function wijzigen($id){
+        
+    }
+    
+    public function verwijderen($id){
+        
+    }
+    
+    public function update() {
+        
+    }
 
     
 }
