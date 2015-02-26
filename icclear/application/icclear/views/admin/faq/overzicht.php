@@ -29,7 +29,7 @@
 
     <h1>FAQ beheren</h1>  
 
-    <?php echo anchor('Wijzig', 'class="wijzigFaq btn btn-default"', 'data-toggle="modal"', 'data-target="#"', 'data-id="' . $vraag->id . '"'); ?>
+    <?php echo anchor('#' , 'Wijzig', 'class="wijzigFaq btn btn-default"', 'data-toggle="modal"', 'data-target="#faqModal"'); ?>
                 
     <table class="table">
         <thead>
