@@ -107,9 +107,9 @@
 
     <div class="row">
         <div class="col-md-12">
-            <input type="hidden" value="<?php echo $gebouw->id; ?>" name="id"/>
-            <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
-            <input type="submit" value="Opslaan" class="btn btn-default"/>             
+            <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"');
+            echo form_submit('mysubmit', 'Opslaan')?>         
+                        
         </div>
     </div>
 
