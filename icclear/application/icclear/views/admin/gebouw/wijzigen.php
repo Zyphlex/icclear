@@ -6,7 +6,7 @@
         <div class="row">            
             <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
-                <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $gebouw->naam ?>"/>                
+                <?php echo form_input(array('id' => 'naam', 'name' => 'naam', 'class' => 'form-control', 'value' => $gebouw->naam)) ?>                     
             </div>
         </div>
         <div class="row">            
