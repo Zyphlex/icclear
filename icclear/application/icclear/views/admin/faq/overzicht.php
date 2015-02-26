@@ -40,7 +40,19 @@
         }); 
     }
     
-    
+    $(".opslaanFaq").click(function() {
+    // gegevens wegschrijven via ajax (doorgeven naar server via json)
+              var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                      $.ajax({
+                      type: "POST",
+                              url: site_url + "/faqbeheer/faqupdate",
+                              async: false,
+                              data: dataString,
+                              dataType: "json"
+                      });
+                      refreshData();
+                      $( "#faqModal" ).modal('hide');
+    });
         
     $(document).ready(function() {
         maakDetailClick();
@@ -53,19 +65,7 @@
             haaloverzicht ();
         });
         
-        $(".opslaanFaq").click(function() {
-        // gegevens wegschrijven via ajax (doorgeven naar server via json)
-              var dataString = $("#JqAjaxForm:eq(0)").serialize();
-                      $.ajax({
-                      type: "POST",
-                              url: site_url + "/faqbeheer/faqupdate",
-                              async: false,
-                              data: dataString,
-                              dataType: "json"
-                      });
-                      refreshData();
-                      $( "#faqModal" ).modal('hide');
-        }
+        
         
     });
 </script>
