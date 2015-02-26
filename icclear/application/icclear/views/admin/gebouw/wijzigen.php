@@ -3,8 +3,7 @@
     <?php echo form_open('gebouw/opslaan'); ?>
     <div class="row">            
         <?php
-        $attributesLabel = array('class' => 'control-label col-md-2');
-        $attributesButton = array('class' => 'btn btn-default');
+        $attributesLabel = array('class' => 'control-label col-md-2');        
         echo form_label('Naam:', 'naam', $attributesLabel);
         ?>
         <div class="col-md-4">
@@ -41,7 +40,7 @@
         <div class="col-md-12">                
             <?php form_hidden('id', $gebouw->id); ?>
             <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>         
-            <?php echo form_submit('submit', 'Opslaan', $attributesButton); ?>                           
+            <?php echo form_submit('submit', 'Opslaan', "class='btn btn-default'");?>                           
         </div>
     </div>
 
