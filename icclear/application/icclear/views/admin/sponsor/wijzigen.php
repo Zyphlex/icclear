@@ -96,9 +96,9 @@
             <?php
             $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
             if ($sponsor->type == 'Sponsor') {
-                echo form_dropdown('type', $optionsType, 'Sponsor');
+                echo form_dropdown('type', $optionsType, 'Sponsor', 'class="form-control"');
             } else {
-                echo form_dropdown('type', $optionsType, 'Partner');
+                echo form_dropdown('type', $optionsType, 'Partner', 'class="form-control"');
             }
             ?>
         </div>
