@@ -12,8 +12,7 @@
     </div>
     <div class="row">            
         <?php echo form_label('Postcode:', 'postcode', $attributesLabel); ?>
-        <div class="col-md-4">
-            <input class="form-control" type="text" id="postcode" name="postcode" value="<?php echo $gebouw->postcode ?>"/>
+        <div class="col-md-4">            
             <?php echo form_input(array('id' => 'postcode', 'name' => 'postcode', 'class' => 'form-control', 'value' => $gebouw->postcode)) ?>    
         </div>
     </div>
