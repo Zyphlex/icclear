@@ -118,7 +118,8 @@ class Faqbeheer extends CI_Controller {
         $id = $this->input->post('id');
         
         $this->load->model('faq_model');
-        echo $this->faq_model->delete($id); 
+        echo "test";
+        //echo $this->faq_model->delete($id); 
     }
 
 }

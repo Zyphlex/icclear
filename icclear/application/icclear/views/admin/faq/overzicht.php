@@ -90,7 +90,7 @@
                         success : function(result){
                             if (result == '0') {
                                 // verwijderen is mislukt, foutmelding tonen
-                                alert("error");
+                                alert(result);
                             } else {
                                 alert("success");
                                 refreshData();
