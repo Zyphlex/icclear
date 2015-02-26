@@ -38,7 +38,7 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                        
-                        <h3>Dag <?php echo $teller .  '  ' . $gebouw->gebouw->naam . '     ' . $gebouw->gebouw->id ?></h3>
+                        <h3>Dag <?php echo $teller .  '  ' . $gebouw->gebouw->naam?></h3>
                     </div>
                     <div class = "panel-body">  
                             <div class="thumbnail">
@@ -58,19 +58,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Routes</h4>
-            </div>
-
-
-            <div class="modal-body">                  
-                <div id="resultaat"></div>
-            </div>
-            
-             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-            </div>
+            <div id="resutlaat"></div>
             
         </div>            
     </div>
