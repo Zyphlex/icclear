@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="col-md-8">   
-                        <input type="text" name="prijs" value="<?php echo $activiteit->prijs; ?>" id="field10" class="form-control" required="required">
+                        <input type="number" name="prijs" value="<?php echo $activiteit->prijs; ?>" id="field10" class="form-control" required="required">
                     </div>
                 </div>
             </div>
