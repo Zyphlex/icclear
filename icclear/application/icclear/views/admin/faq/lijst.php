@@ -13,7 +13,7 @@
                 <td><?php echo $vraag->antwoord ?></td>
                 <td>
                     <p>                                        
-                        <?php echo anchor('Wijzig', 'class="wijzigFag btn btn-default"', 'data-toggle="modal"', 'data-target="#"', 'data-id="' . $vraag->id . '"'); ?>
+                        <?php echo anchor('', 'Wijzig', 'class="wijzigFaq btn btn-default"', 'data-toggle="modal"', 'data-target="#faqModal"', 'data-id="' . $vraag->id . '"'); ?>
                         <?php echo anchor('faqbeheer/verwijder/' . $vraag->id, 'Verwijder', 'class="btn btn-default"'); ?>   
                     </p>                                 
                 </td>
@@ -21,3 +21,6 @@
         <?php } ?>
     </tbody>
 </table>
+
+<button class="wijzigFaq btn btn-primary" data-toggle="modal" data-target="#faqModal">Wijzigen</button>
+       
