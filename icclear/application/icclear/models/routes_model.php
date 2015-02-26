@@ -51,6 +51,11 @@ class Routes_model extends CI_Model {
         $this->db->where('gebouwId', $gebouwId); 
         $query = $this->db->get('route');   
         $routes = $query->result();  
+        
+        $this->load->model('gebouw_model');   
+        foreach ($routes as $route) {
+            $route->gebouw = $this->getGebouw($route->gebouwId);
+        }
                         
         return $routes;
     }
