@@ -1,4 +1,5 @@
 <script type="text/javascript">
+    //Gegevens opvragen en tonen
     function haaloverzicht () {
         $.ajax({type : "GET",
                 url : site_url + "/faqbeheer/overzicht",
@@ -10,10 +11,12 @@
         });
     }
     
+    //Wijzigen refreshen
     function refreshData () {
         haaloverzicht ();
     }
     
+    //Klikken op de Verwijderen knop
     function maakDeleteClick() {
         $(".verwijderFaq").click(function() {
             deleteid = $(this).data("id");
@@ -21,6 +24,7 @@
         });        
     }
     
+    //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
           $(".wijzigFaq").click(function() {
             var iddb = $(this).data("id");
