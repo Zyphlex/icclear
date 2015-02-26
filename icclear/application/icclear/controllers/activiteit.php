@@ -68,6 +68,20 @@ class Activiteit extends CI_Controller {
         $this->overzicht();
     }
     
+    public function nieuw() {
+        $data['user'] = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
+        $this->load->model('conferentie_model');
+        $data['conferenties'] = $this->conferentie_model->getAll();
+
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/toevoegen', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+    
     
     // TEST
 }
