@@ -50,7 +50,6 @@
                               data: dataString,
                               dataType: "json"
                       });
-                      dialogmagtoe = true;
                       refreshData();
                       $( "#faqModal" ).modal('hide');
     }
