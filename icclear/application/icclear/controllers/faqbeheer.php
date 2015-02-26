@@ -99,15 +99,25 @@ class Faqbeheer extends CI_Controller {
             echo json_encode($vraag); 
     }
     
-    public function faqupdate() {        
-        $id = $this->input->post('id');
-        $vraag = $this->input->post('vraag');
-        $antwoord = $this->input->post('antwoord');
+    public function faqupdate() {   
+        $faq->id = $this->input->post('id');
+        $faq->vraag = $this->input->post('vraag');
+        $faq->antwoord = $this->input->post('antwoord');
         
+        $this->load->model('faq_model');        
+        if ($faq->id == 0) {
+            $id = $this->faq_model->insert($faq);
+        } else {
+            $this->faq_model->update($faq);
+        }
+        
+        echo $id;
+    }
+    
+    public function faqdelete($id) {       
         $this->load->model('faq_model');
-        $nieuwId = $this->faq_model->update($id, $vraag, $antwoord);
-        
-        echo $nieuwId;
+        $this->faq_model->delete($id); 
+        redirect('faqbeheer/index');        
     }
 
 }
