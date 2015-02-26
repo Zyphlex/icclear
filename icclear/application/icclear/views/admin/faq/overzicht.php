@@ -1,8 +1,10 @@
 <script type="text/javascript">
     function haaloverzicht () {
+        alert("ajax opgeroepen");
         $.ajax({type : "GET",
                 url : site_url + "/faqbeheer/overzicht",
                 success : function(result){
+                    alert(result);
                     $("#resultaat").html(result);
                 }
         });
@@ -14,7 +16,8 @@
     
     $(document).ready(function() {
         haaloverzicht();
-        $( ".toevoegenFaq" ).click(function() {            
+        $( ".wijzigFaq" ).click(function() {    
+            alert("klik ok");
             haaloverzicht ();
         });
         
@@ -26,6 +29,8 @@
 
     <h1>FAQ beheren</h1>  
 
+    <?php echo anchor('Wijzig', 'class="wijzigFaq btn btn-default"', 'data-toggle="modal"', 'data-target="#"', 'data-id="' . $vraag->id . '"'); ?>
+                
     <table class="table">
         <thead>
             <tr>
@@ -40,7 +45,7 @@
     </table>
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-    <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="toevoegenFaq btn btn-default"'); ?> 
+    <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="btn btn-default"'); ?> 
 
 </div>
 
