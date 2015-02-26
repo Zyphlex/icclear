@@ -28,10 +28,8 @@ class Faq_model extends CI_Model {
         return $query->row();
     }
 
-    function update($id, $vraag, $antwoord) {
-        $faq->vraag = $vraag;
-        $faq->antwoord = $antwoord;
-        $this->db->where('id', $id);
+    function update($faq) {
+        $this->db->where('id', $faq->id);
         $this->db->update('faq', $faq);
     }
 
