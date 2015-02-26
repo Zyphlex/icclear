@@ -6,7 +6,7 @@
             <h1>Activiteit toevoegen</h1>
         </div>
     </div>
-    
+
     <?php
     $attributes = array('name' => 'myform', 'id' => 'myform');
     echo form_open('activiteit/insert', $attributes);
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    
+
                     <textarea cols="5" rows="5" name="omschrijving" class="form-control" required="required" id="omschrijving"></textarea>
                 </div>
             </div>
@@ -81,8 +81,10 @@
 
     </div>   
 
-    <?php echo anchor('activiteit/overzicht', 'Annuleer', 'class="btn btn-default"'); ?>
-    <?php echo form_submit('toevoegen', 'Toevoegen', 'class="btn btn-default"'); ?>
+    <div class="row">
+        <?php echo anchor('activiteit/overzicht', 'Annuleer', 'class="btn btn-default"'); ?>
+        <?php echo form_submit('toevoegen', 'Toevoegen', 'class="btn btn-default"'); ?>
+    </div>
 
     <?php echo form_close(); ?>
 </div>
