@@ -60,8 +60,7 @@
             haaloverzicht ();
         });
         
-        $( ".wijzigFaq" ).click(function() {    
-            haaloverzicht ();
+        $( ".wijzigFaq" ).click(function() {  
         });
         
         $(".opslaanFaq").click(function() {
