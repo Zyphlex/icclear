@@ -98,6 +98,17 @@ class Faqbeheer extends CI_Controller {
             
             echo json_encode($vraag); 
     }
+    
+    public function faqupdate() {        
+        $id = $this->input->post('id');
+        $vraag = $this->input->post('vraag');
+        $antwoord = $this->input->post('antwoord');
+        
+        $this->load->model('faq_model');
+        $nieuwId = $this->faq_model->update($id, $vraag, $antwoord);
+        
+        echo $nieuwId;
+    }
 
 }
 
