@@ -28,18 +28,7 @@
     <h1>FAQ beheren</h1>  
     <button class="wijzigFaq btn btn-primary" data-toggle="modal" data-target="#faqModal">Wijzigen</button>
                
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Vraag</th>
-                <th>Antwoord</th>
-                <th>Beheer</th>
-            </tr>
-        </thead>
-        <tbody>
-            <div id="resultaat"></div>
-        </tbody>
-    </table>
+    <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
     <?php echo anchor('faqbeheer/toevoegen/', 'Nieuwe FAQ toevoegen', 'class="btn btn-default"'); ?> 
