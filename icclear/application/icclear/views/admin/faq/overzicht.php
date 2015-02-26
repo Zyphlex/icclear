@@ -61,6 +61,7 @@
         });
         
         $( ".wijzigFaq" ).click(function() {    
+            haaloverzicht ();
         });
         
         $(".opslaanFaq").click(function() {
