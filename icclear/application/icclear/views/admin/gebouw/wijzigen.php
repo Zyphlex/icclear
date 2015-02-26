@@ -6,9 +6,8 @@
         <div class="row">            
             
             <?php
-//            $attributesLabel = array('style' => 'control-label col-md-2');
-//            echo form_label('Naam:', 'naam', $attributesLabel);
-            echo form_label(array('for' => 'email' , 'class' => 'control-label col-md-2', 'value' => 'Naam:'));
+            $attributesLabel = array('class' => 'control-label col-md-2');
+            echo form_label('Naam:', 'naam', $attributesLabel);            
             ?>
             <div class="col-md-4">
                 <?php echo form_input(array('id' => 'naam', 'name' => 'naam', 'class' => 'form-control', 'value' => $gebouw->naam)) ?>                     
