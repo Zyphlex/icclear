@@ -41,12 +41,18 @@
             
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Routes</h4>
+                <h4 class="modal-title"></h4>
             </div>
 
             <div class="modal-body">                  
                 
-                <!-- formulier shit zooi -->
+                <form id="JqAjaxForm">
+                    <p><?php echo form_label('Vraag:', 'vraag'); ?></p>
+                    <p><?php echo form_input(array('name' => 'vraag', 'id' => 'vraag', 'class' => 'form-control', 'required' => 'required')); ?></p>
+
+                    <p><?php echo form_label('Antwoord:', 'antwoord'); ?></td>
+                    <p><?php echo form_textarea(array('name' => 'antwoord', 'id' => 'antwoord', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                </form>
                 
             </div>
             
