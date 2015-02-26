@@ -51,7 +51,22 @@ class Activiteit extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+     public function update() {
+        $activiteit = new stdClass();
 
+        $activiteit->id = $this->input->post('id');
+        $activiteit->naam = $this->input->post('naam');
+        $activiteit->omschrijving = $this->input->post('omschrijving');
+        $activiteit->prijs = $this->input->post('prijs');
+        $activiteit->conferentieId = $this->input->post('conferentie');
+
+        $this->load->model('activiteit_model');
+
+        $this->gebruiker_model->update($activiteit);
+
+        $this->overzichtGebruikers();
+    }
     
     
     // TEST
