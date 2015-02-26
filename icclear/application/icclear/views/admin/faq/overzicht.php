@@ -121,7 +121,7 @@
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Vraag:', 'vraag'); ?></p>
-                    <p><?php echo form_input(array('name' => 'vraag', 'id' => 'vraag', 'class' => 'form-control', 'required' => 'required')); ?></p>
+                    <p><?php echo form_input(array('name' => 'vraag', 'id' => 'vraag', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Antwoord:', 'antwoord'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'antwoord', 'id' => 'antwoord', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
