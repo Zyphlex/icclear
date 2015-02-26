@@ -25,7 +25,7 @@
         });
         
         $(".wijzigFaq").click(function(e) {
-            e.preventDefault();
+            $( "#faqModal" ).modal('show'); 
             var iddb = $(this).data("id");
             $( "#id" ).val( iddb );
             if (iddb != 0) {
@@ -49,7 +49,6 @@
             $( "#vraag" ).removeClass( "" );
             $( "#antwoord" ).removeClass( "" );
             // dialoogvenster openen
-            $( "#faqModal" ).modal('show'); 
         }); 
         
     });
@@ -80,6 +79,7 @@
             <div class="modal-body">                  
                 
                 <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Vraag:', 'vraag'); ?></p>
                     <p><?php echo form_input(array('name' => 'vraag', 'id' => 'vraag', 'class' => 'form-control', 'required' => 'required')); ?></p>
 
