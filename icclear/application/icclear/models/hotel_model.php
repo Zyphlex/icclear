@@ -18,18 +18,19 @@ class Hotel_model extends CI_Model {
         parent::__construct();
     }
     
-    function getHotels()
-    {        
-        $query = $this->db->get('hotel');
-        return $query->result();
-    }
-    
     function getHotel($id)
     {
         $this->db->where('id', $id);
         $query = $this->db->get('hotel');
         return $query->row();
     }
+    
+    function getHotels()
+    {        
+        $query = $this->db->get('hotel');
+        return $query->result();
+    }
+       
     
     function getHotelsConferentie()
     {
