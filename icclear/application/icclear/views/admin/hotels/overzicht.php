@@ -18,8 +18,8 @@
                                 <td><?php echo $hotel->naam ?></td>
                                 <td><?php echo $hotel->gemeente ?></td>
                                 <td>
-                                    <?php echo anchor('hotels', 'Wijzigen','class="btn btn-default"'); ?>
-                                    <?php echo anchor('hotels', 'Verwijderen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('hotels/wijzig/' . $hotel->id, 'Wijzigen','class="btn btn-default"'); ?>
+                                    <?php echo anchor('hotels/verwijder/' . $hotel->id, 'Verwijderen','class="btn btn-default"'); ?>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -27,7 +27,7 @@
                 </table>
     
     <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>      
-    <?php echo anchor('hotels', 'Nieuwe hotel toevoegen','class="btn btn-default"'); ?>                      
+    <?php echo anchor('hotels/nieuw', 'Nieuwe hotel toevoegen','class="btn btn-default"'); ?>                      
     
     
 </div>
