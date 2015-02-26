@@ -1,5 +1,8 @@
 <div class="col-md-10">
     <h1><?php echo $sponsor->type; ?> wijzigen</h1>
+    
+    <?php $attributes = array('name' => 'myform');
+    echo form_open('sponsor/update', $attributes); ?>
 
     <form action="<?php echo base_url(); ?>icclear.php/gebouw/opslaan" method="post">
 
