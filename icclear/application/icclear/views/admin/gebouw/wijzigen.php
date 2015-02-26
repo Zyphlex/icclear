@@ -1,9 +1,7 @@
 <div class="col-md-10">
     <h1>Gebouw wijzigen</h1>   
     <?php echo form_open('gebouw/opslaan'); ?>
-
     <div class="row">            
-
         <?php
         $attributesLabel = array('class' => 'control-label col-md-2');
         $attributesButton = array('class' => 'btn btn-default');
