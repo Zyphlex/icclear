@@ -46,28 +46,16 @@
             $( "#faqModal" ).modal('show'); 
         }); 
     }
-    
-    $(".opslaanFaq").click(function() {
-    // gegevens wegschrijven via ajax (doorgeven naar server via json)
-              var dataString = $("#JqAjaxForm:eq(0)").serialize();
-                      $.ajax({
-                      type: "POST",
-                              url: site_url + "/faqbeheer/faqupdate",
-                              async: false,
-                              data: dataString,
-                              dataType: "json"
-                      });
-                      refreshData();
-                      $( "#faqModal" ).modal('hide');
-    });
         
     $(document).ready(function() {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
+        //Lijst eerste maal ophalen en tonen
         haaloverzicht();
                 
+        //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanFaq").click(function() {
-        // gegevens wegschrijven via ajax (doorgeven naar server via json)
               var dataString = $("#JqAjaxForm:eq(0)").serialize();
                       $.ajax({
                       type: "POST",
@@ -80,8 +68,8 @@
                       $( "#faqModal" ).modal('hide');
         });
         
+        //Klikken op "BEVESTIG" in de Delete modal
         $(".deleteFaq").click(function() {
-        // gegevens wegschrijven via ajax (doorgeven naar server via json)
                       $.ajax({
                         type: "POST",
                         url: site_url + "/faqbeheer/faqdelete",
@@ -89,11 +77,11 @@
                         data : { id : deleteid },
                         success : function(result){
                             if (result == '0') {
-                                alert("fout");
+                                alert("Er is iets foutgelopen!");
                             } else {
                                 refreshData();
-                                $( "#faqDelete" ).modal('hide');
-                            }                            
+                            }  
+                            $( "#faqDelete" ).modal('hide');                          
                         }
                     });
         });

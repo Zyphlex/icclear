@@ -120,7 +120,7 @@ class Faqbeheer extends CI_Controller {
         $this->load->model('faq_model');
         $deleted = $this->faq_model->delete($id);
         
-        echo "0";
+        echo $deleted;
     }
 
 }
