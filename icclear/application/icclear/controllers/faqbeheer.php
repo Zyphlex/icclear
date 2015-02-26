@@ -81,8 +81,13 @@ class Faqbeheer extends CI_Controller {
         if($id != 0){
             redirect('faqbeheer/index');
         }
-        
-        
+    }
+    
+    public function overzicht() {        
+        $this->load->model('faq_model');
+        $data['vragen'] = $this->faq_model->getAll();
+
+        $this->load->view('admin/faq/lijst', $data);
     }
 
 }
