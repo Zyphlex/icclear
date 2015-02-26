@@ -83,7 +83,7 @@
         $(".deleteFaq").click(function() {
         // gegevens wegschrijven via ajax (doorgeven naar server via json)
                       $.ajax({
-                        type: "GET",
+                        type: "POST",
                         url: site_url + "/faqbeheer/faqdelete",
                         async: false,
                         data : { id : deleteid },
