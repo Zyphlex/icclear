@@ -44,6 +44,7 @@
     }
     
     $(document).ready(function() {
+        $( "#faqModal" ).modal('show'); 
         haaloverzicht();
         $( ".opslaanFaq" ).click(function() {    
             haaloverzicht ();
