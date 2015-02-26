@@ -63,9 +63,9 @@ class Activiteit extends CI_Controller {
 
         $this->load->model('activiteit_model');
 
-        $this->gebruiker_model->update($activiteit);
+        $this->activiteit_model->update($activiteit);
 
-        $this->overzichtGebruikers();
+        $this->overzicht();
     }
     
     
