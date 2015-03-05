@@ -142,36 +142,39 @@
                     <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Familienaam:', 'familienaam'); ?></td>
+                    <p><?php echo form_label('Familienaam:', 'familienaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Emailadres:', 'emailadres'); ?></td>
+                    <p><?php echo form_label('Emailadres:', 'emailadres'); ?></p>
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Geboortedatum:', 'geboortedatum'); ?></td>
-                    <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Geboortedatum:', 'geboortedatum'); ?></p>
+                    <p><?php echo toDDMMYYYY(form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control'))); ?></p>
 
-                    <p><?php echo form_label('Geslacht:', 'geslacht'); ?></td>
-                    <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'class' => 'form-control')); ?>
-                        <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
+                    <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Man
+                        <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Vrouw</p>
                     
-                    <p><?php echo form_label('Type:', 'typeId'); ?></td>
-                    <p><?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId', 'class' => 'form-control')); ?>
-                        <?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Type:', 'typeId'); ?></p>
+                    <p><?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Bezoeker
+                        <?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Spreker</p>
                     
-                    <p><?php echo form_label('Land:', 'landId'); ?></td>
-                    <p><?php echo form_dropdown(array('name' => 'landId', 'id' => 'landId', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Land:', 'landId'); ?></p>
+                        <?php foreach ($landen as $land) {
+                        $options[$land->id] = $land->naam;
+                    } ?>
+                    <p><?php echo form_dropdown(array('name' => 'landId', 'id' => 'landId', 'class' => 'form-control')); $options ?></p>
                     
-                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
+                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
+                    <p><?php echo form_label('Postcode:', 'postcode'); ?></p>
                     <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Straat:', 'straat'); ?></td>
+                    <p><?php echo form_label('Straat:', 'straat'); ?></p>
                     <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Huisnummer:', 'nummer'); ?></td>
+                    <p><?php echo form_label('Huisnummer:', 'nummer'); ?></p>
                     <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
 
                 </form>
