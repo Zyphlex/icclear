@@ -21,8 +21,8 @@
                 <?php } ?>
                 <td>
                     <p>                                        
-                        <button class="wijzigFaq btn btn-primary" data-id="<?php echo $gebruiker->id ?>">Wijzigen</button>
-                        <button class="verwijderFaq btn btn-danger" data-id="<?php echo $gebruiker->id ?>">Verwijderen</button> 
+                        <button class="wijzigGebruiker btn btn-primary" data-id="<?php echo $gebruiker->id ?>">Wijzigen</button>
+                        <button class="verwijderGebruiker btn btn-danger" data-id="<?php echo $gebruiker->id ?>">Verwijderen</button> 
                     </p>                                 
                 </td>
             </tr>
