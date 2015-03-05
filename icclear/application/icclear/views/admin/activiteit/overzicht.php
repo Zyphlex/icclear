@@ -38,7 +38,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
-                        $("#conferentie").val(jobject.conferentie);
+                        $("#conferentie").val(jobject.conferentieId);
                         $("#prijs").val(jobject.prijs);
                     }
                 });
