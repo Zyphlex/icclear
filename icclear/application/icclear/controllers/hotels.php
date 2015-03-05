@@ -24,7 +24,7 @@ class Hotels extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';        
+        $data['title'] = 'IC Clear - Hotel';        
         $data['active'] = 'admin';        
                 
         $this->load->model('hotel_model');
@@ -38,7 +38,7 @@ class Hotels extends CI_Controller {
         $this->load->model('hotel_model');
         $data['hotels'] = $this->hotel_model->getAll();
 
-        $this->load->view('admin/hotel/lijst', $data);
+        $this->load->view('admin/hotels/lijst', $data);
     }
     
     public function detail() {        
