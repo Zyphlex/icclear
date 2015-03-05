@@ -33,20 +33,49 @@ class Hotels extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/hotels/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-     public function wijzig($id) {
-
-        $data['user'] = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
+      
+    public function overzicht() {        
         $this->load->model('hotel_model');
-        $data['hotel'] = $this->hotel_model->get($id);
+        $data['hotels'] = $this->hotel_model->getAll();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/hotels/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        $this->load->view('admin/hotel/lijst', $data);
+    }
+    
+    public function detail() {        
+            $id = $this->input->get('id');
+                        
+            $this->load->model('hotel_model');
+            $hotel = $this->hotel_model->get($id);
+            
+            echo json_encode($hotel); 
+    }
+    
+    public function update() {   
+        $hotel->id = $this->input->post('id');
+        $hotel->naam = $this->input->post('naam');
+        $hotel->website = $this->input->post('website');
+        $hotel->straat = $this->input->post('straat');
+        $hotel->nummer = $this->input->post('nummer');
+        $hotel->gemeente = $this->input->post('gemeente');
+        $hotel->postcode = $this->input->post('postcode');
+        
+        $this->load->model('hotel_model');        
+        if ($hotel->id == 0) {
+            $id = $this->hotel_model->insert($hotel);
+        } else {
+            $this->hotel_model->update($hotel);
+        }
+        
+        echo $id;
+    }
+    
+    public function delete() {       
+        $id = $this->input->post('id');
+        
+        $this->load->model('hotel_model');
+        $deleted = $this->hotel_model->delete($id);
+        
+        echo $deleted;
     }
     
 
