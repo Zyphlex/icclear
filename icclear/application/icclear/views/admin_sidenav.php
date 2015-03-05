@@ -21,8 +21,8 @@
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
-                    <li><?php echo anchor('gebruiker/overzichtGebruikers' , 'Gebruikers'); ?></li>
-                    <li><?php echo anchor('gebruiker/overzichtAdmins' , 'Admins'); ?></li>
+                    <li><?php echo anchor('gebruiker' , 'Gebruikers'); ?></li>
+                    <li><?php echo anchor('gebruiker' , 'Admins'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
                     <li><?php echo anchor('sponsor/overzicht', 'Sponsors'); ?></li>
             
