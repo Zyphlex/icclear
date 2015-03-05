@@ -22,7 +22,7 @@
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
                     <li><?php echo anchor('gebruiker' , 'Gebruikers'); ?></li>
-                    <li><?php echo anchor('gebruiker/indexAdmin' , 'Admins'); ?></li>
+                    <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
                     <li><?php echo anchor('sponsor/overzicht', 'Sponsors'); ?></li>
             
