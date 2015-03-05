@@ -14,8 +14,10 @@
                 <td><?php echo $activiteit->conferentie->naam ?></td>
                 <td><?php echo "€ " . $activiteit->prijs ?></td>
 
-                <td><?php echo anchor('activiteit/wijzig/' . $activiteit->id, 'Wijzigen', 'class="wijzigActiviteit btn btn-default"'); ?>
-                    <?php echo anchor('activiteit/verwijder/' . $activiteit->id, 'Verwijderen', 'class="verwijderActiviteit btn btn-default"'); ?>
+                <td>
+                    <button class="wijzigActiviteit btn btn-primary" data-id="<?php echo $activiteit->id ?>">Wijzigen</button>
+                        <button class="verwijderActiviteit btn btn-danger" data-id="<?php echo $activiteit->id ?>">Verwijderen</button> 
+                </td>    
             </tr>
         <?php } ?>
     </tbody>
