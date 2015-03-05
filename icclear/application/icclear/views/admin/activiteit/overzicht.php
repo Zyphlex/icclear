@@ -98,7 +98,7 @@
 <div class="col-md-10">
 
     <h1>Activiteiten beheren</h1>  
-    <div id="resultaat"></div>
+    //<div id="resultaat"></div>
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
     <?php echo anchor('activiteit/nieuw', 'Nieuwe activiteit toevoegen', 'class="wijzigActiviteit btn btn-default"', 'data-id=0'); ?> 
 
