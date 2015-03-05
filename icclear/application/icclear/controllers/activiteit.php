@@ -101,7 +101,7 @@ class Activiteit extends CI_Controller {
             $id = $this->input->get('id');
                         
             $this->load->model('activiteit_model');
-            $activiteit = $this->faq_model->get($id);
+            $activiteit = $this->activiteit_model->get($id);
             
             echo json_encode($activiteit); 
     }
