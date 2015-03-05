@@ -30,7 +30,7 @@ class Activiteit extends CI_Controller {
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/lijst', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
     
@@ -96,6 +96,16 @@ class Activiteit extends CI_Controller {
 
         $this->overzicht();
     }
+    
+    public function detail() {        
+            $id = $this->input->get('id');
+                        
+            $this->load->model('activiteit_model');
+            $activiteit = $this->faq_model->get($id);
+            
+            echo json_encode($activiteit); 
+    }
+    
     
     
     // TEST
