@@ -149,7 +149,7 @@
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geboortedatum:', 'geboortedatum'); ?></p>
-                    <p><?php echo toDDMMYYYY(form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control'))); ?></p>
+                    <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
                     <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Man
