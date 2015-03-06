@@ -22,6 +22,7 @@ class Faqbeheer extends CI_Controller {
     
     public function index() {
         $data['user'] = $this->authex->getUserInfo();
+        
         $data['title'] = 'IC Clear - F.A.Q.';
         $data['active'] = 'admin';        
         $data['conferentieId'] = $this->session->userdata('conferentieId');
