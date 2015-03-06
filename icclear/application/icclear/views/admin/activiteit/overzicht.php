@@ -27,6 +27,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigActiviteit").click(function () {
+            alert('Robert');
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
