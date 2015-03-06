@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table table-beheer">
     <thead>
         <tr>
             <th>Naam</th>
