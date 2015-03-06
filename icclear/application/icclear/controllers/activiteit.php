@@ -20,7 +20,7 @@ class Activiteit extends CI_Controller {
         }
     }
     
-    public function overzicht() {
+    public function index() {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
@@ -32,6 +32,13 @@ class Activiteit extends CI_Controller {
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
+    }
+    
+    public function overzicht() {        
+        $this->load->model('activiteit_model');
+        $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
+
+        $this->load->view('admin/faq/lijst', $data);
     }
     
     public function wijzig($id) {
