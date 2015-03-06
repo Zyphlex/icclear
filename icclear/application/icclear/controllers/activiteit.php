@@ -41,67 +41,84 @@ class Activiteit extends CI_Controller {
         $this->load->view('admin/activiteit/lijst', $data);
     }
     
-    public function wijzig($id) {
-
-        $data['user'] = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('activiteit_model');
-        $data['activiteit'] = $this->activiteit_model->get($id);
-
-        $this->load->model('conferentie_model');
-        $data['conferenties'] = $this->conferentie_model->getAll();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
+//    public function wijzig($id) {
+//
+//        $data['user'] = $this->authex->getUserInfo();
+//        $data['conferentieId'] = $this->session->userdata('conferentieId');
+//
+//        $data['title'] = 'IC Clear - Beheer';
+//        $data['active'] = 'admin';
+//
+//        $this->load->model('activiteit_model');
+//        $data['activiteit'] = $this->activiteit_model->get($id);
+//
+//        $this->load->model('conferentie_model');
+//        $data['conferenties'] = $this->conferentie_model->getAll();
+//
+//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/wijzigen', 'footer' => 'main_footer');
+//        $this->template->load('admin_master', $partials, $data);
+//    }
     
-     public function update() {
-        $activiteit = new stdClass();
-
+//     public function update() {
+//        $activiteit = new stdClass();
+//
+//        $activiteit->id = $this->input->post('id');
+//        $activiteit->naam = $this->input->post('naam');
+//        $activiteit->omschrijving = $this->input->post('omschrijving');
+//        $activiteit->prijs = $this->input->post('prijs');
+//        $activiteit->conferentieId = $this->input->post('conferentie');
+//
+//        $this->load->model('activiteit_model');
+//
+//        $this->activiteit_model->update($activiteit);
+//
+//        $this->overzicht();
+//    }
+    
+//    public function nieuw() {
+//        $data['user'] = $this->authex->getUserInfo();
+//        $data['conferentieId'] = $this->session->userdata('conferentieId');
+//
+//        $data['title'] = 'IC Clear - Beheer';
+//        $data['active'] = 'admin';
+//
+//        $this->load->model('conferentie_model');
+//        $data['conferenties'] = $this->conferentie_model->getAll();
+//
+//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/toevoegen', 'footer' => 'main_footer');
+//        $this->template->load('admin_master', $partials, $data);
+//    }
+    
+//    public function insert() {
+//        $activiteit = new stdClass();
+//
+//        $activiteit->naam = $this->input->post('naam');
+//        $activiteit->omschrijving = $this->input->post('omschrijving');
+//        $activiteit->prijs = $this->input->post('prijs');
+//        $activiteit->conferentieId = $this->input->post('conferentie');
+//
+//        $this->load->model('activiteit_model');
+//
+//        $this->activiteit_model->insert($activiteit);
+//
+//        $this->overzicht();
+//    }
+    
+    public function update() {   
         $activiteit->id = $this->input->post('id');
         $activiteit->naam = $this->input->post('naam');
         $activiteit->omschrijving = $this->input->post('omschrijving');
         $activiteit->prijs = $this->input->post('prijs');
         $activiteit->conferentieId = $this->input->post('conferentie');
-
-        $this->load->model('activiteit_model');
-
-        $this->activiteit_model->update($activiteit);
-
-        $this->overzicht();
-    }
-    
-    public function nieuw() {
-        $data['user'] = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('conferentie_model');
-        $data['conferenties'] = $this->conferentie_model->getAll();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/activiteit/toevoegen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-    
-    public function insert() {
-        $activiteit = new stdClass();
-
-        $activiteit->naam = $this->input->post('naam');
-        $activiteit->omschrijving = $this->input->post('omschrijving');
-        $activiteit->prijs = $this->input->post('prijs');
-        $activiteit->conferentieId = $this->input->post('conferentie');
-
-        $this->load->model('activiteit_model');
-
-        $this->activiteit_model->insert($activiteit);
-
-        $this->overzicht();
+        
+        $this->load->model('activiteit_model');        
+        if ($activiteit->id == 0) {
+            $id = $this->activiteit_model->insert($activiteit);
+        } else {
+            $this->activiteit_model->update($activiteit);
+        }
+        
+        echo $id;
     }
     
     public function detail() {        
@@ -113,7 +130,14 @@ class Activiteit extends CI_Controller {
             echo json_encode($activiteit); 
     }
     
-    
+    public function delete() {       
+        $id = $this->input->post('id');
+        
+        $this->load->model('activiteit_model');
+        $deleted = $this->activiteit_model->delete($id);
+        
+        echo $deleted;
+    }
     
     // TEST
 }
