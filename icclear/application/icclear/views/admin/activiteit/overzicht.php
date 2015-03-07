@@ -130,6 +130,7 @@
                     $teller = 1;
                     foreach ($conferenties as $conferentie) {
                         $drop[$teller] = $conferentie->naam;
+                        $teller++;
                     }
                     ?>
                     <p><?php echo form_dropdown('conferentie',$drop); ?></p>
