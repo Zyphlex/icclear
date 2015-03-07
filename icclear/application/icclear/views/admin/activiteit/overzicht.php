@@ -124,8 +124,15 @@
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'conferentie', 'id' => 'conferentie', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>                    
-                    <p><?php echo form_dropdown('conferentie',$conferentie->naam); ?></p>
+                    <p><?php echo form_textarea(array('name' => 'conferentie', 'id' => 'conferentie', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <?php
+                    $drop = array();
+                    $teller = 1;
+                    foreach ($conferenties as $conferentie) {
+                        $drop[$teller] = $conferentie->naam;
+                    }
+                    ?>
+                    <p><?php echo form_dropdown('conferentie',$drop); ?></p>
                     
                     <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
