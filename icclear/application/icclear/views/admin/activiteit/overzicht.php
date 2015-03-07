@@ -125,6 +125,7 @@
 
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'conferentie', 'id' => 'conferentie', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_dropdown('conferentie', $conferenties); ?></p>
                     
                     <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
