@@ -22,6 +22,11 @@ class Conferentie_model extends CI_Model {
         $query = $this->db->get('conferentie');
         return $query->result();
     }
+    
+    function getById(){
+        $query = $this->db->get('conferentie');
+        return $query->result();
+    }
 
     function get($id) {
         $this->db->where('id', $id);
