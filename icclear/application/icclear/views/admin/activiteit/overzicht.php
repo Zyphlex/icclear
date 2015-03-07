@@ -123,9 +123,9 @@
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Conferentie:', 'conferentie'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'conferentie', 'id' => 'conferentie', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_label('Conferentie:', 'conferentie'); ?></td>                    
                     <?php
+                    $options = array('id' => 'conferentie');
                     $drop = array();
                     $teller = 1;
                     foreach ($conferenties as $conferentie) {
