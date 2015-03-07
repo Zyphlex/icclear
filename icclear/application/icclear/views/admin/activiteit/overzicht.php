@@ -26,7 +26,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigActiviteit").click(function () {            
+        $(".wijzigActiviteit").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -54,8 +54,6 @@
     }
 
     $(document).ready(function () {
-        
-        
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
@@ -156,7 +154,7 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze vraag wilt verwijderen?</p>  
+                <p>Bent u zeker dat u deze activiteit wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
