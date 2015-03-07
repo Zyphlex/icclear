@@ -38,7 +38,7 @@ class Activiteit extends CI_Controller {
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
         $this->load->model('conferentie_model');
-        $data['conferenties'] = $this->conferentie_model->getAll();          
+        $data['conferenties'] = $this->conferentie_model->getById();          
         $this->load->view('admin/activiteit/lijst', $data);
     }
         
