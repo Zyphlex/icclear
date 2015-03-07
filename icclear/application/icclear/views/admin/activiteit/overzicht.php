@@ -119,8 +119,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
+                <form id="JqAjaxForm">                    
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
