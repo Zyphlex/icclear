@@ -25,8 +25,11 @@ class Activiteit extends CI_Controller {
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';        
-                
+        $data['active'] = 'admin';   
+        
+        $this->load->model('conferentie_model');
+        $data['conferenties'] = $this->conferentie_model->getById(); 
+        
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
 
@@ -37,8 +40,7 @@ class Activiteit extends CI_Controller {
     public function overzicht() {        
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
-        $this->load->model('conferentie_model');
-        $data['conferenties'] = $this->conferentie_model->getById();          
+                  
         $this->load->view('admin/activiteit/lijst', $data);
     }
         
