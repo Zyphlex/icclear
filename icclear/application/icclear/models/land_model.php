@@ -21,6 +21,7 @@ class Land_model extends CI_Model {
        
     function getAll()
     {        
+        $this->db->order_by('naam');
         $query = $this->db->get('land');
         return $query->result();
     }
