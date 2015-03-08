@@ -37,16 +37,12 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#naam").val(jobject.naam);
-                        $("#conferentie").val(jobject.conferentieId);
-                        $("#prijs").val(jobject.prijs);
+                        $("#naam").val(jobject.naam);                        
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken                
-                $("#naam").val("");
-                $("#conferentie").val("");
-                $("#prijs").val("");
+                $("#naam").val("");                
             }
             // dialoogvenster openen
             $("#landModal").modal('show');
@@ -119,25 +115,9 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
-                    <?php                    
-                    echo form_input(array('name' => 'id', 'type'=>'hidden', 'id' =>'id'));                    
-                    ?>
+                    <?php echo form_input(array('name' => 'id', 'type'=>'hidden', 'id' =>'id'));?>
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
-
-                    <p><?php echo form_label('Conferentie:', 'conferentie'); ?></p>                    
-                    <?php
-                    $drop = array();
-                    $teller = 1;
-                    foreach ($conferenties as $conferentie) {
-                        $drop[$teller] = $conferentie->naam;
-                        $teller++;
-                    }
-                    ?>
-                    <p><?php echo form_dropdown('conferentie', $drop, '', 'id="conferentie"'); ?></p>
-
-                    <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
-                    <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>                   
                 </form>
 
             </div>
