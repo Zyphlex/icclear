@@ -98,11 +98,11 @@
 <div class="col-md-10">
 
     <h1>Activiteiten beheren </h1>  
-    
+
     <div id="resultaat"></div>
-    
+
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
-    
+
     <button class="wijzigActiviteit btn btn-primary" data-id="0">Nieuwe activiteit toevoegen</button>
 </div>
 
@@ -119,7 +119,14 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">                    
+                <form id="JqAjaxForm">                     
+                    <?php
+                    $data = array(
+                        'name' => 'id',
+                        'id' => 'id'                        
+                    );
+                    echo form_hidden($data);
+                    ?>
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
@@ -133,8 +140,8 @@
                         $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('conferentie', $drop, '' , 'id="conferentie"'); ?></p>
-                    
+                    <p><?php echo form_dropdown('conferentie', $drop, '', 'id="conferentie"'); ?></p>
+
                     <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
                 </form>
