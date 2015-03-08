@@ -125,7 +125,7 @@
 
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></td>                    
                     <?php
-                    $options = array('id' => 'conferentie');
+                    $options = 'id = "conferentie"';
                     $drop = array();
                     $teller = 1;
                     foreach ($conferenties as $conferentie) {
@@ -133,7 +133,7 @@
                         $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('conferentie',$options, $drop ); ?></p>
+                    <p><?php echo form_dropdown('conferentie', $drop, $options ); ?></p>
                     
                     <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
