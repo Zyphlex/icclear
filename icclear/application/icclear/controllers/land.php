@@ -34,6 +34,12 @@ class Land extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    public function overzicht(){
+        $this->load->model('land_model');
+        $data['activiteiten'] = $this->land_model->getAll();                  
+        $this->load->view('admin/land/lijst', $data);
+    }
+    
 
     
     
