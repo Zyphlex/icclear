@@ -119,7 +119,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">                     
+                <form id="JqAjaxForm" method="post">                     
                     <?php
                     $data = array(
                         'name' => 'id',
