@@ -40,6 +40,36 @@ class Land extends CI_Controller {
         $this->load->view('admin/land/lijst', $data);
     }
     
+     public function update() {   
+        $land->id = $this->input->post('id');
+        $land->naam = $this->input->post('naam');                        
+        
+        $this->load->model('land_model');        
+        if ($land->id == 0) {
+            $id = $this->land_model->insert($land);
+        } else {
+            $this->land_model->update($land);
+        }
+        
+        echo $id;
+    }
+    
+    public function detail() {        
+            $id = $this->input->get('id');                        
+            $this->load->model('land_model');
+            $land = $this->land_model->get($id);            
+            echo json_encode($land); 
+    }
+    
+    public function delete() {       
+        $id = $this->input->post('id');
+        
+        $this->load->model('land_model');
+        $deleted = $this->land_model->delete($id);
+        
+        echo $deleted;
+    }
+    
 
     
     
