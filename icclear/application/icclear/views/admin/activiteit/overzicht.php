@@ -133,7 +133,7 @@
                         $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('conferentie', 'id="conferentie"',  $drop); ?></p>
+                    <p><?php echo form_dropdown('conferentie', $drop, '' , 'id="conferentie"'); ?></p>
                     
                     <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
