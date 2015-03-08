@@ -32,6 +32,22 @@ class Land_model extends CI_Model {
         $query = $this->db->get('land');
         return $query->row();
     }
+    
+    function update($land) {
+        $this->db->where('id', $land->id);
+        $this->db->update('land', $land);
+    }
+
+    function insert($land) {
+        $this->db->insert('activiteit', $land);
+        return $this->db->insert_id();
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('land');
+    }
+
 
     
 }
