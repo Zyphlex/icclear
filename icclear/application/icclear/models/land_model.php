@@ -39,7 +39,7 @@ class Land_model extends CI_Model {
     }
 
     function insert($land) {
-        $this->db->insert('activiteit', $land);
+        $this->db->insert('land', $land);
         return $this->db->insert_id();
     }
 
