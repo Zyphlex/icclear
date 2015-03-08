@@ -132,7 +132,6 @@
 
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></p>                    
                     <?php
-//                    $options = 'id = "conferentie"';
                     $drop = array();
                     $teller = 1;
                     foreach ($conferenties as $conferentie) {
