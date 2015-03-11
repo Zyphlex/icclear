@@ -20,7 +20,7 @@
                 <?php } ?>>
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
-                    <p>                                        
+                    <p>
                         <button class="wijzigSessie btn btn-primary" data-id="<?php echo $sessie->id ?>">Wijzigen</button>
                         <button class="verwijderSessie btn btn-danger" data-id="<?php echo $sessie->id ?>">Verwijderen</button> 
                     </p>                                 
