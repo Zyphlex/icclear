@@ -149,7 +149,7 @@ class Sessies extends CI_Controller {
         $this->load->model('sessie_model');
         $data['sessies'] = $this->sessie_model->getAll();
 
-        $this->load->view('admin/sessies/overzicht', $data);
+        $this->load->view('admin/sessies/lijst', $data);
     }
     
     public function detail() {        
