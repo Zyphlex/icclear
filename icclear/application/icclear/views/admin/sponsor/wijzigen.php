@@ -4,6 +4,7 @@
     <?php
     $attributes = array('name' => 'myform');
     echo form_open('sponsor/update', $attributes);
+    form_hidden('id', $sponsor->id);
     ?>
 
     <div class="row">
