@@ -101,26 +101,26 @@ echo form_hidden('id', $gebruiker->id);
                 </div>
             </div>
         </div>
-        <?php if ($inschrijving != null){?>
-        <div class="row">
-            <div class="col-md-4">   
-                <label for="betaling">
-                    Betaling:
-                </label>
+        <?php if ($inschrijving != null) { ?>
+            <div class="row">
+                <div class="col-md-4">   
+                    <label for="betaling">
+                        Betaling:
+                    </label>
+                </div>
+                <div class="col-md-8">   
+                    <input type="text" class="form-control" value="€ <?php
+                    echo $inschrijving->confonderdeel->prijs;
+                    if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") {
+                        echo " - Betaald";
+                    } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") {
+                        echo " - Niet betaald";
+                    }
+                    ?>" id="betaling" name="betaling" disabled="true">
+                </div>
             </div>
-            <div class="col-md-8">   
-                <input type="text" class="form-control" value="€ <?php
-                echo $inschrijving->confonderdeel->prijs;
-                if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") {
-                    echo " - Betaald";
-                } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") {
-                    echo " - Niet betaald";
-                }
-                ?>" id="betaling" name="betaling" disabled="true">
-            </div>
-        </div>
         <?php } ?>
-                <?php if ($gebruiker->typeId == 2) { ?>
+        <?php if ($gebruiker->typeId == 2) { ?>
             <div class="row">
                 <div class="col-md-4">   
                     <label for="type">
@@ -130,9 +130,9 @@ echo form_hidden('id', $gebruiker->id);
 
                 <div class="col-md-8">        
                     <div class="my-radio">
-    <?php
-    if ($gebruiker->typeId == 2) {
-        echo '<div class="">
+                        <?php
+                        if ($gebruiker->typeId == 2) {
+                            echo '<div class="">
                                             <input type="radio" name="type" id="field9-1"  class="form-horizontal" checked="checked" value="2">
                                             <span class="option-title">
                                                 Spreker
@@ -144,12 +144,12 @@ echo form_hidden('id', $gebruiker->id);
                                                 Bezoeker
                                             </span>
                                         </div>';
-    }
-    ?>
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-                    <?php } ?>
+        <?php } ?>
 
     </div>
 
@@ -163,12 +163,12 @@ echo form_hidden('id', $gebruiker->id);
             </div>
 
             <div class="col-md-8">   
-<?php
-foreach ($landen as $land) {
-    $options[$land->id] = $land->naam;
-}
-echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
-?>
+                <?php
+                foreach ($landen as $land) {
+                    $options[$land->id] = $land->naam;
+                }
+                echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
+                ?>
             </div>
 
 
