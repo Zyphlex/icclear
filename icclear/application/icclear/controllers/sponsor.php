@@ -80,6 +80,8 @@ class Sponsor extends CI_Controller {
         $sponsor->nummer = $this->input->post('nummer');
         $sponsor->type = $this->input->post('type');
         
+        $data['sponsor'] = $sponsor;
+        
         $this->sponsor_model->update($sponsor);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
