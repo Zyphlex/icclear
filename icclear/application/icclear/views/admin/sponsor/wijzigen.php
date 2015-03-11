@@ -69,7 +69,7 @@
 
     <div class="row">
         <?php
-        echo form_label('Nuumer:', 'nummer', $attributesLabel);
+        echo form_label('Nummer:', 'nummer', $attributesLabel);
         ?>
         <div class="col-md-4">
             <?php
