@@ -4,8 +4,7 @@
             <th>Naam</th>
             <th>Dag</th>
             <th>Beginuur</th>
-            <th>Einduur</th>
-            <th>Zaal</th>
+            <th>Omschrijving</th>
             <th>Beheer</th>
         </tr>
     </thead>
@@ -15,12 +14,11 @@
                 <td><?php echo $sessie->onderwerp ?></td>
                 <?php if ($sessie->planning != null) { ?>
                     <td><?php echo toDDMMYYYY($sessie->conferentiedag->datum) ?></td>
-                    <td><?php echo $sessie->planning->beginUur ?></td>
-                    <td><?php echo $sessie->planning->eindUur ?></td>
-                    <td><?php echo $sessie->planning->zaal->naam ?></td>
+                    <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td
                 <?php } else { ?>
-                    <td colspan="5">Nog niet ingepland</td>
-                <?php } ?>
+                    <td colspan="2">Nog niet ingepland</td>
+                <?php } ?>>
+                <td><?php echo $sessie->omschrijving ?></td>
                 <td>
                     <p>                                        
                         <button class="wijzigSessie btn btn-primary" data-id="<?php echo $sessie->id ?>">Wijzigen</button>

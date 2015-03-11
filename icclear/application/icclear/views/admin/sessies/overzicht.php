@@ -115,13 +115,13 @@
                 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Vraag:', 'onderwerp'); ?></p>
+                    <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
                     <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Spreker:', 'spreker'); ?></p>
                     <p><?php echo form_input(array('name' => 'spreker', 'id' => 'spreker', 'class' => 'disabled form-control')); ?></p>
                                         
-                    <p><?php echo form_label('Antwoord:', 'omschrijving'); ?></td>
+                    <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
                 </form>                
             </div>
