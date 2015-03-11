@@ -133,8 +133,8 @@
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
                 
-                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
+                    <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
                     
                     <p><?php echo form_label('Straat:', 'straat'); ?></td>
                     <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
