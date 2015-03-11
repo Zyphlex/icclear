@@ -46,8 +46,8 @@
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#gebruikersnaam").val("");
-                $("#voornaam").val("";
-                        $("#familienaam").val("");
+                $("#voornaam").val("");
+                $("#familienaam").val("");
                 $("#emailadres").val("");
             }
             // dialoogvenster openen
@@ -130,10 +130,10 @@
 
                     <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>
-                    
+
                     <p><?php echo form_label('Familienaam:', 'familienaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?></p>
-                    
+
                     <p><?php echo form_label('Emailadres:', 'emailadres'); ?></p>
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
 
