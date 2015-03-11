@@ -56,6 +56,8 @@ class Adminbeheer extends CI_Controller {
         $admin->voornaam = $this->input->post('voornaam');
         $admin->familienaam = $this->input->post('familienaam');
         $admin->emailadres = $this->input->post('emailadres');
+        $admin->typeId = 3;
+        $admin->landId = 0;
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
