@@ -14,7 +14,7 @@
                 <td><?php echo $sessie->onderwerp ?></td>
                 <?php if ($sessie->planning != null) { ?>
                     <td><?php echo toDDMMYYYY($sessie->conferentiedag->datum) ?></td>
-                    <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td
+                    <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td>
                 <?php } else { ?>
                     <td colspan="2">Nog niet ingepland</td>
                 <?php } ?>
