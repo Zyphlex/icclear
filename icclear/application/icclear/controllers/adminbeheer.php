@@ -30,7 +30,7 @@ class Adminbeheer extends CI_Controller {
         $this->load->model('gebruiker_model');
         $data['admins'] = $this->gebruiker_model->getAllAdmins();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzichtAdmins', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
 
@@ -38,7 +38,7 @@ class Adminbeheer extends CI_Controller {
         $this->load->model('gebruiker_model');
         $data['admins'] = $this->gebruiker_model->getAllAdmins();
 
-        $this->load->view('admin/gebruiker/lijstAdmins', $data);
+        $this->load->view('admin/gebruiker/lijst_admin', $data);
     }
 
     public function detail() {
