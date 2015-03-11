@@ -43,8 +43,13 @@ class Sponsor extends CI_Controller {
         echo json_encode($sponsor);
     }
     
-    public function verwijderen($id){
-        
+    public function delete($id){
+        $id = $this->input->post('id');
+
+        $this->load->model('gebruiker_model');
+        $deleted = $this->gebruiker_model->delete($id);
+
+        echo $deleted;
     }
     
     public function update() {        
