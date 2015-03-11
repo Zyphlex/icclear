@@ -1,6 +1,7 @@
 <script type="text/javascript">
     //Gegevens opvragen en tonen
     function haaloverzicht () {
+        alert("test");
         $.ajax({type : "GET",
                 url : site_url + "/sessies/overzicht",
                 success : function(result){
@@ -49,7 +50,6 @@
     }
         
     $(document).ready(function() {
-        alert("test");
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
