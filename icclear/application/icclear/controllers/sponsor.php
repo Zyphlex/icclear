@@ -25,19 +25,10 @@ class Sponsor extends CI_Controller {
     }
     
     public function overzicht() {
-        $data['user']  = $this->authex->getUserInfo();
-        $data['title'] = 'IC Clear - Sponsors'; 
-        $data['active'] = 'admin';
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
         $this->load->model('sponsor_model');
-        $data['sponsors'] = $this->sponsor_model->getAll();
-        
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        $data['sponsor'] = $this->gebouw_model->getAll();
+
+        $this->load->view('admin/sponsor/lijst', $data);
     }
     
     public function wijzigen($id){
