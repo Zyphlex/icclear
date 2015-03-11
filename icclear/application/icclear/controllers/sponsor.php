@@ -47,14 +47,7 @@ class Sponsor extends CI_Controller {
         
     }
     
-    public function update() {
-        $data['user']  = $this->authex->getUserInfo();
-        $data['title'] = 'IC Clear - Sponsors'; 
-        $data['active'] = 'admin';
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
-        $this->load->model('sponsor_model');
-        
+    public function update() {        
         $sponsor->id = $this->input->post('id');
         $sponsor->naam = $this->input->post('naam');
         $sponsor->landId = $this->input->post('land');
@@ -64,9 +57,14 @@ class Sponsor extends CI_Controller {
         $sponsor->nummer = $this->input->post('nummer');
         $sponsor->type = $this->input->post('type');
         
-        $this->sponsor_model->update($sponsor);
+        $this->load->model('sponsor_model');
+        if ($sponsor->id == 0) {
+            $id = $this->sponsor_model->insert($sponsor);
+        } else {
+            $this->sponsor_model->update($sponsor);
+        }
         
-        redirect('sponsor/overzicht');
+        echo $id;
     }
 
     
