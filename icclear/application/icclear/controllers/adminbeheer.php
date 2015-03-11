@@ -23,7 +23,7 @@ class Adminbeheer extends CI_Controller {
     public function index() {
         $data['user'] = $this->authex->getUserInfo();
 
-        $data['title'] = 'IC Clear - F.A.Q.';
+        $data['title'] = 'IC Clear - Admin';
         $data['active'] = 'admin';
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
