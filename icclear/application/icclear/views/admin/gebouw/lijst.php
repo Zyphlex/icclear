@@ -6,6 +6,7 @@
             <th>Postcode</th>
             <th>Straat</th>
             <th>Nummer</th>
+            <th>Beheer</th>
         </tr>
     </thead>
     <tbody>
