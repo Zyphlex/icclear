@@ -17,7 +17,7 @@
                     <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td
                 <?php } else { ?>
                     <td colspan="2">Nog niet ingepland</td>
-                <?php } ?>>
+                <?php } ?>
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
                     <p>
