@@ -1,11 +1,9 @@
 <script type="text/javascript">
     //Gegevens opvragen en tonen
     function haaloverzicht () {
-        alert("test");
         $.ajax({type : "GET",
                 url : site_url + "/sessies/overzicht",
                 success : function(result){
-                    alert(result);
                     $("#resultaat").html(result);
                     maakDetailClick();
                     maakDeleteClick();
