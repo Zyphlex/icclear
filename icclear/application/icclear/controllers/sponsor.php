@@ -26,7 +26,7 @@ class Sponsor extends CI_Controller {
     
     public function overzicht() {
         $this->load->model('sponsor_model');
-        $data['sponsor'] = $this->sponsor_model->getAll();
+        $data['sponsors'] = $this->sponsor_model->getAll();
         
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
