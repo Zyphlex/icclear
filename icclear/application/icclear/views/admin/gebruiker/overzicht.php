@@ -154,17 +154,19 @@
                     <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
                     <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Man
                         <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Vrouw</p>
-                    
+
                     <p><?php echo form_label('Type:', 'typeId'); ?></p>
                     <p><?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Bezoeker
                         <?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Spreker</p>
-                    
+
                     <p><?php echo form_label('Land:', 'landId'); ?></p>
-                        <?php foreach ($landen as $land) {
+                    <?php
+                    foreach ($landen as $land) {
                         $options[$land->id] = $land->naam;
-                    } ?>
-                    <p><?php echo form_dropdown(array('name' => 'landId', 'id' => 'landId', 'class' => 'form-control')); $options ?></p>
-                    
+                    }
+                    ?>
+                    <p><?php echo form_dropdown('land', $options, 'class="form-control" id="landId"'); ?></p>
+
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
 
