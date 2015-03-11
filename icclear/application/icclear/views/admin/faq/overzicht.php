@@ -96,11 +96,13 @@
 
 <div class="col-md-10">
 
-    <h1>Sessies beheren</h1>  
+    <h1>FAQ beheren</h1>  
             
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
+    
+    <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe FAQ Toevoegen</button>
 
 </div>
 
