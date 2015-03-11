@@ -82,7 +82,7 @@ class Sponsor extends CI_Controller {
         
         $this->sponsor_model->update($sponsor);
         
-        redirect('wijzigen');
+        redirect('overzicht');
     }
 
     
