@@ -131,16 +131,16 @@
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
                 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
                     
                     <p><?php echo form_label('Straat:', 'straat'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
                     
                     <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
                 </form>
 
             </div>
