@@ -147,7 +147,7 @@ class Sessies extends CI_Controller {
     
     public function overzicht() {        
         $this->load->model('sessie_model');
-        $data['sessies'] = $this->sessie_model->getAll();
+        $data['sessie'] = $this->sessie_model->getAll();
 
         $this->load->view('admin/sessies/lijst', $data);
     }
