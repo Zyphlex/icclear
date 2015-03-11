@@ -59,6 +59,17 @@ class Adminbeheer extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
+            $admin->geboortedatum = null;
+            $admin->biografie = null;
+            $admin->foto = null;
+            $admin->gemeente = null;
+            $admin->postcode = null;
+            $admin->straat = null;
+            $admin->nummer = null;
+            $admin->paswoord = null;
+            $admin->geslacht = null;
+            $admin->typeId = 3;
+            $admin->landId = 0;
             $id = $this->gebruiker_model->insert($admin);
         } else {
             $this->gebruiker_model->update($admin);
