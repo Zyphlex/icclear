@@ -23,62 +23,58 @@ class Gebouw extends CI_Controller {
     public function index() {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Gebouw';
-        $data['active'] = 'admin';        
+        $data['active'] = 'admin';
+
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('gebouw_model');
-        $data['gebouwen'] = $this->gebouw_model->getGebouwen();
+
+        $data['gebouwen'] = $this->gebouw_model->getAll();
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function wijzig($id){
-        $data['user'] = $this->authex->getUserInfo();
-        $data['title'] = 'IC Clear - Gebouw wijzigen';
-        $data['active'] = 'admin';        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+
+    public function overzicht() {
         $this->load->model('gebouw_model');
-        $data['gebouw'] = $this->gebouw_model->getGebouw($id);
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        $data['gebouwen'] = $this->gebouw_model->getAll();
+
+        $this->load->view('admin/gebouw/lijst', $data);
     }
-    
-    public function toevoegen(){
-        $data['user'] = $this->authex->getUserInfo();
-        $data['title'] = 'IC Clear - Gebouw toevoegen';
-        $data['active'] = 'admin';        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/toevoegen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('gebouw_model');
+        $gebouw = $this->gebouw_model->get($id);
+
+        echo json_encode($gebouw);
     }
-    
-    public function opslaan(){
+
+    public function update() {
         $gebouw->id = $this->input->post('id');
-        $gebouw->naam =  $this->input->post('naam');
+        $gebouw->naam = $this->input->post('naam');
         $gebouw->postcode = $this->input->post('postcode');
         $gebouw->gemeente = $this->input->post('gemeente');
         $gebouw->straat = $this->input->post('straat');
         $gebouw->nummer = $this->input->post('nummer');
+
         $this->load->model('gebouw_model');
-        $this->gebouw_model->update($gebouw);
-        redirect('gebouw');        
+        if ($gebouw->id == 0) {
+            $id = $this->gebouw_model->insert($gebouw);
+        } else {
+            $this->gebouw_model->update($gebouw);
+        }
+
+        echo $id;
     }
-    
-    public function insert(){
-        $gebouw->id = $this->input->post('id');
-        $gebouw->naam =  $this->input->post('naam');
-        $gebouw->postcode = $this->input->post('postcode');
-        $gebouw->gemeente = $this->input->post('gemeente');
-        $gebouw->straat = $this->input->post('straat');
-        $gebouw->nummer = $this->input->post('nummer');
-        $this->load->model('gebouw_model');
-        $this->gebouw_model->insert($gebouw);
-        redirect('gebouw'); 
-    }
-    
-    public function verwijder($id){
-        $this->load->model('gebouw_model');
-        $this->gebouw_model->delete($id);
-        redirect('gebouw');
+
+    public function delete() {
+        $id = $this->input->post('id');
+
+        $this->load->model('gebruiker_model');
+        $deleted = $this->gebruiker_model->delete($id);
+
+        echo $deleted;
     }
 
 }
