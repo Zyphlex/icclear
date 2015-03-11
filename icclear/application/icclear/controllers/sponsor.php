@@ -82,10 +82,7 @@ class Sponsor extends CI_Controller {
         
         $this->sponsor_model->update($sponsor);
         
-        $data['sponsors'] = $this->sponsor_model->getAll();
-        
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        redirect('wijzigen');
     }
 
     
