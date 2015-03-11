@@ -165,12 +165,10 @@ class Sessies extends CI_Controller {
         $sessie->id = $this->input->post('id');
         $sessie->onderwerp = $this->input->post('onderwerp');
         $sessie->omschrijving = $this->input->post('omschrijving');
-        $sessie->zaal = 0;
         
-        $this->load->model('sessies_model');        
-        if ($sessie->id != 0) {
-           $this->sessies_model->update($sessie);
-        }
+        $this->load->model('sessies_model');     
+        $this->sessies_model->update($sessie);
+        
         
         echo $id;
     }

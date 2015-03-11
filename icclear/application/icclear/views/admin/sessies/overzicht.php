@@ -4,6 +4,7 @@
         $.ajax({type : "GET",
                 url : site_url + "/sessies/overzicht",
                 success : function(result){
+                    alert(result);
                     $("#resultaat").html(result);
                     maakDetailClick();
                     maakDeleteClick();
