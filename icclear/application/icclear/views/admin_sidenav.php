@@ -24,7 +24,7 @@
                     <li><?php echo anchor('gebruiker' , 'Gebruikers'); ?></li>
                     <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
-                    <li><?php echo anchor('sponsor/overzicht', 'Sponsors'); ?></li>
+                    <li><?php echo anchor('sponsor', 'Sponsors'); ?></li>
             
             
             <?php if($conferentieId != null) { ?>
