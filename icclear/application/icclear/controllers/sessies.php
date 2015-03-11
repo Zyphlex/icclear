@@ -145,7 +145,44 @@ class Sessies extends CI_Controller {
         $this->email->send();         
     }
     
+    public function overzicht() {        
+        $this->load->model('sessie_model');
+        $data['sessies'] = $this->sessie_model->getAll();
 
+        $this->load->view('admin/sessies/overzicht', $data);
+    }
+    
+    public function detail() {        
+            $id = $this->input->get('id');
+                        
+            $this->load->model('sessie_model');
+            $sessie = $this->sessie_model->get($id);
+            
+            echo json_encode($sessie); 
+    }
+    
+    public function update() {   
+        $sessie->id = $this->input->post('id');
+        $sessie->onderwerp = $this->input->post('onderwerp');
+        $sessie->omschrijving = $this->input->post('omschrijving');
+        $sessie->zaal = 0;
+        
+        $this->load->model('sessie_model');        
+        if ($sessie->id != 0) {
+           $this->sessie_model->update($sessie);
+        }
+        
+        echo $id;
+    }
+    
+    public function delete() {       
+        $id = $this->input->post('id');
+        
+        $this->load->model('sessie_model');
+        $deleted = $this->sessie_model->delete($id);
+        
+        echo $deleted;
+    }
     
     
     // TEST
