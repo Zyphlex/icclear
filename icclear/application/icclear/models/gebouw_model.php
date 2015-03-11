@@ -19,13 +19,13 @@ class Gebouw_model extends CI_Model {
     }
 
        
-    function getGebouwen()
+    function getAll()
     {        
         $query = $this->db->get('gebouw');
         return $query->result();
     }
     
-    function getGebouw($id)
+    function get($id)
     {        
         $this->db->where('id', $id);
         $query = $this->db->get('gebouw');
