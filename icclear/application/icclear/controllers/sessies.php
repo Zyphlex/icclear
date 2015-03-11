@@ -146,8 +146,8 @@ class Sessies extends CI_Controller {
     }
     
     public function overzicht() {        
-        $this->load->model('sessie_model');
-        $data['sessie'] = $this->sessie_model->getAll();
+        $this->load->model('sessies_model');
+        $data['sessie'] = $this->sessies_model->getAll();
 
         $this->load->view('admin/sessies/lijst', $data);
     }
@@ -155,8 +155,8 @@ class Sessies extends CI_Controller {
     public function detail() {        
             $id = $this->input->get('id');
                         
-            $this->load->model('sessie_model');
-            $sessie = $this->sessie_model->get($id);
+            $this->load->model('sessies_model');
+            $sessie = $this->sessies_model->get($id);
             
             echo json_encode($sessie); 
     }
@@ -167,9 +167,9 @@ class Sessies extends CI_Controller {
         $sessie->omschrijving = $this->input->post('omschrijving');
         $sessie->zaal = 0;
         
-        $this->load->model('sessie_model');        
+        $this->load->model('sessies_model');        
         if ($sessie->id != 0) {
-           $this->sessie_model->update($sessie);
+           $this->sessies_model->update($sessie);
         }
         
         echo $id;
@@ -178,8 +178,8 @@ class Sessies extends CI_Controller {
     public function delete() {       
         $id = $this->input->post('id');
         
-        $this->load->model('sessie_model');
-        $deleted = $this->sessie_model->delete($id);
+        $this->load->model('sessies_model');
+        $deleted = $this->sessies_model->delete($id);
         
         echo $deleted;
     }
