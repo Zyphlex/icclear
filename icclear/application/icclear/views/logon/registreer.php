@@ -94,11 +94,12 @@
             <div class="col-md-6">  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('gebruikersnaam'); ?>                    
+                    <?php echo form_label('username', 'Gebruikersnaam:'); ?>                    
                         <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
-                <div class="col-md-8">        
+                <div class="col-md-8">
+                    <?php echo form_input();?>
                     <input type="text" name="gebruikersnaam" id="username" class="form-control" required="required">  
                 </div>  
                 </div>
@@ -107,12 +108,10 @@
  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="wachtwoord">
-                        Wachtwoord:
-                    </label>
+                    <?php echo form_label('password1', 'Wachtwoord:' );?>                    
                 </div>
                 
-                <div class="col-md-8">   
+                <div class="col-md-8">                       
                     <input type="password" name="wachtwoord" id="password1" class="form-control" required="required">
                 </div>
                 </div>
@@ -121,12 +120,12 @@
  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="bevestigww">
-                        Bevestigen:  <span id="validate-status" class="form-note"></span>
-                    </label>
+                    <?php echo form_label('bevestigww', "Bevestigen:");?>
+                    <span id="validate-status" class="form-note"></span>                    
                 </div>
                 
                 <div class="col-md-8">   
+                    <?php echo form_password(); ?>
                     <input type="password" name="bevestigww" id="password2" class="form-control" required="required">
                 </div>
                 </div>
@@ -135,12 +134,11 @@
                 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="voornaam">
-                        Voornaam:
-                    </label>
+                    <?php echo form_label('voornaam', 'Voornaam:'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
+                    
                     <input type="text" name="voornaam" id="voornaam" class="form-control" required="required">
                 </div>
                 </div>
@@ -149,9 +147,7 @@
                  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="familienaam">
-                        Familienaam:
-                    </label>
+                    <?php echo form_label('familienaam', 'Familienaam: '); ?>                                        
                 </div>
 
                 <div class="col-md-8">   
@@ -163,10 +159,8 @@
                  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="emailadres">
-                        Emailadres: 
-                        <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>
-                    </label>
+                    <?php echo form_label('email', 'Emailadres:'); ?>                        
+                        <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
                 <div class="col-md-8">   
@@ -179,12 +173,11 @@
             <div class="col-md-6 border-left">  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="geboortedatum">
-                        Geboortedatum:
-                    </label>
+                    <?php echo form_label('geboortedatum', 'Geboortedatum:'); ?>                    
                 </div>
                 
                 <div class="col-md-8">   
+                    <?php echo form_input(); ?>
                     <input type="date" class="form-control" id="geboortedatum" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
                 </div>
                 </div>
@@ -193,9 +186,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="geslacht">
-                        Geslacht:
-                    </label>  
+                    <?php echo form_label('geslacht', 'Geslacht:'); ?>                    
                 </div>  
                 
                 <div class="col-md-8">        
@@ -220,12 +211,14 @@
 
                 <div class="row">
                 <div class="col-md-4">   
+                    <?php echo form_label('land', 'Land:'); ?>
                     <label for="land">
                         Land:
                     </label>
                 </div>
                 
                 <div class="col-md-8">   
+<!--                    LOVELY-->
                     <select class="form-control"  name="land" id="land" required="required">
                         <?php
                         foreach ($landen as $land) {
@@ -242,9 +235,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="gemeente">
-                        Gemeente:
-                    </label>
+                    <?php echo form_label('gemeente', 'Gemeente:');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -256,9 +247,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="postcode">
-                        Postcode:
-                    </label>
+                    <?php echo form_label('postcode', 'Postcode:');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -270,9 +259,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="straat">
-                        Straat:
-                    </label>
+                    <?php echo form_label('straat', 'Straat:');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -284,9 +271,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="huisnummer">
-                        Huisnummer:
-                    </label>
+                    <?php echo form_label('huisnummer', 'Huisnummer:'); ?>                    
                 </div>
                 
                 <div class="col-md-8">   
