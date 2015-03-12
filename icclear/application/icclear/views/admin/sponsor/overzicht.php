@@ -157,14 +157,7 @@
                     <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Type:', 'type'); ?></td>
-                    <p><?php
-                        $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
-                        if ($sponsor->type == 'Sponsor') {
-                            echo form_dropdown('type', $optionsType, 'Sponsor', 'class="form-control"');
-                        } else {
-                            echo form_dropdown('type', $optionsType, 'Partner', 'class="form-control"');
-                        }
-                        ?></p>
+                    <p><?php echo form_dropdown('type', $optionsType, '', 'class="form-control"'); ?></p>
                 </form>
 
             </div>
