@@ -37,6 +37,9 @@ class Sponsorbeheer extends CI_Controller {
     public function overzicht() {        
         $this->load->model('sponsor_model');
         $data['sponsors'] = $this->sponsor_model->getAll();
+        
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getAll();
 
         $this->load->view('admin/sponsor/lijst', $data);
     }
