@@ -30,6 +30,9 @@ class Sponsorbeheer extends CI_Controller {
         //$this->load->model('sponsor_model');
         //$data['sponsors'] = $this->sponsor_model->getAll();
         
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getAll();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
