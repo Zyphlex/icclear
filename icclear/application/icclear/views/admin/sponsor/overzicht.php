@@ -3,7 +3,7 @@
     function haaloverzicht() {
         alert('test');
         $.ajax({type: "GET",
-            url: site_url + "/sponsor/overzichtAdmin",
+            url: site_url + "/sponsorbeheer/overzicht",
             success: function(result) {
                 alert('succes');
                 $("#resultaat").html(result);
@@ -34,7 +34,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/sponsor/detail",
+                    url: site_url + "/sponsorbeheer/detail",
                     async: false,
                     data: {id: iddb},
                     success: function(result) {
@@ -75,7 +75,7 @@
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
-                url: site_url + "/sponsor/update",
+                url: site_url + "/sponsorbeheer/update",
                 async: false,
                 data: dataString,
                 dataType: "json"
@@ -85,10 +85,10 @@
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deletesponsor").click(function() {
+        $(".deleteSponsor").click(function() {
             $.ajax({
                 type: "POST",
-                url: site_url + "/sponsor/delete",
+                url: site_url + "/sponsorbeheer/delete",
                 async: false,
                 data: {id: deleteid},
                 success: function(result) {
@@ -181,7 +181,7 @@
 
 
 <!-- MODAL VOOR VERWIJDEREN -->  
-<div class="modal fade" id="faqDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="sponsorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -196,7 +196,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteFaq btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteSponsor btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
