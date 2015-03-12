@@ -28,11 +28,11 @@ class Sponsorbeheer extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
-        /*$this->load->model('sponsor_model');
-        $data['sponsors'] = $this->sponsor_model->getAll();*/
+        //$this->load->model('sponsor_model');
+        //$data['sponsors'] = $this->sponsor_model->getAll();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
+        $this->template->load('admin_master', $partials, $data);
     }
       
     public function overzicht() {        
