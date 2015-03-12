@@ -3,7 +3,7 @@
     function haaloverzicht() {
         alert('test');
         $.ajax({type: "GET",
-            url: site_url + "/sponsor/overzicht",
+            url: site_url + "/sponsor/overzichtAdmin",
             success: function(result) {
                 alert('succes');
                 $("#resultaat").html(result);
