@@ -71,8 +71,8 @@ class Gebouw extends CI_Controller {
     public function delete() {
         $id = $this->input->post('id');
 
-        $this->load->model('gebruiker_model');
-        $deleted = $this->gebruiker_model->delete($id);
+        $this->load->model('gebouw_model');
+        $deleted = $this->gebouw_model->delete($id);
 
         echo $deleted;
     }
