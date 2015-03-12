@@ -94,7 +94,7 @@
             <div class="col-md-6">  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('username', 'Gebruikersnaam:'); ?>                    
+                    <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
                         <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
@@ -108,7 +108,7 @@
  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('password1', 'Wachtwoord:' );?>                    
+                    <?php echo form_label('Wachtwoord:', 'password1');?>                    
                 </div>
                 
                 <div class="col-md-8">                       
@@ -120,7 +120,7 @@
  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('bevestigww', "Bevestigen:");?>
+                    <?php echo form_label('Bevestigen:', 'bevestigww');?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
                 
@@ -134,7 +134,7 @@
                 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('voornaam', 'Voornaam:'); ?>                    
+                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
@@ -147,7 +147,7 @@
                  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('familienaam', 'Familienaam: '); ?>                                        
+                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
 
                 <div class="col-md-8">   
@@ -159,7 +159,7 @@
                  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('email', 'Emailadres:'); ?>                        
+                    <?php echo form_label('Emailadres:', 'email'); ?>                        
                         <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
@@ -173,7 +173,7 @@
             <div class="col-md-6 border-left">  
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('geboortedatum', 'Geboortedatum:'); ?>                    
+                    <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -186,7 +186,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('geslacht', 'Geslacht:'); ?>                    
+                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                    
                 </div>  
                 
                 <div class="col-md-8">        
@@ -211,7 +211,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('land', 'Land:'); ?>
+                    <?php echo form_label('Land:', 'land'); ?>
                     <label for="land">
                         Land:
                     </label>
@@ -235,7 +235,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('gemeente', 'Gemeente:');?>                    
+                    <?php echo form_label('Gemeente:', 'gemeente');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -247,7 +247,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('postcode', 'Postcode:');?>                    
+                    <?php echo form_label('Postcode:', 'postcode');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -259,7 +259,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('straat', 'Straat:');?>                    
+                    <?php echo form_label('Straat:', 'straat');?>                    
                 </div>
                 
                 <div class="col-md-8">   
@@ -271,7 +271,7 @@
 
                 <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('huisnummer', 'Huisnummer:'); ?>                    
+                    <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
                 </div>
                 
                 <div class="col-md-8">   
