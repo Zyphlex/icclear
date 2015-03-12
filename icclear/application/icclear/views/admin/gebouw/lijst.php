@@ -20,7 +20,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigGebouw btn btn-primary" data-id="<?php echo $gebouw->id ?>">Wijzigen</button>
-                        <button class="verwijderGebwouw btn btn-danger" data-id="<?php echo $gebouw->id ?>">Verwijderen</button> 
+                        <button class="verwijderGebouw btn btn-danger" data-id="<?php echo $gebouw->id ?>">Verwijderen</button> 
                     </p>                                 
                 </td>
             </tr>
