@@ -156,7 +156,7 @@
 
 
 <!-- MODAL VOOR VERWIJDEREN -->  
-<div class="modal fade" id="faqDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="gebouwDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -166,12 +166,12 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze vraag wilt verwijderen?</p>  
+                <p>Bent u zeker dat u deze gebouw wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteFaq btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteGebouw btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
