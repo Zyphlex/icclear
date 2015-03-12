@@ -40,7 +40,7 @@ class Zaal extends CI_Controller {
     public function overzicht() {
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
-        $data['gebouw'] = $this->zaal_model->getGebouw();
+        $data['zalen'] = $this->zaal_model->getGebouw();
         
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getAll();
