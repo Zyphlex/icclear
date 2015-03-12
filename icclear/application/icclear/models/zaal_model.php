@@ -12,6 +12,19 @@ class Zaal_model extends CI_Model {
         return $query->row();
     }
     
+    function getGebouw() {
+        $query = $this->db->get('zaal');
+        $zalen = $query->result();
+
+        $this->load->model('gebouw_model');
+
+
+        foreach ($zalen as $zaal) {
+            $zaal->gebouw = $this->gebouw_model->get($zaal->gebouwId);            
+        }
+        return $zalen;
+    }
+    
     function getAll() {
         $query = $this->db->get('zaal');
         return $query->result();
