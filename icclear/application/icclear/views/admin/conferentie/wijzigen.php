@@ -4,7 +4,7 @@
     <form action="conferentie/opslaan" method="post">
 
         <div class="row">        
-            <?php echo form_label('name','Naam:', 'class=control-label');?>
+            <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
                 <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $conferentie->naam ?>"/>                
             </div>
@@ -110,7 +110,7 @@
             </div>
 
             <div class="col-md-12">
-               <textarea rows="10" name="beschrijving" id="beschrijving" class="form-control"></textarea>    
+               <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
             </div>
         </div>        
                 
