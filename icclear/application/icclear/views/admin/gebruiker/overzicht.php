@@ -43,7 +43,7 @@
                         $("#emailadres").val(jobject.emailadres);
                         $("#geslacht").val(jobject.geslacht);
                         $("#typeId").val(jobject.typeId);
-                        $("#landId").val(jobject.landId);
+                        $("#land").val(jobject.landId);
                         $("#gemeente").val(jobject.gemeente);
                         $("#postcode").val(jobject.postcode);
                         $("#straat").val(jobject.straat);
@@ -159,13 +159,16 @@
                     <p><?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Bezoeker
                         <?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Spreker</p>
 
-                    <p><?php echo form_label('Land:', 'landId'); ?></p>
+                    <p><?php echo form_label('Land:', 'land'); ?></p>                    
                     <?php
+                    $drop = array();
+                    $teller = 1;
                     foreach ($landen as $land) {
-                        $options[$land->id] = $land->naam;
+                        $drop[$teller] = $land->naam;
+                        $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('land', $options, 'class="form-control" id="landId"'); ?></p>
+                    <p><?php echo form_dropdown('land', $drop, '', 'id="land"'); ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
