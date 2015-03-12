@@ -140,7 +140,7 @@
                         foreach ($landen as $land) {
                             $optionsLand[$land->id] = $land->naam;
                         }
-                        echo form_dropdown('land', $optionsLand, 'class="form-control"');
+                        echo form_dropdown('land', $optionsLand, ' ', 'class="form-control"');
                         ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
