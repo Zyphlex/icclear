@@ -38,7 +38,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
-                        $("#gebouwId").val(jobject.gebouwId);
+                        $("#gebouw").val(jobject.gebouwId);
                         $("#maximumAantalPersonen").val(jobject.maximumAantalPersonen);
                     }
                 });
