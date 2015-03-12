@@ -141,7 +141,7 @@
                             $optionsLand[$land->id] = $land->naam;
                         }
                         
-                        echo form_dropdown('land', $optionsLand, land, 'id="land" class="form-control"');
+                        echo form_dropdown('land', $optionsLand, '', 'id="land" class="form-control"');
                         ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
