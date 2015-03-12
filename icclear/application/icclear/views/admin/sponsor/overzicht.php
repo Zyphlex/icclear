@@ -38,19 +38,23 @@
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
+                        $("#land").val(jobject.land);
                         $("#postcode").val(jobject.postcode);
                         $("#gemeente").val(jobject.gemeente);
                         $("#straat").val(jobject.straat);
                         $("#nummer").val(jobject.nummer);
+                        $("#type").val(jobject.type);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#naam").val("");
+                $("#land").val("");
                 $("#postcode").val("");
                 $("#gemeente").val("");
                 $("#straat").val("");
                 $("#nummer").val("");
+                $("#type").val("");
             }
             // dialoogvenster openen
             $("#sponsorModal").modal('show');
