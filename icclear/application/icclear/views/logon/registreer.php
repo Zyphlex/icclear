@@ -94,9 +94,8 @@
             <div class="col-md-6">  
                 <div class="row">
                 <div class="col-md-4">   
-                    <label for="gebruikersnaam">
-                        Gebruikersnaam:   <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>
-                    </label> 
+                    <?php echo form_label('gebruikersnaam'); ?>                    
+                        <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
                 <div class="col-md-8">        
