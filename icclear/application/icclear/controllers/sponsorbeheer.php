@@ -25,8 +25,7 @@ class Sponsorbeheer extends CI_Controller {
         $data['title'] = 'IC Clear - Sponsors'; 
         $data['active'] = 'admin';        
         
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         //$this->load->model('sponsor_model');
         //$data['sponsors'] = $this->sponsor_model->getAll();
