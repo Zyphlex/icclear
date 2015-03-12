@@ -38,7 +38,7 @@
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
-                        $("#land").val(jobject.land->naam);
+                        $("#land").val(jobject.land);
                         $("#postcode").val(jobject.postcode);
                         $("#gemeente").val(jobject.gemeente);
                         $("#straat").val(jobject.straat);
@@ -140,7 +140,8 @@
                         foreach ($landen as $land) {
                             $optionsLand[$land->id] = $land->naam;
                         }
-                        echo form_dropdown('land', $optionsLand, '', 'class="form-control"');
+                        
+                        echo form_dropdown('land', $optionsLand, '', 'id="land" class="form-control"');
                         ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
