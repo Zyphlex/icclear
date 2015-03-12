@@ -1,9 +1,11 @@
 <script type="text/javascript">
     //Gegevens opvragen en tonen
     function haaloverzicht() {
+        alert('test');
         $.ajax({type: "GET",
             url: site_url + "/sponsor/overzicht",
             success: function(result) {
+                alert('succes');
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
