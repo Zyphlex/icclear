@@ -140,7 +140,7 @@
                         foreach ($landen as $land) {
                             $optionsLand[$land->id] = $land->naam;
                         }
-                        
+
                         echo form_dropdown('land', $optionsLand, '', 'id="land" class="form-control"');
                         ?></p>
 
@@ -157,7 +157,9 @@
                     <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Type:', 'type'); ?></td>
-                    <p><?php echo form_dropdown('type', $optionsType, '', 'class="form-control"'); ?></p>
+                    <p><?php $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
+                        echo form_dropdown('type', $optionsType, 'Sponsor', 'class="form-control"');
+                        ?></p>
                 </form>
 
             </div>
