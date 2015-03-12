@@ -41,6 +41,12 @@ class Conferentie_model extends CI_Model {
         return $query->row();
     }
 
+    function update($conferentie)
+    {
+        $this->db->where('id', $conferentie->id);
+        $this->db->update('conferentie', $conferentie);
+    }
+    
 }
 
 ?>
