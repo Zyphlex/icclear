@@ -26,9 +26,12 @@ class Zaal extends CI_Controller {
         $data['active'] = 'admin';
 
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
         $this->load->model('zaal_model');
-
         $data['zalen'] = $this->zaal_model->getAll();
+        
+        $this->load->model('gebouw_model');
+        $data['gebouwen'] = $this->gebouw_model->getAll();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/zaal/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -37,6 +40,9 @@ class Zaal extends CI_Controller {
     public function overzicht() {
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
+        
+        $this->load->model('gebouw_model');
+        $data['gebouwen'] = $this->gebouw_model->getAll();
 
         $this->load->view('admin/zaal/lijst', $data);
     }
