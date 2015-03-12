@@ -78,7 +78,9 @@
 
 </script>
 
-<form action="logon/add" class="registreer" method="post" onsubmit="return validateMyForm();">     
+    <?php 
+    $attributes = array('class' => 'registreer', 'id' => 'myForm');
+    echo form_open('logon/add', $attributes); ?>
     
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -140,7 +142,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="voornaam" id="field2" class="form-control" required="required">
+                    <input type="text" name="voornaam" id="voornaam" class="form-control" required="required">
                 </div>
                 </div>
 
@@ -154,7 +156,7 @@
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="familienaam" id="field1" class="form-control" required="required">
+                    <input type="text" name="familienaam" id="familienaam" class="form-control" required="required">
                 </div>
                 </div>
 
@@ -169,7 +171,7 @@
                 </div>  
 
                 <div class="col-md-8">   
-                    <input type="text" name="emailadres" id="email" class="form-control" required="required">      
+                    <input type="text" name="emailadres" id="email emailadres" class="form-control" required="required">      
                 </div>
                 </div>
             </div>
@@ -184,7 +186,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <input type="date" class="form-control" id="field7" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                    <input type="date" class="form-control" id="geboortedatum" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
                 </div>
                 </div>
 
@@ -200,13 +202,13 @@
                 <div class="col-md-8">        
                     <div class="my-radio">
                     <div class="">
-                        <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" value="Man">
+                        <input type="radio" name="geslacht" id="geslacht"  class="form-horizontal" value="Man">
                         <span class="option-title">
                             Man
                         </span>
                     </div>                                
                     <div class="">
-                        <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" value="Vrouw">
+                        <input type="radio" name="geslacht" id="geslacht2" class="form-horizontal" value="Vrouw">
                         <span class="option-title">
                             Vrouw
                         </span>
@@ -225,7 +227,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <select class="form-control"  name="land" id="field9" required="required">
+                    <select class="form-control"  name="land" id="land" required="required">
                         <?php
                         foreach ($landen as $land) {
                             echo '<option value="' . $land->id . '">' .
@@ -247,7 +249,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <input type="text" name="gemeente" id="field10" class="form-control" required="required">
+                    <input type="text" name="gemeente" id="gemeente" class="form-control" required="required">
                 </div>
                 </div>
 
@@ -261,7 +263,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <input type="text" name="postcode" id="field10-b" class="form-control" required="required">
+                    <input type="text" name="postcode" id="postcode" class="form-control" required="required">
                 </div>
                 </div>
 
@@ -275,7 +277,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <input type="text" name="straat" id="field11" class="form-control" required="required">
+                    <input type="text" name="straat" id="straat" class="form-control" required="required">
                 </div>
                 </div>
 
@@ -289,7 +291,7 @@
                 </div>
                 
                 <div class="col-md-8">   
-                    <input type="text" name="huisnummer" id="field12" class="form-control" required="required">
+                    <input type="text" name="huisnummer" id="huisnummer" class="form-control" required="required">
                 </div>
                 </div>
             </div>
@@ -298,9 +300,7 @@
     </div>
 
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
-        <input type="submit" name="mysubmit" value="Verzend" class="btn btn-primary"  />
-
-    </div>
-    
-</form>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
+        <button name="mysubmit" id="mysubmit" class="btn btn-primary">Verzend</button>
+    </div>    
+<?php echo form_close();?>

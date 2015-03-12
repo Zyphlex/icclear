@@ -178,9 +178,9 @@ class Logon extends CI_Controller {
 
     function check_email_availablity() {
         $this->load->model('email_model');
-        $get_result = $this->email_model->check_email_availablity();
+        $result = $this->email_model->check_email_availablity();
 
-        if (!$get_result)
+        if (!$result)
             echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
         else
             echo '<p class="form-note form-note-ok">Beschikbaar</p>';
@@ -188,9 +188,9 @@ class Logon extends CI_Controller {
 
     function check_username_availablity() {
         $this->load->model('gebruiker_model');
-        $get_result = $this->gebruiker_model->check_username_availablity();
+        $result = $this->gebruiker_model->check_username_availablity();
 
-        if (!$get_result)
+        if (!$result)
             echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
         else
             echo '<p class="form-note form-note-ok">Beschikbaar</p>';
