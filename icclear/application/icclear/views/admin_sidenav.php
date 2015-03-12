@@ -17,14 +17,15 @@
             <div class="panel-body">
                 <h4>Algemeen</h4>
                 <ul class="nav nav-pills nav-stacked">
+                    <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
                     <li><?php echo anchor('activiteit' , 'Activiteiten'); ?></li>
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
+                    <li><?php echo anchor('zaal' , 'Zalen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
                     <li><?php echo anchor('gebruiker' , 'Gebruikers'); ?></li>
-                    <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
-                    <li><?php echo anchor('sponsor', 'Sponsors'); ?></li>
+                    <li><?php echo anchor('sponsor/overzichtAdmin', 'Sponsors'); ?></li>
             
             
             <?php if($conferentieId != null) { ?>
