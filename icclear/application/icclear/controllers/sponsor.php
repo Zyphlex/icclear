@@ -24,14 +24,19 @@ class Sponsor extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
-    public function overzicht() {
+    public function overzichtAdmin() {
+        $data['user']  = $this->authex->getUserInfo();
+        $data['title'] = 'IC Clear - Sponsors'; 
+        $data['active'] = 'sponsors';        
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $this->load->model('sponsor_model');
         $data['sponsors'] = $this->sponsor_model->getAll();
         
-        $this->load->model('land_model');
-        $data['landen'] = $this->land_model->getAll();
-
-        $this->load->view('admin/sponsor/lijst', $data);
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'sponsor/overzicht', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
     }
     
     public function detail() {
