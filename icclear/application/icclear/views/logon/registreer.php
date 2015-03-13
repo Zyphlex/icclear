@@ -15,6 +15,8 @@
     $("#usernamediv").addClass("has-error");
             ok = false;
     }
+    return ok;
+    }
     
     $( "#mySubmit" ).click(function(e) {
             e.preventDefault();
