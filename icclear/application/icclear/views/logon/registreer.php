@@ -11,25 +11,83 @@
         function validatieOK() {
             ok = true;
             if ($("#username").val() == "") {
-                $("#username").addClass("has-error");
+                $("#usernamediv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#username").removeClass("has-error");
+                $("#usernamediv").removeClass("has-error");
             }
             if ($("#password1").val() == "") {
-                $("#password1").addClass("has-error");
+                $("#password1div").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#password1").removeClass("has-error");
+                $("#password1div").removeClass("has-error");
             }
             if ($("#password2").val() == "") {
-                $("#password2").addClass("has-error");
+                $("#password2div").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#password2").removeClass("has-error");
+                $("#password2div").removeClass("has-error");
+            }
+            
+            if ($("#voornaam").val() == "") {
+                $("#voornaamdiv").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#voornaamdiv").removeClass("has-error");
+            }
+            
+            if ($("#familienaam").val() == "") {
+                $("#familienaamdiv").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#familienaamdiv").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
+            }
+            if ($("#").val() == "") {
+                $("#div").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#div").removeClass("has-error");
             }
             
             
@@ -160,7 +218,7 @@ echo form_open('logon/add', $attributes);
 
 
 
-            <div class="row">
+            <div class="row" id="familienaamdiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
