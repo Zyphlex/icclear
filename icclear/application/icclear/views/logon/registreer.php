@@ -7,8 +7,9 @@
         $('#' + id).fadeIn();
     }
     $(document).ready(function () {
-ok = true;
-        function validatieOK() {            
+
+        function validatieOK() {
+            ok = true;
             if ($("#username").val() == "") {
                 $("#usernamediv").addClass("has-error");
                 ok = false;
@@ -89,11 +90,12 @@ ok = true;
                 $("#huisnummerdiv").removeClass("has-error");
             }
                                     
+            return ok;
         }
 
         $("#mySubmit").click(function (e) {
             e.preventDefault();
-            if (ok == true) {
+            if (validatieOK() && validate()) {
                 $("#myForm").submit();
             }
         });
@@ -138,6 +140,7 @@ ok = true;
         $("#password2").keyup(validate);
     });
     function validate() {
+        ok = true;
         var password1 = $("#password1").val();
         var password2 = $("#password2").val();
         if (password1 == password2) {
@@ -151,6 +154,7 @@ ok = true;
             $("#validate-status").addClass("form-note-used");
             ok = false;
         }
+        return ok;
     }
 </script>
 
