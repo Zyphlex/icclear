@@ -47,47 +47,47 @@
             else {
                 $("#familienaamdiv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#email").val() == "") {
+                $("#emaildiv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#emaildiv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#geboortedatum").val() == "") {
+                $("#geboortedatumdiv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#geboortedatumdiv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#gemeente").val() == "") {
+                $("#gemeentediv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#gemeentediv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#postcode").val() == "") {
+                $("#postcodediv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#postcodediv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#straat").val() == "") {
+                $("#straatdiv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#straatdiv").removeClass("has-error");
             }
-            if ($("#").val() == "") {
-                $("#div").addClass("has-error");
+            if ($("#huisnummer").val() == "") {
+                $("#huisnummerdiv").addClass("has-error");
                 ok = false;
             }
             else {
-                $("#div").removeClass("has-error");
+                $("#huisnummerdiv").removeClass("has-error");
             }
             
             
@@ -230,7 +230,7 @@ echo form_open('logon/add', $attributes);
 
 
 
-            <div class="row">
+            <div class="row" id="emaildiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Emailadres:', 'email'); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
@@ -244,7 +244,7 @@ echo form_open('logon/add', $attributes);
 
 
         <div class="col-md-6 border-left">  
-            <div class="row">
+            <div class="row" id="geboortedatumdiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
                 </div>
@@ -296,7 +296,7 @@ echo form_open('logon/add', $attributes);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="gemeentediv">
                 <div class="col-md-4">   
                     <?php echo form_label('Gemeente:', 'gemeente'); ?>                    
                 </div>
@@ -306,7 +306,7 @@ echo form_open('logon/add', $attributes);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="postcodediv">
                 <div class="col-md-4">   
                     <?php echo form_label('Postcode:', 'postcode'); ?>                    
                 </div>
@@ -318,7 +318,7 @@ echo form_open('logon/add', $attributes);
 
 
 
-            <div class="row">
+            <div class="row" id="straatdiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Straat:', 'straat'); ?>                    
                 </div>
@@ -328,7 +328,7 @@ echo form_open('logon/add', $attributes);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="huisnummerdiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
                 </div>
