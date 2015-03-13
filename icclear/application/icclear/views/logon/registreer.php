@@ -8,6 +8,7 @@
     }
     $(document).ready(function () {
 
+$("#usernamediv").removeClass("has-error");
 
         function validatieOK() {
             ok = true;
