@@ -267,6 +267,6 @@ echo form_open('logon/add', $attributes);
 
 <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
-    <button name="mysubmit" id="mysubmit" class="btn btn-primary">Verzend</button>
+    <button name="mysubmit" id="mySubmit" class="btn btn-primary">Verzend</button>
 </div>    
 <?php echo form_close(); ?>
