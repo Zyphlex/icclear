@@ -110,7 +110,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">                       
-                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control')); ?> 
+                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'required' => 'required', 'class' => 'form-control')); ?> 
                 </div>
             </div>
 
