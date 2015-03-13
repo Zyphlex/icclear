@@ -147,11 +147,13 @@
             $("#validate-status").text("Correct");
             $("#validate-status").removeClass("form-note-used");
             $("#validate-status").addClass("form-note-ok");
+            $("#password2div").removeClass("has-error");
         }
         else {
             $("#validate-status").text("Incorrect");
             $("#validate-status").removeClass("form-note-ok");
             $("#validate-status").addClass("form-note-used");
+            $("#password2div").addClass("has-error");
             ok = false;
         }
         return ok;
