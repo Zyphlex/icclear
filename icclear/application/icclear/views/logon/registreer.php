@@ -24,7 +24,7 @@
             else {
                 $("#password1div").removeClass("has-error");
             }
-            if ($("#password2").val() == "") {
+            if ($("#password2").val() == "" || validate() == false) {
                 $("#password2div").addClass("has-error");
                 ok = false;
             }
@@ -146,14 +146,12 @@
         if (password1 == password2) {
             $("#validate-status").text("Correct");
             $("#validate-status").removeClass("form-note-used");
-            $("#validate-status").addClass("form-note-ok");    
-            $("#password2div").removeClass("has-error");
+            $("#validate-status").addClass("form-note-ok");                
         }
         else {
             $("#validate-status").text("Incorrect");
             $("#validate-status").removeClass("form-note-ok");
-            $("#validate-status").addClass("form-note-used");
-            $("#password2div").addClass("has-error");
+            $("#validate-status").addClass("form-note-used");            
             ok = false;
         }
         return ok;
