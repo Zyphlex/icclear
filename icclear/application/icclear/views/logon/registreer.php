@@ -89,6 +89,22 @@
             else {
                 $("#huisnummerdiv").removeClass("has-error");
             }
+            
+            function validate() {
+        var password1 = $("#password1").val();
+        var password2 = $("#password2").val();
+        if (password1 == password2) {
+            $("#validate-status").text("Correct");
+            $("#validate-status").removeClass("form-note-used");
+            $("#validate-status").addClass("form-note-ok");
+        }
+        else {
+            $("#validate-status").text("Incorrect");
+            $("#validate-status").removeClass("form-note-ok");
+            $("#validate-status").addClass("form-note-used");
+            ok = false;
+        }
+    }
                                     
             return ok;
         }
@@ -138,21 +154,7 @@
 
         });
         $("#password2").keyup(validate);
-    });
-    function validate() {
-        var password1 = $("#password1").val();
-        var password2 = $("#password2").val();
-        if (password1 == password2) {
-            $("#validate-status").text("Correct");
-            $("#validate-status").removeClass("form-note-used");
-            $("#validate-status").addClass("form-note-ok");
-        }
-        else {
-            $("#validate-status").text("Incorrect");
-            $("#validate-status").removeClass("form-note-ok");
-            $("#validate-status").addClass("form-note-used");
-        }
-    }
+    });    
 </script>
 
 <?php
@@ -231,7 +233,7 @@ echo form_open('logon/add', $attributes);
             <div class="row" id="emaildiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Emailadres:', 'email'); ?>                        
-                    <p><span id="Loading">(someone@something.com)<img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
+                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
                 <div class="col-md-8">   
