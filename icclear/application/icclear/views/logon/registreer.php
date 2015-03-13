@@ -89,9 +89,7 @@
             else {
                 $("#huisnummerdiv").removeClass("has-error");
             }
-            
-            
-            
+                                    
             return ok;
         }
 
@@ -233,7 +231,7 @@ echo form_open('logon/add', $attributes);
             <div class="row" id="emaildiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Emailadres:', 'email'); ?>                        
-                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
+                    <p><span id="Loading">(someone@something.com)<img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
                 <div class="col-md-8">   
