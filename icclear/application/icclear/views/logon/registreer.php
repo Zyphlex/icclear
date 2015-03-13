@@ -206,8 +206,7 @@ echo form_open('logon/add', $attributes);
                     <?php echo form_label('Land:', 'land'); ?>                    
                 </div>
 
-                <div class="col-md-8">      
-                    
+                <div class="col-md-8">                          
                     <?php
                     $drop = array();                    
                     foreach ($landen as $land) {

@@ -7,10 +7,10 @@ class Gebruiker_model extends CI_Model {
     }
 
     function check_username_availablity() {
-        $username = trim($this->input->post('username'));        
-
-        $query = $this->db->query('SELECT * FROM gebruiker where gebruikersnaam="' . $username . '"');
-
+        $username = strtoupper(trim($this->input->post('username')));                
+        $this->db->where('UPPER(gebruikersnaam)', $username);
+        $query = $this->db->get('gebruiker');
+                
         if ($query->num_rows() > 0)
             return false;
         else
