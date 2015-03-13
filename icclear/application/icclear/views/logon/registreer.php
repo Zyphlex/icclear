@@ -100,27 +100,20 @@ echo form_open('logon/add', $attributes);
                 </div>  
 
                 <div class="col-md-8">
-                    <?php
-                    $data = array(
-                        'name' => 'gebruikersnaam', 'id' => 'username', 'required' => 'required', 'maxlength' => '100', 'size' => '50', 'class' => 'form-control');
-                    echo form_input($data);                   
-                    ?>                    
+                    <?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username', 'required' => 'required', 'class' => 'form-control')); ?>                    
                 </div>  
             </div>
 
-
-
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Wachtwoord:', 'password1'); ?>                    
+                        <?php echo form_label('Wachtwoord:', 'password1'); ?>                    
                 </div>
 
                 <div class="col-md-8">                       
-                    <input type="password" name="wachtwoord" id="password1" class="form-control" required="required">
+                     <?php echo form_input(array('type' => 'password', 'name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control'));  ?> 
+<!--                    <input type="password" class="form-control" required="required">-->
                 </div>
             </div>
-
-
 
             <div class="row">
                 <div class="col-md-4">   
