@@ -206,20 +206,15 @@ echo form_open('logon/add', $attributes);
                     <?php echo form_label('Land:', 'land'); ?>                    
                 </div>
 
-                <div class="col-md-8">                      
-                    <?php 
-                    $dropdownattributes = array('id' => 'land', 'class' => 'form-control', 'required' => 'required');                                             
-                    echo form_dropdown('land', $dropdownattributes); 
+                <div class="col-md-8">      
+                    
+                    <?php
+                    $drop = array();                    
+                    foreach ($landen as $land) {
+                        $drop[$land->id] = $land->naam;                        
+                    }                                                                                                
+                    echo form_dropdown('land', $drop, '', 'id="land"');
                     ?>
-                    <select class="form-control"  name="land" id="land" required="required">
-                        <?php
-                        foreach ($landen as $land) {
-                            echo '<option value="' . $land->id . '">' .
-                            $land->naam
-                            . '</option>';
-                        }
-                        ?>
-                    </select>
                 </div>
             </div>
 
