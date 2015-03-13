@@ -146,7 +146,7 @@
         if (password1 == password2) {
             $("#validate-status").text("Correct");
             $("#validate-status").removeClass("form-note-used");
-            $("#validate-status").addClass("form-note-ok");
+            $("#validate-status").addClass("form-note-ok");    
             $("#password2div").removeClass("has-error");
         }
         else {
