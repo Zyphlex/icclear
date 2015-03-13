@@ -95,7 +95,7 @@ echo form_open('logon/add', $attributes);
         <div class="col-md-6">  
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
+                    <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
                     <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
@@ -106,22 +106,22 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-                        <?php echo form_label('Wachtwoord:', 'password1'); ?>                    
+                    <?php echo form_label('Wachtwoord:', 'password1'); ?>                    
                 </div>
 
                 <div class="col-md-8">                       
-                     <?php echo form_input(array('type' => 'password', 'name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control'));  ?> 
+                    <?php echo form_input(array('type' => 'password', 'name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control')); ?> 
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Bevestigen:', 'bevestigww'); ?>
+                    <?php echo form_label('Bevestigen:', 'bevestigww'); ?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
 
                 <div class="col-md-8">   
-<?php echo form_password(); ?>
+                    <?php echo form_password(); ?>
                     <input type="password" name="bevestigww" id="password2" class="form-control" required="required">
                 </div>
             </div>
@@ -130,12 +130,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-
-                    <input type="text" name="voornaam" id="voornaam" class="form-control" required="required">
+                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'required' => 'required', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -143,11 +142,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
 
-                <div class="col-md-8">   
-                    <input type="text" name="familienaam" id="familienaam" class="form-control" required="required">
+                <div class="col-md-8">  
+                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'required' => 'required', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -155,7 +154,7 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Emailadres:', 'email'); ?>                        
+                    <?php echo form_label('Emailadres:', 'email'); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
@@ -169,12 +168,12 @@ echo form_open('logon/add', $attributes);
         <div class="col-md-6 border-left">  
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
+                    <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-<?php echo form_input(); ?>
-                    <input type="date" class="form-control" id="geboortedatum" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
+                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'required' => 'required', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
+<!--                    width 185 px-->
                 </div>
             </div>
 
@@ -182,7 +181,7 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Geslacht:', 'geslacht'); ?>                    
+                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                    
                 </div>  
 
                 <div class="col-md-8">        
@@ -205,7 +204,7 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Land:', 'land'); ?>                    
+                    <?php echo form_label('Land:', 'land'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
@@ -226,11 +225,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Gemeente:', 'gemeente'); ?>                    
+                    <?php echo form_label('Gemeente:', 'gemeente'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="gemeente" id="gemeente" class="form-control" required="required">
+                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'required' => 'required', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -238,23 +237,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Postcode:', 'postcode'); ?>                    
+                    <?php echo form_label('Postcode:', 'postcode'); ?>                    
                 </div>
 
-                <div class="col-md-8">   
-                    <input type="text" name="postcode" id="postcode" class="form-control" required="required">
-                </div>
-            </div>
-
-
-
-            <div class="row">
-                <div class="col-md-4">   
-<?php echo form_label('Straat:', 'straat'); ?>                    
-                </div>
-
-                <div class="col-md-8">   
-                    <input type="text" name="straat" id="straat" class="form-control" required="required">
+                <div class="col-md-8"> 
+                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'required' => 'required', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -262,11 +249,23 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-<?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
+                    <?php echo form_label('Straat:', 'straat'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="huisnummer" id="huisnummer" class="form-control" required="required">
+                    <?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-4">   
+                    <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
+                </div>
+
+                <div class="col-md-8">  
+                    <?php echo form_input(array('name' => 'huisnummer', 'id' => 'huisnummer', 'required' => 'required', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
         </div>
