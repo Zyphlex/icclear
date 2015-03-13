@@ -13,15 +13,15 @@
         $('#username').keyup(function () {
             $('#validate-username').show();
             var u = $('#username').val();
-            if(u.length > 3){
-            $.post("<?php echo base_url() ?>icclear.php/logon/check_username_availablity", {
-                username: $("#username").val()
-            }, function (response) {
-                $('#validate-username').hide();
-                setTimeout("finishAjax('validate-username', '" + escape(response) + "')", 400);
-            });
-            return false;
-        }
+            if (u.length > 3) {
+                $.post("<?php echo base_url() ?>icclear.php/logon/check_username_availablity", {
+                    username: $("#username").val()
+                }, function (response) {
+                    $('#validate-username').hide();
+                    setTimeout("finishAjax('validate-username', '" + escape(response) + "')", 400);
+                });
+                return false;
+            }
         });
 
         $('#email').keyup(function () {
@@ -78,147 +78,146 @@
 
 </script>
 
-    <?php 
-    $attributes = array('class' => 'registreer', 'id' => 'myForm');
-    echo form_open('logon/add', $attributes); ?>
-    
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-         <h4 class="modal-title">Registreren</h4>
+<?php
+$attributes = array('class' => 'registreer', 'id' => 'myForm');
+echo form_open('logon/add', $attributes);
+?>
 
-    </div>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Registreren</h4>
 
-    <div class="modal-body">
+</div>
 
-        <div class="row">
-            <div class="col-md-6">  
-                <div class="row">
+<div class="modal-body">
+
+    <div class="row">
+        <div class="col-md-6">  
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
-                        <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
+<?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
+                    <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
                 <div class="col-md-8">
-                    <?php echo form_input();?>
-                    <input type="text" name="gebruikersnaam" id="username" class="form-control" required="required">  
+                    <?php
+                    $data = array(
+                        'name' => 'gebruikersnaam', 'id' => 'username', 'required' => 'required', 'maxlength' => '100', 'size' => '50', 'class' => 'form-control');
+                    echo form_input($data);                   
+                    ?>                    
                 </div>  
-                </div>
+            </div>
 
 
- 
-                <div class="row">
+
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Wachtwoord:', 'password1');?>                    
+<?php echo form_label('Wachtwoord:', 'password1'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">                       
                     <input type="password" name="wachtwoord" id="password1" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
- 
-                <div class="row">
+
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Bevestigen:', 'bevestigww');?>
+<?php echo form_label('Bevestigen:', 'bevestigww'); ?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
-                
+
                 <div class="col-md-8">   
-                    <?php echo form_password(); ?>
+<?php echo form_password(); ?>
                     <input type="password" name="bevestigww" id="password2" class="form-control" required="required">
                 </div>
-                </div>
-                
-                
-                
-                <div class="row">
+            </div>
+
+
+
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+<?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-                    
+
                     <input type="text" name="voornaam" id="voornaam" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
-                 
-                <div class="row">
+
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+<?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
 
                 <div class="col-md-8">   
                     <input type="text" name="familienaam" id="familienaam" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
-                 
-                <div class="row">
+
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Emailadres:', 'email'); ?>                        
-                        <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
+<?php echo form_label('Emailadres:', 'email'); ?>                        
+                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
                 <div class="col-md-8">   
                     <input type="text" name="emailadres" id="email emailadres" class="form-control" required="required">      
                 </div>
-                </div>
             </div>
-                        
-            
-            <div class="col-md-6 border-left">  
-                <div class="row">
+        </div>
+
+
+        <div class="col-md-6 border-left">  
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
+<?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
-                    <?php echo form_input(); ?>
+<?php echo form_input(); ?>
                     <input type="date" class="form-control" id="geboortedatum" maxlength="524288" name="geboortedatum" required="required" style="width: 158px;" tabindex="0" title="">
                 </div>
-                </div>
+            </div>
 
 
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                    
+<?php echo form_label('Geslacht:', 'geslacht'); ?>                    
                 </div>  
-                
+
                 <div class="col-md-8">        
                     <div class="my-radio">
-                    <div class="">
-                        <input type="radio" name="geslacht" id="geslacht"  class="form-horizontal" value="Man">
-                        <span class="option-title">
-                            Man
-                        </span>
-                    </div>                                
-                    <div class="">
-                        <input type="radio" name="geslacht" id="geslacht2" class="form-horizontal" value="Vrouw">
-                        <span class="option-title">
-                            Vrouw
-                        </span>
-                    </div>
+                        <div class="">
+                            <input type="radio" name="geslacht" id="geslacht"  class="form-horizontal" value="Man">
+                            <span class="option-title">
+                                Man
+                            </span>
+                        </div>                                
+                        <div class="">
+                            <input type="radio" name="geslacht" id="geslacht2" class="form-horizontal" value="Vrouw">
+                            <span class="option-title">
+                                Vrouw
+                            </span>
+                        </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
-
-
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Land:', 'land'); ?>
-                    <label for="land">
-                        Land:
-                    </label>
+<?php echo form_label('Land:', 'land'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
-<!--                    LOVELY-->
+                    <!--                    LOVELY-->
                     <select class="form-control"  name="land" id="land" required="required">
                         <?php
                         foreach ($landen as $land) {
@@ -229,62 +228,62 @@
                         ?>
                     </select>
                 </div>
-                </div>
+            </div>
 
 
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Gemeente:', 'gemeente');?>                    
+<?php echo form_label('Gemeente:', 'gemeente'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
                     <input type="text" name="gemeente" id="gemeente" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Postcode:', 'postcode');?>                    
+<?php echo form_label('Postcode:', 'postcode'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
                     <input type="text" name="postcode" id="postcode" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Straat:', 'straat');?>                    
+<?php echo form_label('Straat:', 'straat'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
                     <input type="text" name="straat" id="straat" class="form-control" required="required">
                 </div>
-                </div>
+            </div>
 
 
 
-                <div class="row">
+            <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
+<?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
                 </div>
-                
+
                 <div class="col-md-8">   
                     <input type="text" name="huisnummer" id="huisnummer" class="form-control" required="required">
                 </div>
-                </div>
             </div>
-        </div>         
+        </div>
+    </div>         
 
-    </div>
+</div>
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
-        <button name="mysubmit" id="mysubmit" class="btn btn-primary">Verzend</button>
-    </div>    
-<?php echo form_close();?>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
+    <button name="mysubmit" id="mysubmit" class="btn btn-primary">Verzend</button>
+</div>    
+<?php echo form_close(); ?>
