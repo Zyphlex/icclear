@@ -160,7 +160,7 @@ echo form_open('logon/add', $attributes);
                 </div>  
 
                 <div class="col-md-8">   
-<?php echo form_input(array('name' => 'emailadres', 'id' => 'email emailadres', 'class' => 'form-control')); ?>                    
+<?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
         </div>
