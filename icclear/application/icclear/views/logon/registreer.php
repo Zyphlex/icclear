@@ -102,7 +102,7 @@ echo form_open('logon/add', $attributes);
                 </div>  
 
                 <div class="col-md-8">
-<?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username', 'required' => 'required', 'class' => 'form-control')); ?>                    
+<?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username',  'class' => 'form-control')); ?>                    
                 </div>  
             </div>
 
@@ -112,7 +112,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">                       
-                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'required' => 'required', 'class' => 'form-control')); ?> 
+                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1',  'class' => 'form-control')); ?> 
                 </div>
             </div>
 
@@ -123,7 +123,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">                                        
-<?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'required' => 'required', 'class' => 'form-control')); ?>                    
+<?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
 
@@ -135,7 +135,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">   
-                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', , 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -147,7 +147,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">  
-                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -160,7 +160,7 @@ echo form_open('logon/add', $attributes);
                 </div>  
 
                 <div class="col-md-8">   
-<?php echo form_input(array('name' => 'emailadres', 'id' => 'email emailadres', 'required' => 'required', 'class' => 'form-control')); ?>                    
+<?php echo form_input(array('name' => 'emailadres', 'id' => 'email emailadres', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
         </div>
@@ -173,7 +173,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">   
-                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'required' => 'required', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
+                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
                     <!--                    width 185 px-->
                 </div>
             </div>
@@ -227,7 +227,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">   
-                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -239,7 +239,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8"> 
-                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -251,7 +251,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">   
-                    <?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -263,7 +263,7 @@ echo form_open('logon/add', $attributes);
                 </div>
 
                 <div class="col-md-8">  
-                    <?php echo form_input(array('name' => 'huisnummer', 'id' => 'huisnummer', 'required' => 'required', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'huisnummer', 'id' => 'huisnummer', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
         </div>
