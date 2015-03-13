@@ -106,11 +106,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row">
                 <div class="col-md-4">   
-                    <?php echo form_label('Wachtwoord:', 'password1'); ?>                    
+                    <?php echo form_label('Wachtwoord:', 'password'); ?>                    
                 </div>
 
                 <div class="col-md-8">                       
-                    <?php echo form_input(array('type' => 'password', 'name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control')); ?> 
+                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control')); ?> 
                 </div>
             </div>
 
@@ -120,9 +120,8 @@ echo form_open('logon/add', $attributes);
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
 
-                <div class="col-md-8">   
-                    <?php echo form_password(); ?>
-                    <input type="password" name="bevestigww" id="password2" class="form-control" required="required">
+                <div class="col-md-8">                                        
+                    <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'required' => 'required', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
 
@@ -159,7 +158,7 @@ echo form_open('logon/add', $attributes);
                 </div>  
 
                 <div class="col-md-8">   
-                    <input type="text" name="emailadres" id="email emailadres" class="form-control" required="required">      
+                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email emailadres', 'required' => 'required', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
         </div>
@@ -187,13 +186,13 @@ echo form_open('logon/add', $attributes);
                 <div class="col-md-8">        
                     <div class="my-radio">
                         <div class="">
-                            <input type="radio" name="geslacht" id="geslacht"  class="form-horizontal" value="Man">
+                            <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'Man')); ?>                            
                             <span class="option-title">
                                 Man
                             </span>
                         </div>                                
                         <div class="">
-                            <input type="radio" name="geslacht" id="geslacht2" class="form-horizontal" value="Vrouw">
+                            <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht2', 'class' => 'form-horizontal', 'value' => 'Vrouw')); ?>                                                        
                             <span class="option-title">
                                 Vrouw
                             </span>
