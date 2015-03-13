@@ -8,14 +8,32 @@
     }
     $(document).ready(function () {
 
-$("#usernamediv").removeClass("has-error");
-
         function validatieOK() {
             ok = true;
             if ($("#username").val() == "") {
-                $("#usernamediv").addClass("has-error");
+                $("#username").addClass("has-error");
                 ok = false;
             }
+            else {
+                $("#username").removeClass("has-error");
+            }
+            if ($("#password1").val() == "") {
+                $("#password1").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#password1").removeClass("has-error");
+            }
+            if ($("#password2").val() == "") {
+                $("#password2").addClass("has-error");
+                ok = false;
+            }
+            else {
+                $("#password2").removeClass("has-error");
+            }
+            
+            
+            
             return ok;
         }
 
@@ -107,7 +125,7 @@ echo form_open('logon/add', $attributes);
                 </div>  
             </div>
 
-            <div class="row">
+            <div class="row" id="password1div">
                 <div class="col-md-4">   
                     <?php echo form_label('Wachtwoord:', 'password'); ?>                    
                 </div>
@@ -117,7 +135,7 @@ echo form_open('logon/add', $attributes);
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="password2div">
                 <div class="col-md-4">   
                     <?php echo form_label('Bevestigen:', 'bevestigww'); ?>
                     <span id="validate-status" class="form-note"></span>                    
@@ -130,7 +148,7 @@ echo form_open('logon/add', $attributes);
 
 
 
-            <div class="row">
+            <div class="row" id="voornaamdiv">
                 <div class="col-md-4">   
                     <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
@@ -219,7 +237,7 @@ echo form_open('logon/add', $attributes);
                     ?>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-4">   
                     <?php echo form_label('Gemeente:', 'gemeente'); ?>                    
