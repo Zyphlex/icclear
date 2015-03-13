@@ -111,7 +111,6 @@ echo form_open('logon/add', $attributes);
 
                 <div class="col-md-8">                       
                      <?php echo form_input(array('type' => 'password', 'name' => 'wachtwoord1', 'id' => 'password', 'required' => 'required', 'class' => 'form-control'));  ?> 
-<!--                    <input type="password" class="form-control" required="required">-->
                 </div>
             </div>
 
