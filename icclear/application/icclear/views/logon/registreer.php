@@ -15,7 +15,13 @@
     $("#usernamediv").addClass("has-error");
             ok = false;
     }
-
+    
+    $( "#mySubmit" ).click(function(e) {
+            e.preventDefault();
+            if (validatieOK()) {
+                $( "#myForm" ).submit();
+            }
+        });
 
     $('#Loading').hide();
             $('#validate-username').hide();
