@@ -158,7 +158,7 @@
 
                     <p><?php echo form_label('Type:', 'type'); ?></td>
                     <p><?php $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
-                        echo form_dropdown('type', $optionsType, 'Sponsor', 'class="form-control"'); ?></p>
+                        echo form_dropdown('type', $optionsType, '', 'class="form-control"'); ?></p>
                 </form>
 
             </div>
