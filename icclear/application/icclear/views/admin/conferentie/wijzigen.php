@@ -1,8 +1,11 @@
 <div class="col-md-10">
     <h1>Conferentie wijzigen.</h1>
 
-    <form action="conferentie/opslaan" method="post">
-
+        <?php
+        $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method'=>'post');
+        echo form_open('conferentie/opslaan', $attributes);
+        ?>
+        
         <div class="row">  
             <div class="col-md-2 control-label">
                 <?php echo form_label('Naam:', 'naam');?>
@@ -70,18 +73,18 @@
             </div>
             <div class="col-md-2">    
                 <?php if($conferentie->seminarieDag == 1){ ?>
-                <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','checked'=>'checked')); ?>
+                    <label class="radio">
+                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','checked'=>'checked')); ?>
                     Ja</label>
-                <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
+                    <label class="radio">
+                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
                     Nee</label>    
                 <?php } else {?>
-                <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
+                    <label class="radio">
+                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
                     Ja</label>
-                <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','checked'=>'checked')); ?>
+                    <label class="radio">
+                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','checked'=>'checked')); ?>
                     Nee</label>
                 <?php } ?>
             </div>
@@ -89,7 +92,7 @@
         
         <br/><br/>
         
-        <div class="row">
+<!--        <div class="row">
             <div class="col-md-12">
                 <div class=" panel panel-default">
                     <div class="panel-heading">
@@ -118,17 +121,17 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>        -->
         
         <br/><br/>
         
         <div class="row">
             <div class="col-md-12">
-                <label for="beschrijving">Beschrijving:</label>    
+                <?php echo form_label('Beschrijving:','beschrijving') ?> 
             </div>
 
             <div class="col-md-12">
-               <textarea rows="10" name="beschrijving" class="form-control"></textarea>    
+                <?php echo form_textarea(array('rows'=>'10','name'=>'beschrijving','class'=>'form-control')) ?>
             </div>
         </div>        
                 
@@ -149,11 +152,11 @@
         <div class="row">
             <div class="col-md-12">                
                 <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>         
-                <input type="submit" value="Opslaan" class="btn btn-default"/>             
+                <?php echo form_submit(array('value'=>'Opslaan','class'=>'btn btn-default')) ?>            
             </div>
         </div>
         
-    </form>
+    <?php echo form_close(); ?>
 
 
 </div>
