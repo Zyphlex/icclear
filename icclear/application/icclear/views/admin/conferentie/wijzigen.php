@@ -3,7 +3,8 @@
 
     <form action="conferentie/opslaan" method="post">
 
-        <div class="row">        
+        <div class="row">   
+            <?php form_label('Naam:', 'naam', 'class="control-label"');?>
             <label for="naam" class="control-label col-md-2">Naam:</label>
             <div class="col-md-4">
                 <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $conferentie->naam ?>"/>                
