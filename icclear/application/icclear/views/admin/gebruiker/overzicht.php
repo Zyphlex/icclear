@@ -27,6 +27,8 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigGebruiker").click(function () {
+            $(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
+            alert('hallo');
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -42,7 +44,7 @@
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
                         $("#geslacht").val(jobject.geslacht);
-                        $(':radio[name="geslacht"][value="man"]').attr('checked', 'checked');
+                        $(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
                         $("#land").val(jobject.landId);
                         $("#gemeente").val(jobject.gemeente);
@@ -153,8 +155,8 @@
                     <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
-                    <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'man')); ?> Man
-                        <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'vrouw')); ?> Vrouw</p>
+                    <p><?php echo form_radio(array('name' => 'geslacht',  'value' => 'man')); ?> Man
+                        <?php echo form_radio(array('name' => 'geslacht', 'value' => 'vrouw')); ?> Vrouw</p>
 
                     <p><?php echo form_label('Type:', 'type'); ?></p>
                     <p><?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?> Bezoeker
