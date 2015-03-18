@@ -42,7 +42,7 @@
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
                         $("#geslacht").val(jobject.geslacht);
-                        $("#typeId").val(jobject.typeId);
+                        $("#type").val(jobject.typeId);
                         $("#land").val(jobject.landId);
                         $("#gemeente").val(jobject.gemeente);
                         $("#postcode").val(jobject.postcode);
@@ -57,8 +57,8 @@
                 $("#geboortedatum").val("");
                 $("#emailadres").val("");
                 $("#geslacht").val("");
-                $("#typeId").val("");
-                $("#landId").val("");
+                $("#type").val("");
+                $("#land").val("");
                 $("#gemeente").val("");
                 $("#postcode").val("");
                 $("#straat").val("");
@@ -155,9 +155,9 @@
                     <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Man
                         <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht')); ?>Vrouw</p>
 
-                    <p><?php echo form_label('Type:', 'typeId'); ?></p>
-                    <p><?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Bezoeker
-                        <?php echo form_radio(array('name' => 'typeId', 'id' => 'typeId')); ?>Spreker</p>
+                    <p><?php echo form_label('Type:', 'type'); ?></p>
+                    <p><?php echo form_radio(array('name' => 'type', 'id' => 'type', 'value' => '1')); ?>Bezoeker
+                        <?php echo form_radio(array('name' => 'type', 'id' => 'type', 'value' => '2')); ?>Spreker</p>
 
                     <p><?php echo form_label('Land:', 'land'); ?></p>                    
                     <?php
