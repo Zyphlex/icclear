@@ -14,15 +14,19 @@
 
         <br/>
         
-        <div class="row">            
-            <label for="begindatum" class="control-label col-md-2">Begin datum:</label>    
-            <div class="col-md-4">            
-                <input type="date" id="begindatum" name="begindatum" class="form-control" value="<?php echo $conferentie->beginDatum ?>"/>
+        <div class="row">    
+            <div class="col-md-2 control-label">
+                <?php echo form_label('Begin datum:','begindatum'); ?>
+            </div>
+            <div class="col-md-4">    
+                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
             </div>
             
-            <label for="einddatum" class="control-label col-md-2 border-left">Eind datum:</label>
+            <div class="col-md-2 control-label  border-left">
+                <?php echo form_label('Eind datum:','einddatum'); ?>
+            </div>
             <div class="col-md-4">
-                <input type="date" id="einddatum" name="einddatum" class="form-control" value="<?php echo $conferentie->eindDatum ?>"/>
+                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
             </div>
         </div>
         
