@@ -76,8 +76,7 @@
                 <?php echo form_label('Max inschrijvingen','maxinschrijvingen') ?>
             </div>
             <div class="col-md-2">
-                <?php echo form_input(array('value'=>$conferentie->maxInschrijvingen,'type'=>'number','class'=>'form-control','name'=>'maxinschrijvingen')) ?>
-                <input class="form-control" type="number" id="maxinschrijvingen" name="maxinschrijvingen"/>                
+                <?php echo form_input(array('value'=>$conferentie->maxInschrijvingen,'type'=>'number','class'=>'form-control','name'=>'maxinschrijvingen')) ?>               
             </div>
         </div>
         
