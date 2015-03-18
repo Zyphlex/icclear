@@ -54,7 +54,7 @@ class Routes_model extends CI_Model {
         
         $this->load->model('gebouw_model');   
         foreach ($routes as $route) {
-            $route->gebouw = $this->gebouw_model->getGebouw($route->gebouwId);
+            $route->gebouw = $this->gebouw_model->get($route->gebouwId);
         }
                         
         return $routes;
