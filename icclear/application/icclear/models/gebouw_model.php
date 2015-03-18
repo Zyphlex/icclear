@@ -32,7 +32,7 @@ class Gebouw_model extends CI_Model {
         $dagen = $query->result();
                   
         foreach ($dagen as $dag) {
-            $dag->gebouw = $this->getGebouw($dag->gebouwId);
+            $dag->gebouw = $this->get($dag->gebouwId);
         }
         
         return $dagen;
