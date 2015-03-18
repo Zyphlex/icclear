@@ -56,18 +56,18 @@ class Gebruiker extends CI_Controller {
     }
     
     public function update() {   
-        $gebruiker->id = $this->input->get('id');
-        $gebruiker->voornaam = $this->input->get('voornaam');
-        $gebruiker->familienaam = $this->input->get('familienaam');
-        $gebruiker->geboortedatum = $this->input->get('geboortedatum');
-        $gebruiker->emailadres = $this->input->get('emailadres');
-        $gebruiker->geslacht = $this->input->get('geslacht');
-        $gebruiker->typeId = $this->input->get('typeId');
-        $gebruiker->landId = $this->input->get('landId');
-        $gebruiker->gemeente = $this->input->get('gemeente');
-        $gebruiker->postcode = $this->input->get('postcode');
-        $gebruiker->straat = $this->input->get('straat');
-        $gebruiker->nummer = $this->input->get('huisnummer');
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->voornaam = $this->input->post('voornaam');
+        $gebruiker->familienaam = $this->input->post('familienaam');
+        $gebruiker->geboortedatum = $this->input->post('geboortedatum');
+        $gebruiker->emailadres = $this->input->post('emailadres');
+        $gebruiker->geslacht = $this->input->post('geslacht');
+        $gebruiker->typeId = 1;
+        $gebruiker->landId = $this->input->post('landId');
+        $gebruiker->gemeente = $this->input->post('gemeente');
+        $gebruiker->postcode = $this->input->post('postcode');
+        $gebruiker->straat = $this->input->post('straat');
+        $gebruiker->nummer = $this->input->post('nummer');
         
         $this->load->model('gebruiker_model');        
         if ($gebruiker->id == 0) {
