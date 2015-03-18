@@ -68,13 +68,22 @@
             <div class="col-md-3 control-label">       
                 <?php echo form_label('Seminariedag:','seminariedag') ?>
             </div>
-            <div class="col-md-2">       
+            <div class="col-md-2">    
+                <?php if($conferentie->seminariedag == 1){ ?>
+                <label class="radio">
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','selected'=>'selected')); ?>
+                    Ja</label>
+                <label class="radio">
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
+                    Nee</label>    
+                <?php } else {?>
                 <label class="radio">
                     <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
                     Ja</label>
                 <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
-                    Nee</label>               
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','selected'=>'selected')); ?>
+                    Nee</label>
+                <?php } ?>
             </div>
         </div>       
         
