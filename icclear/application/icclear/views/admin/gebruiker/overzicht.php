@@ -152,8 +152,8 @@
                     <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
-                    <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'man')); ?>Man
-                        <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'vrouw')); ?>Vrouw</p>
+                    <p><?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'man')); ?> Man
+                        <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'vrouw')); ?> Vrouw</p>
 
                     <p><?php echo form_label('Type:', 'type'); ?></p>
                     <p><?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?>Bezoeker
