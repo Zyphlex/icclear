@@ -71,7 +71,7 @@
             <div class="col-md-2">    
                 <?php if($conferentie->seminarieDag == 1){ ?>
                 <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','selected'=>'selected')); ?>
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','checked')); ?>
                     Ja</label>
                 <label class="radio">
                     <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
@@ -81,7 +81,7 @@
                     <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
                     Ja</label>
                 <label class="radio">
-                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','selected'=>'selected')); ?>
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','checked')); ?>
                     Nee</label>
                 <?php } ?>
             </div>
