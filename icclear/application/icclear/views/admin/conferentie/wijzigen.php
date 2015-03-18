@@ -3,11 +3,12 @@
 
     <form action="conferentie/opslaan" method="post">
 
-        <div class="row">   
+        <div class="row">  
+            <div class="col-md-2">
+                <?php echo form_label('Naam:', 'naam');?>
+            </div>
             <div class="col-md-4">
-            <?php echo form_label('Naam:', 'naam');?>
                 <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "value" => $conferentie->naam)); ?>
-                                
             </div>
         </div>
 
