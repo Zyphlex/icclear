@@ -42,7 +42,7 @@
                     foreach ($landen as $land) {
                         $opties[$land->id] = $land->naam;
                 }?>
-                <?php echo form_dropdown(array("name"=>"land","value"=>$opties,"id"=>"land","class"=>"form-control")); ?>
+                <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control"'); ?>
             </div>            
             
             <div class="col-md-2 control-label border-left">   
