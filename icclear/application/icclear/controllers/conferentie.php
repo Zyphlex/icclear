@@ -30,6 +30,9 @@ class Conferentie extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->get($this->session->userdata('conferentieId'));
 
+        $this->load->model('land_model');        
+        $data['landen'] = $this->land_model->getAll();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }

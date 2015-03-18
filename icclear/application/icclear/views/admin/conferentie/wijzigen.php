@@ -32,12 +32,17 @@
         
         <br/>
         
-        <div class="row">            
-            <label for="land" class="control-label col-md-2">Land:</label>
-            <div class="col-md-4">
-                <select id="land" name="land" class="form-control">
-                    <option>België</option>
-                </select>
+        <div class="row">     
+            <div class="col-md-2 control-label">    
+                <?php echo form_label('Land::','land'); ?>   
+            </div>
+            <div class="col-md-4">                  
+                <?php
+                    $opties = array();
+                    foreach ($landen as $land) {
+                        $opties[$land->id] = $land->naam;
+                }?>
+                <?php echo form_dropdown('land', $opties, '', 'id="land"', 'form-control'); ?>
             </div>            
             
             <label for="stad" class="control-label col-md-2 border-left">Stad:</label>
