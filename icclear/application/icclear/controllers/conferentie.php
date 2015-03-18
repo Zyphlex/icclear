@@ -65,8 +65,9 @@ class Conferentie extends CI_Controller {
         $this->conferentie_model->update($conferentie);  
         echo $id;        
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        redirect('admin');
+//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
+//        $this->template->load('admin_master', $partials, $data);
     }
     
     
