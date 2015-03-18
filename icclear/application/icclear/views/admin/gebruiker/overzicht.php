@@ -153,7 +153,7 @@
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geboortedatum:', 'geboortedatum'); ?></p>
-                    <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'type' => 'date', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Geslacht:', 'geslacht'); ?></p>
                     <p><?php echo form_radio(array('name' => 'geslacht',  'value' => 'man')); ?> Man
@@ -172,7 +172,7 @@
                         $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('land', $drop, '', 'id="land"', 'form-control'); ?></p>
+                    <p><?php echo form_dropdown('land', $drop, '', 'id="land" form-control"'); ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
