@@ -34,7 +34,7 @@
         
         <div class="row">     
             <div class="col-md-2 control-label">    
-                <?php echo form_label('Land::','land'); ?>   
+                <?php echo form_label('Land:','land'); ?>   
             </div>
             <div class="col-md-4">                  
                 <?php
@@ -42,7 +42,7 @@
                     foreach ($landen as $land) {
                         $opties[$land->id] = $land->naam;
                 }?>
-                <?php echo form_dropdown('land', $opties, '', 'id="land"', 'form-control'); ?>
+                <?php echo form_dropdown('land', $opties, '', 'id="land"', 'class="form-control"'); ?>
             </div>            
             
             <label for="stad" class="control-label col-md-2 border-left">Stad:</label>
