@@ -38,15 +38,14 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
-                        alert(jobject.geslacht );
                         $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
+                        $(':radio[name="type"][value="' + jobject.typeId + '"]').prop('checked', 'checked');
                         $("#land").val(jobject.landId);
                         $("#gemeente").val(jobject.gemeente);
                         $("#postcode").val(jobject.postcode);
