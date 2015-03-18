@@ -69,7 +69,7 @@
                 <?php echo form_label('Seminariedag:','seminariedag') ?>
             </div>
             <div class="col-md-2">    
-                <?php if($conferentie->seminariedag == 1){ ?>
+                <?php if($conferentie->seminarieDag == 1){ ?>
                 <label class="radio">
                     <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','selected'=>'selected')); ?>
                     Ja</label>
