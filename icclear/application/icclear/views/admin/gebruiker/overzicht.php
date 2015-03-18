@@ -43,7 +43,7 @@
                         $("#familienaam").val(jobject.familienaam);
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
-                        //$("#geslacht").val(jobject.geslacht);
+                        alert(jobject.geslacht );
                         $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
                         $("#land").val(jobject.landId);
