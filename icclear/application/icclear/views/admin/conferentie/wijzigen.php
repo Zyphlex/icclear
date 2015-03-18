@@ -5,7 +5,7 @@
 
         <div class="row">   
             <div class="col-md-4">
-            <?php echo form_label('Naam:', 'naam', 'class="control-label col-md-2"');?>
+            <?php echo form_label('Naam:', 'for="naam" class="control-label col-md-2"');?>
                 <input class="form-control" type="text" id="naam" name="naam" value="<?php echo $conferentie->naam ?>"/>                
             </div>
         </div>
