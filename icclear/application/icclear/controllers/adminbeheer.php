@@ -59,7 +59,7 @@ class Adminbeheer extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
-            $admin->geboortedatum = null;
+            $admin->geboortedatum = '1995-12-25';
             $admin->biografie = null;
             $admin->foto = null;
             $admin->gemeente = null;
