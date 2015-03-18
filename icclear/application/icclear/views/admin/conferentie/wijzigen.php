@@ -42,24 +42,30 @@
                     foreach ($landen as $land) {
                         $opties[$land->id] = $land->naam;
                 }?>
-                <?php echo form_dropdown('land', $opties, '', 'id="land" class="form-control"'); ?>
+                <?php echo form_dropdown(array("name"=>"land","value"=>$opties,"id"=>"land","class"=>"form-control")); ?>
             </div>            
             
-            <label for="stad" class="control-label col-md-2 border-left">Stad:</label>
+            <div class="col-md-2 control-label border-left">   
+                <?php echo form_label('Stad:', 'stad') ?>
+            </div>
             <div class="col-md-4">
-                <input type="text" id="stad" name="stad" class="form-control"/>
+                <?php echo form_input(array('value' => $conferentie->stad ,'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control')); ?>
             </div>
         </div>
         
-        <div class="row">            
-            <label for="straat" class="control-label col-md-2">Straat:</label>
+        <div class="row">       
+            <div class="col-md-2 control-label">     
+                <?php echo form_label('Straat:','straat'); ?>
+            </div>
             <div class="col-md-4">
-                <input type="text" id="straat" name="straat" class="form-control"/>
+                <?php echo form_input(array('type'=>'text','id'=>'straat','name'=>'straat','class'=>'form-control')) ?>
             </div>
             
-            <label for="nr" class="control-label col-md-2 border-left">Nr:</label>
+            <div class="col-md-2 control-label border-left">   
+                <?php echo form_label('Nr:','nr'); ?>
+            </div>
             <div class="col-md-2">
-                <input type="number" id="nr" name="nr" class="form-control"/>
+                <?php echo form_input(array('type'=>'number','id'=>'nr','name'=>'nr','class'=>'form-control')); ?>
             </div>
         </div>
         
