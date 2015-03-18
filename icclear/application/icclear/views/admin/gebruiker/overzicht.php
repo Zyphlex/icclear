@@ -27,8 +27,8 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigGebruiker").click(function () {
-            $(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
-            alert('hallo');
+            //$(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
+            //alert('hallo');
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -43,8 +43,8 @@
                         $("#familienaam").val(jobject.familienaam);
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
-                        $("#geslacht").val(jobject.geslacht);
-                        $(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
+                        //$("#geslacht").val(jobject.geslacht);
+                        $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
                         $("#land").val(jobject.landId);
                         $("#gemeente").val(jobject.gemeente);
