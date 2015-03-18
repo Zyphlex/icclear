@@ -58,14 +58,14 @@
                 <?php echo form_label('Straat:','straat'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array('type'=>'text','id'=>'straat','name'=>'straat','class'=>'form-control')) ?>
+                <?php echo form_input(array('value'=>$conferentie->straat,'type'=>'text','id'=>'straat','name'=>'straat','class'=>'form-control')) ?>
             </div>
             
             <div class="col-md-2 control-label border-left">   
                 <?php echo form_label('Nr:','nr'); ?>
             </div>
             <div class="col-md-2">
-                <?php echo form_input(array('type'=>'number','id'=>'nr','name'=>'nr','class'=>'form-control')); ?>
+                <?php echo form_input(array('value'=>$conferentie->nr,'type'=>'number','id'=>'nr','name'=>'nr','class'=>'form-control')); ?>
             </div>
         </div>
         
