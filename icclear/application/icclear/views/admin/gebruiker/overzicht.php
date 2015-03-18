@@ -156,8 +156,8 @@
                         <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'value' => 'vrouw')); ?> Vrouw</p>
 
                     <p><?php echo form_label('Type:', 'type'); ?></p>
-                    <p><?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?>Bezoeker
-                        <?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?>Spreker</p>
+                    <p><?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?> Bezoeker
+                        <?php echo form_radio(array('name' => 'type', 'id' => 'type')); ?> Spreker</p>
 
                     <p><?php echo form_label('Land:', 'land'); ?></p>                    
                     <?php
