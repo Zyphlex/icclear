@@ -172,7 +172,7 @@
                         $teller++;
                     }
                     ?>
-                    <p><?php echo form_dropdown('land', $drop, '', 'id="land" form-control"'); ?></p>
+                    <p><?php echo form_dropdown('land', $drop, '', 'id="land" class="form-control"'); ?></p>
 
                     <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
                     <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
