@@ -131,7 +131,7 @@
             </div>
 
             <div class="col-md-12">
-                <?php echo form_textarea(array('rows'=>'10','name'=>'beschrijving','class'=>'form-control')) ?>
+                <?php echo form_textarea(array('value'=>$conferentie->beschrijving,'rows'=>'10','name'=>'beschrijving','class'=>'form-control')) ?>
             </div>
         </div>        
                 
