@@ -71,18 +71,27 @@
         
         <br/>
         
-        <div class="row">            
-            <label for="maxinschrijvingen" class="control-label col-md-3">Max inschrijvingen:</label>
+        <div class="row">    
+            <div class="col-md-3 control-label">  
+                <?php echo form_label('Max inschrijvingen','maxinschrijvingen') ?>
+            </div>
             <div class="col-md-2">
+                <?php echo form_input(array('value'=>$conferentie->maxInschrijvingen,'type'=>'number','class'=>'form-control','name'=>'maxinschrijvingen')) ?>
                 <input class="form-control" type="number" id="maxinschrijvingen" name="maxinschrijvingen"/>                
             </div>
         </div>
         
-        <div class="row">            
-            <label for="seminariedag" class="control-label col-md-3">Seminariedag:</label>
-            <div class="col-md-2">                
-                <label class="radio"><input type="radio" name="seminariedag">Ja</label>
-                <label class="radio"><input type="radio" name="seminariedag">Nee</label>               
+        <div class="row">      
+            <div class="col-md-3 control-label">       
+                <?php echo form_label('Seminariedag:','seminariedag') ?>
+            </div>
+            <div class="col-md-2">       
+                <label class="radio">
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
+                    Ja</label>
+                <label class="radio">
+                    <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
+                    Nee</label>               
             </div>
         </div>       
         
