@@ -43,9 +43,9 @@ class Sponsor_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    function delete($sponsor)
+    function delete($id)
     {
-        $this->db->where('id', $sponsor->id);
+        $this->db->where('id', $id);
         $this->db->delete('sponsor', $sponsor);
     }
 }
