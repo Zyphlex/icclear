@@ -24,18 +24,18 @@ class Routesbeheer extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();
         
         $data['title'] = 'IC Clear - Routes beheren';         
-        $data['active'] = '';
+        $data['active'] = 'admin';
         
         $this->load->model('gebouw_model');
         $data['$gebouwen'] = $this->gebouw_model->getAll();                
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
     }
         
     public function overzicht() {        
         $this->load->model('routes_model');
-        $data['sponsors'] = $this->routes_model->getRoutes();
+        $data['routes'] = $this->routes_model->getRoutes();
         
         $this->load->view('admin/routes/lijst', $data);
     }
