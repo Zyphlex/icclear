@@ -93,7 +93,8 @@
 
 <div class="col-md-10">
 
-    <h1>Sessies beheren</h1>  
+    <h1>Sessies beheren.</h1>
+    <p><?php echo anchor('sessies/keuren', 'Sessievoorstellen keuren', 'class="btn btn-default"'); ?></p>
             
     <div id="resultaat"></div>        
 
