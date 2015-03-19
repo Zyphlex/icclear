@@ -28,7 +28,7 @@ class Routesbeheer extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         $this->load->model('gebouw_model');
-        $data['$gebouwen'] = $this->gebouw_model->getAll();                
+        $data['gebouwen'] = $this->gebouw_model->getAll();                
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
