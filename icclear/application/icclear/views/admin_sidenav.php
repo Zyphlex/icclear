@@ -23,6 +23,7 @@
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('zaal' , 'Zalen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
+                    <li><?php echo anchor('routes' , 'Routes'); ?></li>
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('sponsorbeheer', 'Sponsors'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
