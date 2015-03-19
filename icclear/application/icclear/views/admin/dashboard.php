@@ -7,3 +7,7 @@
     <?php echo anchor('aankondiging/', 'Aankondigingen', 'class="btn btn-default"'); ?>
     <?php echo anchor('inschrijven/opvolgen', 'Betalingen Opvolgen', 'class="btn btn-default"'); ?>            
 </div>
+<div class="col-md-10">
+    <h4>Statistieken</h4>
+    
+</div>
