@@ -61,7 +61,6 @@
                 $("#geboortedatum").val("");
                 $("#emailadres").val("");
                 $("#geslacht").val("");
-                $(':radio[name="geslacht"][value=""]').prop('checked', 'false');
                 $("#type").val("");
                 $("#land").val("");
                 $("#gemeente").val("");
