@@ -36,6 +36,7 @@
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
                     <li><?php echo anchor('gebruiker/gebruikersConferentie', 'Gebruikers'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
+                    <li><?php echo anchor('gebouw/gebouwPerDag', 'Gebouwen') ?></li>
                 
             <?php } ?>            
             
