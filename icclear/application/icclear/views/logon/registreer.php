@@ -54,41 +54,6 @@
             else {
                 $("#emaildiv").removeClass("has-error");
             }
-            if ($("#geboortedatum").val() == "") {
-                $("#geboortedatumdiv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#geboortedatumdiv").removeClass("has-error");
-            }
-            if ($("#gemeente").val() == "") {
-                $("#gemeentediv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#gemeentediv").removeClass("has-error");
-            }
-            if ($("#postcode").val() == "") {
-                $("#postcodediv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#postcodediv").removeClass("has-error");
-            }
-            if ($("#straat").val() == "") {
-                $("#straatdiv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#straatdiv").removeClass("has-error");
-            }
-            if ($("#huisnummer").val() == "") {
-                $("#huisnummerdiv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#huisnummerdiv").removeClass("has-error");
-            }
                                     
             return ok;
         }
