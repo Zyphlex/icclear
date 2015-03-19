@@ -55,19 +55,21 @@ class Logon extends CI_Controller {
         $voornaam = $this->input->post('voornaam');
         $email = $this->input->post('emailadres');
         $wachtwoord = $this->input->post('wachtwoord');
-        $geboortedatum = $this->input->post('geboortedatum');
-        $geslacht = $this->input->post('geslacht');
-        $land = $this->input->post('land');
-        $gemeente = $this->input->post('gemeente');
-        $postcode = $this->input->post('postcode');
-        $straat = $this->input->post('straat');
-        $huisnummer = $this->input->post('huisnummer');
+        $geboortedatum = '';
+        $geslacht = '';
+        $land = 1;
+        $gemeente = '';
+        $postcode = '';
+        $straat = '';
+        $huisnummer = '';
+        $activatie = 1;
+        
 
-        $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
+        //$generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
 
-        $id = $this->authex->register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $geboortedatum, $geslacht, $land, $gemeente, $postcode, $straat, $huisnummer, $generatedKey);
+        $id = $this->authex->register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $geboortedatum, $geslacht, $land, $gemeente, $postcode, $straat, $huisnummer, $activatie);
         if ($id != 0) {
-            $this->sendmail($email, $generatedKey);
+            //$this->sendmail($email, $generatedKey);
             $this->klaar();
         } else {
             $this->bestaat();
