@@ -1,4 +1,3 @@
-
 <div class="col-md-10">       
 
     <h1>Conferentie <?php echo $conferentie ?> beheren</h1>     
