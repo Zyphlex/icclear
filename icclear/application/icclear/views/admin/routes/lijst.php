@@ -12,8 +12,8 @@
                 <td><?php echo $route->vertrekPunt ?></td>
                 <td><?php echo $route->gebouw->naam ?></td>
                 <td>
-                    <button class="wijzigLand btn btn-primary" data-id="<?php echo $route->id ?>">Wijzigen</button>
-                    <button class="verwijderLand btn btn-danger" data-id="<?php echo $route->id ?>">Verwijderen</button>                                 
+                    <button class="wijzigSponsor btn btn-primary" data-id="<?php echo $route->id ?>">Wijzigen</button>
+                    <button class="verwijderSponsor btn btn-danger" data-id="<?php echo $route->id ?>">Verwijderen</button>                                 
                 </td>
             </tr>
         <?php } ?>
