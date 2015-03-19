@@ -196,13 +196,13 @@
                                 <div class="col-md-8">        
                                     <div class="my-radio">
                                         <div class="">
-                                            <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'Man')); ?>                            
+                                            <?php echo form_radio(array('name' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'man')); ?>                            
                                             <span class="option-title">
                                                 Man
                                             </span>
                                         </div>                                
                                         <div class="">
-                                            <?php echo form_radio(array('name' => 'geslacht', 'id' => 'geslacht2', 'class' => 'form-horizontal', 'value' => 'Vrouw')); ?>                                                        
+                                            <?php echo form_radio(array('name' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'vrouw')); ?>                                                        
                                             <span class="option-title">
                                                 Vrouw
                                             </span>
@@ -275,7 +275,6 @@
                                     <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
-
 
 
                             <div class="row" id="straatdiv">
