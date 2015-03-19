@@ -42,5 +42,11 @@ class Sponsor_model extends CI_Model {
         $this->db->insert('sponsor', $sponsor);
         return $this->db->insert_id();
     }
+    
+    function delete($sponsor)
+    {
+        $this->db->where('id', $sponsor->id);
+        $this->db->delete('sponsor', $sponsor);
+    }
 }
 ?>
