@@ -131,9 +131,6 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Land:', 'land'); ?></p>
-                    
-
                     <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
                     <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
 
