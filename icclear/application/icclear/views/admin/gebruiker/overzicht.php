@@ -294,7 +294,7 @@
                                 </div>
 
                                 <div class="col-md-8">  
-                                    <?php echo form_input(array('name' => 'huisnummer', 'id' => 'huisnummer', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
                         </div>
