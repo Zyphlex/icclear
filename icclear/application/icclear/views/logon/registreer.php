@@ -137,7 +137,7 @@ echo form_open('logon/add', $attributes);
 <div class="modal-body">
 
     <div class="row">
-        <div class="">  
+        <div class="col-md-6">  
             <div class="row" id="usernamediv">
                 <div class="col-md-4">   
                     <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
