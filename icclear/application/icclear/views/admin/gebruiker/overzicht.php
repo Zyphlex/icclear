@@ -83,6 +83,7 @@
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanGebruiker").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            alert(dataString);
             $.ajax({
                 type: "POST",
                 url: site_url + "/gebruiker/update",
