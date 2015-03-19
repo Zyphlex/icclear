@@ -29,7 +29,7 @@ class Routesbeheer extends CI_Controller {
         $this->load->model('gebouw_model');
         $data['$gebouwen'] = $this->gebouw_model->getAll();                
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'routes/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
         
