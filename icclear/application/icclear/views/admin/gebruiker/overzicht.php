@@ -143,7 +143,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <?php echo form_hidden(array('name' => 'id', 'id' => 'id', 'class' => 'form-control')); ?>                                        
+                    <input type="hidden" name="id" id="id"/>                                        
 
                     <div class="row">
                         <div class="col-md-6">  
