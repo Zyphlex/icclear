@@ -43,6 +43,7 @@
                         $("#familienaam").val(jobject.familienaam);
                         $("#geboortedatum").val(jobject.geboortedatum);
                         $("#emailadres").val(jobject.emailadres);
+                        $("#geslacht").val(jobject.geslacht);
                         $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
                         $(':radio[name="type"][value="' + jobject.typeId + '"]').prop('checked', 'checked');
@@ -163,21 +164,17 @@
                                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
-
+                            
                             <div class="row" id="emaildiv">
                                 <div class="col-md-4">   
-                                    <?php echo form_label('Emailadres:', 'email'); ?>                        
-                                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
-                                </div>  
+                                    <?php echo form_label('Emailadres:', 'emailadres'); ?>                    
+                                </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
-                        </div>
 
-
-                        <div class="col-md-6 border-left">  
                             <div class="row" id="geboortedatumdiv">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
@@ -220,13 +217,13 @@
                                 <div class="col-md-8">        
                                     <div class="my-radio">
                                         <div class="">
-                                            <?php echo form_radio(array('name' => 'type', 'id' => 'type1', 'class' => 'form-horizontal', 'value' => '1')); ?>                            
+                                            <?php echo form_radio(array('name' => 'type', 'class' => 'form-horizontal', 'value' => '1')); ?>                            
                                             <span class="option-title">
                                                 Bezoeker
                                             </span>
                                         </div>                                
                                         <div class="">
-                                            <?php echo form_radio(array('name' => 'type', 'id' => 'type2', 'class' => 'form-horizontal', 'value' => '2')); ?>                                                        
+                                            <?php echo form_radio(array('name' => 'type', 'class' => 'form-horizontal', 'value' => '2')); ?>                                                        
                                             <span class="option-title">
                                                 Spreker
                                             </span>
@@ -234,6 +231,10 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+
+                        <div class="col-md-6 border-left">                              
 
                             <div class="row">
                                 <div class="col-md-4">   
