@@ -21,10 +21,11 @@ class Routesbeheer extends CI_Controller {
     }
 
     public function index() {
-        $data['user']  = $this->authex->getUserInfo();
-        
+        $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - Routes beheren';         
         $data['active'] = 'admin';
+        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         $this->load->model('gebouw_model');
         $data['$gebouwen'] = $this->gebouw_model->getAll();                
