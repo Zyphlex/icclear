@@ -142,6 +142,8 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
+                    <?php echo form_hidden(array('name' => 'id', 'id' => 'id', 'class' => 'form-control')); ?>                                        
+
                     <div class="row">
                         <div class="col-md-6">  
 
@@ -164,7 +166,7 @@
                                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
-                            
+
                             <div class="row" id="emaildiv">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Emailadres:', 'emailadres'); ?>                    
