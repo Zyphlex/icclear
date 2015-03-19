@@ -6,7 +6,7 @@
 <?php if ($user == null) { // niet aangemeld ?>  
     
     <div class="col-md-4">
-        <p><span class="logon"><a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a> / <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal">Registreer</a></span></p>
+        <p><span class="logon"><a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a> / <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal1">Registreer</a></span></p>
     </div>
     
 <?php } else {  // wel aangemeld ?>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg"><div class="modal-content"></div></div>
+    <div class="modal-dialog"><div class="modal-content"></div></div>
 </div>
 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
