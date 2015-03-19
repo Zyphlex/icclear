@@ -48,6 +48,7 @@ class Admin extends CI_Controller {
         $conferentie = $this->conferentie_model->get($id);
         
         
+        
         $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
         
