@@ -21,14 +21,26 @@ class Routes_model extends CI_Model {
     function getRoutes()
     {        
         $query = $this->db->get('route');
-        return $query->result();
+        $routes = $query->result();  
+        
+        $this->load->model('gebouw_model');   
+        foreach ($routes as $route) {
+            $route->gebouw = $this->gebouw_model->get($route->gebouwId);
+        }
+        
+        return $routes;
     }
     
     function getRoute($id)
     {        
         $this->db->where('id', $id);
-        $query = $this->db->get('route');
-        return $query->row();
+        $query = $this->db->get('route');        
+        $route = $query->row();
+        
+        $this->load->model('gebouw_model');  
+        $route->gebouw = $this->gebouw_model->get($route->gebouwId);
+            
+        return $route;
     }
     
     function getRoutesConferentie()
@@ -58,6 +70,22 @@ class Routes_model extends CI_Model {
         }
                         
         return $routes;
+    }
+    
+    function update($route) {
+        $this->db->where('id', $route->id);
+        $this->db->update('route', $route);
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('route');
+    }
+    
+    function insert($route)
+    {
+        $this->db->insert('route', $route);
+        return $this->db->insert_id();
     }
 }
 
