@@ -84,7 +84,7 @@ class Logon_model extends CI_Model {
         $user->paswoord = sha1($wachtwoord);
         $user->geslacht = '';
         $user->typeId = 1;
-        $user->landId = '';
+        $user->landId = 0;
         $user->generatedKey = $generatedKey;
         $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
