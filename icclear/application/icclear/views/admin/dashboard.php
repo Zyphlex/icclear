@@ -14,7 +14,7 @@
     <br>
     <h4>Statistieken</h4>
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
-    <p>Aantal goedgekeurde sessies: <?php echo $gekeurdeSessies; ?></p> 
+    <p>Aantal gekeurde sessies: <?php echo $gekeurdeSessies; ?></p> 
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>     
     <p>Aantal conferenti</p>
 </div>
