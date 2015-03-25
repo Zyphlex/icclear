@@ -13,8 +13,5 @@
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>
     <br>
     <p>Deze conferentie loopt van <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
-    <p>Stad: <?php echo $dataConferentie->stad; ?></p>    
+    <p style="background-color: yellow;">Stad: <?php echo $dataConferentie->stad; ?></p>    
 </div>
-
-
-
