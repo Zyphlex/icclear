@@ -12,7 +12,7 @@
     <p>Deze conferentie loopt van <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
     <p>Stad: <?php echo $dataConferentie->stad; ?></p>    
     <br>
-    <h4>Statistieken</h4>
+    <h4>Statistieken <span class="glyphicon glyphicon-stats"></span></h4>
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
     <p>Aantal gekeurde sessies: <?php echo $gekeurdeSessies; ?></p> 
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>     
