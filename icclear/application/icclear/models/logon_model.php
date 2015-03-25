@@ -68,23 +68,14 @@ class Logon_model extends CI_Model {
         }
     }
 
-    function insert($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $geboortedatum, $geslacht, $land, $gemeente, $postcode, $straat, $huisnummer, $generatedKey) {
+    function insert($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey) {
         // voeg nieuwe user toe
         $user->gebruikersnaam = $gebruikersnaam;
         $user->voornaam = $voornaam;
-        $user->familienaam = $familienaam;
-        $user->geboortedatum = $geboortedatum;
-        $user->biografie = '';
-        $user->foto = '';
-        $user->emailadres = $email;
-        $user->gemeente = $gemeente;
-        $user->postcode = $postcode;
-        $user->straat = $straat;
-        $user->nummer = $huisnummer;
-        $user->paswoord = sha1($wachtwoord);
-        $user->geslacht = $geslacht;
-        $user->typeId = 1;
-        $user->landId = $land;
+        $user->familienaam = $familienaam;                
+        $user->emailadres = $email;                
+        $user->paswoord = sha1($wachtwoord);        
+        $user->typeId = 1;        
         $user->generatedKey = $generatedKey;
         $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
