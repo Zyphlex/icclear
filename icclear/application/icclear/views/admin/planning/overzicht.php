@@ -37,7 +37,7 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#conferentiedag").val(jobject.conferentiedagId);
+                        $("#conferentiedag").val(jobject.conferentiedag.datum);
                         $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
                         $("#plenair").val(jobject.plenair);
