@@ -8,7 +8,7 @@
     <?php echo anchor('inschrijven/opvolgen', 'Betalingen Opvolgen', 'class="btn btn-default"'); ?>            
 </div>
 <div class="col-md-10">    
-    <h4><span class="glyphicon glyphicon-pushpin"></span>Conferentie:</h4>
+    <h4>Conferentie<span class="glyphicon glyphicon-pushpin"></span></h4>
     <p>Deze conferentie loopt van <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
     <p>Stad: <?php echo $dataConferentie->stad; ?></p>    
     <br>
