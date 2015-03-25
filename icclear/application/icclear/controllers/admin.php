@@ -53,6 +53,7 @@ class Admin extends CI_Controller {
         
         $this->load->model('sessies_model');
         $data['ongekeurdeSessies'] = $this->sessies_model->countOngekeurde();
+        $data['gekeurdeSessies'] = $this->sessies_model->countGekeurde();
         
         $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
