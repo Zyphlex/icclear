@@ -77,7 +77,7 @@ class Logon_model extends CI_Model {
         $user->paswoord = sha1($wachtwoord);        
         $user->typeId = 1;        
         $user->generatedKey = $generatedKey;
-        $user->activatie = 0;
+        $user->activatie = 1;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
         $this->db->insert('gebruiker', $user);
         return $this->db->insert_id();
