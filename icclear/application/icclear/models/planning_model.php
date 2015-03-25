@@ -59,6 +59,13 @@ class Planning_model extends CI_Model {
                  $this->gebruiker_model->getSpreker($planning->sessie->gebruikerIdSpreker);
         }
         
+        $this->load->model('zaal_model');
+        
+        foreach ($planningen as $planning) {
+            $planning->zaal = 
+                 $this->zaal_model->get($planning->zaalId);
+        }
+        
         return $planningen;
     }
     
