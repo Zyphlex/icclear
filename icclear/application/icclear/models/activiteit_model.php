@@ -44,7 +44,7 @@ class Activiteit_model extends CI_Model {
 
         $this->db->where('conferentieId', $actieveConferentie->id);
         $query = $this->db->get('activiteit');
-        return $query->row_count;
+        return $query->num_rows;
     }
 
     function getActiviteitenActieve() {
