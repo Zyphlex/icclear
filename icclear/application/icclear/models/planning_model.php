@@ -18,7 +18,12 @@ class Planning_model extends CI_Model {
         parent::__construct();
     }
 
-       
+    function get($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('planning');
+        return $query->row();
+    }
+    
     function getAll()
     {        
         $query = $this->db->get('planning');
