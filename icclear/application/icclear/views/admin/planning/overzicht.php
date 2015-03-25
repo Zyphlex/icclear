@@ -38,7 +38,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#conferentiedag").val(jobject.conferentiedagId);
-                        $("#sessie").val(jobject.sessie);
+                        $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
                         $("#plenair").val(jobject.plenair);
                         $("#zaal").val(jobject.zaalId);
