@@ -36,7 +36,7 @@ class Inschrijving_model extends CI_Model {
         return $inschrijvingen;
     }
     
-    function getCountByConferentie($id) {
+    function getInschijvingByConferentie($id) {
         $this->db->where('gebruikerId',$id);
         $query = $this->db->get('inschrijving');
         $inschrijving = $query->row();
@@ -50,7 +50,7 @@ class Inschrijving_model extends CI_Model {
         return $inschrijving;
     }
     
-    function getInschijvingByConferentie($id) {
+    function getCountByConferentie($id) {
         $this->db->where('conferentieId',$id);
         $query = $this->db->get('inschrijving');
         $rowcount = $query->num_rows();        
