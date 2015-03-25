@@ -96,7 +96,7 @@
 
 <div class="col-md-10">
 
-    <h1>FAQ beheren</h1>  
+    <h1>Planning beheren</h1>  
             
     <div id="resultaat"></div>        
 
