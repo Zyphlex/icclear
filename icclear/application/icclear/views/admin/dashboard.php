@@ -10,4 +10,6 @@
 <div class="col-md-10">
     <h4>Statistieken</h4>
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
+    <p>Aantal niet-goedgekeurde sessies: <?php echo $aantalInschrijvingen; ?></p>
+    <p>Aantal ....: <?php echo $aantalInschrijvingen; ?></p>    
 </div>
