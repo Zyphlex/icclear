@@ -30,6 +30,12 @@ class Planningbeheer extends CI_Controller {
         $this->load->model('planning_model');        
         $data['planningen'] = $this->planning_model->getAllPlanningen();
         
+        $this->load->model('sessies_model'); 
+        $data['sessies'] = $this->sessie_model->getAlleSessies();
+        
+        $this->load->model('zaal_model'); 
+        $data['zalen'] = $this->zaal_model->getAll();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
