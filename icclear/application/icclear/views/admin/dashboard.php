@@ -9,7 +9,7 @@
 </div>
 <div class="col-md-10">    
     <h4>Conferentie <span class="glyphicon glyphicon-pushpin"></span></h4>
-    <p>Deze conferentie loopt van <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
+    <p>Periode: van <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
     <p>Stad: <?php echo $dataConferentie->stad; ?></p>    
     <br>
     <h4>Statistieken <span class="glyphicon glyphicon-stats"></span></h4>
