@@ -55,7 +55,7 @@ class Logon extends CI_Controller {
         $voornaam = $this->input->post('voornaam');
         $email = $this->input->post('emailadres');
         $wachtwoord = $this->input->post('wachtwoord');        
-        $activatie = 1;
+        $activatie = 0;
         
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
 
