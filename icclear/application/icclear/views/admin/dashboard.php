@@ -9,5 +9,5 @@
 </div>
 <div class="col-md-10">
     <h4>Statistieken</h4>
-    <p>Aantal inschrijvingen: </p>
+    <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
 </div>
