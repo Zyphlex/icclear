@@ -61,6 +61,21 @@ class Planning_model extends CI_Model {
         
         return $planningen;
     }
+    
+    function update($planning) {
+        $this->db->where('id', $planning->id);
+        $this->db->update('planning', $planning);
+    }
+
+    function insert($planning) {
+        $this->db->insert('planning', $planning);
+        return $this->db->insert_id();
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('planning');
+    }
 
     
 }
