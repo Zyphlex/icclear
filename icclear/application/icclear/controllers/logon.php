@@ -59,7 +59,7 @@ class Logon extends CI_Controller {
         
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
 
-        $id = $this->authex->register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $activatie);
+        $id = $this->authex->register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey);
         if ($id != 0) {
             $this->sendmail($email, $generatedKey);
             $this->klaar();
