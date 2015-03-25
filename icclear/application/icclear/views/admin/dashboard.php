@@ -18,5 +18,5 @@
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
     <p>Aantal gekeurde sessies: <?php echo $gekeurdeSessies; ?></p> 
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>     
-    <p>Aantal activiteiten: <?php echo $activiteiten; ?></p>
+    <p>Aantal activiteiten: <?php echo $status->status; ?></p>
 </div>
