@@ -2,7 +2,7 @@
     //Gegevens opvragen en tonen
     function haaloverzicht () {
         $.ajax({type : "GET",
-                url : site_url + "/faqbeheer/overzicht",
+                url : site_url + "/planningbeheer/overzicht",
                 success : function(result){
                     $("#resultaat").html(result);
                     maakDetailClick();
