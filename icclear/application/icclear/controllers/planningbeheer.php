@@ -31,7 +31,7 @@ class Planningbeheer extends CI_Controller {
         $data['planningen'] = $this->planning_model->getAllPlanningen();
         
         $this->load->model('sessies_model'); 
-        $data['sessies'] = $this->sessie_model->getAlleSessies();
+        $data['sessies'] = $this->sessies_model->getAlleSessies();
         
         $this->load->model('zaal_model'); 
         $data['zalen'] = $this->zaal_model->getAll();
