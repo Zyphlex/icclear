@@ -12,6 +12,7 @@
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>
     <br>
-    <p>Deze conferentie loopt van <?php echo $conferentie->beginDatum; ?> tot <?php echo $conferentie->eindDatum; ?></p>    
-    <p>Stad: <?php echo $conferentie->stad; ?></p>
+<!--    <p>Deze conferentie loopt van <?php echo $conferentie->beginDatum; ?> tot <?php echo $conferentie->eindDatum; ?></p>    
+    <p>Stad: <?php echo $conferentie->stad; ?></p>-->
+    <?php print_r($conferentie); ?>
 </div>
