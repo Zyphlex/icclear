@@ -11,5 +11,5 @@
     <h4>Statistieken</h4>
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>
-    <p>Aantal ....: <?php echo $aantalInschrijvingen; ?></p>    
+    <p>Deze conferentie loopt van <?php echo $conferentie->beginDatum; ?> tot <?php echo $conferentie->eindDatum; ?></p>    
 </div>
