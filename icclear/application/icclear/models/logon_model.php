@@ -75,7 +75,8 @@ class Logon_model extends CI_Model {
         $user->familienaam = $familienaam;                
         $user->emailadres = $email;                
         $user->paswoord = sha1($wachtwoord);        
-        $user->typeId = 1;        
+        $user->typeId = 1;     
+        $user->land = 0;
         $user->generatedKey = $generatedKey;
         $user->activatie = 1;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
