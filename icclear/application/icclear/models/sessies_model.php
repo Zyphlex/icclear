@@ -114,6 +114,16 @@ class Sessies_model extends CI_Model {
         return $rowcount;
     }
     
+    function countGekeurde() {        
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();                
+        $this->db->where('isGoedgekeurd', '1');
+        $this->db->where('conferentieId', $actieveConferentie->id);
+        $query = $this->db->get('sessie');
+        $rowcount = $query->num_rows();           
+        return $rowcount;
+    }
+    
     function planningenPerStatus($sessieId){
         $this->db->where('id', $sessieId);
         $query = $this->db->get('sessie');
