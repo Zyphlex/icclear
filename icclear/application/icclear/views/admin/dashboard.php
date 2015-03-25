@@ -11,7 +11,7 @@
     <h4>Conferentie <span class="glyphicon glyphicon-pushpin"></span></h4>
     <p>Periode: <?php echo $dataConferentie->beginDatum; ?> tot <?php echo $dataConferentie->eindDatum; ?></p>    
     <p>Stad: <?php echo $dataConferentie->stad; ?></p>
-    <p>Maximum aantal inschrijvingen: </p>
+    <p>Maximum aantal inschrijvingen: <?php echo $dataConferentie->maxInschrijvingen; ?></p>
     <p>Status: </p>
     <br>
     <h4>Statistieken <span class="glyphicon glyphicon-stats"></span></h4>
