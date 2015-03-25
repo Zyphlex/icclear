@@ -72,13 +72,21 @@ class Logon_model extends CI_Model {
         // voeg nieuwe user toe
         $user->gebruikersnaam = $gebruikersnaam;
         $user->voornaam = $voornaam;
-        $user->familienaam = $familienaam;                
-        $user->emailadres = $email;                
-        $user->paswoord = sha1($wachtwoord);        
-        $user->typeId = 1;     
-        $user->land = 0;
+        $user->familienaam = $familienaam;
+        $user->geboortedatum = '';
+        $user->biografie = '';
+        $user->foto = '';
+        $user->emailadres = $email;
+        $user->gemeente = '';
+        $user->postcode = '';
+        $user->straat = '';
+        $user->nummer = '';
+        $user->paswoord = sha1($wachtwoord);
+        $user->geslacht = '';
+        $user->typeId = 1;
+        $user->landId = '';
         $user->generatedKey = $generatedKey;
-        $user->activatie = 1;
+        $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
         $this->db->insert('gebruiker', $user);
         return $this->db->insert_id();
