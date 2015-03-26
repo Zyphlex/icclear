@@ -68,7 +68,7 @@ class Planning_model extends CI_Model {
                 
         foreach ($dagen as $dag) {
             $dag->planning = 
-                 $this->getVanDag($dag->Id);
+                 $this->getVanDag($dag->id);
         }        
         
         return $dagen;
