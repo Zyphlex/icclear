@@ -63,31 +63,33 @@ echo form_hidden('id', $gebruiker->id);
                 <div class="my-radio">
                     <?php
                     if (strtolower($gebruiker->geslacht) == "man") {
-                        echo '<div class="">
-                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" checked="checked" value="Man">
-                                            <span class="option-title">
-                                                Man
-                                            </span>
-                                        </div> 
-                                        <div class="">
-                                            <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" value="Vrouw">
-                                            <span class="option-title">
-                                                Vrouw
-                                            </span>
-                                        </div>';
-                    } else {
-                        echo '<div class="">
-                                            <input type="radio" name="geslacht" id="field8-1"  class="form-horizontal" value="Man">
-                                            <span class="option-title">
-                                                Man
-                                            </span>
-                                        </div> 
-                                                <div class="">
-                                            <input type="radio" name="geslacht" id="field8-2" class="form-horizontal" checked="checked" value="Vrouw">
-                                            <span class="option-title">
-                                                Vrouw
-                                            </span>
-                                        </div>';
+                        ?>
+                        <div class="">
+                            <?php echo form_input(array('name' => 'geslacht', 'id' => 'man', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                            
+                            <span class="option-title">
+                                Man
+                            </span>
+                        </div> 
+                        <div class="">
+                            <?php echo form_input(array('name' => 'geslacht', 'id' => 'vrouw', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                            
+                            <span class="option-title">
+                                Vrouw
+                            </span>
+                        </div>
+                    <?php } else { ?>
+                        <div class="">
+                            <?php echo form_input(array('name' => 'geslacht', 'id' => 'man', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                            
+                            <span class="option-title">
+                                Man
+                            </span>
+                        </div> 
+                        <div class="">
+                            <?php echo form_input(array('name' => 'geslacht', 'id' => 'vrouw', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                            
+                            <span class="option-title">
+                                Vrouw
+                            </span>
+                        </div>
+                        <?php
                     }
                     ?>
                 </div>
