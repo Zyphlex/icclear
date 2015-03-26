@@ -37,8 +37,9 @@ class Planning_model extends CI_Model {
     }
     
     function getAllByDag($id) { 
+        
+        $this->db->where('conferentiedagId', $id);  
         $this->db->order_by('conferentiedagId');
-        $this->db->where('conferentiedagId', $id);       
         $query = $this->db->get('planning');
         $planningen = $query->result();
         
