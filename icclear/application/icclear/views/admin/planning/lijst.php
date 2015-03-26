@@ -1,7 +1,3 @@
-<?php foreach ($conferentiedagen as $dag) { ?>
-<h2><?php echo toDDMMYYYY($dag->datum) ?></h2>
-<p><?php echo $dag->id ?></p> 
-<?php } ?>
 <script type="text/javascript">
 	//------------------
 	// jQuery UI bepalen
@@ -21,7 +17,7 @@
 echo '<div id="accordion">';
 
 foreach ($conferentiedagen as $dag) {
-    echo '<h3><a href="#">' . $dag->datum . "</a></h3>\n"; 
+    echo '<h3><a href="#">' . toDDMMYYYY($dag->datum) . "</a></h3>\n"; 
     echo "<div><p>\n";
     
     echo "<p>Hallo boer het werkt</p>";
