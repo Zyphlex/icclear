@@ -39,7 +39,7 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
-                        $("#beginuur").val(jobject.eindUur);
+                        $("#einduur").val(jobject.eindUur);
                         $("#plenair").val(jobject.plenair);
                         $("#zaal").val(jobject.zaalId);
 
@@ -50,7 +50,7 @@
                 
                 $("#sessie").val("");
                 $("#beginuur").val("");
-                $("#beginuur").val("");
+                $("#einduur").val("");
                 $("#plenair").val("");
                 $("#zaal").val("");
             }
@@ -129,10 +129,8 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Conferentiedag:', 'conferentiedag'); ?></p>
-                    <p><?php echo form_input(array('name' => 'conferentiedag', 'id' => 'conferentiedag', 'class' => 'form-control', 'type' => 'date')); ?></p>
-
-                    <p><?php echo form_label('Sessie:', 'sessie'); ?></td>
+                    
+                    <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                         <?php
                         $drop = array();
                         $teller = 1;
@@ -142,6 +140,11 @@
                         }
                         echo form_dropdown('sessie', $drop, '', 'id="sessie" class="form-control"');
                         ?>
+                    <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
+                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+
+                    <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
+                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
                 </form>
 
             </div>
