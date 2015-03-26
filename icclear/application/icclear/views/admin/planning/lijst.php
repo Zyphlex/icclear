@@ -1,7 +1,7 @@
 <?php foreach ($conferentiedagen as $dag) { ?>
 <h2><?php echo toDDMMYYYY($dag->datum) ?></h2>
 <?php } ?>
-<table class="table table-beheer">
+<!--<table class="table table-beheer">
     <thead>
         <tr>
             <th>Sessie</th>
@@ -37,4 +37,4 @@
             </tr>
         <?php } ?>
     </tbody>
-</table>      
+</table>      -->
