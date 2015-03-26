@@ -40,12 +40,14 @@ class Planningbeheer extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
       
-    public function overzicht() {        
+    public function overzicht() {    
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
         $this->load->model('planning_model');
         $data['planningen'] = $this->planning_model->getAllByDag();
         
         $this->load->model('conferentiedag_model'); 
-        $data['conferentiedagen'] = $this->conferentiedag_model->getAll();
+        $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($data['conferentieId']);
 
         $this->load->view('admin/planning/lijst', $data);
     }
