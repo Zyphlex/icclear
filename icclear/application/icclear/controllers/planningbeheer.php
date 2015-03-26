@@ -26,10 +26,7 @@ class Planningbeheer extends CI_Controller {
         $data['title'] = 'IC Clear - Planning';
         $data['active'] = 'admin';        
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
-        //$this->load->model('planning_model');        
-        //$data['planningen'] = $this->planning_model->getAllByDag();
-        
+                
         $this->load->model('sessies_model'); 
         $data['sessies'] = $this->sessies_model->getAlleSessies();
         
