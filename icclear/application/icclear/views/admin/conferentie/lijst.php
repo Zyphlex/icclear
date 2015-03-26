@@ -16,13 +16,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php foreach ($onderdelen as $ond) { ?>                        
+                            <tr>
+                                <td><input type="text" class="form-control" name="formule"><?php echo $ond->omschrijving ?></td>
+                                <td><input type="text" class="form-control" name="prijs"><?php echo $ond->prijs ?></td>
+                                <td><input type="text" class="form-control" name="korting"><?php echo $ond->korting ?></td>
+                                <td>
+                                    <a href="" class="glyphicon glyphicon-ok-sign btn btn-default"></a>
+                                    <a href="" class="glyphicon glyphicon-remove-sign btn btn-default"></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        
                         <tr>
                             <td><input type="text" class="form-control" name="formule"></td>
                             <td><input type="text" class="form-control" name="prijs"></td>
                             <td><input type="text" class="form-control" name="korting"></td>
                             <td>
-                                <a href="" class="glyphicon glyphicon-ok btn btn-default"></a>
-                                <a href="" class="glyphicon glyphicon-remove btn btn-default"></a>
+                                <a href="" class="glyphicon glyphicon-plus-sign btn btn-default"></a>
                             </td>
                         </tr>
                     </tbody>
