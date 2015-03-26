@@ -87,7 +87,7 @@ class Gebouw extends CI_Controller {
         $this->load->model('conferentiedag_model');
         $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouw/overzicht', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouwConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
 
