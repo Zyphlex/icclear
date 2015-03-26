@@ -28,6 +28,12 @@ class Conferentiedag_model extends CI_Model {
         $query = $this->db->get('conferentiedag');
         return $query->row();
     }
+    
+    function getFromConferentie($conferentieId) {
+        $this->db->where('conferentieId', $conferentieId);
+        $query = $this->db->get('conferentiedag');
+        return $query->result();
+    }
 
 }
 
