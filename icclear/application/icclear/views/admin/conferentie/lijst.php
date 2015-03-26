@@ -1,8 +1,6 @@
 
-<div class=" panel panel-default">
-    <div class="panel-heading">
-        <h4 class="panel-title">Conferentie onderdelen</h4>
-    </div>
+    <h4>Conferentie onderdelen</h4>
+    
 
     <div class="panel-body">
         <table class="table">
@@ -27,6 +25,6 @@
                     </tr>
                 <?php } ?>
             </tbody>
-        </table>
+        </table
     </div>
 </div>

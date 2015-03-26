@@ -104,10 +104,9 @@
 
     <div id="resultaat"></div>
     
-    <div class=" panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">Conferentie wijzigen</h4>
-        </div>
+    
+        <h4>Conferentie wijzigen</h4>
+            
         <?php
         $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
         echo form_open('conferentie/opslaan', $attributes);
@@ -240,7 +239,6 @@
 
         <?php echo form_close(); ?>
 
-    </div>
         
 
 </div>
