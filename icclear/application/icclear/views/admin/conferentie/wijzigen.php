@@ -105,7 +105,11 @@
     <div id="resultaat"></div>
     
     
-        <h4>Conferentie wijzigen</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Conferentie wijzigen</h2>
+            </div>
+        </div>
             
         <?php
         $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
