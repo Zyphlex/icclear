@@ -24,13 +24,11 @@ echo form_hidden('id', $gebruiker->id);
 
         <div class="row">
             <div class="col-md-4">   
-                <label for="familienaam">
-                    Familienaam:
-                </label>
+                <?php echo form_label('Familienaam:', 'familienaam'); ?>                
             </div>
 
-            <div class="col-md-8">   
-                <input type="text" name="familienaam" value="<?php echo $gebruiker->familienaam; ?>" id="field1" class="form-control">
+            <div class="col-md-8">                   
+                <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
             </div>
         </div>
 
