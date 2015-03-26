@@ -45,9 +45,9 @@ class Routesbeheer extends CI_Controller {
         $id = $this->input->get('id');
 
         $this->load->model('routes_model');
-        $sponsor = $this->routes_model->getRoute($id);
+        $route = $this->routes_model->getRoute($id);
 
-        echo json_encode($sponsor);
+        echo json_encode($route);
     }
     
     public function delete($id){
