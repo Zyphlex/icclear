@@ -28,8 +28,8 @@
                     ?>
                     <td>
                         <p>                                        
-                            <button class="wijzigPlanning btn btn-primary" data-id="<?php echo $planning->id ?>">Wijzigen</button>
-                            <button class="verwijderPlanning btn btn-danger" data-id="<?php echo $planning->id ?>">Verwijderen</button> 
+                            <button class="wijzigPlanning glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $planning->id ?>">Wijzigen</button>
+                            <button class="verwijderPlanning glyphicon glyphicon-pencil btn btn-danger" data-id="<?php echo $planning->id ?>">Verwijderen</button> 
                         </p>                                 
                     </td>
                 </tr>
