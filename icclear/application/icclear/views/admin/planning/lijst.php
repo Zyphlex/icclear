@@ -1,5 +1,5 @@
 <?php foreach ($dagen as $dag) { ?>
-<h3><?php echo date_format("l", $dag->datum) . " " . toDDMMYYYY($dag->datum) ?></h3>
+<h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
     <table class="table table-beheer">
         <thead>
             <tr>
