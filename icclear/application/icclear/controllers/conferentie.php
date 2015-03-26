@@ -77,4 +77,39 @@ class Conferentie extends CI_Controller {
         $this->load->view('admin/conferentie/lijst', $data);
     }
     
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('conferentie_onderdeel_model');
+        $route = $this->conferentie_onderdeel_model->get($id);
+
+        echo json_encode($route);
+    }
+    
+    public function delete($id){
+        $id = $this->input->post('id');
+
+        $this->load->model('conferentie_onderdeel_model');
+        $deleted = $this->conferentie_onderdeel_model->delete($id);
+
+        echo $deleted;
+    }
+    
+    public function update() {        
+        $onderdeel->id = htmlentities($this->input->post('id'));
+        $onderdeel->vertrekpunt = htmlentities($this->input->post('vertrekpunt'));
+        $onderdeel->gebouwId = htmlentities($this->input->post('gebouw'));
+        $onderdeel->url = htmlentities($this->input->post('url'));
+        $onderdeel->beschrijving = htmlentities($this->input->post('beschrijving'));
+        
+        $this->load->model('conferentie_onderdeel_model');
+        if ($onderdeel->id == 0) {
+            $id = $this->conferentie_onderdeel_model->insert($onderdeel);
+        } else {
+            $this->conferentie_onderdeel_model->update($onderdeel);
+        }
+        
+        echo $id;
+    }
+    
 }

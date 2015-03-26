@@ -254,24 +254,14 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
-                    <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Onderdeel omschrijving:', 'onderdeel'); ?></td>
+                    <p><?php echo form_input(array('name' => 'onderdeel', 'id' => 'onderdeel', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('rows'=>'10','cols'=>'50','name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Prijs:', 'prijs'); ?></td>
+                    <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
-                    <p><?php
-                        $options = array();
-                        foreach ($gebouwen as $gebouw) {
-                            $options[$gebouw->id] = $gebouw->naam;
-                        }
-                        echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
-                        ?></p>
-                    
-                    <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
-                    <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
-
+                    <p><?php echo form_label('Korting:', 'korting'); ?></td>
+                    <p><?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>%</p>
                 </form>
 
             </div>
@@ -297,7 +287,7 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze route wilt verwijderen?</p>  
+                <p>Bent u zeker dat u dit onderdeel wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
