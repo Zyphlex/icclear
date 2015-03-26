@@ -76,6 +76,17 @@ class Gebouw extends CI_Controller {
 
         echo $deleted;
     }
+    
+    public function gebouwPerDag() {
+        $data['user']  = $this->authex->getUserInfo();      
+        $data['title'] = 'IC Clear - Dashboard';         
+        $data['active'] = 'admin';
+        $conferentieId = $this->session->userdata('conferentieId');
+        $data['conferentieId'] = $conferentieId;
+        
+        $this->load->model('conferentiedag_model');
+        $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
+    }
 
 }
 
