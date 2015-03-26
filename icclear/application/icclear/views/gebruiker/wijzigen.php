@@ -132,10 +132,8 @@ echo form_hidden('id', $gebruiker->id);
 
     <div class="col-md-6 border-left">      
         <div class="row">
-            <div class="col-md-4">   
-                <label for="land">
-                    Land:
-                </label>
+            <div class="col-md-4">  
+                <?php echo form_label('Land:', 'land'); ?>                   
             </div>
 
             <div class="col-md-8">   
@@ -151,13 +149,11 @@ echo form_hidden('id', $gebruiker->id);
 
             <div class="row">
                 <div class="col-md-4">   
-                    <label for="gemeente">
-                        Gemeente:
-                    </label>
+                    <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="gemeente" value="<?php echo $gebruiker->gemeente; ?>" id="field10" class="form-control">
+                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
                 </div>
             </div>
 
