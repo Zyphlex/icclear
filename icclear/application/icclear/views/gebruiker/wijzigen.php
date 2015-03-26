@@ -36,13 +36,11 @@ echo form_hidden('id', $gebruiker->id);
 
         <div class="row">
             <div class="col-md-4">   
-                <label for="emailadres">
-                    Emailadres: 
-                </label>
+                <?php echo form_label('E-mailadres:', 'emailadres'); ?>                                
             </div>  
 
             <div class="col-md-8">   
-                <input type="text" name="emailadres" value="<?php echo $gebruiker->emailadres; ?>" id="email" class="form-control" disabled="true">      
+                <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'disabled' => 'true')); ?>
             </div>
         </div>
 
