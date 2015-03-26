@@ -1,16 +1,3 @@
-<script type="text/javascript">    
-    function sorteer() {
-            $('.table').DataTable({
-                paging: false,
-                info: false
-            });
-        }
-            
-    $(document).ready(function() {
-        sorteer();
-    });
-</script>
-    
 <table class="table table-beheer">
     <thead>
         <tr>                                
