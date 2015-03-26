@@ -56,9 +56,7 @@ echo form_hidden('id', $gebruiker->id);
 
         <div class="row">
             <div class="col-md-4">   
-                <label for="geslacht">
-                    Geslacht:
-                </label>  
+                <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
             </div>  
 
             <div class="col-md-8">        
