@@ -41,6 +41,7 @@
                         $("#beginuur").val(jobject.beginUur);
                         $("#einduur").val(jobject.eindUur);
                         $("#plenair").val(jobject.plenair);
+                        $(':radio[name="plenair"][value="' + jobject.plenair + '"]').prop('checked', 'checked');
                         $("#zaal").val(jobject.zaalId);
 
                     }
