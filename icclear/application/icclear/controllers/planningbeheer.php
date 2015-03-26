@@ -57,7 +57,6 @@ class Planningbeheer extends CI_Controller {
     
     public function update() {   
         $planning->id = $this->input->post('id');
-        $planning->conferentiedagId = $this->input->post('conferentiedag');
         $planning->sessieId = $this->input->post('sessie');
         $planning->beginUur = $this->input->post('beginuur');
         $planning->eindUur = $this->input->post('einduur');
