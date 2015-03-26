@@ -51,10 +51,8 @@ class Conferentie extends CI_Controller {
     
     public function opslaan() {        
         $conferentie->id = $this->input->post('id');
-        $conferentie->eindDatum = $this->input->post('einddatum');
         $conferentie->stad = $this->input->post('stad');
         $conferentie->landId = $this->input->post('land');
-        $conferentie->beginDatum = $this->input->post('begindatum');
         $conferentie->naam = $this->input->post('naam');
         $conferentie->beschrijving = $this->input->post('beschrijving');
         $conferentie->seminarieDag = $this->input->post('seminariedag');
