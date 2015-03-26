@@ -37,9 +37,9 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#conferentiedag").val(jobject.conferentiedagId);
                         $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
+                        $("#beginuur").val(jobject.eindUur);
                         $("#plenair").val(jobject.plenair);
                         $("#zaal").val(jobject.zaalId);
 
@@ -47,8 +47,9 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#conferentiedag").val("");
+                
                 $("#sessie").val("");
+                $("#beginuur").val("");
                 $("#beginuur").val("");
                 $("#plenair").val("");
                 $("#zaal").val("");
