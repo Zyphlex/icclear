@@ -104,7 +104,7 @@
 
         <?php
         $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method'=>'post');
-        echo form_open('', $attributes);
+        echo form_open('conferentie/opslaan', $attributes);
         ?>
         
         <div class="row">  
