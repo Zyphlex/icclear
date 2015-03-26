@@ -95,49 +95,31 @@ echo form_hidden('id', $gebruiker->id);
                 </div>
             </div>
         </div>
-        <?php if ($inschrijving != null) { ?>
-            <div class="row">
-                <div class="col-md-4">   
-                    <label for="betaling">
-                        Betaling:
-                    </label>
-                </div>
-                <div class="col-md-8">   
-                    <input type="text" class="form-control" value="€ <?php
-                    echo $inschrijving->confonderdeel->prijs;
-                    if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") {
-                        echo " - Betaald";
-                    } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") {
-                        echo " - Niet betaald";
-                    }
-                    ?>" id="betaling" name="betaling" disabled="true">
-                </div>
-            </div>
-        <?php } ?>
+
         <?php if ($gebruiker->typeId == 2) { ?>
             <div class="row">
-                <div class="col-md-4">   
-                    <label for="type">
-                        Type:
-                    </label>  
+                <div class="col-md-4">  
+                    <?php echo form_label('Type:', 'type'); ?>                        
                 </div>  
 
                 <div class="col-md-8">        
                     <div class="my-radio">
                         <?php
                         if ($gebruiker->typeId == 2) {
-                            echo '<div class="">
-                                            <input type="radio" name="type" id="field9-1"  class="form-horizontal" checked="checked" value="2">
-                                            <span class="option-title">
-                                                Spreker
-                                            </span>
-                                        </div> 
-                                        <div class="">
-                                            <input type="radio" name="type" id="field9-2" class="form-horizontal" value="1">
-                                            <span class="option-title">
-                                                Bezoeker
-                                            </span>
-                                        </div>';
+                            ?>
+                            <div class="">
+                                <?php echo form_input(array('name' => 'type', 'id' => 'spreker', 'value' => '2', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                                                            
+                                <span class="option-title">
+                                    Spreker
+                                </span>
+                            </div> 
+                            <div class="">
+                                <?php echo form_input(array('name' => 'type', 'id' => 'bezoeker', 'value' => '1', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                                
+                                <span class="option-title">
+                                    Bezoeker
+                                </span>
+                            </div>
+                            <?php
                         }
                         ?>
                     </div>
