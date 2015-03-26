@@ -18,8 +18,8 @@ class Conferentiedag_model extends CI_Model {
     }
 
     function getAll() {
-        $this->db->order_by('beginDatum');
-        $query = $this->db->get('conferentie');
+        $this->db->order_by('datum');
+        $query = $this->db->get('conferentiedag');
         return $query->result();
     }
 
