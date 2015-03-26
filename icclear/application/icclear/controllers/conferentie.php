@@ -71,8 +71,8 @@ class Conferentie extends CI_Controller {
     }
     
     public function overzicht() {        
-//        $this->load->model('conferentie_onderdeel_model');
-//        $data['routes'] = $this->conferentie_onderdeel_model->getRoutes();
+        $this->load->model('conferentie_onderdeel_model');
+        $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($this->session->userdata('conferentieId'));
         
         $this->load->view('admin/conferentie/lijst', $data);
     }
