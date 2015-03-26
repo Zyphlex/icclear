@@ -18,9 +18,9 @@
                     <tbody>
                         <?php foreach ($onderdelen as $ond) { ?>                        
                             <tr>
-                                <td><input type="text" class="form-control" name="formule"><?php echo $ond->omschrijving ?></td>
-                                <td><input type="text" class="form-control" name="prijs"><?php echo $ond->prijs ?></td>
-                                <td><input type="text" class="form-control" name="korting"><?php echo $ond->korting ?></td>
+                                <td><?php echo $ond->omschrijving ?></td>
+                                <td><?php echo $ond->prijs ?></td>
+                                <td><?php echo $ond->korting ?></td>
                                 <td>
                                     <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $ond->id ?>">Wijzigen</button>
                                     <button class="verwijderItem glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $ond->id ?>">Verwijderen</button>  
