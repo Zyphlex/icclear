@@ -20,7 +20,6 @@
                     <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
                     <li><?php echo anchor('gebruiker' , 'Gebruikers'); ?></li>
                     <li><?php echo anchor('activiteit' , 'Activiteiten'); ?></li>
-                    <li><?php echo anchor('planningbeheer' , 'Planningen'); ?></li>
                     <li><?php echo anchor('land' , 'Landen'); ?></li>
                     <li><?php echo anchor('zaal' , 'Zalen'); ?></li>
                     <li><?php echo anchor('gebouw' , 'Gebouwen'); ?></li>
@@ -37,6 +36,7 @@
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
                     <li><?php echo anchor('gebruiker/gebruikersConferentie', 'Gebruikers'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
+                    <li><?php echo anchor('planningbeheer' , 'Planningen'); ?></li>
                     <li><?php echo anchor('gebouw/gebouwPerDag', 'Gebouwen') ?></li>
                 
             <?php } ?>            
