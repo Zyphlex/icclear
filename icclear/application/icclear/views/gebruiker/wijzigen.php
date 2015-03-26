@@ -161,13 +161,11 @@ echo form_hidden('id', $gebruiker->id);
 
             <div class="row">
                 <div class="col-md-4">   
-                    <label for="postcode">
-                        Postcode:
-                    </label>
+                    <?php echo form_label('Postcode:', 'postcode'); ?>                                          
                 </div>
 
                 <div class="col-md-8">   
-                    <input type="text" name="postcode" value="<?php echo $gebruiker->postcode; ?>" id="field10-b" class="form-control">
+                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
                 </div>
             </div>
 
@@ -175,6 +173,7 @@ echo form_hidden('id', $gebruiker->id);
 
             <div class="row">
                 <div class="col-md-4">   
+                     <?php echo form_label('Straat:', 'straat'); ?>   
                     <label for="straat">
                         Straat:
                     </label>
