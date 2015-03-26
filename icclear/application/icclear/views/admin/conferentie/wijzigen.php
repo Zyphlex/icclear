@@ -238,3 +238,74 @@
         
 
 </div>
+
+
+<!-- MODAL VOOR DETAILS -->         
+<div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id" />
+                    <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
+                    <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
+                    <p><?php echo form_textarea(array('rows'=>'10','cols'=>'50','name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
+                    <p><?php
+                        $options = array();
+                        foreach ($gebouwen as $gebouw) {
+                            $options[$gebouw->id] = $gebouw->naam;
+                        }
+                        echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
+                        ?></p>
+                    
+                    <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
+                    <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="opslaanItem btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
+</div>  
+
+
+<!-- MODAL VOOR VERWIJDEREN -->  
+<div class="modal fade" id="modalItemDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">OPGELET!</h4>
+            </div>
+
+            <div class="modal-body">                  
+                <p>Bent u zeker dat u deze route wilt verwijderen?</p>  
+                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="deleteItem btn btn-primary">Bevestig</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
+</div>  
