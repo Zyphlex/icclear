@@ -36,12 +36,11 @@
                     async: false,
                     data: {id: iddb},
                     success: function(result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
-                        $("#vertrekPunt").val(jobject.naam);
-                        $("#beschrijving").val(jobject.land);
-                        $("#gebouw").val(jobject.postcode);
-                        $("#url").val(jobject.gemeente);
+                        $("#vertrekPunt").val(jobject.vertrekPunt);
+                        $("#beschrijving").val(jobject.beschrijving);
+                        $("#gebouw").val(jobject.gebouwId);
+                        $("#url").val(jobject.url);
                     }
                 });
             } else {
