@@ -1,7 +1,8 @@
+<?php foreach ($planningen as $planning) { ?>
+<h2><?php echo toDDMMYYYY($planning->conferentiedag->datum) ?></h2>
 <table class="table table-beheer">
     <thead>
         <tr>
-            <th>Conferentiedag</th>
             <th>Sessie</th>
             <th>Beginuur</th>
             <th>Einduur</th>
@@ -11,9 +12,8 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($planningen as $planning) { ?>
+        
             <tr>
-                <td><?php echo toDDMMYYYY($planning->conferentiedag->datum) ?></td>
                 <td><?php echo $planning->sessie->onderwerp ?></td>
                 <td><?php echo $planning->beginUur ?></td>
                 <td><?php echo $planning->eindUur ?></td>
