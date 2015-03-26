@@ -36,10 +36,9 @@ class Planning_model extends CI_Model {
         return $query->row();
     }
     
-    function getAllByDag($id) { 
-        
-        $this->db->where('conferentiedagId', $id);  
-        $this->db->order_by('conferentiedagId');
+    function getVanDag($id)
+    {
+        $this->db->where('conferentiedagId', $id); 
         $query = $this->db->get('planning');
         $planningen = $query->result();
         
@@ -47,12 +46,7 @@ class Planning_model extends CI_Model {
         foreach ($planningen as $planning) {
             $planning->sessie = 
                  $this->sessies_model->planningenPerStatus($planning->sessieId);
-        }                        
-//        $this->load->model('conferentiedag_model');        
-//        foreach ($planningen as $planning) {
-//            $planning->conferentiedag = 
-//                 $this->conferentiedag_model->get($planning->conferentiedagId);
-//        }
+        }   
         
         $this->load->model('zaal_model');
         
@@ -62,6 +56,22 @@ class Planning_model extends CI_Model {
         }
         
         return $planningen;
+        
+    }
+    
+    function getAllByDag($id) { 
+        
+        $this->db->where('conferentieId', $id);  
+        $this->db->order_by('Id');
+        $query = $this->db->get('conferentiedag');
+        $dagen = $query->result();
+                
+        foreach ($dagen as $dag) {
+            $dag->planning = 
+                 $this->getVanDag($dag->Id);
+        }        
+        
+        return $dagen;
     }
     
     function getAllPlanningen() {        
