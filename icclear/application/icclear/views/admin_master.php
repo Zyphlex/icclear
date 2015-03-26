@@ -25,6 +25,7 @@
           href="<?php echo base_url() . APPPATH; ?>img/default/favicon.png"/>
     
     <script src="<?php echo base_url() . APPPATH; ?>js/jquery-1.11.2.min.js"></script>   
+    <script src="<?php echo base_url() . APPPATH; ?>js/jquery.dataTables.js"></script>   
     
     <script type="text/javascript">
         var site_url = '<?php echo site_url();?>';

@@ -1,6 +1,4 @@
-<script type="text/javascript" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
-        
+       
 <table class="table table-beheer">
     <thead>
         <tr>                                
