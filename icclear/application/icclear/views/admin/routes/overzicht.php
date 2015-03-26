@@ -56,10 +56,7 @@
     }
     
     function sorteer() {
-                $('.table').DataTable({
-                    paging:false,
-                    info:false
-                });
+                $('.table').DataTable();
             }
 
     $(document).ready(function() {
@@ -69,6 +66,8 @@
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
         sorteer();
+        
+        $('#table_id').DataTable();
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function() {
@@ -117,7 +116,7 @@
     <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
     
     
-<table class="table table-beheer">
+<table id="table_id" class="table table-beheer">
     <thead>
         <tr>                                
             <th>Vertrekpunt</th>   
