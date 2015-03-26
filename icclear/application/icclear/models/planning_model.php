@@ -25,8 +25,7 @@ class Planning_model extends CI_Model {
     }
     
     function getAll()
-    {      
-        $this->db->order_by('conferentiedagId');
+    {        
         $query = $this->db->get('planning');
         return $query->result();
     }
