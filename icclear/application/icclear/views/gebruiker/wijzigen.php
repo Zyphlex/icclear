@@ -50,7 +50,7 @@ echo form_hidden('id', $gebruiker->id);
             </div>
 
             <div class="col-md-8"> 
-                <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'disabled' => 'true', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
+                <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
             </div>
         </div>
 
