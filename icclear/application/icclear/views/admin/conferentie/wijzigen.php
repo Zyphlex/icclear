@@ -229,13 +229,10 @@
             </div>
         </div>
         
+    <?php echo form_close(); ?>
+        
         
     <div id="resultaat"></div>
-        
-        
-    <?php echo form_close(); ?>
-
-        
 
 </div>
 
