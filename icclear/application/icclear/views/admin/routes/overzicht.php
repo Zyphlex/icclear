@@ -115,6 +115,35 @@
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
 
     <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
+    
+    
+<table class="table table-beheer">
+    <thead>
+        <tr>                                
+            <th>Vertrekpunt</th>   
+            <th>Bestemming</th>
+            <th>Beheer</th>
+        </tr>
+    </thead>
+    <tbody
+            <tr>
+                <td><?php echo "vertrekPunt" ?></td>
+                <td><?php echo "naam" ?></td>
+                <td>
+                    <button class="wijzigItem btn btn-primary" data-id="<?php echo "" ?>">Wijzigen</button>
+                    <button class="verwijderItem btn btn-danger" data-id="<?php echo "" ?>">Verwijderen</button>                                 
+                </td>
+            </tr>
+            <tr>
+                <td><?php echo "aaaaaaaaaaaaaa" ?></td>
+                <td><?php echo "nbbaam" ?></td>
+                <td>
+                    <button class="wijzigItem btn btn-primary" data-id="<?php echo "" ?>">Wijzigen</button>
+                    <button class="verwijderItem btn btn-danger" data-id="<?php echo "" ?>">Verwijderen</button>                                 
+                </td>
+            </tr>
+    </tbody>
+</table>
 
 </div>
 
