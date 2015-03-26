@@ -54,6 +54,13 @@
             $("#modalItemDetail").modal('show');
         });
     }
+    
+    function sorteer() {
+                $('.table').DataTable({
+                    paging:false,
+                    info:false
+                });
+            }
 
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
@@ -61,6 +68,7 @@
         maakDeleteClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
+        sorteer();
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function() {
