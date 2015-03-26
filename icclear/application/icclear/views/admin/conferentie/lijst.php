@@ -20,7 +20,10 @@
                             <td><input type="text" class="form-control" name="formule"></td>
                             <td><input type="text" class="form-control" name="prijs"></td>
                             <td><input type="text" class="form-control" name="korting"></td>
-                            <td><a href="" class="glyphicon glyphicon-plus btn btn-default"></a></td>
+                            <td>
+                                <a href="" class="glyphicon glyphicon-ok btn btn-default"></a>
+                                <a href="" class="glyphicon glyphicon-remove btn btn-default"></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
