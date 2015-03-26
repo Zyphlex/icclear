@@ -45,14 +45,12 @@ echo form_hidden('id', $gebruiker->id);
         </div>
 
         <div class="row">
-            <div class="col-md-4">   
-                <label for="geboortedatum">
-                    Geboortedatum:
-                </label>
+            <div class="col-md-4">
+                <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                                                
             </div>
 
-            <div class="col-md-8">   
-                <input type="date" class="form-control" value="<?php echo $gebruiker->geboortedatum; ?>" id="field7" maxlength="524288" name="geboortedatum" style="width: 158px;" tabindex="0" title="">
+            <div class="col-md-8"> 
+                <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'disabled' => 'true', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
             </div>
         </div>
 
