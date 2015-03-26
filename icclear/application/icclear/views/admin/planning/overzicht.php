@@ -162,7 +162,7 @@
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p>
                         <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
-                        <?php echo form_radio(array('name' => 'planair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
                     </p>
                 </form>
 
