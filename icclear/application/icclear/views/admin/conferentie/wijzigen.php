@@ -235,6 +235,8 @@
                 <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>            
             </div>
         </div>
+        
+        <br/>
 
         <?php echo form_close(); ?>
 
