@@ -37,7 +37,7 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#vertrekpunt").val(jobject.naam);
+                        $("#vertrekPunt").val(jobject.naam);
                         $("#beschrijving").val(jobject.land);
                         $("#gebouw").val(jobject.postcode);
                         $("#url").val(jobject.gemeente);
@@ -45,7 +45,7 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#vertrekpunt").val("");
+                $("#vertrekPunt").val("");
                 $("#beschrijving").val("");
                 $("#gebouw").val("");
                 $("#url").val("");
