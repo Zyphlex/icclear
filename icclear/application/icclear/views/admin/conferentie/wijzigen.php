@@ -100,16 +100,22 @@
 </script>
 
 <div class="col-md-10">
-    <h1>Conferentie wijzigen.</h1>
+    <h1>Conferentie</h1>
 
+    <div id="resultaat"></div>
+    
+    <div class=" panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Conferentie wijzigen</h4>
+        </div>
         <?php
-        $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method'=>'post');
+        $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
         echo form_open('conferentie/opslaan', $attributes);
         ?>
-        
+
         <div class="row">  
             <div class="col-md-2 control-label">
-                <?php echo form_label('Naam:', 'naam');?>
+                <?php echo form_label('Naam:', 'naam'); ?>
             </div>
             <div class="col-md-4">
                 <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "value" => $conferentie->naam)); ?>
@@ -117,122 +123,123 @@
         </div>
 
         <br/>
-        
+
         <div class="row">    
             <div class="col-md-2 control-label">
-                <?php echo form_label('Begin datum:','begindatum'); ?>
+                <?php echo form_label('Begin datum:', 'begindatum'); ?>
             </div>
             <div class="col-md-4">    
-                <?php echo form_input(array("disabled" => "true","class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
+                <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
             </div>
-            
+
             <div class="col-md-2 control-label  border-left">
-                <?php echo form_label('Eind datum:','einddatum'); ?>
+                <?php echo form_label('Eind datum:', 'einddatum'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("disabled" => "true","class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
+                <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
             </div>
         </div>
-        
+
         <br/>
-        
+
         <div class="row">     
             <div class="col-md-2 control-label">    
-                <?php echo form_label('Land:','land'); ?>   
+                <?php echo form_label('Land:', 'land'); ?>   
             </div>
             <div class="col-md-4">                  
                 <?php
-                    $opties = array();
-                    foreach ($landen as $land) {
-                        $opties[$land->id] = $land->naam;
-                }?>
-                <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control"'); ?>
+                $opties = array();
+                foreach ($landen as $land) {
+                    $opties[$land->id] = $land->naam;
+                }
+                ?>
+            <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control"'); ?>
             </div>            
-            
+
             <div class="col-md-2 control-label border-left">   
-                <?php echo form_label('Stad:', 'stad') ?>
+            <?php echo form_label('Stad:', 'stad') ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array('value' => $conferentie->stad ,'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control')); ?>
+            <?php echo form_input(array('value' => $conferentie->stad, 'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control')); ?>
             </div>
         </div>
-        
+
         <br/>
-        
+
         <div class="row">    
             <div class="col-md-3 control-label">  
-                <?php echo form_label('Max inschrijvingen','maxinschrijvingen') ?>
+            <?php echo form_label('Max inschrijvingen', 'maxinschrijvingen') ?>
             </div>
             <div class="col-md-2">
-                <?php echo form_input(array('value'=>$conferentie->maxInschrijvingen,'type'=>'number','class'=>'form-control','name'=>'maxinschrijvingen')) ?>               
+            <?php echo form_input(array('value' => $conferentie->maxInschrijvingen, 'type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen')) ?>               
             </div>
         </div>
-        
+
         <div class="row">      
             <div class="col-md-3 control-label">       
-                <?php echo form_label('Seminariedag:','seminariedag') ?>
+                <?php echo form_label('Seminariedag:', 'seminariedag') ?>
             </div>
             <div class="col-md-2">    
-                <?php if($conferentie->seminarieDag == 1){ ?>
+                    <?php if ($conferentie->seminarieDag == 1) { ?>
                     <label class="radio">
-                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1','checked'=>'checked')); ?>
-                    Ja</label>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', 'checked' => 'checked')); ?>
+                        Ja</label>
                     <label class="radio">
-                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0')); ?>
-                    Nee</label>    
-                <?php } else {?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0')); ?>
+                        Nee</label>    
+                    <?php } else { ?>
                     <label class="radio">
-                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'1')); ?>
-                    Ja</label>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1')); ?>
+                        Ja</label>
                     <label class="radio">
-                        <?php echo form_radio(array('type'=>'radio','name'=>'seminariedag','value'=>'0','checked'=>'checked')); ?>
-                    Nee</label>
-                <?php } ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', 'checked' => 'checked')); ?>
+                        Nee</label>
+                    <?php } ?>
             </div>
         </div>       
-        
+
         <br/><br/>
-        
-        
+
+
         <br/><br/>
-        
+
         <div class="row">
             <div class="col-md-12">
-                <?php echo form_label('Beschrijving:','beschrijving') ?> 
+                <?php echo form_label('Beschrijving:', 'beschrijving') ?> 
             </div>
 
             <div class="col-md-12">
-                <?php echo form_textarea(array('value'=>$conferentie->beschrijving,'rows'=>'10','name'=>'beschrijving','class'=>'form-control')) ?>
+                <?php echo form_textarea(array('value' => $conferentie->beschrijving, 'rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control')) ?>
             </div>
         </div>        
-                
+
         <br/><br/>
-        
+
         <div class="row">
             <div class="col-md-12">
-            
+
             </div>
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <br/>
-        
+
         <div class="row">
             <div class="col-md-12">   
-                <?php echo form_hidden('id',$conferentie->id); ?>
-                
-                <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>         
-                <?php echo form_submit(array('value'=>'Opslaan','class'=>'btn btn-default')) ?>            
+                <?php echo form_hidden('id', $conferentie->id); ?>
+
+                <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?>         
+                <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>            
             </div>
         </div>
+
+        <?php echo form_close(); ?>
+
+    </div>
         
-    <?php echo form_close(); ?>
-        
-        
-    <div id="resultaat"></div>
 
 </div>
 
