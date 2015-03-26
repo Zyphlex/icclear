@@ -60,20 +60,17 @@ class Routesbeheer extends CI_Controller {
     }
     
     public function update() {        
-        $sponsor->id = $this->input->post('id');
-        $sponsor->naam = $this->input->post('naam');
-        $sponsor->landId = $this->input->post('land');
-        $sponsor->gemeente = $this->input->post('gemeente');
-        $sponsor->postcode = $this->input->post('postcode');
-        $sponsor->straat = $this->input->post('straat');
-        $sponsor->nummer = $this->input->post('nummer');
-        $sponsor->type = $this->input->post('type');
+        $route->id = htmlentities($this->input->post('id'));
+        $route->vertrekpunt = htmlentities($this->input->post('vertrekpunt'));
+        $route->gebouwId = htmlentities($this->input->post('gebouw'));
+        $route->url = htmlentities($this->input->post('url'));
+        $route->beschrijving = htmlentities($this->input->post('beschrijving'));
         
-        $this->load->model('sponsor_model');
-        if ($sponsor->id == 0) {
-            $id = $this->sponsor_model->insert($sponsor);
+        $this->load->model('routes_model');
+        if ($route->id == 0) {
+            $id = $this->routes_model->insert($route);
         } else {
-            $this->sponsor_model->update($sponsor);
+            $this->routes_model->update($route);
         }
         
         echo $id;

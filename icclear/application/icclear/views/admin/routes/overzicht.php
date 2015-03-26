@@ -18,15 +18,15 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderSponsor").click(function() {
+        $(".verwijderItem").click(function() {
             deleteid = $(this).data("id");
-            $("#sponsorDelete").modal('show');
+            $("#modalItemDelete").modal('show');
         });
     }
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigSponsor").click(function() {
+        $(".wijzigItem").click(function() {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -37,27 +37,21 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#naam").val(jobject.naam);
-                        $("#land").val(jobject.land);
-                        $("#postcode").val(jobject.postcode);
-                        $("#gemeente").val(jobject.gemeente);
-                        $("#straat").val(jobject.straat);
-                        $("#nummer").val(jobject.nummer);
-                        $("#type").val(jobject.type);
+                        $("#vertrekpunt").val(jobject.naam);
+                        $("#beschrijving").val(jobject.land);
+                        $("#gebouw").val(jobject.postcode);
+                        $("#url").val(jobject.gemeente);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#naam").val("");
-                $("#land").val("");
-                $("#postcode").val("");
-                $("#gemeente").val("");
-                $("#straat").val("");
-                $("#nummer").val("");
-                $("#type").val("");
+                $("#vertrekpunt").val("");
+                $("#beschrijving").val("");
+                $("#gebouw").val("");
+                $("#url").val("");
             }
             // dialoogvenster openen
-            $("#sponsorModal").modal('show');
+            $("#modalItemDetail").modal('show');
         });
     }
 
@@ -69,7 +63,7 @@
         haaloverzicht();
 
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanSponsor").click(function() {
+        $(".opslaanItem").click(function() {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -79,11 +73,11 @@
                 dataType: "json"
             });
             refreshData();
-            $("#sponsorModal").modal('hide');
+            $("#modalItemDetail").modal('hide');
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteSponsor").click(function() {
+        $(".deleteItem").click(function() {
             $.ajax({
                 type: "POST",
                 url: site_url + "/routesbeheer/delete",
@@ -95,7 +89,7 @@
                     } else {
                         refreshData();
                     }
-                    $("#sponsorDelete").modal('hide');
+                    $("#modalItemDelete").modal('hide');
                 }
             });
         });
@@ -112,13 +106,13 @@
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
 
-    <button class="wijzigSponsor btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
+    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
 
 </div>
 
 
 <!-- MODAL VOOR DETAILS -->         
-<div class="modal fade" id="sponsorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -154,7 +148,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="opslaanSponsor btn btn-primary">Opslaan</button>
+                <button type="button" class="opslaanItem btn btn-primary">Opslaan</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
@@ -164,7 +158,7 @@
 
 
 <!-- MODAL VOOR VERWIJDEREN -->  
-<div class="modal fade" id="sponsorDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalItemDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -179,7 +173,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteSponsor btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteItem btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
