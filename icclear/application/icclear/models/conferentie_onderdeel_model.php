@@ -17,12 +17,17 @@ class Conferentie_onderdeel_model extends CI_Model {
         parent::__construct();
     }
 
+
+    function getAll() {
+        $query = $this->db->get('conferentieOnderdeel');
+        return $query->result();
+    }
+    
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('conferentieOnderdeel');
         return $query->row();
     }
-
 }
 
 ?>

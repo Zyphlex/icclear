@@ -70,8 +70,11 @@ class Conferentie extends CI_Controller {
 //        $this->template->load('admin_master', $partials, $data);
     }
     
+    public function overzicht() {        
+//        $this->load->model('conferentie_onderdeel_model');
+//        $data['routes'] = $this->conferentie_onderdeel_model->getRoutes();
+        
+        $this->load->view('admin/conferentie/lijst', $data);
+    }
     
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

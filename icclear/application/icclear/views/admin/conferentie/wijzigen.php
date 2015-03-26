@@ -1,3 +1,104 @@
+<script type="text/javascript">
+    //Gegevens opvragen en tonen
+    function haaloverzicht() {
+        $.ajax({type: "GET",
+            url: site_url + "/conferentie/overzicht",
+            success: function(result) {
+                $("#resultaat").html(result);
+                maakDetailClick();
+                maakDeleteClick();
+            }
+        });
+    }
+
+    //Wijzigen refreshen
+    function refreshData() {
+        haaloverzicht();
+    }
+
+    //Klikken op de Verwijderen knop
+    function maakDeleteClick() {
+        $(".verwijderItem").click(function() {
+            deleteid = $(this).data("id");
+            $("#modalItemDelete").modal('show');
+        });
+    }
+
+    //Klikken op de Wijzig knop/Toevoeg knop
+    function maakDetailClick() {
+        $(".wijzigItem").click(function() {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/conferentie/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function(result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#vertrekpunt").val(jobject.vertrekPunt);
+                        $("#beschrijving").val(jobject.beschrijving);
+                        $("#gebouw").val(jobject.gebouwId);
+                        $("#url").val(jobject.url);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#vertrekpunt").val("");
+                $("#beschrijving").val("");
+                $("#gebouw").val("");
+                $("#url").val("");
+            }
+            // dialoogvenster openen
+            $("#modalItemDetail").modal('show');
+        });
+    }
+
+    $(document).ready(function() {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php
+        maakDetailClick();
+        maakDeleteClick();
+        //Lijst eerste maal ophalen en tonen
+        haaloverzicht();
+        
+        $('.table').DataTable();
+        
+        //Klikken op "OPSLAAN" in de Detail modal
+        $(".opslaanItem").click(function() {
+            var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            $.ajax({
+                type: "POST",
+                url: site_url + "/conferentie/update",
+                async: false,
+                data: dataString,
+                dataType: "json"
+            });
+            refreshData();
+            $("#modalItemDetail").modal('hide');
+        });
+
+        //Klikken op "BEVESTIG" in de Delete modal
+        $(".deleteItem").click(function() {
+            $.ajax({
+                type: "POST",
+                url: site_url + "/conferentie/delete",
+                async: false,
+                data: {id: deleteid},
+                success: function(result) {
+                    if (result == '0') {
+                        alert("Er is iets foutgelopen!");
+                    } else {
+                        refreshData();
+                    }
+                    $("#modalItemDelete").modal('hide');
+                }
+            });
+        });
+
+    });
+</script>
+
 <div class="col-md-10">
     <h1>Conferentie wijzigen.</h1>
 
@@ -92,36 +193,6 @@
         
         <br/><br/>
         
-<!--        <div class="row">
-            <div class="col-md-12">
-                <div class=" panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Conferentie</h4>
-                    </div>
-
-                    <div class="panel-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th><label for="formule">Formule</label></th>
-                                    <th><label for="prijs">Prijs</label></th>
-                                    <th><label for="korting">Korting</label></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <tr>
-                                        <td><input type="text" class="form-control" name="formule"></td>
-                                        <td><input type="text" class="form-control" name="prijs"></td>
-                                        <td><input type="text" class="form-control" name="korting"></td>
-                                        <td><a href="" class="glyphicon glyphicon-plus btn btn-default"></a></td>
-                                    </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>        -->
         
         <br/><br/>
         
@@ -160,5 +231,7 @@
         
     <?php echo form_close(); ?>
 
+    <div id="resultaat"></div>
+        
 
 </div>
