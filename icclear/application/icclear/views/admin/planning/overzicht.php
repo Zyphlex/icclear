@@ -130,6 +130,12 @@
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
                     
+                    <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
+                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+
+                    <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
+                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                         <?php
                         $drop = array();
@@ -140,11 +146,18 @@
                         }
                         echo form_dropdown('sessie', $drop, '', 'id="sessie" class="form-control"');
                         ?>
-                    <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
-
-                    <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    
+                    <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
+                        <?php
+                        $drop = array();
+                        $teller = 1;
+                        foreach ($zalen as $zaal) {
+                            $drop[$zaal->id] = $zaal->naam;
+                            $teller++;
+                        }
+                        echo form_dropdown('zaal', $drop, '', 'id="zaal" class="form-control"');
+                        ?>
+                    
                 </form>
 
             </div>
