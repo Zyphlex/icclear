@@ -1,5 +1,5 @@
 <?php foreach ($dagen as $dag) { ?>
-<h3><?php echo strtotime(str_replace('-','/', $dag->datum)) . " " . toDDMMYYYY($dag->datum) ?></h3>
+<h3><?php echo str_replace('-','/', $dag->datum) . " " . toDDMMYYYY($dag->datum) ?></h3>
     <table class="table table-beheer">
         <thead>
             <tr>
