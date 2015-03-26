@@ -36,6 +36,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function(result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#vertrekPunt").val(jobject.naam);
                         $("#beschrijving").val(jobject.land);
