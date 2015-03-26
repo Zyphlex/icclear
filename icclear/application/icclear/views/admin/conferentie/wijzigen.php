@@ -22,14 +22,14 @@
                 <?php echo form_label('Begin datum:','begindatum'); ?>
             </div>
             <div class="col-md-4">    
-                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
+                <?php echo form_input(array("disabled" => "true","class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
             </div>
             
             <div class="col-md-2 control-label  border-left">
                 <?php echo form_label('Eind datum:','einddatum'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
+                <?php echo form_input(array("disabled" => "true","class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
             </div>
         </div>
         
