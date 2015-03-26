@@ -28,21 +28,24 @@ class Planningbeheer extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         
         $this->load->model('planning_model');        
-        $data['planningen'] = $this->planning_model->getAllPlanningen();
+        $data['planningen'] = $this->planning_model->getAllByDag();
         
         $this->load->model('sessies_model'); 
         $data['sessies'] = $this->sessies_model->getAlleSessies();
         
         $this->load->model('zaal_model'); 
         $data['zalen'] = $this->zaal_model->getAll();
-        
+                
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
       
     public function overzicht() {        
         $this->load->model('planning_model');
-        $data['planningen'] = $this->planning_model->getAllPlanningen();
+        $data['planningen'] = $this->planning_model->getAllByDag();
+        
+        $this->load->model('conferentiedag_model'); 
+        $data['conferentiedagen'] = $this->conferentiedag_model->getAll();
 
         $this->load->view('admin/planning/lijst', $data);
     }
