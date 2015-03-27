@@ -21,8 +21,8 @@
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
                     <p>
-                        <button class="wijzigSessie btn btn-primary" data-id="<?php echo $sessie->id ?>">Wijzigen</button>
-                        <button class="verwijderSessie btn btn-danger" data-id="<?php echo $sessie->id ?>">Verwijderen</button> 
+                        <button class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
+                        <button class="verwijderSessie glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $sessie->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>
