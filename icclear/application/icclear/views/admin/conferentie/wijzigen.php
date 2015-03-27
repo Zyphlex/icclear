@@ -55,32 +55,6 @@
         });
     }
 
-    function invullenAlleVelden() {
-            var iddb = $(this).data("id");
-            $("#id").val(iddb);
-            if (iddb != 0) {
-                // gegevens ophalen via ajax (doorgeven van server met json)
-                $.ajax({type: "GET",
-                    url: site_url + "/conferentie/detail",
-                    async: false,
-                    data: {id: iddb},
-                    success: function(result) {
-                        var jobject = jQuery.parseJSON(result);
-                        $("#vertrekpunt").val(jobject.vertrekPunt);
-                        $("#beschrijving").val(jobject.beschrijving);
-                        $("#gebouw").val(jobject.gebouwId);
-                        $("#url").val(jobject.url);
-                    }
-                });
-            } else {
-                // bij toevoegen gewoon vakken leeg maken
-                $("#vertrekpunt").val("");
-                $("#beschrijving").val("");
-                $("#gebouw").val("");
-                $("#url").val("");
-            }
-    }
-
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
@@ -143,7 +117,7 @@
                 <?php echo form_label('Naam:', 'naam'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "value" => $conferentie->naam)); ?>
+                <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "value"=>$conferentie->naam)); ?>
             </div>
         </div>
 

@@ -79,9 +79,9 @@ class Conferentie extends CI_Controller {
         $id = $this->input->get('id');
 
         $this->load->model('conferentie_onderdeel_model');
-        $route = $this->conferentie_onderdeel_model->get($id);
+        $onderdeel = $this->conferentie_onderdeel_model->get($id);
 
-        echo json_encode($route);
+        echo json_encode($onderdeel);
     }
     
     public function delete($id){
