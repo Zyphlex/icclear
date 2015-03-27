@@ -55,6 +55,8 @@
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
                 
+        $('.table').DataTable();
+            
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanFaq").click(function() {
               var dataString = $("#JqAjaxForm:eq(0)").serialize();
