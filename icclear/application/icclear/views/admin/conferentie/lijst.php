@@ -27,7 +27,7 @@
                 <td></td>
                 <td></td>
                 <td>
-                    <button class="verwijderItem glyphicon glyphicon-plus btn btn-primary" data-id="0"></button>
+                    <button class="wijzigItem glyphicon glyphicon-plus btn btn-primary" data-id="0"></button>
                 </td>
             </tr>
     </tbody>
