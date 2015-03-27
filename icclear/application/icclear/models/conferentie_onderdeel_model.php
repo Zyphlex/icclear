@@ -29,6 +29,22 @@ class Conferentie_onderdeel_model extends CI_Model {
         $query = $this->db->get('conferentieOnderdeel');
         return $query->row();
     }
+       
+    function update($onderdeel) {
+        $this->db->where('id', $onderdeel->id);
+        $this->db->update('conferentieOnderdeel', $onderdeel);
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('conferentieOnderdeel');
+    }
+    
+    function insert($onderdeel)
+    {
+        $this->db->insert('conferentieOnderdeel', $onderdeel);
+        return $this->db->insert_id();
+    }
 }
 
 ?>
