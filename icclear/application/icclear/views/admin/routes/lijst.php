@@ -1,9 +1,4 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.table').DataTable();
-    });
-</script>
-    
+
 <table class="table table-beheer">
     <thead>
         <tr>                                
