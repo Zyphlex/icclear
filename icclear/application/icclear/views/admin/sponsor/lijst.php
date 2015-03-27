@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.table').DataTable();
+    });
+</script>
+
 <h2>Sponsors</h2>
 <table class = "table table-beheer">
     <thead>
