@@ -95,10 +95,9 @@ class Conferentie extends CI_Controller {
     
     public function update() {        
         $onderdeel->id = htmlentities($this->input->post('id'));
-        $onderdeel->vertrekpunt = htmlentities($this->input->post('vertrekpunt'));
-        $onderdeel->gebouwId = htmlentities($this->input->post('gebouw'));
-        $onderdeel->url = htmlentities($this->input->post('url'));
-        $onderdeel->beschrijving = htmlentities($this->input->post('beschrijving'));
+        $onderdeel->omschrijving = htmlentities($this->input->post('onderdeel'));
+        $onderdeel->prijs = htmlentities($this->input->post('prijs'));
+        $onderdeel->korting = htmlentities($this->input->post('korting'));
         
         $this->load->model('conferentie_onderdeel_model');
         if ($onderdeel->id == 0) {
