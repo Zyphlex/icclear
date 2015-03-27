@@ -243,7 +243,7 @@ button:focus {
 }
 
 .table-beheer td:last-child { 
-    width:220px; 
+    width:100px; 
 }
 
 .login-user { 
