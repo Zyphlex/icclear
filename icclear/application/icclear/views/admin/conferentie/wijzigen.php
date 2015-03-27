@@ -55,6 +55,32 @@
         });
     }
 
+    function invullenAlleVelden() {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/conferentie/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function(result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#vertrekpunt").val(jobject.vertrekPunt);
+                        $("#beschrijving").val(jobject.beschrijving);
+                        $("#gebouw").val(jobject.gebouwId);
+                        $("#url").val(jobject.url);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#vertrekpunt").val("");
+                $("#beschrijving").val("");
+                $("#gebouw").val("");
+                $("#url").val("");
+            }
+    }
+
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
@@ -102,14 +128,10 @@
 <div class="col-md-10">
     <h1>Conferentie</h1>
 
-    <div id="resultaat"></div>
+    <div id="resultaat"></div>    
     
-    
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Conferentie wijzigen</h2>
-            </div>
-        </div>
+    <h2>Conferentie wijzigen</h2>
+        
             
         <?php
         $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
