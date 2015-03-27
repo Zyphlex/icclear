@@ -95,6 +95,7 @@ class Conferentie extends CI_Controller {
     
     public function update() {        
         $onderdeel->id = htmlentities($this->input->post('id'));
+        $onderdeel->conferentieId = $this->session->userdata('conferentieId');
         $onderdeel->omschrijving = htmlentities($this->input->post('onderdeel'));
         $onderdeel->prijs = htmlentities($this->input->post('prijs'));
         $onderdeel->korting = htmlentities($this->input->post('korting'));
