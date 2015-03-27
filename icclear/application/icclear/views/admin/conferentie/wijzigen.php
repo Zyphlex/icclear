@@ -37,18 +37,16 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#vertrekpunt").val(jobject.vertrekPunt);
-                        $("#beschrijving").val(jobject.beschrijving);
-                        $("#gebouw").val(jobject.gebouwId);
-                        $("#url").val(jobject.url);
+                        $("#onderdeel").val(jobject.omschrijving);
+                        $("#prijs").val(jobject.prijs);
+                        $("#korting").val(jobject.korting);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#vertrekpunt").val("");
-                $("#beschrijving").val("");
-                $("#gebouw").val("");
-                $("#url").val("");
+                $("#onderdeel").val("");
+                $("#prijs").val("");
+                $("#korting").val("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
