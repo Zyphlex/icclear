@@ -30,4 +30,4 @@
     </tbody>
 </table>
 
-<button class="wijzigItem btn btn-primary" data-id="0"><span class="btn btn-primary glyphicon glyphicon-plus">Toevoegen</span></button>
+<button class="wijzigItem btn btn-primary" data-id="0"><span class="glyphicon glyphicon-plus btn-primary"></spanToevoegenbutton>
