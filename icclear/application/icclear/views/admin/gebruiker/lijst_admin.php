@@ -23,8 +23,8 @@
                 <td><?php echo $admin->emailadres ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigAdmin btn btn-primary" data-id="<?php echo $admin->id ?>">Wijzigen</button>
-                        <button class="verwijderAdmin btn btn-danger" data-id="<?php echo $admin->id ?>">Verwijderen</button> 
+                        <button class="wijzigAdmin glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $admin->id ?>"></button>
+                        <button class="verwijderAdmin glyphicon glyphicon-pencil btn btn-danger" data-id="<?php echo $admin->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>
