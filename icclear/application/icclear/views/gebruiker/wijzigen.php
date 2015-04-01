@@ -226,7 +226,22 @@
 
                         <div role="tabpanel" class="tab-pane" id="conferenties">
                             <h1>Ingeschreven conferenties</h1>
-                            
+                            <table>
+                                <tr>
+                                    <th>Conferentie</th>
+                                    <th>Plaats</th>
+                                    <th>Periode</th>
+                                    <th>Prijs</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                             <h1>Afgelopen conferenties</h1>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="betalingen">
