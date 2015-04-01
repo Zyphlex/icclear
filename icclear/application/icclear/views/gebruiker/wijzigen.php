@@ -235,10 +235,10 @@
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td><?php echo $inschrijving->conferentieId;?></td>
-                                    <td><?php echo $inschrijving->conferentieId;?></td>
+                                    <td><?php echo $inschrijving->confonderdeel->naam;?></td>
+                                    <td><?php echo $inschrijving->confonderdeel->stad;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
-                                    <td><?php echo $inschrijving->conferentieId;?></td>
+                                    <td><?php echo $inschrijving->betaling;?></td>
                                     <td></td>
                                 </tr>
                             </table>
