@@ -36,7 +36,7 @@ class Admin extends CI_Controller {
     }
     
 
-     public function dashboard($ip) {
+     public function dashboard($id) {
         $this->session->set_userdata('conferentieId', $id);  
         
         $data['user']  = $this->authex->getUserInfo();    
