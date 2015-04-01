@@ -52,7 +52,7 @@
                                 </div>  
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control')); ?>
+                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'disabled' => 'disabled')); ?>
                                 </div>
                             </div>
 
