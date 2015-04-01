@@ -31,4 +31,4 @@
 </table>
 
 
-<button class="wijzigItem btn btn-primary" data-id="0"></button>
+<button class="wijzigItem glyphicon glyphicon-plus btn btn-primary" data-id="0"></button>
