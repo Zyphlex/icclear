@@ -16,6 +16,25 @@ echo form_hidden('id', $gebruiker->id);
                 <a href="" class="btn btn-primary">Account</a>
                 <a href="" class="btn btn-default">Conferenties</a>
                 <a href="" class="btn btn-default">Betalingen</a>
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">...</div>
+                        <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div class="row">            
@@ -179,7 +198,7 @@ echo form_hidden('id', $gebruiker->id);
 
             <div class="row">
                 <div class="col-md-4">   
-                     <?php echo form_label('Straat:', 'straat'); ?>                       
+                    <?php echo form_label('Straat:', 'straat'); ?>                       
                 </div>
 
                 <div class="col-md-8">   
