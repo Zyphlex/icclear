@@ -2,7 +2,7 @@
 
 <div class="col-md-10">        
     <h1>Admin dashboard</h1>  
-    <h2>Verleden</h2>
+    <h2 style="font-style: italic">Verleden</h2>
     <table class="table">
         <thead>
             <tr>
