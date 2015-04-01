@@ -6,7 +6,7 @@
     <table class="table">
         <col width="100">
         <col width="100">
-        <col width="100"
+        <col width="100">
         <thead>
             <tr>
                 <th>Naam</th>
