@@ -2,7 +2,7 @@
 
 <div class="col-md-10">        
     <h1>Admin dashboard</h1>  
-    <h3>Verleden</h3>
+    <h2>Verleden</h2>
     <table class="table">
         <thead>
             <tr>
@@ -25,7 +25,7 @@
         </tbody>
     </table>
     
-    <h3>Huidige</h3>
+    <h2>Huidige</h2>
     <table class="table">
         <thead>
             <tr>
@@ -46,7 +46,7 @@
         </tbody>
     </table>
     
-    <h3>Aankomende</h3>
+    <h2>Aankomende</h2>
     <table class="table">
         <thead>
             <tr>
