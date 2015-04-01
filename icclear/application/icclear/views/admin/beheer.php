@@ -21,8 +21,7 @@
                     <td><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
                     <td><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
-    <?php $teller++;
-} ?>
+    <?php } ?>
         </tbody>
     </table>
     
@@ -66,8 +65,7 @@
                     <td><?php echo toDDMMYYYY($toe->beginDatum) ?></td>
                     <td><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
-    <?php $teller++;
-} ?>
+    <?php } ?>
         </tbody>
     </table>
 
