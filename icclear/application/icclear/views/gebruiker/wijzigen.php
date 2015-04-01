@@ -236,7 +236,7 @@
 </div>
 
 <script type="text/javascript">
-    $('.nav-tabs a').click(function (e) {
+    $('#myTab a').click(function (e) {
         e.preventDefault()
         $(this).tab('show')
     })
