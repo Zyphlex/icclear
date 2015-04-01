@@ -49,4 +49,4 @@ class Sponsor_model extends CI_Model {
         $this->db->delete('sponsor', $sponsor);
     }
 }
-?>
+?> 
