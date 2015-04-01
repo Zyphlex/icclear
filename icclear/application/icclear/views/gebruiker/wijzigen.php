@@ -14,7 +14,7 @@ echo form_hidden('id', $gebruiker->id);
 
         <div class="row">
             <div class="col-md-12">
-                <a href="" class="btn btn-default">Account</a>
+                <a href="" class="btn btn-primary">Account</a>
                 <a href="" class="btn btn-default">Conferenties</a>
                 <a href="" class="btn btn-default">Betalingen</a>
             </div>
