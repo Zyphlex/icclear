@@ -68,7 +68,7 @@ class Profiel extends CI_Controller {
         $data['landen'] = $this->land_model->getAll();
         
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getAllInschijvingByConferentie($user->id);       
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByConferentie($user->id);       
         
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
