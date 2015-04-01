@@ -173,10 +173,7 @@ echo form_hidden('id', $gebruiker->id);
 
             <div class="row">
                 <div class="col-md-4">   
-                     <?php echo form_label('Straat:', 'straat'); ?>   
-                    <label for="straat">
-                        Straat:
-                    </label>
+                     <?php echo form_label('Straat:', 'straat'); ?>                       
                 </div>
 
                 <div class="col-md-8">   
