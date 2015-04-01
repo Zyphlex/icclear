@@ -93,5 +93,5 @@ class Gebouw extends CI_Controller {
 
 }
 
-/* End of file gebouw.php */
+/* End of file gebouw.php  */
 /* Location: ./application/controllers/gebouw.php */
