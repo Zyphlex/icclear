@@ -245,7 +245,21 @@
                             <h1>Afgelopen conferenties</h1>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="betalingen">
-                            Betalingen
+                            <h1>Betalingen</h1>
+                            <table>
+                                <tr>
+                                    <th>Conferentie</th>
+                                    <th>Datum</th>
+                                    <th>Methode</th>
+                                    <th>Bedrag</th>                                    
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>                                    
+                                </tr>
+                            </table>
                         </div>                        
                     </div>
 
