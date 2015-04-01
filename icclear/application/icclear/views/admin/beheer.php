@@ -20,7 +20,7 @@
                     <td style="width:130px"><?php echo $ver->stad ?></td>
                     <td style="width:130px"><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
                     <td style="width:130px"><?php echo toDDMMYYYY($ver->eindDatum) ?></td>
-                    <td style="width:70px"><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                    <td style="width:100px"><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
         </tbody>
@@ -43,7 +43,7 @@
                 <td style="width:200px"><?php echo $actieve->stad ?></td>
                 <td style="width:200px"><?php echo toDDMMYYYY($actieve->beginDatum) ?></td>
                 <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
-                <td style="width:100px"><?php echo anchor('admin/dashboard/' . $actieve->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                <td style="width:150px"><?php echo anchor('admin/dashboard/' . $actieve->id, 'Beheren', 'class="btn btn-default"'); ?></td>
             </tr>
 
         </tbody>
@@ -67,7 +67,7 @@
                     <td style="width:200px"><?php echo $toe->stad ?></td>
                     <td style="width:200px"><?php echo toDDMMYYYY($toe->beginDatum) ?></td>
                     <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
-                    <td style="width:100px"><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                    <td style="width:150px"><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
 <?php } ?>
         </tbody>
