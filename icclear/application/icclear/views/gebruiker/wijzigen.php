@@ -139,105 +139,102 @@
                                 </div>
                             <?php } ?>
 
+
+
+
+                            <div class="col-md-6 border-left">      
+                                <div class="row">
+                                    <div class="col-md-4">  
+                                        <?php echo form_label('Land:', 'land'); ?>                   
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <?php
+                                        foreach ($landen as $land) {
+                                            $options[$land->id] = $land->naam;
+                                        }
+                                        echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
+                                        ?>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <?php echo form_label('Postcode:', 'postcode'); ?>                                          
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <?php echo form_label('Straat:', 'straat'); ?>                       
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="huisnummer">
+                                                Huisnummer:
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">   
+                                            <label for="methode">
+                                                Betaalmethode:
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-8">   
+                                            <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control" disabled="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+                            <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+                            <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
+                            <?php echo form_close(); ?> 
                         </div>
 
-
-                        <div class="col-md-6 border-left">      
-                            <div class="row">
-                                <div class="col-md-4">  
-                                    <?php echo form_label('Land:', 'land'); ?>                   
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <?php
-                                    foreach ($landen as $land) {
-                                        $options[$land->id] = $land->naam;
-                                    }
-                                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
-                                    ?>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <?php echo form_label('Postcode:', 'postcode'); ?>                                          
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <?php echo form_label('Straat:', 'straat'); ?>                       
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="huisnummer">
-                                            Huisnummer:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">   
-                                        <label for="methode">
-                                            Betaalmethode:
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-8">   
-                                        <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control" disabled="true">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>         
-
+                        <div role="tabpanel" class="tab-pane" id="conferenties">Conferenties</div>
+                        <div role="tabpanel" class="tab-pane" id="betalingen">Betalingen</div>                        
                     </div>
 
-                    <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
-                    <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
-
-                    <?php echo form_close(); ?>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="conferenties">Conferenties</div>
-                <div role="tabpanel" class="tab-pane" id="betalingen">Betalingen</div>                        
             </div>
-
         </div>
-    </div>
-</div>
 
-<script type="text/javascript">
-    $('#myTab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-</script>
+        <script type="text/javascript">
+            $('#myTab a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
