@@ -14,9 +14,9 @@ echo form_hidden('id', $gebruiker->id);
 
         <div class="row">
             <div class="col-md-12">
-                <a href="" class="btn btn-default"></a>
-                <a href="" class="btn btn-default"></a>
-                <a href="" class="btn btn-default"></a>
+                <a href="" class="btn btn-default">Account</a>
+                <a href="" class="btn btn-default">Conferenties</a>
+                <a href="" class="btn btn-default">Betalingen</a>
             </div>
             <div class="col-md-4">   
                 <?php echo form_label('Voornaam:', 'voornaam'); ?>
