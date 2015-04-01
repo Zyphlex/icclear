@@ -38,9 +38,9 @@ class Profiel extends CI_Controller {
         $gebruiker->voornaam = $this->input->post('voornaam');
         $gebruiker->familienaam = $this->input->post('familienaam');
         $gebruiker->geboortedatum = $this->input->post('geboortedatum');
-        $gebruiker->emailadres = $this->input->post('emailadres');
+//        $gebruiker->emailadres = $this->input->post('emailadres');
         $gebruiker->geslacht = $this->input->post('geslacht');
-        $gebruiker->typeId = $this->input->post('type');
+//        $gebruiker->typeId = $this->input->post('type');
         $gebruiker->landId = $this->input->post('land');
         $gebruiker->gemeente = $this->input->post('gemeente');
         $gebruiker->postcode = $this->input->post('postcode');
