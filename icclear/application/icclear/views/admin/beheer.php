@@ -26,8 +26,8 @@
         </tbody>
     </table>
 
-    <h2>Huidige</h2>
-    <table class="table">
+    <h3 style="font-style: italic; margin-left: 25px;">Huidige</h3>
+    <table class="table" style="margin-left: 50px">
         <thead>
             <tr>
                 <th>Naam</th>
@@ -49,8 +49,8 @@
         </tbody>
     </table>
 
-    <h2>Aankomende</h2>
-    <table class="table">
+    <h3 style="font-style: italic; margin-left: 25px;">Aankomende</h3>
+    <table class="table" style="margin-left: 50px">
         <thead>
             <tr>
                 <th>Naam</th>
