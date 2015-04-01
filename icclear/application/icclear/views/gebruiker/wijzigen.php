@@ -235,3 +235,9 @@ echo form_hidden('id', $gebruiker->id);
 
 <?php echo form_close(); ?>
 
+<script type="text/javascript">
+$('.nav-tabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
