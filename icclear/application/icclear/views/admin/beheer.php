@@ -4,9 +4,6 @@
     <h1>Admin dashboard</h1>  
     <h2>Verleden</h2>
     <table class="table">
-        <col width="100">
-        <col width="100">
-        <col width="100">
         <thead>
             <tr>
                 <th>Naam</th>
@@ -18,9 +15,9 @@
         <tbody>
             <?php foreach ($verleden as $ver) { ?>
                 <tr>
-                    <td><?php echo $ver->naam ?></td>
-                    <td><?php echo $ver->stad ?></td>
-                    <td><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
+                    <td style="width:80px"><?php echo $ver->naam ?></td>
+                    <td style="width:80px"><?php echo $ver->stad ?></td>
+                    <td style="width:80px"><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
                     <td><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
