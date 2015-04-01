@@ -31,4 +31,4 @@
 </table>
 
 
-<button class="wijzigItem glyphicon glyphicon-plus btn btn-primary" data-id="0">Nieuw onderdeel toevoegen</button>
+<button class="wijzigItem btn btn-primary" data-id="0"><span class="glyphicon glyphicon-plus">  Nieuw onderdeel toevoegen</span></button>
