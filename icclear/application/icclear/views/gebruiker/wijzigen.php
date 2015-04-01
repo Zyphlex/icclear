@@ -224,8 +224,14 @@
                             <?php echo form_close(); ?> 
                         </div>
 
-                        <div role="tabpanel" class="tab-pane" id="conferenties">Conferenties</div>
-                        <div role="tabpanel" class="tab-pane" id="betalingen">Betalingen</div>                        
+                        <div role="tabpanel" class="tab-pane" id="conferenties">
+                            <h1>Ingeschreven conferenties</h1>
+                            
+                            <h1>Afgelopen conferenties</h1>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="betalingen">
+                            Betalingen
+                        </div>                        
                     </div>
 
                 </div>
