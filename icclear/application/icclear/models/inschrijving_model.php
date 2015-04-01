@@ -45,10 +45,12 @@ class Inschrijving_model extends CI_Model {
         
         $this->load->model('betaling_model');
         $this->load->model('conferentie_onderdeel_model');
+        $this->load->model('conferentie_model');
                 
         $inschrijving->betaling = $this->betaling_model->get($id);
         $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-                    
+        $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);            
+        
         return $inschrijving;
     }
     
