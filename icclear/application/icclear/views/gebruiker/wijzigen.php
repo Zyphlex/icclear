@@ -256,7 +256,7 @@
                                 </tr>
                                 <tr>
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
-                                    <td></td>
+                                    <td><?php echo $inschrijving->datum;?></td>
                                     <td><?php echo $inschrijving->betaling->methode;?></td>
                                     <td></td>                                    
                                 </tr>
