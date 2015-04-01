@@ -40,6 +40,20 @@ class Conferentie_model extends CI_Model {
         $query = $this->db->get('conferentie');
         return $query->row();
     }
+    
+    function getVerledenConferentie()
+    {
+        $this->db->where('statusId', '1');
+        $query = $this->db->get('conferentie');
+        return $query->result();
+    }
+    
+    function getToekomstConferentie()
+    {
+        $this->db->where('statusId', '3');
+        $query = $this->db->get('conferentie');
+        return $query->result();
+    }
 
     function update($conferentie)
     {
