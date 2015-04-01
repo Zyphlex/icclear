@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             <tr>
-                <td style="width:200px"><?php echo $actieve->naam ?></td>
+                <td style="width:230px"><?php echo $actieve->naam ?></td>
                 <td style="width:200px"><?php echo $actieve->stad ?></td>
                 <td style="width:200px"><?php echo toDDMMYYYY($actieve->beginDatum) ?></td>
                 <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
@@ -63,7 +63,7 @@
         <tbody>
             <?php foreach ($toekomenden as $toe) { ?>
                 <tr>
-                    <td style="width:200px"><?php echo $toe->naam ?></td>
+                    <td style="width:230px"><?php echo $toe->naam ?></td>
                     <td style="width:200px"><?php echo $toe->stad ?></td>
                     <td style="width:200px"><?php echo toDDMMYYYY($toe->beginDatum) ?></td>
                     <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
