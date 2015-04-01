@@ -235,8 +235,8 @@
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td><?php echo $inschrijving->confonderdeel->naam;?></td>
-                                    <td><?php echo $inschrijving->confonderdeel->stad;?></td>
+                                    <td><?php echo $inschrijving->conferentie->naam;?></td>
+                                    <td><?php echo $inschrijving->conferentie->stad;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
                                     <td><?php echo $inschrijving->betaling->methode;?></td>
                                     <td></td>
@@ -254,7 +254,7 @@
                                     <th>Bedrag</th>                                    
                                 </tr>
                                 <tr>
-                                    <td><?php echo $inschrijving->confonderdeel->naam;?></td>
+                                    <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td></td>
                                     <td><?php echo $inschrijving->betaling->methode;?></td>
                                     <td></td>                                    
