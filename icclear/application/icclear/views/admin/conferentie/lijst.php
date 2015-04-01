@@ -31,6 +31,5 @@
 </table>
 
 <div class="btn-group">
-<button class="wijzigItem glyphicon glyphicon-plus btn btn-primary" data-id="0"></button>
-<button class="wijzigItem btn btn-primary" data-id="0">Toevoegen</button>
+    <button class="wijzigItem btn btn-primary" data-id="0"><span class="glyphicon glyphicon-plus">Toevoegen</span></button>
 </div>
