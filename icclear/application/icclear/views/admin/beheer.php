@@ -2,8 +2,8 @@
 
 <div class="col-md-10">        
     <h1>Admin dashboard</h1>  
-    <h2 style="font-style: italic">Verleden</h2>
-    <table class="table">
+    <h3 style="font-style: italic">Verleden</h3>
+    <table class="table" style="margin-left: 100px">
         <thead>
             <tr>
                 <th>Naam</th>
