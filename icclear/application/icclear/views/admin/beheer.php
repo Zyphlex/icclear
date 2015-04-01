@@ -26,7 +26,7 @@
         </tbody>
     </table>
 
-    <h3 style="font-style: italic; margin-left: 25px;">Huidige</h3>
+    <h3 style="font-style: italic; margin-left: 25px;"><b>Huidige</b></h3>
     <table class="table" style="margin-left: 50px">
         <thead>
             <tr>
