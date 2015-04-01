@@ -28,7 +28,9 @@ class Admin extends CI_Controller {
         $data['active'] = 'admin';        
                 
         $this->load->model('conferentie_model');
-        $data['conferenties'] = $this->conferentie_model->getAll();
+        $data['actieve'] = $this->conferentie_model->getActieveConferentie();
+        $data['verleden'] = $this->conferentie_model->getVerledenConferentie();
+        $data['toekomenden'] = $this->conferentie_model->getToekomstConferentie();
         $data['conferentieId'] = 0;
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
