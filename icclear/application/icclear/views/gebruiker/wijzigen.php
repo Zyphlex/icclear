@@ -225,7 +225,7 @@
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="conferenties">
-                            <h1>Ingeschreven conferenties</h1>
+                            <h2>Ingeschreven conferenties</h2>
                             <table>
                                 <tr>
                                     <th>Conferentie</th>
@@ -242,7 +242,8 @@
                                     <td></td>
                                 </tr>
                             </table>
-                            <h1>Afgelopen conferenties</h1>
+                            <h2>Afgelopen conferenties</h2>
+                            
                         </div>
                         <div role="tabpanel" class="tab-pane" id="betalingen">
                             <h1>Betalingen</h1>
