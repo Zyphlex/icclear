@@ -8,7 +8,8 @@
             <tr>
                 <th>Naam</th>
                 <th>Stad</th>
-                <th>Begin datum</th>
+                <th>Begindatum</th>
+                <th>Einddatum</th>
                 <th>Beheer</th>
             </tr>
         </thead>
