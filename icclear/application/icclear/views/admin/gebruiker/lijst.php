@@ -28,7 +28,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigGebruiker glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebruiker->id ?>"></button>
-                        <button class="verwijderGebruiker glyphicon glyphicon-pencil btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button> 
+                        <button class="verwijderGebruiker glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>
