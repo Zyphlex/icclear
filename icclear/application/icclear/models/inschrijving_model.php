@@ -25,6 +25,7 @@ class Inschrijving_model extends CI_Model {
         $this->load->model('gebruiker_model');
         $this->load->model('betaling_model');
         $this->load->model('conferentie_onderdeel_model');
+        $this->load->model('conferentie_model');
 
 
         foreach ($inschrijvingen as $inschrijving) {
