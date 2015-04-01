@@ -16,10 +16,10 @@
         <tbody>
             <?php foreach ($verleden as $ver) { ?>
                 <tr>
-                    <td style="width:200px"><?php echo $ver->naam ?></td>
-                    <td style="width:170px"><?php echo $ver->stad ?></td>
-                    <td style="width:170px"><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
-                    <td style="width:170px"><?php echo toDDMMYYYY($ver->eindDatum) ?></td>
+                    <td style="width:170px"><?php echo $ver->naam ?></td>
+                    <td style="width:150px"><?php echo $ver->stad ?></td>
+                    <td style="width:150px"><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
+                    <td style="width:150px"><?php echo toDDMMYYYY($ver->eindDatum) ?></td>
                     <td style="width:100px"><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
