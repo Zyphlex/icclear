@@ -2,8 +2,8 @@
 
 <div class="col-md-10">        
     <h1>Admin dashboard</h1>  
-    <h3 style="font-style: italic">Verleden</h3>
-    <table class="table" style="margin-left: 100px">
+    <h3 style="font-style: italic; margin-left: 25px;">Verleden</h3>
+    <table class="table" style="margin-left: 50px">
         <thead>
             <tr>
                 <th>Naam</th>
@@ -20,7 +20,7 @@
                     <td style="width:170px"><?php echo $ver->stad ?></td>
                     <td style="width:170px"><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
                     <td style="width:170px"><?php echo toDDMMYYYY($ver->eindDatum) ?></td>
-                    <td><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                    <td style="width:100px"><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
         </tbody>
