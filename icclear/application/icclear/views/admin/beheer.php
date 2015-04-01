@@ -4,6 +4,9 @@
     <h1>Admin dashboard</h1>  
     <h2>Verleden</h2>
     <table class="table">
+        <col width="100">
+        <col width="100">
+        <col width="100"
         <thead>
             <tr>
                 <th>Naam</th>
@@ -13,18 +16,17 @@
             </tr>
         </thead>
         <tbody>
-            <?php 
-            foreach ($verleden as $ver) { ?>
+            <?php foreach ($verleden as $ver) { ?>
                 <tr>
                     <td><?php echo $ver->naam ?></td>
                     <td><?php echo $ver->stad ?></td>
                     <td><?php echo toDDMMYYYY($ver->beginDatum) ?></td>
                     <td><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
-    <?php } ?>
+            <?php } ?>
         </tbody>
     </table>
-    
+
     <h2>Huidige</h2>
     <table class="table">
         <thead>
@@ -36,16 +38,16 @@
             </tr>
         </thead>
         <tbody>
-                <tr>
-                    <td><?php echo $actieve->naam ?></td>
-                    <td><?php echo $actieve->stad ?></td>
-                    <td><?php echo toDDMMYYYY($actieve->beginDatum) ?></td>
-                    <td><?php echo anchor('admin/dashboard/' . $actieve->id, 'Beheren', 'class="btn btn-default"'); ?></td>
-                </tr>
-    
+            <tr>
+                <td><?php echo $actieve->naam ?></td>
+                <td><?php echo $actieve->stad ?></td>
+                <td><?php echo toDDMMYYYY($actieve->beginDatum) ?></td>
+                <td><?php echo anchor('admin/dashboard/' . $actieve->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+            </tr>
+
         </tbody>
     </table>
-    
+
     <h2>Aankomende</h2>
     <table class="table">
         <thead>
@@ -57,15 +59,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php 
-            foreach ($toekomenden as $toe) { ?>
+            <?php foreach ($toekomenden as $toe) { ?>
                 <tr>
                     <td><?php echo $toe->naam ?></td>
                     <td><?php echo $toe->stad ?></td>
                     <td><?php echo toDDMMYYYY($toe->beginDatum) ?></td>
                     <td><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
-    <?php } ?>
+<?php } ?>
         </tbody>
     </table>
 
