@@ -58,11 +58,11 @@ class Admin extends CI_Controller {
         $data['aantalInschrijvingen'] = $this->inschrijving_model->getCountByConferentie($id);
         
         $this->load->model('sessies_model');
-        $data['ongekeurdeSessies'] = $this->sessies_model->countOngekeurde();
-        $data['gekeurdeSessies'] = $this->sessies_model->countGekeurde();
+        $data['ongekeurdeSessies'] = $this->sessies_model->countOngekeurde($id);
+        $data['gekeurdeSessies'] = $this->sessies_model->countGekeurde($id);
         
         $this->load->model('activiteit_model');
-        $data['activiteiten'] = $this->activiteit_model->countActiviteitenActieve();
+        $data['activiteiten'] = $this->activiteit_model->countActiviteiten();
         
         $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
