@@ -37,7 +37,7 @@ class Inschrijven extends CI_Controller {
         
         $inschrijving = new stdClass();
         
-        console.log($this->post('conferentieonderdeelId'));
+        console.log($this->post('methode'));
         
         $inschrijving->gebruikerId = $this->authex->getUserInfo('user_id');
         $inschrijving->conferentieId = $this->post('conferentieId');
