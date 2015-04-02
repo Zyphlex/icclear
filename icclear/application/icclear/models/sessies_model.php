@@ -109,21 +109,19 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
     
-    function countOngekeurde() {        
-        $this->load->model('conferentie_model');
-        $actieveConferentie = $this->conferentie_model->getActieveConferentie();                
+    function countOngekeurde($id) {        
+        $this->load->model('conferentie_model');                      
         $this->db->where('isGoedgekeurd', '0');
-        $this->db->where('conferentieId', $actieveConferentie->id);
+        $this->db->where('conferentieId', $id);
         $query = $this->db->get('sessie');
         $rowcount = $query->num_rows();           
         return $rowcount;
     }
     
-    function countGekeurde() {        
-        $this->load->model('conferentie_model');
-        $actieveConferentie = $this->conferentie_model->getActieveConferentie();                
+    function countGekeurde($id) {        
+        $this->load->model('conferentie_model');                      
         $this->db->where('isGoedgekeurd', '1');
-        $this->db->where('conferentieId', $actieveConferentie->id);
+        $this->db->where('conferentieId', $id);
         $query = $this->db->get('sessie');
         $rowcount = $query->num_rows();           
         return $rowcount;
