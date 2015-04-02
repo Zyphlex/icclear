@@ -104,7 +104,7 @@ class Spreker extends CI_Controller {
         $config['max_width'] = 500;
         
         $this->load->library('upload', $config);
-        
+        $this->upload->initialize($config);
         if ( ! $this->upload->do_upload())
 		{
 			$error = array('error' => $this->upload->display_errors());
