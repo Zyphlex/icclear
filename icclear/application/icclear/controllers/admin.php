@@ -62,7 +62,7 @@ class Admin extends CI_Controller {
         $data['gekeurdeSessies'] = $this->sessies_model->countGekeurde($id);
         
         $this->load->model('activiteit_model');
-        $data['activiteiten'] = $this->activiteit_model->countActiviteiten();
+        $data['activiteiten'] = $this->activiteit_model->countActiviteiten($id);
         
         $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
