@@ -21,8 +21,8 @@
                 <td><?php echo $zaal->maximumAantalPersonen ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigZaal btn btn-primary" data-id="<?php echo $zaal->id ?>">Wijzigen</button>
-                        <button class="verwijderZaal btn btn-danger" data-id="<?php echo $zaal->id ?>">Verwijderen</button> 
+                        <button class="wijzigZaal glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $zaal->id ?>"></button>
+                        <button class="verwijderZaal glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $zaal->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>
