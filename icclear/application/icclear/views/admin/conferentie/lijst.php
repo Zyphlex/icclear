@@ -9,7 +9,7 @@
 <table class="table table-beheer">
     <thead>
         <tr>
-            <th><label for="formule">Formule</label></th>
+            <th><label for="formule">Onderdeel</label></th>
             <th><label for="prijs">Prijs</label></th>
             <th><label for="korting">Korting</label></th>
             <th></th>
