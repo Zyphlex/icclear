@@ -3,7 +3,7 @@
 
     <?php
         $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
-        echo form_open('conferentie/toevoegen', $attributes);
+        echo form_open('conferentie/nieuwopslaan', $attributes);
         ?>
 
         <div class="row">  
