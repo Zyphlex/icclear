@@ -95,7 +95,7 @@ class Spreker extends CI_Controller {
         $biografie = $this->input->post("biografie");
         
         // foto
-        $config['upload_path'] = base_url() . '/application/upload/fotos/sprekers';
+        $config['upload_path'] = base_url() . '/application/upload/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['file_name'] = 'spreker' . $spreker->id . '.png';
         $config['max_size'] = 200;
@@ -103,6 +103,7 @@ class Spreker extends CI_Controller {
         $config['max_width'] = 500;       
                 
         $spreker->biografie = $biografie;
+        $spreker->foto = $config['file_name'];
         
         $this->gebruiker_model->update($spreker);
         
