@@ -38,10 +38,10 @@ class Inschrijven extends CI_Controller {
         $inschrijving = new stdClass();
         
         $inschrijving->gebruikerId = $this->authex->getUserInfo('user_id');
-        $inschrijving->conferentieId = $this->get('conferentieId');
-        $inschrijving->conferentieOnderdeelId = $this->get('conferentieonderdeelId');
-        $inschrijving->betalingId = $this->input->get('methode');
-        $inschrijving->datum = $this->input->get('datum');
+        $inschrijving->conferentieId = $this->post('conferentieId');
+        $inschrijving->conferentieOnderdeelId = $this->post('conferentieonderdeelId');
+        $inschrijving->betalingId = $this->input->post('methode');
+        $inschrijving->datum = $this->input->post('datum');
         
         $this->load->model('inschrijving_model');
         $inschrijvingId = $this->inschrijving_model->insert($inschrijving);
