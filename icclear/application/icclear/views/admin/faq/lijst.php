@@ -19,8 +19,8 @@
                 <td><?php echo $vraag->antwoord ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigFaq btn btn-primary" data-id="<?php echo $vraag->id ?>">Wijzigen</button>
-                        <button class="verwijderFaq btn btn-danger" data-id="<?php echo $vraag->id ?>">Verwijderen</button> 
+                        <button class="wijzigFaq glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $vraag->id ?>"></button>
+                        <button class="verwijderFaq glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $vraag->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>
