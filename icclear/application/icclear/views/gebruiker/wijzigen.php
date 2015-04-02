@@ -24,6 +24,8 @@
                             echo form_open('profiel/update', $attributes);
                             echo form_hidden('id', $gebruiker->id);
                             ?>
+                            <div class="row">
+                                <div class="col-md-6">
                             <div class="row">            
                                 <div class="col-md-4">   
                                     <?php echo form_label('Voornaam:', 'voornaam'); ?>
@@ -138,10 +140,8 @@
                                     </div>
                                 </div>
                             <?php } ?>
-
-
-
-
+                                </div>
+                            
                             <div class="col-md-6 border-left">      
                                 <div class="row">
                                     <div class="col-md-4">  
@@ -224,6 +224,7 @@
                             <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
                             <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
                             <?php echo form_close(); ?> 
+                        </div>
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="conferenties">
