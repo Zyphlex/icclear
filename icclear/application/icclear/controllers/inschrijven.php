@@ -46,7 +46,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('inschrijving_model');
         $inschrijvingId = $this->inschrijving_model->insert($inschrijving);
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'welcome_message', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
     }
     
