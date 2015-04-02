@@ -36,7 +36,7 @@ class Gebouw extends CI_Controller {
 
     public function overzicht() {
         $this->load->model('gebouw_model');
-        $data['gebouwen'] = $this->gebouw_model->getAll();
+        $data['gebouwen'] = $this->gebouw_model->getAll(); 
 
         $this->load->view('admin/gebouw/lijst', $data);
     }
