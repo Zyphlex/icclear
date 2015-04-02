@@ -38,15 +38,21 @@ class Conferentie extends CI_Controller {
     }
     
 
-     public function toevoegen() {
-        $data['user']  = $this->authex->getUserInfo();    
+     public function toevoegen() { 
+        $conferentie->stad = $this->input->post('stad');
+        $conferentie->landId = $this->input->post('land');
+        $conferentie->naam = $this->input->post('naam');
+        $conferentie->beschrijving = $this->input->post('beschrijving');
+        $conferentie->seminarieDag = $this->input->post('seminariedag');
+        $conferentie->maxInschrijvingen = $this->input->post('maxinschrijvingen');
+        $conferentie->beginDatum = $this->input->post('begindatum');
+        $conferentie->eindDatum = $this->input->post('einddatum');
         
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - ';         
-        $data['active'] = 'admin'; 
+        $this->load->model('conferentie_model');     
+        $this->conferentie_model->insert($conferentie);  
+        echo $id;        
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/toevoegen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        redirect('admin/dashboard/' . $conferentie->id);
     }
     
     public function opslaan() {        

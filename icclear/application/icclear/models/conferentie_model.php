@@ -61,6 +61,11 @@ class Conferentie_model extends CI_Model {
         $this->db->update('conferentie', $conferentie);
     }
     
+    function insert($conferentie)
+    {
+        $this->db->insert('conferentie', $conferentie);
+        return $this->db->insert_id();
+    }
 }
 
 ?>
