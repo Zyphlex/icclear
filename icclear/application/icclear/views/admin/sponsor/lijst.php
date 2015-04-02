@@ -31,8 +31,8 @@
                     <td> <?php echo $sponsor->nummer; ?> </td>
                     <td>
                         <p>
-                            <button class="wijzigSponsor btn btn-primary" data-id="<?php echo $sponsor->id ?>">Wijzigen</button>
-                            <button class="verwijderSponsor btn btn-danger" data-id="<?php echo $sponsor->id ?>">Verwijderen</button>
+                            <button class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button class="verwijderSponsor glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
                         </p>
                     </td>
                 </tr>
