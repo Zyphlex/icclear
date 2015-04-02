@@ -18,7 +18,7 @@ echo form_open('inschrijven/inschrijven', $attributes);
 
 <div class="row">
     <div class="col-md-12">
-        <form action="inschrijven">
+        <form action="inschrijven/inschrijven">
         <h3>Selecteer formule</h3>
 
         <table class="table">
