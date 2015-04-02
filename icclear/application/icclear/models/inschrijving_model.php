@@ -61,6 +61,12 @@ class Inschrijving_model extends CI_Model {
         return $rowcount;
     }
     
+    function insert($inschrijving)
+    {
+        $this->db->insert('inschrijving', $inschrijving);
+        return $this->db->insert_id();
+    }
+    
 
 }
 
