@@ -46,6 +46,13 @@ class Activiteit_model extends CI_Model {
         $query = $this->db->get('activiteit');
         return $query->num_rows;
     }
+    
+    function countActiviteiten($id) {
+        $this->load->model('conferentie_model');        
+        $this->db->where('conferentieId', $id);
+        $query = $this->db->get('activiteit');
+        return $query->num_rows;
+    }
 
     function getActiviteitenActieve() {
         $this->load->model('conferentie_model');
