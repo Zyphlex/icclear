@@ -65,7 +65,7 @@
                                     <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
                                 </div>
                             </div>
-
+                        </div>
                             <div class="row">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
@@ -268,8 +268,10 @@
 
                 </div>
             </div>
+            
         </div>
     </div>
+    
 </div>
         <script type="text/javascript">
             $('#myTab a').click(function (e) {
