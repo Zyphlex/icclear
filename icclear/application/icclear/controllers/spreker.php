@@ -87,6 +87,9 @@ class Spreker extends CI_Controller {
         $data['title'] = 'IC Clear - Biografie';
         $data['active'] = 'spreker';
         
+        $this->load->model('gebruiker_model');
+        $spreker = $this->gebruiker_model->get($id);
+        
         // biografie
         $id = $this->session->userdata('user_id');
         $biografie = $this->input->post("biografie");
@@ -94,13 +97,11 @@ class Spreker extends CI_Controller {
         // foto
         $config['upload_path'] = base_url() . '/application/upload/fotos/sprekers';
         $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['file_name'] = 'spreker' . $spreker->id . '.png';
         $config['max_size'] = 200;
-        $config['max_height'] = 250;
-        $config['max_width'] = 250;
-        
-        $this->load->model('gebruiker_model');
-        $spreker = $this->gebruiker_model->get($id);
-        
+        $config['max_height'] = 500;
+        $config['max_width'] = 500;       
+                
         $spreker->biografie = $biografie;
         
         $this->gebruiker_model->update($spreker);
