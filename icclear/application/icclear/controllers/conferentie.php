@@ -61,6 +61,7 @@ class Conferentie extends CI_Controller {
         $conferentie->maxInschrijvingen = $this->input->post('maxinschrijvingen');
         $conferentie->beginDatum = $this->input->post('begindatum');
         $conferentie->eindDatum = $this->input->post('einddatum');
+        $conferentie->statusId = 3;
         
         $this->load->model('conferentie_model');     
         $id = $this->conferentie_model->insert($conferentie);  
