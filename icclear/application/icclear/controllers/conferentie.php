@@ -45,6 +45,9 @@ class Conferentie extends CI_Controller {
         $data['title'] = 'IC Clear - ';         
         $data['active'] = 'admin'; 
         
+        $this->load->model('land_model');        
+        $data['landen'] = $this->land_model->getAll();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
@@ -60,10 +63,10 @@ class Conferentie extends CI_Controller {
         $conferentie->eindDatum = $this->input->post('einddatum');
         
         $this->load->model('conferentie_model');     
-        $this->conferentie_model->insert($conferentie);  
-        echo $id;        
+        $id = $this->conferentie_model->insert($conferentie);  
+              
         
-        redirect('admin/dashboard/' . $conferentie->id);
+        redirect('admin/dashboard/' . $id);
     }
     
     public function opslaan() {        
