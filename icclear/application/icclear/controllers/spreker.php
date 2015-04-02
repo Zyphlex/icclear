@@ -93,6 +93,8 @@ class Spreker extends CI_Controller {
         
         // foto
         $config['upload_path'] = base_url() . '/application/upload/fotos/sprekers';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size'] = 200;
         
         $this->load->model('gebruiker_model');
         $spreker = $this->gebruiker_model->get($id);
