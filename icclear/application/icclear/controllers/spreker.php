@@ -92,7 +92,7 @@ class Spreker extends CI_Controller {
         $biografie = $this->input->post("biografie");
         
         // foto
-        $config['upload_path'] = 'upload/fotos';
+        $config['upload_path'] = base_url() . '/application/upload/fotos/sprekers';
         
         $this->load->model('gebruiker_model');
         $spreker = $this->gebruiker_model->get($id);
