@@ -87,11 +87,12 @@ class Spreker extends CI_Controller {
         $data['title'] = 'IC Clear - Biografie';
         $data['active'] = 'spreker';
         
+        $id = $this->session->userdata('user_id');
+        
         $this->load->model('gebruiker_model');
         $spreker = $this->gebruiker_model->get($id);
         
         // biografie
-        $id = $this->session->userdata('user_id');
         $biografie = $this->input->post("biografie");
         
         // foto
