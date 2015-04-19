@@ -21,12 +21,22 @@ class Logon extends CI_Controller {
     public function aanmelden() {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
-
+        
+        //is geactiveerd
+        $this->load->model('logon_model');
+        $actCheck = $this->logon_model->isGeactiveerd($email);
+        if($actCheck == true){
+            //login
         if ($this->authex->login($email, sha1($password))) {
             redirect('home');
         } else {
             redirect('faq');
         }
+        }
+        else{
+            redirect();            
+        }
+        
     }
 
     public function vergeten() {
@@ -61,8 +71,7 @@ class Logon extends CI_Controller {
         $user->geslacht = $this->input->post('geslacht');
         $user->land = $this->input->post('land');
         $user->generatedKey = $genkey;
-        
-        
+                
         $id = $this->authex->register($user);
         if ($id != 0) {
             $this->sendmail($user->email, $user->generatedKey);
