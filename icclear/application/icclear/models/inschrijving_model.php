@@ -41,8 +41,13 @@ class Inschrijving_model extends CI_Model {
     function getInschijvingByConferentie($id) {
         $this->db->where('gebruikerId',$id);
         $query = $this->db->get('inschrijving');
-        $inschrijving = $query->row();
-        
+        if ($query->num_rows() == 1){
+            $inschrijving = $query->row();
+        }            
+        else{
+            $inschrijving = "";
+        }
+                
         $this->load->model('betaling_model');
         $this->load->model('conferentie_onderdeel_model');
         $this->load->model('conferentie_model');
