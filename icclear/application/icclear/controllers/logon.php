@@ -19,10 +19,10 @@ class Logon extends CI_Controller {
     }
 
     public function aanmelden() {
-        $naam = $this->input->post('naam');
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        if ($this->authex->login($naam, sha1($password))) {
+        if ($this->authex->login($email, sha1($password))) {
             redirect('home');
         } else {
             redirect('faq');
