@@ -13,7 +13,7 @@
         
         <div class="row">
             <div class="col-md-4">      
-                <label for="naam">Gebruikersnaam:</label>    
+                <label for="naam">E-mailadres:</label>    
             </div>
 
             <div class="col-md-8">
