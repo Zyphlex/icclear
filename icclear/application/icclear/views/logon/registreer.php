@@ -208,6 +208,16 @@ echo form_open('logon/add', $attributes);
                 </div>
 
             </div>
+            
+            <div class="row" id="landdiv">
+                <div class="col-md-4">   
+                    <?php echo form_label('Land:', 'land'); ?>                                        
+                </div>
+
+                <div class="col-md-8">  
+                    <?php echo form_dropdown(array('name' => 'land', 'id' => 'land', 'class' => 'form-control', $landen)); ?>                                        
+                </div>
+            </div>
 
         </div>
     </div>         
