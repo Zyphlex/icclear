@@ -60,7 +60,7 @@
 
         $("#mySubmit").click(function (e) {
             e.preventDefault();
-            if (validatieOK() && validate()) {
+            if (validatieOK() && validate() && emailCorrect()) {
                 $("#myForm").submit();
             }
         });
@@ -100,8 +100,16 @@
             if ($('#email').val() == '') {
                 $('#Loading').hide();
             }
-
-        });
+            
+            function emailCorrect{
+          ok = true;
+          var em = $("#feedbackemail").val();
+          if(em == "Niet beschikbaar"){
+              ok = false;
+        }
+        return ok;
+    });
+        
         $("#password2").keyup(validate);
     });
     function validate() {

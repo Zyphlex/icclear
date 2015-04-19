@@ -173,9 +173,9 @@ class Logon extends CI_Controller {
         $result = $this->email_model->check_email_availablity();
 
         if (!$result)
-            echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
+            echo '<p class="form-note form-note-used" id="feedbackemail">Niet beschikbaar</p>';
         else
-            echo '<p class="form-note form-note-ok">Beschikbaar</p>';
+            echo '<p class="form-note form-note-ok" id="feedbackemail">Beschikbaar</p>';
     }
 
     function check_username_availablity() {
