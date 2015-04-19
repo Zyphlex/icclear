@@ -155,7 +155,7 @@ class Logon extends CI_Controller {
 
         $this->authex->new_genKey($email, $generatedKey);
 
-        $this->email->from('donotreply@icclear.com');
+        $this->email->from('donotreply@thomasmore.be');
         $this->email->to($email);
         $this->email->subject('Paswoord resetten - IC Clear');
         $this->email->message('Klik op onderstaande link als u uw wachtwoord wilt resetten. ' . "\n" . "\n " . site_url("logon/passReset/$generatedKey"));
