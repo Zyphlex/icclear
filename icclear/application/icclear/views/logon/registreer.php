@@ -7,9 +7,9 @@
         $('#' + id).fadeIn();
     }
     $(document).ready(function () {
-         $('#Loading').hide();        
+        $('#Loading').hide();
         function validatieOK() {
-            ok = true;            
+            ok = true;
             if ($("#password1").val() == "") {
                 $("#password1div").addClass("has-error");
                 ok = false;
@@ -50,16 +50,16 @@
 
             return ok;
         }
-        
-         function emailCorrect(){
+
+        function emailCorrect() {
             ok = true;
             var em = $("#feedbackemail").val();
             if (em == "Niet beschikbaar") {
                 ok = false;
             }
             return ok;
-       
-            }
+
+        }
 
         $("#mySubmit").click(function (e) {
             e.preventDefault();
@@ -67,27 +67,27 @@
                 $("#myForm").submit();
             }
         });
-                     
-            function validate() {
+
+        function validate() {
             ok = true;
-                    var password1 = $("#password1").val();
-                    var password2 = $("#password2").val();
-                    if (password1 == password2) {
-            $("#validate-status").text("Correct");
-                    $("#validate-status").removeClass("form-note-used");
-                    $("#validate-status").addClass("form-note-ok");
+            var password1 = $("#password1").val();
+            var password2 = $("#password2").val();
+            if (password1 == password2) {
+                $("#validate-status").text("Correct");
+                $("#validate-status").removeClass("form-note-used");
+                $("#validate-status").addClass("form-note-ok");
             }
             else {
-            $("#validate-status").text("Incorrect");
-                    $("#validate-status").removeClass("form-note-ok");
-                    $("#validate-status").addClass("form-note-used");
-                    ok = false;
+                $("#validate-status").text("Incorrect");
+                $("#validate-status").removeClass("form-note-ok");
+                $("#validate-status").addClass("form-note-used");
+                ok = false;
             }
             return ok;
-            }
-            
-            
-$('#email').keyup(function () {            
+        }
+
+
+        $('#email').keyup(function () {
             emailCorrect();
             $('#Loading').show();
             var a = $("#email").val();
@@ -108,11 +108,11 @@ $('#email').keyup(function () {
             if ($('#email').val() == '') {
                 $('#Loading').hide();
             }
-           
-        $("#password2").keyup(validate);
+
+            $("#password2").keyup(validate);
+        });
+
     });
-            
-            });
 
 </script>
 
@@ -130,7 +130,17 @@ echo form_open('logon/add', $attributes);
 <div class="modal-body">
 
     <div class="row">
-        <div class="">              
+        <div class=""> 
+            <div class="row" id="emaildiv">
+                <div class="col-md-4">   
+                    <?php echo form_label('Emailadres:', 'email'); ?>                        
+                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
+                </div>  
+
+                <div class="col-md-8">   
+                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                </div>
+            </div>
             <div class="row" id="password1div">
                 <div class="col-md-4">   
                     <?php echo form_label('Wachtwoord:', 'password'); ?>                    
@@ -176,18 +186,29 @@ echo form_open('logon/add', $attributes);
                 </div>
             </div>
 
-
-
-            <div class="row" id="emaildiv">
+            <div class="row" id="geslachtdiv">                                    
                 <div class="col-md-4">   
-                    <?php echo form_label('Emailadres:', 'email'); ?>                        
-                    <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
-                </div>  
-
-                <div class="col-md-8">   
-                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                                        
                 </div>
+
+                <div class="col-md-8">  
+
+                    <div class="">
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                                            
+                        <span class="option-title">
+                            Man
+                        </span>
+                    </div> 
+                    <div class="">
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                
+                        <span class="option-title">
+                            Vrouw
+                        </span>
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>         
 
