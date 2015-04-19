@@ -49,11 +49,11 @@ class Authex {
         }
     }
 
-    function login($naam, $password) 
+    function login($email, $password) 
     {
         // gebruiker aanmelden met opgegeven email en wachtwoord
         $CI = & get_instance();
-        $user = $CI->logon_model->getUser($naam, $password);
+        $user = $CI->logon_model->getUser($email, $password);
         if ($user == null) {
             return false;
         } else {
