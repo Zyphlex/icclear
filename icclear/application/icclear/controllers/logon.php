@@ -57,7 +57,9 @@ class Logon extends CI_Controller {
         $user->geslacht = $this->input->post('geslacht');
         $user->land = $this->input->post('land');
         
-        $user->$generatedKey = sha1(mt_rand(10000, 99999) . time() . $user->email);
+        $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
+        
+        $user->$generatedKey = $genkey;
 
         $id = $this->authex->register($user);
         if ($id != 0) {
