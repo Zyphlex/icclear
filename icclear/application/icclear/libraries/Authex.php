@@ -84,7 +84,7 @@ class Authex {
             $id = $CI->logon_model->update($email, $generatedKey);
             return $id;
         } else {
-            return 0;
+            return false;
         }
     }
     
