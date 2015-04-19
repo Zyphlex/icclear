@@ -84,7 +84,7 @@ class Logon_model extends CI_Model {
         $user->geslacht = $geb->geslacht;
         $user->typeId = 1;
         $user->landId = $geb->land;
-        $user->generatedKey = $geb->$generatedKey;
+        $user->generatedKey = $geb->generatedKey;
         $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
         $this->db->insert('gebruiker', $user);
