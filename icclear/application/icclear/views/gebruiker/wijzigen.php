@@ -229,6 +229,9 @@
 
                         <div role="tabpanel" class="tab-pane" id="conferenties">
                             <h2>Ingeschreven conferenties</h2>
+                            <?php 
+                                if($inschrijving != null){
+                                ?>
                             <table class="table">
                                 <tr>
                                     <th>Conferentie</th>
@@ -237,18 +240,18 @@
                                     <th>Prijs</th>
                                     <th></th>
                                 </tr>
-                                <?php 
-                                if($inschrijving != null){
-                                ?>
+                                
                                 <tr>                                    
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td><?php echo $inschrijving->conferentie->stad;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
                                     <td>?????<td>
                                     <td></td>
-                                </tr>
-                                <?php } ?>
+                                </tr>                                
                             </table>
+                            <?php } else { ?>
+                            <p>Geen</p>
+                            <?php } ?>
                             <h2>Afgelopen conferenties</h2>
                             
                         </div>
