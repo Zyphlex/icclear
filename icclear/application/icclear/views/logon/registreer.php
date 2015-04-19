@@ -98,7 +98,7 @@
             }
             return ok;
             }
-    );
+            });
 
 $('#email').keyup(function () {
             alert('test');
@@ -129,8 +129,8 @@ $('#email').keyup(function () {
                 ok = false;
             }
             return ok;
-        });
-
+       
+            }
         $("#password2").keyup(validate);
     });
 </script>
