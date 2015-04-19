@@ -122,7 +122,7 @@ $('#email').keyup(function () {
                 $('#Loading').hide();
             }
 
-            function emailCorrect{
+            function emailCorrect(){
             ok = true;
             var em = $("#feedbackemail").val();
             if (em == "Niet beschikbaar") {
