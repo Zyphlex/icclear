@@ -36,16 +36,14 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        var jobject = jQuery.parseJSON(result);
-                        $("#gebruikersnaam").val(jobject.gebruikersnaam);
+                        var jobject = jQuery.parseJSON(result);                        
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
                         $("#emailadres").val(jobject.emailadres);
                     }
                 });
             } else {
-                // bij toevoegen gewoon vakken leeg maken
-                $("#gebruikersnaam").val("");
+                // bij toevoegen gewoon vakken leeg maken                
                 $("#voornaam").val("");
                 $("#familienaam").val("");
                 $("#emailadres").val("");
@@ -124,9 +122,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Gebruikersnaam:', 'gebruikersnaam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'gebruikersnaam', 'class' => 'form-control')); ?></p>
+                    <input type="hidden" name="id" id="id" />                  
 
                     <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>

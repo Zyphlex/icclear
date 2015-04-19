@@ -18,8 +18,7 @@
             <div class="panel-body">-->
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th>Gebruiker ID</th>
+                        <tr>                            
                             <th>Familienaam</th>
                             <th>Voornaam</th>
                             <th>Beheer</th>
@@ -27,8 +26,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($inschrijvingen as $inschrijving) { ?>
-                            <tr>
-                                <td><?php echo $inschrijving->gebruiker->gebruikersnaam; ?></td>
+                            <tr>                                
                                 <td><?php echo $inschrijving->gebruiker->familienaam; ?></td>
                                 <td><?php echo $inschrijving->gebruiker->voornaam; ?></td>
                                 <td>

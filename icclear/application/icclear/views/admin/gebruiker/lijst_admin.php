@@ -6,8 +6,7 @@
 
 <table class="table table-beheer">
     <thead>
-        <tr>
-            <th>Gebruikersnaam</th>
+        <tr>            
             <th>Voornaam</th>
             <th>Familienaam</th>
             <th>Emailadres</th>
@@ -16,8 +15,7 @@
     </thead>
     <tbody>
         <?php foreach ($admins as $admin) { ?>
-            <tr>
-                <td><?php echo $admin->gebruikersnaam ?></td>
+            <tr>                
                 <td><?php echo $admin->voornaam ?></td>
                 <td><?php echo $admin->familienaam ?></td>
                 <td><?php echo $admin->emailadres ?></td>
