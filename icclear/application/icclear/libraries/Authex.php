@@ -69,12 +69,12 @@ class Authex {
         $CI->session->unset_userdata('user_id');
     }        
 
-    function register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey)
+    function register($familienaam, $voornaam, $email, $wachtwoord, $generatedKey)
     {
         // nieuwe gebruiker registreren als email nog niet bestaat
         $CI = & get_instance();
         if ($CI->logon_model->emailVrij($email)) {
-            $id = $CI->logon_model->insert($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey);
+            $id = $CI->logon_model->insert($familienaam, $voornaam, $email, $wachtwoord, $generatedKey);
             return $id;
         } else {
             return 0;
