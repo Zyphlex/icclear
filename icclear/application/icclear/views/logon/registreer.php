@@ -130,13 +130,6 @@
                 }
                 return ok;
             }
-
-    $("#email").keyup(emailisok);
-
-    function emailisok() {
-        
-        }
-    }
     );
 </script>
 
