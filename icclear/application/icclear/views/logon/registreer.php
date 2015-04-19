@@ -7,17 +7,9 @@
         $('#' + id).fadeIn();
     }
     $(document).ready(function () {
-         $('#Loading').hide();
-        $('#validate-username').hide();
+         $('#Loading').hide();        
         function validatieOK() {
-            ok = true;
-            if ($("#username").val() == "") {
-                $("#usernamediv").addClass("has-error");
-                ok = false;
-            }
-            else {
-                $("#usernamediv").removeClass("has-error");
-            }
+            ok = true;            
             if ($("#password1").val() == "") {
                 $("#password1div").addClass("has-error");
                 ok = false;
@@ -75,21 +67,7 @@
                 $("#myForm").submit();
             }
         });
-       
-        $('#username').keyup(function () {
-            $('#validate-username').show();
-            var u = $('#username').val();
-            if (u.length > 3) {
-                $.post("<?php echo base_url() ?>icclear.php/logon/check_username_availablity", {
-                    username: $("#username").val()
-                }, function (response) {
-                    $('#validate-username').hide();
-                    setTimeout("finishAjax('validate-username', '" + escape(response) + "')", 400);
-                });
-                return false;
-            }
-        });
-        
+                     
             function validate() {
             ok = true;
                     var password1 = $("#password1").val();
