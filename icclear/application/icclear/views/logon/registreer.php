@@ -7,7 +7,8 @@
         $('#' + id).fadeIn();
     }
     $(document).ready(function () {
-
+         $('#Loading').hide();
+        $('#validate-username').hide();
         function validatieOK() {
             ok = true;
             if ($("#username").val() == "") {
@@ -65,8 +66,7 @@
             }
         });
 
-        $('#Loading').hide();
-        $('#validate-username').hide();
+       
         $('#username').keyup(function () {
             $('#validate-username').show();
             var u = $('#username').val();
@@ -80,8 +80,28 @@
                 return false;
             }
         });
-        $('#email').keyup(function () {
-        alert('test');
+        
+            function validate() {
+            ok = true;
+                    var password1 = $("#password1").val();
+                    var password2 = $("#password2").val();
+                    if (password1 == password2) {
+            $("#validate-status").text("Correct");
+                    $("#validate-status").removeClass("form-note-used");
+                    $("#validate-status").addClass("form-note-ok");
+            }
+            else {
+            $("#validate-status").text("Incorrect");
+                    $("#validate-status").removeClass("form-note-ok");
+                    $("#validate-status").addClass("form-note-used");
+                    ok = false;
+            }
+            return ok;
+            }
+    );
+
+$('#email').keyup(function () {
+            alert('test');
             $('#Loading').show();
             var a = $("#email").val();
             var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
@@ -112,25 +132,7 @@
         });
 
         $("#password2").keyup(validate);
-    };
-            function validate() {
-                ok = true;
-                var password1 = $("#password1").val();
-                var password2 = $("#password2").val();
-                if (password1 == password2) {
-                    $("#validate-status").text("Correct");
-                    $("#validate-status").removeClass("form-note-used");
-                    $("#validate-status").addClass("form-note-ok");
-                }
-                else {
-                    $("#validate-status").text("Incorrect");
-                    $("#validate-status").removeClass("form-note-ok");
-                    $("#validate-status").addClass("form-note-used");
-                    ok = false;
-                }
-                return ok;
-            }
-    );
+    });
 </script>
 
 <?php
@@ -150,33 +152,33 @@ echo form_open('logon/add', $attributes);
         <div class="">  
             <div class="row" id="usernamediv">
                 <div class="col-md-4">   
-<?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
+                    <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
                     <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
                 </div>  
 
                 <div class="col-md-8">
-<?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username', 'class' => 'form-control')); ?>                    
+                    <?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username', 'class' => 'form-control')); ?>                    
                 </div>  
             </div>
 
             <div class="row" id="password1div">
                 <div class="col-md-4">   
-<?php echo form_label('Wachtwoord:', 'password'); ?>                    
+                    <?php echo form_label('Wachtwoord:', 'password'); ?>                    
                 </div>
 
                 <div class="col-md-8">                       
-<?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'class' => 'form-control')); ?> 
+                    <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'class' => 'form-control')); ?> 
                 </div>
             </div>
 
             <div class="row" id="password2div">
                 <div class="col-md-4">   
-<?php echo form_label('Bevestigen:', 'bevestigww'); ?>
+                    <?php echo form_label('Bevestigen:', 'bevestigww'); ?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
 
                 <div class="col-md-8">                                        
-<?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
+                    <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
 
@@ -184,11 +186,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row" id="voornaamdiv">
                 <div class="col-md-4">   
-<?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
 
                 <div class="col-md-8">   
-<?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -196,11 +198,11 @@ echo form_open('logon/add', $attributes);
 
             <div class="row" id="familienaamdiv">
                 <div class="col-md-4">   
-<?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
 
                 <div class="col-md-8">  
-<?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
@@ -208,12 +210,12 @@ echo form_open('logon/add', $attributes);
 
             <div class="row" id="emaildiv">
                 <div class="col-md-4">   
-<?php echo form_label('Emailadres:', 'email'); ?>                        
+                    <?php echo form_label('Emailadres:', 'email'); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                 </div>  
 
                 <div class="col-md-8">   
-<?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
         </div>
