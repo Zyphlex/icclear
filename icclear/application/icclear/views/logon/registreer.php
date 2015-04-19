@@ -135,6 +135,7 @@
         function emailisok(){
     alert('test');    
     }
+    });
 </script>
 
 <?php
