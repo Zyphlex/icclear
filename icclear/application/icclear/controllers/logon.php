@@ -50,18 +50,22 @@ class Logon extends CI_Controller {
     }
 
     public function add() {  
+        
+        $email = $this->input->post('emailadres');
+        $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
+        
         $user = new stdClass();
         
         $user->familienaam = $this->input->post('familienaam');
         $user->voornaam = $this->input->post('voornaam');
-        $user->email = $this->input->post('emailadres');
+        $user->email = $email;
         $user->wachtwoord = $this->input->post('wachtwoord1');                
         $user->geslacht = $this->input->post('geslacht');
         $user->land = $this->input->post('land');
-        
-        $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
-        
         $user->$generatedKey = $genkey;
+        
+        
+        
 
         $id = $this->authex->register($user);
         if ($id != 0) {
