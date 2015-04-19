@@ -109,7 +109,7 @@
         }
         return ok;
     });
-        
+                
         $("#password2").keyup(validate);
     });
     function validate() {
@@ -128,6 +128,12 @@
             ok = false;
         }
         return ok;
+    }
+    
+    $("#email").keyup(emailisok);
+        
+        function emailisok(){
+    alert('test');    
     }
 </script>
 
