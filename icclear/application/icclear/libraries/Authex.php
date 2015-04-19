@@ -4,18 +4,13 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Authex {
-
-    // +----------------------------------------------------------
-    // | TV Shop
-    // +----------------------------------------------------------
-    // | KHK - 2 TI - 201x-201x
+           
     // +----------------------------------------------------------
     // | Authex library
     // |
     // +----------------------------------------------------------
     // | Nelson Wells
-    // | http://nelsonwells.net/2010/05/creating-a-simple-extensible-codeigniter-authentication-library/
-    // | aangepast door K. Vangeel
+    // | http://nelsonwells.net/2010/05/creating-a-simple-extensible-codeigniter-authentication-library/    
     // | aangepast door Frederik Van Hooghten
     // +----------------------------------------------------------
 
