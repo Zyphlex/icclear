@@ -111,7 +111,7 @@
     });
                 
         $("#password2").keyup(validate);
-    });
+    };
     function validate() {
         ok = true;
         var password1 = $("#password1").val();
