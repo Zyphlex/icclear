@@ -237,13 +237,17 @@
                                     <th>Prijs</th>
                                     <th></th>
                                 </tr>
-                                <tr>
+                                <?php 
+                                if($inschrijving != null){
+                                ?>
+                                <tr>                                    
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td><?php echo $inschrijving->conferentie->stad;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
                                     <td>?????<td>
                                     <td></td>
                                 </tr>
+                                <?php } ?>
                             </table>
                             <h2>Afgelopen conferenties</h2>
                             
