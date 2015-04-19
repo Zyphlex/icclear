@@ -100,8 +100,7 @@
             }
             
             
-$('#email').keyup(function () {
-            alert('test');
+$('#email').keyup(function () {            
             emailCorrect();
             $('#Loading').show();
             var a = $("#email").val();
