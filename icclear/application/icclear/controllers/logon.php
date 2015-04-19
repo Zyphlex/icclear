@@ -49,8 +49,7 @@ class Logon extends CI_Controller {
         $this->load->view('logon/registreer', $data);
     }
 
-    public function add() {
-        $gebruikersnaam = $this->input->post('gebruikersnaam');
+    public function add() {        
         $familienaam = $this->input->post('familienaam');
         $voornaam = $this->input->post('voornaam');
         $email = $this->input->post('emailadres');
@@ -58,7 +57,7 @@ class Logon extends CI_Controller {
         
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
 
-        $id = $this->authex->register($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey);
+        $id = $this->authex->register($familienaam, $voornaam, $email, $wachtwoord, $generatedKey);
         if ($id != 0) {
             $this->sendmail($email, $generatedKey);
             $this->klaar();
@@ -177,18 +176,7 @@ class Logon extends CI_Controller {
         else
             echo '<p class="form-note form-note-ok" id="feedbackemail">Beschikbaar</p>';
     }
-
-    function check_username_availablity() {
-        $this->load->model('gebruiker_model');
-        $result = $this->gebruiker_model->check_username_availablity();
-
-        if (!$result)
-            echo '<p class="form-note form-note-used">Niet beschikbaar</p>';
-        else
-            echo '<p class="form-note form-note-ok">Beschikbaar</p>';
-    }
-
-    // TEST
+   
 }
 
 /* End of file welcome.php */
