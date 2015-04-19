@@ -6,16 +6,17 @@ class Gebruiker_activiteit_model extends CI_Model {
         parent::__construct();
     }
 
-    function check_username_availablity() {
-        $username = trim($this->input->post('username'));
-
-        $query = $this->db->query('SELECT * FROM gebruiker where gebruikersnaam="' . $username . '"');
-
-        if ($query->num_rows() > 0)
-            return false;
-        else
-            return true;
-    }
+//        veranderen naar email
+//    function check_username_availablity() {
+//        $username = trim($this->input->post('username'));
+//
+//        $query = $this->db->query('SELECT * FROM gebruiker where gebruikersnaam="' . $username . '"');
+//
+//        if ($query->num_rows() > 0)
+//            return false;
+//        else
+//            return true;
+//    }
 
     function getActiviteitPrijs() {
         $query = $this->db->get('gebruikerActiviteit');
