@@ -49,7 +49,9 @@ class Logon extends CI_Controller {
         $this->load->view('logon/registreer', $data);
     }
 
-    public function add() {        
+    public function add() {  
+        $user = new stdClass();
+        
         $user->familienaam = $this->input->post('familienaam');
         $user->voornaam = $this->input->post('voornaam');
         $user->email = $this->input->post('emailadres');
