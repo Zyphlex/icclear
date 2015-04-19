@@ -65,7 +65,6 @@
                 $("#myForm").submit();
             }
         });
-
        
         $('#username').keyup(function () {
             $('#validate-username').show();
@@ -121,16 +120,7 @@ $('#email').keyup(function () {
             if ($('#email').val() == '') {
                 $('#Loading').hide();
             }
-
-            function emailCorrect(){
-            ok = true;
-            var em = $("#feedbackemail").val();
-            if (em == "Niet beschikbaar") {
-                ok = false;
-            }
-            return ok;
-       
-            }
+           
         $("#password2").keyup(validate);
     });
             
