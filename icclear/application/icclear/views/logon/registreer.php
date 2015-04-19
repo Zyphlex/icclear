@@ -219,7 +219,7 @@ echo form_open('logon/add', $attributes);
                     foreach ($landen as $land) {
                         $options[$land->id] = $land->naam;
                     }
-                    echo form_dropdown('land', $options, 'class="form-control" id="land"');
+                    echo form_dropdown('land', $options,0, 'class="form-control" id="land"');
                     ?>
                 </div>
             </div>
