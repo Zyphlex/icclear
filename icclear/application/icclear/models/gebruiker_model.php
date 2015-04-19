@@ -6,16 +6,17 @@ class Gebruiker_model extends CI_Model {
         parent::__construct();
     }
 
-    function check_username_availablity() {
-        $username = strtoupper(trim($this->input->post('username')));                
-        $this->db->where('UPPER(gebruikersnaam)', $username);
-        $query = $this->db->get('gebruiker');
-                
-        if ($query->num_rows() > 0)
-            return false;
-        else
-            return true;
-    }
+//      veranderen in email
+//    function check_username_availablity() {
+//        $username = strtoupper(trim($this->input->post('username')));                
+//        $this->db->where('UPPER(gebruikersnaam)', $username);
+//        $query = $this->db->get('gebruiker');
+//                
+//        if ($query->num_rows() > 0)
+//            return false;
+//        else
+//            return true;
+//    }
     
      function get($id) {
         $this->db->where('id', $id);
