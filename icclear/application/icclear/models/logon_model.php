@@ -68,9 +68,8 @@ class Logon_model extends CI_Model {
         }
     }
 
-    function insert($gebruikersnaam, $familienaam, $voornaam, $email, $wachtwoord, $generatedKey) {
-        // voeg nieuwe user toe
-        $user->gebruikersnaam = $gebruikersnaam;
+    function insert($familienaam, $voornaam, $email, $wachtwoord, $generatedKey) {
+        // voeg nieuwe user toe        
         $user->voornaam = $voornaam;
         $user->familienaam = $familienaam;
         $user->geboortedatum = '';
@@ -116,17 +115,7 @@ class Logon_model extends CI_Model {
         $user->generatedKey = $newKey;        
         $this->db->where('generatedKey', $generatedKey);
         $this->db->update('gebruiker', $user);
-    }
-    
-    function user_exists($key) {
-        $this->db->where('gebruikersnaam', $key);
-        $query = $this->db->get('gebruiker');
-        if ($query->num_rows() > 0) {
-            return "Gebruikersnaam is al in gebruik";
-        } else {
-            return "Gebruikersnaam is beschikbaar";
-        }
-    }
+    }        
 
 }
 
