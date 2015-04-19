@@ -62,9 +62,9 @@ class Logon_model extends CI_Model {
         $this->db->where('activatie', 1);
         $query = $this->db->get('gebruiker');
         if ($query->num_rows() == 1) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     }
     
