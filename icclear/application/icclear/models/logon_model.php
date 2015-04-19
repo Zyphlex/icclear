@@ -57,6 +57,17 @@ class Logon_model extends CI_Model {
         }
     }
     
+    function isGeactiveerd($email) {        
+        $this->db->where('emailadres', $email);
+        $this->db->where('activatie', 1);
+        $query = $this->db->get('gebruiker');
+        if ($query->num_rows() == 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
     function correct($generatedKey) {
         // is generated key correct?
         $this->db->where('generatedKey', $generatedKey);
