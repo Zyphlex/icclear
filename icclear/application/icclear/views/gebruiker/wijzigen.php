@@ -257,6 +257,7 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="betalingen">
                             <h1>Betalingen</h1>
+                            <?php if($inschrijving != null){ ?>
                             <table class="table">
                                 <tr>
                                     <th>Conferentie</th>
@@ -271,6 +272,9 @@
                                     <td>???</td>                                    
                                 </tr>
                             </table>
+                            <?php } else { ?>
+                            <p>Geen</p>
+                            <?php } ?>
                         </div>                        
                     </div>
 
