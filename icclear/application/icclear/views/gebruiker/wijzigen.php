@@ -206,7 +206,7 @@
                                             <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
                                         </div>
                                     </div>
-                                    <?php if($inschrijving != null){ ?>
+                                    <?php if($inschrijving != null && $inschrijving->betaling != null){ ?>
                                     <div class="row">
                                         <div class="col-md-4">   
                                             <label for="methode">
