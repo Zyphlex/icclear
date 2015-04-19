@@ -13,11 +13,11 @@
         
         <div class="row">
             <div class="col-md-4">      
-                <label for="naam">E-mailadres:</label>    
+                <label for="email">E-mailadres:</label>    
             </div>
 
             <div class="col-md-8">
-                <input type="text" name="naam" value="" id="naam" size="30" class="form-control"  />    
+                <input type="text" name="email" value="" id="email" size="30" class="form-control"  />    
             </div>
         </div>
       
