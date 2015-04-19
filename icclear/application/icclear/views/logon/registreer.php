@@ -130,18 +130,7 @@ echo form_open('logon/add', $attributes);
 <div class="modal-body">
 
     <div class="row">
-        <div class="">  
-            <div class="row" id="usernamediv">
-                <div class="col-md-4">   
-                    <?php echo form_label('Gebruikersnaam:', 'username'); ?>                    
-                    <span id="validate-username"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>                     
-                </div>  
-
-                <div class="col-md-8">
-                    <?php echo form_input(array('name' => 'gebruikersnaam', 'id' => 'username', 'class' => 'form-control')); ?>                    
-                </div>  
-            </div>
-
+        <div class="">              
             <div class="row" id="password1div">
                 <div class="col-md-4">   
                     <?php echo form_label('Wachtwoord:', 'password'); ?>                    
