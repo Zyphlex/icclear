@@ -115,6 +115,13 @@ class Logon extends CI_Controller {
         }
         $this->template->load('main_master', $partials, $data);
     }
+    
+    public function nietGeactiveerd(){
+         $data['title'] = 'IC Clear - Account niet geactiveerd'; 
+        $data['active'] = '';
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/nietActief', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
 
     public function bestaat() {
         $data['title'] = 'IC Clear - Register';
