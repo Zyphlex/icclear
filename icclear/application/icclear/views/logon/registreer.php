@@ -46,7 +46,7 @@
             }
             else {
                 $("#emaildiv").removeClass("has-error");
-            }
+            }            
 
             return ok;
         }
