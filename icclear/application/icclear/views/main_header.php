@@ -14,7 +14,7 @@
     <div class="col-md-4">
             <div class="dropdown logon">Welkom, 
                 <a data-toggle="dropdown">
-                    <span class="login-user"><?php echo strtoupper($user->gebruikersnaam) ?></span>
+                    <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">                    
