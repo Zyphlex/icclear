@@ -34,7 +34,7 @@ class Logon extends CI_Controller {
         }
         }
         else{
-            redirect();            
+            redirect('logon/nietGeactiveerd');            
         }
         
     }
@@ -117,6 +117,7 @@ class Logon extends CI_Controller {
     }
     
     public function nietGeactiveerd(){
+        $data['user'] = '';
         $data['title'] = 'IC Clear - Account niet geactiveerd'; 
         $data['active'] = '';
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/nietActief', 'footer' => 'main_footer');
