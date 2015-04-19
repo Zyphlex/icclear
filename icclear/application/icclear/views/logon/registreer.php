@@ -58,6 +58,16 @@
 
             return ok;
         }
+        
+         function emailCorrect(){
+            ok = true;
+            var em = $("#feedbackemail").val();
+            if (em == "Niet beschikbaar") {
+                ok = false;
+            }
+            return ok;
+       
+            }
 
         $("#mySubmit").click(function (e) {
             e.preventDefault();
