@@ -98,8 +98,8 @@
             }
             return ok;
             }
-            });
-
+            
+            
 $('#email').keyup(function () {
             alert('test');
             $('#Loading').show();
@@ -133,6 +133,9 @@ $('#email').keyup(function () {
             }
         $("#password2").keyup(validate);
     });
+            
+            });
+
 </script>
 
 <?php
