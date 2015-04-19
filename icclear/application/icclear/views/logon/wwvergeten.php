@@ -31,7 +31,7 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" name="mysubmit" value="Send Email" class="btn btn-primary"  />
+        <input type="submit" name="mysubmit" value="Verstuur Email" class="btn btn-primary"  />
     </div>
     
 </form>
