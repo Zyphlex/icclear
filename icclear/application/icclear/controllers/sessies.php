@@ -30,6 +30,9 @@ class Sessies extends CI_Controller {
                 
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAll($this->session->userdata('conferentieId'));
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -47,6 +50,9 @@ class Sessies extends CI_Controller {
         
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -61,6 +67,9 @@ class Sessies extends CI_Controller {
                 
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -75,6 +84,9 @@ class Sessies extends CI_Controller {
                 
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/beheer', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -89,6 +101,9 @@ class Sessies extends CI_Controller {
         
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -131,6 +146,9 @@ class Sessies extends CI_Controller {
         $this->gebruiker_model->update($sessie->spreker);
         
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
