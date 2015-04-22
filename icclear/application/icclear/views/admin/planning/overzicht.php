@@ -137,7 +137,7 @@
                     foreach ($dagen as $dag) {
                         $drop[$dag->id] = toDDMMYYYY($dag->datum);
                     }
-                    echo form_dropdown('datum', $drop, '', 'id="datum" class="form-control"');
+                    echo form_dropdown('datum', $drop, 'id="datum" class="form-control"');
                     ?>
                     
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
