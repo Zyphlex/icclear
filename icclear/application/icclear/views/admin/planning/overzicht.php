@@ -131,6 +131,17 @@
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
 
+                    <p><?php echo form_label('Datum:', 'datum'); ?></p>
+                    <?php
+                    $drop = array();
+                    $teller = 1;
+                    foreach ($dagen as $dag) {
+                        $drop[$dag->id] = $dag->datum;
+                        $teller++;
+                    }
+                    echo form_dropdown('datum', $drop, '', 'id="datum" class="form-control"');
+                    ?>
+                    
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
                     <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
