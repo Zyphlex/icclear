@@ -20,7 +20,6 @@
 <br/><br/>
 
 <div class="row">
-    <?php echo base_url() . '/application/upload/';?>
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-md-4">
                 <h1><?php echo $aankondiging->titel; ?></h1>
