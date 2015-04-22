@@ -47,8 +47,13 @@
 
 <div class="row">
     <div class="col-md-12">        
-        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>     
-        <input type="submit" class="btn btn-default" value="Voorstel versturen">
+        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>   
+        
+        <?php if ($user == null) { ?>
+            <a href="<?php echo base_url(); ?>icclear.php/spreker/login" data-toggle="modal" data-target="#myModal">Aanmelden en verder</a>
+        <?php } else { ?>
+            <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
+        <?php } ?>
     </div>
 </div>
 

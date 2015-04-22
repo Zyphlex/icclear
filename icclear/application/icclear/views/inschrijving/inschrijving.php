@@ -13,7 +13,7 @@
 
 <?php
 $attributes = array('name' => 'myform');
-echo form_open('inschrijven/opvolgen', $attributes);
+echo form_open('inschrijven/verzenden', $attributes);
 ?>        
 
 <div class="row">
