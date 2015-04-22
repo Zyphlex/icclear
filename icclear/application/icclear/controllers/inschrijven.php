@@ -34,11 +34,7 @@ class Inschrijven extends CI_Controller {
         $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - Inschrijven'; 
         $data['active'] = 'inschrijven';
-        
-        $inschrijving = new stdClass();
-        
-        print_r($this->post('methode'));
-        
+                
         $inschrijving->gebruikerId = $this->authex->getUserInfo('user_id');
         $inschrijving->conferentieId = $this->post('conferentieId');
         $inschrijving->conferentieOnderdeelId = $this->post('conferentieonderdeelId');
@@ -46,7 +42,7 @@ class Inschrijven extends CI_Controller {
         $inschrijving->datum = $this->input->post('datum');
         
         $this->load->model('inschrijving_model');
-        $inschrijvingId = $this->inschrijving_model->insert($inschrijving);
+        $this->inschrijving_model->insert($inschrijving);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data); 
