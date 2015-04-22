@@ -31,11 +31,13 @@ echo form_open('inschrijven/verzenden', $attributes);
             </tr>
             
             <?php foreach ($conferentieOnderdelen as $conferentieOnderdeel) { ?>
-                <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>
-                    <tr> <?php echo $conferentieOnderdeel->omschrijving ?></td>
+                <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>                    
+                <tr>
+                    <td> <?php echo $conferentieOnderdeel->omschrijving ?></td>
                     <td> <?php echo $conferentieOnderdeel->prijs ?></td>
                     <td> <?php echo $conferentieOnderdeel->korting ?></td>
                     <td><input type="radio" name="conferentieOnderdeelId" value="<?php echo $conferentieOnderdeel->id ?>"/></td></tr>
+                </tr>
                 <?php } ?>
             <?php } ?>
 
