@@ -40,16 +40,13 @@ class Planning_model extends CI_Model {
         $planningen = $query->result();
 
         $this->load->model('sessies_model');
-        foreach ($planningen as $planning) {
-            $planning->sessie = $this->sessies_model->planningenPerStatus($planning->sessieId);
-        }
-
         $this->load->model('zaal_model');
         $this->load->model('gebouw_model');
-
+        
         foreach ($planningen as $planning) {
+            $planning->sessie = $this->sessies_model->planningenPerStatus($planning->sessieId);
             $planning->zaal = $this->zaal_model->get($planning->zaalId);
-
+            $planning->zaal->gebouw = $this->zaal_model->getGebouw();
         }
 
         return $planningen;
