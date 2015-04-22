@@ -29,22 +29,19 @@ echo form_open('inschrijven/verzenden', $attributes);
                 <th>Early-bird korting</th>
                 <td></td>
             </tr>
-            <?php
-            foreach ($conferentieOnderdelen as $conferentieOnderdeel) {
-                if ($conferentieOnderdeel->conferentie->statusId == '2') {
-                    echo "<input type='hidden' name='conferentieOnderdeelId' value='$conferentieOnderdeel->id' />";
-                    echo '<tr><td>' . $conferentieOnderdeel->omschrijving . '</td>';
-                    echo '<td>' . $conferentieOnderdeel->prijs . '</td>';
-                    echo '<td>' . $conferentieOnderdeel->korting . ' %</td>';
-                    echo '<td><input type="radio" name="formule" value="' . $conferentieOnderdeel->id . '"/></td></tr>';
-                }
-            }
-            ?>
+            
+            <?php foreach ($conferentieOnderdelen as $conferentieOnderdeel) { ?>
+                <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>
+                    <tr> <?php echo $conferentieOnderdeel->omschrijving ?></td>
+                    <td> <?php echo $conferentieOnderdeel->prijs ?></td>
+                    <td> <?php echo $conferentieOnderdeel->korting ?></td>
+                    <td><input type="radio" name="conferentieOnderdeelId" value="<?php echo $conferentieOnderdeel->id ?>"/></td></tr>
+                <?php } ?>
+            <?php } ?>
 
         </table>
 
         <h3>Extra activiteiten</h3>
-
         <table class="table">
             <tr>
                 <th>Activiteit</th>
@@ -52,15 +49,16 @@ echo form_open('inschrijven/verzenden', $attributes);
                 <th></th>
                 <th>Aantal Personen (max. 10)</th>
             </tr>
-            <?php
-            foreach ($activiteiten as $activiteit) {
-                if ($activiteit->conferentie->statusId == '2') {
-                    echo '<tr><td>' . $activiteit->naam . '</td>';
-                    echo '<td>' . $activiteit->prijs . '</td>';
-                    ?>
-                    <td><input type="checkbox" name="aanwezig<?php echo $activiteit->id; ?>" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
-                    <td><input type="number" name="aantalPersonen" id="aantalPersonen" max="10"/></td>
-                    <?php
+            <?php foreach ($activiteiten as $activiteit) { ?>
+                <?php if ($activiteit->conferentie->statusId == '2') { ?>
+                    <tr>
+                        <td><?php echo $activiteit->naam ?></td>
+                        <td><?php echo $activiteit->prijs ?></td>
+                    
+                        <td><input type="checkbox" name="aanwezig" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
+                        <td><input type="number" name="aantalPersonen" id="aantalPersonen" max="10"/></td>
+                    </tr>
+                        <?php
                 }
             }
             ?>
