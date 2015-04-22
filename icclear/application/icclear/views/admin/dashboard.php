@@ -1,8 +1,7 @@
 <div class="col-md-10">       
     <h1>Conferentie <?php echo $conferentie ?> beheren</h1>         
     <?php echo anchor('email/', 'Emails', 'class="btn btn-default"'); ?>
-    <?php echo anchor('aankondiging/', 'Aankondigingen', 'class="btn btn-default"'); ?>
-    <?php echo anchor('inschrijven/opvolgen', 'Betalingen Opvolgen', 'class="btn btn-default"'); ?>            
+    <?php echo anchor('aankondiging/', 'Aankondigingen', 'class="btn btn-default"'); ?>           
 </div>
 <div class="col-md-10">    
     <h4>Conferentie <span class="glyphicon glyphicon-pushpin"></span></h4>
