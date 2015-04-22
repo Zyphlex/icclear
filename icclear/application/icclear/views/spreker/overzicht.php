@@ -1,26 +1,5 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Zelf spreker worden</h1>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">        
-        <p>
-            Nulla id finibus mauris. Cras maximus ultrices dictum. 
-            Phasellus suscipit felis sed nibh euismod, vel varius velit porttitor. 
-            Nullam vulputate imperdiet sem ornare porta. Nunc eget lectus a metus consectetur suscipit in in urna. 
-            Quisque vestibulum erat in convallis faucibus. Aliquam sed placerat dolor.
-        </p>  
-        <p><?php echo anchor('spreker/voorstel', 'Voorstel indienen', 'class="btn btn-default"') ?></p>
-
-    </div>
-</div>
-
-<br/><br/>
-
-<div class="row">
-    <div class="col-md-12">
         <h1>Sprekers tijdens de conferentie</h1>
     </div>
 </div>
