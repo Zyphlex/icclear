@@ -94,6 +94,8 @@ class Logon extends CI_Controller {
         $newKey = sha1(mt_rand(10000, 99999) . time() . $wachtwoord);
         $this->authex->updateKey($generatedKey, $newKey);
         
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/ww_succes', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -107,6 +109,9 @@ class Logon extends CI_Controller {
         $data['generatedKey'] = $generatedKey;
         $data['title'] = 'IC Clear - Register'; 
         $data['active'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         if ($this->logon_model->correct($generatedKey) == false) {
             $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/foutKey', 'footer' => 'main_footer');
@@ -120,6 +125,10 @@ class Logon extends CI_Controller {
         $data['user'] = '';
         $data['title'] = 'IC Clear - Account niet geactiveerd'; 
         $data['active'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/nietActief', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
@@ -128,6 +137,9 @@ class Logon extends CI_Controller {
         $data['title'] = 'IC Clear - Register';
         $data['user'] = ''; 
         $data['active'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_bestaat', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -137,6 +149,9 @@ class Logon extends CI_Controller {
         $data['title'] = 'IC Clear - Register';
         $data['user'] = $this->authex->getUserInfo(); 
         $data['active'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_klaar', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -155,6 +170,10 @@ class Logon extends CI_Controller {
 
         $data['user'] = null; 
         $data['active'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/user_geactiveerd', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
@@ -184,6 +203,9 @@ class Logon extends CI_Controller {
         $this->email->send();
 
         $data['user'] = '';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/verzonden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
