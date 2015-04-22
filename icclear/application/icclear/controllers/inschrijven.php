@@ -47,8 +47,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data); 
+        redirect('home');
     }
     
     public function opvolgen(){
