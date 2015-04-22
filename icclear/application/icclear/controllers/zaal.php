@@ -32,6 +32,9 @@ class Zaal extends CI_Controller {
         
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/zaal/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
