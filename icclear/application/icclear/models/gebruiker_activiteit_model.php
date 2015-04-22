@@ -32,6 +32,13 @@ class Gebruiker_activiteit_model extends CI_Model {
         }
         return $gebActiviteiten;
     }
+        
+    function getByGebruiker($id)
+    {
+        $this->db->where('gebruikerId', $id);
+        $query = $this->db->get('gebruikerActiviteit');
+        return $query->row();
+    }
 
 }
 
