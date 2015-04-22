@@ -24,7 +24,7 @@
                     <td><?php echo $planning->beginUur ?></td>
                     <td><?php echo $planning->eindUur ?></td>
                     <td><?php echo $planning->sessie->onderwerp ?></td>
-                    <td><?php echo $planning->zaal->naam + " (" + $planning->zaal->maximumAantalPersonen + ")" ?></td>
+                    <td><?php echo $planning->zaal->maximumAantalPersonen ?></td>
                     <?php
                     if ($planning->plenair == 1) {
                         echo '<td>Ja</td>';
