@@ -35,9 +35,14 @@ class Gebruiker_activiteit_model extends CI_Model {
         
     function getByGebruiker($id)
     {
+        $this->load->model('activiteit_model');        
         $this->db->where('gebruikerId', $id);
         $query = $this->db->get('gebruikerActiviteit');
-        return $query->result();
+        $geb_act = $query->result();
+        foreach ($geb_act as $g){
+            $g->activiteit = $this->activiteit_model->get($g->activiteitId);
+        }        
+        return $geb_act;
     }
 
 }
