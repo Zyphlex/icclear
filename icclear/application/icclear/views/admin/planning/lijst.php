@@ -13,7 +13,7 @@
                 <th>Beginuur</th>
                 <th>Einduur</th>
                 <th>Sessie</th>                
-                <th>Zaal</th>
+                <th>Plaats</th>
                 <th>Plenair</th>
                 <th>Beheer</th>
             </tr>
