@@ -245,7 +245,7 @@
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td><?php echo $inschrijving->conferentie->stad;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
-                                    <td>?????<td>
+                                    <td><?php echo $geld;?><td>
                                     <td></td>
                                 </tr>                                
                             </table>
@@ -269,7 +269,7 @@
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
                                     <td><?php echo $inschrijving->betaling->methode;?></td>
-                                    <td>???</td>                                    
+                                    <td><?php echo $geld;?></td>                                    
                                 </tr>
                             </table>
                             <?php } else { ?>
