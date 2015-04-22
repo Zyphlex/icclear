@@ -29,7 +29,10 @@ class Aankondiging extends CI_Controller {
         $data['aankondigingen'] = $this->aankondiging_model->getAllPerConferentie($this->session->userdata('conferentieId'));
         
         $data['title'] = 'IC Clear - aankondigingen';         
-        $data['active'] = 'admin';                
+        $data['active'] = 'admin';   
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/aankondiging/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -47,6 +50,9 @@ class Aankondiging extends CI_Controller {
         
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -58,7 +64,9 @@ class Aankondiging extends CI_Controller {
         
         $data['title'] = 'IC Clear - Aankondiging toevoegen';        
         $data['active'] = 'admin';        
-                        
+            
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/aankondiging/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
