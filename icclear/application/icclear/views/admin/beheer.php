@@ -43,7 +43,7 @@
                     <td style="width:250px"><?php echo $toe->naam ?></td>
                     <td style="width:200px"><?php echo $toe->stad ?></td>
                     <td style="width:200px"><?php echo toDDMMYYYY($toe->beginDatum) ?></td>
-                    <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
+                    <td style="width:200px"><?php echo toDDMMYYYY($conferentie->eindDatum) ?></td>
                     <td style="width:150px"><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                 </tr>
 <?php } ?>
