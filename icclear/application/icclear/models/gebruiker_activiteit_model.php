@@ -33,16 +33,30 @@ class Gebruiker_activiteit_model extends CI_Model {
         return $gebActiviteiten;
     }
         
-    function getByGebruiker($id)
+//    function getByGebruiker($id)
+//    {
+//        $this->load->model('activiteit_model');        
+//        $this->db->where('gebruikerId', $id);
+//        $query = $this->db->get('gebruikerActiviteit');
+//        $geb_act = $query->result();
+//        foreach ($geb_act as $g){
+//            $g->activiteit = $this->activiteit_model->get($g->activiteitId);
+//        }        
+//        return $geb_act;
+//    }
+    
+    function getPrijsByGebruiker($id)
     {
+        $geld = 0;
         $this->load->model('activiteit_model');        
         $this->db->where('gebruikerId', $id);
         $query = $this->db->get('gebruikerActiviteit');
         $geb_act = $query->result();
         foreach ($geb_act as $g){
             $g->activiteit = $this->activiteit_model->get($g->activiteitId);
+            $geld += $g->activiteit->prijs;
         }        
-        return $geb_act;
+        return $geld;
     }
 
 }
