@@ -41,7 +41,7 @@ class Inschrijven extends CI_Controller {
         $inschrijving->conferentieId = $this->conferentie_model->getActieveConferentie();
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
         $inschrijving->datum = date("Y-m-d");
-        $inschrijving->betalingId = $this->input->post('methode');
+        $inschrijving->methodeId = $this->input->post('methode');
         
         $this->load->model('inschrijving_model');
         $this->inschrijving_model->insert($inschrijving);
