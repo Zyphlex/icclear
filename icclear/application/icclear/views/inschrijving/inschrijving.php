@@ -1,7 +1,3 @@
-<?php
-$attributes = array('name' => 'myform');
-echo form_open('inschrijven/inschrijven', $attributes);
-?>        
 <div class="row">
     <div class="col-md-12">
         <h1>Inschrijven conferentie</h1>
@@ -15,6 +11,10 @@ echo form_open('inschrijven/inschrijven', $attributes);
     </div>
 </div>
 
+<?php
+$attributes = array('name' => 'myform');
+echo form_open('inschrijven/inschrijven', $attributes);
+?>        
 
 <div class="row">
     <div class="col-md-12">
@@ -88,9 +88,7 @@ echo form_open('inschrijven/inschrijven', $attributes);
             <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a>
         <?php } else { ?>
             <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
-        <?php
-        }
-        echo form_close();
-        ?>
+        <?php } ?>
     </div>
 </div>
+<?php echo form_close(); ?>
