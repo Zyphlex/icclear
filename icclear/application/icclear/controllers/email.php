@@ -27,6 +27,9 @@ class Email extends CI_Controller {
         
         $data['title'] = 'IC Clear - Emails.';         
         $data['active'] = 'admin';
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
                         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/email/opstellen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
