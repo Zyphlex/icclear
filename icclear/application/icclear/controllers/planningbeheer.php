@@ -35,6 +35,9 @@ class Planningbeheer extends CI_Controller {
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
+        $this->load->model('conferentiedag_model');
+        $data['dagen'] = $this->conferentiedag_model->getAll();
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
