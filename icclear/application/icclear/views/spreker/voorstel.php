@@ -41,23 +41,7 @@
     </div>
 </div>
 
-<br/>
 
-<div class="row">
-    <div class="col-md-2">
-        <label for="sessiebijlage" class="control-label">Bijlage: </label>
-    </div>
-    <div class="col-md-2 fileUpload btn btn-default">
-        <span>Bestand selecteren</span>
-        <input id="sessiebijlage" type="file" name="sessiebijlage" class="upload"/>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-4 italic">
-        Als u bestanden hebt die u later zal gebruiken, dan kan u ze hier uploaden.
-    </div>
-</div>
 
 <br/><br/>
 
