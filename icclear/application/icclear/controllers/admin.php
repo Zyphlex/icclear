@@ -67,6 +67,8 @@ class Admin extends CI_Controller {
         $this->session->set_userdata('conferentie',$conferentie->naam);  
         $data['conferentie'] = $this->session->userdata('conferentie');
         
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
