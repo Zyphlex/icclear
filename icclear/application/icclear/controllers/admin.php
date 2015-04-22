@@ -28,7 +28,7 @@ class Admin extends CI_Controller {
         $data['active'] = 'admin';        
                 
         $this->load->model('conferentie_model');
-        $data['actieve'] = $this->conferentie_model->getActieveConferentie();
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         $data['verleden'] = $this->conferentie_model->getVerledenConferentie();
         $data['toekomenden'] = $this->conferentie_model->getToekomstConferentie();
         $data['conferentieId'] = 0;
@@ -64,8 +64,8 @@ class Admin extends CI_Controller {
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->countActiviteiten($id);
         
-        //$this->session->set_userdata('conferentie',$conferentie->naam);  
-        //$data['conferentie'] = $this->session->userdata('conferentie');
+        $this->session->set_userdata('conferentie',$conferentie->naam);  
+        $data['conferentie'] = $this->session->userdata('conferentie');
         
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
