@@ -9407,7 +9407,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 10, 25, 50, 100 ],
+		"aLengthMenu": [ 5, 10, 15, 20 ],
 	
 	
 		/**
@@ -10751,7 +10751,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(Gefiltert van _MAX_ totaal rijen)",
+			"sInfoFiltered": "(Gefiltert van _MAX_ rijen)",
 	
 	
 			/**
