@@ -16,6 +16,9 @@ class Spreker extends CI_Controller {
         $data['title'] = 'IC Clear - Sprekers'; 
         $data['active'] = 'spreker';
         
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $this->load->model('gebruiker_model');
         $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
                 
@@ -26,7 +29,7 @@ class Spreker extends CI_Controller {
         
         $data['user']  = $this->authex->getUserInfo();        
         $data['title'] = 'IC Clear - Sprekers'; 
-        $data['active'] = 'spreker';       
+        $data['active'] = 'programma';       
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
