@@ -1,5 +1,5 @@
 <div class="col-md-10">       
-    <h1>Conferentie <?php echo $conferentie ?> beheren</h1>         
+    <h1>Conferentie <?php echo $conferentie->naam ?> beheren</h1>         
     <?php echo anchor('email/', 'Emails', 'class="btn btn-default"'); ?>
     <?php echo anchor('aankondiging/', 'Aankondigingen', 'class="btn btn-default"'); ?>           
 </div>
