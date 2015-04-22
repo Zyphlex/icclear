@@ -107,9 +107,9 @@ class Spreker extends CI_Controller {
         $config['max_width'] = 500;
         
         $this->load->library('upload', $config);
-         /*if(!is_dir($config['upload_path'])){
+         if(!is_dir($config['upload_path'])){
                     mkdir($config['upload_path'],0777,TRUE);
-                }*/
+                }
         $this->upload->initialize($config);
         if ( ! $this->upload->do_upload())
 		{
