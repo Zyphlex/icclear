@@ -17,6 +17,9 @@ class Faq extends CI_Controller {
 
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'faq/faq', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
