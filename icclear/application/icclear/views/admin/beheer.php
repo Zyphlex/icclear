@@ -16,11 +16,11 @@
         </thead>
         <tbody>
             <tr>
-                <td style="width:250px"><?php echo $actieve->naam ?></td>
-                <td style="width:200px"><?php echo $actieve->stad ?></td>
-                <td style="width:200px"><?php echo toDDMMYYYY($actieve->beginDatum) ?></td>
-                <td style="width:200px"><?php echo toDDMMYYYY($actieve->eindDatum) ?></td>
-                <td style="width:150px"><?php echo anchor('admin/dashboard/' . $actieve->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                <td style="width:250px"><?php echo $conferentie->naam ?></td>
+                <td style="width:200px"><?php echo $conferentie->stad ?></td>
+                <td style="width:200px"><?php echo toDDMMYYYY($conferentie->beginDatum) ?></td>
+                <td style="width:200px"><?php echo toDDMMYYYY($conferentie->eindDatum) ?></td>
+                <td style="width:150px"><?php echo anchor('admin/dashboard/' . $conferentie->id, 'Beheren', 'class="btn btn-default"'); ?></td>
             </tr>
 
         </tbody>
