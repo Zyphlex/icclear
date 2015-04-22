@@ -26,6 +26,9 @@ class Profiel extends CI_Controller {
 
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
@@ -70,7 +73,9 @@ class Profiel extends CI_Controller {
         $this->load->model('inschrijving_model');
         $data['inschrijving'] = $this->inschrijving_model->getInschijvingByConferentie($user->id);       
         
-
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
