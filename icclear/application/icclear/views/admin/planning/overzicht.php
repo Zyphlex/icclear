@@ -135,7 +135,7 @@
                     <?php
                     $drop = array();
                     foreach ($dagen as $dag) {
-                        $drop[$dag->id] = $dag->datum;
+                        $drop[$dag->id] = toDDMMYYYY($dag->datum);
                     }
                     echo form_dropdown('datum', $drop, '', 'id="datum" class="form-control"');
                     ?>
