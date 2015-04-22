@@ -35,8 +35,10 @@ class Inschrijven extends CI_Controller {
         $data['title'] = 'IC Clear - Inschrijven'; 
         $data['active'] = 'home';
                 
+        $this->load->model('conferentie_model');
+        
         $inschrijving->gebruikerId = 17;
-        $inschrijving->conferentieId = $this->input->post('conferentieId');
+        $inschrijving->conferentieId = $this->conferentie_model->getActieveConferentie();
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
         $inschrijving->datum = date("Y-m-d");
         $inschrijving->betalingId = $this->input->post('methode');
