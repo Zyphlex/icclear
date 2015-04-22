@@ -91,11 +91,11 @@ class Sessies_model extends CI_Model {
        
     function getAllOngekeurdeMetSpreker() {        
         $this->load->model('conferentie_model');
-        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        $conferentieId = $this->session->userdata('conferentieId');
         
         $this->db->order_by('conferentiedagId');
         $this->db->where('isGoedgekeurd', '0');
-        $this->db->where('conferentieId', $actieveConferentie->id);
+        $this->db->where('conferentieId', $conferentieId);
         $query = $this->db->get('sessie');
         $sessies = $query->result();
         
