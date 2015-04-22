@@ -29,6 +29,9 @@ class Adminbeheer extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['admins'] = $this->gebruiker_model->getAllAdmins();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
