@@ -110,6 +110,7 @@ class Spreker extends CI_Controller {
         
         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors());
+            echo 'lol fail';
         } else {
             $data = array('upload_data' => $this->upload->data());
             echo 'gelukt';
@@ -120,7 +121,7 @@ class Spreker extends CI_Controller {
 
         $this->gebruiker_model->update($spreker);
 
-        redirect('profiel/instellingen');
+        /*redirect('profiel/instellingen');*/
     }
 
 }
