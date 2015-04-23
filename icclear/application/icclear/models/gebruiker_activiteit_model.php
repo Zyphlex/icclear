@@ -58,7 +58,12 @@ class Gebruiker_activiteit_model extends CI_Model {
         }        
         return $geld;
     }
-
+        
+    function insert($activiteit) {
+        $this->db->insert('gebruikerActiviteit', $activiteit);
+        return $this->db->insert_id();
+    }
+    
 }
 
 ?>
