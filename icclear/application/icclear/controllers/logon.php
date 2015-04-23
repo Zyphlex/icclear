@@ -30,8 +30,16 @@ class Logon extends CI_Controller {
         } else if ($this->authex->login($email, sha1($password))) {
             redirect('home');
         } else {
-            redirect('faq');
+            redirect('');
         }
+    }
+    
+    public function fout() {
+        $data['title'] = 'IC Clear - Fout';
+        $data['user'] = $this->authex->getUserInfo();
+        $data['active'] = '';
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/fout', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
     }
 
     public function vergeten() {
