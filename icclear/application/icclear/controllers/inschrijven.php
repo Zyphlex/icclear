@@ -42,7 +42,7 @@ class Inschrijven extends CI_Controller {
         {
             $betaling->gebruikerId = $this->authex->getUserInfo();        
             $this->load->model('betaling_model');
-            $betalingId = $this->betaling_model->insert($betaling);
+            $betId = $this->betaling_model->insert($betaling);
         }               
         
         $inschrijving->gebruikerId = $this->authex->getUserInfo();
@@ -50,9 +50,9 @@ class Inschrijven extends CI_Controller {
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
         $inschrijving->datum = date("Y-m-d");
         $inschrijving->methodeId = $this->input->post('methode');
-        if ($betalingId != null)
+        if ($betId != null)
         {
-            $inschrijving->betalingId = $betalingId;
+            $inschrijving->betalingId = $betId;
         }
         
         $this->load->model('inschrijving_model');
