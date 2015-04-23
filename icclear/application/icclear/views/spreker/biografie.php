@@ -25,6 +25,9 @@
         <div class="col-md-2">
             <input id="userfile" type="file" name="userfile" class=""/>
         </div>
+        <div class="col-md-2">
+            Enkel JPG afbeeldingen toegestaan. Maximum 250x250 pixels.
+        </div>
     </div>
 
     <br/>
