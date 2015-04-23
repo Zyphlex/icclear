@@ -44,7 +44,7 @@ class Inschrijven extends CI_Controller {
         {
             $betaling->gebruikerId = $userId->id;        
             $this->load->model('betaling_model');
-            $betId = $this->betaling_model->insert($betaling);
+            //$betId = $this->betaling_model->insert($betaling);
         }               
              
         $inschrijving->gebruikerId = $userId->id;
@@ -55,7 +55,10 @@ class Inschrijven extends CI_Controller {
         if ($betId != 0)
         {
             $inschrijving->betalingId = $betId;
-        }
+        }       
+        
+        $this->load->model('inschrijving_model');
+        //$this->inschrijving_model->insert($inschrijving);
         
         $teller = 1;
         
@@ -75,22 +78,20 @@ class Inschrijven extends CI_Controller {
                     $activiteit->aantalPersonen = $maxP[$indexP];
                 }
                 
-                $activiteit->aantalPersonen = $maxP[array_search($a, $act)];
+                //$activiteit->aantalPersonen = $maxP[array_search($a, $act)];
                 $indexP++;
                 
                 $this->load->model('gebruiker_activiteit_model');
                 $actId = $this->gebruiker_activiteit_model->insert($activiteit);
         }
         print_r($maxP);
-        
-        $this->load->model('inschrijving_model');
-        $this->inschrijving_model->insert($inschrijving);
+        print_r($act);
          
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
-        redirect('home');
+        //redirect('home');
     }
     
     public function opvolgen(){
