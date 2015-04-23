@@ -42,7 +42,7 @@ class Inschrijven extends CI_Controller {
         $betId = 0;
         if ($this->input->post('methode') != 4)
         {
-            $betaling->gebruikerId = $userId;        
+            $betaling->gebruikerId = $userId->id;        
             $this->load->model('betaling_model');
             $betId = $this->betaling_model->insert($betaling);
         }               
