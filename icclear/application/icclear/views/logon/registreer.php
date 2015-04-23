@@ -53,10 +53,7 @@
             return ok;
         }
 
-
-
-        $("#mySubmit").click(function (e) {
-            alert(resu);
+        $("#mySubmit").click(function (e) {            
             e.preventDefault();
             if (validatieOK() && validate() && emailCheck()) {
                 $("#myForm").submit();
