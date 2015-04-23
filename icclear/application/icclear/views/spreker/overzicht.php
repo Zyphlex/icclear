@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-5">
-                            <?php if ($spreker->foto != 'spreker' . $spreker->id . '.jpg') { ?>
+                            <?php if ($spreker->foto == 'spreker' . $spreker->id . '.jpg') { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $spreker->foto; ?>" 
                                  alt="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
                                  title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>"
