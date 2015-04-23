@@ -23,7 +23,7 @@
             <label for="foto" class="control-label">Foto: </label>
         </div>
         <div class="col-md-2">
-            <input id="foto" type="file" name="foto" class=""/>
+            <input id="userfile" type="file" name="userfile" class=""/>
         </div>
     </div>
 
