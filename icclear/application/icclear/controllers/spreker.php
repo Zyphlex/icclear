@@ -95,7 +95,7 @@ class Spreker extends CI_Controller {
         // foto
         $config['upload_path'] = './application/upload/';
         $config['allowed_types'] = 'jpg';
-        $config['file_name'] = 'spreker' . $spreker->id . '.jpg';
+        //$config['file_name'] = 'spreker' . $spreker->id . '.jpg';
         $config['max_size'] = 200;
         $config['max_height'] = 250;
         $config['max_width'] = 250;
