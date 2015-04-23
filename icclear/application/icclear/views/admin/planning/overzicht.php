@@ -166,7 +166,7 @@
                     foreach ($dagen as $dag) {
 
                         foreach ($dag->planning as $planning) {
-                            $drop[$planning->zaal->id] = $planning->zaal->naam . " (" . $planning->gebouw->naam . " ," . $planning->zaal->maximumAantalPersonen . ")";
+                            $drop[$planning->zaal->id] = $planning->zaal->naam . " (" . $planning->gebouw->naam . " , " . $planning->zaal->maximumAantalPersonen . " plaatsen)";
                             $teller++;
                         }
                     }
