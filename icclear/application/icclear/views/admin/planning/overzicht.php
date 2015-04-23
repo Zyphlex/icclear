@@ -163,7 +163,7 @@
                     <?php
                     $drop = array();
                     $teller = 1;
-                    foreach ($dag->planning->zaal as $zaal) {
+                    foreach ($dagen->planning->zaal as $zaal) {
                         $drop[$zaal->id] = $zaal->naam;
                         $teller++;
                     }
