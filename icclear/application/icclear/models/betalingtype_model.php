@@ -9,7 +9,7 @@ class Betalingtype_model extends CI_Model {
     
     function get($id) {
         $this->db->where('id', $id);
-        $query = $this->db->get('betaling');
+        $query = $this->db->get('betalingtype');
         return $query->row();
     }
             
