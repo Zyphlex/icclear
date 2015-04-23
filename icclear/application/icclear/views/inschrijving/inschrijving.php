@@ -1,14 +1,3 @@
-<script type="text/javascript">    
-        $('.checkact').attr('checked', false);
-        $('.checkact').click(function(){
-        if($('input[name='+ $(this).attr('value')+']').attr('disabled') == false){
-            $('input[name='+ $(this).attr('value')+']').attr('disabled', true);
-        }else{
-            $('input[name='+ $(this).attr('value')+']').attr('disabled', false);
-        }
-    });
-</script>
-
 <div class="row">
     <div class="col-md-12">
         <h1>Inschrijven conferentie</h1>
@@ -102,20 +91,3 @@ echo form_open('inschrijven/verzenden', $attributes);
     </div>
 </div>
 <?php echo form_close(); ?>
-
-<table>
-    <tr>    
-        <td >Specific operations/procedures</td>
-        <td>
-            <input type="checkbox" name="sd3" value="mfi_nam9" class="checkact"/>Other(please specify)<br/>     
-            <input type="text" name="mfi_nam9" class="text required" id="mfi_name" >
-        </td>
-    </tr>
-    <tr>    
-        <td >General principles/strategies</td>
-        <td>
-            <input type="checkbox" name="sd2[]" value="mfi_nam8"  class="checkact"/>Other(please specify):<br/>
-            <input type="text" name="mfi_nam8" class="text required" id="mfi_name" >
-        </td>
-    </tr>
-</table>
