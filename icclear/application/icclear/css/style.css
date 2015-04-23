@@ -75,7 +75,7 @@ a:hover {
 }
 
 .bold { 
-    font-style: bold;
+    font-weight:bold;
 }
 
 .modal-lg {
