@@ -109,6 +109,7 @@ class Spreker extends CI_Controller {
         $this->upload->initialize($config);
         
         $fieldname = 'userfile';
+        $this->upload->do_upload($fieldname);
         
         if (!$this->upload->do_upload($fieldname)) {
             $error = array('error' => $this->upload->display_errors());
