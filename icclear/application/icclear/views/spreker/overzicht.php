@@ -15,7 +15,7 @@
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $spreker->foto; ?>" 
                                  alt="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
                                  title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>"
-                                 width="110">
+                                 height="110">
                             <?php } else { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
                                  alt="Foto niet beschikbaar" title="Foto niet beschikbaar" width="110">
