@@ -20,7 +20,7 @@
         <tbody>
             <?php foreach ($dag->planning as $planning) { ?>
                 <tr>
-                    <td><?php echo $planning->beginUur . " : " . $planning->eindUur ?></td>
+                    <td><?php echo $planning->beginUur . " tot " . $planning->eindUur ?></td>
                     <td><?php echo $planning->sessie->onderwerp ?></td>
                     <td><?php echo $planning->zaal->naam ?></td>
                     <?php
