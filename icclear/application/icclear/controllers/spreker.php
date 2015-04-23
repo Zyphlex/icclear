@@ -97,8 +97,8 @@ class Spreker extends CI_Controller {
         $config['allowed_types'] = 'jpg';
         $config['file_name'] = 'spreker' . $spreker->id . '.jpg';
         $config['max_size'] = 200;
-        $config['max_height'] = 500;
-        $config['max_width'] = 500;
+        $config['max_height'] = 250;
+        $config['max_width'] = 250;
 
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, TRUE);
