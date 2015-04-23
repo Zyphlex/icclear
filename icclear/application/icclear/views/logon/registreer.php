@@ -103,7 +103,12 @@
                     //#emailInfo is a span which will show you message
                     $('#Loading').hide();
                     setTimeout("finishAjax('Loading', '" + escape(response) + "')", 400);
-                    
+                    if(response == 1){                
+                        $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                    }
+                    else{
+                        $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                    }
                 });
                 return false;
             }
@@ -138,6 +143,7 @@ echo form_open('logon/add', $attributes);
                 <div class="col-md-4">   
                     <?php echo form_label('Emailadres:', 'email'); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
+                    <div id="feedbackemail"></div>
                 </div>  
 
                 <div class="col-md-8">   
