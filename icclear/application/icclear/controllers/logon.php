@@ -25,9 +25,9 @@ class Logon extends CI_Controller {
         //is geactiveerd
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
-        if ($actCheck == false) {
+        if ($this->authex->login($email, sha1($password))) {
             redirect('logon/nietGeactiveerd');
-        } else if ($this->authex->login($email, sha1($password))) {
+        } else if ($actCheck == false) {
             redirect('home');
         } else {
             redirect('logon/fout');
