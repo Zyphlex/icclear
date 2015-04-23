@@ -48,7 +48,7 @@ class Logon_model extends CI_Model {
     
     function emailAanwezig($email) {
         // is email al dan niet aanwezig
-        $this->db->where('UPPERR(emailadres)', upper($email));
+        $this->db->where('UPPER(emailadres)', upper($email));
         $query = $this->db->get('gebruiker');
         if ($query->num_rows() == 0) {
             return false;
