@@ -58,7 +58,7 @@
             if (validatieOK() && validate() && emailCorrect()) {
                 $("#myForm").submit();
             }
-            alert($("#feedbackemail").val());
+            
         });
 
 
@@ -103,9 +103,7 @@
                     //#emailInfo is a span which will show you message
                     $('#Loading').hide();
                     setTimeout("finishAjax('Loading', '" + escape(response) + "')", 400);
-                    if(response == false){
-                        alert('test'); 
-                    }
+                    
                 });
                 return false;
             }
