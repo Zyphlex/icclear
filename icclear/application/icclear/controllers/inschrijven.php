@@ -78,11 +78,11 @@ class Inschrijven extends CI_Controller {
                     $activiteit->aantalPersonen = $maxP[$indexP];
                 }
                 
-                //$activiteit->aantalPersonen = $maxP[array_search($a, $act)];
+                $activiteit->aantalPersonen = $maxP[array_search($a, $act)];
                 $indexP++;
                 
                 $this->load->model('gebruiker_activiteit_model');
-                $actId = $this->gebruiker_activiteit_model->insert($activiteit);
+                //$actId = $this->gebruiker_activiteit_model->insert($activiteit);
         }
         print_r($maxP);
         print_r($act);
