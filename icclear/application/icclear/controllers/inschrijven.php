@@ -70,8 +70,10 @@ class Inschrijven extends CI_Controller {
                 {
                     $activiteit->betalingId = $betId;
                 }
-                $aantal = $this->input->post('aantalPersonen' . $a);
-                $activiteit->aantalPersonen = $maxP[$indexP];
+                if ($maxP[$indexP] != "")
+                {
+                    $activiteit->aantalPersonen = $maxP[$indexP];
+                }
                 $indexP++;
                 
                 $this->load->model('gebruiker_activiteit_model');
