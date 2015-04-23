@@ -38,6 +38,8 @@ class Logon extends CI_Controller {
         $data['title'] = 'IC Clear - Fout';
         $data['user'] = $this->authex->getUserInfo();
         $data['active'] = '';
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'logon/fout', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
