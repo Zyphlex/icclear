@@ -103,7 +103,7 @@
                     //#emailInfo is a span which will show you message
                     $('#Loading').hide();
                     setTimeout("finishAjax('Loading', '" + escape(response) + "')", 400);
-                    if(response == 1){                
+                    if(response == 0){                
                         $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                     }
                     else{
