@@ -161,12 +161,12 @@
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
+                    $drop = array();
+                    $teller = 1;
                     foreach ($dagen as $dag) {
 
-                        $drop = array();
-                        $teller = 1;
-                        foreach ($dag->planning->zaal as $zaal) {
-                            $drop[$zaal->id] = $zaal->naam;
+                        foreach ($dag->planning as $planning) {
+                            $drop[$planning->zaal->id] = $planning->zaal->naam;
                             $teller++;
                         }
                     }
