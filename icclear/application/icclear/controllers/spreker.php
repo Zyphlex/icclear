@@ -106,18 +106,14 @@ class Spreker extends CI_Controller {
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        
+
         $fieldname = 'userfile';
-        
+
         if (!$this->upload->do_upload($fieldname)) {
             $error = array('error' => $this->upload->display_errors());
-                        
-                        
-                        echo print_r($config);
-                        echo print_r($error);
-                        echo realpath($config['upload_path']);
-        } else {
-            echo 'gelukt';
+            echo print_r($config);
+            echo print_r($error);
+            echo realpath($config['upload_path']);
         }
 
         $spreker->biografie = $biografie;
@@ -125,7 +121,7 @@ class Spreker extends CI_Controller {
 
         $this->gebruiker_model->update($spreker);
 
-        /*redirect('profiel/instellingen');*/
+        /* redirect('profiel/instellingen'); */
     }
 
 }
