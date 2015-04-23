@@ -26,7 +26,7 @@ echo form_open('spreker/updateBiografie', $attributes);
         <input id="userfile" type="file" name="userfile" class=""/>
     </div>
 </div>
-<div class="col-md-2">
+<div class="row">
     Enkel JPG afbeeldingen toegestaan. Maximum 250x250 pixels.
 </div>
 
