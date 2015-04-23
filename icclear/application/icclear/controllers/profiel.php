@@ -54,7 +54,7 @@ class Profiel extends CI_Controller {
 
         $this->gebruiker_model->update($gebruiker);
 
-        redirect('home');
+        redirect('profiel/instellingen');
     }
     
     public function instellingen() {
