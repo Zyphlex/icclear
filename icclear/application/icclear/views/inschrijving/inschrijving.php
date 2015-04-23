@@ -51,7 +51,6 @@ echo form_open('inschrijven/verzenden', $attributes);
                 <th></th>
                 <th>Aantal Personen (max. 10)</th>
             </tr>
-            <?php $teller = 1; ?>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
                     <tr>
@@ -59,10 +58,9 @@ echo form_open('inschrijven/verzenden', $attributes);
                         <td><?php echo $activiteit->prijs ?></td>
                     
                         <td><input type="checkbox" name="aanwezig[]" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
-                        <td><input placeholder="0" type="number" name="aantalPersonen" id="aantalPersonen" max="10"/></td>
+                        <td><input type="number" name="aantalPersonen" id="aantalPersonen" max="10"/></td>
                     </tr>
-                        <?php $teller++;
-                }
+                <?php }
             }
             ?>
 
