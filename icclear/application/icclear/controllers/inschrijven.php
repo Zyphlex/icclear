@@ -46,7 +46,8 @@ class Inschrijven extends CI_Controller {
 //            $betId = $this->betaling_model->insert($betaling);
 //        }               
         
-        $inschrijving->gebruikerId = $this->authex->getUserInfo();
+        $userId = $this->authex->getUserInfo();
+        $inschrijving->gebruikerId = $userId->id;
         $inschrijving->conferentieId = $conf->id;
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
         $inschrijving->datum = date("Y-m-d");
