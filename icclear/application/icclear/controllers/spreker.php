@@ -110,7 +110,7 @@ class Spreker extends CI_Controller {
         
         if (!$this->upload->do_upload()) {
             $error = array('error' => $this->upload->display_errors());
-            echo 'lol fail';
+            echo 'mislukt';
         } else {
             $data = array('upload_data' => $this->upload->data());
             echo 'gelukt';
