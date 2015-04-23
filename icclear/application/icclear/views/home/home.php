@@ -12,7 +12,7 @@
     
     <div class="col-md-4">
         <div class="thumbnail">
-            <img src="http://icclear.net/wp-content/uploads/2015/02/clarity2014-slider-new.jpg" alt="placeholder image" title="placeholder">
+            <img src="http://icclear.net/wp-content/uploads/2015/02/clarity2014-slider-new.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
     </div>
 </div>
