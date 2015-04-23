@@ -60,6 +60,8 @@ class Inschrijven extends CI_Controller {
         $teller = 1;
         
         $act = $this->input->post('aanwezig');
+        $maxP = $this->input->post('aantalPersonen');
+        $indexP = 0;
         foreach ($act as $a)
         {
                 $activiteit->activiteitId = $a;
@@ -68,9 +70,9 @@ class Inschrijven extends CI_Controller {
                 {
                     $activiteit->betalingId = $betId;
                 }
-                $var = (string)('aantalPersonen' . $a);
-                $aantal = $this->input->post($var);
-                $activiteit->aantalPersonen = $aantal;
+                $aantal = $this->input->post('aantalPersonen' . $a);
+                $activiteit->aantalPersonen = $maxP[$indexP];
+                $indexP++;
                 
                 $this->load->model('gebruiker_activiteit_model');
                 $actId = $this->gebruiker_activiteit_model->insert($activiteit);
