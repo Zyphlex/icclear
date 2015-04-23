@@ -66,6 +66,9 @@
             if (validatieOK() && validate() && emailCorrect()) {
                 $("#myForm").submit();
             }
+            else{
+                alert('hallo');
+            }
         });
 
         function validate() {
