@@ -54,7 +54,7 @@ class Gebruiker_activiteit_model extends CI_Model {
         $geb_act = $query->result();
         foreach ($geb_act as $g){
             $g->activiteit = $this->activiteit_model->get($g->activiteitId);
-            $geld += $g->activiteit->prijs;
+            $geld += ($g->activiteit->prijs * $g->aantalPersonen);
         }        
         return $geld;
     }
