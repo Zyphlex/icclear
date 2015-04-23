@@ -58,9 +58,7 @@
             if (validatieOK() && validate() && emailCorrect()) {
                 $("#myForm").submit();
             }
-            else{
-                alert('hallo');
-            }
+            alert($("#feedbackemail").val());
         });
 
 
