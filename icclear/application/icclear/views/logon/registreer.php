@@ -55,6 +55,7 @@
 
         $("#mySubmit").click(function (e) {            
             e.preventDefault();
+            dubbelCheck();
             if (validatieOK() && validate() && emailCheck()) {
                 $("#myForm").submit();
             }
@@ -70,6 +71,30 @@
             }
             return ok;
         }
+       
+       function dubbelCheck(){           
+            $('#Loading').show();
+            var a = $("#email").val();
+            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;            
+            if (filter.test(a)) {                           
+                $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
+                    email: $('#email').val()
+                }, function (response) {
+                    resu = response;                    
+                    $('#Loading').hide();
+                    if (response == 0) {
+                        $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                    }
+                    else {
+                        $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                    }                               
+            }
+            if ($('#email').val() == '') {
+                $('#Loading').hide();
+                $("#feedbackemail").html("");
+            }
+        });
+       }
        
         function validate() {
             ok = true;
@@ -115,6 +140,7 @@
 
             if ($('#email').val() == '') {
                 $('#Loading').hide();
+                $("#feedbackemail").html("");
             }
 
 
