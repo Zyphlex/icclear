@@ -1,3 +1,18 @@
+<script type="text/javascript">    
+$(document).ready(function () {
+    $('.checkact').attr('checked', true);
+    
+    $('.checkact').click(function(){
+        if($('input[name='+ $(this).attr('value')+']').attr('disabled') == false){
+            $('input[name='+ $(this).attr('value')+']').attr('disabled', true);
+        }else{
+            $('input[name='+ $(this).attr('value')+']').attr('disabled', false);
+        }
+    });
+    
+});
+</script>
+
 <div class="row">
     <div class="col-md-12">
         <h1>Inschrijven conferentie</h1>
@@ -57,8 +72,8 @@ echo form_open('inschrijven/verzenden', $attributes);
                         <td><?php echo $activiteit->naam ?></td>
                         <td><?php echo $activiteit->prijs ?></td>
                     
-                        <td><input type="checkbox" name="aanwezig[]" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
-                        <td><input type="number" name="aantalPersonen[]" id="aantalPersonen" max="10" value=""/></td>
+                        <td><input class="checkact" type="checkbox" name="aanwezig[]" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
+                        <td><input type="text" name="aantalPersonen[]" id="aantalPersonen" max="10" value=""/></td>
                     </tr>
                 <?php }
             }
