@@ -75,7 +75,7 @@ class Profiel extends CI_Controller {
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+                
         $this->load->model('gebruiker_activiteit_model');
         $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id);
                 
