@@ -68,12 +68,13 @@
             if (resu == 0) {
                 ok = false;
 
-            } else {
+            }
+            else {
                 ok = true;
             }
             return ok;
-        }}
-
+        }
+       
         function validate() {
             ok = true;
             var password1 = $("#password1").val();
