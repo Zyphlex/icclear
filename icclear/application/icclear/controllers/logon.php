@@ -218,7 +218,6 @@ class Logon extends CI_Controller {
     function check_email_availablity() {
         $this->load->model('email_model');
         $result = $this->email_model->check_email_availablity();       
-
         if (!$result) {
             echo 0;
         } else {
