@@ -57,19 +57,26 @@ class Inschrijven extends CI_Controller {
             $inschrijving->betalingId = $betId;
         }
         
-        print_r($teller);
-        
         $teller = 1;
+        
         while ($this->input->post('aanwezig' + $teller) != null) {
             if ($this->input->post('aanwezig' + $teller))
-            {                
-                print_r($teller);
+            {       
+                $activiteit->activiteitId = 1;
+                $activiteit->gebruikerId = $userId->id;
+                $activiteit->betalingId = $betId;
+                $activiteit->aantalPersonen = 1;
+                
+                $this->load->model('gebruiker_activiteit_model');
+                $actId = $this->gebruiker_activiteit_model->insert($activiteit);
+                //print_r($teller);
             }
+            $teller++;
         }
         
         $this->load->model('inschrijving_model');
         $this->inschrijving_model->insert($inschrijving);
-        
+         
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
