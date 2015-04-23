@@ -205,20 +205,7 @@
                                         <div class="col-md-8">   
                                             <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
                                         </div>
-                                    </div>
-                                    <?php if($inschrijving != null && $inschrijving->betaling != null){ ?>
-                                    <div class="row">
-                                        <div class="col-md-4">   
-                                            <label for="methode">
-                                                Betaalmethode:
-                                            </label>
-                                        </div>
-
-                                        <div class="col-md-8">   
-                                            <input type="text" name="methode" value="<?php echo $inschrijving->betaling->methode ?>" id="methode" class="form-control" disabled="true">
-                                        </div>
-                                    </div>
-                                    <?php } ?>
+                                    </div>                                    
                                 </div>
                             </div>         
                             <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
