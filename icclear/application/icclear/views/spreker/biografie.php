@@ -15,7 +15,7 @@
 </div>
 
 <?php 
-    $attributes = array('name' => 'myform');
+    $attributes = array('name' => 'myform',  'enctype' => 'multipart/form-data');
     echo form_open('spreker/updateBiografie', $attributes);
 ?>
     <div class="row">
