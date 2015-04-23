@@ -134,8 +134,10 @@
                     <p><?php echo form_label('Datum:', 'datum'); ?></p>
                     <?php
                     $drop = array();
+                    $teller = 1;
                     foreach ($dagen as $dag) {
                         $drop[$dag->id] = toDDMMYYYY($dag->datum);
+                        $teller++;
                     }
                     echo form_dropdown('datum', $drop, '', 'id="datum" class="form-control"');
                     ?>
@@ -161,7 +163,7 @@
                     <?php
                     $drop = array();
                     $teller = 1;
-                    foreach ($zalen as $zaal) {
+                    foreach ($dag->planning->zaal as $zaal) {
                         $drop[$zaal->id] = $zaal->naam;
                         $teller++;
                     }
