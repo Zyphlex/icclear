@@ -131,6 +131,7 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="dag" id="dag" />
                     
                     <p><?php echo form_label('Datum:', 'datum'); ?></p>
                     <?php
