@@ -224,7 +224,7 @@
                                 <tr>
                                     <td><?php echo $inschrijving->conferentie->naam;?></td>
                                     <td><?php echo $inschrijving->datum;?></td>
-                                    <td><?php echo $inschrijving->betaling->methode;?></td>
+                                    <td><?php echo $inschrijving->type->omschrijving;?></td>
                                     <td><?php echo $geld;?></td>                                    
                                 </tr>
                             </table>
