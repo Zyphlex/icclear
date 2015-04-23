@@ -122,7 +122,7 @@ class Spreker extends CI_Controller {
 
         $this->gebruiker_model->update($spreker);
 
-        /* redirect('profiel/instellingen'); */
+        redirect('profiel/instellingen');
     }
 
 }
