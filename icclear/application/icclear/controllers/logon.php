@@ -217,16 +217,13 @@ class Logon extends CI_Controller {
 
     function check_email_availablity() {
         $this->load->model('email_model');
-        $result = $this->email_model->check_email_availablity();
-        $boolean = false;
+        $result = $this->email_model->check_email_availablity();       
 
         if (!$result) {
-            echo '<p class="form-note form-note-used" id="feedbackemail">Niet beschikbaar</p>';
+            echo 0;
         } else {
-            echo '<p class="form-note form-note-ok" id="feedbackemail">Beschikbaar</p>';
-            $boolean = true;
-        }
-        return $boolean;
+            echo 1;            
+        }        
     }
 
 }
