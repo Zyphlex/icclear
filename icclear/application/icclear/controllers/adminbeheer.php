@@ -58,6 +58,7 @@ class Adminbeheer extends CI_Controller {
         $admin->voornaam = $this->input->post('voornaam');
         $admin->familienaam = $this->input->post('familienaam');
         $admin->emailadres = $this->input->post('emailadres');
+        $admin->paswoord = $this->input->post('wachtwoord');
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
@@ -68,7 +69,6 @@ class Adminbeheer extends CI_Controller {
             $admin->postcode = '';
             $admin->straat = '';
             $admin->nummer = '';
-            $admin->paswoord = '';
             $admin->geslacht = '';
             $admin->typeId = 3;
             $admin->landId = 1;
