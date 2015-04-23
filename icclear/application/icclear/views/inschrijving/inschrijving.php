@@ -1,6 +1,6 @@
 <script type="text/javascript">    
 $(document).ready(function () {
-    $('.checkact').attr('checked', true);
+    $('.checkact').attr('checked', false);
     
     $('.checkact').click(function(){
         if($('input[name='+ $(this).attr('value')+']').attr('disabled') == false){
