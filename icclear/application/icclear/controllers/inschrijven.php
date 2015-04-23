@@ -77,6 +77,7 @@ class Inschrijven extends CI_Controller {
                 $this->load->model('gebruiker_activiteit_model');
                 $actId = $this->gebruiker_activiteit_model->insert($activiteit);
         }
+        print_r($maxP);
         
         $this->load->model('inschrijving_model');
         $this->inschrijving_model->insert($inschrijving);
