@@ -12,8 +12,8 @@
                     <div class="panel-body">
                         <div class="col-md-5">
                             <img src="<?php echo base_url() . 'application/upload/' . $spreker->foto; ?>" 
-                                 alt="<?php echo$spreker->naam . ' ' . $spreker->voornaam; ?>" 
-                                 title="<?php echo$spreker->naam . ' ' . $spreker->voornaam; ?>">
+                                 alt="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
+                                 title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>">
                         </div>
                         <div class="col-md-7">
                             <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4> 
