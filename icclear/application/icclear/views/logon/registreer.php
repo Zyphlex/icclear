@@ -67,7 +67,6 @@
             ok = true;
             if (resu == 0) {
                 ok = false;
-
             }
             else {
                 ok = true;
