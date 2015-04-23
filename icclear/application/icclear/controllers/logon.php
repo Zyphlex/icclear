@@ -30,7 +30,7 @@ class Logon extends CI_Controller {
         } else if ($this->authex->login($email, sha1($password))) {
             redirect('home');
         } else {
-            redirect('');
+            redirect('logon/fout');
         }
     }
     
