@@ -20,7 +20,7 @@
 ?>
     <div class="row">
         <div class="col-md-2">
-            <label for="foto" class="control-label">Foto: </label>
+            <label for="userfile" class="control-label">Foto: </label>
         </div>
         <div class="col-md-2">
             <input id="userfile" type="file" name="userfile" class=""/>
