@@ -87,8 +87,7 @@
         }
 
 
-        $('#email').keyup(function () {
-            emailCorrect();
+        $('#email').keyup(function () {            
             $('#Loading').show();
             var a = $("#email").val();
             var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
