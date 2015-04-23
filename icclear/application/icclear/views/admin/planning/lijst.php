@@ -22,7 +22,7 @@
                 <tr>
                     <td><?php echo $planning->beginUur . " : " . $planning->eindUur ?></td>
                     <td><?php echo $planning->sessie->onderwerp ?></td>
-                    <td><?php echo $planning->gebouw->naam ?></td>
+                    <td><?php echo $planning->zaal->naam ?></td>
                     <?php
                     if ($planning->plenair == 1) {
                         echo '<td>Ja</td>';
