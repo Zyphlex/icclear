@@ -14,31 +14,31 @@
     </div> 
 </div>
 
-<?php 
-    $attributes = array('name' => 'myform',  'enctype' => 'multipart/form-data');
-    echo form_open('spreker/updateBiografie', $attributes);
+<?php
+$attributes = array('name' => 'myform', 'enctype' => 'multipart/form-data');
+echo form_open('spreker/updateBiografie', $attributes);
 ?>
-    <div class="row">
-        <div class="col-md-2">
-            <label for="userfile" class="control-label">Foto: </label>
-        </div>
-        <div class="col-md-2">
-            <input id="userfile" type="file" name="userfile" class=""/>
-        </div>
-        <div class="col-md-2">
-            Enkel JPG afbeeldingen toegestaan. Maximum 250x250 pixels.
-        </div>
+<div class="row">
+    <div class="col-md-2">
+        <label for="userfile" class="control-label">Foto: </label>
     </div>
-
-    <br/>
-
-    <div class="row">
-        <div class="col-md-2">
-            <label for="biografie" class="control-label">Biografie: </label>
-        </div>
-        <div class="col-md-8">
-            <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
-        </div>
+    <div class="col-md-2">
+        <input id="userfile" type="file" name="userfile" class=""/>
     </div>
-    <input type="submit" value="Bevestigen" class="btn btn-default"/>
+</div>
+<div class="col-md-2">
+    Enkel JPG afbeeldingen toegestaan. Maximum 250x250 pixels.
+</div>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-2">
+        <label for="biografie" class="control-label">Biografie: </label>
+    </div>
+    <div class="col-md-8">
+        <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
+    </div>
+</div>
+<input type="submit" value="Bevestigen" class="btn btn-default"/>
 </form>
