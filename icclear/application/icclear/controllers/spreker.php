@@ -112,6 +112,7 @@ class Spreker extends CI_Controller {
             $error = array('error' => $this->upload->display_errors());
         } else {
             $data = array('upload_data' => $this->upload->data());
+            echo 'gelukt';
         }
 
         $spreker->biografie = $biografie;
