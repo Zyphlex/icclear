@@ -108,38 +108,7 @@
                                         ?>
                                     </div>
                                 </div>
-                            </div>
-
-                            <?php if ($gebruiker->typeId == 2) { ?>
-                                <div class="row">
-                                    <div class="col-md-4">  
-                                        <?php echo form_label('Type:', 'type'); ?>                        
-                                    </div>  
-
-                                    <div class="col-md-8">        
-                                        <div class="my-radio">
-                                            <?php
-                                            if ($gebruiker->typeId == 2) {
-                                                ?>
-                                                <div class="">
-                                                    <?php echo form_input(array('name' => 'type', 'id' => 'spreker', 'value' => '2', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                                                            
-                                                    <span class="option-title">
-                                                        Spreker
-                                                    </span>
-                                                </div> 
-                                                <div class="">
-                                                    <?php echo form_input(array('name' => 'type', 'id' => 'bezoeker', 'value' => '1', 'class' => 'form-horizontal', 'type' => 'radio', 'checked' => 'checked')); ?>                                
-                                                    <span class="option-title">
-                                                        Bezoeker
-                                                    </span>
-                                                </div>
-                                                <?php
-                                            }
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
+                            </div>                           
                                 </div>
                             
                             <div class="col-md-6 border-left">      
