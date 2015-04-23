@@ -92,10 +92,12 @@
     $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
     }
     }
-    }
-    }
     );
     }
+    }
+    }
+    
+    
 
     function validate() {
     ok = true;
