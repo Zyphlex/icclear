@@ -121,7 +121,7 @@ class Spreker extends CI_Controller {
         }
 
         $spreker->biografie = $biografie;
-        $spreker->foto = $config['file_name'];
+        //$spreker->foto = $config['file_name'];
 
         $this->gebruiker_model->update($spreker);
 
