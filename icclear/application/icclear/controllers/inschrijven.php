@@ -46,7 +46,7 @@ class Inschrijven extends CI_Controller {
             $this->load->model('betaling_model');
             $betId = $this->betaling_model->insert($betaling);
         }               
-        
+             
         $inschrijving->gebruikerId = $userId->id;
         $inschrijving->conferentieId = $conf->id;
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
@@ -55,6 +55,14 @@ class Inschrijven extends CI_Controller {
         if ($betId != 0)
         {
             $inschrijving->betalingId = $betId;
+        }
+        
+        $teller = 1;
+        while ($this->input->post('aanwezig' + $teller) != null) {
+            if ($this->input->post('aanwezig' + $teller))
+            {                
+                print_r($teller);
+            }
         }
         
         $this->load->model('inschrijving_model');
