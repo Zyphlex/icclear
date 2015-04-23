@@ -104,7 +104,8 @@
                     $('#Loading').hide();
                     setTimeout("finishAjax('Loading', '" + escape(response) + "')", 400);
                     if(response == false){
-                        alert('test');
+                        alert('test'); 
+                    }
                 });
                 return false;
             }
