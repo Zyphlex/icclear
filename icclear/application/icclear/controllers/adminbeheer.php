@@ -56,9 +56,10 @@ class Adminbeheer extends CI_Controller {
     public function update() {
         $admin->id = $this->input->post('id');        
         $admin->voornaam = $this->input->post('voornaam');
-        $admin->familienaam = $this->input->post('familienaam');
+        $admin->familienaam = $this->input->post('familienaam');        
         $admin->emailadres = $this->input->post('emailadres');
-        $admin->paswoord = $this->input->post('wachtwoord');
+        $wachtwoord = $this->input->post('wachtwoord');
+        $admin->paswoord = sha1($wachtwoord);
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
