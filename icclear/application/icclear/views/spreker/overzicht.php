@@ -11,10 +11,15 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-5">
+                            <?php if ($spreker->foto != null) { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $spreker->foto; ?>" 
                                  alt="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
                                  title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>"
                                  width="110">
+                            <?php } else { ?>
+                            <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
+                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" width="110">
+                            <?php } ?>
                         </div>
                         <div class="col-md-7">
                             <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4> 
