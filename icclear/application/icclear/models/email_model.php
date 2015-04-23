@@ -6,12 +6,11 @@ class Email_model extends CI_Model {
         parent::__construct();
     }
 
-    function check_email_availablity() {
-        $email = trim($this->input->post('email'));
-        $email = strtolower($email);
-
-        $query = $this->db->query('SELECT * FROM gebruiker where emailadres="' . $email . '"');
-
+    function check_email_availablity($email) {        
+        $email = strtolower($email);        
+        $this->db->where('LOWER(emailadres)', $email);
+        $query = $this->db->get('gebruiker');
+        
         if ($query->num_rows() > 0){
             return false;
         }            
