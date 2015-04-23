@@ -10,8 +10,7 @@
         <thead>
             <tr>
 
-                <th>Beginuur</th>
-                <th>Einduur</th>
+                <th>Tijdstip</th>
                 <th>Sessie</th>                
                 <th>Plaats</th>
                 <th>Plenair</th>
@@ -21,8 +20,7 @@
         <tbody>
             <?php foreach ($dag->planning as $planning) { ?>
                 <tr>
-                    <td><?php echo $planning->beginUur ?></td>
-                    <td><?php echo $planning->eindUur ?></td>
+                    <td><?php echo $planning->beginUur . " : " . $planning->eindUur ?></td>
                     <td><?php echo $planning->sessie->onderwerp ?></td>
                     <td><?php echo $planning->gebouw->naam ?></td>
                     <?php
