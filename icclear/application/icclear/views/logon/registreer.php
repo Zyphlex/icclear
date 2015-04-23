@@ -46,7 +46,7 @@
             }
             else {
                 $("#emaildiv").removeClass("has-error");
-            }            
+            }
 
             return ok;
         }
@@ -86,8 +86,8 @@
             return ok;
         }
 
-
-        $('#email').keyup(function () {            
+        $("#password2").keyup(validate);
+        $('#email').keyup(function () {
             $('#Loading').show();
             var a = $("#email").val();
             var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
@@ -108,7 +108,7 @@
                 $('#Loading').hide();
             }
 
-            $("#password2").keyup(validate);
+
         });
 
     });
@@ -212,13 +212,13 @@ echo form_open('logon/add', $attributes);
                 <div class="col-md-4">   
                     <?php echo form_label('Land:', 'land'); ?>                                        
                 </div>              
-               
+
                 <div class="col-md-8">   
                     <?php
                     foreach ($landen as $land) {
                         $options[$land->id] = $land->naam;
                     }
-                    echo form_dropdown('land', $options,0, 'class="form-control" id="land"');
+                    echo form_dropdown('land', $options, 0, 'class="form-control" id="land"');
                     ?>
                 </div>
             </div>
