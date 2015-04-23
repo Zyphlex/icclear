@@ -1,13 +1,12 @@
 <script type="text/javascript">    
         $('.checkact').attr('checked', false);
-
         $('.checkact').click(function(){
-            if($('#aantalPersonen' + $(this).attr('value')).attr('disabled') == false){
-                $('#aantalPersonen' + $(this).attr('value')).attr('disabled', true);
-            }else{
-                $('#aantalPersonen' + $(this).attr('value')).attr('disabled', false);
-            }
-        });
+        if($('input[name='+ $(this).attr('value')+']').attr('disabled') == false){
+            $('input[name='+ $(this).attr('value')+']').attr('disabled', true);
+        }else{
+            $('input[name='+ $(this).attr('value')+']').attr('disabled', false);
+        }
+    });
 </script>
 
 <div class="row">
