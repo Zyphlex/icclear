@@ -1,30 +1,27 @@
 <div class="row">
-    <div class="col-md-10">  
-        <div class="row">
-            <div class="col-md-12">                
-                <div role="tabpanel">
+    <div class="col-md-12">                
+        <div role="tabpanel">
 
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
-                        <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
-                        <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
-                    </ul>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+                <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
+                <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
+            </ul>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="account">
-                            <div class="col-md-12">   
-                            <h1>Profiel wijzigen</h1>
-                            </div>
-                            
-                            <?php
-                            $attributes = array('name' => 'myform', 'id' => 'myform');
-                            echo form_open('profiel/update', $attributes);
-                            echo form_hidden('id', $gebruiker->id);
-                            ?>
-                            <div class="row">
-                                <div class="col-md-6">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="account">
+                    <h1 class="margin-top">Profiel wijzigen</h1>
+                    
+
+                    <?php
+                    $attributes = array('name' => 'myform', 'id' => 'myform');
+                    echo form_open('profiel/update', $attributes);
+                    echo form_hidden('id', $gebruiker->id);
+                    ?>
+                    <div class="row">
+                        <div class="col-md-6">
                             <div class="row">            
                                 <div class="col-md-4">   
                                     <?php echo form_label('Voornaam:', 'voornaam'); ?>
@@ -66,7 +63,7 @@
                                     <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
                                 </div>
                             </div>
-                        
+
                             <div class="row">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
@@ -108,143 +105,140 @@
                                     </div>
                                 </div>
                             </div>                           
+                        </div>
+
+                        <div class="col-md-6 border-left">      
+                            <div class="row">
+                                <div class="col-md-4">  
+                                    <?php echo form_label('Land:', 'land'); ?>                   
                                 </div>
-                            
-                            <div class="col-md-6 border-left">      
+
+                                <div class="col-md-8">   
+                                    <?php
+                                    foreach ($landen as $land) {
+                                        $options[$land->id] = $land->naam;
+                                    }
+                                    echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
+                                    ?>
+                                </div>
+
+
+
                                 <div class="row">
-                                    <div class="col-md-4">  
-                                        <?php echo form_label('Land:', 'land'); ?>                   
+                                    <div class="col-md-4">   
+                                        <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
                                     </div>
 
                                     <div class="col-md-8">   
-                                        <?php
-                                        foreach ($landen as $land) {
-                                            $options[$land->id] = $land->naam;
-                                        }
-                                        echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
-                                        ?>
+                                        <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
                                     </div>
-
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">   
-                                            <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
-                                        </div>
-
-                                        <div class="col-md-8">   
-                                            <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">   
-                                            <?php echo form_label('Postcode:', 'postcode'); ?>                                          
-                                        </div>
-
-                                        <div class="col-md-8">   
-                                            <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">   
-                                            <?php echo form_label('Straat:', 'straat'); ?>                       
-                                        </div>
-
-                                        <div class="col-md-8">   
-                                            <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row">
-                                        <div class="col-md-4">   
-                                            <label for="huisnummer">
-                                                Huisnummer:
-                                            </label>
-                                        </div>
-
-                                        <div class="col-md-8">   
-                                            <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
-                                        </div>
-                                    </div>                                    
                                 </div>
-                            </div>         
-                            <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
-                            <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
-                            <?php echo form_close(); ?> 
-                        </div>
-                        </div>
 
-                        <div role="tabpanel" class="tab-pane" id="conferenties">
-                            <div class="row">
-                            <h1>Ingeschreven conferenties</h1>
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <?php echo form_label('Postcode:', 'postcode'); ?>                                          
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <?php echo form_label('Straat:', 'straat'); ?>                       
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <label for="huisnummer">
+                                            Huisnummer:
+                                        </label>
+                                    </div>
+
+                                    <div class="col-md-8">   
+                                        <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
+                                    </div>
+                                </div>                                    
                             </div>
-                            <?php 
-                                if($inschrijving != null){
-                                ?>
-                            <table class="table">
-                                <tr>
-                                    <th>Conferentie</th>
-                                    <th>Plaats</th>
-                                    <th>Periode</th>
-                                    <th>Prijs</th>
-                                    <th></th>
-                                </tr>
-                                
-                                <tr>                                    
-                                    <td><?php echo $inschrijving->conferentie->naam;?></td>
-                                    <td><?php echo $inschrijving->conferentie->stad;?></td>
-                                    <td><?php echo $inschrijving->datum;?></td>
-                                    <td><?php echo $geld;?><td>
-                                    <td></td>
-                                </tr>                                
-                            </table>
-                            <?php } else { ?>
-                            <p>Geen</p>
-                            <?php } ?>
-                            <h1>Afgelopen conferenties</h1>
-                            
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="betalingen">
-                            <h1>Betalingen</h1>
-                            <?php if($inschrijving != null){ ?>
-                            <table class="table">
-                                <tr>
-                                    <th>Conferentie</th>
-                                    <th>Datum</th>
-                                    <th>Methode</th>
-                                    <th>Bedrag</th>                                    
-                                </tr>
-                                <tr>
-                                    <td><?php echo $inschrijving->conferentie->naam;?></td>
-                                    <td><?php echo $inschrijving->datum;?></td>
-                                    <td><?php echo $inschrijving->type->omschrijving;?></td>
-                                    <td><?php echo $geld;?></td>                                    
-                                </tr>
-                            </table>
-                            <?php } else { ?>
-                            <p>Geen</p>
-                            <?php } ?>
-                        </div>                        
+                        </div>         
+                        <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+                        <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
+                        <?php echo form_close(); ?> 
                     </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="conferenties">
+
+                    <h1 class="margin-top">Ingeschreven conferenties</h1>
+
+                    <?php
+                    if ($inschrijving != null) {
+                        ?>
+                        <table class="table">
+                            <tr>
+                                <th>Conferentie</th>
+                                <th>Plaats</th>
+                                <th>Periode</th>
+                                <th>Prijs</th>
+                                <th></th>
+                            </tr>
+
+                            <tr>                                    
+                                <td><?php echo $inschrijving->conferentie->naam; ?></td>
+                                <td><?php echo $inschrijving->conferentie->stad; ?></td>
+                                <td><?php echo $inschrijving->datum; ?></td>
+                                <td><?php echo $geld; ?><td>
+                                <td></td>
+                            </tr>                                
+                        </table>
+                    <?php } else { ?>
+                        <p>Geen</p>
+                    <?php } ?>
+                    <h1 class="margin-top">Afgelopen conferenties</h1>
 
                 </div>
+                <div role="tabpanel" class="tab-pane" id="betalingen">
+                    <h1 class="margin-top">Betalingen</h1>
+                    <?php if ($inschrijving != null) { ?>
+                        <table class="table">
+                            <tr>
+                                <th>Conferentie</th>
+                                <th>Datum</th>
+                                <th>Methode</th>
+                                <th>Bedrag</th>                                    
+                            </tr>
+                            <tr>
+                                <td><?php echo $inschrijving->conferentie->naam; ?></td>
+                                <td><?php echo $inschrijving->datum; ?></td>
+                                <td><?php echo $inschrijving->type->omschrijving; ?></td>
+                                <td><?php echo $geld; ?></td>                                    
+                            </tr>
+                        </table>
+                    <?php } else { ?>
+                        <p>Geen</p>
+                    <?php } ?>
+                </div>                        
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>
-        <script type="text/javascript">
-            $('#myTab a').click(function (e) {
-                e.preventDefault()
-                $(this).tab('show')
-            })
-        </script>
+<script type="text/javascript">
+    $('#myTab a').click(function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+</script>
