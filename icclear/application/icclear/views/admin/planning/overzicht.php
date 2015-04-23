@@ -37,6 +37,7 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
+                        $("#dag").val(jobject.conferentiedagId);
                         $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
                         $("#einduur").val(jobject.eindUur);
@@ -48,7 +49,7 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-
+                
                 $("#sessie").val("");
                 $("#beginuur").val("");
                 $("#einduur").val("");
@@ -130,7 +131,7 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-
+                    
                     <p><?php echo form_label('Datum:', 'datum'); ?></p>
                     <?php
                     $drop = array();
