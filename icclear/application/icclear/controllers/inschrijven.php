@@ -59,7 +59,7 @@ class Inschrijven extends CI_Controller {
         
         $teller = 1;
         
-        $act = $this->input->post("aanwezig");
+        $act = $this->input->post('aanwezig');
         foreach ($act as $a)
         {
                 $activiteit->activiteitId = 1;
