@@ -7,6 +7,8 @@
         $('#' + id).fadeIn();
     }
     $(document).ready(function () {
+        var resu;
+        
         $('#Loading').hide();
         function validatieOK() {
             ok = true;
@@ -51,74 +53,75 @@
             return ok;
         }
 
-       
+
 
         $("#mySubmit").click(function (e) {
+            alert(resu);
             e.preventDefault();
-            if (validatieOK() && validate() && emailCorrect()) {
+            if (validatieOK() && validate() && emailCheck()) {
                 $("#myForm").submit();
             }
-            
+
         });
-
-
- function emailCorrect() {
+        function emailCheck() {
             ok = true;
-            var em = $("#feedbackemail").val();
-            if (em == "Niet beschikbaar") {
-                ok = false;
-            }
-            return ok;
-
-        }
-        function validate() {
-            ok = true;
-            var password1 = $("#password1").val();
-            var password2 = $("#password2").val();
-            if (password1 == password2) {
-                $("#validate-status").text("Correct");
-                $("#validate-status").removeClass("form-note-used");
-                $("#validate-status").addClass("form-note-ok");
-            }
-            else {
-                $("#validate-status").text("Incorrect");
-                $("#validate-status").removeClass("form-note-ok");
-                $("#validate-status").addClass("form-note-used");
-                ok = false;
-            }
-            return ok;
-        }
-
-        $("#password2").keyup(validate);
-        $('#email').keyup(function () {
-            $('#Loading').show();
-            var a = $("#email").val();
-            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-            // check if email is valid
-            if (filter.test(a)) {
-                // show loader                 
-                $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
-                    email: $('#email').val()
-                }, function (response) {
-                    //#emailInfo is a span which will show you message
-                    $('#Loading').hide();                    
-                    if(response == 0){                
-                        $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                    }
+            if (resu == 0){
+            ok = false;
+                    )
                     else{
-                        $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                    }
-                });
-                return false;
-            }
+                    ok = true;
+                }
+        return ok;
+    }}
 
-            if ($('#email').val() == '') {
+    function validate() {
+        ok = true;
+        var password1 = $("#password1").val();
+        var password2 = $("#password2").val();
+        if (password1 == password2) {
+            $("#validate-status").text("Correct");
+            $("#validate-status").removeClass("form-note-used");
+            $("#validate-status").addClass("form-note-ok");
+        }
+        else {
+            $("#validate-status").text("Incorrect");
+            $("#validate-status").removeClass("form-note-ok");
+            $("#validate-status").addClass("form-note-used");
+            ok = false;
+        }
+        return ok;
+    }
+
+    $("#password2").keyup(validate);
+    $('#email').keyup(function () {
+        $('#Loading').show();
+        var a = $("#email").val();
+        var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+        // check if email is valid
+        if (filter.test(a)) {
+            // show loader                 
+            $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
+                email: $('#email').val()
+            }, function (response) {
+                resu = response;
+                //#emailInfo is a span which will show you message
                 $('#Loading').hide();
-            }
+                if (response == 0) {
+                    $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                }
+                else {
+                    $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                }
+            });
+            return false;
+        }
+
+        if ($('#email').val() == '') {
+            $('#Loading').hide();
+        }
 
 
-        });
-
+    });
     });
 
 </script>
