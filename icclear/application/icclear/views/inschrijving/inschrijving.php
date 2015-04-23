@@ -58,7 +58,7 @@ echo form_open('inschrijven/verzenden', $attributes);
                         <td><?php echo $activiteit->prijs ?></td>
                     
                         <td><input type="checkbox" name="aanwezig[]" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
-                        <td><input type="number" name="aantalPersonen[]" id="aantalPersonen" max="10"/></td>
+                        <td><input type="number" name="aantalPersonen[]" id="aantalPersonen" max="10" value=""/></td>
                     </tr>
                 <?php }
             }
