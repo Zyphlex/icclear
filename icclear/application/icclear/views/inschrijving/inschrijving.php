@@ -1,5 +1,4 @@
 <script type="text/javascript">    
-    $(document).ready(function () {
         $('.checkact').attr('checked', false);
 
         $('.checkact').click(function(){
@@ -9,8 +8,6 @@
                 $('#aantalPersonen' + $(this).attr('value')).attr('disabled', false);
             }
         });
-
-    });
 </script>
 
 <div class="row">
