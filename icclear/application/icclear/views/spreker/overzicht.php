@@ -13,7 +13,8 @@
                         <div class="col-md-5">
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $spreker->foto; ?>" 
                                  alt="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
-                                 title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>">
+                                 title="<?php echo$spreker->familienaam . ' ' . $spreker->voornaam; ?>"
+                                 width="110">
                         </div>
                         <div class="col-md-7">
                             <h4><?php echo$spreker->voornaam . ' ' . $spreker->familienaam ?></h4> 
