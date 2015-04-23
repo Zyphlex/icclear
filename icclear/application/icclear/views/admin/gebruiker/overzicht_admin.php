@@ -134,7 +134,7 @@
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
                     
                     <p><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></p>
-                    <p><?php echo form_input(array('name' => 'wachtwoord', 'id' => 'wachtwoord', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoord', 'class' => 'form-control')); ?></p>
 
                 </form>
 
