@@ -101,8 +101,7 @@
                     email: $('#email').val()
                 }, function (response) {
                     //#emailInfo is a span which will show you message
-                    $('#Loading').hide();
-                    setTimeout("finishAjax('Loading', '" + escape(response) + "')", 400);
+                    $('#Loading').hide();                    
                     if(response == 0){                
                         $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                     }
