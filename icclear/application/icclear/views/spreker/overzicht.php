@@ -18,7 +18,7 @@
                                  height="110">
                             <?php } else { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
-                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" width="110">
+                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="110">
                             <?php } ?>
                         </div>
                         <div class="col-md-7">
