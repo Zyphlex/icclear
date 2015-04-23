@@ -40,6 +40,7 @@
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
                         $("#emailadres").val(jobject.emailadres);
+                        $("#wachtwoord").val(jobject.emailadres);
                     }
                 });
             } else {
@@ -47,6 +48,7 @@
                 $("#voornaam").val("");
                 $("#familienaam").val("");
                 $("#emailadres").val("");
+                $("#wachtwoord").val("");
             }
             // dialoogvenster openen
             $("#adminModal").modal('show');
