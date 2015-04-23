@@ -60,7 +60,7 @@ class Inschrijven extends CI_Controller {
         $teller = 1;
         
         //while ($this->input->post('aanwezig1') != null) {
-            if ($this->input->post('aanwezig1'))
+            if ($this->input->post('aanwezig'+$teller))
             {       
                 $activiteit->activiteitId = 1;
                 $activiteit->gebruikerId = $userId->id;
