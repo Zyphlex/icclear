@@ -14,11 +14,10 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="account">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h1>Profiel wijzigen</h1>
-                                </div>
+                            <div class="col-md-12">   
+                            <h1>Profiel wijzigen</h1>
                             </div>
+                            
                             <?php
                             $attributes = array('name' => 'myform', 'id' => 'myform');
                             echo form_open('profiel/update', $attributes);
@@ -184,7 +183,9 @@
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="conferenties">
-                            <h2>Ingeschreven conferenties</h2>
+                            <div class="row">
+                            <h1>Ingeschreven conferenties</h1>
+                            </div>
                             <?php 
                                 if($inschrijving != null){
                                 ?>
@@ -208,7 +209,7 @@
                             <?php } else { ?>
                             <p>Geen</p>
                             <?php } ?>
-                            <h2>Afgelopen conferenties</h2>
+                            <h1>Afgelopen conferenties</h1>
                             
                         </div>
                         <div role="tabpanel" class="tab-pane" id="betalingen">
