@@ -99,6 +99,7 @@ class Spreker extends CI_Controller {
         $config['max_size'] = 200;
         $config['max_height'] = 250;
         $config['max_width'] = 250;
+        $config['overwrite'] = true;
 
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, TRUE);
