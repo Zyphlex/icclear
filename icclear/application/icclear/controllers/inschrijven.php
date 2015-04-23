@@ -38,15 +38,15 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $conf = $this->conferentie_model->getActieveConferentie();
         
+        $userId = $this->authex->getUserInfo();
         $betId = 0;
         if ($this->input->post('methode') != 4)
         {
-            $betaling->gebruikerId = $this->authex->getUserInfo();        
+            $betaling->gebruikerId = $userId;        
             $this->load->model('betaling_model');
             $betId = $this->betaling_model->insert($betaling);
         }               
         
-        $userId = $this->authex->getUserInfo();
         $inschrijving->gebruikerId = $userId->id;
         $inschrijving->conferentieId = $conf->id;
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
