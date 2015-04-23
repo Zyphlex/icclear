@@ -109,7 +109,12 @@ class Spreker extends CI_Controller {
         $this->upload->initialize($config);
         
         if (!$this->upload->do_upload()) {
-            echo 'mislukt';
+            $error = array('error' => $this->upload->display_errors());
+                        
+                        
+                        echo print_r($config);
+                        echo print_r($error);
+                        echo realpath($config['upload_path']);
         } else {
             echo 'gelukt';
         }
