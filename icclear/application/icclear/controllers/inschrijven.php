@@ -59,7 +59,7 @@ class Inschrijven extends CI_Controller {
         
         $teller = 1;
         
-        while ($this->input->post('aanwezig1') != null) {
+        //while ($this->input->post('aanwezig1') != null) {
             if ($this->input->post('aanwezig1'))
             {       
                 $activiteit->activiteitId = 1;
@@ -72,7 +72,7 @@ class Inschrijven extends CI_Controller {
                 //print_r($teller);
             }
             $teller++;
-        }
+        //}
         
         $this->load->model('inschrijving_model');
         $this->inschrijving_model->insert($inschrijving);
