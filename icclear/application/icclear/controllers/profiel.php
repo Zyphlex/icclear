@@ -76,7 +76,7 @@ class Profiel extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
-        $diff = ($data['inschrijving']->datum - $data['conferentie']->beginDatum );
+        $diff = ($data['inschrijving']->datum - $data['inschrijving']->conferentie->beginDatum );
         if ($diff >= 30)
         {
             print_r('korting ' . $diff);
