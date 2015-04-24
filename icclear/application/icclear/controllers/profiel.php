@@ -87,7 +87,7 @@ class Profiel extends CI_Controller {
         }
         
         $this->load->model('gebruiker_activiteit_model');
-        $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $data['inschrijving']->confonderdeel->prijs;
+        $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
