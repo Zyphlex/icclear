@@ -22,7 +22,9 @@
                     <?php } ?>
                     <?php if ($inschrijving == null){ ?>
                     <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
-                    <?php }?>
+                    <?php }else{?>
+                    <li <?php if ($active == 'Sessie voorkeuren'){ echo 'class="active"'; } ?>><?php echo anchor('sessies/', 'SESSIE VOORKEUREN'); ?></li>
+                    <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
                     <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENUES/ROUTES<b class="caret"></b></a>
