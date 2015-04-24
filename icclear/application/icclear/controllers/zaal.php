@@ -21,11 +21,16 @@ class Zaal extends CI_Controller {
     }
 
     public function index() {
-        $data['user'] = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         $data['title'] = 'IC Clear - Zaal';
         $data['active'] = 'admin';
 
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
         
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
