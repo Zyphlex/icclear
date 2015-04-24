@@ -239,7 +239,7 @@
                                 <td><?php echo $inschrijving->conferentie->stad; ?></td>
                                 <td><?php echo $inschrijving->datum; ?></td>
                                 <td><?php echo $geld; ?></td>
-                                <td><button class="toonDetails btn btn-default" data-id="<?php $inschrijving->conferentie->id ?>">Details</button></td>
+                                <td><button class="toonDetails btn btn-primary" data-id="<?php $inschrijving->conferentie->id ?>">Details</button></td>
                             </tr>                                
                         </table>
                     <?php } else { ?>
