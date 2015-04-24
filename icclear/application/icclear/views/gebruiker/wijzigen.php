@@ -206,10 +206,10 @@
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
                                     <td>
                                         <?php echo $i->geld; ?>
+                                    </td>
                                         <?php if($i->betaling == null) {?>                                        
                                             <span class="label label-danger">Nog niet betaald!</span>
                                         <?php } ?>
-                                    </td>
                                 </tr>                                
                             </table>
                         <?php } ?>
