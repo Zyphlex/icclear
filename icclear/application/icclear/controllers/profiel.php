@@ -79,7 +79,7 @@ class Profiel extends CI_Controller {
         $this->load->model('gebruiker_activiteit_model');   
         foreach ($data['inschrijving'] as $i)
         {
-            $confId = $i->confonderdeel->conferendieId;
+            $confId = $i->confonderdeel->conferentieId;
             $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum)))/86400; 
             if ($diff >= 30)
             {
