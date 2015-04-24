@@ -1,3 +1,38 @@
+<script type="text/javascript">
+    $('#myTab a').click(function(e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+    
+    function maakDetailClick() {
+        $(".toonDetails").click(function () {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/activiteit/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#naam").val(jobject.naam);
+                        $("#conferentie").val(jobject.conferentieId);
+                        $("#prijs").val(jobject.prijs);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken                
+                $("#naam").val("");
+                $("#conferentie").val("");
+                $("#prijs").val("");
+            }
+            // dialoogvenster openen
+            $("#bedragDetails").modal('show');
+        });
+    }
+</script>
+
 <div class="row">
     <div class="col-md-12">                
         <div role="tabpanel">
@@ -192,7 +227,7 @@
                                 <th>Plaats</th>
                                 <th>Periode</th>
                                 <th>Bedrag</th>
-                                <th></th>
+                                <th>toon</th>
                             </tr>
 
                             <tr>                                    
@@ -236,40 +271,6 @@
     </div>
 
 </div>
-<script type="text/javascript">
-    $('#myTab a').click(function(e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-    
-    function maakDetailClick() {
-        $(".toonDetails").click(function () {
-            var iddb = $(this).data("id");
-            $("#id").val(iddb);
-            if (iddb != 0) {
-                // gegevens ophalen via ajax (doorgeven van server met json)
-                $.ajax({type: "GET",
-                    url: site_url + "/activiteit/detail",
-                    async: false,
-                    data: {id: iddb},
-                    success: function (result) {
-                        var jobject = jQuery.parseJSON(result);
-                        $("#naam").val(jobject.naam);
-                        $("#conferentie").val(jobject.conferentieId);
-                        $("#prijs").val(jobject.prijs);
-                    }
-                });
-            } else {
-                // bij toevoegen gewoon vakken leeg maken                
-                $("#naam").val("");
-                $("#conferentie").val("");
-                $("#prijs").val("");
-            }
-            // dialoogvenster openen
-            $("#bedragDetails").modal('show');
-        });
-    }
-</script>
 
 <div class="modal fade" id="bedragDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
