@@ -64,7 +64,7 @@ class Inschrijving_model extends CI_Model {
     function getOnderdeelByInschrijving($id) {
         $this->db->where('conferentieOnderdeelId', $id);
         $query = $this->db->get('inschrijving');
-        $inschrijvingen = $query->row();
+        $inschrijving = $query->row();
 
         $this->load->model('gebruiker_model');
         $this->load->model('betaling_model');
@@ -73,13 +73,12 @@ class Inschrijving_model extends CI_Model {
         $this->load->model('conferentie_model');
 
 
-        foreach ($inschrijvingen as $inschrijving) {
-            $inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
-            $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
-            $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-            $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);
-        }
-        return $inschrijvingen;
+        $inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
+        $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
+        $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
+        $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);
+        
+        return $inschrijving;
     }
     
     function getCountByConferentie($id) {
