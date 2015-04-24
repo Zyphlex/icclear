@@ -30,7 +30,7 @@ class Voorkeur extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'sessie/voorkeuren', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'voorkeur/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
     
