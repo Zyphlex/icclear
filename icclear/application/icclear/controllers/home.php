@@ -10,7 +10,8 @@ class Home extends CI_Controller {
     }
 
     public function index() {
-        $data['user']  = $this->authex->getUserInfo();
+        $user  = $this->authex->getUserInfo();
+        $data['user']  = $user;
         $data['title'] = 'IC Clear - Home'; 
         $data['active'] = 'home';        
         
@@ -22,6 +23,9 @@ class Home extends CI_Controller {
         
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
+        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
