@@ -30,7 +30,7 @@
                     
             
             
-            <?php if($conferentieId != 0) { ?>
+            <?php if($conferentieId != null) { ?>
                     
                 <h4>Conferentie</h4>
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
