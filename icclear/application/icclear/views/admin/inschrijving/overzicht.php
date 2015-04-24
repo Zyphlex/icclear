@@ -26,7 +26,7 @@
                         <?php } ?>
                     </td>
                     <td><?php echo toDDMMYYYY($i->datum) ?></td>
-                    <td><?php echo $i->betaling->methode ?></td>
+                    <td><?php echo $i->type->omschrijving ?></td>
                     <td><?php echo anchor('inschrijving/wijzig/' . $i->id, 'Wijzigen', 'class="btn btn-default"'); ?>
                         <?php echo anchor('inschrijving/verwijder/' . $i->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
                 </tr>
