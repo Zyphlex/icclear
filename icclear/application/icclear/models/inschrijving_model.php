@@ -51,12 +51,7 @@ class Inschrijving_model extends CI_Model {
         
         foreach ($inschrijvingen as $inschrijving)
         {
-            if ($inschrijving->betalingId != null)
-            {
-                $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
-            } else {
-                $inschrijving->betaling = null;
-            }
+            $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);            
             $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
             $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);            
             $inschrijving->type = $this->betalingtype_model->get($inschrijving->methodeId);
