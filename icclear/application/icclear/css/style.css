@@ -4,6 +4,8 @@
     color:#333
 }
 
+.margin-top {margin-top:20px;}
+
 @font-face {
     font-family: 'estrangelo';
     src: url('webfont/estre-webfont.eot');
