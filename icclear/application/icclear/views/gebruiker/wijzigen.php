@@ -267,7 +267,7 @@
                 <div role="tabpanel" class="tab-pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijving as $i) { ?>
-                        <?php if ($i != null ) { ?>
+                        <?php if ($i != null && $i->betaling->id != 0) { ?>
                         <table class="table">
                             <tr>
                                 <th>Conferentie</th>
