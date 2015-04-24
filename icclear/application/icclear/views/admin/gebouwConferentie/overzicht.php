@@ -3,9 +3,7 @@
         <div class="col-md-10"> 
             <?php foreach ($dagen as $dag) { ?>
                 <h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
-        </div>
 
-            <div class="col-md-10"> 
                 <table class="table table-beheer">
                     <thead>
                         <tr>
