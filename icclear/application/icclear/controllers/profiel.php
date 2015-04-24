@@ -75,17 +75,21 @@ class Profiel extends CI_Controller {
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-                
-        $diff = (abs(strtotime($data['inschrijving']->conferentie->beginDatum) - strtotime($data['inschrijving']->datum)))/86400; 
-        if ($diff >= 30)
+             
+        $this->load->model('gebruiker_activiteit_model');   
+        foreach ($data['inschrijving'] as $i)
         {
-            $confprijs = $data['inschrijving']->confonderdeel->prijs - (($data['inschrijving']->confonderdeel->prijs / 100) * $data['inschrijving']->confonderdeel->korting);
-        } else {
-            $confprijs = $data['inschrijving']->confonderdeel->prijs;
+            $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum)))/86400; 
+            if ($diff >= 30)
+            {
+                $confprijs = $i->confonderdeel->prijs - (($i->confonderdeel->prijs / 100) * $i->confonderdeel->korting);
+            } else {
+                $confprijs = $i->confonderdeel->prijs;
+            }
+            
+            $data['inschrijving']->geld = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
         }
         
-        $this->load->model('gebruiker_activiteit_model');
-        $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

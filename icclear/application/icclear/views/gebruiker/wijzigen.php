@@ -231,7 +231,7 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->datum; ?></td>
-                                    <td><?php echo $geld; ?></td>
+                                    <td><?php echo $i->geld; ?></td>
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
@@ -256,7 +256,7 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->datum; ?></td>
-                                    <td><?php echo $geld; ?></td>
+                                    <td><?php echo $i->geld; ?></td>
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
