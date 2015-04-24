@@ -77,7 +77,7 @@ class Profiel extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         
-        $diff = abs($data['inschrijving']->conferentie->beginDatum - $data['inschrijving']->datum);
+        $diff = abs(strtotime($data['inschrijving']->conferentie->beginDatum) - strtotime($data['inschrijving']->datum));
 
         $years = floor($diff / (365*60*60*24));
         $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
