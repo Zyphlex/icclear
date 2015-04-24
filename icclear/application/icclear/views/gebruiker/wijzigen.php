@@ -237,8 +237,6 @@
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
-                        <?php } else { ?>
-                            <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
                     <?php $index++; } ?>
                             
@@ -264,8 +262,6 @@
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
-                        <?php } else { ?>
-                            <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
                     <?php $index++; } ?>
 
