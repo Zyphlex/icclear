@@ -11,7 +11,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/activiteit/detail",
+                    url: site_url + "/profiel/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -235,7 +235,7 @@
                                 <td><?php echo $inschrijving->conferentie->stad; ?></td>
                                 <td><?php echo $inschrijving->datum; ?></td>
                                 <td><?php echo $geld; ?><td>
-                                <td><button class="toonDetails btn btn-default">Details</button></td>
+                                <td><button class="toonDetails btn btn-default" data-id="<?php $inschrijving->conferentie->id ?>">Details</button></td>
                             </tr>                                
                         </table>
                     <?php } else { ?>
