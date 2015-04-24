@@ -227,14 +227,14 @@
                                 <th>Plaats</th>
                                 <th>Periode</th>
                                 <th>Bedrag</th>
-                                <th>toon</th>
+                                <th></th>
                             </tr>
 
                             <tr>                                    
                                 <td><?php echo $inschrijving->conferentie->naam; ?></td>
                                 <td><?php echo $inschrijving->conferentie->stad; ?></td>
                                 <td><?php echo $inschrijving->datum; ?></td>
-                                <td><?php echo $geld; ?><td>
+                                <td><?php echo $geld; ?></td>
                                 <td><button class="toonDetails btn btn-default" data-id="<?php $inschrijving->conferentie->id ?>">Details</button></td>
                             </tr>                                
                         </table>
