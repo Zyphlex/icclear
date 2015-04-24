@@ -254,3 +254,10 @@ button:focus {
     color:#b60717;
     cursor:pointer;
 }
+
+
+.label {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 60%;
+}
