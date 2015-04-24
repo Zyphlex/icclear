@@ -23,7 +23,7 @@
                     <?php if ($inschrijving == null){ ?>
                     <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <?php }else{?>
-                    <li <?php if ($active == 'Sessie voorkeuren'){ echo 'class="active"'; } ?>><?php echo anchor('voorkeur/', 'SESSIE VOORKEUREN'); ?></li>
+                    <li <?php if ($active == 'sessie voorkeuren'){ echo 'class="active"'; } ?>><?php echo anchor('voorkeur/', 'SESSIE VOORKEUREN'); ?></li>
                     <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
                     <li class="dropdown">
