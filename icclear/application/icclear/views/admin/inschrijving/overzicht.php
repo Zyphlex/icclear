@@ -38,7 +38,7 @@
                     success: function(result) {
                         alert(result)
                         var jobject = jQuery.parseJSON(result);
-                        $("#gebruiker").val(jobject.gebruiker.id);
+                        $("#gebruiker").val(jobject.id);
                     }
                 });
             } else {

@@ -132,7 +132,15 @@ class Inschrijven extends CI_Controller {
         
         $this->load->view('admin/inschrijving/lijst', $data);
     }
-  
+    
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('gebruiker_model');
+        $gebruiker = $this->gebruiker_model->get($id);
+
+        echo json_encode($gebruiker);
+    }
     
 }
 
