@@ -8,7 +8,6 @@
             <tr>
                 <th>Naam</th>
                 <th>Te betalen</th>
-                <th>Betaald</th>
                 <th>Datum</th>
                 <th>Betaling</th>
             </tr>
@@ -27,8 +26,8 @@
                     </td>
                     <td><?php echo toDDMMYYYY($i->datum) ?></td>
                     <td><?php echo $i->type->omschrijving ?></td>
-                    <td><?php echo anchor('inschrijving/wijzig/' . $i->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                        <?php echo anchor('inschrijving/verwijder/' . $i->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                    <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $i->id ?>"></button>
+                    <button class="verwijderItem glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $i->id ?>"></button>   
                 </tr>
             <?php } ?>
         </tbody>
