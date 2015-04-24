@@ -76,12 +76,19 @@ class Profiel extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
+        
+        $diff = abs($data['inschrijving']->conferentie->beginDatum - $data['inschrijving']->datum);
+
+        $years = floor($diff / (365*60*60*24));
+        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+        
         $diff = ($data['inschrijving']->datum - $data['inschrijving']->conferentie->beginDatum );
         if ($diff >= 30)
         {
-            print_r('korting ' . $data['inschrijving']->datum . '  ' . $data['inschrijving']->conferentie->beginDatum);
+            print_r('korting ' . $years . ' ' . $months . ' ' . $days);
         } else {
-            print_r('geen korting ' . (toDDMMYYYY($data['inschrijving']->conferentie->beginDatum) - toDDMMYYYY($data['inschrijving']->datum))/(60*60/24) . '  ' . toDDMMYYYY($data['inschrijving']->conferentie->beginDatum) . ' ' . toDDMMYYYY($data['inschrijving']->datum));
+            print_r('geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . toDDMMYYYY($data['inschrijving']->conferentie->beginDatum) . ' ' . toDDMMYYYY($data['inschrijving']->datum));
         }
         
         $this->load->model('gebruiker_activiteit_model');
