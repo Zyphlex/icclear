@@ -29,7 +29,7 @@ class Sessies extends CI_Controller {
         $data['active'] = 'admin';        
                 
         $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAll($this->session->userdata('conferentieId'));
+        $data['sessies'] = $this->sessies_model->getAll($data['conferentieId']);
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
