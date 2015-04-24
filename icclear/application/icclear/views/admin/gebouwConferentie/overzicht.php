@@ -36,6 +36,7 @@ and open the template in the editor.
                             <td><?php echo $planning->gebouw->naam ?></td>
                             <td><?php echo $planning->gebouw->gemeente ?></td>
                             <td><?php echo $planning->gebouw->postcode ?></td>
+                            <td><?php echo $planning->gebouw->land->naam ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
