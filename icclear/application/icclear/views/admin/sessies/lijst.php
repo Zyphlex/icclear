@@ -19,7 +19,7 @@
             <tr>
                 <td><?php echo $sessie->onderwerp ?></td>
                 <?php if ($sessie->planning != null) { ?>
-                    <td><?php echo toDDMMYYYY($sessie->conferentiedag->datum) ?></td>
+                    <td><?php echo toDDMMYYYY($sessie->planning->datum) ?></td>
                     <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td>
                 <?php } else { ?>
                     <td>Nog niet ingepland</td>  
