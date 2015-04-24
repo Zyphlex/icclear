@@ -95,7 +95,7 @@
 
 <div class="col-md-10">
 
-    <h1>Ingeschreven bezoekers en sprekers</h1>  
+    <h1>Ingeschrevenen</h1>  
     
     <div id="resultaat"></div>
 
