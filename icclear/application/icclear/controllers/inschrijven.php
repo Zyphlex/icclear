@@ -102,6 +102,21 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
+        $this->load->model('gebruiker_activiteit_model');
+        foreach ($data['inschrijvingen'] as $i)
+        {
+            $confId = $data['conferentieId'];
+            $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum)))/86400; 
+            if ($diff >= 30)
+            {
+                $confprijs = $i->confonderdeel->prijs - (($i->confonderdeel->prijs / 100) * $i->confonderdeel->korting);
+            } else {
+                $confprijs = $i->confonderdeel->prijs;
+            }
+            
+            $i->geld += $this->gebruiker_activiteit_model->getPrijsByConfGebruiker($i->gebruikerId, $confId) + $confprijs;
+        }
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
