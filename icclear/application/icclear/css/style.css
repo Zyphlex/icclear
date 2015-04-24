@@ -259,6 +259,7 @@ button:focus {
 .label {
   font-weight: normal;
   font-size: 75%;
+  font-variant: small-caps;
 }
 
 .right {
