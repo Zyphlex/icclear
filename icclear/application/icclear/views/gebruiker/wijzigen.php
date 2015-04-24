@@ -19,6 +19,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").html(jobject.confonderdeel.omschrijving);
                         $("#prijs").html(jobject.confonderdeel.prijs);
