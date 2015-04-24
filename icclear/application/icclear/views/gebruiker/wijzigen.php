@@ -12,16 +12,13 @@
         $(".toonDetails").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
-            alert(iddb);
             if (iddb != 0) {
-                alert("ajax");
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
                     url: site_url + "/profiel/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").html(jobject.confonderdeel.omschrijving);
                         $("#prijs").html(jobject.confonderdeel.prijs);
@@ -219,31 +216,54 @@
                 <div role="tabpanel" class="tab-pane" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
+                    <?php foreach ($inschrijving as $i) { ?>
+                        <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
+                            <table class="table">
+                                <tr>
+                                    <th>Conferentie</th>
+                                    <th>Plaats</th>
+                                    <th>Periode</th>
+                                    <th>Bedrag</th>
+                                    <th></th>
+                                </tr>
 
-                    <?php
-                    if ($inschrijving != null) {
-                        ?>
-                        <table class="table">
-                            <tr>
-                                <th>Conferentie</th>
-                                <th>Plaats</th>
-                                <th>Periode</th>
-                                <th>Bedrag</th>
-                                <th></th>
-                            </tr>
-
-                            <tr>
-                                <td><?php echo $inschrijving->conferentie->naam; ?></td>
-                                <td><?php echo $inschrijving->conferentie->stad; ?></td>
-                                <td><?php echo $inschrijving->datum; ?></td>
-                                <td><?php echo $geld; ?></td>
-                                <td><button class="toonDetails btn btn-primary" data-id="2">Details</button></td>
-                            </tr>                                
-                        </table>
-                    <?php } else { ?>
-                        <p>Geen</p>
+                                <tr>
+                                    <td><?php echo $i->conferentie->naam; ?></td>
+                                    <td><?php echo $i->conferentie->stad; ?></td>
+                                    <td><?php echo $i->datum; ?></td>
+                                    <td><?php echo $geld; ?></td>
+                                    <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
+                                </tr>                                
+                            </table>
+                        <?php } else { ?>
+                            <p>Geen inschrijvingen gevonden.</p>
+                        <?php } ?>
                     <?php } ?>
+                            
                     <h1 class="margin-top">Afgelopen conferenties</h1>
+                    <?php foreach ($inschrijving as $i) { ?>
+                        <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
+                            <table class="table">
+                                <tr>
+                                    <th>Conferentie</th>
+                                    <th>Plaats</th>
+                                    <th>Periode</th>
+                                    <th>Bedrag</th>
+                                    <th></th>
+                                </tr>
+
+                                <tr>
+                                    <td><?php echo $i->conferentie->naam; ?></td>
+                                    <td><?php echo $i->conferentie->stad; ?></td>
+                                    <td><?php echo $i->datum; ?></td>
+                                    <td><?php echo $geld; ?></td>
+                                    <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
+                                </tr>                                
+                            </table>
+                        <?php } else { ?>
+                            <p>Geen inschrijvingen gevonden.</p>
+                        <?php } ?>
+                    <?php } ?>
 
                 </div>
                 
@@ -287,7 +307,7 @@
             </div>
 
             <div class="modal-body">                  
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Naam</th>
