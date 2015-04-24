@@ -92,7 +92,15 @@ class Profiel extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-
+    
+    public function detail() {        
+        $id = $this->input->get('id');
+                        
+        $this->load->model('inschrijving_model');
+        $inschrijving = $this->inschrijving_model->getInschijvingByConferentie($user->id);  
+            
+        echo json_encode($inschrijving); 
+    }
     
 }
 

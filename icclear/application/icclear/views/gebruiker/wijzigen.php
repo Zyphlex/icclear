@@ -20,16 +20,11 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#naam").val(jobject.naam);
-                        $("#conferentie").val(jobject.conferentieId);
-                        $("#prijs").val(jobject.prijs);
+                        $("#naam").val(jobject.confonderdeel.omschrijving);
+                        $("#prijs").val(jobject.confonderdeel.prijs);
+                        $("#korting").val(jobject.confonderdeel.korting);
                     }
                 });
-            } else {
-                // bij toevoegen gewoon vakken leeg maken                
-                $("#naam").val("");
-                $("#conferentie").val("");
-                $("#prijs").val("");
             }
             // dialoogvenster openen
             $("#bedragDetails").modal('show');
@@ -234,12 +229,12 @@
                                 <th></th>
                             </tr>
 
-                            <tr>                                    
+                            <tr>
                                 <td><?php echo $inschrijving->conferentie->naam; ?></td>
                                 <td><?php echo $inschrijving->conferentie->stad; ?></td>
                                 <td><?php echo $inschrijving->datum; ?></td>
                                 <td><?php echo $geld; ?></td>
-                                <td><button class="toonDetails btn btn-primary" data-id="<?php $inschrijving->conferentie->id ?>">Details</button></td>
+                                <td><button class="toonDetails btn btn-primary" data-id="<?php $inschrijving->id ?>">Details</button></td>
                             </tr>                                
                         </table>
                     <?php } else { ?>
@@ -248,6 +243,9 @@
                     <h1 class="margin-top">Afgelopen conferenties</h1>
 
                 </div>
+                
+                
+                
                 <div role="tabpanel" class="tab-pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>
                     <?php if ($inschrijving != null) { ?>
@@ -286,7 +284,18 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Details van bedragen</p>                   
+                <table>
+                    <thead>
+                        <th>Naam</th>
+                        <th>Prijs</th>
+                        <th>Korting</th>
+                    </thead>
+                    <tbody>
+                        <td id="naam"></td>
+                        <td id="prijs"></td>
+                        <td id="korting"></td>
+                    </tbody>
+                </table>
             </div>
 
             <div class="modal-footer">
