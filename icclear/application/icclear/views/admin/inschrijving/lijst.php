@@ -11,6 +11,7 @@
             <th>Te betalen</th>
             <th>Datum</th>
             <th>Betaling</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
