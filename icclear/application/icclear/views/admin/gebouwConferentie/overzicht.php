@@ -1,8 +1,9 @@
 
+<div class="row">
         <div class="col-md-10"> 
             <?php foreach ($dagen as $dag) { ?>
                 <h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
-            </div>
+        </div>
 
             <div class="col-md-10"> 
                 <table class="table table-beheer">
@@ -28,3 +29,4 @@
                 </table>  
             </div>
         <?php } ?> 
+</div>
