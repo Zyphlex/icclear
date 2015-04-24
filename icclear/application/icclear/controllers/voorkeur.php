@@ -25,8 +25,8 @@ class Voorkeur extends CI_Controller {
         $data['title'] = 'IC Clear - Sessie voorkeuren';
         $data['active'] = 'sessie voorkeuren';
 
-        $this->load->model('gebruiker_model');
-        $data['gebruiker'] = $this->gebruiker_model->get($id);
+//        $this->load->model('gebruiker_model');
+//        $data['gebruiker'] = $this->gebruiker_model->get($id);
 
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
