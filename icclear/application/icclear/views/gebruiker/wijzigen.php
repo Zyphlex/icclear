@@ -240,8 +240,7 @@
                         <?php } else { ?>
                             <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
-                        $index++;
-                    <?php } ?>
+                    <?php $index++; } ?>
                             
                     <h1 class="margin-top">Afgelopen conferenties</h1>
                     <?php 
@@ -268,8 +267,7 @@
                         <?php } else { ?>
                             <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
-                        $index++;
-                    <?php } ?>
+                    <?php $index++; } ?>
 
                 </div>
                 
