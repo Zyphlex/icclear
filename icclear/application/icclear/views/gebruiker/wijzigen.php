@@ -12,13 +12,16 @@
         $(".toonDetails").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
+            alert(iddb);
             if (iddb != 0) {
+                alert("ajax");
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
                     url: site_url + "/profiel/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.confonderdeel.omschrijving);
                         $("#prijs").val(jobject.confonderdeel.prijs);
