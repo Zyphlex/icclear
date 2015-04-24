@@ -36,7 +36,12 @@ class Logon extends CI_Controller {
     
     public function fout() {
         $data['title'] = 'IC Clear - Fout';
-        $data['user'] = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         $data['active'] = '';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
