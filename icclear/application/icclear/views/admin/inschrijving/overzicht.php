@@ -37,7 +37,7 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#gebruiker").val(jobject.gebruiker->id);
+                        $("#gebruiker").val(jobject.gebruiker.id);
                     }
                 });
             } else {
