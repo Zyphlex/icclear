@@ -81,7 +81,7 @@ class Profiel extends CI_Controller {
         {
             print_r('korting ' . $diff);
         } else {
-            print_r('geen korting' . $diff);
+            print_r('geen korting ' . $diff);
         }
         
         $this->load->model('gebruiker_activiteit_model');
