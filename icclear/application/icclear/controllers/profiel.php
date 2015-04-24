@@ -86,7 +86,7 @@ class Profiel extends CI_Controller {
         
         if ($diff >= 30)
         {
-            print_r($diff . ' korting ' . $years . ' ' . $months . ' ' . ($diff/86400));
+            print_r($diff . ' korting ' . $years . ' ' . $months . ' ' . ($diff/86400) . ' ' $days);
         } else {
             print_r( $diff . ' geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . $data['inschrijving']->conferentie->beginDatum . ' ' . $data['inschrijving']->datum);
         }
