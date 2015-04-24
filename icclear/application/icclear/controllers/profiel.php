@@ -77,7 +77,7 @@ class Profiel extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
                 
         $this->load->model('gebruiker_activiteit_model');
-        $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id);
+        $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $data['inschrijving']->confonderdeel->prijs;
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
