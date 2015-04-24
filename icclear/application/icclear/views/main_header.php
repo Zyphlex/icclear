@@ -17,9 +17,8 @@
                     <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
                     <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu">                    
-                    <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Sessie voorkeuren</a></li>  
-                    <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  Instellingen</a></li>     
+                <ul class="dropdown-menu">                                        
+                    <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
                     <li class="divider"></li>
                     <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
                 </ul>
