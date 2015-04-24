@@ -79,6 +79,7 @@ class Profiel extends CI_Controller {
         $this->load->model('gebruiker_activiteit_model');   
         foreach ($data['inschrijving'] as $i)
         {
+            $confId = $i->confonderdeel->conferendieId;
             $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum)))/86400; 
             if ($diff >= 30)
             {
@@ -87,7 +88,7 @@ class Profiel extends CI_Controller {
                 $confprijs = $i->confonderdeel->prijs;
             }
             
-            $i->geld += $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
+            $i->geld += $this->gebruiker_activiteit_model->getPrijsByConfGebruiker($user->id, $confId) + $confprijs;
         }
         
                 

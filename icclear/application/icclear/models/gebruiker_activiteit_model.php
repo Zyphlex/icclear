@@ -48,13 +48,34 @@ class Gebruiker_activiteit_model extends CI_Model {
     function getPrijsByGebruiker($id)
     {
         $geld = 0;
-        $this->load->model('activiteit_model');        
+        $this->load->model('activiteit_model');
         $this->db->where('gebruikerId', $id);
         $query = $this->db->get('gebruikerActiviteit');
         $geb_act = $query->result();
+        
         foreach ($geb_act as $g){
             $g->activiteit = $this->activiteit_model->get($g->activiteitId);
             $geld += ($g->activiteit->prijs * $g->aantalPersonen);
+        }        
+        return $geld;
+    }
+    
+    function getPrijsByConfGebruiker($id,$confId)
+    {        
+        $geld = 0;
+                
+        $this->db->where('gebruikerId', $id);
+        $query = $this->db->get('gebruikerActiviteit');
+        $activiteitenGeb = $query->result();
+        
+        $this->load->model('activiteit_model');      
+        foreach ($activiteitenGeb as $a){
+            $acitiviteit = $this->activiteit_model->get($a->activiteitId);              
+            if ($acitiviteit->conferentieId == $confId)
+            {
+                $g->activiteit = $this->activiteit_model->get($a->activiteitId);
+                $geld += ($a->activiteit->prijs * $a->aantalPersonen);
+            }
         }        
         return $geld;
     }
