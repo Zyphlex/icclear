@@ -30,7 +30,6 @@ and open the template in the editor.
                             <th>Gemeente</th>                
                             <th>Postcode</th>
                             <th>Land</th>
-                            <th>Gebouw</th>
                         </tr>
                     </thead>
                     <tbody>
