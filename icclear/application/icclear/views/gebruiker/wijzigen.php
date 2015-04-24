@@ -198,19 +198,19 @@
                                     <th class="profPl">Plaats</th>
                                     <th class="profPer">Periode</th>
                                     <th class="profBed">Bedrag</th>
-                                    <th></th>
                                 </tr>
 
                                 <tr>
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?></td>
-                                    <td>                                        
+                                    <td><?php echo $i->geld; ?>
+                                                          
                                         <?php if($i->betaling == null) {?>                                        
                                             <span class="right label label-danger">Nog niet betaald!</span>
-                                        <?php } ?>
-                                    </td>
+                                        <?php } ?></td>
+                                                    
+                                    
                                 </tr>                                
                             </table>
                         <?php } ?>
