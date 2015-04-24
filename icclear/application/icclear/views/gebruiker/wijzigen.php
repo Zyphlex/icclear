@@ -204,7 +204,12 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?></td>
+                                    <td>
+                                        <?php echo $i->geld; ?>
+                                        <?php if($i->betaling != null) {?>                                        
+                                            <span class="label label-danger">NOG NIET BETAALD</span>
+                                        <?php } ?>
+                                    </td>
                                 </tr>                                
                             </table>
                         <?php } ?>
