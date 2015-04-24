@@ -37,7 +37,8 @@ class Sessies_model extends CI_Model {
         $this->load->model('planning_model');  
         $this->load->model('conferentiedag_model');         
         foreach ($sessies as $sessie) {
-            $sessie->planning = $this->planning_model->getSessie($sessie->id);            
+            $sessie->planning = $this->planning_model->getSessie($sessie->id);   
+            print_r($sessie->planning->conferentiedagId);
             $sessie->dag = $this->conferentiedag_model->get(1);            
         }
         
