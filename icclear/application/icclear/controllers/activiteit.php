@@ -25,6 +25,7 @@ class Activiteit extends CI_Controller {
         $data['user'] = $user;      
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';   
+        $data['conferentieId'] = null;
         
         $this->load->model('inschrijving_model');
         $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
