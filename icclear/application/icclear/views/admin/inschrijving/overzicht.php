@@ -37,7 +37,7 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#gebruiker").val(jobject.gebruikerId);
+                        $("#gebruiker").val(jobject.gebruiker->id);
                     }
                 });
             } else {
@@ -155,8 +155,8 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze route wilt verwijderen?</p>  
-                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+                <p>Bent u zeker dat u deze inschrijving wilt verwijderen?</p>  
+                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>
             </div>
 
             <div class="modal-footer">
