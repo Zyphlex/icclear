@@ -22,12 +22,12 @@ class Activiteit extends CI_Controller {
     
     public function index() {
         $$user = $this->authex->getUserInfo();
-        $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
-        $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        $data['user'] = $user;      
         $data['title'] = 'IC Clear - Beheer';        
         $data['active'] = 'admin';   
+        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         
         $this->load->model('conferentie_model');
         $data['conferenties'] = $this->conferentie_model->getById(); 
