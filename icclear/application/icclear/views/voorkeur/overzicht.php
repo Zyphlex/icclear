@@ -8,11 +8,10 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                                                
+                        Kies welke sessie je wilt bijwonen
                     </div>
                     <div class = "panel-body">  
-                            <div class="thumbnail">
-                                <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
-                            </div>                                                                    
+                                                                                              
                     </div>
                 </div>  
             </div>          
