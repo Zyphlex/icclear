@@ -33,7 +33,12 @@ class Spreker extends CI_Controller {
 
     public function voorstel() {
 
-        $data['user'] = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         $data['title'] = 'IC Clear - Sprekers';
         $data['active'] = 'programma';
 
