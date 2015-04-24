@@ -70,8 +70,8 @@ class Gebruiker_activiteit_model extends CI_Model {
         
         $this->load->model('activiteit_model');      
         foreach ($activiteitenGeb as $a){
-            $acitiviteit = $this->activiteit_model->get($a->activiteitId);              
-            if ($acitiviteit->conferentieId == $confId)
+            $a->activiteit = $this->activiteit_model->get($a->activiteitId);              
+            if ($a->activiteit->conferentieId == $confId)
             {
                 $g->activiteit = $this->activiteit_model->get($a->activiteitId);
                 $geld += ($a->activiteit->prijs * $a->aantalPersonen);
