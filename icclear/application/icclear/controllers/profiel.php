@@ -75,7 +75,14 @@ class Profiel extends CI_Controller {
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-                
+        
+        if (($data['conferentie']->beginDatum - $data['inschrijving']->datum) >= 30)
+        {
+            print_r('korting');
+        } else {
+            print_r('geen korting');
+        }
+        
         $this->load->model('gebruiker_activiteit_model');
         $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $data['inschrijving']->confonderdeel->prijs;
                 
