@@ -95,7 +95,7 @@ class Profiel extends CI_Controller {
         $id = $this->input->get('id');
                         
         $this->load->model('inschrijving_model');
-        $inschrijving = $this->inschrijving_model->getInschijvingByConferentie($user->id);  
+        $inschrijving = $this->inschrijving_model->getOnderdeelByInschrijving($id);  
             
         echo json_encode($inschrijving); 
     }
