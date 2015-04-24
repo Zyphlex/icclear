@@ -4,6 +4,10 @@
         $(this).tab('show')
     })
     
+    $(document).ready(function () {
+        maakDetailClick();
+    });
+    
     function maakDetailClick() {
         $(".toonDetails").click(function () {
             var iddb = $(this).data("id");
