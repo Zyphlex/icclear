@@ -22,7 +22,8 @@
                     <td><?php echo toDDMMYYYY($sessie->conferentiedag->datum) ?></td>
                     <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td>
                 <?php } else { ?>
-                    <td colspan="2">Nog niet ingepland</td>
+                    <td>Nog niet ingepland</td>  
+                    <td><?php echo anchor('planningbeheer', 'Planning','class="btn btn-primary"'); ?></td>
                 <?php } ?>
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
