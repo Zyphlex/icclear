@@ -207,7 +207,7 @@
                                     <td>
                                         <?php echo $i->geld; ?>
                                         <?php if($i->betaling == null) {?>                                        
-                                            <span class="label label-danger">NOG NIET BETAALD</span>
+                                            <span class="label label-danger">Nog niet betaald!</span>
                                         <?php } ?>
                                     </td>
                                 </tr>                                
