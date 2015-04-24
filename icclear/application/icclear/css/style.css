@@ -257,7 +257,6 @@ button:focus {
 
 
 .label {
-  display: inline-block;
   font-weight: normal;
   font-size: 75%;
 }
