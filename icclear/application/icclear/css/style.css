@@ -223,7 +223,7 @@ a:hover {
     color: #fff; 
     border: 1px solid #a30614;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#b60717), color-stop(100%,#a30614));
-    //background: -moz-gradient(linear, left top, left bottom, color-stop(30%,#b60717), color-stop(100%,#a30614));
+    background: -moz-gradient(linear, left top, left bottom, color-stop(30%,#b60717), color-stop(100%,#a30614));
     border-radius:5px;
 }
 
