@@ -34,6 +34,19 @@ class Conferentiedag_model extends CI_Model {
         $query = $this->db->get('conferentiedag');
         return $query->result();
     }
+    
+    function getGebouwenByDag(){
+        $query = $this->db->get('conferentiedag');
+        $dagen = $query->result();
+
+        $this->load->model('gebouw_model');
+        
+        foreach ($dagen as $dag) {
+            $dag->gebouw = $this->gebouw_model->get($dag->gebouwId);
+        }
+
+        return $dagen;
+    }
 
 }
 
