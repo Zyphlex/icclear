@@ -92,12 +92,14 @@ class Inschrijven extends CI_Controller {
     
     public function opvolgen(){
         
-        $data['user']  = $this->authex->getUserInfo();        
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         $data['title'] = 'IC Clear - Beheer'; 
         $data['active'] = 'admin';
-        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+                        
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();   
         
