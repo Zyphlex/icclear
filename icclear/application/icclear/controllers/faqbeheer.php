@@ -21,11 +21,15 @@ class Faqbeheer extends CI_Controller {
     }
     
     public function index() {
-        $data['user'] = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         
         $data['title'] = 'IC Clear - F.A.Q.';
-        $data['active'] = 'admin';        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['active'] = 'admin';                
         
         $this->load->model('faq_model');        
         $data['vragen'] = $this->faq_model->getAll();
