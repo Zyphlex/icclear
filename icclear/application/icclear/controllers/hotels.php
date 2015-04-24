@@ -21,9 +21,12 @@ class Hotels extends CI_Controller {
     }
     
     public function index() {
-        $data['user']  = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - Hotel';        
         $data['active'] = 'admin';        
                 
