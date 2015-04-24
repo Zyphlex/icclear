@@ -4,33 +4,6 @@
         $(this).tab('show')
     })
     
-    $(document).ready(function () {
-        maakDetailClick();
-    });
-    
-    function maakDetailClick() {
-        $(".toonDetails").click(function () {
-            var iddb = $(this).data("id");
-            $("#id").val(iddb);
-            if (iddb != 0) {
-                // gegevens ophalen via ajax (doorgeven van server met json)
-                $.ajax({type: "GET",
-                    url: site_url + "/profiel/detail",
-                    async: false,
-                    data: {id: iddb},
-                    success: function (result) {
-                        alert(result);
-                        var jobject = jQuery.parseJSON(result);
-                        $("#naam").html(jobject.confonderdeel.omschrijving);
-                        $("#prijs").html(jobject.confonderdeel.prijs);
-                        $("#korting").html(jobject.confonderdeel.korting);
-                    }
-                });
-            }
-            // dialoogvenster openen
-            $("#bedragDetails").modal('show');
-        });
-    }
 </script>
 
 <div class="row">
@@ -225,7 +198,6 @@
                                     <th>Plaats</th>
                                     <th>Periode</th>
                                     <th>Bedrag</th>
-                                    <th></th>
                                 </tr>
 
                                 <tr>
@@ -233,7 +205,6 @@
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
                                     <td><?php echo $i->geld; ?></td>
-                                    <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
                         <?php } ?>
@@ -248,7 +219,6 @@
                                     <th>Plaats</th>
                                     <th>Periode</th>
                                     <th>Bedrag</th>
-                                    <th></th>
                                 </tr>
 
                                 <tr>
@@ -256,7 +226,6 @@
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
                                     <td><?php echo $i->geld; ?></td>
-                                    <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
                         <?php } ?>
@@ -291,39 +260,3 @@
     </div>
 
 </div>
-
-<div class="modal fade" id="bedragDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Prijs Details</h4>
-            </div>
-
-            <div class="modal-body">                  
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Naam</th>
-                            <th>Prijs</th>
-                            <th>Korting</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="naam"></td>
-                            <td id="prijs"></td>
-                            <td id="korting"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-            </div>
-
-        </div>            
-    </div>
-</div>  
