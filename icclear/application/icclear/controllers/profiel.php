@@ -15,8 +15,12 @@ class Profiel extends CI_Controller {
     
     public function wijzig($id) {
 
-        $data['user'] = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
 
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
