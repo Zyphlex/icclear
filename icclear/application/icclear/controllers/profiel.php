@@ -83,12 +83,12 @@ class Profiel extends CI_Controller {
         $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
         $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
         
-        $diff = ($data['inschrijving']->datum - $data['inschrijving']->conferentie->beginDatum );
+        
         if ($diff >= 30)
         {
             print_r('korting ' . $years . ' ' . $months . ' ' . $days);
         } else {
-            print_r( $diff . 'geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . $data['inschrijving']->conferentie->beginDatum . ' ' . $data['inschrijving']->datum);
+            print_r( $diff . ' geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . $data['inschrijving']->conferentie->beginDatum . ' ' . $data['inschrijving']->datum);
         }
         
         $this->load->model('gebruiker_activiteit_model');
