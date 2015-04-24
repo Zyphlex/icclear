@@ -23,32 +23,19 @@ and open the template in the editor.
                 <thead>
                     <tr>
 
-                        <th>Tijdstip</th>
-                        <th>Sessie</th>                
-                        <th>Plaats</th>
-                        <th>Plenair</th>
-                        <th>Beheer</th>
+                        <th>Naam</th>
+                        <th>Gemeente</th>                
+                        <th>Postcode</th>
+                        <th>Land</th>
+                        <th>Gebouw</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($dag->planning as $planning) { ?>
                         <tr>
-                            <td><?php echo $planning->beginUur . " tot " . $planning->eindUur ?></td>
-                            <td><?php echo $planning->sessie->onderwerp ?></td>
-                            <td><?php echo $planning->zaal->naam . " (" . $planning->gebouw->naam . ")" ?></td>
-                            <?php
-                            if ($planning->plenair == 1) {
-                                echo '<td>Ja</td>';
-                            } else {
-                                echo '<td>Nee</td>';
-                            }
-                            ?>
-                            <td>
-                                <p>                                        
-                                    <button class="wijzigPlanning glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $planning->id ?>"></button>
-                                    <button class="verwijderPlanning glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $planning->id ?>"></button> 
-                                </p>                                 
-                            </td>
+                            <td><?php echo $planning->gebouw->naam ?></td>
+                            <td><?php echo $planning->gebouw->gemeente ?></td>
+                            <td><?php echo $planning->gebouw->postcode ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
