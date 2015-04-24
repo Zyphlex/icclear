@@ -95,7 +95,7 @@ class Gebouw extends CI_Controller {
         $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
        
         $this->load->model('planning_model');
-        $data['dagen'] = $this->planning_model->getAllByDag($data['conferentieId']);
+        $data['dagen'] = $this->planning_model->getAllByDag($conferentieId);
         
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
