@@ -23,7 +23,7 @@
                     <td><?php echo $sessie->planning->beginUur . " - " . $sessie->planning->eindUur ?></td>
                 <?php } else { ?>
                     <td>Nog niet ingepland</td>  
-                    <td><?php echo anchor('planningbeheer', 'Planning','class="btn btn-primary"'); ?></td>
+                    <td><span class="glyphicon glyphicon-th-list"></span><?php echo anchor('planningbeheer', 'Planning','class="btn btn-primary"'); ?></td>
                 <?php } ?>
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
