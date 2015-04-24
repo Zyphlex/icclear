@@ -77,18 +77,13 @@ class Profiel extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         
-        $diff = (abs(strtotime($data['inschrijving']->conferentie->beginDatum) - strtotime($data['inschrijving']->datum)))/86400;
-
-        $years = floor($diff / (365*60*60*24));
-        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-        
-        
+        $diff = (abs(strtotime($data['inschrijving']->conferentie->beginDatum) - strtotime($data['inschrijving']->datum)))/86400; 
         if ($diff >= 30)
         {
-            print_r($diff . ' korting ' . $years . ' ' . $months . ' ' . $diff . ' ' . $days);
+            $confprijs = $data['inschrijving']->confonderdeel->prijs - ($data['inschrijving']->confonderdeel->prijs * $data['inschrijving']->confonderdeel->korting);
+            print_r($data['inschrijving']->confonderdeel->prijs * $data['inschrijving']->confonderdeel->korting);
         } else {
-            print_r( $diff . ' geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . $data['inschrijving']->conferentie->beginDatum . ' ' . $data['inschrijving']->datum);
+            $confprijs = $data['inschrijving']->confonderdeel->prijs;
         }
         
         $this->load->model('gebruiker_activiteit_model');
