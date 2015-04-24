@@ -21,7 +21,7 @@ class Activiteit extends CI_Controller {
     }
     
     public function index() {
-        $$user  = $this->authex->getUserInfo();
+        $$user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');        
         $this->load->model('inschrijving_model');
