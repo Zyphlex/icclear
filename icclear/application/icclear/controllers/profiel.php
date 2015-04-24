@@ -88,7 +88,7 @@ class Profiel extends CI_Controller {
             }
             
             print_r($confprijs);
-            $data['inschrijving']->geld = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
+            $data['geld'] = $this->gebruiker_activiteit_model->getPrijsByGebruiker($user->id) + $confprijs;
         }
         
                 

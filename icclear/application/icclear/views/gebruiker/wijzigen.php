@@ -216,7 +216,9 @@
                 <div role="tabpanel" class="tab-pane" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
-                    <?php foreach ($inschrijving as $i) { ?>
+                    <?php
+                        $index = 0;
+                        foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
@@ -231,17 +233,20 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?></td>
+                                    <td><?php echo $geld[$index]; ?></td>
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
                         <?php } else { ?>
                             <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
+                        $index++;
                     <?php } ?>
                             
                     <h1 class="margin-top">Afgelopen conferenties</h1>
-                    <?php foreach ($inschrijving as $i) { ?>
+                    <?php 
+                        $index = 0;
+                        foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
@@ -256,13 +261,14 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?></td>
+                                    <td><?php echo $geld[$index]; ?></td>
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
                         <?php } else { ?>
                             <p>Geen inschrijvingen gevonden.</p>
                         <?php } ?>
+                        $index++;
                     <?php } ?>
 
                 </div>
