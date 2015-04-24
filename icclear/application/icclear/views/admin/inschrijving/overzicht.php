@@ -14,22 +14,21 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($inschrijvingen as $inschrijving) { ?>
+            <?php foreach ($inschrijvingen as $i) { ?>
                 <tr>
-                    <td><?php echo $inschrijving->gebruiker->voornaam . " " .$inschrijving->gebruiker->familienaam?></td>
+                    <td><?php echo $i->gebruiker->voornaam . " " . $i->gebruiker->familienaam ?></td>
 
-                    <td><?php echo "€ " . $inschrijving->confonderdeel->prijs ?></td>
-                    <?php
-                    if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode != "Overschrijving") { ?>
-
-                        echo "<td>Ja</td>";
-                    <?php } else if ($inschrijving->confonderdeel->prijs > 0 && $inschrijving->betaling->methode == "Overschrijving") { ?>
-                        echo "<td>Nee</td>";
-                    <?php } ?>
-                    <td><?php echo toDDMMYYYY($inschrijving->datum) ?></td>
-                    <td><?php echo $inschrijving->betaling->methode ?></td>
-                    <td><?php echo anchor('inschrijving/wijzig/' . $inschrijving->id, 'Wijzigen', 'class="btn btn-default"'); ?>
-                        <?php echo anchor('inschrijving/verwijder/' . $inschrijving->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
+                    <td><?php echo "€ " . $i->geld ?>
+                        <?php if ($i->betaling == null) { ?>                                        
+                            <span class="right label label-danger">Nog niet betaald!</span>
+                        <?php } else { ?>      
+                            <span class="right label label-success">Reeds betaald!</span>
+                        <?php } ?>
+                    </td>
+                    <td><?php echo toDDMMYYYY($i->datum) ?></td>
+                    <td><?php echo $i->betaling->methode ?></td>
+                    <td><?php echo anchor('inschrijving/wijzig/' . $i->id, 'Wijzigen', 'class="btn btn-default"'); ?>
+                        <?php echo anchor('inschrijving/verwijder/' . $i->id, 'Verwijderen', 'class="btn btn-default"'); ?></td>
                 </tr>
             <?php } ?>
         </tbody>
