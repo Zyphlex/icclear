@@ -21,11 +21,16 @@ class Planningbeheer extends CI_Controller {
     }
     
     public function index() {
-        $data['user'] = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         
         $data['title'] = 'IC Clear - Planning';
         $data['active'] = 'admin';        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
                 
         $this->load->model('sessies_model'); 
         $data['sessies'] = $this->sessies_model->getAlleSessies();
