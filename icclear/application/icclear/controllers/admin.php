@@ -22,8 +22,7 @@ class Admin extends CI_Controller {
     
     public function index() {
         $user  = $this->authex->getUserInfo();
-        $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['user'] = $user;       
         $this->load->model('inschrijving_model');
         $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         
@@ -34,7 +33,7 @@ class Admin extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         $data['verleden'] = $this->conferentie_model->getVerledenConferentie();
         $data['toekomenden'] = $this->conferentie_model->getToekomstConferentie();
-        $data['conferentieId'] = 0;
+        $data['conferentieId'] = null;
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/beheer', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
