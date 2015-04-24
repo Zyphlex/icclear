@@ -33,7 +33,8 @@ class Inschrijving_model extends CI_Model {
             $inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
             $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
             $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-            $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);
+            $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);       
+            $inschrijving->type = $this->betalingtype_model->get($inschrijving->methodeId);
         }
         return $inschrijvingen;
     }
