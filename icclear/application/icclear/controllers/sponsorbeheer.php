@@ -21,11 +21,15 @@ class Sponsorbeheer extends CI_Controller {
     }
     
     public function index() {
-        $data['user']  = $this->authex->getUserInfo();
+         $user  = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $this->load->model('inschrijving_model');
+        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        
         $data['title'] = 'IC Clear - Sponsors'; 
         $data['active'] = 'admin';        
-        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+                
         
         //$this->load->model('sponsor_model');
         //$data['sponsors'] = $this->sponsor_model->getAll();
