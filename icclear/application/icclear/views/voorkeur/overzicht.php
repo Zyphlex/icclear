@@ -8,10 +8,12 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class = "panel-heading">                                                
-                        Kies welke sessie je wilt bijwonen
+                        <p>Kies welke sessie je wilt bijwonen</p>
                     </div>
                     <div class = "panel-body">  
-                                                                                              
+                        <table class="table">
+                            
+                        </table>                                                                      
                     </div>
                 </div>  
             </div>          
