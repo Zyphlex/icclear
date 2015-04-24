@@ -80,8 +80,8 @@ class Profiel extends CI_Controller {
         $diff = (abs(strtotime($data['inschrijving']->conferentie->beginDatum) - strtotime($data['inschrijving']->datum)))/86400; 
         if ($diff >= 30)
         {
-            $confprijs = $data['inschrijving']->confonderdeel->prijs - ($data['inschrijving']->confonderdeel->prijs * $data['inschrijving']->confonderdeel->korting);
-            print_r($data['inschrijving']->confonderdeel->prijs * $data['inschrijving']->confonderdeel->korting);
+            $confprijs = $data['inschrijving']->confonderdeel->prijs - (($data['inschrijving']->confonderdeel->prijs / 100) * $data['inschrijving']->confonderdeel->korting);
+            print_r(($data['inschrijving']->confonderdeel->prijs / 100) * $data['inschrijving']->confonderdeel->korting);
         } else {
             $confprijs = $data['inschrijving']->confonderdeel->prijs;
         }
