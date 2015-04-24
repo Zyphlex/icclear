@@ -233,7 +233,7 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $geld[$index]; ?></td>
+                                    <td><?php echo $i->geld]; ?></td>
                                     <td><button class="toonDetails btn btn-primary" data-id="<?php $i->id ?>">Details</button></td>
                                 </tr>                                
                             </table>
