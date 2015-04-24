@@ -216,9 +216,7 @@
                 <div role="tabpanel" class="tab-pane" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
-                    <?php
-                        $index = 0;
-                        foreach ($inschrijving as $i) { ?>
+                    <?php foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
@@ -238,12 +236,10 @@
                                 </tr>                                
                             </table>
                         <?php } ?>
-                    <?php $index++; } ?>
+                    <?php } ?>
                             
                     <h1 class="margin-top">Afgelopen conferenties</h1>
-                    <?php 
-                        $index = 0;
-                        foreach ($inschrijving as $i) { ?>
+                    <?php foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
@@ -263,15 +259,15 @@
                                 </tr>                                
                             </table>
                         <?php } ?>
-                    <?php $index++; } ?>
+                    <?php } ?>
 
                 </div>
-                
-                
+                                
                 
                 <div role="tabpanel" class="tab-pane" id="betalingen">
-                    <h1 class="margin-top">Betalingen</h1>
-                    <?php if ($inschrijving != null) { ?>
+                    <h1 class="margin-top">Betalingen</h1>                    
+                    <?php foreach ($inschrijving as $i) { ?>
+                        <?php if ($i != null && $i->betaling->id != null) { ?>
                         <table class="table">
                             <tr>
                                 <th>Conferentie</th>
@@ -280,14 +276,13 @@
                                 <th>Bedrag</th>                                    
                             </tr>
                             <tr>
-                                <td><?php echo $inschrijving->conferentie->naam; ?></td>
-                                <td><?php echo $inschrijving->datum; ?></td>
-                                <td><?php echo $inschrijving->type->omschrijving; ?></td>
-                                <td><?php echo $geld; ?></td>                                    
+                                <td><?php echo $i->conferentie->naam; ?></td>
+                                <td><?php echo $i->datum; ?></td>
+                                <td><?php echo $i->type->omschrijving; ?></td>
+                                <td><?php echo $i->geld; ?></td>                                    
                             </tr>
                         </table>
-                    <?php } else { ?>
-                        <p>Geen</p>
+                        <?php } ?>
                     <?php } ?>
                 </div>                        
             </div>

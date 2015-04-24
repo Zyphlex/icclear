@@ -37,29 +37,6 @@ class Inschrijving_model extends CI_Model {
         }
         return $inschrijvingen;
     }
-
-    function getInschijvingByConferentie($id) {
-        $this->db->where('gebruikerId', $id);
-        $query = $this->db->get('inschrijving');
-        if ($query->num_rows() == 1) {
-            $inschrijving = $query->row();
-            $this->load->model('betaling_model');
-            $this->load->model('conferentie_onderdeel_model');
-            $this->load->model('conferentie_model');
-            $this->load->model('betalingtype_model');
-            $this->load->model('gebruiker_activiteit_model');
-            
-            
-            $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);
-            $inschrijving->confonderdeel = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
-            $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);            
-            $inschrijving->type = $this->betalingtype_model->get($inschrijving->methodeId);
-        
-        } else {
-            $inschrijving = null;
-        }
-        return $inschrijving;
-    }
     
     function getInschijvingByGebruiker($id) {
         $this->db->where('gebruikerId', $id);
