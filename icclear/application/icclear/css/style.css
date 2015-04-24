@@ -261,3 +261,7 @@ button:focus {
   font-weight: normal;
   font-size: 75%;
 }
+
+.right {
+    float: right;
+}
