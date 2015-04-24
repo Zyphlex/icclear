@@ -88,7 +88,7 @@ class Profiel extends CI_Controller {
         {
             print_r('korting ' . $years . ' ' . $months . ' ' . $days);
         } else {
-            print_r('geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . toDDMMYYYY($data['inschrijving']->conferentie->beginDatum) . ' ' . toDDMMYYYY($data['inschrijving']->datum));
+            print_r('geen korting ' . $years . ' ' . $months . ' ' . $days . '  ' . $data['inschrijving']->conferentie->beginDatum . ' ' . $data['inschrijving']->datum);
         }
         
         $this->load->model('gebruiker_activiteit_model');
