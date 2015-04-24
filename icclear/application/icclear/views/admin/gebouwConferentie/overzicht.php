@@ -17,7 +17,7 @@ and open the template in the editor.
     </head>
     <body>
 
-        <?php foreach ($conferentiedagen as $dag) { ?>
+        <?php foreach ($dagen as $dag) { ?>
             <h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
             <table class="table table-beheer">
                 <thead>
