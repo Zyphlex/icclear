@@ -264,3 +264,8 @@ button:focus {
 .right {
     float: right;
 }
+
+.profConf {width: 35%}
+.profPl {width:20%}
+.profPer {width: 30%}
+.profBed {width: 15%}

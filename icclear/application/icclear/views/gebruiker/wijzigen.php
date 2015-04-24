@@ -194,10 +194,10 @@
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
-                                    <th>Conferentie</th>
-                                    <th>Plaats</th>
-                                    <th>Periode</th>
-                                    <th>Bedrag</th>
+                                    <th class="profConf">Conferentie</th>
+                                    <th class="profPl">Plaats</th>
+                                    <th class="profPer">Periode</th>
+                                    <th class="profBed">Bedrag</th>
                                     <th></th>
                                 </tr>
 
@@ -221,10 +221,10 @@
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                             <table class="table">
                                 <tr>
-                                    <th>Conferentie</th>
-                                    <th>Plaats</th>
-                                    <th>Periode</th>
-                                    <th>Bedrag</th>
+                                    <th class="profConf">Conferentie</th>
+                                    <th class="profPl">Plaats</th>
+                                    <th class="profPer">Periode</th>
+                                    <th class="profBed">Bedrag</th>
                                 </tr>
 
                                 <tr>
@@ -245,10 +245,10 @@
                         <?php if ($i != null && $i->betaling != null) { ?>
                         <table class="table">
                             <tr>
-                                <th>Conferentie</th>
-                                <th>Datum</th>
-                                <th>Methode</th>
-                                <th>Bedrag</th>                                    
+                                <th class="profConf">Conferentie</th>
+                                <th class="profPl">Datum</th>
+                                <th class="profPer">Methode</th>
+                                <th class="profBed">Bedrag</th>                                 
                             </tr>
                             <tr>
                                 <td><?php echo $i->conferentie->naam; ?></td>
