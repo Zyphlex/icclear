@@ -92,7 +92,18 @@ class Inschrijven extends CI_Controller {
         $data['active'] = 'admin';
         
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-
+        
+        $this->load->model('gebruiker_model');
+        $data['gebruikers'] = $this->gebruiker_model->getAll();   
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+    
+    public function overzicht(){
         $this->load->model('inschrijving_model');
         $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($data['conferentieId']);       
         
@@ -117,10 +128,8 @@ class Inschrijven extends CI_Controller {
             $i->geld += $this->gebruiker_activiteit_model->getPrijsByConfGebruiker($i->gebruikerId, $confId) + $confprijs;
         }
         
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        $this->load->view('admin/inschrijving/lijst', $data);
     }
-    
   
     
 }

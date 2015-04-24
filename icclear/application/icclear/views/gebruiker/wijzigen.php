@@ -208,9 +208,10 @@
                                                           
                                         <?php if($i->betaling == null) {?>                                        
                                             <span class="right label label-danger">Nog niet betaald!</span>
-                                        <?php } ?></td>
-                                                    
-                                    
+                                        <?php } else { ?>      
+                                            <span class="right label label-success">Reeds betaald!</span>
+                                        <?php } ?>
+                                    </td>
                                 </tr>                                
                             </table>
                         <?php } ?>
