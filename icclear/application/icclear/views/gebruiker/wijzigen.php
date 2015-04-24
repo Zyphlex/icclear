@@ -23,9 +23,9 @@
                     success: function (result) {
                         alert(result);
                         var jobject = jQuery.parseJSON(result);
-                        $("#naam").val(jobject.confonderdeel.omschrijving);
-                        $("#prijs").val(jobject.confonderdeel.prijs);
-                        $("#korting").val(jobject.confonderdeel.korting);
+                        $("#naam").html(jobject.confonderdeel.omschrijving);
+                        $("#prijs").html(jobject.confonderdeel.prijs);
+                        $("#korting").html(jobject.confonderdeel.korting);
                     }
                 });
             }
