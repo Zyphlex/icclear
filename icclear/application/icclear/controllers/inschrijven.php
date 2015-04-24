@@ -136,10 +136,9 @@ class Inschrijven extends CI_Controller {
     public function detail() {
         $id = $this->input->get('id');
 
-        $this->load->model('gebruiker_model');
-        $gebruiker = $this->gebruiker_model->get($id);
+        $data;
 
-        echo json_encode($gebruiker);
+        echo json_encode($data);
     }
     
 }
