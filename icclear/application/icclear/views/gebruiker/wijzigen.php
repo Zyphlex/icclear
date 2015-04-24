@@ -286,14 +286,18 @@
             <div class="modal-body">                  
                 <table>
                     <thead>
-                        <th>Naam</th>
-                        <th>Prijs</th>
-                        <th>Korting</th>
+                        <tr>
+                            <th>Naam</th>
+                            <th>Prijs</th>
+                            <th>Korting</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <td id="naam"></td>
-                        <td id="prijs"></td>
-                        <td id="korting"></td>
+                        <tr>
+                            <td id="naam"></td>
+                            <td id="prijs"></td>
+                            <td id="korting"></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
