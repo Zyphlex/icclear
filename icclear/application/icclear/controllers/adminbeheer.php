@@ -25,7 +25,7 @@ class Adminbeheer extends CI_Controller {
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Admin';
         $data['active'] = 'admin';  
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['conferentieId'] = null;
         
         $this->load->model('inschrijving_model');
         $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);

@@ -23,7 +23,7 @@ class Faqbeheer extends CI_Controller {
     public function index() {
          $user  = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = null;        
         $this->load->model('inschrijving_model');
         $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         
