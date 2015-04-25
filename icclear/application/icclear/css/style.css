@@ -120,7 +120,6 @@ a:hover {
     font-size:14px;
     border-radius:5px;
     margin-top:10px;    
-    background: #fff;
     background: -moz-linear-gradient(top, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
     background: -webkit-gradient(left top, left bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
     background: linear-gradient(to bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
