@@ -10,32 +10,35 @@ class Home extends CI_Controller {
     }
 
     public function index() {
-        $user  = $this->authex->getUserInfo();
-        $data['user']  = $user;
-        $data['title'] = 'IC Clear - Home'; 
-        $data['active'] = 'home';        
-        
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['title'] = 'IC Clear - Home';
+        $data['active'] = 'home';
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $this->load->model('algemeneinfo_model');
-        $data['algemeneinfo'] = $this->algemeneinfo_model-> get();
-        
+        $data['algemeneinfo'] = $this->algemeneinfo_model->get();
+
         $this->load->model('aankondiging_model');
-        $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
-        
+        $data['aankondigingen'] = $this->aankondiging_model->getAankondigingenActieve();
+
         $this->load->model('inschrijving_model');
-        if($user == null){
+        if ($user == null) {
             $data['inschrijving'] = null;
-        }else{
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        }        
-        
+        } else {
+            if ($user == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            }
+        }
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
-    }       
+    }
 
-    
 }
 
 /* End of file welcome.php */

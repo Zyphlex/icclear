@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Routesbeheer extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -21,33 +21,37 @@ class Routesbeheer extends CI_Controller {
     }
 
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = null;        
+        $data['conferentieId'] = null;
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
-        $data['title'] = 'IC Clear - Routes beheren';         
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
+        $data['title'] = 'IC Clear - Routes beheren';
         $data['active'] = 'admin';
-                
-        
+
+
         $this->load->model('gebouw_model');
-        $data['gebouwen'] = $this->gebouw_model->getAll();   
-        
+        $data['gebouwen'] = $this->gebouw_model->getAll();
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-        
-    public function overzicht() {        
+
+    public function overzicht() {
         $this->load->model('routes_model');
         $data['routes'] = $this->routes_model->getRoutes();
-        
+
         $this->load->view('admin/routes/lijst', $data);
     }
-    
+
     public function detail() {
         $id = $this->input->get('id');
 
@@ -56,8 +60,8 @@ class Routesbeheer extends CI_Controller {
 
         echo json_encode($route);
     }
-    
-    public function delete($id){
+
+    public function delete($id) {
         $id = $this->input->post('id');
 
         $this->load->model('routes_model');
@@ -65,24 +69,24 @@ class Routesbeheer extends CI_Controller {
 
         echo $deleted;
     }
-    
-    public function update() {        
+
+    public function update() {
         $route->id = htmlentities($this->input->post('id'));
         $route->vertrekpunt = htmlentities($this->input->post('vertrekpunt'));
         $route->gebouwId = htmlentities($this->input->post('gebouw'));
         $route->url = htmlentities($this->input->post('url'));
         $route->beschrijving = htmlentities($this->input->post('beschrijving'));
-        
+
         $this->load->model('routes_model');
         if ($route->id == 0) {
             $id = $this->routes_model->insert($route);
         } else {
             $this->routes_model->update($route);
         }
-        
+
         echo $id;
     }
-    
+
 }
 
 /* End of file welcome.php */

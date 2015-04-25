@@ -27,21 +27,25 @@ class Logon extends CI_Controller {
         $actCheck = $this->logon_model->isGeactiveerd($email);
         if ($this->authex->login($email, sha1($password))) {
             redirect('home');
-        } else if ($actCheck == false) {            
+        } else if ($actCheck == false) {
             redirect('logon/nietGeactiveerd');
         } else {
             redirect('logon/fout');
         }
     }
-    
+
     public function fout() {
         $data['title'] = 'IC Clear - Fout';
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $data['active'] = '';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -92,11 +96,15 @@ class Logon extends CI_Controller {
     }
 
     public function nieuwPass() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['active'] = '';
         $data['title'] = 'IC Clear - Wachtwoord aangepast';
 
@@ -118,11 +126,15 @@ class Logon extends CI_Controller {
     public function passReset($generatedKey) {
         $this->load->model('logon_model');
 
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['generatedKey'] = $generatedKey;
         $data['title'] = 'IC Clear - Register';
         $data['active'] = '';
@@ -139,11 +151,15 @@ class Logon extends CI_Controller {
     }
 
     public function nietGeactiveerd() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['title'] = 'IC Clear - Account niet geactiveerd';
         $data['active'] = '';
 
@@ -156,11 +172,15 @@ class Logon extends CI_Controller {
 
     public function bestaat() {
         $data['title'] = 'IC Clear - Register';
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['active'] = '';
 
         $this->load->model('conferentie_model');
@@ -172,11 +192,15 @@ class Logon extends CI_Controller {
 
     public function klaar() {
         $data['title'] = 'IC Clear - Register';
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['active'] = '';
 
         $this->load->model('conferentie_model');
@@ -197,11 +221,15 @@ class Logon extends CI_Controller {
 
         $this->authex->activate($generatedKey);
 
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['active'] = '';
 
         $this->load->model('conferentie_model');
@@ -235,11 +263,15 @@ class Logon extends CI_Controller {
         $this->email->message('Klik op onderstaande link als u uw wachtwoord wilt resetten. ' . "\n" . "\n " . site_url("logon/passReset/$generatedKey"));
         $this->email->send();
 
-        $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -251,12 +283,12 @@ class Logon extends CI_Controller {
     function check_email_availablity() {
         $this->load->model('email_model');
         $email = trim($this->input->post('email'));
-        $result = $this->email_model->check_email_availablity($email);       
+        $result = $this->email_model->check_email_availablity($email);
         if (!$result) {
             echo 0;
         } else {
-            echo 1;            
-        }        
+            echo 1;
+        }
     }
 
 }

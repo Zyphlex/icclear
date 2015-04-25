@@ -19,50 +19,54 @@ class Gebruiker extends CI_Controller {
             }
         }
     }
-    
+
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = null;        
+        $data['conferentieId'] = null;
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $data['title'] = 'IC Clear - Gebruiker';
-        $data['active'] = 'admin';        
-        
-        $this->load->model('gebruiker_model');        
+        $data['active'] = 'admin';
+
+        $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();
-        
-        $this->load->model('land_model');        
+
+        $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-      
-    public function overzicht() {        
+
+    public function overzicht() {
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();
-        
-        $this->load->model('land_model');        
+
+        $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
 
         $this->load->view('admin/gebruiker/lijst', $data);
     }
-    
-    public function detail() {        
-            $id = $this->input->get('id');
-                        
-            $this->load->model('gebruiker_model');
-            $gebruiker = $this->gebruiker_model->get($id);
-            
-            echo json_encode($gebruiker); 
+
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('gebruiker_model');
+        $gebruiker = $this->gebruiker_model->get($id);
+
+        echo json_encode($gebruiker);
     }
-    
-    public function update() {   
+
+    public function update() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->voornaam = $this->input->post('voornaam');
         $gebruiker->familienaam = $this->input->post('familienaam');
@@ -75,23 +79,23 @@ class Gebruiker extends CI_Controller {
         $gebruiker->postcode = $this->input->post('postcode');
         $gebruiker->straat = $this->input->post('straat');
         $gebruiker->nummer = $this->input->post('nummer');
-        
-        $this->load->model('gebruiker_model');        
+
+        $this->load->model('gebruiker_model');
         if ($gebruiker->id == 0) {
             $id = $this->gebruiker_model->insert($gebruiker);
         } else {
             $this->gebruiker_model->update($gebruiker);
         }
-        
+
         echo $id;
     }
-    
-    public function delete() {       
+
+    public function delete() {
         $id = $this->input->post('id');
-        
+
         $this->load->model('gebruiker_model');
         $deleted = $this->gebruiker_model->delete($id);
-        
+
         echo $deleted;
     }
 

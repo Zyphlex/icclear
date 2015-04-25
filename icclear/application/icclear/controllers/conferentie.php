@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Conferentie extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -19,49 +19,52 @@ class Conferentie extends CI_Controller {
             }
         }
     }
-    
+
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
-        $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin';        
-                        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->get($this->session->userdata('conferentieId'));
 
-        $this->load->model('land_model');        
+        $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
 
-     public function toevoegen() {
-        $data['user']  = $this->authex->getUserInfo();    
-        
+    public function toevoegen() {
+        $data['user'] = $this->authex->getUserInfo();
+
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - ';         
-        $data['active'] = 'admin'; 
-        
-        $this->load->model('land_model');        
+        $data['title'] = 'IC Clear - ';
+        $data['active'] = 'admin';
+
+        $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function nieuwopslaan() {       
+
+    public function nieuwopslaan() {
         $conferentie->stad = $this->input->post('stad');
         $conferentie->landId = $this->input->post('land');
         $conferentie->naam = $this->input->post('naam');
@@ -71,15 +74,15 @@ class Conferentie extends CI_Controller {
         $conferentie->beginDatum = $this->input->post('begindatum');
         $conferentie->eindDatum = $this->input->post('einddatum');
         $conferentie->statusId = 3;
-        
-        $this->load->model('conferentie_model');     
-        $id = $this->conferentie_model->insert($conferentie);  
-              
-        
+
+        $this->load->model('conferentie_model');
+        $id = $this->conferentie_model->insert($conferentie);
+
+
         redirect('admin/dashboard/' . $id);
     }
-    
-    public function opslaan() {        
+
+    public function opslaan() {
         $conferentie->id = $this->input->post('id');
         $conferentie->stad = $this->input->post('stad');
         $conferentie->landId = $this->input->post('land');
@@ -88,21 +91,21 @@ class Conferentie extends CI_Controller {
         $conferentie->seminarieDag = $this->input->post('seminariedag');
         //$conferentie->statusId = $this->input->post('id');
         $conferentie->maxInschrijvingen = $this->input->post('maxinschrijvingen');
-        
-        $this->load->model('conferentie_model');     
-        $this->conferentie_model->update($conferentie);  
-        echo $id;        
-        
+
+        $this->load->model('conferentie_model');
+        $this->conferentie_model->update($conferentie);
+        echo $id;
+
         redirect('admin/dashboard/' . $conferentie->id);
     }
-    
-    public function overzicht() {        
+
+    public function overzicht() {
         $this->load->model('conferentie_onderdeel_model');
         $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($this->session->userdata('conferentieId'));
-        
+
         $this->load->view('admin/conferentie/lijst', $data);
     }
-    
+
     public function detail() {
         $id = $this->input->get('id');
 
@@ -111,8 +114,8 @@ class Conferentie extends CI_Controller {
 
         echo json_encode($onderdeel);
     }
-    
-    public function delete($id){
+
+    public function delete($id) {
         $id = $this->input->post('id');
 
         $this->load->model('conferentie_onderdeel_model');
@@ -120,22 +123,22 @@ class Conferentie extends CI_Controller {
 
         echo $deleted;
     }
-    
-    public function update() {        
+
+    public function update() {
         $onderdeel->id = htmlentities($this->input->post('id'));
         $onderdeel->conferentieId = $this->session->userdata('conferentieId');
         $onderdeel->omschrijving = htmlentities($this->input->post('onderdeel'));
         $onderdeel->prijs = htmlentities($this->input->post('prijs'));
         $onderdeel->korting = htmlentities($this->input->post('korting'));
-        
+
         $this->load->model('conferentie_onderdeel_model');
         if ($onderdeel->id == 0) {
             $id = $this->conferentie_onderdeel_model->insert($onderdeel);
         } else {
             $this->conferentie_onderdeel_model->update($onderdeel);
         }
-        
+
         echo $id;
     }
-    
+
 }

@@ -21,19 +21,23 @@ class Gebouw extends CI_Controller {
     }
 
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = null;        
+        $data['conferentieId'] = null;
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $data['title'] = 'IC Clear - Gebouw';
         $data['active'] = 'admin';
-        
+
         $this->load->model('gebouw_model');
 
         $data['gebouwen'] = $this->gebouw_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -43,7 +47,7 @@ class Gebouw extends CI_Controller {
 
     public function overzicht() {
         $this->load->model('gebouw_model');
-        $data['gebouwen'] = $this->gebouw_model->getAll(); 
+        $data['gebouwen'] = $this->gebouw_model->getAll();
 
         $this->load->view('admin/gebouw/lijst', $data);
     }
@@ -83,27 +87,31 @@ class Gebouw extends CI_Controller {
 
         echo $deleted;
     }
-    
+
     public function gebouwPerDag() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $conferentieId = $this->session->userdata('conferentieId');        
+        $conferentieId = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        $data['title'] = 'IC Clear - Gebouwen';         
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+        $data['title'] = 'IC Clear - Gebouwen';
         $data['active'] = 'admin';
-        
+
         $data['conferentieId'] = $conferentieId;
-        
+
         $this->load->model('conferentiedag_model');
         $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
-       
+
         $this->load->model('planning_model');
         $data['dagen'] = $this->planning_model->getAllByDag($conferentieId);
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouwConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }

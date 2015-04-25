@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Aankondiging extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -19,71 +19,75 @@ class Aankondiging extends CI_Controller {
             }
         }
     }
-    
-    public function index() {                  
-        $user  = $this->authex->getUserInfo();
+
+    public function index() {
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 //        $data['conferentie'] = $this->session->userdata('conferentie');
-        
+
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model->getAllPerConferentie($this->session->userdata('conferentieId'));
-        
-        $data['title'] = 'IC Clear - aankondigingen';         
-        $data['active'] = 'admin';   
-        
+
+        $data['title'] = 'IC Clear - aankondigingen';
+        $data['active'] = 'admin';
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/aankondiging/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
+
     public function wijzigen($id) {
-        $data['user']  = $this->authex->getUserInfo();
-        
+        $data['user'] = $this->authex->getUserInfo();
+
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';        
-        $data['active'] = 'admin'; 
-                
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+
         $this->load->model('sessies_model');
         $data['sessie'] = $this->sessies_model->get($id);
-        
+
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
+
     public function toevoegen() {
-        $data['user']  = $this->authex->getUserInfo();        
+        $data['user'] = $this->authex->getUserInfo();
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
-        $data['title'] = 'IC Clear - Aankondiging toevoegen';        
-        $data['active'] = 'admin';        
-            
+
+        $data['title'] = 'IC Clear - Aankondiging toevoegen';
+        $data['active'] = 'admin';
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/aankondiging/toevoegen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function insert(){
+
+    public function insert() {
         $titel = $this->input->post('titel');
-        $inhoud = $this->input->post('inhoud'); 
+        $inhoud = $this->input->post('inhoud');
         $gepostDoorId = $this->input->post('gebruiker');
         $conferentieId = $this->input->post('conferentie');
         $this->load->model('aankondiging_model');
         $id = $this->aankondiging_model->insert($titel, $inhoud, $gepostDoorId, $conferentieId);
-        if($id != 0){
+        if ($id != 0) {
             redirect('aankondiging/index');
         }
 //        error
@@ -91,7 +95,6 @@ class Aankondiging extends CI_Controller {
 //            redirect('aankondiging/index');
 //        }
     }
-
 
 //    public function verwijderen() {
 //        $data['user']  = $this->authex->getUserInfo();
@@ -106,10 +109,6 @@ class Aankondiging extends CI_Controller {
 //        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/beheer', 'footer' => 'main_footer');
 //        $this->template->load('admin_master', $partials, $data);
 //    }
-    
-
-    
-    
     // TEST
 }
 

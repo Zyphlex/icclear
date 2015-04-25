@@ -21,23 +21,27 @@ class Zaal extends CI_Controller {
     }
 
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = null;        
+        $data['conferentieId'] = null;
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $data['title'] = 'IC Clear - Zaal';
         $data['active'] = 'admin';
 
-        
-        
+
+
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
-        
+
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -49,7 +53,7 @@ class Zaal extends CI_Controller {
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getAll();
         $data['zalen'] = $this->zaal_model->getGebouw();
-        
+
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getAll();
 

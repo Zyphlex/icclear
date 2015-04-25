@@ -24,15 +24,19 @@ class Adminbeheer extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Admin';
-        $data['active'] = 'admin';  
+        $data['active'] = 'admin';
         $data['conferentieId'] = null;
-        
+
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
 
         $this->load->model('gebruiker_model');
         $data['admins'] = $this->gebruiker_model->getAllAdmins();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -57,9 +61,9 @@ class Adminbeheer extends CI_Controller {
     }
 
     public function update() {
-        $admin->id = $this->input->post('id');        
+        $admin->id = $this->input->post('id');
         $admin->voornaam = $this->input->post('voornaam');
-        $admin->familienaam = $this->input->post('familienaam');        
+        $admin->familienaam = $this->input->post('familienaam');
         $admin->emailadres = $this->input->post('emailadres');
         $wachtwoord = $this->input->post('wachtwoord');
         $admin->paswoord = sha1($wachtwoord);

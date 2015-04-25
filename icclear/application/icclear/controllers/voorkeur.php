@@ -9,18 +9,22 @@ class Voorkeur extends CI_Controller {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
         if (!$this->authex->loggedIn()) {
-            redirect('logon/aanmelden');         
-        }         
+            redirect('logon/aanmelden');
+        }
     }
-    
+
     public function index() {
 
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
 
         $data['title'] = 'IC Clear - Sessie voorkeuren';
         $data['active'] = 'sessie voorkeuren';
@@ -30,15 +34,14 @@ class Voorkeur extends CI_Controller {
 
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'voorkeur/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
-    
+
     public function update() {
         $gebruiker = new stdClass();
 
@@ -61,7 +64,7 @@ class Voorkeur extends CI_Controller {
 
         redirect('profiel/instellingen');
     }
-    
+
     public function instellingen() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -71,45 +74,47 @@ class Voorkeur extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['gebruiker'] = $this->gebruiker_model->get($user->id);
-        
+
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
-        
+
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);       
-        
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-             
-        $this->load->model('gebruiker_activiteit_model');   
-        foreach ($data['inschrijving'] as $i)
-        {
+
+        $this->load->model('gebruiker_activiteit_model');
+        foreach ($data['inschrijving'] as $i) {
             $confId = $i->confonderdeel->conferentieId;
-            $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum)))/86400; 
-            if ($diff >= 30)
-            {
+            $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum))) / 86400;
+            if ($diff >= 30) {
                 $confprijs = $i->confonderdeel->prijs - (($i->confonderdeel->prijs / 100) * $i->confonderdeel->korting);
             } else {
                 $confprijs = $i->confonderdeel->prijs;
             }
-            
+
             $i->geld += $this->gebruiker_activiteit_model->getPrijsByConfGebruiker($user->id, $confId) + $confprijs;
         }
-        
-                
+
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'gebruiker/wijzigen', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
-    public function detail() {        
+
+    public function detail() {
         $id = $this->input->get('id');
-                        
+
         $this->load->model('inschrijving_model');
         $inschrijving = $this->inschrijving_model->getOnderdeelByInschrijving($id);
-            
-        echo json_encode($inschrijving); 
+
+        echo json_encode($inschrijving);
     }
-    
+
 }
 
 /* End of file welcome.php */

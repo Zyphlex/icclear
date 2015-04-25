@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Email extends CI_Controller {
-    
+
     public function __construct() {
         parent::__construct();
         $this->load->helper(array('form', 'url'));
@@ -22,38 +22,42 @@ class Email extends CI_Controller {
     }
 
     public function index() {
-         $user  = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');        
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        
-        
-        $data['title'] = 'IC Clear - Emails.';         
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+
+
+        $data['title'] = 'IC Clear - Emails.';
         $data['active'] = 'admin';
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-                        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/email/opstellen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-    
-    public function verzend(){
+
+    public function verzend() {
         $onderwerp = $this->input->post('onderwerp');
         $ontvanger = $this->input->post('ontvanger');
         $inhoud = $this->input->post('inhoud');
-        $conferentie = $this->session->userdata('conferentie');        
-        
-        $subject = $conferentie . ' - ' . $onderwerp;         
-        
+        $conferentie = $this->session->userdata('conferentie');
+
+        $subject = $conferentie . ' - ' . $onderwerp;
+
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($ontvanger);
         $this->email->subject($subject);
         $this->email->message($inhoud);
-        $this->email->send();                
-        
+        $this->email->send();
+
         redirect('admin/index');
-    }        
-    
+    }
+
 }
