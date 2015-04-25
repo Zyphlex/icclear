@@ -175,6 +175,7 @@ a:hover {
     border:none;
     border-radius:0 0 5px 5px;
     margin-top:10px;
+    background: gradient(linear, left top, left bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
     background: -moz-linear-gradient(top to bottom,color-stop(50%,#fff), color-stop(100%,#f4f4f4));
     background: -moz-gradient(linear, left top, left bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#fff), color-stop(100%,#f4f4f4));
