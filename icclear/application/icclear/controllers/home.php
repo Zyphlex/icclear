@@ -25,7 +25,11 @@ class Home extends CI_Controller {
         $data['aankondigingen'] = $this->aankondiging_model-> getAankondigingenActieve();
         
         $this->load->model('inschrijving_model');
-        $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        if($user == null){
+            $data['inschrijving'] = null;
+        }else{
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }        
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
