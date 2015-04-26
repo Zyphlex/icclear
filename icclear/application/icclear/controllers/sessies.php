@@ -100,9 +100,15 @@ class Sessies extends CI_Controller {
     }
 
     public function keuren() {
-        $data['user'] = $this->authex->getUserInfo();
-
+         $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $this->load->model('inschrijving_model');
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
 
