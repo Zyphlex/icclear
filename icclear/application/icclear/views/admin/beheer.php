@@ -4,12 +4,12 @@
     <h1>Admin dashboard</h1>  
 
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel">
+        <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
-                        <b>Huidige</b>
+                        <b>Huidige Conferentie</b>
                     </a>
                 </h4>
             </div>
@@ -44,7 +44,7 @@
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-                        Aankomende
+                        Aankomende Conferenties
                     </a>
                 </h4>
             </div>
@@ -80,7 +80,7 @@
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 
-                        Verleden
+                        Verleden Conferenties
                     </a>
                 </h4>
             </div>
