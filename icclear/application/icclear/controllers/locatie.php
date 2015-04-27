@@ -22,7 +22,7 @@ class Locatie extends CI_Controller {
 
 
         $data['title'] = 'IC Clear - Venues';
-        $data['active'] = '';
+        $data['active'] = 'venue';
 
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getGebouwenConferentie();

@@ -26,13 +26,7 @@
                     <li <?php if ($active == 'sessie voorkeuren'){ echo 'class="active"'; } ?>><?php echo anchor('voorkeur/', 'SESSIE VOORKEUREN'); ?></li>
                     <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
-                    <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENUES/ROUTES<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            <li><?php echo anchor('locatie/', 'VENUE'); ?></li>                            
-                            <li><?php echo anchor('locatie/route', 'ROUTES'); ?></li>
-                            </ul>
-                            </li>
+                    <li <?php if ($active == 'venue'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUES/ROUTES'); ?></li>
                     <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
                     <li <?php if ($active == 'sponsors'){ echo 'class="active"'; } ?>><?php echo anchor('sponsor/', 'SPONSORS'); ?></li>
                     <?php
