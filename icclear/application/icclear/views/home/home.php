@@ -7,6 +7,7 @@
 <div class="row">
     <div class="col-md-8">
         <h2>Wat is IC Clear?</h2>
+        <p><?php echo base_url() . " " . APPPATH() ?> </p>
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
