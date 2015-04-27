@@ -12,7 +12,7 @@
     
     <div class="col-md-4">
         <div class="thumbnail">
-            <img src="../../img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
+            <img src="<?php base_url() ?> " alt="ICclear clarity" title="Home Afbeelding">
         </div>
     </div>
 </div>
