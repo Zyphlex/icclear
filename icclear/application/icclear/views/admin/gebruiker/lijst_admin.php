@@ -22,7 +22,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigAdmin glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $admin->id ?>"></button>
-                        <button class="verwijderAdmin glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $admin->id ?>"></button> 
+                        <button class="verwijderAdmin glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $admin->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

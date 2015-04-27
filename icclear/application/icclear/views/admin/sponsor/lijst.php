@@ -32,7 +32,7 @@
                     <td>
                         <p>
                             <button class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
-                            <button class="verwijderSponsor glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
                         </p>
                     </td>
                 </tr>
@@ -71,7 +71,7 @@
                     <td>
                         <p>
                             <button class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
-                            <button class="verwijderSponsor glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
                         </p>
                     </td>
                 </tr>

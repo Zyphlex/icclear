@@ -20,7 +20,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigFaq glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $vraag->id ?>"></button>
-                        <button class="verwijderFaq glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $vraag->id ?>"></button> 
+                        <button class="verwijderFaq glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $vraag->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

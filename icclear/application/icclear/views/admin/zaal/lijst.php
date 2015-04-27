@@ -22,7 +22,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigZaal glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $zaal->id ?>"></button>
-                        <button class="verwijderZaal glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $zaal->id ?>"></button> 
+                        <button class="verwijderZaal glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $zaal->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

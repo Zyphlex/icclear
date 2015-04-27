@@ -22,7 +22,7 @@
 
                 <td>
                     <button class="wijzigActiviteit glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $activiteit->id ?>"></button>
-                        <button class="verwijderActiviteit glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $activiteit->id ?>"></button> 
+                        <button class="verwijderActiviteit glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $activiteit->id ?>"></button> 
                 </td>    
             </tr>
         <?php } ?>

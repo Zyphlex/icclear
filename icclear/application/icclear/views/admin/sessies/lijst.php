@@ -29,7 +29,7 @@
                 <td>
                     <p>
                         <button class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
-                        <button class="verwijderSessie glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $sessie->id ?>"></button> 
+                        <button class="verwijderSessie glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sessie->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

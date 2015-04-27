@@ -19,7 +19,7 @@
                 <td><?php echo $route->gebouw->naam ?></td>
                 <td>
                     <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $route->id ?>"></button>
-                    <button class="verwijderItem glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $route->id ?>"></button>                                 
+                    <button class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $route->id ?>"></button>                                 
                 </td>
             </tr>
         <?php } ?>

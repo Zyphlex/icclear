@@ -17,7 +17,7 @@
                 <td><?php echo $land->naam ?></td>
                 <td>
                     <button class="wijzigLand glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $land->id ?>"></button>
-                    <button class="verwijderLand glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $land->id ?>"></button>                                 
+                    <button class="verwijderLand glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $land->id ?>"></button>                                 
                 </td>
             </tr>
         <?php } ?>

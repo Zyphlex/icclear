@@ -26,7 +26,7 @@
                 <td>
                     <p>                                        
                         <button class="wijzigGebouw glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebouw->id ?>"></button>
-                        <button class="verwijderGebouw glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $gebouw->id ?>"></button> 
+                        <button class="verwijderGebouw glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $gebouw->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

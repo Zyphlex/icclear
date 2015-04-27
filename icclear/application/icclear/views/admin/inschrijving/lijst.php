@@ -30,7 +30,7 @@
                 <td><?php echo $i->type->omschrijving ?></td>
                 <td>
                     <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $i->id ?>"></button>
-                    <button class="verwijderItem glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $i->id ?>"></button>   
+                    <button class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $i->id ?>"></button>   
                 </td>
             </tr>
         <?php } ?>
