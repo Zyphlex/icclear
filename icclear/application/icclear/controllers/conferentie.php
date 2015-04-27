@@ -48,10 +48,11 @@ class Conferentie extends CI_Controller {
     }
 
     public function toevoegen() {
-        $data['user'] = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
 
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - ';
+        $data['title'] = 'IC Clear - Conferentie toevoegen';
         $data['active'] = 'admin';
         $this->load->model('inschrijving_model');
         if ($user == null) {
