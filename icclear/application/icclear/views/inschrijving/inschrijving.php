@@ -85,7 +85,7 @@ echo form_open('inschrijven/verzenden', $attributes);
         <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
 
         <?php if ($user == null) { ?>
-            <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a>
+            <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal"  class="btn btn-default">Aanmelden</a>
         <?php } else { ?>
             <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
         <?php } ?>
