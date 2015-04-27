@@ -6,8 +6,6 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Collapsible Group Item #1
-
                     <h3 style="font-style: italic; margin-left: 25px;"><b>Huidige</b></h3>
                 </a>
             </div>
@@ -104,6 +102,7 @@
         </tbody>
     </table>
 
+</div>
 </div>
 </div>
 </div>
