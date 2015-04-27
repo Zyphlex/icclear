@@ -68,7 +68,6 @@
                 <table class = "table">
                     <thead>
                         <tr>
-                            <th>#</th>
                             <th>Naam</th>
                             <th>Omschrijving</th>
                             <th>Prijs</th>
@@ -76,15 +75,12 @@
                     </thead>  
                     <tbody>            
                         <?php
-                        $teller = 1;
                         foreach ($activiteiten as $activiteit) { ?>
                                 <tr>
-                                    <td><?php echo $teller ?></td>
                                     <td><?php echo $activiteit->naam ?></td>
                                     <td><?php echo $activiteit->omschrijving ?></td>
                                     <td><?php echo toKomma($activiteit->prijs) ?> EUR</td>
                                 </tr>
-                                <?php $teller++;?>
                         <?php } ?>
                     </tbody>
                 </table>         
