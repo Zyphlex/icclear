@@ -74,10 +74,10 @@ echo form_open('inschrijven/verzenden', $attributes);
         <br/>
         <br/>
 
-        <input type="radio" name="methode" value="1"/><label> VISA</label><br/>
-        <input type="radio" name="methode" value="2"/><label> Mastercard</label><br/>
-        <input type="radio" name="methode" value="3"/><label> PayPal</label><br/>
-        <input type="radio" name="methode" value="4"/><label> Overschrijving</label><br/>
+        <input type="radio" name="methode" value="1"/> <label> VISA</label><br/>
+        <input type="radio" name="methode" value="2"/> <label> Mastercard</label><br/>
+        <input type="radio" name="methode" value="3"/> <label> PayPal</label><br/>
+        <input type="radio" name="methode" value="4"/> <label> Overschrijving</label><br/>
 
         <input type="hidden" name="datum" value="<?php date("Y-m-d") ?>" />
 
