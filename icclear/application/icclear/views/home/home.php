@@ -12,7 +12,7 @@
     
     <div class="col-md-4">
         <div class="thumbnail">
-            <img src="http://icclear.net/wp-content/uploads/2015/02/clarity2014-slider-new.jpg" alt="ICclear clarity" title="Home Afbeelding">
+            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
     </div>
 </div>
