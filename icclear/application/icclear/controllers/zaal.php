@@ -51,7 +51,6 @@ class Zaal extends CI_Controller {
 
     public function overzicht() {
         $this->load->model('zaal_model');
-        $data['zalen'] = $this->zaal_model->getAll();
         $data['zalen'] = $this->zaal_model->getGebouw();
 
         $this->load->model('gebouw_model');
@@ -72,7 +71,7 @@ class Zaal extends CI_Controller {
     public function update() {
         $zaal->id = $this->input->post('id');
         $zaal->naam = $this->input->post('naam');
-        $zaal->gebouwId = $this->input->post('postcode');
+        $zaal->gebouwId = $this->input->post('gebouw');
         $zaal->maximumAantalPersonen = $this->input->post('maximumAantalPersonen');
 
         $this->load->model('zaal_model');
