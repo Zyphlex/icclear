@@ -44,7 +44,7 @@
                 </a>
             </div>
 
-            <div id="collapseTwo" class="accordion-body collapse in">
+            <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <table class="table" style="margin-left: 50px">
                         <table class="table" style="margin-left: 50px">
@@ -76,13 +76,13 @@
         </div>
         <div class="accordion-group">
             <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
 
                     <h3 style="font-style: italic; margin-left: 25px;">Verleden</h3>
                 </a>
             </div>
 
-            <div id="collapseThree" class="accordion-body collapse in">
+            <div id="collapseThree" class="accordion-body collapse">
                 <div class="accordion-inner">
                     <table class="table" style="margin-left: 50px">
                         <table class="table" style="margin-left: 50px">
