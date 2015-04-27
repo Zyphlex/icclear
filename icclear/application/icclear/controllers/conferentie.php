@@ -53,7 +53,13 @@ class Conferentie extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['title'] = 'IC Clear - ';
         $data['active'] = 'admin';
-
+        $this->load->model('inschrijving_model');
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+        
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
 
