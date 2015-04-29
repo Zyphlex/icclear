@@ -21,7 +21,7 @@
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
             } */
-            alert("test5");
+            alert("test6");
             // dialoogvenster openen
             $("#test").modal('show');
         });
