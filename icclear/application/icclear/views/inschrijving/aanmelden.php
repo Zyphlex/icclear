@@ -13,35 +13,37 @@
             $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
             echo form_open('inschrijven/aanmelden', $attributes);
             ?>
+            <div class="row">
+                
+                <div class="text-center underline">
+                    <h3>Aanmelden</h3>
+                </div>   
 
-            <div class="text-center underline">
-                <h3>Aanmelden</h3>
-            </div>   
-
-            <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
-            <div class="col-sm-8">
-                <?php echo form_input(); ?>
-                <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
-            </div>
-
-            <label class="col-sm-4 control-label" for="passwordlogon">Wachtwoord:</label>                
-            <div class="col-sm-8">
-                <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
-            </div>
-
-
-            <div class="col-sm-8 col-sm-offset-4">  
-                <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
-            </div>
-
-
-            <div class="col-sm-offset-4 col-sm-8 margin-top">
-                <div class="btn-group btn-block">
-                    <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
-                    <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
+                <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
+                <div class="col-sm-8">
+                    <?php echo form_input(); ?>
+                    <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
                 </div>
-            </div>
 
+                <label class="col-sm-4 control-label" for="passwordlogon">Wachtwoord:</label>                
+                <div class="col-sm-8">
+                    <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
+                </div>
+
+
+                <div class="col-sm-8 col-sm-offset-4">  
+                    <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
+                </div>
+
+
+                <div class="col-sm-offset-4 col-sm-8 margin-top">
+                    <div class="btn-group btn-block">
+                        <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+                        <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
+                    </div>
+                </div>
+
+            </div>     
             <?php echo form_close(); ?>
 
 
@@ -233,6 +235,7 @@
 
 
 
+            <div class="row">
                 <div class=""> 
                     <div id="emaildiv">
                         <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span><div id="feedbackemail"></div>
@@ -307,12 +310,13 @@
 
                     </div>
 
-                </div>
-            
+                </div>    
+
             <div class="col-sm-offset-4 col-sm-8 margin-top">
                 <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreren</button>
             </div>
 
+            </div>     
             <?php echo form_close(); ?>
         </div>
     </div>
