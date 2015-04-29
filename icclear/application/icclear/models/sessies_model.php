@@ -136,12 +136,18 @@ class Sessies_model extends CI_Model {
     
     function update($sessie)
     {
+        //Html entities en extra spaties verwijderen
+        $sessie = escape_html($sessie);
+        
         $this->db->where('id', $sessie->id);
         $this->db->update('sessie', $sessie);
     }
     
     function insert($sessie)
     {
+        //Html entities en extra spaties verwijderen
+        $sessie = escape_html($sessie);
+        
         $this->db->insert('sessie', $sessie);
         return $this->db->insert_id();
     }
