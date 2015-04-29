@@ -21,7 +21,7 @@
                     <td><?php echo $gebruiker->familienaam ?></td>
                     <td><?php echo $gebruiker->voornaam ?></td>
                     <td>
-                        <button class="emailGebruiker glyphicon glyphicon-envelope btn btn-primary groen" data-id="<?php echo $gebruiker->id ?>"></button>
+                        <button class="emailGebruiker glyphicon glyphicon-envelope btn btn-primary white groen" data-id="<?php echo $gebruiker->id ?>"></button>
                         <?php echo $gebruiker->emailadres ?></td>
                     <?php if ($gebruiker->typeId == 1) { ?>
                         <td>Bezoeker</td>
