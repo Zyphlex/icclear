@@ -29,6 +29,9 @@ class Faq_model extends CI_Model {
     }
 
     function update($faq) {
+        //Html entities en extra spaties verwijderen
+        $faq = escape_html($faq);
+        
         $this->db->where('id', $faq->id);
         $this->db->update('faq', $faq);
     }
@@ -40,6 +43,9 @@ class Faq_model extends CI_Model {
     
     function insert($faq)
     {
+        //Html entities en extra spaties verwijderen
+        $faq = escape_html($faq);
+        
         $this->db->insert('faq', $faq);
         return $this->db->insert_id();
     }
