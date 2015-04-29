@@ -62,13 +62,12 @@ class Email extends CI_Controller {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
         $id = $this->input->post('email');
+        $onderwerp = $this->input->post('onderwerp');
+        $inhoud = $this->input->post('boodschap');
 
         if ($id == 0) {
             foreach ($gebruikers as $g) {
-                $ontvanger = $g->emailadres;
-                $onderwerp = $this->input->post('onderwerp');
-                $inhoud = $this->input->post('boodschap');
-
+                $ontvanger = $g->emailadres;                
                 $this->email->from('donotreply@thomasmore.be');
                 $this->email->to($ontvanger);
                 $this->email->subject($onderwerp);
@@ -77,9 +76,6 @@ class Email extends CI_Controller {
             }
         } else {
             $ontvanger = $this->input->post('email');
-            $onderwerp = $this->input->post('onderwerp');
-            $inhoud = $this->input->post('boodschap');
-
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($ontvanger);
             $this->email->subject($onderwerp);
