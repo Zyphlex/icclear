@@ -60,7 +60,7 @@ class Conferentie extends CI_Controller {
         } else {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         }
-        
+
         $this->load->model('land_model');
         $data['landen'] = $this->land_model->getAll();
 
@@ -72,18 +72,25 @@ class Conferentie extends CI_Controller {
     }
 
     public function nieuwopslaan() {
+        //ingevoerde gegevens ophalen
         $conferentie->stad = $this->input->post('stad');
         $conferentie->landId = $this->input->post('land');
         $conferentie->naam = $this->input->post('naam');
         $conferentie->beschrijving = $this->input->post('beschrijving');
         $conferentie->seminarieDag = $this->input->post('seminariedag');
         $conferentie->maxInschrijvingen = $this->input->post('maxinschrijvingen');
-        $conferentie->beginDatum = $this->input->post('begindatum');
-        $conferentie->eindDatum = $this->input->post('einddatum');
+        //status is "toekomstig"
         $conferentie->statusId = 3;
+
+        $begindatum = $this->input->post('begindatum');
+        $einddatum = $this->input->post('einddatum');
+        $conferentie->beginDatum = $begindatum;
+        $conferentie->eindDatum = $einddatum;
 
         $this->load->model('conferentie_model');
         $id = $this->conferentie_model->insert($conferentie);
+
+        //Alle datums tussen begin en einddatum zoeken
 
 
         redirect('admin/dashboard/' . $id);
@@ -146,6 +153,25 @@ class Conferentie extends CI_Controller {
         }
 
         echo $id;
+    }
+
+    public function getDatumsConferentie($begindatum, $einddatum) {
+        $datums = array();
+
+        $startDatum = mktime(1, 0, 0, substr($begindatum, 0, 2), substr($begindatum, 3, 2), substr($begindatum, 6, 4));
+        $stopDatum = mktime(1, 0, 0, substr($einddatum, 0, 2), substr($einddatum, 3, 2), substr($einddatum, 6, 4));
+
+        print_r(date('Y-m-d', $startDatum));
+        /*
+        if ($stopDatum >= $startDatum) {
+            array_push($datums, date('Y-m-d', $startDatum)); // first entry
+            while ($startDatum < $stopDatum) {
+                $startDatum+=86400; // add 24 hours
+                
+                //array_push($datums, date('Y-m-d', $startDatum));
+            }
+        }*/
+        return $datums;
     }
 
 }
