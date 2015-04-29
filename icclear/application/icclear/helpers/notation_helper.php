@@ -62,7 +62,19 @@ function toPunt($input) {
         }
     }
 }
-
+function escape_html($data)
+{
+    if (is_array($data)) {
+        return array_map(array($this,'escape_html'), $data);
+    }
+    if (is_object($data)) {
+        $tmp = clone $data; // avoid modifing original object
+        foreach ( $data as $k => $var )
+            $tmp->{$k} = escape_html($var);
+        return $tmp;
+    }
+    return trim(htmlentities($data));
+}
 
 /* End of file notation_helper.php */
 /* Location: helpers/notation_helper.php */
