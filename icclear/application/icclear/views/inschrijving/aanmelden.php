@@ -13,7 +13,7 @@
     echo form_open('inschrijven/aanmelden', $attributes);
 ?>
 
-    <div class="underline">
+    <div class="text-center underline">
          <h3>Aanmelden</h3>
     </div>   
         
@@ -231,7 +231,7 @@ $attributes = array('class' => 'registreer', 'id' => 'myForm', 'class' => 'form-
 echo form_open('inschrijven/registreer', $attributes);
 ?>
 
-    <div class="underline">
+    <div class="text-center underline">
     <h3>Registreren</h3>
     </div>
 
