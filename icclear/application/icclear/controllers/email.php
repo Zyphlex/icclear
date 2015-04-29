@@ -60,19 +60,14 @@ class Email extends CI_Controller {
     
     public function verzenden() {
         $onderwerp = $this->input->post('onderwerp');
-        $ontvanger = $this->input->post('ontvanger');
+        $ontvanger = $this->input->post('email');
         $inhoud = $this->input->post('boodschap');
-        $conferentie = $this->session->userdata('conferentie');
-
-        $subject = $conferentie . ' - ' . $onderwerp;
-
+               
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($ontvanger);
-        $this->email->subject($subject);
+        $this->email->subject($onderwerp);
         $this->email->message($inhoud);
-        $this->email->send();
-
-        redirect('admin/index');
+        $this->email->send();       
     }
     
      public function update() {
