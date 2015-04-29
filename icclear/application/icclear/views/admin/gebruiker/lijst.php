@@ -4,7 +4,8 @@
     });
 </script>
 
-<table class="table table-responsive table-beheer">
+<div class="table-responsive">
+<table class="table table-beheer">
     <thead>
         <tr>
             <th>Familienaam</th>
@@ -34,4 +35,5 @@
             </tr>
         <?php } ?>
     </tbody>
-</table>      
+</table>     
+</div>
