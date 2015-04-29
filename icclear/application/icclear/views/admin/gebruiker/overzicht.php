@@ -345,7 +345,7 @@
                                 </div>
 
                                 <div class="col-md-8">                                      
-                                    <?php echo form_textarea(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control', 'rows' => '10', 'cols' => '150'));?>                                    
+                                    <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150'));?>                                    
                                 </div>
                             </div>
                            
