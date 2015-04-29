@@ -240,7 +240,7 @@ class Inschrijven extends CI_Controller {
             $Pers = $this->session->userdata('Pers');
             $Acts = $this->session->userdata('ActId');
             $i=0;
-            foreach ($acts as $a)
+            foreach ($Acts as $a)
             {
                 $activiteit->activiteitId = $a;
                 $activiteit->gebruikerId = $user->id;
