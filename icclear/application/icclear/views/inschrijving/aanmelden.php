@@ -66,7 +66,7 @@
     
     
     
-<div class="col-md-6 col-sm-6">
+<div class="col-md-6 col-sm-6 border-left">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="<?php echo base_url() . APPPATH; ?>/js/bootstrap.js"></script>
 <script type="text/javascript">
