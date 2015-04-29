@@ -89,9 +89,9 @@ $attributes = array('name' => 'myform');
         <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
 
         <?php if ($user == null) { ?>
-            <input type="submit" value="Aanmelden en betalen" class="btn btn-default"/>
+            <input type="submit" value="Aanmelden en betalen" class="btn btn-primary"/>
         <?php } else { ?>
-            <input type="submit" value="Inschrijven en betalen" class="btn btn-default"/>
+            <input type="submit" value="Inschrijven en betalen" class="btn btn-primary"/>
         <?php } ?>
     </div>
 </div>
