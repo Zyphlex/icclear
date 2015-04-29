@@ -236,7 +236,7 @@ class Inschrijven extends CI_Controller {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         }
         $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
+        $data['active'] = 'inschrijven';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
