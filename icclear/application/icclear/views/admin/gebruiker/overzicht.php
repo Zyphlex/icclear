@@ -92,12 +92,24 @@
                         $("#boodschap").val("");
                     }
                 });
+            }else{
+                $.ajax({type: "GET",
+                    url: site_url + "/gebruiker/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#ontvanger").val("Alle gebruikers");                                             
+                        $("#onderwerp").val("");
+                        $("#boodschap").val("");
+                    }
+                });
             }
             // dialoogvenster openen
             $("#gebruikerEmail").modal('show');
         });
     }
-
+    
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
@@ -159,7 +171,7 @@
 <div class="col-md-10">
 
     <h1>Gebruiker beheren</h1>      
-    
+
 
     <div id="resultaat"></div>        
 
