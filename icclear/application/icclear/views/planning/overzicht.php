@@ -6,7 +6,7 @@
     //Link leggen met de knoppen die gemaakt worden in lijst.php
     function maakDetailClick() {
         $(".sessie").click(function () {
-            var iddb = $(this).data("id");
+            /* var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
@@ -24,8 +24,8 @@
                 // bij toevoegen gewoon vakken leeg maken
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
-            }
-            alert("test");
+            } */
+            alert("test1");
             // dialoogvenster openen
             $("#sessieModal").modal('show');
         });
@@ -138,13 +138,8 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
-                    <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
-
-                    <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
-                </form>
+                    <!-- <input type="hidden" name="id" id="id" />
+                    --></form>
 
             </div>
 
