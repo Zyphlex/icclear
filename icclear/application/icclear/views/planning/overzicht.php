@@ -140,14 +140,10 @@
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type'=>'hidden', 'id' =>'id'));?>
-                    <p>Onderwerp: <span id="onderwerp"></span></p>                
+                    <p>Onderwerp: <span id="onderwerp"></span></p> 
+                    <p>Omschrijving: <span id="omschrijving"></span></p> 
                 </form>
 
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="opslaanLand btn btn-primary">Opslaan</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
         </div>            
