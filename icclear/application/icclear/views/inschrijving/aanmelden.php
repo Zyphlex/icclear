@@ -40,8 +40,10 @@
 
 
         <div class="row margin-top">
-        <button type="button" class="col-md-6 col-sd-6 btn btn-default" data-dismiss="modal">Annuleer</button>
-        <input type="submit" name="mysubmit" value="Aanmelden" class="col-md-6 col-sd-6 btn btn-primary"  />
+        <div class="btn-group btn-block">
+        <button type="button" class="col-md-6 col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+        <input type="submit" name="mysubmit" value="Aanmelden" class="col-md-6 col-sm-6 btn btn-primary"  />
+        </div>
         </div>
     
 </form>
