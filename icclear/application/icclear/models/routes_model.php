@@ -73,6 +73,9 @@ class Routes_model extends CI_Model {
     }
     
     function update($route) {
+        //Html entities en extra spaties verwijderen
+        $route = escape_html($route);
+        
         $this->db->where('id', $route->id);
         $this->db->update('route', $route);
     }
@@ -84,6 +87,9 @@ class Routes_model extends CI_Model {
     
     function insert($route)
     {
+        //Html entities en extra spaties verwijderen
+        $route = escape_html($route);
+        
         $this->db->insert('route', $route);
         return $this->db->insert_id();
     }
