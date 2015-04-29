@@ -246,21 +246,6 @@ echo form_open('logon/add', $attributes);
 
             </div>
 
-            <div class="row" id="landdiv">
-                <div class="col-md-4">   
-                    <?php echo form_label('Land:', 'land'); ?>                                        
-                </div>              
-
-                <div class="col-md-8">   
-                    <?php
-                    foreach ($landen as $land) {
-                        $options[$land->id] = $land->naam;
-                    }
-                    echo form_dropdown('land', $options, 0, 'class="form-control" id="land"');
-                    ?>
-                </div>
-            </div>
-
         </div>
     </div>         
 
