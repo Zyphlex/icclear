@@ -313,9 +313,15 @@
                     </div>
 
                 </div>    
-
-            <div class="col-sm-offset-4 col-sm-8 margin-top">
-                <button name="mysubmit" id="mySubmit" class="col-sm-12 btn btn-primary">Registreren</button>
+                
+            <div class="col-sm-4 margin-top">
+                        <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+                    
+            </div>
+            <div class="col-sm-8 margin-top">
+                        <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+                        <button name="mysubmit" id="mySubmit" class="col-sm-12 btn btn-primary">Registreren</button>
+                    
             </div>
 
             </div>     
