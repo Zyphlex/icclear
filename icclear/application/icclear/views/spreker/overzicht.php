@@ -6,7 +6,7 @@
 
 <div class="row"> 
     <?php foreach ($sprekers as $spreker) { ?>   
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4">
             <div class="panel panel-default">
                 <div class="row">
                     <div class="panel-body">
