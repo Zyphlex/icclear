@@ -70,12 +70,10 @@ class Inschrijven extends CI_Controller {
         }  
         
         $acti = array();
-        $actiU = array();
         $actiPer = array();
         $act = $this->input->post('aanwezig');
         foreach ($act as $a) {
             array_push($acti, $a);
-            array_push($actiU, $user->id);
             $activiteit->activiteitId = $a;
             $activiteit->gebruikerId = $user->id;
             if ($betId != 0) {
@@ -85,8 +83,7 @@ class Inschrijven extends CI_Controller {
             $activiteit->aantalPersonen = $this->input->post($a);
         }
         
-        $this->session->set_userdata($inschrijving);
-        print_r($actiU);   
+        $this->session->set_userdata($inschrijving); 
         print_r($acti);
         print_r($actiPer);
         
