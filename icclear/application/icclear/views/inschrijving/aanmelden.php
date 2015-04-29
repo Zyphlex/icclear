@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-<div class="col-sm-6">
+<div class="col-sm-6 panel panel-default">
     <?php 
     $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
     echo form_open('inschrijven/aanmelden', $attributes);
@@ -61,7 +61,7 @@
     
     
     
-<div class="col-sm-6 col-sm-6 panel panel-default">
+<div class="col-sm-6 panel panel-default">
 <script type="text/javascript">
 
     function finishAjax(id, response) {
