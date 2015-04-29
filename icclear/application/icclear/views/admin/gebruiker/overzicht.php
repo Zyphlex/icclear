@@ -158,8 +158,7 @@
 
 <div class="col-md-10">
 
-    <h1>Gebruiker beheren</h1>  
-    <button class="btn btn-warning">Email naar alle gebruikers versturen</button>
+    <h1>Gebruiker beheren</h1>      
     
 
     <div id="resultaat"></div>        
@@ -167,7 +166,7 @@
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
 
     <button class="wijzigGebruiker btn btn-primary" data-id="0">Nieuwe gebruiker Toevoegen</button>
-
+    <button class="emailAllen btn btn-warning" data-id="0">Email naar alle gebruikers versturen</button>
 </div>
 
 
