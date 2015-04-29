@@ -25,7 +25,7 @@
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
             } */
-            alert("test2");
+            alert("test3");
             // dialoogvenster openen
             $("#sessieModal").modal('show');
         });
@@ -141,6 +141,11 @@
                     <!-- <input type="hidden" name="id" id="id" />
                     --></form>
 
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="opslaanFaq btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
         </div>            
