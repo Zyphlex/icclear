@@ -34,7 +34,7 @@
                 $.ajax({type: "GET",
                     url: site_url + "/spreker/detail",
                     async: false,
-                    data: {id: iddb},
+                    data: {bid: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").html(jobject.voornaam);
