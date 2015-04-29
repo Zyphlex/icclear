@@ -93,11 +93,11 @@ class Gebouw extends CI_Controller {
         $data['user'] = $user;
         $conferentieId = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        /*if ($user == null) {
+        if ($user == null) {
             $data['inschrijving'] = null;
         } else {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        }*/
+        }
         $data['title'] = 'IC Clear - Gebouwen';
         $data['active'] = 'admin';
 
