@@ -64,6 +64,7 @@ class Activiteit_model extends CI_Model {
     }
 
     function update($activiteit) {
+        $activiteit = escape_html($activiteit);
         $this->db->where('id', $activiteit->id);
         $this->db->update('activiteit', $activiteit);
     }
