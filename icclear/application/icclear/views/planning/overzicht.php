@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    
+</script>
 <div class='row'>
     <div class='col-md-12'>
         <h1>Programma overzicht - <?php echo $actieveId->naam ?></h1>
