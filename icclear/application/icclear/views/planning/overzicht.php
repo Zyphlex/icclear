@@ -141,8 +141,7 @@
             </div>
             
             <div class="modal-footer">
-                <button type="button" class="opslaanFaq btn btn-primary">Opslaan</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Sluiten</button>
             </div>
 
         </div>            
