@@ -52,6 +52,9 @@ class Hotel_model extends CI_Model {
     }
     
     function update($hotel) {
+        //Html entities en extra spaties verwijderen
+        $hotel = escape_html($hotel);
+        
         $this->db->where('id', $hotel->id);
         $this->db->update('hotel', $hotel);
     }
@@ -63,6 +66,9 @@ class Hotel_model extends CI_Model {
     
     function insert($hotel)
     {
+        //Html entities en extra spaties verwijderen
+        $hotel = escape_html($hotel);
+        
         $this->db->insert('hotel', $hotel);
         return $this->db->insert_id();
     }
