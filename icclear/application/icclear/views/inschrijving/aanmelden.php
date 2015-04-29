@@ -39,7 +39,7 @@
         
 
 
-        <div class="row">
+        <div class="row margin-top">
         <button type="button" class="col-md-6 col-sd-6 btn btn-default" data-dismiss="modal">Annuleer</button>
         <input type="submit" name="mysubmit" value="Aanmelden" class="col-md-6 col-sd-6 btn btn-primary"  />
         </div>
@@ -310,9 +310,11 @@ echo form_open('logon/add', $attributes);
         </div>
     </div>         
     
-    <div class="row">
-    <button type="button" class="col-md-6 col-sd-6 btn btn-default" data-dismiss="modal">Annuleer</button>        
-    <button name="mysubmit" id="mySubmit" class="col-md-6 col-sd-6 btn btn-primary">Registreer</button>
+    <div class="row margin-top">
+        <div class="btn-toolbar" role="toolbar" aria-label="...">
+        <button type="button" role="group" class="col-md-6 col-sd-6 btn-group btn-default" data-dismiss="modal">Annuleer</button>        
+        <button name="mysubmit" role="group" id="mySubmit" class="col-md-6 col-sd-6 btn-group btn-primary">Registreer</button>
+        </div>
     </div>
     
 <?php echo form_close(); ?>
