@@ -45,10 +45,10 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#voornaam").html("");
-                $("#familienaam").html("");
-                $("#foto").html("");
-                $("#biografie").html("");
+                $("#voornaam").val("");
+                $("#familienaam").val("");
+                $("#foto").val("");
+                $("#biografie").val("");
             }
             // dialoogvenster openen
             $("#sprekerModal").modal('show');
