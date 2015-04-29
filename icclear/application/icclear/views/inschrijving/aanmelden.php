@@ -233,7 +233,6 @@
 
 
 
-            <div class="row">
                 <div class=""> 
                     <div id="emaildiv">
                         <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span><div id="feedbackemail"></div>
@@ -309,8 +308,7 @@
                     </div>
 
                 </div>
-            </div>         
-
+            
             <div class="col-sm-offset-4 col-sm-8 margin-top">
                 <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreren</button>
             </div>
