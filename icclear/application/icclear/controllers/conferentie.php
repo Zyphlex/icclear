@@ -102,7 +102,7 @@ class Conferentie extends CI_Controller {
             $conferentiedagId = $this->conferentiedag_model->insert($conferentiedag);
         }
 
-        redirect('admin/dashboard/' . $id);
+        redirect('gebouw/gebouwPerDag/' . $conferentieId);
     }
 
     public function opslaan() {
