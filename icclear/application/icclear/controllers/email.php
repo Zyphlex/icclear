@@ -57,31 +57,39 @@ class Email extends CI_Controller {
 
         redirect('admin/index');
     }
-    
+
     public function verzenden() {
-        $string = "";
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
-        foreach ($gebruikers as $g){
-            $string += $g->emailadres + ", ";
-        }
         $id = $this->input->post('email');
-        if($id == 0){
-            $ontvanger = $string;
-        }else{
+
+
+        if ($id == 0) {
+            foreach ($gebruikers as $g) {
+                $ontvanger = $g->emailadres;
+                $onderwerp = $this->input->post('onderwerp');
+                $inhoud = $this->input->post('boodschap');
+
+                $this->email->from('donotreply@thomasmore.be');
+                $this->email->to($ontvanger);
+                $this->email->subject($onderwerp);
+                $this->email->message($inhoud);
+                $this->email->send();
+            }
+        } else {
             $ontvanger = $this->input->post('email');
+            $onderwerp = $this->input->post('onderwerp');
+            $inhoud = $this->input->post('boodschap');
+
+            $this->email->from('donotreply@thomasmore.be');
+            $this->email->to($ontvanger);
+            $this->email->subject($onderwerp);
+            $this->email->message($inhoud);
+            $this->email->send();
         }
-        $onderwerp = $this->input->post('onderwerp');        
-        $inhoud = $this->input->post('boodschap');
-               
-        $this->email->from('donotreply@thomasmore.be');
-        $this->email->to($ontvanger);
-        $this->email->subject($onderwerp);
-        $this->email->message($inhoud);
-        $this->email->send();                
     }
-    
-     public function update() {
+
+    public function update() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->voornaam = $this->input->post('voornaam');
         $gebruiker->familienaam = $this->input->post('familienaam');
