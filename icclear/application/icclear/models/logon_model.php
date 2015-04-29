@@ -79,10 +79,7 @@ class Logon_model extends CI_Model {
         }
     }
 
-    function insert($geb) { 
-        //Html entities en extra spaties verwijderen
-        $geb = escape_html($geb);
-        
+    function insert($geb) {         
         // voeg nieuwe user toe        
         $user->voornaam = $geb->voornaam;
         $user->familienaam = $geb->familienaam;
@@ -101,6 +98,9 @@ class Logon_model extends CI_Model {
         $user->generatedKey = $geb->generatedKey;
         $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
+//Html entities en extra spaties verwijderen
+        $user = escape_html($user);
+        
         $this->db->insert('gebruiker', $user);
         return $this->db->insert_id();
     }
