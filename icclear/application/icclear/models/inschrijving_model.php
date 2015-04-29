@@ -89,6 +89,9 @@ class Inschrijving_model extends CI_Model {
     }
 
     function insert($inschrijving) {
+        //Html entities en extra spaties verwijderen
+        $inschrijving = escape_html($inschrijving);
+        
         $this->db->insert('inschrijving', $inschrijving);
         return $this->db->insert_id();
     }
