@@ -89,7 +89,7 @@ $attributes = array('name' => 'myform');
         <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
 
         <?php if ($user == null) { ?>
-            <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal"  class="btn btn-default">Aanmelden en inschrijven</a>
+            <input type="submit" value="Aanmelden en betalen" class="btn btn-default"/>
         <?php } else { ?>
             <input type="submit" value="Inschrijven en betalen" class="btn btn-default"/>
         <?php } ?>
