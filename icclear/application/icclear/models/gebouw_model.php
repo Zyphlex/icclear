@@ -57,8 +57,7 @@ class Gebouw_model extends CI_Model {
     function getPerLand($landId) {
         $this->db->where('landId', $landId);
         $query = $this->db->get('gebouw');
-        return $query->result();
-    
+        return $query->result();    
     }
 
 }
