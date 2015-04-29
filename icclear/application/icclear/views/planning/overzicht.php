@@ -1,6 +1,6 @@
 <script type="text/javascript">
     //Link leggen met de knoppen die gemaakt worden in lijst.php
-    
+
     $(document).ready(function () {
         $(".toonItem").click(function () {
             var iddb = $(this).data("id");
@@ -24,10 +24,38 @@
             }
             // dialoogvenster openen
             $("#itemModal").modal('show');
-        });  
+        });
+
+        $(".toonSpreker").click(function () {
+            var iddb = $(this).data("bid");
+            $("#bid").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/spreker/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#voornaam").html(jobject.voornaam);
+                        $("#familienaam").html(jobject.familienaam);
+                        $("#foto").html(jobject.foto);
+                        $("#biografie").html(jobject.biografie);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#voornaam").html("");
+                $("#familienaam").html("");
+                $("#foto").html("");
+                $("#biografie").html("");
+            }
+            // dialoogvenster openen
+            $("#sprekerModal").modal('show');
+        });
     });
-    
-    
+
+
 
 </script>
 
@@ -139,10 +167,10 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
-                    <?php echo form_input(array('name' => 'id', 'type'=>'hidden', 'id' =>'id'));?>
+                    <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <p><b>Onderwerp:</b></p> 
                     <p><span id="onderwerp"></span></p> 
-                    
+
                     <p><b>Omschrijving:</b></p> 
                     <p><span id="omschrijving"></span></p> 
                 </form>
@@ -153,21 +181,28 @@
     </div>
 </div>  
 
-
-<!--<div class="modal" id="test" >
+<div class="modal fade" id="sprekerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Spreker</h4>
+            </div>
 
             <div class="modal-body">                  
-                <p>Test</p>
 
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Sluiten</button>
+                <form id="JqAjaxForm">                     
+                    <?php echo form_input(array('name' => 'bid', 'type' => 'hidden', 'id' => 'bid')); ?>
+                    <p><b>Naam:</b></p> 
+                    <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
+
+                    <p><b>Biografie:</b></p> 
+                    <p><span id="biografie"></span></p> 
+                </form>
+
             </div>
 
         </div>            
     </div>
-</div> -->
+</div> 
