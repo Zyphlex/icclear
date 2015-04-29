@@ -25,7 +25,7 @@
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
             } */
-            alert("test1");
+            alert("test2");
             // dialoogvenster openen
             $("#sessieModal").modal('show');
         });
@@ -126,7 +126,7 @@
     </div>    
 </div>
 
-<div class="modal fade" id="sessieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="sessieModal" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
