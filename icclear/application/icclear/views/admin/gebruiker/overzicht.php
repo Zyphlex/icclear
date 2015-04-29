@@ -73,9 +73,9 @@
             $("#gebruikerModal").modal('show');
         });
     }
-    
+
     function maakMailClick() {
-        $(".emailGebruiker").click(function () {            
+        $(".emailGebruiker").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -88,10 +88,10 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
                         $("#onderwerp").val("");
-                        $("#boodschap").val("");                       
+                        $("#boodschap").val("");
                     }
                 });
-            } 
+            }
             // dialoogvenster openen
             $("#gebruikerEmail").modal('show');
         });
@@ -136,7 +136,7 @@
                 }
             });
         });
-        
+
         //Verzenden in de Detail modal
         $(".emailOpslaan").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
@@ -377,7 +377,7 @@
                                     <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled')); ?>                                        
                                 </div>
                             </div>
-                            
+
                             <div class="row" id="onderwerpdiv">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Onderwerp:', 'onderwerp'); ?>                    
@@ -394,22 +394,22 @@
                                 </div>
 
                                 <div class="col-md-8">                                      
-                                    <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150'));?>                                    
+                                    <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
                 </form>        
             </div>                 
 
-        
 
-        <div class="modal-footer">
-            <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+
+            <div class="modal-footer">
+                <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
         </div>
-</div>
     </div>            
 </div> 
 
