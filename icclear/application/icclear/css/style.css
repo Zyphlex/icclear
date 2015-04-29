@@ -292,9 +292,8 @@ button:focus {
     margin-bottom:25px;
 }
 
-.whitespace {
-    display:block;
-    padding:20px 0;
+.space-bottom {
+    margin-bottom:50px;
 }
 
 //// TABELLEN BREEDTES
