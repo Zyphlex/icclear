@@ -3,55 +3,29 @@
     
     $(document).ready(function () {
         $(".toonItem").click(function () {
-//            var iddb = $(this).data("id");
-//            $("#id").val(iddb);
-//            if (iddb != 0) {
-//                // gegevens ophalen via ajax (doorgeven van server met json)
-//                $.ajax({type: "GET",
-//                    url: site_url + "/land/detail",
-//                    async: false,
-//                    data: {id: iddb},
-//                    success: function (result) {
-//                        var jobject = jQuery.parseJSON(result);
-//                        $("#naam").val(jobject.naam);                        
-//                    }
-//                });
-//            } else {
-//                // bij toevoegen gewoon vakken leeg maken                
-//                $("#naam").val("");                
-//            }
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/sessies/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#onderwerp").val(jobject.onderwerp);
+                        $("#omschrijving").val(jobject.omschrijving);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#onderwerp").val("");
+                $("#omschrijving").val("");
+            }
             // dialoogvenster openen
             $("#itemModal").modal('show');
-        });   
+        });  
     });
-//    //function maakDetailClick() {
-//        $(".sessie").click(function () {
-//            /* var iddb = $(this).data("id");
-//            $("#id").val(iddb);
-//            if (iddb != 0) {
-//                // gegevens ophalen via ajax (doorgeven van server met json)
-//                $.ajax({type: "GET",
-//                    url: site_url + "/sessies/detail",
-//                    async: false,
-//                    data: {id: iddb},
-//                    success: function (result) {
-//                        var jobject = jQuery.parseJSON(result);
-//                        $("#onderwerp").val(jobject.onderwerp);
-//                        $("#omschrijving").val(jobject.omschrijving);
-//                    }
-//                });
-//            } else {
-//                // bij toevoegen gewoon vakken leeg maken
-//                $("#onderwerp").val("");
-//                $("#omschrijving").val("");
-//            } */
-//            alert("test6");
-//            // dialoogvenster openen
-//            $("#test").modal('show');
-//        });
-//    //}
-//    
-//    //maakDetailClick();
     
     
 
