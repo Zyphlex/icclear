@@ -235,7 +235,7 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
 
-    <div class="row panel">
+    <div class="row panel panel-default">
         <div class=""> 
             <div id="emaildiv">
                 <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span><div id="feedbackemail"></div>
