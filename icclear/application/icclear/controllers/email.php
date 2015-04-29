@@ -31,8 +31,6 @@ class Email extends CI_Controller {
         } else {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         }
-
-
         $data['title'] = 'IC Clear - Emails.';
         $data['active'] = 'admin';
 
@@ -43,6 +41,23 @@ class Email extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    public function verzend() {
+        $onderwerp = $this->input->post('onderwerp');
+        $ontvanger = $this->input->post('ontvanger');
+        $inhoud = $this->input->post('inhoud');
+        $conferentie = $this->session->userdata('conferentie');
+
+        $subject = $conferentie . ' - ' . $onderwerp;
+
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($ontvanger);
+        $this->email->subject($subject);
+        $this->email->message($inhoud);
+        $this->email->send();
+
+        redirect('admin/index');
+    }
+    
     public function verzend() {
         $onderwerp = $this->input->post('onderwerp');
         $ontvanger = $this->input->post('ontvanger');
