@@ -88,14 +88,18 @@ class Conferentie extends CI_Controller {
         $conferentie->eindDatum = $einddatum;
 
         $this->load->model('conferentie_model');
-        $id = $this->conferentie_model->insert($conferentie);
+        $conferentieId = $this->conferentie_model->insert($conferentie);
 
         //Alle datums tussen begin en einddatum zoeken
         $datums = getDatumsConferentie($begindatum, $einddatum);
         //Elke datum als conferentiedag toevoegen
         foreach ($datums as $datum){
-            $conferentiedag->conferentieId = $id;
+            $conferentiedag->conferentieId = $conferentieId;
             $conferentiedag->datum = $datum;
+            $conferentiedag->gebouwId = null;
+            
+            $this->load->model('conferentiedag_model');
+            $conferentiedagId = $this->conferentiedag_model->insert($conferentiedag);
         }
 
         redirect('admin/dashboard/' . $id);
