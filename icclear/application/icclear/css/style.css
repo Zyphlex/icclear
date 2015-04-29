@@ -292,6 +292,11 @@ button:focus {
     margin-bottom:25px;
 }
 
+.whitespace {
+    display:block;
+    margin:20px 0;
+}
+
 //// TABELLEN BREEDTES
 
 .profConf {width: 35%}
