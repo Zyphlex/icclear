@@ -1,6 +1,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.table').DataTable();       
+        $('.table').DataTable();
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
     });
     
 </script>
