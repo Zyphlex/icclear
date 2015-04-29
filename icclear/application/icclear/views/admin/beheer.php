@@ -15,7 +15,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                    <table class="table" style="margin-left: 50px">
+                    <table class="table table-responsive" style="margin-left: 50px">
                         <thead>
                             <tr>
                                 <th>Naam</th>
@@ -50,7 +50,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body">
-                    <table class="table" style="margin-left: 50px">
+                    <table class="table table-responsive" style="margin-left: 50px">
                         <thead>
                             <tr>
                                 <th>Naam</th>
@@ -86,7 +86,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
-                    <table class="table" style="margin-left: 50px">
+                    <table class="table table-responsive" style="margin-left: 50px">
                         <thead>
                             <tr>
                                 <th>Naam</th>

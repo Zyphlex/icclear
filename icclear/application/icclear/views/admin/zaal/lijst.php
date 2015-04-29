@@ -4,7 +4,7 @@
     });
 </script>
 
-<table class="table table-beheer">
+<table class="table table-responsive table-beheer">
     <thead>
         <tr>
             <th>Naam</th>

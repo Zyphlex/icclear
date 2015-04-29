@@ -192,7 +192,7 @@
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
-                            <table class="table">
+                            <table class="table table-responsive">
                                 <tr>
                                     <th class="profConf">Conferentie</th>
                                     <th class="profPl">Plaats</th>
@@ -220,7 +220,7 @@
                     <h1 class="margin-top">Afgelopen conferenties</h1>
                     <?php foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
-                            <table class="table">
+                            <table class="table table-responsive">
                                 <tr>
                                     <th class="profConf">Conferentie</th>
                                     <th class="profPl">Plaats</th>
@@ -244,7 +244,7 @@
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijving as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <tr>
                                 <th class="profConf">Conferentie</th>
                                 <th class="profPl">Datum</th>

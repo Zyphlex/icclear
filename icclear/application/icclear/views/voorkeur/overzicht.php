@@ -11,7 +11,7 @@
                         <p>Kies welke sessie je wilt bijwonen</p>
                     </div>
                     <div class = "panel-body">  
-                        <table class="table">
+                        <table class="table table-responsive">
                             
                         </table>                                                                      
                     </div>

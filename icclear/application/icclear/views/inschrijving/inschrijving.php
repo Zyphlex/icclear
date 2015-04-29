@@ -22,7 +22,7 @@ echo form_open('inschrijven/verzenden', $attributes);
 
         <h3>Selecteer formule</h3>
 
-        <table class="table">
+        <table class="table table-responsive">
             <tr>
                 <th>Formule</th>
                 <th>Prijs</th>
@@ -44,7 +44,7 @@ echo form_open('inschrijven/verzenden', $attributes);
         </table>
 
         <h3>Extra activiteiten</h3>
-        <table class="table">
+        <table class="table table-responsive">
             <tr>
                 <th>Activiteit</th>
                 <th>Prijs per persoon</th>

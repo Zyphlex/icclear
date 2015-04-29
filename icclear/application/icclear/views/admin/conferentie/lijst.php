@@ -6,7 +6,7 @@
 
 <h2>Conferentie onderdelen</h2>
 
-<table class="table table-beheer">
+<table class="table table-responsive table-beheer">
     <thead>
         <tr>
             <th><label for="formule">Onderdeel</label></th>

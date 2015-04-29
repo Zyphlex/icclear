@@ -16,7 +16,7 @@
 
         <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
             <div class="panel-body">-->
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                         <tr>                            
                             <th>Familienaam</th>
