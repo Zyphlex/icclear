@@ -239,7 +239,7 @@ echo form_open('inschrijven/registreer', $attributes);
 
     <div class="row">
         <div class=""> 
-            <div class="row" id="emaildiv">
+            <div id="emaildiv">
                     <?php echo form_label('Emailadres:','email', array('class' => 'col-sm-4 control-label')); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                     <div id="feedbackemail"></div>
