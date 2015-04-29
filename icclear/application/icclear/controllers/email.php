@@ -61,7 +61,7 @@ class Email extends CI_Controller {
     public function verzenden() {
         $onderwerp = $this->input->post('onderwerp');
         $ontvanger = $this->input->post('ontvanger');
-        $inhoud = $this->input->post('inhoud');
+        $inhoud = $this->input->post('boodschap');
         $conferentie = $this->session->userdata('conferentie');
 
         $subject = $conferentie . ' - ' . $onderwerp;
@@ -73,6 +73,30 @@ class Email extends CI_Controller {
         $this->email->send();
 
         redirect('admin/index');
+    }
+    
+     public function update() {
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->voornaam = $this->input->post('voornaam');
+        $gebruiker->familienaam = $this->input->post('familienaam');
+        $gebruiker->geboortedatum = $this->input->post('geboortedatum');
+        $gebruiker->emailadres = $this->input->post('emailadres');
+        $gebruiker->geslacht = strtolower($this->input->post('geslacht'));
+        $gebruiker->typeId = $this->input->post('type');
+        $gebruiker->landId = $this->input->post('land');
+        $gebruiker->gemeente = $this->input->post('gemeente');
+        $gebruiker->postcode = $this->input->post('postcode');
+        $gebruiker->straat = $this->input->post('straat');
+        $gebruiker->nummer = $this->input->post('nummer');
+
+        $this->load->model('gebruiker_model');
+        if ($gebruiker->id == 0) {
+            $id = $this->gebruiker_model->insert($gebruiker);
+        } else {
+            $this->gebruiker_model->update($gebruiker);
+        }
+
+        echo $id;
     }
 
 }
