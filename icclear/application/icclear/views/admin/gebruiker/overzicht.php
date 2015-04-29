@@ -158,9 +158,9 @@
 
 <div class="col-md-10">
 
-    <h1>Gebruiker beheren</h1>  
+    <h1>Gebruiker beheren <button>Email naar alle gebruikers versturen</button></h1>  
     
-    <button>Email naar alle gebruikers versturen</button>
+    
 
     <div id="resultaat"></div>        
 
