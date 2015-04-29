@@ -1,12 +1,10 @@
-<div class="row">
+<div class="row space-bottom">
     <div class="col-sm-12">
         <h1>Gelieve eerst in te loggen of registreren</h1>
         <p>Vooraleer wij uw inschrijving kunnen verwerken, moet u eerst inloggen of registreren.</p>
         <p>De inschrijving zal dan automatisch verwerkt worden. U hoeft dus <strong>niet</strong> nog eens in te schrijven.</p>
     </div>
 </div>
-
-<div class="white-space"></div>
 
 <div class="row">
     <div class="col-sm-6">
