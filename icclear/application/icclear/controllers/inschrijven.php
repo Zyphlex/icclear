@@ -38,15 +38,18 @@ class Inschrijven extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //Inschrijven voor conferentie zonder reeds ingelogd te zijn
+    //Data van inschrijvingsformulier in sessie plaatsen
+    //Doorverwijzen naar pagina om in te loggen/te registeren
     public function aanmeldenEnVerzenden() {  
-        
+        //Algemene informatie nodig voor de pagina
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Inschrijven';
         $data['active'] = 'inschrijven';        
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
@@ -66,12 +69,14 @@ class Inschrijven extends CI_Controller {
             $inschrijving->betalingId = $betId;
         }        
         $this->session->set_userdata($inschrijving);
-        print_r($inschrijving);
+        print_r($inschrijving->methodeId);
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
     
+    //Reeds ingelogd op website
+    //Inschrijving verwerken
     public function verzenden() {
 
         $data['user'] = $this->authex->getUserInfo();
