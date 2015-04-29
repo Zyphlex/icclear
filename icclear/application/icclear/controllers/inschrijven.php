@@ -38,6 +38,31 @@ class Inschrijven extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    public function aanmeldenEnVerzenden() {  
+        
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['title'] = 'IC Clear - Inschrijven';
+        $data['active'] = 'inschrijven';
+        
+        $this->load->model('conferentie_model');
+        $conf = $this->conferentie_model->getActieveConferentie();
+        
+        $betId = 0;
+        $inschrijving->conferentieId = $conf->id;
+        $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
+        $inschrijving->datum = date("Y-m-d");
+        $inschrijving->methodeId = $this->input->post('methode');
+        if ($betId != 0) {
+            $inschrijving->betalingId = $betId;
+        }        
+        $this->session->set_userdata($inschrijving);
+        print_r($inschrijving);
+                
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
+        $this->template->load('admin_master', $partials, $data);
+    }
+    
     public function verzenden() {
 
         $data['user'] = $this->authex->getUserInfo();
@@ -68,7 +93,6 @@ class Inschrijven extends CI_Controller {
         $this->inschrijving_model->insert($inschrijving);
 
         $teller = 1;
-
         $act = $this->input->post('aanwezig');
         foreach ($act as $a) {
             $activiteit->activiteitId = $a;
