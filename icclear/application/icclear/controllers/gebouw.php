@@ -102,13 +102,13 @@ class Gebouw extends CI_Controller {
         $data['active'] = 'admin';
 
         $data['conferentieId'] = $conferentieId;
-
-        $this->load->model('conferentiedag_model');
-        $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
-
+        
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->get($conferentieId);
         $data['conferentie'] = $conferentie;
+
+        $this->load->model('conferentiedag_model');
+        $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentie->id);
         
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getPerLand($conferentie->landId);
