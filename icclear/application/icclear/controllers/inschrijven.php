@@ -70,22 +70,25 @@ class Inschrijven extends CI_Controller {
         }  
         
         $acti = array();
+        $actiU = array();
         $actiPer = array();
         $act = $this->input->post('aanwezig');
         foreach ($act as $a) {
             array_push($acti, $a);
-            array_push($actiPer, $user->id);
+            array_push($actiU, $user->id);
             $activiteit->activiteitId = $a;
             $activiteit->gebruikerId = $user->id;
             if ($betId != 0) {
                 $activiteit->betalingId = $betId;
             }
-
+            array_push($actiPer, $this->input->post($a));
             $activiteit->aantalPersonen = $this->input->post($a);
         }
         
         $this->session->set_userdata($inschrijving);
-        print_r($actiPer);        
+        print_r($actiU);   
+        print_r($acti);
+        print_r($actiPer);
         
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
