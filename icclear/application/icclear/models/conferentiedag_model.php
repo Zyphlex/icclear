@@ -47,6 +47,12 @@ class Conferentiedag_model extends CI_Model {
 
         return $dagen;
     }
+    
+    function insert($conferentiedag)
+    {
+        $this->db->insert('conferentiedag', $conferentiedag);
+        return $this->db->insert_id();
+    }
 
 }
 
