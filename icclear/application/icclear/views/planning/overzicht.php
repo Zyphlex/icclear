@@ -69,7 +69,7 @@
             Sed nec tincidunt tortor, ac fermentum sem. 
             Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
         </p>
-        <a href="" class="toonItem" data-id="1">Heya</a>   
+        <a href="" data-toggle="modal" data-target="#itemModal" class="toonItem" data-id="1">Heya</a>   
         <button type="button" href="" class="toonItem" data-id="2">Button</button>                                   
                                             
     </div>
