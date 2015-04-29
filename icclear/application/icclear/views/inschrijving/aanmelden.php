@@ -240,18 +240,17 @@ echo form_open('inschrijven/registreer', $attributes);
     <div class="row">
         <div class=""> 
             <div id="emaildiv">
-                    <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span> 
-                    <?php echo form_label('Emailadres:','email', array('class' => 'col-sm-4 control-label')); ?>                                         
-                    <div id="feedbackemail"></div>
-                 
+                <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span><div id="feedbackemail"></div>
+                <?php echo form_label('Emailadres:','email', array('class' => 'col-sm-4 control-label')); ?> 
 
                 <div class="col-sm-8">   
                     <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
-            <div class="row" id="password1div">
+            
+            <div id="password1div">
                 <div class="col-sm-4">   
-                    <?php echo form_label('Wachtwoord:', 'password'); ?>                    
+                    <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>                    
                 </div>
 
                 <div class="col-sm-8">                       
@@ -259,9 +258,9 @@ echo form_open('inschrijven/registreer', $attributes);
                 </div>
             </div>
 
-            <div class="row" id="password2div">
+            <div id="password2div">
                 <div class="col-sm-4">   
-                    <?php echo form_label('Bevestigen:', 'bevestigww'); ?>
+                    <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
 
@@ -272,9 +271,9 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
 
-            <div class="row" id="voornaamdiv">
+            <div id="voornaamdiv">
                 <div class="col-sm-4">   
-                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+                    <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>                    
                 </div>
 
                 <div class="col-sm-8">   
@@ -286,7 +285,7 @@ echo form_open('inschrijven/registreer', $attributes);
 
             <div class="row" id="familienaamdiv">
                 <div class="col-sm-4">   
-                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+                    <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>                                        
                 </div>
 
                 <div class="col-sm-8">  
@@ -296,16 +295,14 @@ echo form_open('inschrijven/registreer', $attributes);
 
             <div class="row" id="geslachtdiv">                                    
                 <div class="col-sm-4">   
-                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                                        
+                    <?php echo form_label('Geslacht:', 'geslacht', array('class' => 'col-sm-4 control-label')); ?>                                        
                 </div>
 
                 <div class="col-sm-8">  
 
                     <div class="">
-                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                                            
-                        <span class="option-title">
-                            Man
-                        </span>
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man')); ?>                                                            
+                        
                     </div> 
                     <div class="">
                         <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                
