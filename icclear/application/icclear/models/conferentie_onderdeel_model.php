@@ -31,6 +31,9 @@ class Conferentie_onderdeel_model extends CI_Model {
     }
        
     function update($onderdeel) {
+        //Html entities en extra spaties verwijderen
+        $onderdeel = escape_html($onderdeel);
+        
         $this->db->where('id', $onderdeel->id);
         $this->db->update('conferentieOnderdeel', $onderdeel);
     }
@@ -42,6 +45,9 @@ class Conferentie_onderdeel_model extends CI_Model {
     
     function insert($onderdeel)
     {
+        //Html entities en extra spaties verwijderen
+        $onderdeel = escape_html($onderdeel);
+        
         $this->db->insert('conferentieOnderdeel', $onderdeel);
         return $this->db->insert_id();
     }
