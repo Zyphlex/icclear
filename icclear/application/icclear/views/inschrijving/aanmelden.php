@@ -9,7 +9,7 @@
 <div class="row">
 <div class="col-sm-6">
     <?php 
-    $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
+    $attributes = array('name' => 'myform', 'class' => '');
     echo form_open('inschrijven/aanmelden', $attributes);
 ?>
 
