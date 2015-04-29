@@ -133,9 +133,6 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
-                    <!-- <input type="hidden" name="id" id="id" />
-                    --></form>
 
             </div>
             
