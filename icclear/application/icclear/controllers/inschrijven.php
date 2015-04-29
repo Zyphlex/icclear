@@ -44,7 +44,6 @@ class Inschrijven extends CI_Controller {
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Inschrijven';
         $data['active'] = 'inschrijven';        
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -69,8 +68,8 @@ class Inschrijven extends CI_Controller {
         $this->session->set_userdata($inschrijving);
         print_r($inschrijving);
                 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
     }
     
     public function verzenden() {
