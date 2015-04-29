@@ -197,6 +197,7 @@ class Inschrijven extends CI_Controller {
         echo json_encode($data);
     }
     
+    //Na inschrijving invullen, kiest men om in te loggen
     //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     public function aanmelden() {
         $email = $this->input->post('emaillogon');
@@ -255,6 +256,9 @@ class Inschrijven extends CI_Controller {
         }
     }
     
+    //Na inschrijving invullen, kiest men om te registreren
+    //Nadat men met success registreert, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
+    //Gebruiker krijgt geen activatie mail
     public function registreer() {
         $email = $this->input->post('emailadres');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
@@ -270,6 +274,7 @@ class Inschrijven extends CI_Controller {
         $id = $this->authex->register($user);
     }
     
+    //Voorkeuren doorgeven door persoon die zich net heeft ingeschreven
     public function voorkeuren() {        
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
