@@ -85,7 +85,7 @@ class Inschrijven extends CI_Controller {
         }
         
         $this->session->set_userdata($inschrijving);
-        print_r($acti, $actiPer);        
+        print_r($actiPer);        
         
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
