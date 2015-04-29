@@ -63,7 +63,6 @@ class Email extends CI_Controller {
         $gebruikers = $this->gebruiker_model->getAll();
         $id = $this->input->post('email');
 
-
         if ($id == 0) {
             foreach ($gebruikers as $g) {
                 $ontvanger = $g->emailadres;
