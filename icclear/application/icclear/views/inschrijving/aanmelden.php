@@ -314,13 +314,11 @@
 
                 </div>    
                 
-            <div class="col-sm-4 margin-top">
-                        <button type="button" class="col-sm-12 btn btn-default" data-dismiss="modal">Annuleer</button>
-                    
-            </div>
-            <div class="col-sm-8 margin-top">
-                        <button name="mysubmit" id="mySubmit" class="col-sm-12 btn btn-primary">Registreren</button>
-                    
+            <div class="col-sm-12 margin-top">
+                    <div class="btn-group btn-block">
+                        <button type="button" class="col-sm-4 btn btn-default" data-dismiss="modal">Annuleer</button>
+                        <button name="mysubmit" id="mySubmit" class="col-sm-8 btn btn-primary">Registreren</button>
+                    </div>
             </div>
 
             </div>     
