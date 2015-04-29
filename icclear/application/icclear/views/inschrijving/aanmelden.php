@@ -38,13 +38,13 @@
                 </div>
 
 
-                <div class="col-sm-offset-4 col-sm-8 margin-top">
+                <div class="col-xs-12 margin-top">
                     <div class="btn-group btn-block">
-                        <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
-                        <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
+                        <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
+                        <input type="submit" name="mysubmit" value="Aanmelden" class="col-xs-8 btn btn-primary"/>
                     </div>
                 </div>
-
+                
             </div>     
             <?php echo form_close(); ?>
 
