@@ -83,7 +83,6 @@ class Logon extends CI_Controller {
         $user->email = $email;
         $user->wachtwoord = $this->input->post('wachtwoord1');
         $user->geslacht = $this->input->post('geslacht');
-        $user->land = $this->input->post('land');
         $user->generatedKey = $genkey;
 
         $id = $this->authex->register($user);
