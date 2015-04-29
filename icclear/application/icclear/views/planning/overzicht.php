@@ -4,7 +4,6 @@
     $(document).ready(function () {
         $(".toonItem").click(function () {
             var iddb = $(this).data("id");
-            alert(iddb);
             $("#id").val(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
@@ -13,6 +12,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#onderwerp").val(jobject.onderwerp);
                         $("#omschrijving").val(jobject.omschrijving);
