@@ -140,8 +140,11 @@
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type'=>'hidden', 'id' =>'id'));?>
-                    <p>Onderwerp: <span id="onderwerp"></span></p> 
-                    <p>Omschrijving: <span id="omschrijving"></span></p> 
+                    <p><b>Onderwerp:</b></p> 
+                    <p><span id="onderwerp"></span></p> 
+                    
+                    <p><b>Omschrijving:</b></p> 
+                    <p><span id="omschrijving"></span></p> 
                 </form>
 
             </div>
