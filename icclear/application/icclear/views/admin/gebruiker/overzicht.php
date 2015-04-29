@@ -403,13 +403,13 @@
                 </form>        
             </div>                 
 
-        </div>
+        
 
         <div class="modal-footer">
             <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
         </div>
-
+</div>
     </div>            
 </div> 
 
