@@ -91,7 +91,7 @@ class Conferentie extends CI_Controller {
         $conferentieId = $this->conferentie_model->insert($conferentie);
 
         //Alle datums tussen begin en einddatum zoeken
-        $datums = getDatumsConferentie($begindatum, $einddatum);
+        $datums = $this->getDatumsConferentie($begindatum, $einddatum);
         //Elke datum als conferentiedag toevoegen
         foreach ($datums as $datum){
             $conferentiedag->conferentieId = $conferentieId;
