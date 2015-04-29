@@ -93,12 +93,9 @@
                     }
                 });
             }else{
-                $.ajax({type: "GET",
-                    url: site_url + "/gebruiker/detail",
-                    async: false,
-                    data: {id: iddb},
-                    success: function (result) {
-                        var jobject = jQuery.parseJSON(result);
+                $.ajax({type: "GET",                    
+                    async: false,                    
+                    success: function () {                        
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
