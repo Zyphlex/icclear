@@ -128,13 +128,15 @@
     </div>    
 </div>
 
+
+
 <div class="modal" id="test" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
 
             <div class="modal-body">                  
-
+                <p>Test</p>
 
             </div>
             
