@@ -311,11 +311,8 @@
                 </div>
             </div>         
 
-            <div class="row margin-top">
-                <div class="btn-group btn-block">
-                    <button type="button" class="btn btn-default col-sm-6 col-sm-6" data-dismiss="modal">Annuleer</button>        
-                    <button name="mysubmit" id="mySubmit" class="btn btn-primary col-sm-6 col-sm-6">Registreer</button>
-                </div>
+            <div class="col-sm-offset-4 col-sm-8 margin-top">
+                <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreren</button>
             </div>
 
             <?php echo form_close(); ?>
