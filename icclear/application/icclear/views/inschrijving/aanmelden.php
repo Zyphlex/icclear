@@ -295,11 +295,11 @@ echo form_open('inschrijven/registreer', $attributes);
                 <div class="col-sm-8">  
 
                     <div class="checkbox">
-                        <?php echo form_label(form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio')) . 'Man','geslacht');  ?>
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'type' => 'radio')); ?>   
                         
                     </div> 
                     <div class="checkbox">
-                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
                         <span class="option-title">
                             Vrouw
                         </span>
