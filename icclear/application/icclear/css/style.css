@@ -254,7 +254,7 @@ button:focus {
 }
 
 .table-beheer td:last-child { 
-    width:110px; 
+    max-width:110px; 
 }
 
 .login-user { 
@@ -276,6 +276,10 @@ button:focus {
 
 .white {
     color: #FFFFFF;
+}
+
+.underline {
+    border-bottom: solid 1px #333;
 }
 
 //// TABELLEN BREEDTES
