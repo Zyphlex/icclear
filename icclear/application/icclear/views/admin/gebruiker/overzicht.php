@@ -7,6 +7,7 @@
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
+                maakMailClick();
             }
         });
     }
@@ -72,11 +73,35 @@
             $("#gebruikerModal").modal('show');
         });
     }
+    
+    function maakMailClick() {
+        $(".emailGebruiker").click(function () {            
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/gebruiker/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
+                        $("#onderwerp").val("");
+                        $("#boodschap").val("");                       
+                    }
+                });
+            } 
+            // dialoogvenster openen
+            $("#gebruikerEmail").modal('show');
+        });
+    }
 
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
+        maakMailClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
@@ -123,7 +148,7 @@
                 dataType: "json"
             });
             refreshData();
-            $("#gebruikerModal").modal('hide');
+            $("#gebruikerEmail").modal('hide');
         });
 
     });
@@ -349,7 +374,17 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled')); ?>                                        
+                                </div>
+                            </div>
+                            
+                            <div class="row" id="onderwerpdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Onderwerp:', 'onderwerp'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
