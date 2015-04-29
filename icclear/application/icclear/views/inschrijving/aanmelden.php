@@ -299,7 +299,7 @@ echo form_open('inschrijven/registreer', $attributes);
                 <div class="col-sm-8">  
 
                     <div class="checkbox">
-                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man')); ?>Man                                                            
+                        <?php echo form_label('Geslacht:','geslacht', array(form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man'))));  ?>
                         
                     </div> 
                     <div class="checkbox">
