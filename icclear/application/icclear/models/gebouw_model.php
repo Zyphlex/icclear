@@ -40,12 +40,18 @@ class Gebouw_model extends CI_Model {
             
     function update($gebouw)
     {
+        //Html entities en extra spaties verwijderen
+        $gebouw = escape_html($gebouw);
+        
         $this->db->where('id', $gebouw->id);
         $this->db->update('gebouw', $gebouw);
     }
     
     function insert($gebouw)
     {
+        //Html entities en extra spaties verwijderen
+        $gebouw = escape_html($gebouw);
+        
         $this->db->insert('gebouw', $gebouw);
         return $this->db->insert_id();
     }
