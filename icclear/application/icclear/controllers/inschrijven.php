@@ -61,15 +61,15 @@ class Inschrijven extends CI_Controller {
         $conf = $this->conferentie_model->getActieveConferentie();
         
         $betId = 0;
-        $inschrijving->conferentieId = $conf->id;
-        $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
-        $inschrijving->datum = date("Y-m-d");
-        $inschrijving->methodeId = $this->input->post('methode');
+        $inschrijving->sconferentieId = $conf->id;
+        $inschrijving->sconferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
+        $inschrijving->sdatum = date("Y-m-d");
+        $inschrijving->smethodeId = $this->input->post('methode');
         if ($betId != 0) {
-            $inschrijving->betalingId = $betId;
-        }        
+            $inschrijving->sbetalingId = $betId;
+        }     
+        
         $this->session->set_userdata($inschrijving);
-        print_r($inschrijving->methodeId);
                 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -195,7 +195,32 @@ class Inschrijven extends CI_Controller {
         //is geactiveerd
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
-        if ($this->authex->login($email, sha1($password))) {
+        if ($this->authex->login($email, sha1($password))) {            
+            
+            $user = $this->authex->getUserInfo();
+            
+            $betId = 0;
+            //Controleren of het geen overschrijving is. Geen overschrijving = betaling verwerken
+            if ($this->session->userdata('smethodeId') != 4) {
+                $betaling->gebruikerId = $user->id;
+                $this->load->model('betaling_model');
+                $betId = $this->betaling_model->insert($betaling);
+            }  
+            //Inschrijf gegevens uit session halen
+            $inschrijving->gebruikerId = $user->id;
+            $inschrijving->conferentieId = $this->session->userdata('sconferentieId');
+            $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
+            $inschrijving->datum = $this->session->userdata('sdatum');
+            $inschrijving->methodeId = $this->session->userdata('smethodeId');
+            //Als het geen overschrijving is, betaling linken
+            if ($betId != 0) {
+                $inschrijving->betalingId = $betId;
+            }
+        
+            $this->load->model('inschrijving_model');
+            $this->inschrijving_model->insert($inschrijving);
+        
+        
             redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
@@ -217,12 +242,6 @@ class Inschrijven extends CI_Controller {
         $user->generatedKey = $genkey;
 
         $id = $this->authex->register($user);
-        if ($id != 0) {
-            $this->sendmail($user->email, $user->generatedKey);
-            $this->klaar();
-        } else {
-            $this->bestaat();
-        }
     }
     
     public function voorkeuren() {        
