@@ -67,9 +67,7 @@ class Email extends CI_Controller {
         $this->email->to($ontvanger);
         $this->email->subject($onderwerp);
         $this->email->message($inhoud);
-        $this->email->send();
-        
-        echo $this->email->print_debugger();
+        $this->email->send();                
     }
     
      public function update() {
