@@ -13,7 +13,7 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#onderwerp").val(jobject.onderwerp);
+                        $("#onderwerp").html(jobject.onderwerp);
                         $("#omschrijving").val(jobject.omschrijving);
                     }
                 });
