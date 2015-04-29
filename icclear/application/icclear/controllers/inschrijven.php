@@ -189,8 +189,8 @@ class Inschrijven extends CI_Controller {
     }
     
     public function aanmelden() {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
+        $email = $this->input->post('emaillogon');
+        $password = $this->input->post('passwordlogon');
 
         //is geactiveerd
         $this->load->model('logon_model');

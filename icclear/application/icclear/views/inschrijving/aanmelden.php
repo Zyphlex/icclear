@@ -11,21 +11,21 @@
         
         <div class="row">
             <div class="col-md-4">      
-                <label for="email">E-mailadres:</label>    
+                <label for="emaillogon">E-mailadres:</label>    
             </div>
 
             <div class="col-md-8">
-                <input type="text" name="email" value="" id="email" size="30" class="form-control"  />    
+                <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
             </div>
         </div>
       
         <div class="row">     
             <div class="col-md-4">
-                <label for="password">Wachtwoord:</label>    
+                <label for="passwordlogon">Wachtwoord:</label>    
             </div>
 
             <div class="col-md-8">
-                <input type="password" name="password" value="" id="password" size="30" class="form-control"  />    
+                <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
             </div>
         </div>
         
