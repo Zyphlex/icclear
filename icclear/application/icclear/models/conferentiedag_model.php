@@ -53,6 +53,12 @@ class Conferentiedag_model extends CI_Model {
         $this->db->insert('conferentiedag', $conferentiedag);
         return $this->db->insert_id();
     }
+    
+    function update($conferentiedag)
+    {        
+        $this->db->where('id', $conferentiedag->id);
+        $this->db->update('conferentiedag', $conferentiedag);
+    }
 
 }
 
