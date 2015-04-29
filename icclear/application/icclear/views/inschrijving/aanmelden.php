@@ -315,10 +315,10 @@
                 </div>    
                 
             <div class="col-xs-12 margin-top">
-                    <div class="btn-group btn-block">
-                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleer</button>
-                        <button name="mysubmit" id="mySubmit" class="col-xs-8 btn btn-primary">Registreren</button>
-                    </div>
+                <div class="btn-group btn-block">
+                    <?php echo anchor('javascript:history.go(-1);', 'Terug', 'class="col-xs-4 btn btn-default"'); ?>
+                    <button name="mysubmit" id="mySubmit" class="col-xs-8 btn btn-primary">Registreren</button>
+                </div>
             </div>
 
             </div>     
