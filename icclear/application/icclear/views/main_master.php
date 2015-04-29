@@ -38,8 +38,7 @@
 
 
 <body>
-    <div id="container">
-        <img src="http://rs2img.memecdn.com/Dick-Nosed-Monkey_o_102356.jpg"/>
+    <div id="container">        
         <div id="hoofding"><?php echo $header; ?></div>
         <div id="navigatie"><?php echo $nav; ?></div>
         <div class="content" id="inhoud"><?php echo $content; ?></div>
