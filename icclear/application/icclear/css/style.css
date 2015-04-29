@@ -278,6 +278,10 @@ button:focus {
     color: #FFFFFF;
 }
 
+.groen{
+    color:#0c0;
+}
+
 .underline {
     border-bottom: solid 1px #e5e5e5;
     margin-bottom:25px;
