@@ -139,7 +139,7 @@
         });
 
         //Verzenden in de Detail modal
-        $(".emailOpslaan").click(function () {
+        $(".verstuurEmail").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
