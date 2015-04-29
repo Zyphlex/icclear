@@ -17,8 +17,6 @@
                     
                     <?php if($conferentie->isPlanningZichtbaar) { ?>
                         <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
-                    <?php } else { ?>
-                        
                     <?php } ?>
                     <?php if ($inschrijving == null){ ?>
                     <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
