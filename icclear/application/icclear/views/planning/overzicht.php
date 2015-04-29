@@ -1,6 +1,7 @@
 <script type="text/javascript">
     //Link leggen met de knoppen die gemaakt worden in lijst.php
     
+    $(document).ready(function () {
         $(".toonItem").click(function () {
 //            var iddb = $(this).data("id");
 //            $("#id").val(iddb);
@@ -22,6 +23,7 @@
             // dialoogvenster openen
             $("#itemModal").modal('show');
         });   
+    });
 //    //function maakDetailClick() {
 //        $(".sessie").click(function () {
 //            /* var iddb = $(this).data("id");
