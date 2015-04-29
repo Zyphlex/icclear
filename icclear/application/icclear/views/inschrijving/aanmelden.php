@@ -291,9 +291,9 @@ echo form_open('inschrijven/registreer', $attributes);
 
                 <div class="col-sm-8">  
 
-                    <div class="checkbox">
+                    <div class="checkbox form-control">
                         <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'type' => 'radio')); ?>   
-                        <span class="control-label">
+                        <span class="">
                             Man
                         </span>
                         
