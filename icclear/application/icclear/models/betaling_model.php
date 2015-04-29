@@ -16,6 +16,7 @@ class Betaling_model extends CI_Model {
     
     function insert($betaling)
     {
+        $betaling = escape_html($betaling);
         $this->db->insert('betaling', $betaling);
         return $this->db->insert_id();
     }
