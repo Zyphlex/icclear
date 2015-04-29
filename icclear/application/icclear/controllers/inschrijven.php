@@ -74,13 +74,7 @@ class Inschrijven extends CI_Controller {
         $act = $this->input->post('aanwezig');
         foreach ($act as $a) {
             array_push($acti, $a);
-            $activiteit->activiteitId = $a;
-            $activiteit->gebruikerId = $user->id;
-            if ($betId != 0) {
-                $activiteit->betalingId = $betId;
-            }
             array_push($actiPer, $this->input->post($a));
-            $activiteit->aantalPersonen = $this->input->post($a);
         }
         
         $this->session->set_userdata('Pers',$actiPer);
