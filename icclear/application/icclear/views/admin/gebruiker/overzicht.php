@@ -99,6 +99,7 @@
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
+                        $("#email").val(0);
                     }
                 });
             }
