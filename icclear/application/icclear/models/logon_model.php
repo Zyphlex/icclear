@@ -108,7 +108,10 @@ class Logon_model extends CI_Model {
     function update($email, $generatedKey) {
         // voeg nieuwe user toe        
         $user->generatedKey = $generatedKey;        
-        $this->db->where('emailadres', $email);              
+        $this->db->where('emailadres', $email);
+        //Html entities en extra spaties verwijderen
+        $user = escape_html($user);
+        
         $this->db->update('gebruiker', $user);
         return true;
     }
@@ -116,12 +119,18 @@ class Logon_model extends CI_Model {
     function activeer($generatedKey) {
         $user->activatie = 1;
         $this->db->where('generatedKey', $generatedKey);
+        //Html entities en extra spaties verwijderen
+        $user = escape_html($user);
+        
         $this->db->update('gebruiker', $user);
     }
     
     function changePass($wachtwoord, $generatedKey) {        
         $user->paswoord = sha1($wachtwoord);        
         $this->db->where('generatedKey', $generatedKey);
+        //Html entities en extra spaties verwijderen
+        $user = escape_html($user);
+        
         $this->db->update('gebruiker', $user);
     }
     
