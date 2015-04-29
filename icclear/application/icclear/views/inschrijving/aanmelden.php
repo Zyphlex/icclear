@@ -316,7 +316,7 @@
                 
             <div class="col-xs-12 margin-top">
                 <div class="btn-group btn-block">
-                    <?php echo anchor('javascript:history.go(-1);', 'Terug', 'class="col-xs-4 btn btn-default"'); ?>
+                    <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
                     <button name="mysubmit" id="mySubmit" class="col-xs-8 btn btn-primary">Registreren</button>
                 </div>
             </div>
