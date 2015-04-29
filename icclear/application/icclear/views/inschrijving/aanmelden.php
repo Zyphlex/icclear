@@ -314,8 +314,8 @@
 
                 </div>    
 
-            <div class="col-sm-offset-4 margin-top">
-                <button name="mysubmit" id="mySubmit" class="col-sm-8 btn btn-primary">Registreren</button>
+            <div class="col-sm-offset-4 col-sm-8 margin-top">
+                <button name="mysubmit" id="mySubmit" class="col-sm-12 btn btn-primary">Registreren</button>
             </div>
 
             </div>     
