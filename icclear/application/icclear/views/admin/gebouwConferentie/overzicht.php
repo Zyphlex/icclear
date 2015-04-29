@@ -20,7 +20,7 @@
             <tbody>
                 <?php
                 $teller = 0;
-                foreach ($conferentiadagen as $conferentiedag) {
+                foreach ($conferentiedagen as $conferentiedag) {
                     $teller++;
                     echo form_hidden('id', $conferentiedag->id);
                     ?>                
