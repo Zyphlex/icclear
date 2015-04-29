@@ -196,7 +196,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
         if ($this->authex->login($email, sha1($password))) {
-            redirect('home');
+            redirect('inschrijven/');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
         } else {
@@ -223,6 +223,25 @@ class Inschrijven extends CI_Controller {
         } else {
             $this->bestaat();
         }
+    }
+    
+    public function voorkeuren() {        
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $this->load->model('inschrijving_model');
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+        }
+        $data['title'] = 'IC Clear - Beheer';
+        $data['active'] = 'admin';
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/voorkeur', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
     }
 
 }
