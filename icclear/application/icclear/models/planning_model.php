@@ -98,11 +98,17 @@ class Planning_model extends CI_Model {
     }
 
     function update($planning) {
+        //Html entities en extra spaties verwijderen
+        $planning = escape_html($planning);
+        
         $this->db->where('id', $planning->id);
         $this->db->update('planning', $planning);
     }
 
     function insert($planning) {
+        //Html entities en extra spaties verwijderen
+        $planning = escape_html($planning);
+        
         $this->db->insert('planning', $planning);
         return $this->db->insert_id();
     }
