@@ -1,6 +1,7 @@
 <script type="text/javascript">
     //Link leggen met de knoppen die gemaakt worden in lijst.php
-    function maakDetailClick() {
+    $(document).ready(function () {
+    //function maakDetailClick() {
         $(".sessie").click(function () {
             /* var iddb = $(this).data("id");
             $("#id").val(iddb);
@@ -25,10 +26,9 @@
             // dialoogvenster openen
             $("#test").modal('show');
         });
-    }
+    //}
     
-    $(document).ready(function () {
-        maakDetailClick();
+        //maakDetailClick();
     });
     
     
