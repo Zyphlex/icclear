@@ -142,6 +142,15 @@ class Spreker extends CI_Controller {
 
         redirect('profiel/instellingen');
     }
+    
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('gebruiker_model');
+        $spreker = $this->gebruiker_model->getSpreker($id);
+
+        echo json_encode($spreker);
+    }
 
 }
 
