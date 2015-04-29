@@ -84,11 +84,8 @@ class Inschrijven extends CI_Controller {
         }
         
         $this->session->set_userdata('Pers',$actiPer);
-        $this->session->set_userdata($inschrijving); 
-        print_r($acti);
-        print_r($actiPer);
-        print_r($this->session->userdata('Pers'));
-        
+        $this->session->set_userdata('ActId',$acti);
+        $this->session->set_userdata($inschrijving);         
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
@@ -207,6 +204,7 @@ class Inschrijven extends CI_Controller {
         echo json_encode($data);
     }
     
+    //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     public function aanmelden() {
         $email = $this->input->post('emaillogon');
         $password = $this->input->post('passwordlogon');
@@ -238,7 +236,23 @@ class Inschrijven extends CI_Controller {
         
             $this->load->model('inschrijving_model');
             $this->inschrijving_model->insert($inschrijving);
-        
+                    
+            $Pers = $this->session->userdata('Pers');
+            $Acts = $this->session->userdata('ActId');
+            $i=0;
+            foreach ($acts as $a)
+            {
+                $activiteit->activiteitId = $a;
+                $activiteit->gebruikerId = $user->id;
+                if ($betId != 0) {
+                    $activiteit->betalingId = $betId;
+                }
+                $activiteit->aantalPersonen = $Pers[$i];
+                $this->load->model('gebruiker_activiteit_model');
+                $actId = $this->gebruiker_activiteit_model->insert($activiteit);
+                
+                $i++;
+            }
         
             redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
