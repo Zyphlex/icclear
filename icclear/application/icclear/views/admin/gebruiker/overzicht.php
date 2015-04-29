@@ -309,6 +309,188 @@
 
         </div>            
     </div>
+</div> 
+
+<!--EMAIL VERSTUREN-->
+<div class="modal fade" id="gebruikerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Gebruiker beheren</h4>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id"/>                                        
+
+                    <div class="row">
+                        <div class="col-md-6">  
+
+                            <div class="row" id="voornaamdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="familienaamdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+                                </div>
+
+                                <div class="col-md-8">  
+                                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="emaildiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Emailadres:', 'emailadres'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="geboortedatumdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
+                                    <!--                    width 185 px-->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Geslacht:', 'geslacht'); ?>                    
+                                </div>  
+
+                                <div class="col-md-8">        
+                                    <div class="my-radio">
+                                        <div class="">
+                                            <?php echo form_radio(array('name' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'man')); ?>                            
+                                            <span class="option-title">
+                                                Man
+                                            </span>
+                                        </div>                                
+                                        <div class="">
+                                            <?php echo form_radio(array('name' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'vrouw')); ?>                                                        
+                                            <span class="option-title">
+                                                Vrouw
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Type:', 'type'); ?>                    
+                                </div>  
+
+                                <div class="col-md-8">        
+                                    <div class="my-radio">
+                                        <div class="">
+                                            <?php echo form_radio(array('name' => 'type', 'class' => 'form-horizontal', 'value' => '1')); ?>                            
+                                            <span class="option-title">
+                                                Bezoeker
+                                            </span>
+                                        </div>                                
+                                        <div class="">
+                                            <?php echo form_radio(array('name' => 'type', 'class' => 'form-horizontal', 'value' => '2')); ?>                                                        
+                                            <span class="option-title">
+                                                Spreker
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 border-left">                              
+
+                            <div class="row">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Land:', 'land'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">                          
+                                    <?php
+                                    $drop = array();
+                                    $teller = 1;
+                                    foreach ($landen as $land) {
+                                        $drop[$land->id] = $land->naam;
+                                        $teller++;
+                                    }
+                                    echo form_dropdown('land', $drop, '', 'id="land" class="form-control"');
+                                    ?>
+                                </div>
+                            </div>
+
+                            <div class="row" id="gemeentediv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Gemeente:', 'gemeente'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="postcodediv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Postcode:', 'postcode'); ?>                    
+                                </div>
+
+                                <div class="col-md-8"> 
+                                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="straatdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Straat:', 'straat'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="huisnummerdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">  
+                                    <?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="opslaanGebruiker btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
 </div>  
 
 
