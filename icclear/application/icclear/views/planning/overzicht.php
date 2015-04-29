@@ -25,7 +25,7 @@
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
             } */
-            alert("test4");
+            alert("test5");
             // dialoogvenster openen
             $("#test").modal('show');
         });
@@ -126,7 +126,7 @@
     </div>    
 </div>
 
-<div class="modal fade" id="test" >
+<div class="modal" id="test" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
