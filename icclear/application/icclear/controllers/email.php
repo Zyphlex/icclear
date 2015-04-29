@@ -58,7 +58,7 @@ class Email extends CI_Controller {
         redirect('admin/index');
     }
     
-    public function verzend() {
+    public function verzenden() {
         $onderwerp = $this->input->post('onderwerp');
         $ontvanger = $this->input->post('ontvanger');
         $inhoud = $this->input->post('inhoud');
