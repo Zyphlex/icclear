@@ -14,7 +14,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#onderwerp").html(jobject.onderwerp);
-                        $("#omschrijving").val(jobject.omschrijving);
+                        $("#omschrijving").html(jobject.omschrijving);
                     }
                 });
             } else {
