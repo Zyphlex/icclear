@@ -25,6 +25,7 @@
                 $("#onderwerp").val("");
                 $("#omschrijving").val("");
             }
+            alert("test");
             // dialoogvenster openen
             $("#sessieModal").modal('show');
         });
@@ -137,6 +138,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
                     <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
 
