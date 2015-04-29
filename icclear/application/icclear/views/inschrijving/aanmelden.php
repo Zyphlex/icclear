@@ -62,9 +62,6 @@
     
     
 <div class="col-sm-6 col-sm-6">
-    <div class="panel">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="<?php echo base_url() . APPPATH; ?>/js/bootstrap.js"></script>
 <script type="text/javascript">
 
     function finishAjax(id, response) {
@@ -326,7 +323,6 @@ echo form_open('inschrijven/registreer', $attributes);
     </div>
     
         <?php echo form_close(); ?>
-    </div>
 </div>
 </div>
     
