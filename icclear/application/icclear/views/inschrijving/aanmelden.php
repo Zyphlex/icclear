@@ -246,10 +246,9 @@ echo form_open('inschrijven/registreer', $attributes);
                 </div>
             </div>
             
-            <div id="password1div">
-                <div class="col-sm-4">   
+            <div id="password1div"> 
                     <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>                    
-                </div>
+                
 
                 <div class="col-sm-8">                       
                     <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'class' => 'form-control')); ?> 
@@ -257,10 +256,9 @@ echo form_open('inschrijven/registreer', $attributes);
             </div>
 
             <div id="password2div">
-                <div class="col-sm-4">   
                     <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
                     <span id="validate-status" class="form-note"></span>                    
-                </div>
+                
 
                 <div class="col-sm-8">                                        
                     <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
@@ -270,9 +268,8 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
             <div id="voornaamdiv">
-                <div class="col-sm-4">   
                     <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>                    
-                </div>
+                
 
                 <div class="col-sm-8">   
                     <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
@@ -281,20 +278,18 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
 
-            <div class="row" id="familienaamdiv">
-                <div class="col-sm-4">   
+            <div id="familienaamdiv">
                     <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>                                        
-                </div>
+                
 
                 <div class="col-sm-8">  
                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
-            <div class="row" id="geslachtdiv">                                    
-                <div class="col-sm-4">   
+            <div id="geslachtdiv">     
                     <?php echo form_label('Geslacht:', 'geslacht', array('class' => 'col-sm-4 control-label')); ?>                                        
-                </div>
+                
 
                 <div class="col-sm-8">  
 
