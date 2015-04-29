@@ -1,6 +1,35 @@
 <script type="text/javascript">
-    
+    $(document).ready(function() {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php
+        function maakDetailClick() {
+          $(".sessie").click(function() {
+            var iddb = $(this).data("id");
+            $( "#id" ).val( iddb );
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type : "GET",
+                    url : site_url + "/sessies/detail",
+                    async: false,
+                    data : { id : iddb },
+                    success : function(result){
+                        var jobject = jQuery.parseJSON(result);
+                        $( "#onderwerp" ).val(jobject.vraag);
+                        $( "#omschrijving" ).val(jobject.antwoord);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $( "#onderwerp" ).val("");
+                $( "#omschrijving" ).val("");
+            }
+            // dialoogvenster openen
+            $( "#sessieModal" ).modal('show'); 
+        }); 
+    }
+        
+    });
 </script>
+
 <div class='row'>
     <div class='col-md-12'>
         <h1>Programma overzicht - <?php echo $actieveId->naam ?></h1>
@@ -43,8 +72,8 @@
                         foreach ($planningen as $planning) {
                             if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) { ?>
                                 <tr>
-                                    <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
-                                    <td><a href="" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                    <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
+                                    <td><a href="" class="sessie" id="id" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                     <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                 </tr>
                                <?php 
@@ -93,3 +122,29 @@
 
     </div>    
 </div>
+
+<div class="modal fade" id="sessieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+
+            <div class="modal-body">                  
+                
+                <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id" />
+                    <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
+                    <p><?php echo form_input(array('name' => 'onderwero', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
+                    <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                </form>
+                
+            </div>
+            
+        </div>            
+    </div>
+</div> 
