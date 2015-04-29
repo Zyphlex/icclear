@@ -9,7 +9,7 @@
 <div class="row">
 <div class="col-sm-6">
     <?php 
-    $attributes = array('name' => 'myform', 'class' => '');
+    $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
     echo form_open('inschrijven/aanmelden', $attributes);
 ?>
 
@@ -19,6 +19,7 @@
         
             <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
             <div class="col-sm-8">
+                <?php echo form_input();?>
                 <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
             </div>
 
@@ -37,10 +38,10 @@
         
 
 
-        <div class="row margin-top">
+        <div class="col-sm-offset-4 margin-top">
             <div class="btn-group btn-block">
-                <button type="button" class="col-sm-6 col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
-                <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 col-sm-6 btn btn-primary"  />
+                <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+                <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
             </div>
         </div>
     
@@ -216,7 +217,7 @@
 </script>
 
 <?php
-$attributes = array('class' => 'registreer', 'id' => 'myForm');
+$attributes = array('class' => 'registreer', 'id' => 'myForm', 'class' => 'form-horizontal');
 echo form_open('inschrijven/registreer', $attributes);
 ?>
 
