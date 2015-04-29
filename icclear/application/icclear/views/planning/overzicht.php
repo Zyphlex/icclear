@@ -100,7 +100,7 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
-                                            <td><a href="" class="sessie" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                            <td><a href="" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                             <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                         </tr>
                                         <?php
