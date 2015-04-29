@@ -35,7 +35,8 @@
                             ?>
                         </td>
                     </tr>
-                <?php } ?>
+                <?php } 
+                echo form_hidden('aantal', $teller)?>
             </tbody>
         </table>  
         <?php echo form_submit('gebouw/gebouwPerDagOpslaan', 'Opslaan', 'class="btn btn-default"'); ?>
