@@ -14,8 +14,7 @@
 <br/><br/>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <p>Opdrachtgever: Karine Nickolay</p>
-        <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou</p>        
+    <div class="col-md-8 col-md-offset-2">       
+        <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou - Opdrachtgever: Karine Nickolay</p>        
     </div>
 </div>
