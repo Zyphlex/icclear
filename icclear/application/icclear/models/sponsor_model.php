@@ -39,12 +39,18 @@ class Sponsor_model extends CI_Model {
     
     function insert($sponsor)
     {
+        //Html entities en extra spaties verwijderen
+        $sponsor = escape_html($sponsor);
+        
         $this->db->insert('sponsor', $sponsor);
         return $this->db->insert_id();
     }
     
     function delete($id)
     {
+        //Html entities en extra spaties verwijderen
+        $sponsor = escape_html($sponsor);
+        
         $this->db->where('id', $id);
         $this->db->delete('sponsor', $sponsor);
     }
