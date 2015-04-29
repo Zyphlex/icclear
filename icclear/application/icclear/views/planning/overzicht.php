@@ -67,7 +67,7 @@
             Sed nec tincidunt tortor, ac fermentum sem. 
             Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
         </p>
-        <td><a type="button" href="" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
+        <td><a type="button" href="" class="toonItem" data-id="1">Heya</a></td>                                    
                                             
     </div>
 </div>
