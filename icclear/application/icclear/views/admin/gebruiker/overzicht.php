@@ -175,7 +175,7 @@
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
 
     <button class="wijzigGebruiker btn btn-primary" data-id="0">Nieuwe gebruiker Toevoegen</button>
-    <button class="emailAllen btn btn-warning" data-id="0">Email naar alle gebruikers versturen</button>
+    <button class="emailGebruiker btn btn-warning" data-id="0">Email naar alle gebruikers versturen</button>
 </div>
 
 
