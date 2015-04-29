@@ -59,12 +59,18 @@ class Gebruiker_model extends CI_Model {
     
     function insert($gebruiker)
     {
+        //Html entities en extra spaties verwijderen
+        $gebruiker = escape_html($gebruiker);
+        
         $this->db->insert('gebruiker', $gebruiker);
         return $this->db->insert_id();
     }
     
     function update($gebruiker)
     {
+        //Html entities en extra spaties verwijderen
+        $gebruiker = escape_html($gebruiker);
+        
         $this->db->where('id', $gebruiker->id);
         $this->db->update('gebruiker', $gebruiker);
     }
