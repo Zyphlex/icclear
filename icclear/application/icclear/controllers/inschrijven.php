@@ -126,7 +126,6 @@ class Inschrijven extends CI_Controller {
             }
 
             $activiteit->aantalPersonen = $this->input->post($a);
-            $indexP++;
 
             $this->load->model('gebruiker_activiteit_model');
             $actId = $this->gebruiker_activiteit_model->insert($activiteit);
