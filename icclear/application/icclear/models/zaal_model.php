@@ -32,12 +32,18 @@ class Zaal_model extends CI_Model {
     
     function update($zaal)
     {
+        //Html entities en extra spaties verwijderen
+        $zaal = escape_html($zaal);
+        
         $this->db->where('id', $zaal->id);
         $this->db->update('zaal', $zaal);
     }
     
     function insert($zaal)
     {
+        //Html entities en extra spaties verwijderen
+        $zaal = escape_html($zaal);
+        
         $this->db->insert('zaal', $zaal);
         return $this->db->insert_id();
     }
