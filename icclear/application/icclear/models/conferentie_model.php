@@ -57,12 +57,18 @@ class Conferentie_model extends CI_Model {
 
     function update($conferentie)
     {
+        //Html entities en extra spaties verwijderen
+        $conferentie = escape_html($conferentie);
+        
         $this->db->where('id', $conferentie->id);
         $this->db->update('conferentie', $conferentie);
     }
     
     function insert($conferentie)
     {
+        //Html entities en extra spaties verwijderen
+        $conferentie = escape_html($conferentie);
+        
         $this->db->insert('conferentie', $conferentie);
         return $this->db->insert_id();
     }
