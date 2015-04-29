@@ -18,16 +18,15 @@
                 <div class="text-center underline">
                     <h3>Aanmelden</h3>
                 </div>   
-
-                <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
+                
+                <?php echo form_label('Emailadres:', 'emaillogon', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
-                    <?php echo form_input(); ?>
-                    <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
+                    <?php echo form_input(array('type' => 'email', 'name' => 'emaillogon', 'id' => 'emaillogon', 'class' => 'form-control', 'size' => '30')); ?>        
                 </div>
 
-                <label class="col-sm-4 control-label" for="passwordlogon">Wachtwoord:</label>                
+                <?php echo form_label('Wachtwoord:', 'passwordlogon', array('class' => 'col-sm-4 control-label')); ?>           
                 <div class="col-sm-8">
-                    <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
+                    <?php echo form_password(array('name' => 'passwordlogon', 'id' => 'passwordlogon', 'class' => 'form-control', 'size' => '30')); ?> 
                 </div>
 
 
@@ -39,7 +38,7 @@
                 <div class="col-xs-12 margin-top">
                     <div class="btn-group btn-block">
                         <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
-                        <input type="submit" name="mysubmit" value="Aanmelden" class="col-xs-8 btn btn-primary"/>
+                        <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
                     </div>
                 </div>
                 
@@ -49,10 +48,6 @@
 
         </div>
     </div>
-
-
-
-
 
 
 
