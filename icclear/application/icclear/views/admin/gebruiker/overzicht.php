@@ -374,7 +374,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm" method="post">
+                <form id="JqAjaxForm">
                     <input type="hidden" name="email" id="email"/>                                        
 
                     <div class="row">
