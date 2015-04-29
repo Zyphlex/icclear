@@ -28,14 +28,12 @@
             <div class="col-sm-8">
                 <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
             </div>
-        
-        <div class="row">     
-            <div class="col-sm-4"></div>
+         
 
-            <div class="col-sm-8">  
+            <div class="col-sm-8 col-sm-offset-4">  
                 <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
             </div>
-        </div>
+        
         
 
 
@@ -45,8 +43,7 @@
                 <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
             </div>
         </div>
-    
-</form>
+<?php echo form_close(); ?>
 
 
     </div>
