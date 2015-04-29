@@ -116,6 +116,28 @@ class Gebouw extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouwConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function gebouwPerDagOpslaan()
+    {
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $conferentieId = $this->session->userdata('conferentieId');
+        $this->load->model('inschrijving_model');
+        $data['title'] = 'IC Clear - Gebouwen';
+        $data['active'] = 'admin';
+        
+        $this->load->model('conferentiedag_model');
+        
+        //Aantal records dat wordt bewerkt
+        $aantal = $this->input->post('aantal');
+        for ($i=1; $i<=$aantal; $i++){
+            $conferentiedag->gebouwId = $this->input->post('gebouw');
+            
+            $this->conferentiedag_model->update($conferentiedag);
+        }
+        
+        redirect('admin/dashboard');
+    }
 
 }
 
