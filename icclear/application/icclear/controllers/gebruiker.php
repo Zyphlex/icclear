@@ -64,13 +64,7 @@ class Gebruiker extends CI_Controller {
         $gebruiker = $this->gebruiker_model->get($id);
 
         echo json_encode($gebruiker);
-    }
-    
-    public function emails() {        
-        $this->load->model('gebruiker_model');
-        $gebruikers = $this->gebruiker_model->getAll();
-        echo json_encode($gebruikers);
-    }
+    }      
 
     public function update() {
         $gebruiker->id = $this->input->post('id');
