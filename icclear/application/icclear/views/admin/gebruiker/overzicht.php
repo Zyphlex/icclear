@@ -159,6 +159,8 @@
 <div class="col-md-10">
 
     <h1>Gebruiker beheren</h1>  
+    
+    <button></button>
 
     <div id="resultaat"></div>        
 
