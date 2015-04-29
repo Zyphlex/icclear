@@ -148,7 +148,7 @@
             });
         });
 
-        //Verzenden in de Detail modal
+        //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
