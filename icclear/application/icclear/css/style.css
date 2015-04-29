@@ -280,6 +280,7 @@ button:focus {
 
 .underline {
     border-bottom: solid 1px #333;
+    margin-bottom:25px;
 }
 
 //// TABELLEN BREEDTES
