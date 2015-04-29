@@ -38,7 +38,7 @@
         
 
 
-        <div class="col-sm-offset-4 margin-top">
+        <div class="col-sm-offset-4 col-sm-8 margin-top">
             <div class="btn-block">
                 <button type="button" class="col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
                 <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 btn btn-primary"  />
