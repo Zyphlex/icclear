@@ -34,11 +34,17 @@ class Land_model extends CI_Model {
     }
     
     function update($land) {
+        //Html entities en extra spaties verwijderen
+        $land = escape_html($land);
+        
         $this->db->where('id', $land->id);
         $this->db->update('land', $land);
     }
 
     function insert($land) {
+        //Html entities en extra spaties verwijderen
+        $land = escape_html($land);
+        
         $this->db->insert('land', $land);
         return $this->db->insert_id();
     }
