@@ -1,8 +1,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
         maakDetailClick();
-
     });
+    
     //Link leggen met de knoppen die gemaakt worden in lijst.php
     function maakDetailClick() {
         $(".sessie").click(function () {
@@ -76,7 +76,7 @@
                                         ?>
                                         <tr>
                                             <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
-                                            <td><a href="" class="sessie" id="id" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                            <td><a href="" class="sessie" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                             <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                         </tr>
                                         <?php
@@ -139,7 +139,7 @@
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
-                    <p><?php echo form_input(array('name' => 'onderwero', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
