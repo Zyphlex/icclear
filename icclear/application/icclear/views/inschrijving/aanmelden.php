@@ -240,11 +240,10 @@ echo form_open('inschrijven/registreer', $attributes);
     <div class="row">
         <div class=""> 
             <div class="row" id="emaildiv">
-                <div class="col-sm-4">   
-                    <?php echo form_label(array('value' => 'Emailadres:', 'for' => 'email')); ?>                        
+                    <?php echo form_label('Emailadres:','email', array('class' => 'col-sm-4')); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                     <div id="feedbackemail"></div>
-                </div>  
+                 
 
                 <div class="col-sm-8">   
                     <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
