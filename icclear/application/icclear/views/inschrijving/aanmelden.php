@@ -19,7 +19,6 @@
         
             <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
             <div class="col-sm-8">
-                <?php echo form_input();?>
                 <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
             </div>
 
