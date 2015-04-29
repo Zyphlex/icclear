@@ -61,7 +61,7 @@
     
     
     
-<div class="col-sm-6 col-sm-6">
+<div class="col-sm-6 col-sm-6 panel panel-default">
 <script type="text/javascript">
 
     function finishAjax(id, response) {
@@ -235,7 +235,7 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
 
-    <div class="row panel panel-default">
+    <div class="row">
         <div class=""> 
             <div id="emaildiv">
                 <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span><div id="feedbackemail"></div>
