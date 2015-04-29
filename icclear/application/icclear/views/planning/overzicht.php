@@ -27,7 +27,7 @@
             } */
             alert("test3");
             // dialoogvenster openen
-            $("#sessieModal").modal('show');
+            $("#test").modal('show');
         });
     }
 
@@ -126,7 +126,7 @@
     </div>    
 </div>
 
-<div class="modal fade" id="sessieModal" >
+<div class="modal fade" id="test" >
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
