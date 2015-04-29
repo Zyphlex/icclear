@@ -88,10 +88,9 @@ class Gebouw extends CI_Controller {
         echo $deleted;
     }
 
-    public function gebouwPerDag() {
+    public function gebouwPerDag($conferentieId) {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $conferentieId = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
