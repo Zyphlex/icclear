@@ -39,10 +39,10 @@
         
 
 
-
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
-        <input type="submit" name="mysubmit" value="Aanmelden" class="btn btn-primary"  />
-    
+        <div class="row">
+        <button type="button" class="col-md-6 col-sd-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+        <input type="submit" name="mysubmit" value="Aanmelden" class="col-md-6 col-sd-6 btn btn-primary"  />
+        </div>
     
 </form>
 
@@ -309,10 +309,12 @@ echo form_open('logon/add', $attributes);
 
         </div>
     </div>         
-
-    <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
-    <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreer</button>
-
+    
+    <div class="row">
+    <button type="button" class="col-md-6 col-sd-6 btn btn-default" data-dismiss="modal">Annuleer</button>        
+    <button name="mysubmit" id="mySubmit" class="col-md-6 col-sd-6 btn btn-primary">Registreer</button>
+    </div>
+    
 <?php echo form_close(); ?>
 </div>
 </div>
