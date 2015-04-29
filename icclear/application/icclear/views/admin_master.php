@@ -30,6 +30,10 @@
     <script type="text/javascript">
         var site_url = '<?php echo site_url();?>';
 	var img_url = '<?php echo base_url() . APPPATH; ?>';
+         
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
     </script>
 </head>
 
