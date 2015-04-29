@@ -91,7 +91,12 @@ class Conferentie extends CI_Controller {
         $id = $this->conferentie_model->insert($conferentie);
 
         //Alle datums tussen begin en einddatum zoeken
-
+        $datums = getDatumsConferentie($begindatum, $einddatum);
+        //Elke datum als conferentiedag toevoegen
+        foreach ($datums as $datum){
+            $conferentiedag->conferentieId = $id;
+            $conferentiedag->datum = $datum;
+        }
 
         redirect('admin/dashboard/' . $id);
     }
@@ -155,22 +160,21 @@ class Conferentie extends CI_Controller {
         echo $id;
     }
 
+    //Alle datums ophalen tussen de begin- en einddatum
     public function getDatumsConferentie($begindatum, $einddatum) {
         $datums = array();
 
         $startDatum = mktime(1, 0, 0, substr($begindatum, 5, 2), substr($begindatum, 8, 2), substr($begindatum, 0, 4));
         $stopDatum = mktime(1, 0, 0, substr($einddatum, 5, 2), substr($einddatum, 8, 2), substr($einddatum, 0, 4));
 
-        print_r(date('Y-m-d', $startDatum));
-        /*
         if ($stopDatum >= $startDatum) {
             array_push($datums, date('Y-m-d', $startDatum)); // first entry
             while ($startDatum < $stopDatum) {
                 $startDatum+=86400; // add 24 hours
                 
-                //array_push($datums, date('Y-m-d', $startDatum));
+                array_push($datums, date('Y-m-d', $startDatum));
             }
-        }*/
+        }
         return $datums;
     }
 
