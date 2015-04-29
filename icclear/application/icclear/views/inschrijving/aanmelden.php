@@ -77,40 +77,50 @@
             ok = true;
                     if ($("#password1").val() == "") {
             $("#password1div").addClass("has-error");
+            $("#password1div").removeClass("has-success");
                     ok = false;
             }
             else {
             $("#password1div").removeClass("has-error");
+            $("#password1div").addClass("has-success");
             }
             if ($("#password2").val() == "" || validate() == false) {
             $("#password2div").addClass("has-error");
+            $("#password1div").removeClass("has-success");
                     ok = false;
             }
             else {
             $("#password2div").removeClass("has-error");
+            $("#password1div").addClass("has-success");
             }
 
             if ($("#voornaam").val() == "") {
             $("#voornaamdiv").addClass("has-error");
+            $("#password1div").removeClass("has-success");
                     ok = false;
             }
             else {
             $("#voornaamdiv").removeClass("has-error");
+            $("#password1div").addClass("has-success");
             }
 
             if ($("#familienaam").val() == "") {
             $("#familienaamdiv").addClass("has-error");
+            $("#password1div").removeClass("has-success");
                     ok = false;
             }
             else {
             $("#familienaamdiv").removeClass("has-error");
+            $("#password1div").addClass("has-success");
             }
             if ($("#email").val() == "") {
             $("#emaildiv").addClass("has-error");
+            $("#password1div").removeClass("has-success");
                     ok = false;
             }
             else {
             $("#emaildiv").removeClass("has-error");
+            $("#password1div").addClass("has-success");
             }
 
             return ok;
