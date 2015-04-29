@@ -67,10 +67,26 @@ class Inschrijven extends CI_Controller {
         $inschrijving->smethodeId = $this->input->post('methode');
         if ($betId != 0) {
             $inschrijving->sbetalingId = $betId;
-        }     
+        }  
+        
+        $acti = array();
+        $act = $this->input->post('aanwezig');
+        foreach ($act as $a) {
+            array_push($acti, $a);
+            $activiteit->activiteitId = $a;
+            $activiteit->gebruikerId = $user->id;
+            if ($betId != 0) {
+                $activiteit->betalingId = $betId;
+            }
+
+            $activiteit->aantalPersonen = $this->input->post($a);
+            $indexP++;
+        }
         
         $this->session->set_userdata($inschrijving);
-                
+        print_r(acti);        
+        
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
