@@ -93,11 +93,11 @@ class Gebouw extends CI_Controller {
         $data['user'] = $user;
         $conferentieId = $this->session->userdata('conferentieId');
         $this->load->model('inschrijving_model');
-        if ($user == null) {
+        /*if ($user == null) {
             $data['inschrijving'] = null;
         } else {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
-        }
+        }*/
         $data['title'] = 'IC Clear - Gebouwen';
         $data['active'] = 'admin';
 
@@ -106,11 +106,12 @@ class Gebouw extends CI_Controller {
         $this->load->model('conferentiedag_model');
         $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentieId);
 
-        $this->load->model('planning_model');
-        $data['dagen'] = $this->planning_model->getAllByDag($conferentieId);
-
         $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        $conferentie = $this->conferentie_model->get($conferentieId);
+        $data['conferentie'] = $conferentie;
+        
+        $this->loaf->model('gebouw_model');
+        $data['gebouwen'] = $this->gebouw_model->getPerLand($conferentie->landId);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouwConferentie/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
