@@ -1,33 +1,35 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-        //Link leggen met de knoppen die gemaakt worden in lijst.php
-        function maakDetailClick() {
-          $(".sessie").click(function() {
+    $(document).ready(function () {
+        maakDetailClick();
+
+    });
+    //Link leggen met de knoppen die gemaakt worden in lijst.php
+    function maakDetailClick() {
+        $(".sessie").click(function () {
             var iddb = $(this).data("id");
-            $( "#id" ).val( iddb );
+            $("#id").val(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
-                $.ajax({type : "GET",
-                    url : site_url + "/sessies/detail",
+                $.ajax({type: "GET",
+                    url: site_url + "/sessies/detail",
                     async: false,
-                    data : { id : iddb },
-                    success : function(result){
+                    data: {id: iddb},
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $( "#onderwerp" ).val(jobject.onderwerp);
-                        $( "#omschrijving" ).val(jobject.omschrijving);
+                        $("#onderwerp").val(jobject.onderwerp);
+                        $("#omschrijving").val(jobject.omschrijving);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $( "#onderwerp" ).val("");
-                $( "#omschrijving" ).val("");
+                $("#onderwerp").val("");
+                $("#omschrijving").val("");
             }
             // dialoogvenster openen
-            $( "#sessieModal" ).modal('show'); 
-        }); 
+            $("#sessieModal").modal('show');
+        });
     }
-        
-    });
+
 </script>
 
 <div class='row'>
@@ -50,43 +52,44 @@
         <h3>Sessies</h3>        
         <div class="panel panel-default">
             <div class="panel-body">
-        <?php
-        $id = 0;
-        $counter = 1;
-        foreach ($planningen as $dag) {
-            if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id)  {
-                echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
-                $counter++;
-                ?>
-                <table class = "table">
-                    <thead>
-                        <tr>
-                            <th><span class="glyphicon glyphicon-time"></span> Tijdstip</th>
-                            <th><span class="glyphicon glyphicon-paperclip"></span> Onderwerp</th>                                                                                                                
-                            <th><span class="glyphicon glyphicon-bullhorn"></span> Spreker</th>
-                        </tr>
-                    </thead>  
-                    <tbody>            
-                        <?php $id = $dag->conferentiedag->id; ?>                
-                        <?php                        
-                        foreach ($planningen as $planning) {
-                            if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) { ?>
-                                <tr>
-                                    <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
-                                    <td><a href="" class="sessie" id="id" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
-                                    <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
-                                </tr>
-                               <?php 
-                            }
-                        }
-                        ?>
-                    </tbody>
-                </table>   
-                <br/>
                 <?php
-            }
-        }
-        ?>
+                $id = 0;
+                $counter = 1;
+                foreach ($planningen as $dag) {
+                    if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id) {
+                        echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
+                        $counter++;
+                        ?>
+                        <table class = "table">
+                            <thead>
+                                <tr>
+                                    <th><span class="glyphicon glyphicon-time"></span> Tijdstip</th>
+                                    <th><span class="glyphicon glyphicon-paperclip"></span> Onderwerp</th>                                                                                                                
+                                    <th><span class="glyphicon glyphicon-bullhorn"></span> Spreker</th>
+                                </tr>
+                            </thead>  
+                            <tbody>            
+                                <?php $id = $dag->conferentiedag->id; ?>                
+                                <?php
+                                foreach ($planningen as $planning) {
+                                    if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
+                                            <td><a href="" class="sessie" id="id" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                            <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </tbody>
+                        </table>   
+                        <br/>
+                        <?php
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>    
@@ -106,17 +109,16 @@
                         </tr>
                     </thead>  
                     <tbody>            
-                        <?php
-                        foreach ($activiteiten as $activiteit) { ?>
-                                <tr>
-                                    <td><?php echo $activiteit->naam ?></td>
-                                    <td><?php echo $activiteit->omschrijving ?></td>
-                                    <td><?php echo toKomma($activiteit->prijs) ?> EUR</td>
-                                </tr>
+                        <?php foreach ($activiteiten as $activiteit) { ?>
+                            <tr>
+                                <td><?php echo $activiteit->naam ?></td>
+                                <td><?php echo $activiteit->omschrijving ?></td>
+                                <td><?php echo toKomma($activiteit->prijs) ?> EUR</td>
+                            </tr>
                         <?php } ?>
                     </tbody>
                 </table>         
-                
+
             </div>
         </div>
 
@@ -126,14 +128,14 @@
 <div class="modal fade" id="sessieModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title"></h4>
             </div>
 
             <div class="modal-body">                  
-                
+
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Onderwerp:', 'onderwerp'); ?></p>
@@ -142,9 +144,9 @@
                     <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
                 </form>
-                
+
             </div>
-            
+
         </div>            
     </div>
 </div> 
