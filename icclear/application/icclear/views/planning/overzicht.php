@@ -3,6 +3,7 @@
     
     $(document).ready(function () {
         $(".toonItem").click(function () {
+            e.preventDefault();
 //            var iddb = $(this).data("id");
 //            $("#id").val(iddb);
 //            if (iddb != 0) {
