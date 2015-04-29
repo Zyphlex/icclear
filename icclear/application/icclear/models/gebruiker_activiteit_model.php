@@ -81,6 +81,9 @@ class Gebruiker_activiteit_model extends CI_Model {
     }
         
     function insert($activiteit) {
+        //Html entities en extra spaties verwijderen
+        $activiteit = escape_html($activiteit);
+        
         $this->db->insert('gebruikerActiviteit', $activiteit);
         return $this->db->insert_id();
     }
