@@ -5,13 +5,9 @@
     echo form_open('logon/aanmelden', $attributes);
 ?>
 
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-         <h4 class="modal-title">Aanmelden</h4>
-    </div>
-
-
-    <div class="modal-body">        
+    <div class="underline">
+         <h3>Aanmelden</h3>
+    </div>   
         
         <div class="row">
             <div class="col-md-4">      
@@ -42,13 +38,11 @@
         </div>
         
 
-    </div>
 
 
-    <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
         <input type="submit" name="mysubmit" value="Aanmelden" class="btn btn-primary"  />
-    </div>
+    
     
 </form>
 
@@ -226,13 +220,11 @@ $attributes = array('class' => 'registreer', 'id' => 'myForm');
 echo form_open('logon/add', $attributes);
 ?>
 
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h4 class="modal-title">Registreren</h4>
+    <div class="underline">
+    <h3>Registreren</h3>
+    </div>
 
-</div>
 
-<div class="modal-body">
 
     <div class="row">
         <div class=""> 
@@ -318,12 +310,9 @@ echo form_open('logon/add', $attributes);
         </div>
     </div>         
 
-</div>
-
-<div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
     <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreer</button>
-</div>    
+
 <?php echo form_close(); ?>
 </div>
 </div>
