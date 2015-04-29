@@ -70,6 +70,7 @@ class Activiteit_model extends CI_Model {
     }
 
     function insert($activiteit) {
+        $activiteit = escape_html($activiteit);
         $this->db->insert('activiteit', $activiteit);
         return $this->db->insert_id();
     }
