@@ -7,9 +7,9 @@
 </div>
 
 <div class="row">
-<div class="col-md-6">
+<div class="col-sm-6">
     <?php 
-    $attributes = array('name' => 'myform');
+    $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
     echo form_open('inschrijven/aanmelden', $attributes);
 ?>
 
@@ -17,30 +17,20 @@
          <h3>Aanmelden</h3>
     </div>   
         
-        <div class="row">
-            <div class="col-md-4">      
-                <label for="emaillogon">E-mailadres:</label>    
-            </div>
-
-            <div class="col-md-8">
+            <label class="col-sm-4 control-label" for="emaillogon">E-mailadres:</label>
+            <div class="col-sm-8">
                 <input type="text" name="emaillogon" value="" id="emaillogon" size="30" class="form-control"  />    
             </div>
-        </div>
-      
-        <div class="row">     
-            <div class="col-md-4">
-                <label for="passwordlogon">Wachtwoord:</label>    
-            </div>
 
-            <div class="col-md-8">
+            <label class="col-sm-4 control-label" for="passwordlogon">Wachtwoord:</label>                
+            <div class="col-sm-8">
                 <input type="password" name="passwordlogon" value="" id="passwordlogon" size="30" class="form-control"  />    
             </div>
-        </div>
         
         <div class="row">     
-            <div class="col-md-4"></div>
+            <div class="col-sm-4"></div>
 
-            <div class="col-md-8">  
+            <div class="col-sm-8">  
                 <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
             </div>
         </div>
@@ -48,10 +38,10 @@
 
 
         <div class="row margin-top">
-        <div class="btn-group btn-block">
-        <button type="button" class="col-md-6 col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
-        <input type="submit" name="mysubmit" value="Aanmelden" class="col-md-6 col-sm-6 btn btn-primary"  />
-        </div>
+            <div class="btn-group btn-block">
+                <button type="button" class="col-sm-6 col-sm-6 btn btn-default" data-dismiss="modal">Annuleer</button>
+                <input type="submit" name="mysubmit" value="Aanmelden" class="col-sm-6 col-sm-6 btn btn-primary"  />
+            </div>
         </div>
     
 </form>
@@ -70,7 +60,7 @@
     
     
     
-<div class="col-md-6 col-sm-6 border-left">
+<div class="col-sm-6 col-sm-6 border-left">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="<?php echo base_url() . APPPATH; ?>/js/bootstrap.js"></script>
 <script type="text/javascript">
@@ -239,33 +229,33 @@ echo form_open('inschrijven/registreer', $attributes);
     <div class="row">
         <div class=""> 
             <div class="row" id="emaildiv">
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Emailadres:', 'email'); ?>                        
                     <p><span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span></p>                    
                     <div id="feedbackemail"></div>
                 </div>  
 
-                <div class="col-md-8">   
+                <div class="col-sm-8">   
                     <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
             <div class="row" id="password1div">
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Wachtwoord:', 'password'); ?>                    
                 </div>
 
-                <div class="col-md-8">                       
+                <div class="col-sm-8">                       
                     <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'class' => 'form-control')); ?> 
                 </div>
             </div>
 
             <div class="row" id="password2div">
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Bevestigen:', 'bevestigww'); ?>
                     <span id="validate-status" class="form-note"></span>                    
                 </div>
 
-                <div class="col-md-8">                                        
+                <div class="col-sm-8">                                        
                     <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
                 </div>
             </div>
@@ -273,11 +263,11 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
             <div class="row" id="voornaamdiv">
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                 </div>
 
-                <div class="col-md-8">   
+                <div class="col-sm-8">   
                     <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
@@ -285,21 +275,21 @@ echo form_open('inschrijven/registreer', $attributes);
 
 
             <div class="row" id="familienaamdiv">
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                 </div>
 
-                <div class="col-md-8">  
+                <div class="col-sm-8">  
                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                 </div>
             </div>
 
             <div class="row" id="geslachtdiv">                                    
-                <div class="col-md-4">   
+                <div class="col-sm-4">   
                     <?php echo form_label('Geslacht:', 'geslacht'); ?>                                        
                 </div>
 
-                <div class="col-md-8">  
+                <div class="col-sm-8">  
 
                     <div class="">
                         <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                                            
@@ -322,8 +312,8 @@ echo form_open('inschrijven/registreer', $attributes);
     
     <div class="row margin-top">
         <div class="btn-group btn-block">
-        <button type="button" class="btn btn-default col-md-6 col-sm-6" data-dismiss="modal">Annuleer</button>        
-        <button name="mysubmit" id="mySubmit" class="btn btn-primary col-md-6 col-sm-6">Registreer</button>
+        <button type="button" class="btn btn-default col-sm-6 col-sm-6" data-dismiss="modal">Annuleer</button>        
+        <button name="mysubmit" id="mySubmit" class="btn btn-primary col-sm-6 col-sm-6">Registreer</button>
         </div>
     </div>
     
