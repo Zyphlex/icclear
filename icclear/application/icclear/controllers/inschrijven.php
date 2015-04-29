@@ -196,7 +196,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
         if ($this->authex->login($email, sha1($password))) {
-            redirect('inschrijven/');
+            redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
         } else {
