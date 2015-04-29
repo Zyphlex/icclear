@@ -311,11 +311,9 @@ echo form_open('logon/add', $attributes);
     </div>         
     
     <div class="row margin-top">
-        <div class="col-md-12 col-sd-12">
-        <div class="btn-group-lg">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>        
-        <button name="mysubmit" id="mySubmit" class="btn btn-primary">Registreer</button>
-        </div>
+        <div class="btn-group btn-block">
+        <button type="button" class="btn btn-default col-md-6 col-sm-6" data-dismiss="modal">Annuleer</button>        
+        <button name="mysubmit" id="mySubmit" class="btn btn-primary col-md-6 col-sm-6">Registreer</button>
         </div>
     </div>
     
