@@ -80,11 +80,10 @@ class Inschrijven extends CI_Controller {
             }
 
             $activiteit->aantalPersonen = $this->input->post($a);
-            $indexP++;
         }
         
         $this->session->set_userdata($inschrijving);
-        print_r(acti);        
+        print_r($acti);        
         
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
