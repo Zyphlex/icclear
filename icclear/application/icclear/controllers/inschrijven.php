@@ -262,6 +262,7 @@ class Inschrijven extends CI_Controller {
     //Nadat men met success registreert, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     //Gebruiker krijgt geen activatie mail
     public function registreer() {
+        //Eerst nieuwe gebruiker registreren
         $email = $this->input->post('emailadres');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
         $user = new stdClass();
@@ -271,9 +272,52 @@ class Inschrijven extends CI_Controller {
         $user->email = $email;
         $user->wachtwoord = $this->input->post('wachtwoord1');
         $user->geslacht = $this->input->post('geslacht');
-        $user->generatedKey = $genkey;
+        $user->activatie = 1;
 
-        $id = $this->authex->register($user);
+        $user->id = $this->authex->register($user);
+        
+        //Verwerken van het inschrijven
+        //////////////////////////
+        //////////////////////////
+        //DUBBEL VAN aanmelden - PROBEREN WEG TE WERKEN
+        $betId = 0;
+        //Controleren of het geen overschrijving is. Geen overschrijving = betaling verwerken
+        if ($this->session->userdata('smethodeId') != 4) {
+            $betaling->gebruikerId = $user->id;
+            $this->load->model('betaling_model');
+            $betId = $this->betaling_model->insert($betaling);
+        }
+        //Inschrijf gegevens uit session halen
+        $inschrijving->gebruikerId = $user->id;
+        $inschrijving->conferentieId = $this->session->userdata('sconferentieId');
+        $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
+        $inschrijving->datum = $this->session->userdata('sdatum');
+        $inschrijving->methodeId = $this->session->userdata('smethodeId');
+        //Als het geen overschrijving is, betaling linken
+        if ($betId != 0) {
+            $inschrijving->betalingId = $betId;
+        }
+
+        $this->load->model('inschrijving_model');
+        $this->inschrijving_model->insert($inschrijving);
+
+        $Pers = $this->session->userdata('Pers');
+        $Acts = $this->session->userdata('ActId');
+        $i = 0;
+        foreach ($Acts as $a) {
+            $activiteit->activiteitId = $a;
+            $activiteit->gebruikerId = $user->id;
+            if ($betId != 0) {
+                $activiteit->betalingId = $betId;
+            }
+            $activiteit->aantalPersonen = $Pers[$i];
+            $this->load->model('gebruiker_activiteit_model');
+            $actId = $this->gebruiker_activiteit_model->insert($activiteit);
+
+            $i++;
+        }
+
+        redirect('inschrijven/voorkeuren');
     }
     
     //Voorkeuren doorgeven door persoon die zich net heeft ingeschreven
