@@ -1,8 +1,4 @@
 <script type="text/javascript">
-    $(document).ready(function () {
-        maakDetailClick();
-    });
-    
     //Link leggen met de knoppen die gemaakt worden in lijst.php
     function maakDetailClick() {
         $(".sessie").click(function () {
@@ -30,6 +26,12 @@
             $("#test").modal('show');
         });
     }
+    
+    $(document).ready(function () {
+        maakDetailClick();
+    });
+    
+    
 
 </script>
 
