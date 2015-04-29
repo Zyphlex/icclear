@@ -111,6 +111,20 @@
                 }
             });
         });
+        
+        //Verzenden in de Detail modal
+        $(".emailOpslaan").click(function () {
+            var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            $.ajax({
+                type: "POST",
+                url: site_url + "/email/verzenden",
+                async: false,
+                data: dataString,
+                dataType: "json"
+            });
+            refreshData();
+            $("#gebruikerModal").modal('hide');
+        });
 
     });
 </script>
