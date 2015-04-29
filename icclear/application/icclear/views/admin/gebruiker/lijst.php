@@ -1,7 +1,12 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.table').DataTable();
+        
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
     });
+    
 </script>
 
 <div class="table-responsive">
@@ -21,7 +26,7 @@
                     <td><?php echo $gebruiker->familienaam ?></td>
                     <td><?php echo $gebruiker->voornaam ?></td>
                     <td>
-                        <button class="emailGebruiker glyphicon glyphicon-envelope btn btn-success white" data-id="<?php echo $gebruiker->id ?>"></button>
+                        <button data-toggle="tooltip" data-placement="bottom" title="Email versturen" class="emailGebruiker glyphicon glyphicon-envelope btn btn-success white" data-id="<?php echo $gebruiker->id ?>"></button>
                         <?php echo $gebruiker->emailadres ?></td>
                     <?php if ($gebruiker->typeId == 1) { ?>
                         <td>Bezoeker</td>
