@@ -272,7 +272,6 @@ class Inschrijven extends CI_Controller {
         $user->email = $email;
         $user->wachtwoord = $this->input->post('wachtwoord1');
         $user->geslacht = $this->input->post('geslacht');
-        $user->activatie = 1;
 
         $user->id = $this->authex->register($user);
         

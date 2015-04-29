@@ -95,6 +95,7 @@ class Logon_model extends CI_Model {
         $user->geslacht = $geb->geslacht;
         $user->typeId = 1;
         $user->generatedKey = $geb->generatedKey;
+        $user->activatie = 0;
 //        $user->laatstAangemeld = date("Y-m-d H-i-s");
 //Html entities en extra spaties verwijderen
         $user = escape_html($user);
