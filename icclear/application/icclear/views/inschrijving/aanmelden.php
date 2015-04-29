@@ -302,7 +302,7 @@ echo form_open('inschrijven/registreer', $attributes);
                 <div class="col-sm-8">  
 
                     <div class="">
-                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man')); ?>                                                            
+                        <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man')); ?>Man                                                            
                         
                     </div> 
                     <div class="">
