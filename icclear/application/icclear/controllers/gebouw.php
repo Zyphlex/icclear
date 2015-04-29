@@ -110,7 +110,7 @@ class Gebouw extends CI_Controller {
         $conferentie = $this->conferentie_model->get($conferentieId);
         $data['conferentie'] = $conferentie;
         
-        $this->loaf->model('gebouw_model');
+        $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getPerLand($conferentie->landId);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebouwConferentie/overzicht', 'footer' => 'main_footer');
