@@ -31,7 +31,12 @@ class Conferentie_model extends CI_Model {
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('conferentie');
-        return $query->row();
+        $conferentie = $query->row();
+        
+        $this->load->model('land_model');
+        $conferentie->land = $this->land_model->get($conferentie->landId);
+        
+        return $conferentie;
     }
 
     function getActieveConferentie()
