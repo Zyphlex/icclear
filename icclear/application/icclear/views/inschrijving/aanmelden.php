@@ -6,6 +6,8 @@
     </div>
 </div>
 
+<div class="white-space"></div>
+
 <div class="row">
     <div class="col-sm-6">
         <div class="panel panel-default">
