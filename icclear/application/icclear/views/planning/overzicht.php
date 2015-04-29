@@ -41,7 +41,7 @@
                             if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) { ?>
                                 <tr>
                                     <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td>                                    
-                                    <td><?php echo $planning->sessie->onderwerp ?></td>                                    
+                                    <td><a><?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                     <td><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></td>
                                 </tr>
                                <?php 
