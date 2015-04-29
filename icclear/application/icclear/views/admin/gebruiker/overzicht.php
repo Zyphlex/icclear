@@ -158,7 +158,7 @@
 
 <div class="col-md-10">
 
-    <h1>Gebruiker beheren <button>Email naar alle gebruikers versturen</button></h1>  
+    <h1>Gebruiker beheren <button class="btn btn-warning">Email naar alle gebruikers versturen</button></h1>  
     
     
 
