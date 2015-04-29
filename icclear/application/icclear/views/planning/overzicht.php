@@ -50,6 +50,7 @@
                 $("#foto").val("");
                 $("#biografie").val("");
             }
+            alert("boer");
             // dialoogvenster openen
             $("#sprekerModal").modal('show');
         });
