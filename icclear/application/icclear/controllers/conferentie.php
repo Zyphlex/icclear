@@ -158,8 +158,8 @@ class Conferentie extends CI_Controller {
     public function getDatumsConferentie($begindatum, $einddatum) {
         $datums = array();
 
-        $startDatum = mktime(1, 0, 0, substr($begindatum, 0, 2), substr($begindatum, 3, 2), substr($begindatum, 6, 4));
-        $stopDatum = mktime(1, 0, 0, substr($einddatum, 0, 2), substr($einddatum, 3, 2), substr($einddatum, 6, 4));
+        $startDatum = mktime(1, 0, 0, substr($begindatum, 5, 2), substr($begindatum, 8, 2), substr($begindatum, 0, 4));
+        $stopDatum = mktime(1, 0, 0, substr($einddatum, 5, 2), substr($einddatum, 8, 2), substr($einddatum, 0, 4));
 
         print_r(date('Y-m-d', $startDatum));
         /*
