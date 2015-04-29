@@ -144,7 +144,7 @@
                     <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>
+                    <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '7', 'cols' => '10')); ?></p>
                 
                 </form>
 
