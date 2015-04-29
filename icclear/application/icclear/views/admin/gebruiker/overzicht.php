@@ -329,50 +329,40 @@
                     <div class="row">
                         <div class="col-md-6">  
 
-                            <div class="row" id="voornaamdiv">
+                            <div class="row" id="ontvangerdiv">
                                 <div class="col-md-4">   
-                                    <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
+                                    <?php echo form_label('Ontvanger:', 'ontvanger'); ?>                    
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
-                            <div class="row" id="familienaamdiv">
+                            <div class="row" id="boodschapdiv">
                                 <div class="col-md-4">   
-                                    <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
+                                    <?php echo form_label('Boodschap:', 'boodschap'); ?>                                        
                                 </div>
 
-                                <div class="col-md-8">  
-                                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                                <div class="col-md-8">                                      
+                                    <?php echo form_textarea(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control', 'rows' => '10', 'cols' => '150'));?>                                    
                                 </div>
                             </div>
-
-                            <div class="row" id="emaildiv">
-                                <div class="col-md-4">   
-                                    <?php echo form_label('Emailadres:', 'emailadres'); ?>                    
-                                </div>
-
-                                <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                                        
-                                </div>
-                            </div>
-                                                 
-                            </div>
+                           
                         </div>
-            </form>        
+                    </div>
+                </form>        
             </div>                 
 
-            </div>
+        </div>
 
-            <div class="modal-footer">
-                <button type="button" class="opslaanGebruiker btn btn-primary">Opslaan</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
-            </div>
+        <div class="modal-footer">
+            <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+        </div>
 
-        </div>            
-    </div> 
+    </div>            
+</div> 
 
 
 <!-- MODAL VOOR VERWIJDEREN -->  
