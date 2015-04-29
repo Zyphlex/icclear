@@ -298,11 +298,11 @@ echo form_open('inschrijven/registreer', $attributes);
 
                 <div class="col-sm-8">  
 
-                    <div class="">
+                    <div class="checkbox">
                         <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'class' => 'form-horizontal', 'type' => 'radio', 'Text' => 'Man')); ?>Man                                                            
                         
                     </div> 
-                    <div class="">
+                    <div class="checkbox">
                         <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'class' => 'form-horizontal', 'type' => 'radio')); ?>                                
                         <span class="option-title">
                             Vrouw
