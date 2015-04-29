@@ -2,7 +2,7 @@
 <div class="col-md-6">
     <?php 
     $attributes = array('name' => 'myform');
-    echo form_open('logon/aanmelden', $attributes);
+    echo form_open('inschrijven/aanmelden', $attributes);
 ?>
 
     <div class="underline">
@@ -219,7 +219,7 @@
 
 <?php
 $attributes = array('class' => 'registreer', 'id' => 'myForm');
-echo form_open('logon/add', $attributes);
+echo form_open('inschrijven/registreer', $attributes);
 ?>
 
     <div class="underline">

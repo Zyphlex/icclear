@@ -187,6 +187,43 @@ class Inschrijven extends CI_Controller {
 
         echo json_encode($data);
     }
+    
+    public function aanmelden() {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        //is geactiveerd
+        $this->load->model('logon_model');
+        $actCheck = $this->logon_model->isGeactiveerd($email);
+        if ($this->authex->login($email, sha1($password))) {
+            redirect('home');
+        } else if ($actCheck == flogonalse) {
+            redirect('logon/nietGeactiveerd');
+        } else {
+            redirect('logon/fout');
+        }
+    }
+    
+    public function registreer() {
+        $email = $this->input->post('emailadres');
+        $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
+        $user = new stdClass();
+
+        $user->familienaam = $this->input->post('familienaam');
+        $user->voornaam = $this->input->post('voornaam');
+        $user->email = $email;
+        $user->wachtwoord = $this->input->post('wachtwoord1');
+        $user->geslacht = $this->input->post('geslacht');
+        $user->generatedKey = $genkey;
+
+        $id = $this->authex->register($user);
+        if ($id != 0) {
+            $this->sendmail($user->email, $user->generatedKey);
+            $this->klaar();
+        } else {
+            $this->bestaat();
+        }
+    }
 
 }
 
