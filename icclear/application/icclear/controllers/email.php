@@ -85,6 +85,8 @@ class Email extends CI_Controller {
             echo $this->email->print_debugger();
             die;
         }
+        
+        echo print_r($onderwerp);
     }
 
     public function update() {
