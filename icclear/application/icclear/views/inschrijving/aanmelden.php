@@ -31,7 +31,7 @@
 
 
                 <div class="col-sm-8 col-sm-offset-4">  
-                    <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
+                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#vergetenModal">Wachtwoord vergeten?</a>
                 </div>
 
 
@@ -225,6 +225,7 @@
             ?>
 
             <div class="text-center underline">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Registreren</h3>
             </div>
 
@@ -293,5 +294,41 @@
             </div>     
             <?php echo form_close(); ?>
         </div>
+    </div>
+</div>
+
+
+<!-- Modal wachtwoord vergeten -->
+<div class="modal fade" id="vergetenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <?php
+            $attributes = array('name' => 'myform', 'method' => 'post', 'class' => 'form-horizontal');
+            echo form_open('logon/resetPass', $attributes);
+            ?>   
+
+            <div class="row">
+                <div class="text-center underline">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Wachtwoord vergeten</h3>
+                </div>   
+
+                <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                <div class="col-sm-8">
+                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                </div>
+
+                <div class="col-xs-12 margin-top space-bottom15">
+                    <div class="btn-group btn-block">
+                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
+                        <?php echo form_submit('mysubmit', 'Verstuur Email', 'class="col-xs-8 btn btn-primary"'); ?>
+                    </div>
+                </div>
+
+            </div>
+            <?php echo form_close(); ?>
+            
+        </div>            
     </div>
 </div>
