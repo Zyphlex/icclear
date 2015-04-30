@@ -19,7 +19,7 @@
 
 <br/><br/>
 
-<div class="row">
+<div class="row clearfix">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-xs-4"><h1>
             <span class="underline">
