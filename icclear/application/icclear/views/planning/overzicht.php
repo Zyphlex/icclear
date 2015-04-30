@@ -188,7 +188,7 @@
 </div>  
 
 <div class="modal fade" id="sprekerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header">
@@ -201,9 +201,9 @@
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <div class="row">
-                    <div class="col-sm-5"><img id="foto" src="" width="100px" height="85px;"></div>
+                    <div class="col-sm-4"><img id="foto" src="" width="100px" height="85px;"></div>
 
-                    <div class="col-sm-7">
+                    <div class="col-sm-6">
                         <p><b>Naam:</b></p> 
                         <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
 
