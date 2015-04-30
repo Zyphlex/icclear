@@ -23,7 +23,7 @@
                 echo form_hidden('conferentieId', $conferentie->id);
                 foreach ($conferentiedagen as $conferentiedag) {
                     $teller++;
-                    echo form_hidden('id', $conferentiedag->id);
+                    //echo form_hidden('id', $conferentiedag->id);
                     ?>                
                     <tr>
                         <td><?php echo $conferentiedag->datum ?></td>
