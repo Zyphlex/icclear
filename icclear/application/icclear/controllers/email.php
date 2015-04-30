@@ -64,22 +64,20 @@ class Email extends CI_Controller {
         $id = $this->input->post('email');
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
+        $this->email->subject($onderwerp);
+        $this->email->message($inhoud);
 
         if ($id == 0) {
             foreach ($gebruikers as $g) {
-                $ontvanger = $g->emailadres;                
+                $ontvanger = $g->emailadres;
                 $this->email->from('donotreply@thomasmore.be');
                 $this->email->to($ontvanger);
-                $this->email->subject($onderwerp);
-                $this->email->message($inhoud);
                 $this->email->send();
             }
         } else {
             $ontvanger = $this->input->post('email');
             $this->email->from('donotreply@thomasmore.be');
-            $this->email->to($ontvanger);
-            $this->email->subject($onderwerp);
-            $this->email->message($inhoud);
+            $this->email->to($ontvanger);           
             $this->email->send();
         }
     }
