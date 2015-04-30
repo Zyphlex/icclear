@@ -298,23 +298,19 @@ button:focus {
 
 .toonItem, .toonSpreker
 {
-    border-bottom: dotted 1px;
+    text-decoration: underline dotted;
 }
 
 .toonItem:hover, .toonSpreker:hover
 {
-    border-bottom: solid 1px;
+    text-decoration: underline solid;
 }
 
 .link-icon
 {
-    border-bottom: none;
+    text-decoration:none;
 }
 
-.link-icon:hover
-{
-    border-bottom: none;
-}
 
 
 //// TABELLEN BREEDTES
