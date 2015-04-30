@@ -150,7 +150,7 @@
 
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {            
-        $("#Loading").removeClass("hidden");     
+        $("#Loading").show();    
         $("#Loading").addClass("show");
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
@@ -160,9 +160,8 @@
                 data: dataString,
                 dataType: "json"
             });
-            refreshData();
-        $("#Loading").removeClass("show");
-        $("#Loading").addClass("hidden");    
+            refreshData();          
+            $("#Loading").hide();
         $("#gebruikerEmail").modal('hide');            
         });
 
