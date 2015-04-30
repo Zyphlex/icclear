@@ -23,7 +23,7 @@ $( document ).ready(function() {
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
-    <div class="col-sm-4 col-lg-2">
+    <div class="col-sm-4 col-md-8">
         <div class="thumbnail">
             <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
@@ -34,10 +34,10 @@ $( document ).ready(function() {
 
 <div class="row">
     <div class="col-sm-12">
-    <?php foreach ($aankondigingen as $aankondiging){ ?>          
-        <div class="col-sm-4">
-            <div class="panel nieuws-item">
-            <span class="panel-body">
+    <?php foreach ($aankondigingen as $aankondiging){ ?>  
+        <div class="col-sm-4">    
+            <div class="panel panel-default nieuws-item">    
+            <span class="">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
             </span>
