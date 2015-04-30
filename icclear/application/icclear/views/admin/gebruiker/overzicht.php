@@ -108,8 +108,7 @@
         });
     }
     
-    $(document).ready(function () {
-        $("#Loading").hide(); 
+    $(document).ready(function () {         
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
@@ -147,11 +146,7 @@
                 }
             });
         });
-        
-         $(".verstuurEmail").hover(function() {
-             $("#Loading").delay(2000).show();
-         });
-        
+               
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {                            
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
@@ -421,8 +416,7 @@
 
 
 
-            <div class="modal-footer">                
-                <span id="Loading">Verzenden... <img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>
+            <div class="modal-footer">                                
                 <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
