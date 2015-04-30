@@ -20,6 +20,7 @@
             <tbody>
                 <?php
                 $teller = 0;
+                echo form_hidden('conferentieId', $conferentie->id);
                 foreach ($conferentiedagen as $conferentiedag) {
                     $teller++;
                     echo form_hidden('id', $conferentiedag->id);
@@ -36,11 +37,12 @@
                             ?>
                         </td>
                     </tr>
-                <?php } 
-                echo form_hidden('aantal', $teller)?>
+                <?php }
+                echo form_hidden('aantal', $teller)
+                ?>
             </tbody>
         </table>  
         <?php echo form_submit('gebouw/gebouwPerDagOpslaan', 'Opslaan', 'class="btn btn-default"'); ?>
-        <?php echo form_close(); ?>
+<?php echo form_close(); ?>
     </div>
 </div>
