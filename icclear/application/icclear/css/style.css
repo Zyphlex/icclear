@@ -296,7 +296,7 @@ button:focus {
     margin-bottom:50px;
 }
 
-.toonItem, .toonSpreker
+.under-link a
 {
     text-decoration-line:underline;
 }
