@@ -75,8 +75,7 @@
     }
 
     function maakMailClick() {
-        $(".emailGebruiker").click(function () {
-            $("#Loading").show();
+        $(".emailGebruiker").click(function () {            
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -151,8 +150,7 @@
 
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {            
-        $("#Loading").show();    
-        $("#Loading").addClass("show");
+        $("#Loading").show();            
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
