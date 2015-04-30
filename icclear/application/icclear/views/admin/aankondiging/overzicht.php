@@ -38,7 +38,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
-                        $("#inhoud").val(jobject.titel);
+                        $("#inhoud").val(jobject.inhoud);
                         $("#gepostDoor").val(jobject.gepostDoor);
                     }
                 });
