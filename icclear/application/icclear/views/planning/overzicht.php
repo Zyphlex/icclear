@@ -40,8 +40,6 @@
                         $("#voornaam").html(jobject.voornaam);
                         $("#familienaam").html(jobject.familienaam);
                         
-                        alert(jobject.url + jobject.foto);
-                        
                         if (jobject.foto == null) {
                             $("#foto").attr("src", jobject.url + "default.jpg");
                         } else {
