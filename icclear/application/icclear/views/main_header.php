@@ -5,8 +5,14 @@
     
 <?php if ($user == null) { // niet aangemeld ?>  
     
-    <div class="col-md-4">
-        <p><span class="logon"><a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a> / <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal1">Registreer</a></span></p>
+    <div class="col-md-4 logon">
+        <p>
+            <span class="">
+                <a href="<?php echo base_url(); ?>icclear.php/logon/login" data-toggle="modal" data-target="#myModal">Aanmelden</a> 
+                / 
+                <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal1">Registreer</a>
+            </span>
+        </p>
     </div>
     
 <?php } else {  // wel aangemeld ?>
