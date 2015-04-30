@@ -19,10 +19,10 @@
     </div>
 </div>
 
-<script type="text/javascript">    
-    $(document).ready(function () {
-        $('.table').DataTable();        
-    });
+<script type="text/javascript">   
+    $(function () {
+        $('.table').DataTable();     
+    });    
     
     $(function () {
         $('[data-toggle="popover"]').popover();
