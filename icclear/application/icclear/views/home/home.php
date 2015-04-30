@@ -22,7 +22,8 @@
 <div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <div class="col-xs-4">
-            <h1 class="underline "><?php echo $aankondiging->titel; ?></h1>
+            <span  class="underline">
+                <h1><?php echo $aankondiging->titel; ?></h1></span>
             <p><?php echo $aankondiging->inhoud; ?></p>
         </div>
     <?php } ?>
