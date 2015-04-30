@@ -23,7 +23,7 @@ $( document ).ready(function() {
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
-    <div class="col-md-4">
+    <div class="col-sm-4 col-lg-2">
         <div class="thumbnail">
             <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
@@ -36,7 +36,7 @@ $( document ).ready(function() {
     <div class="col-sm-12">
     <?php foreach ($aankondigingen as $aankondiging){ ?>          
         <div class="col-sm-4">
-            <div class="panel panel-default nieuws-item">
+            <div class="panel nieuws-item">
             <span class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
