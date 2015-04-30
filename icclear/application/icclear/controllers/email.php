@@ -77,8 +77,13 @@ class Email extends CI_Controller {
         } else {
             $ontvanger = $this->input->post('email');
             $this->email->from('donotreply@thomasmore.be');
-            $this->email->to($ontvanger);           
+            $this->email->to($ontvanger);
             $this->email->send();
+        }
+
+        if ($this->email->send()) {
+            echo $this->email->print_debugger();
+            die;
         }
     }
 
