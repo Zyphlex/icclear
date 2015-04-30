@@ -33,7 +33,13 @@
                             foreach ($gebouwen as $gebouw) {
                                 $options[$gebouw->id] = $gebouw->naam;
                             }
+                            if ($conferentiedag->gebouwId == null){
+                                
                             echo form_dropdown('gebouw' . $teller, $options, 0, 'class="form-control"');
+                            } else {
+                                
+                            echo form_dropdown('gebouw' . $teller, $options, $conferentiedag->gebouwId, 'class="form-control"');
+                            }
                             ?>
                         </td>
                     </tr>
