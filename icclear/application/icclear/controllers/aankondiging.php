@@ -46,69 +46,47 @@ class Aankondiging extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
-    public function wijzigen($id) {
-        $data['user'] = $this->authex->getUserInfo();
-
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('sessies_model');
-        $data['sessie'] = $this->sessies_model->get($id);
-
-        $this->load->model('zaal_model');
-        $data['zalen'] = $this->zaal_model->getAll();
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-
-    public function toevoegen() {
-        $data['user'] = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-
-        $data['title'] = 'IC Clear - Aankondiging toevoegen';
-        $data['active'] = 'admin';
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/aankondiging/toevoegen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-
-    public function insert() {
-        $titel = $this->input->post('titel');
-        $inhoud = $this->input->post('inhoud');
-        $gepostDoorId = $this->input->post('gebruiker');
-        $conferentieId = $this->input->post('conferentie');
+    public function overzicht() {
         $this->load->model('aankondiging_model');
-        $id = $this->aankondiging_model->insert($titel, $inhoud, $gepostDoorId, $conferentieId);
-        if ($id != 0) {
-            redirect('aankondiging/index');
-        }
-//        error
-//        else{
-//            redirect('aankondiging/index');
-//        }
+        $data['aankondigingen'] = $this->aankondiging_model->getAllPerConferentie($this->session->userdata('conferentieId'));
+
+        $this->load->view('admin/aankondiging/lijst', $data);
     }
 
-//    public function verwijderen() {
-//        $data['user']  = $this->authex->getUserInfo();
-//        
-//        $data['conferentieId'] = $this->session->userdata('conferentieId');
-//        $data['title'] = 'IC Clear - Beheer';        
-//        $data['active'] = 'admin';        
-//                
-//        $this->load->model('sessies_model');
-//        $data['sessies'] = $this->sessies_model->getAll();
-//
-//        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/beheer', 'footer' => 'main_footer');
-//        $this->template->load('admin_master', $partials, $data);
-//    }
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('aankondiging_model');
+        $aankondiging = $this->aankondiging_model->getAankondiging($id);
+
+        echo json_encode($aankondiging);
+    }
+
+    public function delete($id) {
+        $id = $this->input->post('id');
+
+        $this->load->model('aankondiging_model');
+        $deleted = $this->aankondiging_model->delete($id);
+
+        echo $deleted;
+    }
+
+    public function update() {
+        $aankondiging->id = htmlentities($this->input->post('id'));
+        $aankondiging->titel = htmlentities($this->input->post('titel'));
+        $aankondiging->inhoud = htmlentities($this->input->post('inhoud'));
+        $aankondiging->gepostDoor = htmlentities($this->input->post('gepostDoor'));
+        $aankondiging->conferentieId = htmlentities($this->input->post('conferentieId'));
+
+        $this->load->model('aankondiging_model');
+        if ($aankondiging->id == 0) {
+            $id = $this->aankondiging_model->insert($aankondiging);
+        } else {
+            $this->aankondiging_model->update($aankondiging);
+        }
+
+        echo $id;
+    }
     // TEST
 }
 
