@@ -296,7 +296,7 @@ button:focus {
     margin-bottom:50px;
 }
 
-.toonItem, .toonSpreker
+a.toonItem, .toonSpreker
 {
     text-decoration: underline dotted;
 }
