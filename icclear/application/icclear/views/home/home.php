@@ -23,7 +23,7 @@ $( document ).ready(function() {
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
-    <div class="col-xs-4">
+    <div class="col-md-4">
         <div class="thumbnail">
             <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
