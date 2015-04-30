@@ -20,7 +20,7 @@
     <div class="col-md-4">
             <div class="dropdown logon">Welkom, 
                 <a data-toggle="dropdown">
-                    <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
+                    <span class="login-user"><?php echo strtoupper($user->voornaam)?></span>
                     <span class="glyphicon glyphicon-chevron-down"></span>
                 </a>
                 <ul class="dropdown-menu">                                        
@@ -32,7 +32,7 @@
         
             <div class="dropdown logon">
                 <a class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
-                    <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
+                    <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam) ?></span>
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
