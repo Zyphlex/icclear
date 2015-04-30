@@ -18,6 +18,9 @@
     font-style: normal;
 
 }
+.hidden {
+    visibility: hidden;
+}
 
 .fileUpload {
 	position: relative;
