@@ -81,8 +81,8 @@ class Email extends CI_Controller {
             $this->email->send();
         }
        
-        echo print_r($onderwerp);
-        echo print_r($inhoud);
+        print_r($onderwerp);
+        print_r($inhoud);
         
         echo $onderwerp;
         
