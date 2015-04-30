@@ -194,7 +194,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
-                    <?php echo form_input(array('name' => 'bid', 'type' => 'hidden', 'id' => 'bid')); ?>
+                    <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <p><b>Naam:</b></p> 
                     <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
 
