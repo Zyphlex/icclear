@@ -88,11 +88,11 @@ class Email extends CI_Controller {
         
         echo $inhoud;
         
-        if($onderwerp == "" || $onderwerp == null){
+        if($onderwerp == null){
             echo "onderwerp is leeg";
         }
         
-        if($inhoud == "" || $inhoud == null){
+        if($inhoud == null){
             echo "inhoud is leeg";
         }
     }
