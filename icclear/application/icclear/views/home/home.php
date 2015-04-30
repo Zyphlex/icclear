@@ -1,3 +1,4 @@
+<!-- Announcement items allemaal dezelfde hoogte geven -->
 <script type="text/javascript">
 $( document ).ready(function() {
     var heights = $(".nieuws-item").map(function() {
