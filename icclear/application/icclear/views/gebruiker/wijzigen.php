@@ -194,10 +194,10 @@
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                             <table class="table table-responsive">
                                 <tr>
-                                    <th class="profConf">Conferentie</th>
-                                    <th class="profPl">Plaats</th>
-                                    <th class="profPer">Periode</th>
-                                    <th class="profBed">Bedrag</th>
+                                    <th class="w35">Conferentie</th>
+                                    <th class="w20">Plaats</th>
+                                    <th class="w27">Periode</th>
+                                    <th class="w18">Bedrag</th>
                                 </tr>
 
                                 <tr>

@@ -311,8 +311,14 @@ a.toonItem, .toonSpreker
 
 //// TABELLEN BREEDTES
 
-.profConf {width: 35%}
-.profPl {width:20%}
-.profPer {width: 27%}
-.profBed {width: 18%}
+.w15 {width: 15%}
+.w18 {width: 18%}
+.w20 {width: 20%}
+.w25 {width: 25%}
+.w27 {width: 27%}
+.w33 {width: 33.333333%}
+.w35 {width: 35%}
+.w50 {width: 50%}
+.w66 {width: 66.666667%}
+.w75 {width: 75%}
 
