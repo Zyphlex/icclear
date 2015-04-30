@@ -27,9 +27,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigGebruiker").click(function () {
-            //$(':radio[name="geslacht"][value="man"]').prop('checked', 'checked');
-            //alert('hallo');
+        $(".wijzigGebruiker").click(function () {            
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
