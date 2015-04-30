@@ -306,7 +306,9 @@ a.toonItem, .toonSpreker
     text-decoration: underline solid;
 }
 
-
+.modal-body .h3 {
+    margin-top: 0;
+}
 
 
 //// TABELLEN BREEDTES
