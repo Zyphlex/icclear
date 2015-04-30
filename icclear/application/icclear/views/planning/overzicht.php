@@ -40,6 +40,13 @@
                         $("#voornaam").html(jobject.voornaam);
                         $("#familienaam").html(jobject.familienaam);
                         
+                        if (jobject.foto == null) {
+                            $("#foto").attr("src", <?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>);
+                        }
+                        else
+                        {
+                            $("#foto").attr("src", <?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto)
+                        }
 
                         $("#biografie").html(jobject.biografie);
                     }
