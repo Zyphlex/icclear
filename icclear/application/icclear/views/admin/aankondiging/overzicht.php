@@ -37,9 +37,9 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#titel").val(jobject.vertrekPunt);
-                        $("#inhoud").val(jobject.beschrijving);
-                        $("#gepostDoor").val(jobject.gebouwId);
+                        $("#titel").val(jobject.titel);
+                        $("#inhoud").val(jobject.inhoud);
+                        $("#gepostDoor").val(jobject.gepostDoor);
                     }
                 });
             } else {
