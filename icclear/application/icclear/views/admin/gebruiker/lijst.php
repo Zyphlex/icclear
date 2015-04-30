@@ -1,13 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.table').DataTable();
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-          })
-    });
-    
-</script>
-
 <div class="table-responsive">
     <table class="table table-beheer">
         <thead>

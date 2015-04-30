@@ -19,7 +19,11 @@
     </div>
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript">    
+    $(document).ready(function () {
+        $('.table').DataTable();        
+    });
+    
     $(function () {
         $('[data-toggle="popover"]').popover();
         $('body').tooltip({
