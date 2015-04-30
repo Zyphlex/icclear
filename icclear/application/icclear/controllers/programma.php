@@ -42,6 +42,15 @@ class Programma extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
+    
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('sessies_model');
+        $sessie = $this->sessies_model->get($id);
+
+        echo json_encode($sessie);
+    }
 
 }
 
