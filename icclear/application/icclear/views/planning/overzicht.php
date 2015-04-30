@@ -203,7 +203,7 @@
                     <div class="row">
                     <div class="col-sm-4"><img id="foto" src="" width="100px" height="85px;"></div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <p><b>Naam:</b></p> 
                         <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
 
