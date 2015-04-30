@@ -268,10 +268,6 @@ button:focus {
     cursor:pointer;
 }
 
-.under-link .label {
-    font-size:100%;
-}
-
 .label {
   font-weight: normal;
   font-size: 75%;
