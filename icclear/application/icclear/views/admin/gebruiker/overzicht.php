@@ -91,8 +91,7 @@
                     }
                 });
             }else{
-                $.ajax({type: "GET",                    
-                    async: false,                    
+                $.ajax({                   
                     success: function () {                        
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
