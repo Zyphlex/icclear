@@ -301,6 +301,11 @@ button:focus {
     border-bottom: dotted 1px;
 }
 
+.toonItem:hover, .toonSpreker:hover
+{
+    border-bottom: solid 1px;
+}
+
 
 //// TABELLEN BREEDTES
 
