@@ -8,6 +8,18 @@ class Aankondiging_model extends CI_Model {
     }
     
     
+    function getAankondiging($id)
+    {        
+        $this->db->where('id', $id);
+        $query = $this->db->get('aankondiging');        
+        $aankondiging = $query->row();
+        
+        $this->load->model('gebruiker_model');  
+        $aankondiging->admin = $this->gebruiker_model->get($aankondiging->gepostDoor);
+            
+        return $aankondiging;
+    }
+    
     function getAllPerConferentie($id)
     {        
         $this->db->where('conferentieId',$id);
@@ -20,17 +32,6 @@ class Aankondiging_model extends CI_Model {
         return $aankondigingen;
     }
     
-    function insert($titel, $inhoud, $gepostDoor, $conferentieId){
-        $aankondiging->titel = $titel;
-        $aankondiging->inhoud = $inhoud;
-        $aankondiging->gepostDoor = $gepostDoor;
-        $aankondiging->conferentieId = $conferentieId;
-        //Html entities en extra spaties verwijderen
-        $aankondiging = escape_html($aankondiging);
-        $this->db->insert('aankondiging', $aankondiging);
-        return $this->db->insert_id();
-    }
-    
     function getAankondigingenActieve(){
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
@@ -38,6 +39,28 @@ class Aankondiging_model extends CI_Model {
        $this->db->where('conferentieId',$actieveConferentie->id);
         $query = $this->db->get('aankondiging');        
        return $query->result();              
+    }
+    
+    function update($aankondiging) {
+        //Html entities en extra spaties verwijderen
+        $aankondiging = escape_html($aankondiging);
+        
+        $this->db->where('id', $aankondiging->id);
+        $this->db->update('aankondiging', $aankondiging);
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('aankondiging');
+    }
+    
+    function insert($aankondiging)
+    {
+        //Html entities en extra spaties verwijderen
+        $aankondiging = escape_html($aankondiging);
+        
+        $this->db->insert('aankondiging', $aankondiging);
+        return $this->db->insert_id();
     }
     
     
