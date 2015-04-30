@@ -3,7 +3,7 @@
     function haaloverzicht() {
         $.ajax({type: "GET",
             url: site_url + "/aankondiging/overzicht",
-            success: function(result) {
+            success: function (result) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
@@ -18,7 +18,7 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderItem").click(function() {
+        $(".verwijderItem").click(function () {
             deleteid = $(this).data("id");
             $("#modalItemDelete").modal('show');
         });
@@ -26,7 +26,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigItem").click(function() {
+        $(".wijzigItem").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -35,41 +35,39 @@
                     url: site_url + "/aankondiging/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function(result) {
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#vertrekpunt").val(jobject.vertrekPunt);
-                        $("#beschrijving").val(jobject.beschrijving);
-                        $("#gebouw").val(jobject.gebouwId);
-                        $("#url").val(jobject.url);
+                        $("#titel").val(jobject.vertrekPunt);
+                        $("#inhoud").val(jobject.beschrijving);
+                        $("#gepostDoor").val(jobject.gebouwId);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#vertrekpunt").val("");
-                $("#beschrijving").val("");
-                $("#gebouw").val("");
-                $("#url").val("");
+                $("#titel").val("");
+                $("#inhoud").val("");
+                $("#gepostDoor").val("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
         });
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
-        
+
         $('.table').DataTable();
-        
+
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanItem").click(function() {
+        $(".opslaanItem").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
-                url: site_url + "/routesbeheer/update",
+                url: site_url + "/aankondiging/update",
                 async: false,
                 data: dataString,
                 dataType: "json"
@@ -79,13 +77,13 @@
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteItem").click(function() {
+        $(".deleteItem").click(function () {
             $.ajax({
                 type: "POST",
-                url: site_url + "/routesbeheer/delete",
+                url: site_url + "/aankondiging/delete",
                 async: false,
                 data: {id: deleteid},
-                success: function(result) {
+                success: function (result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -102,14 +100,14 @@
 
 <div class="col-md-10">
 
-    <h1>Routes beheren</h1>  
+    <h1>Aankondigingen beheren</h1>  
 
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
 
-    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
-    
+    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Aankondiging Toevoegen</button>
+
 </div>
 
 
@@ -131,7 +129,7 @@
                     <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('rows'=>'10','cols'=>'50','name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_textarea(array('rows' => '10', 'cols' => '50', 'name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
                     <p><?php
@@ -141,7 +139,7 @@
                         }
                         echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
                         ?></p>
-                    
+
                     <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
                     <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
 
