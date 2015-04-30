@@ -148,8 +148,8 @@
             });
         });
         
-         $(".verstuurEmail").hover(function() {
-             $("#Loading").delay(2000).show();
+         $(".verstuurEmail").click(function() {
+             $("#Loading").show();
          )};
         
         //Verzenden in de Email modal
