@@ -46,7 +46,7 @@
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#titel").val("");
-                $("textarea[name=inhoud]").val("");
+                $("textarea[name=inhoud]").html("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
