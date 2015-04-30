@@ -173,8 +173,8 @@
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     
-                    <div class="col-sm-8">
-                    <3>Omschrijving:</3> 
+                    <div class="col-sm-12">
+                    <h3>Omschrijving:</h3> 
                     <p id="omschrijving"></p> 
                     </div>
                 </form>
