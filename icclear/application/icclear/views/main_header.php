@@ -54,60 +54,41 @@
     <div class="modal-dialog">
         <div class="modal-content">
             
-            <?php 
-    $attributes = array('name' => 'myform');
-    echo form_open('logon/aanmelden', $attributes);
-?>
+            <?php
+            $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
+            echo form_open('inschrijven/aanmelden', $attributes);
+            ?>
+            <div class="row">
+                
+                <div class="text-center underline">
+                    <h3>Aanmelden</h3>
+                </div>   
+                
+                <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                <div class="col-sm-8">
+                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                </div>
 
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-         <h4 class="modal-title">Aanmelden</h4>
-    </div>
-
-
-    <div class="modal-body">        
-        
-        <div class="row">
-            <div class="col-md-4">      
-                <label for="email">E-mailadres:</label>    
-            </div>
-
-            <div class="col-md-8">
-                <input type="text" name="email" value="" id="email" size="30" class="form-control"  />    
-            </div>
-        </div>
-      
-        <div class="row">     
-            <div class="col-md-4">
-                <label for="password">Wachtwoord:</label>    
-            </div>
-
-            <div class="col-md-8">
-                <input type="password" name="password" value="" id="password" size="30" class="form-control"  />    
-            </div>
-        </div>
-        
-        <div class="row">     
-            <div class="col-md-4"></div>
-
-            <div class="col-md-8">  
-                <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
-            </div>
-        </div>
-        
-
-    </div>
+                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
+                <div class="col-sm-8">
+                    <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
+                </div>
 
 
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
-        <input type="submit" name="mysubmit" value="Aanmelden" class="btn btn-primary"  />
-    </div>
-    
-</form>
+                <div class="col-sm-8 col-sm-offset-4">  
+                    <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
+                </div>
 
 
-
+                <div class="col-xs-12 margin-top">
+                    <div class="btn-group btn-block">
+                        <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
+                        <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
+                    </div>
+                </div>
+                
+            </div>     
+            <?php echo form_close(); ?>    
             
         </div>            
     </div>
