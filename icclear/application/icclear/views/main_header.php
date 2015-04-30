@@ -17,8 +17,8 @@
     
 <?php } else {  // wel aangemeld ?>
     
-    <div class="col-md-4">
-            <div class="dropdown logon">Welkom, 
+    <div class="col-md-4 logon">
+            <div class="dropdown">Welkom, 
                 <a data-toggle="dropdown">
                     <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
                     <span class="caret"></span>
