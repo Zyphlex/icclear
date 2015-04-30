@@ -88,6 +88,18 @@ class Email extends CI_Controller {
         
         echo print_r($onderwerp);
         echo print_r($inhoud);
+        
+        echo $onderwerp;
+        
+        echo $inhoud;
+        
+        if($onderwerp == "" || $onderwerp == null){
+            echo "onderwerp is leeg";
+        }
+        
+        if($inhoud == "" || $inhoud == null){
+            echo "inhoud is leeg";
+        }
     }
 
     public function update() {
