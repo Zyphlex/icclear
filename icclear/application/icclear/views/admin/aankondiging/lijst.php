@@ -18,7 +18,7 @@
             <tr>
                 <td><?php echo $aankondiging->titel ?></td>
                 <td><?php echo $aankondiging->inhoud ?></td>
-                <td><?php echo $aankondiging->poster->voornaam ?></td>
+                <td><?php echo $aankondiging->poster->voornaam . " " . $aankondiging->poster->familienaam ?></td>
                 <td>
                     <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $aankondiging->id ?>"></button>
                     <button class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $aankondiging->id ?>"></button>                                 
