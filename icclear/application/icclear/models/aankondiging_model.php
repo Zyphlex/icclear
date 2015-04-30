@@ -14,9 +14,6 @@ class Aankondiging_model extends CI_Model {
         $query = $this->db->get('aankondiging');        
         $aankondiging = $query->row();
         
-        $this->load->model('gebruiker_model');  
-        $aankondiging->admin = $this->gebruiker_model->get($aankondiging->gepostDoor);
-            
         return $aankondiging;
     }
     
