@@ -40,11 +40,11 @@
                         $("#voornaam").html(jobject.voornaam);
                         $("#familienaam").html(jobject.familienaam);
                         if (jobject.foto == null) {
-                            $("#foto").html(<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>);
+                            $("#foto").attr(<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>);
                         }
                         else
                         {
-                            $("#foto").html(<?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto)
+                            $("#foto").attr(<?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto)
                         }
 
                         $("#biografie").html(jobject.biografie);
