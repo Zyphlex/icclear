@@ -30,7 +30,7 @@
                 </ul>
             </div>
         
-            <div class="dropdown">
+            <div class="">
                 <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown trigger
                     <span class="caret"></span>
