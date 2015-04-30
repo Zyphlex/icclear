@@ -33,10 +33,11 @@ $( document ).ready(function() {
 
 <div class="row clearfix">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <div class="nieuws-item col-xs-4"><h1>
-            <span class="underline">
-                <?php echo $aankondiging->titel; ?></span></h1>
-            <p><?php echo $aankondiging->inhoud; ?></p>
+        <div class="panel panel-default nieuws-item col-xs-4">            
+            <span class="panel-body">
+                <h1 class="underline"><?php echo $aankondiging->titel; ?></h1>
+                <p><?php echo $aankondiging->inhoud; ?></p>
+            </span>
         </div>
     <?php } ?>
 </div>
