@@ -179,20 +179,9 @@
     
 <?php } else {  // wel aangemeld ?>
     
-    <div class="col-md-4">
-            <div class="dropdown logon">Welkom, 
-                <a data-toggle="dropdown">
-                    <span class="login-user"><?php echo strtoupper($user->voornaam)?></span>
-                    <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu">                                        
-                    <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
-                    <li class="divider"></li>
-                    <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
-                </ul>
-            </div>
-        
+    <div class="col-md-4">        
             <div class="dropdown logon">
+                <span class="glyphicon glyphicon-user"></span>
                 <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
                     <span class="caret"></span>
@@ -203,7 +192,6 @@
                     <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
                 </ul>
             </div>
-
     </div>
     
 <?php } ?>
