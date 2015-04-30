@@ -18,3 +18,14 @@
         <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou - Opdrachtgever: Karine Nickolay</p>        
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+        $('body').tooltip({
+            selector: '*',
+            html: true
+        });
+
+    });
+</script>
