@@ -63,8 +63,8 @@ class Email extends CI_Controller {
         $gebruikers = $this->gebruiker_model->getAll();
         $id = $this->input->post('email');
         
-        $onderwerp = $this->input->post('onderwerp');
-        $inhoud = $this->input->post('boodschap');
+        $onderwerp = $this->input->post('onderwerps');
+        $inhoud = $this->input->post('boodsschap');
         
         $this->email->subject($onderwerp);
         $this->email->message($inhoud);
