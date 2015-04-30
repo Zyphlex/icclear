@@ -150,7 +150,7 @@
         
          $(".verstuurEmail").click(function() {
              $("#Loading").show();
-         )};
+         });
         
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {                            
