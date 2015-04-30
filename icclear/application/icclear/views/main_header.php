@@ -31,7 +31,7 @@
             </div>
         
             <div class="dropdown logon">
-                <a data-target="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
+                <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
                     <span class="caret"></span>
                 </a>
