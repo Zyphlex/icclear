@@ -31,10 +31,10 @@
             </div>
         
             <div class="dropdown logon">
-                <button id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown trigger
+                <a class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
+                    <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
                     <span class="caret"></span>
-                </button>
+                </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                     ...
                 </ul>
