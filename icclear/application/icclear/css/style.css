@@ -296,7 +296,7 @@ button:focus {
     margin-bottom:50px;
 }
 
-.under-link a
+.under-link td a
 {
     text-decoration-line:underline;
 }
