@@ -125,7 +125,6 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <input type="hidden" name="conferentieId" id="conferentieId" value="<?php $conferentie->id ?>" />
                     <p><?php echo form_label('Titel:', 'titel'); ?></td>
                     <p><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
 
