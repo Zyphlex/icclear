@@ -125,23 +125,22 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
-                    <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
+                    <input type="hidden" name="conferentieId" id="conferentieId" value="<?php $conferentie->id ?>" />
+                    <p><?php echo form_label('Titel:', 'titel'); ?></td>
+                    <p><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('rows' => '10', 'cols' => '50', 'name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Inhoud:', 'inhoud'); ?></td>
+                    <p><?php echo form_textarea(array('rows' => '10', 'cols' => '50', 'name' => 'inhoud', 'id' => 'inhoud', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
+                    <p><?php echo form_label('Gepost door:', 'gepostDoor'); ?></td>
                     <p><?php
                         $options = array();
-                        foreach ($gebouwen as $gebouw) {
-                            $options[$gebouw->id] = $gebouw->naam;
+                        foreach ($admins as $admin) {
+                            $options[$admin->id] = $admin->voornaam . " " . $admin->familienaam;
                         }
-                        echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
-                        ?></p>
-
-                    <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
-                    <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
+                        echo form_dropdown('gepostDoor', $options, '', 'id="gepostDoor" class="form-control"');
+                        ?>
+                    </p>
 
                 </form>
 
@@ -168,7 +167,7 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze route wilt verwijderen?</p>  
+                <p>Bent u zeker dat u deze aankondiging wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
