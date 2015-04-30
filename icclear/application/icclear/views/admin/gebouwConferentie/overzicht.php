@@ -6,7 +6,7 @@
         <h4><?php echo $conferentie->land->naam ?></h4>
 
         <?php
-        $attributes = array('name' => 'myform', 'id' => 'myform');
+        $attributes = array('name' => 'myform', 'id' => 'myform', 'method' => 'post');
         echo form_open('gebouw/gebouwPerDagOpslaan', $attributes);
         ?>
 
