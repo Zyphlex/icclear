@@ -36,7 +36,7 @@ $( document ).ready(function() {
     <?php $teller = 3; ?>
     <?php foreach ($aankondigingen as $aankondiging){ ?>
         <?php if ($teller != 3) { ?>
-        <div class="panel panel-default nieuws-item col-xs-4">            
+        <div class="panel panel-default nieuws-item col-sm-4">            
             <span class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
