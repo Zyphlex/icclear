@@ -200,6 +200,7 @@
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
+                    <div class="row">
                     <div class="col-sm-5"><img id="foto" src="" width="100px" height="85px;"></div>
 
                     <div class="col-sm-7">
@@ -208,6 +209,7 @@
 
                         <p><b>Biografie:</b></p> 
                         <p id="biografie"></p> 
+                    </div>
                     </div>
                 </form>
 
