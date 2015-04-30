@@ -12,7 +12,7 @@ $( document ).ready(function() {
 </script>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <h1>Conferentie - <?php echo $conferentie->naam ?></h1>
     </div>
 </div>
@@ -33,20 +33,14 @@ $( document ).ready(function() {
 <br/><br/>
 
 <div class="row">
-    <?php $teller = 3; ?>
+    <div class="col-sm-12">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <?php if ($teller != 3) { ?>
         <div class="panel panel-default nieuws-item col-sm-4">            
             <span class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
             </span>
         </div>
-        <?php $teller++; ?>
-        <?php } else { ?>
-            <?php $teller = 0; ?>
-            </div>
-            <div class="row">
-        <?php } ?>
     <?php } ?>
+    </div>
 </div>
