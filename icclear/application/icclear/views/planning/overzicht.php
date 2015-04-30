@@ -8,7 +8,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/programma/detail",
+                    url: site_url + "/programma/detailSessie",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -32,7 +32,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/spreker/detail",
+                    url: site_url + "/programma/detailSpreker",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -44,7 +44,7 @@
                         }
                         else
                         {
-                            $("#foto").attr("src", jobject.foto);
+                            $("#foto").attr("src", jobject.url + jobject.foto);
                         }
 
                         $("#biografie").html(jobject.biografie);

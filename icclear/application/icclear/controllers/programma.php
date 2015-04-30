@@ -43,13 +43,24 @@ class Programma extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
-    public function detail() {
+    public function detailSessie() {
         $id = $this->input->get('id');
 
         $this->load->model('sessies_model');
         $sessie = $this->sessies_model->get($id);
 
         echo json_encode($sessie);
+    }
+    
+    
+    public function detailSpreker() {
+        $id = $this->input->get('id');
+
+        $this->load->model('gebruiker_model');
+        $spreker = $this->gebruiker_model->getSpreker($id);
+        $spreker->url = base_url() + APPPATH + "/";
+        
+        echo json_encode($spreker);
     }
 
 }
