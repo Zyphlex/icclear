@@ -296,9 +296,16 @@ button:focus {
     margin-bottom:50px;
 }
 
+.toonItem, .toonSpreker
+{
+    border-bottom: dotted 1px;
+}
+
+
 //// TABELLEN BREEDTES
 
 .profConf {width: 35%}
 .profPl {width:20%}
 .profPer {width: 27%}
 .profBed {width: 18%}
+
