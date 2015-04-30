@@ -45,7 +45,7 @@
                         }
                         else
                         {
-                            $("#foto").attr("src", <?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto)
+                            $("#foto").attr("src", <?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto);
                         }
 
                         $("#biografie").html(jobject.biografie);
