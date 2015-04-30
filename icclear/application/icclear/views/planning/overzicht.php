@@ -40,6 +40,12 @@
                         $("#voornaam").html(jobject.voornaam);
                         $("#familienaam").html(jobject.familienaam);
                         
+                        if (jobject.foto == null) {
+                        }
+                        else
+                        {
+                            $("#foto").attr("src", jobject.foto);
+                        }
 
                         $("#biografie").html(jobject.biografie);
                     }
