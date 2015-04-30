@@ -172,7 +172,7 @@
             <span class="logon">
                 <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                 / 
-                <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#registreerModal">Registreer</a>
+                <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
             </span>
         </p>
     </div>
