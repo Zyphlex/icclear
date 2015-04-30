@@ -129,7 +129,7 @@
                     <p><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Inhoud:', 'inhoud'); ?></td>
-                    <p><?php echo form_textarea(array('rows' => '10', 'cols' => '50', 'name' => 'inhoud', 'id' => 'inhoud', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_textarea(array('name' => 'inhoud', 'id' => 'inhoud', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Gepost door:', 'gepostDoor'); ?></td>
                     <p><?php
