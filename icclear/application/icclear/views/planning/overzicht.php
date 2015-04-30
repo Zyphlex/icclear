@@ -91,9 +91,9 @@
                         <table class = "table">
                             <thead>
                                 <tr>
-                                    <th><span class="glyphicon glyphicon-time"></span> Tijdstip</th>
-                                    <th><span class="glyphicon glyphicon-paperclip"></span> Onderwerp</th>                                                                                                                
-                                    <th><span class="glyphicon glyphicon-bullhorn"></span> Spreker</th>
+                                    <th>Tijdstip</th>
+                                    <th>Onderwerp</th>                                                                                                                
+                                    <th>Spreker</th>
                                 </tr>
                             </thead>  
                             <tbody>            
@@ -103,10 +103,10 @@
                                     if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
-                                            <td><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><?php echo $planning->sessie->onderwerp ?></a></td>                                    
-                                            <td><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"><?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
-                                        </tr>
+                                            <td><span class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
+                                            <td><span class="glyphicon glyphicon-info-sign"></span><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                            <td><span class="glyphicon glyphicon-user"></span><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
+                                        </tr> 
                                         <?php
                                     }
                                 }
