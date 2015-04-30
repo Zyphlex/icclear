@@ -87,6 +87,7 @@ class Email extends CI_Controller {
         }
         
         echo print_r($onderwerp);
+        echo print_r($inhoud);
     }
 
     public function update() {
