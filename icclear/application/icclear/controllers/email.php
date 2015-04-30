@@ -80,12 +80,7 @@ class Email extends CI_Controller {
             $this->email->to($ontvanger);
             $this->email->send();
         }
-
-        if ($this->email->send()) {
-            echo $this->email->print_debugger();
-            die;
-        }
-        
+       
         echo print_r($onderwerp);
         echo print_r($inhoud);
         
