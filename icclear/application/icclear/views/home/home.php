@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
 <div class="row">
     <?php foreach ($aankondigingen as $aankondiging){ ?>  
-        <div class="col-sm-4 col-xs-6">    
+        <div class="col-sm-4 col-xs-12">    
             <div class="panel panel-default nieuws-item">    
             <div class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
