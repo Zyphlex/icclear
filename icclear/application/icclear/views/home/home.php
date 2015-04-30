@@ -1,3 +1,15 @@
+<script type="text/javascript">
+$( document ).ready(function() {
+    var heights = $(".nieuws-item").map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $(".nieuws-item").height(maxHeight);
+});
+</script>
+
 <div class="row">
     <div class="col-md-12">
         <h1>Conferentie - <?php echo $conferentie->naam ?></h1>
@@ -21,7 +33,7 @@
 
 <div class="row clearfix">
     <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <div class="col-xs-4"><h1>
+        <div class="nieuws-item col-xs-4"><h1>
             <span class="underline">
                 <?php echo $aankondiging->titel; ?></span></h1>
             <p><?php echo $aankondiging->inhoud; ?></p>
