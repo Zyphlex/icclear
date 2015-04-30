@@ -56,7 +56,7 @@
             
             <?php
             $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
-            echo form_open('inschrijven/aanmelden', $attributes);
+            echo form_open('logon/aanmelden', $attributes);
             ?>
             <div class="row">
                 
