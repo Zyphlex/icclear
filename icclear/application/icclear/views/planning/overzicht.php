@@ -43,9 +43,8 @@
                         alert(jobject.url + jobject.foto);
                         
                         if (jobject.foto == null) {
-                        }
-                        else
-                        {
+                            $("#foto").attr("src", jobject.url + "default.jpg");
+                        } else {
                             $("#foto").attr("src", jobject.url + jobject.foto);
                         }
 
