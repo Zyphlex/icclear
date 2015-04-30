@@ -159,8 +159,7 @@
                 data: dataString,
                 dataType: "json"
             });
-            refreshData();          
-            $("#Loading").hide();
+            refreshData();                      
         $("#gebruikerEmail").modal('hide');            
         });
 
