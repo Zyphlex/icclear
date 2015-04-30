@@ -165,7 +165,7 @@
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="onderwerp"></h4>
+                <h3 class="modal-title" id="onderwerp"></h3>
             </div>
 
             <div class="modal-body">                  
@@ -174,8 +174,8 @@
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     
                     <div class="col-sm-12">
-                    <h3>Omschrijving:</h3> 
-                    <p id="omschrijving"></p> 
+                        <h3>Omschrijving:</h3> 
+                        <p id="omschrijving"></p> 
                     </div>
                 </form>
 
@@ -191,7 +191,7 @@
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 id="naam" class="modal-title"></h4>
+                <h3 id="naam" class="modal-title"></h3>
             </div>
 
             <div class="modal-body">                  
