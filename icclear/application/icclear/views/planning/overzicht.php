@@ -104,8 +104,8 @@
                                         ?>
                                         <tr>
                                             <td><span class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?></td> 
-                                            <td><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><span class="glyphicon glyphicon-info-sign"></span> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
-                                            <td><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"><span class="glyphicon glyphicon-user"></span> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
+                                            <td><span class="glyphicon glyphicon-info-sign"></span><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
+                                            <td><span class="glyphicon glyphicon-user"></span><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
                                         </tr> 
                                         <?php
                                     }
