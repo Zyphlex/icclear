@@ -74,8 +74,7 @@
 
     function maakMailClick() {
         $(".emailGebruiker").click(function () {            
-            var iddb = $(this).data("id");
-            $("#id").val(iddb);
+            var iddb = $(this).data("id");            
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
