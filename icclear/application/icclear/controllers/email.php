@@ -62,8 +62,10 @@ class Email extends CI_Controller {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
         $id = $this->input->post('email');
+        
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
+        
         $this->email->subject($onderwerp);
         $this->email->message($inhoud);
 
@@ -80,10 +82,7 @@ class Email extends CI_Controller {
             $this->email->to($ontvanger);
             $this->email->send();
         }
-       
-        print_r($onderwerp);
-        print_r($inhoud);
-        
+               
         echo $onderwerp;
         
         echo $inhoud;
