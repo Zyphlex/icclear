@@ -30,7 +30,7 @@
                 </ul>
             </div>
         
-            <div class="dropdown logon">
+            <div class="logon">
                 <a class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam) ?></span>
                     <span class="glyphicon glyphicon-menu-down"></span>
