@@ -88,6 +88,7 @@ class Gebouw extends CI_Controller {
         echo $deleted;
     }
 
+    //Elke datum van een conferentie tonen met het bijbehorende gebouw
     public function gebouwPerDag($conferentieId) {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -102,6 +103,7 @@ class Gebouw extends CI_Controller {
 
         $data['conferentieId'] = $conferentieId;
         
+        //Alle conferentiedagen van een conferentie
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->get($conferentieId);
         $data['conferentie'] = $conferentie;
@@ -109,6 +111,7 @@ class Gebouw extends CI_Controller {
         $this->load->model('conferentiedag_model');
         $data['conferentiedagen'] = $this->conferentiedag_model->getFromConferentie($conferentie->id);
         
+        //Alle gebouwen die in hetzelfde land als de concerentie gelegen zijn
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getPerLand($conferentie->landId);
 
