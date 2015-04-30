@@ -58,7 +58,7 @@ class Programma extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $spreker = $this->gebruiker_model->getSpreker($id);
-        $spreker->url = base_url() + APPPATH;
+        $spreker->url = base_url() . APPPATH . "/";
         
         echo json_encode($spreker);
     }
