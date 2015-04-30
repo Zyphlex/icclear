@@ -39,7 +39,7 @@
                         alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
-                        $("#inhoud").html(jobject.inhoud);
+                        $("#inhoud").val(jobject.inhoud);
                         $("#gepostDoor").val(jobject.gepostDoor);
                     }
                 });
@@ -126,13 +126,13 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Titel:', 'titel'); ?></td>
+                    <p><?php echo form_label('Titel:', 'titel'); ?></p>
                     <p><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Inhoud:', 'inhoud'); ?></td>
+                    <p><?php echo form_label('Inhoud:', 'inhoud'); ?></p>
                     <p><?php echo form_textarea(array('name' => 'inhoud', 'id' => 'inhoud', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Gepost door:', 'gepostDoor'); ?></td>
+                    <p><?php echo form_label('Gepost door:', 'gepostDoor'); ?></p>
                     <p><?php
                         $options = array();
                         foreach ($admins as $admin) {
