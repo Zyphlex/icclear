@@ -31,19 +31,15 @@
             </div>
         
             <div class="dropdown logon">
-                <p>
-                    <span class="">
-                        <a data-target="#" class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
-                            <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
-                            <li class="divider"></li>
-                            <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
-                        </ul>
-                    </span>
-                </p>
+                <a data-target="#" class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
+                    <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
+                    <li class="divider"></li>
+                    <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
+                </ul>
             </div>
 
     </div>
