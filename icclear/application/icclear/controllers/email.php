@@ -31,7 +31,7 @@ class Email extends CI_Controller {
         } else {
             $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         }
-        $data['title'] = 'IC Clear - Emails.';
+        $data['title'] = 'IC Clear - Emails';
         $data['active'] = 'admin';
 
         $this->load->model('conferentie_model');
