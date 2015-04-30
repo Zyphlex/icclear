@@ -81,7 +81,7 @@
                 </div>
 
 
-                <div class="col-xs-12 margin-top space-bottom">
+                <div class="col-xs-12 margin-top space-bottom20">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
                         <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
@@ -129,7 +129,7 @@
             </div>
 
 
-            <div class="col-xs-12 margin-top space-bottom">
+            <div class="col-xs-12 margin-top space-bottom20">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Sluit</button>
                 <input type="submit" name="mysubmit" value="Verstuur Email" class="btn btn-primary"  />
             </div>
