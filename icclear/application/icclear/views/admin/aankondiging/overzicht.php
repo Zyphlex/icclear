@@ -39,13 +39,15 @@
                         alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
-                        $("textarea[name=inhoud]").html(jobject.inhoud);
+                        $("#inhoud").val(jobject.inhoud);
+                        $(':textarea[name="inhoud"][value="' + jobject.inhoud + '"]');
+                        
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#titel").val("");
-                $("textarea[name=inhoud]").html("");
+                $("#inhoud").val("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
