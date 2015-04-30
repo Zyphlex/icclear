@@ -61,7 +61,7 @@
             <div class="row">
                 
                 <div class="text-center underline">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Sluiten">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Aanmelden</h3>
                 </div>   
                 
@@ -118,7 +118,7 @@
 
             <div class="row">
                 <div class="text-center underline">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Sluiten">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Wachtwoord vergeten</h3>
                 </div>   
 
