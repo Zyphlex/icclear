@@ -21,7 +21,10 @@
 
 <script type="text/javascript">   
     $(function () {
-        $('.table').DataTable();     
+        $('.table').DataTable({            
+            selector: '*',
+            html: true
+        });     
     });    
     
     $(function () {
