@@ -147,10 +147,13 @@
                 }
             });
         });
-
+        
+         $(".verstuurEmail").hover(function()){
+             $("#Loading").delay(2000).show();
+         }
+        
         //Verzenden in de Email modal
-        $(".verstuurEmail").click(function () {            
-        $("#Loading").show();            
+        $(".verstuurEmail").click(function () {                            
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
