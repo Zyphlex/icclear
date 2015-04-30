@@ -84,9 +84,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
-                        $("#email").val(jobject.emailadres);
-                        $("#onderwerp").val("");
-                        $("#boodschap").val("");
+                        $("#email").val(jobject.emailadres);                      
                     }
                 });
             }else{
