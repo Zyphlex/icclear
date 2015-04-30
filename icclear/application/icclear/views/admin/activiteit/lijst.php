@@ -21,8 +21,8 @@
                 <td><?php echo "€ " . $activiteit->prijs ?></td>
 
                 <td>
-                    <button class="wijzigActiviteit glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $activiteit->id ?>"></button>
-                        <button class="verwijderActiviteit glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $activiteit->id ?>"></button> 
+                    <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigActiviteit glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $activiteit->id ?>"></button>
+                    <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderActiviteit glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $activiteit->id ?>"></button> 
                 </td>    
             </tr>
         <?php } ?>

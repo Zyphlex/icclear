@@ -21,13 +21,6 @@
 
 <script type="text/javascript">   
     $(function () {
-        $('.table').DataTable({            
-            selector: '*',
-            html: true
-        });     
-    });    
-    
-    $(function () {
         $('[data-toggle="popover"]').popover();
         $('body').tooltip({
             selector: '*',

@@ -28,8 +28,8 @@
                 <td><?php echo $sessie->omschrijving ?></td>
                 <td>
                     <p>
-                        <button class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
-                        <button class="verwijderSessie glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sessie->id ?>"></button> 
+                        <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
+                        <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderSessie glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sessie->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

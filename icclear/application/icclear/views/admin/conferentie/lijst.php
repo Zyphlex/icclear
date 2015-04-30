@@ -22,8 +22,8 @@
                 <td><?php echo $ond->prijs ?></td>
                 <td><?php echo $ond->korting ?></td>
                 <td>
-                    <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $ond->id ?>"></button>
-                    <button class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $ond->id ?>"></button>  
+                    <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $ond->id ?>"></button>
+                    <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $ond->id ?>"></button>  
                 </td>
             </tr>
         <?php } ?>

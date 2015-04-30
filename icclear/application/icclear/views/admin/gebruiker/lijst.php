@@ -1,3 +1,10 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.table').DataTable();        
+    });
+    
+</script>
+
 <div class="table-responsive">
     <table class="table table-beheer">
         <thead>
@@ -24,8 +31,8 @@
                     <?php } ?>
                     <td>
                         <p>                                        
-                            <button class="wijzigGebruiker glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebruiker->id ?>"></button>
-                            <button class="verwijderGebruiker glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button> 
+                            <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigGebruiker glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebruiker->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderGebruiker glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button> 
                         </p>                                 
                     </td>
                 </tr>

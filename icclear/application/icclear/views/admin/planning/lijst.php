@@ -32,8 +32,8 @@
                     ?>
                     <td>
                         <p>                                        
-                            <button class="wijzigPlanning glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $planning->id ?>"></button>
-                            <button class="verwijderPlanning glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $planning->id ?>"></button> 
+                            <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigPlanning glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $planning->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderPlanning glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $planning->id ?>"></button> 
                         </p>                                 
                     </td>
                 </tr>

@@ -19,8 +19,8 @@
                 <td><?php echo $hotel->gemeente ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigHotel glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $hotel->id ?>"></button>
-                        <button class="verwijderHotel glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $hotel->id ?>"></button> 
+                        <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigHotel glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $hotel->id ?>"></button>
+                        <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderHotel glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $hotel->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

@@ -31,8 +31,8 @@
                     <td> <?php echo $sponsor->nummer; ?> </td>
                     <td>
                         <p>
-                            <button class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
-                            <button class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
                         </p>
                     </td>
                 </tr>
@@ -70,8 +70,8 @@
                     <td> <?php echo $sponsor->nummer; ?> </td>
                     <td>
                         <p>
-                            <button class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
-                            <button class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigSponsor glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sponsor->id ?>"></button>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderSponsor glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $sponsor->id ?>"></button>
                         </p>
                     </td>
                 </tr>

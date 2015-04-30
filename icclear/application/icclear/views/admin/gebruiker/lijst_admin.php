@@ -21,8 +21,8 @@
                 <td><?php echo $admin->emailadres ?></td>
                 <td>
                     <p>                                        
-                        <button class="wijzigAdmin glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $admin->id ?>"></button>
-                        <button class="verwijderAdmin glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $admin->id ?>"></button> 
+                        <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigAdmin glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $admin->id ?>"></button>
+                        <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderAdmin glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $admin->id ?>"></button> 
                     </p>                                 
                 </td>
             </tr>

@@ -18,8 +18,8 @@
                 <td><?php echo $route->vertrekPunt ?></td>
                 <td><?php echo $route->gebouw->naam ?></td>
                 <td>
-                    <button class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $route->id ?>"></button>
-                    <button class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $route->id ?>"></button>                                 
+                    <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $route->id ?>"></button>
+                    <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $route->id ?>"></button>                                 
                 </td>
             </tr>
         <?php } ?>
