@@ -306,6 +306,16 @@ button:focus {
     border-bottom: solid 1px;
 }
 
+.link-icon
+{
+    border-bottom: none;
+}
+
+.link-icon:hover
+{
+    border-bottom: none;
+}
+
 
 //// TABELLEN BREEDTES
 
