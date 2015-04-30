@@ -27,14 +27,14 @@
         });
 
         $(".toonSpreker").click(function () {
-            var iddb = $(this).data("bid");
-            $("#bid").val(iddb);
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
                     url: site_url + "/spreker/detail",
                     async: false,
-                    data: {bid: iddb},
+                    data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").html(jobject.voornaam);
