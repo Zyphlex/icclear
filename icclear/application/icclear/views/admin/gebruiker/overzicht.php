@@ -149,8 +149,9 @@
         });
 
         //Verzenden in de Email modal
-        $(".verstuurEmail").click(function () {
-            $("#Loading").show();
+        $(".verstuurEmail").click(function () {            
+        $("#Loading").removeClass("hidden");     
+        $("#Loading").addClass("show");
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -160,8 +161,9 @@
                 dataType: "json"
             });
             refreshData();
-            $("#gebruikerEmail").modal('hide');
-            $("#Loading").hide();
+        $("#Loading").removeClass("show");
+        $("#Loading").addClass("hidden");    
+        $("#gebruikerEmail").modal('hide');            
         });
 
     });
