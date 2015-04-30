@@ -75,10 +75,12 @@ class Aankondiging extends CI_Controller {
     }
 
     public function update() {
+        $user = $this->authex->getUserInfo();
+        
         $aankondiging->id = htmlentities($this->input->post('id'));
         $aankondiging->titel = htmlentities($this->input->post('titel'));
         $aankondiging->inhoud = htmlentities($this->input->post('inhoud'));
-        $aankondiging->gepostDoor = htmlentities($this->input->post('gepostDoor'));
+        $aankondiging->gepostDoor = htmlentities($user->id);
         $aankondiging->conferentieId = htmlentities($this->session->userdata('conferentieId'));
 
         $this->load->model('aankondiging_model');
