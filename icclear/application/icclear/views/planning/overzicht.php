@@ -96,8 +96,8 @@
                             <thead>
                                 <tr>
                                     <th class="w20">Tijdstip</th>
-                                    <th class="w65">Onderwerp</th>                                                                                                                
-                                    <th class="w15">Spreker</th>
+                                    <th class="w60">Onderwerp</th>                                                                                                                
+                                    <th class="w20">Spreker</th>
                                 </tr>
                             </thead>  
                             <tbody>            
@@ -136,8 +136,8 @@
                     <thead>
                         <tr>
                             <th class="w20">Naam</th>
-                            <th class="65">Omschrijving</th>
-                            <th class="15">Prijs</th>
+                            <th class="w60">Omschrijving</th>
+                            <th class="w20">Prijs</th>
                         </tr>
                     </thead>  
                     <tbody>            
