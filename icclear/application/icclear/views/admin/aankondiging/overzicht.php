@@ -36,9 +36,10 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
-                        $("#inhoud").val(jobject.inhoud);
+                        $("#inhoud").html(jobject.inhoud);
                         $("#gepostDoor").val(jobject.gepostDoor);
                     }
                 });
