@@ -76,6 +76,7 @@
 
     function maakMailClick() {
         $(".emailGebruiker").click(function () {
+            $("#Loading").show();
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
