@@ -172,10 +172,11 @@
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
-                    
-                    <div class="col-sm-12">
-                        <h3>Omschrijving:</h3> 
-                        <p id="omschrijving"></p> 
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Omschrijving:</h3> 
+                            <p id="omschrijving"></p> 
+                        </div>
                     </div>
                 </form>
 
@@ -199,12 +200,12 @@
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <div class="row">
-                    <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
+                        <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
 
-                    <div class="col-sm-8">
-                        <h3>Biografie:</h3> 
-                        <p id="biografie"></p> 
-                    </div>
+                        <div class="col-sm-8">
+                            <h3>Biografie:</h3> 
+                            <p id="biografie"></p> 
+                        </div>
                     </div>
                 </form>
 
