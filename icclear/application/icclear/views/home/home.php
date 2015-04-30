@@ -34,9 +34,9 @@ $( document ).ready(function() {
 
 <div class="row">
     <div class="col-sm-12">
-    <?php foreach ($aankondigingen as $aankondiging){ ?>
-        <div class="panel panel-default nieuws-item">          
-            <div class="col-sm-4">
+    <?php foreach ($aankondigingen as $aankondiging){ ?>          
+        <div class="col-sm-4">
+            <div class="panel panel-default nieuws-item">
             <span class="panel-body">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
