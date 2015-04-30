@@ -115,7 +115,7 @@
         maakMailClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
-
+        $("#Loading").hide();
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanGebruiker").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
