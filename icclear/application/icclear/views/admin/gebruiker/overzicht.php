@@ -103,13 +103,13 @@
                     }
                 });
             }
-            // dialoogvenster openen
-            $("#Loading").hide(); 
+            // dialoogvenster openen            
             $("#gebruikerEmail").modal('show');
         });
     }
     
     $(document).ready(function () {
+        $("#Loading").hide(); 
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
