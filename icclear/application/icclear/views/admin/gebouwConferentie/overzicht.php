@@ -33,7 +33,7 @@
                             foreach ($gebouwen as $gebouw) {
                                 $options[$gebouw->id] = $gebouw->naam;
                             }
-                            echo form_dropdown('gebouw', $options, 0, 'class="form-control"');
+                            echo form_dropdown('gebouw' . $i, $options, 0, 'class="form-control"');
                             ?>
                         </td>
                     </tr>
