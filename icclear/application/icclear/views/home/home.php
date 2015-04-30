@@ -32,13 +32,21 @@ $( document ).ready(function() {
 
 <br/><br/>
 
-<div class="row clearfix">
+<div class="row">
+    <?php $teller = 3; ?>
     <?php foreach ($aankondigingen as $aankondiging){ ?>
+        <?php if ($teller != 3) { ?>
         <div class="panel panel-default nieuws-item col-xs-4">            
             <span class="panel-body">
-                <h1 class="underline"><?php echo $aankondiging->titel; ?></h1>
+                <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
             </span>
         </div>
+        <?php $teller++; ?>
+        <?php } else { ?>
+            <?php $teller = 0; ?>
+            </div>
+            <div class="row">
+        <?php } ?>
     <?php } ?>
 </div>
