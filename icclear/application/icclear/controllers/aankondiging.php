@@ -79,7 +79,7 @@ class Aankondiging extends CI_Controller {
         $aankondiging->titel = htmlentities($this->input->post('titel'));
         $aankondiging->inhoud = htmlentities($this->input->post('inhoud'));
         $aankondiging->gepostDoor = htmlentities($this->input->post('gepostDoor'));
-        $aankondiging->conferentieId = htmlentities($this->input->post('conferentieId'));
+        $aankondiging->conferentieId = htmlentities($this->session->userdata('conferentieId'));
 
         $this->load->model('aankondiging_model');
         if ($aankondiging->id == 0) {
