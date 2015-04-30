@@ -37,8 +37,7 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#voornaam").html(jobject.voornaam);
-                        $("#familienaam").html(jobject.familienaam);
+                        $("#naam").html(jobject.voornaam + " " + jobject.familienaam);
                         
                         if (jobject.foto == null) {
                             $("#foto").attr("src", jobject.url + "default.jpg");
@@ -51,8 +50,7 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#voornaam").val("");
-                $("#familienaam").val("");
+                $("#naam").val("");
                 $("#foto").val("");
                 $("#biografie").val("");
             }
@@ -204,10 +202,10 @@
                     <div class="col-sm-4"><img id="foto" src="" width="100px" height="85px;"></div>
 
                     <div class="col-sm-8">
-                        <p><b>Naam:</b></p> 
-                        <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
+                        <h3>Naam:</h3> 
+                        <p id="naam"></p> 
 
-                        <p><b>Biografie:</b></p> 
+                        <h3>Biografie:</h3> 
                         <p id="biografie"></p> 
                     </div>
                     </div>
