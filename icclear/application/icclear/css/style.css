@@ -19,7 +19,7 @@
 
 }
 .hidden {
-    visibility: hidden;
+    display: none;
 }
 
 .fileUpload {
