@@ -95,8 +95,8 @@
                         <table class = "table">
                             <thead>
                                 <tr>
-                                    <th class="w20">Tijdstip</th>
-                                    <th class="w60">Onderwerp</th>                                                                                                                
+                                    <th class="w15">Tijdstip</th>
+                                    <th class="w65">Onderwerp</th>                                                                                                                
                                     <th class="w20">Spreker</th>
                                 </tr>
                             </thead>  
@@ -135,8 +135,8 @@
                 <table class = "table">
                     <thead>
                         <tr>
-                            <th class="w20">Naam</th>
-                            <th class="w60">Omschrijving</th>
+                            <th class="w15">Naam</th>
+                            <th class="w65">Omschrijving</th>
                             <th class="w20">Prijs</th>
                         </tr>
                     </thead>  
