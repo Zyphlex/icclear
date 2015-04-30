@@ -299,6 +299,10 @@ button:focus {
     margin-bottom:50px;
 }
 
+.space-bottom20 {
+    margin-bottom:20px;
+}
+
 .under-link td a
 {
     text-decoration-line:underline;
