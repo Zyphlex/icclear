@@ -39,7 +39,14 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").html(jobject.voornaam);
                         $("#familienaam").html(jobject.familienaam);
-                        $("#foto").html(jobject.foto);
+                        if (jobject.foto == null) {
+                            $("#foto").html(<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>);
+                        }
+                        else
+                        {
+                            $("#foto").html(<?php echo base_url() . 'application/upload/fotos/sprekers/'; ?> + jobject.foto)
+                        }
+
                         $("#biografie").html(jobject.biografie);
                     }
                 });
@@ -196,7 +203,7 @@
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <p><b>Foto:</b></p>
                     <p><img src="https://subversion.khk.be/projecten/TI1415project23/icclear/application/upload/default.jpg" width="100px" height="85px;"></p>
-                    
+
                     <p><b>Naam:</b></p> 
                     <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
 
