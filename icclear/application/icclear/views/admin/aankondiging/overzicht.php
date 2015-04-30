@@ -36,7 +36,6 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
                         $("textarea[name=inhoud]").html(jobject.inhoud);
