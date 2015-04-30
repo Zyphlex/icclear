@@ -33,7 +33,7 @@
             <div class="logon">
                 <p>
                     <span class="">
-                        <a class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
+                        <a data-target="#" class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
                             <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
