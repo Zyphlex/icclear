@@ -267,6 +267,10 @@ button:focus {
     cursor:pointer;
 }
 
+.label-ic {
+    background-color: #b60717;
+}
+
 .label {
   padding: .6em .2em .6em .3em;
   font-weight: normal;
