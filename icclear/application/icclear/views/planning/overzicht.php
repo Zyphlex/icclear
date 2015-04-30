@@ -165,18 +165,18 @@
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Sessieonderwerp</h4>
+                <h4 class="modal-title" id="onderwerp"></h4>
             </div>
 
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
-                    <p><b>Onderwerp:</b></p> 
-                    <p><span id="onderwerp"></span></p> 
-
-                    <p><b>Omschrijving:</b></p> 
-                    <p><span id="omschrijving"></span></p> 
+                    
+                    <div class="col-sm-8">
+                    <3>Omschrijving:</3> 
+                    <p id="omschrijving"></p> 
+                    </div>
                 </form>
 
             </div>
@@ -191,7 +191,7 @@
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Spreker</h4>
+                <h4 id="naam" class="modal-title"></h4>
             </div>
 
             <div class="modal-body">                  
@@ -202,9 +202,6 @@
                     <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
 
                     <div class="col-sm-8">
-                        <h3>Naam:</h3> 
-                        <p id="naam"></p> 
-
                         <h3>Biografie:</h3> 
                         <p id="biografie"></p> 
                     </div>
