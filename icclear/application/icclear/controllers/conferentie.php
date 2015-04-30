@@ -154,6 +154,7 @@ class Conferentie extends CI_Controller {
         $onderdeel->prijs = htmlentities($this->input->post('prijs'));
         $onderdeel->korting = htmlentities($this->input->post('korting'));
 
+        //toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('conferentie_onderdeel_model');
         if ($onderdeel->id == 0) {
             $id = $this->conferentie_onderdeel_model->insert($onderdeel);
@@ -168,13 +169,14 @@ class Conferentie extends CI_Controller {
     public function getDatumsConferentie($begindatum, $einddatum) {
         $datums = array();
 
+        //Datums in formaat dd/mm/jjjj zetten
         $startDatum = mktime(1, 0, 0, substr($begindatum, 5, 2), substr($begindatum, 8, 2), substr($begindatum, 0, 4));
         $stopDatum = mktime(1, 0, 0, substr($einddatum, 5, 2), substr($einddatum, 8, 2), substr($einddatum, 0, 4));
 
         if ($stopDatum >= $startDatum) {
-            array_push($datums, date('Y-m-d', $startDatum)); // first entry
+            array_push($datums, date('Y-m-d', $startDatum)); // Eerste invoer
             while ($startDatum < $stopDatum) {
-                $startDatum+=86400; // add 24 hours
+                $startDatum+=86400; // 24 uur er bij doen
                 
                 array_push($datums, date('Y-m-d', $startDatum));
             }
