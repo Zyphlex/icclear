@@ -65,8 +65,7 @@ class Email extends CI_Controller {
         
         $onderwerp = $this->input->post('onderwerps');
         $inhoud = $this->input->post('boodsschap');
-        
-        $this->email->subject($onderwerp);
+                
         $this->email->message($inhoud);
 
         if ($id == 0) {
@@ -74,12 +73,14 @@ class Email extends CI_Controller {
                 $ontvanger = $g->emailadres;
                 $this->email->from('donotreply@thomasmore.be');
                 $this->email->to($ontvanger);
+                $this->email->subject($onderwerp);
                 $this->email->send();
             }
         } else {
             $ontvanger = $this->input->post('email');
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($ontvanger);
+            $this->email->subject($onderwerp);
             $this->email->send();
         }
                
