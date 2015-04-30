@@ -8,7 +8,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/sessies/detail",
+                    url: site_url + "/programma/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
