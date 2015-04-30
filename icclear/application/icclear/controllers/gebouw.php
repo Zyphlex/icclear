@@ -136,8 +136,8 @@ class Gebouw extends CI_Controller {
         }
         
         //Naar dashboard van juiste conferentie gaan
-        $conferentieId = $this->input->post('conferentieId');
-        redirect('admin/dashboard/' . $conferentieId);
+        $id = $this->input->post('conferentieId');
+        redirect('admin/dashboard/' . $id);
     }
 
 }
