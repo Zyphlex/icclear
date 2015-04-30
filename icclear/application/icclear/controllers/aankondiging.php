@@ -36,6 +36,9 @@ class Aankondiging extends CI_Controller {
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model->getAllPerConferentie($this->session->userdata('conferentieId'));
 
+        $this->load->model('aankondiging_model');
+        $data['admins'] = $this->gebruiker_model->getAllAdmins();
+        
         $data['title'] = 'IC Clear - aankondigingen';
         $data['active'] = 'admin';
 
