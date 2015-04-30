@@ -38,6 +38,7 @@ class Gebouw extends CI_Controller {
 
         $data['gebouwen'] = $this->gebouw_model->getAll();
 
+        //Actieve conferentie ophalen
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -69,6 +70,7 @@ class Gebouw extends CI_Controller {
         $gebouw->straat = $this->input->post('straat');
         $gebouw->nummer = $this->input->post('nummer');
 
+        //gebouw toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('gebouw_model');
         if ($gebouw->id == 0) {
             $id = $this->gebouw_model->insert($gebouw);
