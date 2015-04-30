@@ -195,7 +195,7 @@
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <p><b>Foto:</b></p>
-                    <p><img src="https://subversion.khk.be/projecten/TI1415project23/icclear/application/upload/default.jpg" width="200px" height="185px;"></p>
+                    <p><img src="https://subversion.khk.be/projecten/TI1415project23/icclear/application/upload/default.jpg" width="100px" height="85px;"></p>
                     
                     <p><b>Naam:</b></p> 
                     <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
