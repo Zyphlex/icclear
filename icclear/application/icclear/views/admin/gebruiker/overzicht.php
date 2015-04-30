@@ -93,9 +93,7 @@
             }else{
                 $.ajax({                   
                     success: function () {                        
-                        $("#ontvanger").val("Alle gebruikers");                                             
-                        $("#onderwerp").val("");
-                        $("#boodschap").val("");
+                        $("#ontvanger").val("Alle gebruikers");                                                                     
                         $("#email").val(0);
                     }
                 });
