@@ -299,6 +299,7 @@ button:focus {
 .under-link td a
 {
     text-decoration-line:underline;
+    text-decoration-style: dotted;
 }
 
 .toonItem:hover, .toonSpreker:hover
