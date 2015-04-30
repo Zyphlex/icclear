@@ -21,7 +21,7 @@
             <div class="dropdown logon">Welkom, 
                 <a data-toggle="dropdown">
                     <span class="login-user"><?php echo strtoupper($user->voornaam)?></span>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">                                        
                     <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
@@ -33,7 +33,7 @@
             <div class="dropdown logon">
                 <a class="dropdown-toggle" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam) ?></span>
-                    <span class="caret"></span>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                     ...
