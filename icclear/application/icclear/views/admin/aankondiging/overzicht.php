@@ -40,14 +40,12 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
                         $("textarea[name=inhoud]").html(jobject.inhoud);
-                        $("#gepostDoor").val(jobject.gepostDoor);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#titel").val("");
                 $("textarea[name=inhoud]").html("");
-                $("#gepostDoor").val("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
@@ -131,16 +129,6 @@
 
                     <p><?php echo form_label('Inhoud:', 'inhoud'); ?></p>
                     <p><?php echo form_textarea(array('name' => 'inhoud', 'id' => 'inhoud', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
-
-                    <p><?php echo form_label('Gepost door:', 'gepostDoor'); ?></p>
-                    <p><?php
-                        $options = array();
-                        foreach ($admins as $admin) {
-                            $options[$admin->id] = $admin->voornaam . " " . $admin->familienaam;
-                        }
-                        echo form_dropdown('gepostDoor', $options, '', 'id="gepostDoor" class="form-control"');
-                        ?>
-                    </p>
 
                 </form>
 
