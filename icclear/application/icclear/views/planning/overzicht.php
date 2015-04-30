@@ -38,7 +38,6 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").html(jobject.voornaam + " " + jobject.familienaam);
-                        alert(result);
                         
                         if (jobject.foto == "") {
                             $("#foto").attr("src", jobject.url + "default.jpg");
