@@ -144,7 +144,7 @@ class Spreker extends CI_Controller {
     }
     
     public function detail() {
-        $id = $this->input->get('bid');
+        $id = $this->input->get('id');
 
         $this->load->model('gebruiker_model');
         $spreker = $this->gebruiker_model->getSpreker($id);
