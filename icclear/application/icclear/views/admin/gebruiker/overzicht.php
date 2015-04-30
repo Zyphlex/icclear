@@ -150,6 +150,7 @@
 
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {
+            $("#Loading").show();
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -160,6 +161,7 @@
             });
             refreshData();
             $("#gebruikerEmail").modal('hide');
+            $("#Loading").hide();
         });
 
     });
