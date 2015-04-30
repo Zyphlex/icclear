@@ -298,7 +298,7 @@ button:focus {
 
 .toonItem, .toonSpreker
 {
-    text-decoration: underline dotted;
+    text-decoration-line:underline;
 }
 
 .toonItem:hover, .toonSpreker:hover
