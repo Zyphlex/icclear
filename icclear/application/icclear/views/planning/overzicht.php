@@ -109,7 +109,7 @@
                                 
                                         <tr class="under-link">
                                             <td>
-                                                <p class="label label-info">
+                                                <p class="label label-warning">
                                                 <span aria-hidden="true" class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?>
                                                 </p>
                                             </td> 
