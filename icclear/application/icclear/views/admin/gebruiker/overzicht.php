@@ -84,13 +84,17 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
-                        $("#email").val(jobject.emailadres);                      
+                        $("#email").val(jobject.emailadres);
+                        $("#onderwerp").val("");
+                        $("#boodschap").val("");
                     }
                 });
             }else{
                 $.ajax({                   
                     success: function () {                        
-                        $("#ontvanger").val("Alle gebruikers");                                                                     
+                        $("#ontvanger").val("Alle gebruikers");                                             
+                        $("#onderwerp").val("");
+                        $("#boodschap").val("");
                         $("#email").val(0);
                     }
                 });
