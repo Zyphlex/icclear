@@ -420,7 +420,7 @@
 
 
             <div class="modal-footer">                
-                <span id="Loading">Verzenden... <img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>
+                <span id="Loading" class="hidden">Verzenden... <img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>
                 <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
