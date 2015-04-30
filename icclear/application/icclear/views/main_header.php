@@ -8,9 +8,9 @@
     <div class="col-md-4 logon">
         <p>
             <span class="">
-                <a href="#" data-toggle="modal" data-target="#myModal">Aanmelden</a> 
+                <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                 / 
-                <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#myModal1">Registreer</a>
+                <a href="<?php echo base_url(); ?>icclear.php/logon/register" data-toggle="modal" data-target="#registreerModal">Registreer</a>
             </span>
         </p>
     </div>
@@ -49,8 +49,8 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- Modal Inloggen -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             
@@ -76,11 +76,11 @@
 
 
                 <div class="col-sm-8 col-sm-offset-4">  
-                    <a href="<?php echo base_url(); ?>icclear.php/logon/vergeten" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Wachtwoord vergeten?</a>
+                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#vergetenModal">Wachtwoord vergeten?</a>
                 </div>
 
 
-                <div class="col-xs-12 margin-top">
+                <div class="col-xs-12 margin-top space-bottom">
                     <div class="btn-group btn-block">
                         <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
                         <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
@@ -94,10 +94,24 @@
     </div>
 </div>
 
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog"><div class="modal-content"></div></div>
+<!-- Modal Registreren -->
+<div class="modal fade" id="registreerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            
+            
+        </div>            
+    </div>
 </div>
 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog"><div class="modal-content"></div></div>
+<!-- Modal wachtwoord vergeten -->
+<div class="modal fade" id="vergetenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            
+            
+        </div>            
+    </div>
 </div>
