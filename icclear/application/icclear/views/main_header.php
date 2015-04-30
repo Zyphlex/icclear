@@ -17,8 +17,8 @@
     
 <?php } else {  // wel aangemeld ?>
     
-    <div class="col-md-4 logon">
-            <div class="dropdown">Welkom, 
+    <div class="col-md-4">
+            <div class="dropdown logon">Welkom, 
                 <a data-toggle="dropdown">
                     <span class="login-user"><?php echo strtoupper($user->voornaam) ?></span>
                     <span class="caret"></span>
@@ -30,11 +30,11 @@
                 </ul>
             </div>
         
-            <div class="">
-                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="logon">
+                <a id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown trigger
                     <span class="caret"></span>
-                </button>
+                </a>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                     ...
                 </ul>
