@@ -199,7 +199,7 @@
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <div class="row">
-                    <div class="col-sm-4"><img width="100%" id="foto" src=""></div>
+                    <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
 
                     <div class="col-sm-8">
                         <h3>Naam:</h3> 
