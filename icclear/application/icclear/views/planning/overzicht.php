@@ -109,9 +109,9 @@
                                 
                                         <tr class="under-link">
                                             <td>
-                                                <p class="label label-warning">
+                                                <span class="label label-warning">
                                                 <span aria-hidden="true" class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?>
-                                                </p>
+                                                </span>
                                             </td> 
                                             <td><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                             <td><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"> <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
