@@ -131,7 +131,7 @@ class Gebouw extends CI_Controller {
         $aantal = $this->input->post('aantal');
         for ($i=1; $i<=$aantal; $i++){
             $conferentiedag->id = $this->input->post('id' . $i);
-            $conferentiedag->gebouwId = $this->input->post('gebouw');
+            $conferentiedag->gebouwId = $this->input->post('gebouw' . $i);
             
             $this->conferentiedag_model->update($conferentiedag);
         }
