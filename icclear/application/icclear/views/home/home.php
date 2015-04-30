@@ -18,12 +18,12 @@ $( document ).ready(function() {
 </div>
 
 <div class="row">
-    <div class="col-xs-8">
+    <div class="col-sm-8">
         <h2>Wat is IC Clear?</h2>
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
-    <div class="col-sm-4">
+    <div class="col-xs-4">
         <div class="thumbnail">
             <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
         </div>
