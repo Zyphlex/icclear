@@ -200,13 +200,15 @@
 
                 <form id="JqAjaxForm">                     
                     <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
-                    <img class="left" id="foto" src="" width="100px" height="85px;">
+                    <div class="col-sm-5"><img id="foto" src="" width="100px" height="85px;"></div>
 
-                    <p><b>Naam:</b></p> 
-                    <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
+                    <div class="col-sm-7">
+                        <p><b>Naam:</b></p> 
+                        <p><span id="voornaam"></span> <span id="familienaam"></span></p> 
 
-                    <p><b>Biografie:</b></p> 
-                    <p><span id="biografie"></span></p> 
+                        <p><b>Biografie:</b></p> 
+                        <p id="biografie"></p> 
+                    </div>
                 </form>
 
             </div>
