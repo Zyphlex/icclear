@@ -126,6 +126,10 @@
             $("#email").select(function(){
         alert('hallo');        
     });
+    
+    $("#voornaam").select(function(){
+        alert('hallo');        
+    });
             
         $("#password2").keyup(validate);
         $('#email').keyup(function() {
