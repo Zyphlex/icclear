@@ -46,7 +46,7 @@ function finishAjax(id, response) {
                 $("#familienaamdiv").removeClass("has-error");
                 $("#familienaamdiv").addClass("has-success");
             }
-            if (($("#email").val() == "") || $("#email").empty()) {
+            if (($("#email").val() == "") || $("#email").empty() || emailCheck() == false) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
