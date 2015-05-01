@@ -123,7 +123,7 @@
             }
             return ok;
         }
-            $("#email").hover(function(){
+            $("#email").select(function(){
         alert('hallo');        
     });
             
