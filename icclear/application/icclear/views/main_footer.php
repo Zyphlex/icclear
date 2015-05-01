@@ -20,4 +20,3 @@
 </div>
 
  
-<script src="<?php echo base_url() . APPPATH; ?>js/script.js"></script>
