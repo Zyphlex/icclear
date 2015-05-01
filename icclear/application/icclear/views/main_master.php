@@ -96,7 +96,7 @@
 
         $("#mySubmit").click(function(e) {
             e.preventDefault();
-            dubbelCheck();
+            realCheck();
             if (validatieOK() && validate() && emailCheck()) {
                 $("#myForm").submit();
             }
@@ -113,7 +113,7 @@
             return ok;
         }
 
-        function dubbelCheck() {
+        function realCheck() {
             if ($('#email').val() == '') {
                 $('#Loading').hide();
                 $("#feedbackemail").html("");
