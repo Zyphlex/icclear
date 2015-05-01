@@ -81,7 +81,7 @@
                 $("#familienaamdiv").removeClass("has-error");
                 $("#familienaamdiv").addClass("has-success");
             }
-            if ($("#email").val() == "") {
+            if (($("#email").val() == "") || $("#email").empty()) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
