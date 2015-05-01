@@ -125,7 +125,7 @@
         }
             $("#email").hover(function(){
         alert('hallo');        
-        );
+    });
             
         $("#password2").keyup(validate);
         $('#email').keyup(function() {
