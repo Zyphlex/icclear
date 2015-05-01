@@ -36,7 +36,7 @@ $( document ).ready(function() {
     <?php foreach ($aankondigingen as $aankondiging){ ?>  
         <div class="col-sm-4 col-xs-12">    
             <div class="panel panel-default">    
-            <div class="nieuws-item">
+            <div class="equalizer nieuws-item">
                 <h1><?php echo $aankondiging->titel; ?></h1>
                 <p><?php echo $aankondiging->inhoud; ?></p>
             </div>
