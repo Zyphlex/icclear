@@ -1,3 +1,127 @@
+<script>
+function finishAjax(id, response) {
+        $('#' + id).html(unescape(response));
+        $('#' + id).fadeIn();
+    }
+    $(document).ready(function() {
+        var resu;
+        $('#Loading').hide();
+        function validatieOK() {
+            ok = true;
+            if ($("#password1").val() == "") {
+                $("#password1div").addClass("has-error");
+                $("#password1div").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#password1div").removeClass("has-error");
+                $("#password1div").addClass("has-success");
+            }
+            if ($("#password2").val() == "" || validate() == false) {
+                $("#password2div").addClass("has-error");
+                $("#password2div").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#password2div").removeClass("has-error");
+                $("#password2div").addClass("has-success");
+            }
+
+            if ($("#voornaam").val() == "") {
+                $("#voornaamdiv").addClass("has-error");
+                $("#voornaamdiv").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#voornaamdiv").removeClass("has-error");
+                $("#voornaamdiv").addClass("has-success");
+            }
+
+            if ($("#familienaam").val() == "") {
+                $("#familienaamdiv").addClass("has-error");
+                $("#familienaamdiv").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#familienaamdiv").removeClass("has-error");
+                $("#familienaamdiv").addClass("has-success");
+            }
+            if (($("#email").val() == "") || $("#email").empty()) {
+                $("#emaildiv").addClass("has-error");
+                $("#emaildiv").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#emaildiv").removeClass("has-error");
+                $("#emaildiv").addClass("has-success");
+            }
+
+            return ok;
+        }
+
+        $("#mySubmit").click(function(e) {
+            alert($("#email").val());
+            e.preventDefault();
+            realCheck();
+            if (validatieOK() && validate() && emailCheck()) {
+                $("#myForm").submit();
+            }
+
+        });
+        function emailCheck() {
+            ok = true;
+            if (resu == 0) {
+                ok = false;
+            }
+            else {
+                ok = true;
+            }
+            return ok;
+        }
+
+        function realCheck() {                            
+                var a = $("#email").val();
+                var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
+                if (filter.test(a)) {
+                    $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
+                        email: $('#email').val()
+                    }, function(response) {
+                        resu = response;
+                        $('#Loading').hide();
+                        if (response == 0) {
+                            $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                        }
+                        else {
+                            $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                        }
+                    }
+                    );
+                }            
+        }
+
+        function validate() {
+            ok = true;
+            var password1 = $("#password1").val();
+            var password2 = $("#password2").val();
+            if (password1 == password2) {
+                $("#validate-status").text("Correct");
+                $("#validate-status").removeClass("form-note-used");
+                $("#validate-status").addClass("form-note-ok");
+            }
+            else {
+                $("#validate-status").text("Incorrect");
+                $("#validate-status").removeClass("form-note-ok");
+                $("#validate-status").addClass("form-note-used");
+                ok = false;
+            }
+            return ok;
+        }
+
+        $("#password2").keyup(validate);
+               
+    });
+</script>
+
 
 <div class="row">
     <div class="col-sm-12 space-bottom">
