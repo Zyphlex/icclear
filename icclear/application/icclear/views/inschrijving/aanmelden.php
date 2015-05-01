@@ -1,4 +1,4 @@
-<script>
+<script language="javascript">
 function finishAjax(id, response) {
         $('#' + id).html(unescape(response));
         $('#' + id).fadeIn();
