@@ -159,36 +159,7 @@
         }
 
         $("#password2").keyup(validate);
-        $('#email').keyup(function() {
-            $('#Loading').show();
-            var a = $("#email").val();
-            var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-            // check if email is valid
-            if (filter.test(a)) {
-                // show loader                 
-                $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
-                    email: $('#email').val()
-                }, function(response) {
-                    resu = response;
-                    //#emailInfo is a span which will show you message
-                    $('#Loading').hide();
-                    if (response == 0) {
-                        $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                    }
-                    else {
-                        $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                    }
-                });
-                return false;
-            }
-
-            if ($('#email').val() == '') {
-                $('#Loading').hide();
-                $("#feedbackemail").html("");
-            }
-
-
-        });
+               
     });    
 </script>
 
