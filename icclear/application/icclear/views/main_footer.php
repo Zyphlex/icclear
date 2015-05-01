@@ -19,13 +19,5 @@
     </div>
 </div>
 
-<script type="text/javascript">   
-    $(function () {
-        $('[data-toggle="popover"]').popover();
-        $('body').tooltip({
-            selector: '*',
-            html: true
-        });
-
-    });
-</script>
+ 
+<script src="<?php echo base_url() . APPPATH; ?>js/script.js"></script>
