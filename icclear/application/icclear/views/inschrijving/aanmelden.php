@@ -196,7 +196,9 @@ function finishAjax(id, response) {
             <div class="row">
                 <div class=""> 
                     <div id="emaildiv">
-<!--                        <span id="Loading"><img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" /></span>-->
+<!--                        <span id="Loading">
+                            <img src="<?php echo base_url() . APPPATH; ?>img/default/loader.gif" alt="Ajax Indicator" />
+                        </span>-->
                         <div id="feedbackemail"></div>
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                         <div class="col-sm-8">   
