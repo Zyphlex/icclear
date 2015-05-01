@@ -123,7 +123,8 @@
             }
             return ok;
         }
-
+            $("#email").hover(alert('ja'));
+            
         $("#password2").keyup(validate);
         $('#email').keyup(function() {
             $('#Loading').show();
