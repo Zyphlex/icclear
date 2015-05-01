@@ -95,6 +95,7 @@
         }
 
         $("#mySubmit").click(function(e) {
+            alert($("#email").val());
             e.preventDefault();
             realCheck();
             if (validatieOK() && validate() && emailCheck()) {
@@ -113,11 +114,7 @@
             return ok;
         }
 
-        function realCheck() {
-            if ($('#email').val() == '') {
-                $('#Loading').hide();
-                $("#feedbackemail").html("");
-            } else {                
+        function realCheck() {                            
                 var a = $("#email").val();
                 var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                 if (filter.test(a)) {
@@ -134,11 +131,8 @@
                         }
                     }
                     );
-                }
-            }
+                }            
         }
-
-
 
         function validate() {
             ok = true;
