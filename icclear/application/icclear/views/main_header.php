@@ -79,8 +79,8 @@
         }
 
         function dubbelCheck() {
-            if ($('#email').val() == '') {
-                $('#Loading').hide();
+        $('#Loading').hide();   
+        if ($('#email').val() == '') {                
                 $("#feedbackemail").html("");
             } else {
                 $('#Loading').show();
