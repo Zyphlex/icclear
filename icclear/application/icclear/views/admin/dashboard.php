@@ -6,7 +6,7 @@
         <?php
         $attributes = array('name' => 'myform');
         if ($user == null) {
-            echo form_open('', $attributes);
+            echo form_open('admin/wijzigStatus', $attributes);
         }
         ?>        
 
