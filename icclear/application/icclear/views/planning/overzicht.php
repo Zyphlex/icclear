@@ -81,7 +81,7 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3 class="underline-full">Sessies</h3>        
+        <h2 class="underline-full">Sessies</h2>        
 
         <?php $teller = 0; foreach ($programma as $d) { $teller++; ?>
         <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
@@ -126,34 +126,30 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3>Activiteiten</h3>        
-        <div class="panel panel-default">
-            <div class="panel-body">   
-                <div class="table-responsive">
-                <table class = "table-condensed table">
-                    <thead>
+        <h2 class="underline">Activiteiten</h2>        
+        <p class="help-block">Deze activiteiten kunt u extra voor inschrijven. Deze zijn niet verplicht.</p>
+        <div class="table-responsive">
+            <table class = "table-condensed table">
+                <thead>
+                    <tr>
+                        <th class="w15">Naam</th>
+                        <th class="w65">Omschrijving</th>
+                        <th class="w20">Prijs</th>
+                    </tr>
+                </thead>  
+                <tbody>            
+                    <?php foreach ($activiteiten as $activiteit) { ?>
                         <tr>
-                            <th class="w15">Naam</th>
-                            <th class="w65">Omschrijving</th>
-                            <th class="w20">Prijs</th>
+                            <td><?php echo $activiteit->naam ?></td>
+                            <td><?php echo $activiteit->omschrijving ?></td>
+                            <td>&euro; <?php echo toKomma($activiteit->prijs) ?></td>
                         </tr>
-                    </thead>  
-                    <tbody>            
-                        <?php foreach ($activiteiten as $activiteit) { ?>
-                            <tr>
-                                <td><?php echo $activiteit->naam ?></td>
-                                <td><?php echo $activiteit->omschrijving ?></td>
-                                <td><?php echo toKomma($activiteit->prijs) ?> EUR</td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>         
-                </div>
-            </div>
-        </div>
+                    <?php } ?>
+                </tbody>
+            </table>       
 
-    </div>    
-</div>
+        </div>    
+    </div>
 
 
 <!-- MODAL VOOR DETAILS -->         
