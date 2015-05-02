@@ -18,7 +18,7 @@ $( document ).ready(function() {
 </div>
 
 <div class="row">
-    <div class="col-sm-12 "
+    <div class="col-sm-12 ">
     <h2 class="underline-full">Wat is IC Clear?</h2>
     </div>
     <div class="col-sm-8">
