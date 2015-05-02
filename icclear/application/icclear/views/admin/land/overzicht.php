@@ -8,8 +8,7 @@
                 maakDetailClick();
                 maakDeleteClick();
                 $('.table').DataTable({
-                    "aaSorting": [],
-                    "dom": '<"top"f>rt<"bottom"ilp><"clear">'
+                    "aaSorting": []
                 });
             }
         });
