@@ -81,18 +81,18 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3>Sessies</h3>        
-        <div class="panel panel-default">
-            <div class="panel-body">
+        <h3 class="underline">Sessies</h3>        
+        
                 <?php
                 $id = 0;
                 $counter = 1;
                 foreach ($planningen as $dag) {
-                    if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id) {
-                        echo "\n" . '<h4>Dag ' . $counter . '</h4>' . "\n";
-                        $counter++;
+                    if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id) { ?>
+                        <h4>Dag <?php echo $counter . " " . date('d',$dag->conferentiedag->datum); ?></h4>
+                        <?php $counter++;
                         ?>
-                        <table class = "table">
+                <div class="table-responsive space-bottom">
+                        <table class = "table-bordered table-condensed table">
                             <thead>
                                 <tr>
                                     <th class="w15">Tijdstip</th>
@@ -108,10 +108,10 @@
                                         ?>
                                 
                                         <tr class="under-link">
-                                            <td>
-                                                <span class="label label-info">
+                                            <td><p>
+                                                <span class="label label-warning">
                                                 <span aria-hidden="true" class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?>
-                                                </span>
+                                                </span></p>
                                             </td> 
                                             <td><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
                                             <td><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"> <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
@@ -122,22 +122,22 @@
                                 ?>
                             </tbody>
                         </table>   
-                        <br/>
+                </div>
                         <?php
                     }
                 }
                 ?>
             </div>
-        </div>
-    </div>    
+            
 </div>
 
 <div class='row'>
     <div class='col-md-12'>
         <h3>Activiteiten</h3>        
         <div class="panel panel-default">
-            <div class="panel-body">                
-                <table class = "table">
+            <div class="panel-body">   
+                <div class="table-responsive">
+                <table class = "table-condensed table">
                     <thead>
                         <tr>
                             <th class="w15">Naam</th>
@@ -155,7 +155,7 @@
                         <?php } ?>
                     </tbody>
                 </table>         
-
+                </div>
             </div>
         </div>
 
