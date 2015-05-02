@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/ajsny-bootstrap.css" />
     
     <link rel="icon" type="image/png" href="<?php echo base_url() . APPPATH; ?>img/default/favicon.png"/>
     
@@ -29,6 +30,7 @@
     <script src="<?php echo base_url() . APPPATH; ?>js/bootstrap.js"></script>
     <script src="<?php echo base_url() . APPPATH; ?>js/jquery.dataTables.js"></script>    
     <script src="<?php echo base_url() . APPPATH; ?>js/dataTables.bootstrap.js"></script>   
+    <script src="<?php echo base_url() . APPPATH; ?>js/jasny-bootstrap.min.js"></script>   
     <script src="<?php echo base_url() . APPPATH; ?>js/script.js"></script>
     
     <script type="text/javascript">
