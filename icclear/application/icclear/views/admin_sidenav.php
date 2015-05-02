@@ -4,17 +4,14 @@
         </div>
     </div>-->
 <div class="col-sm-2">    
-    <div class="navbar navbar-default navbar-fixed-top">
-        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+        
+        
+        
     </div>
-</div>
 
-    <div id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation" class="col-sm-2">  
-        <h4><span class="glyphicon glyphicon-th-large"></span> DASHBOARD</h4>                         
+
+<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas-sm" role="navigation">
+    <h4><span class="glyphicon glyphicon-th-large"></span> DASHBOARD</h4>                         
         <div class="panel panel-default">
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
@@ -54,7 +51,13 @@
                 </ul>
             </div>
         </div>
-        
-        
-        
-    </div>
+</nav>
+<div class="navbar navbar-default navbar-fixed-top">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+
+</div>
