@@ -3,11 +3,11 @@
     
     <p>
         <?php if ($conferentie->statusId == 1) { ?>
-                  <button disabled>Deze conferentie is al afgelopen</button>
+                  <button class="btn btn-primary disabled" disabled>Deze conferentie is al afgelopen</button>
             <?php } else if ($actieveconf->id != $conferentie->id) {
                   echo anchor('admin/wijzigStatus', 'Deze conferentie actief maken', 'class="btn btn-warning col-xs-6"'); 
                   } else { ?>
-                  <button disabled>Deze conferentie is al actief</button>
+                  <button class="btn btn-primary disabled" disabled>Deze conferentie is al actief</button>
             <?php }
         ?>
         
