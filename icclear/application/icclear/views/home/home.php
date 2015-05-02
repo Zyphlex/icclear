@@ -33,8 +33,8 @@ $( document ).ready(function() {
 <br/><br/>
 
 <div class="row">
-    <div class="underline-full col-xs-12">
-        <h2>Recent nieuws!</h2>
+    <div class="col-xs-12">
+        <h2 class="underline-full">Recent nieuws!</h2>
     </div>
     <?php foreach ($aankondigingen as $aankondiging){ ?>  
         <div class="col-sm-4 col-xs-12">    
