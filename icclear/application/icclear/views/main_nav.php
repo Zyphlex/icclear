@@ -21,7 +21,7 @@
                         <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/voorstel', 'WORDT SPREKER'); ?></li>
                     <?php } ?>
                     <?php if ($inschrijving == null){ ?>
-                    <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
+                        <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
                     <li <?php if ($active == 'venue'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUES/ROUTES'); ?></li>

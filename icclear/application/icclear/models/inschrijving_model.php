@@ -95,6 +95,18 @@ class Inschrijving_model extends CI_Model {
         $this->db->insert('inschrijving', $inschrijving);
         return $this->db->insert_id();
     }
+    
+    function IsGebruikerIngeschreven($id)
+    {
+        $this->load->model('conferentie_model');
+        $confId = $this->conferentie_model->getActieveConferentie();        
+        
+        $this->db->where('gebruikerId', $id);
+        $this->db->where('conferentieId', $confId);
+        $query = $this->db->get('inschrijving');        
+        $inschrijving = $query->row();
+        return $inschrijving;
+    }
 
 }
 
