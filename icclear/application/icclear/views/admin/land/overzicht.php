@@ -7,6 +7,11 @@
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
+                $('.table').DataTable({
+                    "aaSorting": [],
+                    "iDisplayLength": 5
+
+                });
             }
         });
     }

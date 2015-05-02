@@ -1,9 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.table').DataTable();
-    });
-</script>
-
 <table class="table table-responsive table-beheer">
     <thead>
         <tr>                                
