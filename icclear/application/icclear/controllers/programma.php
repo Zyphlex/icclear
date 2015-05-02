@@ -29,17 +29,10 @@ class Programma extends CI_Controller {
         }
 
         $this->load->model('planning_model');
-        $data['planningen'] = $this->planning_model->getAllPlanningen();
         $data['programma'] = $this->planning_model->getOverzichtActieve();
-
-        $this->load->model('conferentie_model');
-        $data['actieveId'] = $this->conferentie_model->getActieveConferentie();
 
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getActiviteitenActieve();
-
-        $this->load->model('aankondiging_model');
-        $data['aankondigingen'] = $this->aankondiging_model->getAankondigingenActieve();
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();

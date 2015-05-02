@@ -83,54 +83,47 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3 class="underline">Sessies</h3>        
-        
-                <?php
-                $id = 0;
-                $counter = 1;
-                foreach ($planningen as $dag) {
-                    if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id) { ?>
-                        <h4>Dag <?php echo $counter . " " . date('D',$dag->conferentiedag->datum); ?></h4>
-                        <?php $counter++;
-                        ?>
-                <div class="table-responsive space-bottom">
-                        <table class = "table-hover table-condensed table">
-                            <thead>
-                                <tr>
-                                    <th class="w15">Tijdstip</th>
-                                    <th class="w65">Onderwerp</th>                                                                                                                
-                                    <th class="w20">Spreker</th>
-                                </tr>
-                            </thead>  
-                            <tbody>            
-                                <?php $id = $dag->conferentiedag->id; ?>                
-                                <?php
-                                foreach ($planningen as $planning) {
-                                    if ($dag->conferentiedag->id == $planning->conferentiedag->id && $planning->conferentiedag->conferentieId == $actieveId->id) {
-                                        ?>
-                                
-                                        <tr class="under-link">
-                                            <td><p>
-                                                <span class="label label-warning">
-                                                <span aria-hidden="true" class="glyphicon glyphicon-time"></span> <?php echo $planning->beginUur . ' - ' . $planning->eindUur ?>
-                                                </span></p>
-                                            </td> 
-                                            <td><a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $planning->sessie->id ?>"><span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $planning->sessie->onderwerp ?></a></td>                                    
-                                            <td><a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $planning->spreker->id ?>"> <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $planning->spreker->voornaam . ' ' . $planning->spreker->familienaam ?></a></td>
-                                        </tr> 
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </tbody>
-                        </table>   
-                </div>
-                        <?php
-                    }
-                }
-                ?>
+        <h3>Sessies</h3>        
+
+        <?php foreach ($programma as $d) { ?>
+        <h4>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
+            <div class="table-responsive space-bottom">
+                <table class = "table-hover table-condensed table">
+                    <thead>
+                        <tr>
+                            <th class="w15">Tijdstip</th>
+                            <th class="w65">Onderwerp</th>                                                                                                                
+                            <th class="w20">Spreker</th>
+                        </tr>
+                    </thead>  
+                    <tbody>                        
+                        <?php foreach ($d->programma as $p) { ?>                             
+                            <tr class="under-link">
+                                <td>
+                                    <p>
+                                        <span class="label label-warning">
+                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span><?php echo $p->beginUur . ' - ' . $p->eindUur ?>
+                                        </span>
+                                    </p>
+                                </td> 
+                                <td>
+                                    <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
+                                        <span class="glyphicon glyphicon-info-sign link-icon"></span><?php echo $p->sessie->onderwerp ?>
+                                    </a>
+                                </td>                                    
+                                <td>
+                                    <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->sessie->gebruikerIdSpreker ?>"> 
+                                        <span class="glyphicon glyphicon-user link-icon"></span><?php echo $p->sessie->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
+                                    </a>
+                                </td>
+                            </tr> 
+                        <?php } ?>
+                    </tbody>
+                </table>   
             </div>
-            
+        <?php } ?>
+        
+    </div>
 </div>
 
 <div class='row'>
@@ -228,47 +221,3 @@
 
 
 
-<div class='row'>
-    <div class='col-md-12'>
-        <h3 class="underline">Sessies</h3>        
-
-        <?php foreach ($programma as $d) { ?>
-        <h4>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
-            <div class="table-responsive space-bottom">
-                <table class = "table-hover table-condensed table">
-                    <thead>
-                        <tr>
-                            <th class="w15">Tijdstip</th>
-                            <th class="w65">Onderwerp</th>                                                                                                                
-                            <th class="w20">Spreker</th>
-                        </tr>
-                    </thead>  
-                    <tbody>                        
-                        <?php foreach ($d->programma as $p) { ?>                             
-                            <tr class="under-link">
-                                <td>
-                                    <p>
-                                        <span class="label label-warning">
-                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span><?php echo $p->beginUur . ' - ' . $p->eindUur ?>
-                                        </span>
-                                    </p>
-                                </td> 
-                                <td>
-                                    <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
-                                        <span class="glyphicon glyphicon-info-sign link-icon"></span><?php echo $p->sessie->onderwerp ?>
-                                    </a>
-                                </td>                                    
-                                <td>
-                                    <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->sessie->gebruikerIdSpreker ?>"> 
-                                        <span class="glyphicon glyphicon-user link-icon"></span><?php echo $p->sessie->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
-                                    </a>
-                                </td>
-                            </tr> 
-                        <?php } ?>
-                    </tbody>
-                </table>   
-            </div>
-        <?php } ?>
-    </div>
-
-</div>
