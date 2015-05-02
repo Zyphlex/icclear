@@ -11,12 +11,12 @@
                     <div class="panel-body">                        
                             <h4><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
                             <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
-                            <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
+                                <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
                                  alt="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
                                  title="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>"
                                  height="110">
                             <?php } else { ?>
-                            <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
+                                <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
                                  alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="110">
                             <?php } ?>
                         </div> 
