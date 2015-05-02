@@ -296,6 +296,7 @@ button:focus {
 .underline-full {
     display: block;
     border-bottom: solid 1px #e5e5e5;
+    margin-bottom: 25px;
 }
 
 .underline {
