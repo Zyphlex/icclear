@@ -121,7 +121,7 @@
                     <p><?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Spreker:', 'spreker'); ?></p>             
-                    <p><?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "text", "name" => "spreker")); ?></p>
+                    <p><?php echo form_input(array("disabled" => "true", "id"=>"spreker", "class" => "form-control", "type" => "text", "name" => "spreker")); ?></p>
                             
                     <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></td>
                     <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control', 'rows' => '5', 'cols' => '10')); ?></p>

@@ -20,7 +20,7 @@
                     <?php } else { ?>
                         <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/voorstel', 'WORDT SPREKER'); ?></li>
                     <?php } ?>
-                    <?php if ($inschrijving == null){ ?>
+                    <?php if ($inschrijving == null || $conferentie->beginDatum >= date('Y-m-d',strtotime('-1 month'))){ ?>
                         <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
