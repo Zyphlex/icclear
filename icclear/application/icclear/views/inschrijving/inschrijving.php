@@ -58,7 +58,7 @@ $attributes = array('name' => 'myform');
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
                     <tr>
                         <td><?php echo $activiteit->naam ?></td>
-                        <td><?php echo $activiteit->prijs ?></td>
+                        <td>&euro; <?php echo $activiteit->prijs ?></td>
                     
                         <td>
                            <div class="input-group">
