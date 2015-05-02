@@ -233,7 +233,7 @@
         <h3 class="underline">Sessies</h3>        
 
         <?php foreach ($programma as $d) { ?>
-        <p>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></p>
+        <h4>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
             <div class="table-responsive space-bottom">
                 <table class = "table-hover table-condensed table">
                     <thead>
@@ -249,7 +249,7 @@
                                 <td>
                                     <p>
                                         <span class="label label-warning">
-                                            <span aria-hidden="true" class="glyphicon glyphicon-time"><?php echo $p->beginUur . ' - ' . $p->eindUur ?></span>
+                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span>
                                         </span>
                                     </p>
                                 </td> 
