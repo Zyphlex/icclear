@@ -146,10 +146,11 @@
                         </tr>
                     <?php } ?>
                 </tbody>
-            </table>       
-
+            </table> 
         </div>    
+        
     </div>
+</div>
 
 
 <!-- MODAL VOOR DETAILS -->         
