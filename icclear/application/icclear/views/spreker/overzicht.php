@@ -12,8 +12,8 @@
                             <h4><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
                             <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
-                                 alt="<?php echo$p->spreker->familienaam . ' ' . $spreker->voornaam; ?>" 
-                                 title="<?php echo$p->spreker->familienaam . ' ' . $spreker->voornaam; ?>"
+                                 alt="<?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
+                                 title="<?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>"
                                  height="110">
                             <?php } else { ?>
                             <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
