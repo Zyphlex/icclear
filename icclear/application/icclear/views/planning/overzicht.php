@@ -100,18 +100,18 @@
                                 <td>
                                     <p>
                                         <span class="label label-warning">
-                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span><?php echo $p->beginUur . ' - ' . $p->eindUur ?>
+                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span> <?php echo $p->beginUur . ' - ' . $p->eindUur ?>
                                         </span>
                                     </p>
                                 </td> 
                                 <td>
                                     <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
-                                        <span class="glyphicon glyphicon-info-sign link-icon"></span><?php echo $p->sessie->onderwerp ?>
+                                        <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->sessie->onderwerp ?>
                                     </a>
                                 </td>                                    
                                 <td>
                                     <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->sessie->gebruikerIdSpreker ?>"> 
-                                        <span class="glyphicon glyphicon-user link-icon"></span><?php echo $p->sessie->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
+                                        <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $p->sessie->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
                                     </a>
                                 </td>
                             </tr> 
