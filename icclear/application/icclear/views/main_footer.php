@@ -37,18 +37,6 @@
         }).get(),
         maxHeight = Math.max.apply(null, heights);
         $(".equalizer").height(maxHeight);
-        
-        $('.table').DataTable({
-        "aaSorting": [],
-        "iDisplayLength": 5,
-        "dom": '<"top"i>rt<"bottom"flp><"clear">'
-    });
-    });
-        
-    
-    $('.table').DataTable({
-        "aaSorting": [],
-        "iDisplayLength": 5,
-        "dom": '<"top"i>rt<"bottom"flp><"clear">'
+                
     });
 </script>
