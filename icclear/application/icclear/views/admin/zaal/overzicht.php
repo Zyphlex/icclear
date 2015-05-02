@@ -133,7 +133,7 @@
                         $drop[$gebouw->id] = $gebouw->naam;
                     }
                     ?>
-                    <p><?php echo form_dropdown('gebouw', $drop, '', 'id="gebouw"'); ?></p>
+                    <p><?php echo form_dropdown('gebouw', $drop, '', 'id="gebouw" class="form-control"'); ?></p>
                     
                     <p><?php echo form_label('Max personen:', 'maximumAantalPersonen'); ?></p>
                     <p><?php echo form_input(array('name' => 'maximumAantalPersonen', 'id' => 'maximumAantalPersonen', 'class' => 'form-control')); ?></p>
