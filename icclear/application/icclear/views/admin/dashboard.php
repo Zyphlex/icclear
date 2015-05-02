@@ -18,7 +18,7 @@
             $options[$s->id] = $s->status;
         }
         ?>
-    <?php echo form_dropdown('status', $options, '', 'id="status" class="form-control"'); ?></p>
+    <?php echo form_dropdown('status', $options, $status->id, 'id="status" class="form-control"'); ?></p>
 
     <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary"'); ?>
     <?php echo form_close(); ?>
