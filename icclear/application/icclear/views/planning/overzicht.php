@@ -126,7 +126,7 @@
 
 <div class='row space-bottom'>
     <div class='col-md-12'>
-        <h2 class="underline-full">Activiteiten<span class="help-block">Deze activiteiten kunt u extra voor inschrijven. Ze zijn niet verplicht.</span></h2>        
+        <h2 class="underline-full">Activiteiten</h2>        
         
         <div class="table-responsive">
             <table class = "table-condensed table">
