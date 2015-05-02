@@ -233,6 +233,7 @@
         <h3 class="underline">Sessies</h3>        
 
         <?php foreach ($programma as $d) { ?>
+        <p>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></p>
             <div class="table-responsive space-bottom">
                 <table class = "table-hover table-condensed table">
                     <thead>
