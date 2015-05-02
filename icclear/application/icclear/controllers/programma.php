@@ -33,6 +33,7 @@ class Programma extends CI_Controller {
         $this->load->model('planning_model');
         $data['planningen'] = $this->planning_model->getAllPlanningen();
         $data['programma'] = $this->planning_model->getOverzichtActieve();
+        print_r($data['programma']);
 
         $this->load->model('conferentie_model');
         $data['actieveId'] = $this->conferentie_model->getActieveConferentie();
