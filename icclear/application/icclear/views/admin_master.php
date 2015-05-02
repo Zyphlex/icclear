@@ -20,7 +20,6 @@
     <meta charset="utf-8"> 
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/dataTables.bootstrap.css" />
     
