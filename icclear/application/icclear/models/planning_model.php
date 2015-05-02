@@ -105,8 +105,7 @@ class Planning_model extends CI_Model {
     
     function getOverzichtActieve() {           
         $this->load->model('conferentie_model');
-        $confId = $this->conferentie_model->getActieveConferentie();
-        $this->db->order_by('conferentiedagId, beginuur');    
+        $confId = $this->conferentie_model->getActieveConferentie(); 
         $this->db->where('conferentieId', $confId->id);
         $query = $this->db->get('conferentiedag');
         $dagen = $query->result();
