@@ -8,7 +8,8 @@
     <?php foreach ($sprekers as $p) { ?>    
         <div class="col-sm-3">
             <div class="equalizer panel panel-default">
-                    <div class="panel-body center-block">                        
+                    <div class="panel-body">      
+                        <div class="center-block">
                             <h4><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
                             <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
                                 <img src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
@@ -20,6 +21,7 @@
                                  alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="110" data-toggle="bottom">
                             <?php } ?>
                         </div> 
+                    </div>
             </div>  
         </div>
     <?php } ?>
