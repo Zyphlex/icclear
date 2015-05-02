@@ -63,9 +63,8 @@
 
 </script>
 
-<div class='row'>
+<div class='row underline'>
     <div class='col-md-12'>
-        <div class="underline">
         <h1>Programma overzicht - <?php echo $conferentie->naam . " " . "<span class='italic'>(" . toDDMMYYYY($conferentie->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) . ")</span>" ?></h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -77,7 +76,6 @@
             Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
         </p>       
         </div>
-    </div>
 </div>
 
 
