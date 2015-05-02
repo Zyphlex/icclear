@@ -88,7 +88,7 @@ class Admin extends CI_Controller {
         $conferentie->statusId = $this->input->post('status');
         
         $this->load->model('conferentie_model');        
-        $this->conferentie_model->insert($conferentie);
+        $this->conferentie_model->update($conferentie);
 
         
         redirect('admin/dashboard/' . $confId);
