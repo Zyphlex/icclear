@@ -2,7 +2,15 @@
     <h1>Conferentie <?php echo $conferentie->naam ?> beheren</h1>         
     
     <p>
-        <?php echo anchor('admin/wijzigStatus', 'Deze conferentie actief maken', 'class="btn btn-warning"'); ?>
+        <?php if ($conferentie->statusId == 1) { ?>
+                  <button disabled>Deze conferentie is al afgelopen</button>
+            <?php } else if ($actieveconf->id != $conferentie->id) {
+                  echo anchor('admin/wijzigStatus', 'Deze conferentie actief maken', 'class="btn btn-warning col-xs-6"'); 
+                  } else { ?>
+                  <button disabled>Deze conferentie is al actief</button>
+            <?php }
+        ?>
+        
         <p class="help-block">Als u dit doet, wordt de vorige actieve conferentie veranderd in <span class="italic">"afgelopen"</span></p>
     </p>
     

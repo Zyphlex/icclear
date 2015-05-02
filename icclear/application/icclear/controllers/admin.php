@@ -62,6 +62,7 @@ class Admin extends CI_Controller {
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->get($id);
         $data['conferentie'] = $conferentie;
+        $data['actieveconf'] = $this->conferentie_model->getActieveConferentie();
         
         $this->load->model('status_model');
         $data['status'] = $this->status_model->get($conferentie->statusId);
