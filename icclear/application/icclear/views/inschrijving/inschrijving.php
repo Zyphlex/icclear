@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="underline col-md-12">
+    <div class="underline col-sm-12">
         <h1>Inschrijven conferentie</h1>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
@@ -21,19 +21,22 @@ $attributes = array('name' => 'myform');
 ?>        
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <input type="hidden" name="conferentieId" value="<?php $conferentie->id ?>" />
 
         <h3>Selecteer formule</h3>
 
         <table class="space-bottom table table-responsive">
+            <thead>
             <tr>
                 <th class="w50">Formule</th>
                 <th class="w15">Prijs</th>
                 <th class="w25">Early-bird korting</th>
                 <th class="success">Selecteer</th>
             </tr>
+            </thead>
             
+            <tbody>
             <?php foreach ($conferentieOnderdelen as $conferentieOnderdeel) { ?>
                 <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>                    
                 <tr>
@@ -44,17 +47,22 @@ $attributes = array('name' => 'myform');
                 </tr>
                 <?php } ?>
             <?php } ?>
+            </tbody>
 
         </table>
 
         <h3>Extra activiteiten</h3>
         <p class="help-block">Activiteiten zijn extra en dus niet verplicht</p>
         <table class="space-bottom table table-responsive">
+            <thead>
             <tr>
                 <th class="w50">Activiteit</th>
                 <th class="w15">Prijs per persoon</th>
                 <th class="w35 success">Selecteer</th>
             </tr>
+            </thead>
+            
+            <tbody>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
                     <tr>
@@ -73,6 +81,7 @@ $attributes = array('name' => 'myform');
                 <?php }
             }
             ?>
+            </tbody>
 
         </table>
 
