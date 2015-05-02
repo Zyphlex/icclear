@@ -26,7 +26,7 @@ $attributes = array('name' => 'myform');
 
         <h3>Selecteer formule</h3>
 
-        <table class="underline-full table table-responsive">
+        <table class="space-bottom table table-responsive">
             <tr>
                 <th class="w50">Formule</th>
                 <th class="w15">Prijs</th>
@@ -38,9 +38,9 @@ $attributes = array('name' => 'myform');
                 <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>                    
                 <tr>
                     <td> <?php echo $conferentieOnderdeel->omschrijving ?></td>
-                    <td> <?php echo $conferentieOnderdeel->prijs ?></td>
-                    <td> <?php echo $conferentieOnderdeel->korting ?></td>
-                    <td><input type="radio" name="conferentieOnderdeelId" value="<?php echo $conferentieOnderdeel->id ?>"/></td></tr>
+                    <td>&euro; <?php echo $conferentieOnderdeel->prijs ?></td>
+                    <td><?php echo $conferentieOnderdeel->korting ?> &percnt;</td>
+                    <td class="success"><input type="radio" name="conferentieOnderdeelId" value="<?php echo $conferentieOnderdeel->id ?>"/></td></tr>
                 </tr>
                 <?php } ?>
             <?php } ?>
@@ -49,7 +49,7 @@ $attributes = array('name' => 'myform');
 
         <h3>Extra activiteiten</h3>
         <p class="help-block">Activiteiten zijn extra en dus niet verplicht</p>
-        <table class="underline-full table table-responsive">
+        <table class="space-bottom table table-responsive">
             <tr>
                 <th class="w50">Activiteit</th>
                 <th class="w15">Prijs per persoon</th>
@@ -61,7 +61,7 @@ $attributes = array('name' => 'myform');
                         <td><?php echo $activiteit->naam ?></td>
                         <td>&euro; <?php echo $activiteit->prijs ?></td>
                     
-                        <td>
+                        <td class="success">
                            <div class="input-group">
                                 <span class="input-group-addon">
                                     <?php echo form_input(array('class' => 'checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig' . $activiteit->id, 'value' => $activiteit->id)); ?>
