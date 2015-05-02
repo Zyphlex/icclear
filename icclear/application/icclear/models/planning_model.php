@@ -27,7 +27,13 @@ class Planning_model extends CI_Model {
         $query = $this->db->get('planning');
         return $query->result();
     }
-
+    
+    function getAllPlanning($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('planning');
+        return $query->result();
+    }
+    
     function getSessie($id) {
         $this->db->where('sessieId', $id);
         $query = $this->db->get('planning');
@@ -96,6 +102,27 @@ class Planning_model extends CI_Model {
 
         return $planningen;
     }
+    
+    function getOverzichtActieve() {           
+        $this->load->model('conferentie_model');
+        $confId = $this->conferentie_model->getActieveConferentie();
+        $this->db->order_by('conferentiedagId, beginuur');    
+        $this->db->where('conferentieId', $confId);
+        $query = $this->db->get('conferentiedag');
+        $dagen = $query->result();
+         
+        $this->load->model('sessies_model');
+        $this->load->model('zaal_model');
+        foreach ($dagen as $d) {
+            $d->programma = $this->getAllPlanning($d->id);
+            foreach ($d->programma as $p) {
+                $p->zaal = $this->zaal_model->get($p->zaalId);
+                $p->sessie = $this->sessies_model->get($p->sessieId);
+            }
+        }     
+        return $dagen;
+    }
+    
 
     function update($planning) {
         //Html entities en extra spaties verwijderen

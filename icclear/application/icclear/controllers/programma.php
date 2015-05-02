@@ -12,7 +12,8 @@ class Programma extends CI_Controller {
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['title'] = 'IC Clear - Programma';
+        $data['active'] = 'programma';
         
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
@@ -28,11 +29,10 @@ class Programma extends CI_Controller {
         }
 
 
-        $data['title'] = 'IC Clear - Programma';
-        $data['active'] = 'programma';
 
         $this->load->model('planning_model');
         $data['planningen'] = $this->planning_model->getAllPlanningen();
+        $data['programma'] = $this->planning_model->getOverzichtActieve();
 
         $this->load->model('conferentie_model');
         $data['actieveId'] = $this->conferentie_model->getActieveConferentie();
