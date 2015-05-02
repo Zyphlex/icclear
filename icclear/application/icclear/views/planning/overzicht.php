@@ -63,7 +63,7 @@
 
 </script>
 
-<div class='row underline'>
+<div class='row '>
     <div class='col-md-12'>
         <h1>Programma overzicht - <?php echo $conferentie->naam . " " . "<span class='italic'>(" . toDDMMYYYY($conferentie->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) . ")</span>" ?></h1>
         <p>
@@ -81,7 +81,7 @@
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3>Sessies</h3>        
+        <h3 class="underline-full">Sessies</h3>        
 
         <?php $teller = 0; foreach ($programma as $d) { $teller++; ?>
         <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
