@@ -15,12 +15,12 @@
     <p>
     <div class="btn-group btn-block">
         <?php if ($conferentie->isPlanningZichtbaar == 1) { ?>
-            <button class="btn btn-primary disabled col-xs-6" disabled>Het programma is al zichtbaar</button>
-            <?php echo anchor('admin/toonProgramma/0', 'Het programma verbergen', 'class="btn btn-info col-xs-6"'); ?>
+            <button class="btn btn-primary disabled col-sm-3" disabled>Het programma is al zichtbaar</button>
+            <?php echo anchor('admin/toonProgramma/0', 'Het programma verbergen', 'class="btn btn-info col-sm-3"'); ?>
         <?php } else {
-            echo anchor('admin/toonProgramma/1', 'Het programma zichtbaar maken', 'class="btn btn-warning col-xs-6"');
+            echo anchor('admin/toonProgramma/1', 'Het programma zichtbaar maken', 'class="btn btn-warning col-sm-3"');
             ?>
-            <button class="btn btn-info disabled col-xs-6" disabled>Het programma is verborgen</button>
+            <button class="btn btn-info disabled col-sm-3" disabled>Het programma is verborgen</button>
         <?php } ?>
     </div>
 </p>
