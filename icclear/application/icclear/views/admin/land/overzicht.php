@@ -9,8 +9,7 @@
                 maakDeleteClick();
                 $('.table').DataTable({
                     "aaSorting": [],
-                    "iDisplayLength": 5
-
+                    "dom": '<"top"f>rt<"bottom"ilp>'
                 });
             }
         });
