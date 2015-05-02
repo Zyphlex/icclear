@@ -6,7 +6,7 @@
 
 <div class="row"> 
     <?php foreach ($sprekers as $p) { ?>    
-        <div class="col-sm-3">
+        <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="equalizer panel panel-default">
                     <div class="panel-body">      
                             <h4 class="text-center"><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
