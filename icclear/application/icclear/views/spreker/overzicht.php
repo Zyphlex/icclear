@@ -14,10 +14,10 @@
                                 <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
                                  alt="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
                                  title="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>"
-                                 height="110" data-toggle="bottom">
+                                 height="150" width="auto" data-placement="bottom">
                             <?php } else { ?>
                                 <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
-                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="110" data-toggle="bottom">
+                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="bottom">
                             <?php } ?>
                         </div> 
             </div>  
