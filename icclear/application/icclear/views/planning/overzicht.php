@@ -249,7 +249,7 @@
                                 <td>
                                     <p>
                                         <span class="label label-warning">
-                                            <span aria-hidden="true" class="glyphicon glyphicon-time"></span><?php echo $p->beginUur . ' - ' . $p->eindUur ?>
+                                            <span aria-hidden="true" class="glyphicon glyphicon-time"><?php echo $p->beginUur . ' - ' . $p->eindUur ?></span>
                                         </span>
                                     </p>
                                 </td> 
