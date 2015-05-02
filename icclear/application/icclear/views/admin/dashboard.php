@@ -3,13 +3,23 @@
     
     <p>
         <?php if ($conferentie->statusId == 1) { ?>
-                  <button class="btn btn-primary disabled" disabled>Deze conferentie is al afgelopen</button>
+                  <button class="btn btn-primary disabled col-xs-6" disabled>Deze conferentie is al afgelopen</button>
             <?php } else if ($actieveconf->id != $conferentie->id) {
                   echo anchor('admin/wijzigStatus', 'Deze conferentie actief maken', 'class="btn btn-warning col-xs-6"'); 
                   } else { ?>
-                  <button class="btn btn-primary disabled" disabled>Deze conferentie is al actief</button>
+                  <button class="btn btn-primary disabled col-xs-6" disabled>Deze conferentie is al actief</button>
             <?php }
         ?>
+    </p>
+    
+    <p>
+        <?php if ($conferentie->isPlanningZichtbaar == 1) { ?>
+            <button class="btn btn-primary disabled" disabled>Het programma is al zichtbaar</button>
+            <?php echo anchor('admin/toonProgramma/0', 'Het programma verbergen', 'class="btn btn-info col-xs-6"'); ?>
+        <?php } else { 
+            echo anchor('admin/toonProgramma/1', 'Het programma zichtbaar maken', 'class="btn btn-warning col-xs-6"'); ?>
+            <button class="btn btn-info disabled" disabled>Het programma is verborgen</button>
+        <?php } ?>
     </p>
     
 </div>

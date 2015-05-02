@@ -118,6 +118,24 @@ class Admin extends CI_Controller {
         
         redirect('admin/dashboard/' . $confId);
     }
+    
+    public function toonProgramma($id) {
+        $confId = $this->session->userdata('conferentieId');
+        $this->load->model('conferentie_model');  
+        $conf = $this->conferentie_model->getActieveConferentie();
+        
+        //Geselecteerde conferentie wijzigen naar "Actief"
+        $conferentie->id = $confId;
+        if ($id == 0) { //Als doorgegeven Id 0 is, dan moet het programma verborgen worden. Anders moet hij zichtbaar worden
+            $conferentie->isPlanningZichtbaar = 0;       
+        } else {
+            $conferentie->isPlanningZichtbaar = 1;                   
+        }
+        $this->conferentie_model->update($conferentie);
+        
+        redirect('admin/dashboard/' . $confId);
+    }
+    
 
 }
 
