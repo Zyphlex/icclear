@@ -5,7 +5,7 @@
     </div>-->
     
     <div class="col-md-2">  
-        <h4>DASHBOARD <span class="glyphicon glyphicon-th-large"></span></h4>                         
+        <h4><span class="glyphicon glyphicon-th-large"></span> DASHBOARD</h4>                         
         <div class="panel panel-default">
             
             <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
