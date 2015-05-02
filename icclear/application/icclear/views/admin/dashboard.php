@@ -2,6 +2,7 @@
     <h1>Conferentie <?php echo $conferentie->naam ?> beheren</h1>         
     
     
+    <div class="row">
     <p>
         <?php
         $attributes = array('name' => 'myform');
@@ -21,6 +22,7 @@
     <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary col-xs-2"'); ?>
     <?php echo form_close(); ?>
     </p>
+    </div>
     
 </div>
 <div class="col-sm-10">    
