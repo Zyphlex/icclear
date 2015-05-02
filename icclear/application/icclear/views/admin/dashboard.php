@@ -3,15 +3,25 @@
     
     
     <p>
-        <?php echo form_label('Status van conferentie:','status') ?>
-                          
+        <?php
+        $attributes = array('name' => 'myform');
+        if ($user == null) {
+            echo form_open('', $attributes);
+        }
+        ?>        
+
+        <?php echo form_label('Status van conferentie:', 'status') ?>
+
         <?php
         $options = array();
         foreach ($statussen as $s) {
             $options[$s->id] = $s->status;
-        } ?>
-        <?php echo form_dropdown('status', $options, '', 'id="status"'); ?></p>
-        
+        }
+        ?>
+    <?php echo form_dropdown('status', $options, '', 'id="status" class="form-control"'); ?></p>
+
+    <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary"'); ?>
+    <?php echo form_close(); ?>
     </p>
     
 </div>
