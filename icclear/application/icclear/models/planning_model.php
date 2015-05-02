@@ -29,6 +29,7 @@ class Planning_model extends CI_Model {
     }
     
     function getAllPlanning($id) {
+        $this->db->order_by('conferentiedagId, beginuur');    
         $this->db->where('id', $id);
         $query = $this->db->get('planning');
         return $query->result();
@@ -105,7 +106,7 @@ class Planning_model extends CI_Model {
     
     function getOverzichtActieve() {           
         $this->load->model('conferentie_model');
-        $confId = $this->conferentie_model->getActieveConferentie(); 
+        $confId = $this->conferentie_model->getActieveConferentie();
         $this->db->where('conferentieId', $confId->id);
         $query = $this->db->get('conferentiedag');
         $dagen = $query->result();
