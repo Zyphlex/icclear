@@ -85,10 +85,16 @@ class Admin extends CI_Controller {
     public function wijzigStatus() {        
         $confId = $this->session->userdata('conferentieId');
         $this->load->model('conferentie_model');  
+        $conf = $this->conferentie_model->getActieveConferentie();
         
-        //Huidig actieve conferentie veranderen naar "Afgelopen"
-        $oudconferentie->id = $this->conferentie_model->getActieveConferentie()->id;
-        $oudconferentie->statusId = 1;
+        //Huidig actieve conferentie veranderen naar "Afgelopen" of "Toekomstig" op basis van beginDatum
+        $oudconferentie->id = $conf->id;
+        if ($conf->beginDatum > date("Y-m-d")) { //Als conferentiedatum groter is dan huidige datum
+            $oudconferentie->statusId = 3; //toekomstig maken
+        } else {
+            $oudconferentie->statusId = 1; //afgelopen maken      
+        }
+        
         $this->conferentie_model->update($oudconferentie);
         
         //Geselecteerde conferentie wijzigen naar "Actief"
