@@ -1,3 +1,13 @@
+<?php if ($conferentie->beginDatum <= (date('Y-m-d')-30)) {  ?>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="center-block underline">Het inschrijven voor de conferentie is helaas afgelopen!</h1>
+    </div>
+</div>
+
+<?php } else { ?>
+
 <div class="row">
     <div class="underline col-sm-12">
         <h1>Inschrijven conferentie</h1>
@@ -111,3 +121,5 @@ $attributes = array('name' => 'myform');
     </div>
 </div>
 <?php echo form_close(); ?>
+
+<?php } ?>
