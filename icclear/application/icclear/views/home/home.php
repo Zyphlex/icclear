@@ -13,15 +13,13 @@ $( document ).ready(function() {
 
 <div class="row">
     <div class="col-sm-12">
-        <h1>Conferentie - <?php echo $conferentie->naam ?></h1>
+        <h1 class="underline-full">Conferentie - <?php echo $conferentie->naam ?></h1>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-12 ">
-    <h2 class="underline-full">Wat is IC Clear?</h2>
-    </div>
     <div class="col-sm-8">
+        <h2>Wat is IC Clear?</h2>
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
