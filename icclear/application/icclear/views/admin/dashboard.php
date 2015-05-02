@@ -14,7 +14,7 @@
     
 </div>
 <div class="col-sm-10">    
-    <h4><span class="glyphicon glyphicon-pushpin"></span>Conferentie </h4>
+    <h4><span class="glyphicon glyphicon-pushpin"></span> Conferentie </h4>
     <h5>Naam: <?php echo $conferentie->naam ?></h5>
     <p>Periode: <?php echo $conferentie->beginDatum; ?> tot <?php echo $conferentie->eindDatum; ?></p>    
     <p>Stad: <?php echo $conferentie->stad; ?></p>
