@@ -28,9 +28,9 @@ $attributes = array('name' => 'myform');
 
         <table class="table table-responsive">
             <tr>
-                <th>Formule</th>
-                <th>Prijs</th>
-                <th>Early-bird korting</th>
+                <th class="w50">Formule</th>
+                <th class="w15">Prijs</th>
+                <th class="w25">Early-bird korting</th>
                 <td></td>
             </tr>
             
