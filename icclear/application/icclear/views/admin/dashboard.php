@@ -1,28 +1,10 @@
 <div class="col-sm-10">       
     <h1>Conferentie <?php echo $conferentie->naam ?> beheren</h1>         
     
-    
-    <div class="row">
     <p>
-        <?php
-        $attributes = array('name' => 'myform');
-        echo form_open('admin/wijzigStatus', $attributes);        
-        ?>        
-
-        <?php echo form_label('Status van conferentie:', 'status',array('class'=>'col-xs-3')) ?>
-
-        <?php
-        $options = array();
-        foreach ($statussen as $s) {
-            $options[$s->id] = $s->status;
-        }
-        ?>
-    <?php echo form_dropdown('status', $options, $status->id, 'id="status" class="form-control col-xs-7"'); ?>
-
-    <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary col-xs-2"'); ?>
-    <?php echo form_close(); ?>
+        <?php echo anchor('admin/wijzigStatus', 'Deze conferentie actief maken', 'class="btn btn-warning"'); ?>
+        <p class="help-block">Als u dit doet, wordt de vorige actieve conferentie veranderd in <span class="italic">"afgelopen"</span></p>
     </p>
-    </div>
     
 </div>
 <div class="col-sm-10">    
