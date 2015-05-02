@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="underline-full col-md-12">
+    <div class="underline col-md-12">
         <h1>Inschrijven conferentie</h1>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
