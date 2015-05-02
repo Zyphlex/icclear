@@ -4,7 +4,7 @@
         </div>
     </div>-->
     
-    <div class="col-md-2">  
+    <div class="col-xs-2">  
         <h4><span class="glyphicon glyphicon-th-large"></span> DASHBOARD</h4>                         
         <div class="panel panel-default">
             
