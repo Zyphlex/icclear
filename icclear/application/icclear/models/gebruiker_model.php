@@ -39,16 +39,19 @@ class Gebruiker_model extends CI_Model {
     }
     
     function getSprekersActieve(){
-        $this->db->where('typeId', 2);
-        $query = $this->db->get('gebruiker');
-        $sprekers = $query->result();    
+        $this->load->model('conferentie_model');
+        $confId = $this->conferentie_model->getActieveConferentie();
         
-        $this->load->model('sessies_model');
-        foreach ($sprekers as $spreker) {
-            $spreker->sessie = $this->sessies_model->getSessiesVanSpreker($spreker->id);
+        $this->db->where('conferentieId', $confId->id);
+        $this->db->group_by('gebruikerIdSpreker');
+        $query = $this->db->get('sessie');
+        $sessies = $query->result();    
+        
+        foreach ($sessies as $s) {
+            $s->spreker = $this->get($s->gebruikerIdSpreker);
         }
         
-        return $sprekers;
+        return $sessies;
     }
     
     function getSpreker($sprekerId){
