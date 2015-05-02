@@ -10,8 +10,6 @@
                   <button class="btn btn-primary disabled" disabled>Deze conferentie is al actief</button>
             <?php }
         ?>
-        
-        <p class="help-block">Als u dit doet, wordt de vorige actieve conferentie veranderd in <span class="italic">"afgelopen"</span></p>
     </p>
     
 </div>
