@@ -52,7 +52,7 @@ $attributes = array('name' => 'myform');
             <tr>
                 <th class="w50">Activiteit</th>
                 <th class="w15">Prijs per persoon</th>
-                <th class="35">Aantal Personen (max. 10)</th>
+                <th class="w35">Aantal Personen (max. 10)</th>
             </tr>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
