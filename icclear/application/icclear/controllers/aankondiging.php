@@ -26,11 +26,17 @@ class Aankondiging extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 //        $data['conferentie'] = $this->session->userdata('conferentie');
 
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
 
         $this->load->model('aankondiging_model');
@@ -95,5 +101,5 @@ class Aankondiging extends CI_Controller {
     // TEST
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+ 
+ 

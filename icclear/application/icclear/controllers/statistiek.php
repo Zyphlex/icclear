@@ -13,11 +13,18 @@ class Statistiek extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
 
         $data['title'] = 'IC Clear - Statistieken';

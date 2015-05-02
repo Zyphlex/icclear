@@ -24,11 +24,18 @@ class Routesbeheer extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = null;
+        
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
 
         $data['title'] = 'IC Clear - Routes beheren';
@@ -89,5 +96,5 @@ class Routesbeheer extends CI_Controller {
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+ 
+ 

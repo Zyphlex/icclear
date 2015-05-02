@@ -25,11 +25,18 @@ class Sessies extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
 
         $data['title'] = 'IC Clear - Beheer';
@@ -45,70 +52,24 @@ class Sessies extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
-    public function wijzigen($id) {
-        $data['user'] = $this->authex->getUserInfo();
-
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('sessies_model');
-        $data['sessie'] = $this->sessies_model->get($id);
-
-        $this->load->model('zaal_model');
-        $data['zalen'] = $this->zaal_model->getAll();
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/wijzigen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-
-    public function toevoegen() {
-        $data['user'] = $this->authex->getUserInfo();
-
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAll();
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/toevoegen', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-
-    public function verwijderen() {
-        $data['user'] = $this->authex->getUserInfo();
-
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['title'] = 'IC Clear - Beheer';
-        $data['active'] = 'admin';
-
-        $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAll();
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/beheer', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-    }
-
     public function keuren() {
          $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
+        
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
 
@@ -158,13 +119,7 @@ class Sessies extends CI_Controller {
         $sessie->spreker->generatedKey = $generatedKey;
         $this->gebruiker_model->update($sessie->spreker);
 
-        $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        redirect('sessies/keuren');
     }
 
     private function sendmail($to, $id, $generatedKey) {
@@ -216,5 +171,5 @@ class Sessies extends CI_Controller {
     // TEST
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+ 
+ 

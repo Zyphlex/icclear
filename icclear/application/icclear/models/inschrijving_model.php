@@ -96,6 +96,7 @@ class Inschrijving_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    //Kijken of er een inschrijving is van de gebruiker voor de actieve conferentie
     function IsGebruikerIngeschreven($id)
     {
         $this->load->model('conferentie_model');

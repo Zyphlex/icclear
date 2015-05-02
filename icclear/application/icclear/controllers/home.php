@@ -24,6 +24,7 @@ class Home extends CI_Controller {
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model->getNieuwsteAankondigingenActieve();
 
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
             $data['inschrijving'] = null;
@@ -42,5 +43,5 @@ class Home extends CI_Controller {
 
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+ 
+ 
