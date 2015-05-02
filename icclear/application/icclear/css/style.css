@@ -293,6 +293,11 @@ button:focus {
     background-color: #0c0;
 }
 
+.underline-full {
+    display: block;
+    border-bottom: solid 1px #e5e5e5;
+}
+
 .underline {
     border-bottom: solid 1px #e5e5e5;
     margin: 0 15px;
