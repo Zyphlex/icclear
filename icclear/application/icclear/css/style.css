@@ -260,7 +260,7 @@ button:focus {
 }
 
 .table-beheer td:last-child { 
-    max-width:110px; 
+    width:110px; 
 }
 
 .login-user { 
