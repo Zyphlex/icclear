@@ -50,9 +50,9 @@ $attributes = array('name' => 'myform');
         <h3>Extra activiteiten</h3>
         <table class="table table-responsive">
             <tr>
-                <th>Activiteit</th>
-                <th>Prijs per persoon</th>
-                <th>Aantal Personen (max. 10)</th>
+                <th class="w60">Activiteit</th>
+                <th class="w25">Prijs per persoon</th>
+                <th class="w15">Aantal Personen (max. 10)</th>
             </tr>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
