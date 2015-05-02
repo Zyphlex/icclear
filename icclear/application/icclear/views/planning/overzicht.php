@@ -64,7 +64,8 @@
 </script>
 
 <div class='row'>
-    <div class='col-md-12 underline'>
+    <div class='col-md-12'>
+        <div class="underline">
         <h1>Programma overzicht - <?php echo $actieveId->naam ?></h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -74,25 +75,26 @@
             Etiam vestibulum, velit nec consequat faucibus, nisi lectus tincidunt mi, in mattis eros mauris lobortis felis. 
             Sed nec tincidunt tortor, ac fermentum sem. 
             Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
-        </p>                               
+        </p>       
+        </div>
     </div>
 </div>
 
 
 <div class='row'>
     <div class='col-md-12'>
-        <h3 class="underline">Sessies</h3>        
+        <h3 class="underline-full">Sessies</h3>        
         
                 <?php
                 $id = 0;
                 $counter = 1;
                 foreach ($planningen as $dag) {
                     if ($dag->conferentiedag->id != $id && $dag->conferentiedag->conferentieId == $actieveId->id) { ?>
-                        <h4>Dag <?php echo $counter . " " . date('d',$dag->conferentiedag->datum); ?></h4>
+                        <h4>Dag <?php echo $counter . " " . date('D',$dag->conferentiedag->datum); ?></h4>
                         <?php $counter++;
                         ?>
                 <div class="table-responsive space-bottom">
-                        <table class = "table-bordered table-condensed table">
+                        <table class = "table-hover table-condensed table">
                             <thead>
                                 <tr>
                                     <th class="w15">Tijdstip</th>
