@@ -1,4 +1,4 @@
-<?php if ($conferentie->beginDatum <= (date('Y-m-d')-30)) {  ?>
+<?php if ($conferentie->beginDatum <= date('Y-m-d',strtotime('-1 month'))) {  ?>
 
 <div class="row">
     <div class="col-sm-12">
