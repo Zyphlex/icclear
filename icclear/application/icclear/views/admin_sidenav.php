@@ -10,9 +10,9 @@
 
 
 <div class="col-md-2">  
-    <nav class="" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header">Admin Nav
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#adminnav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -22,7 +22,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="adminnav">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
                 <h4><span class="glyphicon glyphicon-th-large"></span> DASHBOARD</h4>                         
