@@ -51,8 +51,8 @@ $attributes = array('name' => 'myform');
         <table class="table table-responsive">
             <tr>
                 <th class="w50">Activiteit</th>
-                <th class="w25">Prijs per persoon</th>
-                <th class="w25">Aantal Personen (max. 10)</th>
+                <th class="w15">Prijs per persoon</th>
+                <th>Aantal Personen (max. 10)</th>
             </tr>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>
