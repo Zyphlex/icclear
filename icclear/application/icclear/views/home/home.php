@@ -18,8 +18,8 @@ $( document ).ready(function() {
 </div>
 
 <div class="row">
+    <h2 class="col-sm-12 underline-full">Wat is IC Clear?</h2>
     <div class="col-sm-8">
-        <h2 class="underline-full">Wat is IC Clear?</h2>
         <p><?php echo $algemeneinfo->omschrijving ?></p>
     </div> 
     
