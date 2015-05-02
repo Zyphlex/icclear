@@ -102,7 +102,7 @@ class Inschrijving_model extends CI_Model {
         $confId = $this->conferentie_model->getActieveConferentie();        
         
         $this->db->where('gebruikerId', $id);
-        $this->db->where('conferentieId', $confId);
+        $this->db->where('conferentieId', $confId->id);
         $query = $this->db->get('inschrijving');        
         $inschrijving = $query->row();
         return $inschrijving;
