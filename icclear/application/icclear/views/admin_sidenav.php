@@ -10,7 +10,7 @@
 
 
 <div class="col-md-2">  
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">Admin Nav
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#adminnav">
