@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="underline-full col-md-12">
         <h1>Inschrijven conferentie</h1>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
@@ -26,12 +26,12 @@ $attributes = array('name' => 'myform');
 
         <h3>Selecteer formule</h3>
 
-        <table class="table table-responsive">
+        <table class="underline-full table table-responsive">
             <tr>
                 <th class="w50">Formule</th>
                 <th class="w15">Prijs</th>
                 <th class="w25">Early-bird korting</th>
-                <td></td>
+                <th class="success">Selecteer</th>
             </tr>
             
             <?php foreach ($conferentieOnderdelen as $conferentieOnderdeel) { ?>
@@ -48,11 +48,12 @@ $attributes = array('name' => 'myform');
         </table>
 
         <h3>Extra activiteiten</h3>
-        <table class="table table-responsive">
+        <p class="help-block">Activiteiten zijn extra en dus niet verplicht</p>
+        <table class="underline-full table table-responsive">
             <tr>
                 <th class="w50">Activiteit</th>
                 <th class="w15">Prijs per persoon</th>
-                <th class="w35">Aantal Personen (max. 10)</th>
+                <th class="w35 success">Selecteer</th>
             </tr>
             <?php foreach ($activiteiten as $activiteit) { ?>
                 <?php if ($activiteit->conferentie->statusId == '2') { ?>

@@ -25,7 +25,7 @@ $( document ).ready(function() {
     
     <div class="col-sm-4 col-xs-12">
         <div class="thumbnail">
-            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICclear clarity" title="Home Afbeelding">
+            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICClear clarity logo" title="Home Afbeelding">
         </div>
     </div>
 </div>
