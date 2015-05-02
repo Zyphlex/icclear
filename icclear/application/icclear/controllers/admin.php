@@ -86,7 +86,7 @@ class Admin extends CI_Controller {
         $this->load->model('conferentie_model');  
         
         //Huidig actieve conferentie veranderen naar "Afgelopen"
-        $oudconferentie->id = $this->conferentie_model->getActieveConferentie();
+        $oudconferentie->id = $this->conferentie_model->getActieveConferentie()->id;
         $oudconferentie->statusId = 1;
         $this->conferentie_model->update($oudconferentie);
         
