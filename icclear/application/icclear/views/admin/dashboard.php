@@ -10,7 +10,7 @@
         }
         ?>        
 
-        <?php echo form_label('Status van conferentie:', 'status') ?>
+        <?php echo form_label('Status van conferentie:', 'status',array('class'=>'col-xs-3')) ?>
 
         <?php
         $options = array();
@@ -18,9 +18,9 @@
             $options[$s->id] = $s->status;
         }
         ?>
-    <?php echo form_dropdown('status', $options, $status->id, 'id="status" class="form-control"'); ?></p>
+    <?php echo form_dropdown('status', $options, $status->id, 'id="status" class="form-control col-xs-7"'); ?></p>
 
-    <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary"'); ?>
+    <?php echo form_submit('mysubmit', 'Status opslaan', 'class="btn btn-primary col-xs-2"'); ?>
     <?php echo form_close(); ?>
     </p>
     
