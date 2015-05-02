@@ -83,13 +83,17 @@ class Admin extends CI_Controller {
     
     public function wijzigStatus() {        
         $confId = $this->session->userdata('conferentieId');
+        $this->load->model('conferentie_model');  
         
+        //Huidig actieve conferentie veranderen naar "Afgelopen"
+        $oudconferentie->id = $this->conferentie_model->getActieveConferentie();
+        $oudconferentie->statusId = 1;
+        $this->conferentie_model->update($oudconferentie);
+        
+        //Geselecteerde conferentie wijzigen naar "Actief"
         $conferentie->id = $confId;
-        $conferentie->statusId = $this->input->post('status');
-        
-        $this->load->model('conferentie_model');        
+        $conferentie->statusId = 2;              
         $this->conferentie_model->update($conferentie);
-
         
         redirect('admin/dashboard/' . $confId);
     }
