@@ -85,8 +85,8 @@
     <div class='col-md-12'>
         <h3>Sessies</h3>        
 
-        <?php foreach ($programma as $d) { ?>
-        <h4>Conferentiedag 1 <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
+        <?php $teller = 0; foreach ($programma as $d) { $teller++; ?>
+        <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
             <div class="table-responsive space-bottom">
                 <table class = "table-hover table-condensed table">
                     <thead>
