@@ -80,6 +80,19 @@ class Admin extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/dashboard', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+    
+    public function wijzigStatus() {        
+        $confId = $this->session->userdata('conferentieId');
+        
+        $conferentie->id = $confId;
+        $conferentie->statusId = $this->input->post('status');
+        
+        $this->load->model('conferentie_model');        
+        $this->conferentie_model->insert($conferentie);
+
+        
+        redirect('admin/dashboard/' . $confId);
+    }
 
 }
 
