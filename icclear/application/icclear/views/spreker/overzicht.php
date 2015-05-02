@@ -9,7 +9,7 @@
         <div class="col-sm-3">
             <div class="equalizer panel panel-default">
                     <div class="panel-body">      
-                            <h4 class="center-block"><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
+                            <h4 class="text-center"><?php echo$p->spreker->voornaam . ' ' . $p->spreker->familienaam ?></h4> 
                             <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
                                 <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
                                  alt="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
