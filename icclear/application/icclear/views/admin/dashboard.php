@@ -5,9 +5,7 @@
     <p>
         <?php
         $attributes = array('name' => 'myform');
-        if ($user == null) {
-            echo form_open('admin/wijzigStatus', $attributes);
-        }
+        echo form_open('admin/wijzigStatus', $attributes);        
         ?>        
 
         <?php echo form_label('Status van conferentie:', 'status',array('class'=>'col-xs-3')) ?>
