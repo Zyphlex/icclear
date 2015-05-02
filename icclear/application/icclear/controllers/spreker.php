@@ -34,7 +34,6 @@ class Spreker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
-        print_r( $data['sprekers']);
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
