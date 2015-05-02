@@ -66,7 +66,7 @@
 <div class='row'>
     <div class='col-md-12'>
         <div class="underline">
-        <h1>Programma overzicht - <?php echo $actieveId->naam ?></h1>
+        <h1>Programma overzicht - <?php echo $conferentie->naam . " " . "<span class='italic'>(" . $conferentie->beginDatum . " - " . $conferentie->eindDatum . ")</span>" ?></h1>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Curabitur finibus tortor at erat sodales ornare. 
