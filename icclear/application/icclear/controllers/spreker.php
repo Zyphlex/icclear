@@ -14,7 +14,10 @@ class Spreker extends CI_Controller {
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['title'] = 'IC Clear - Sprekers';
+        $data['active'] = 'spreker';
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
@@ -29,14 +32,8 @@ class Spreker extends CI_Controller {
             }
         }
 
-        $data['title'] = 'IC Clear - Sprekers';
-        $data['active'] = 'spreker';
-
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $this->load->model('gebruiker_model');
-        $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
+        $this->load->model('planning_model');
+        $data['sprekers'] = $this->planning_model->getOverzichtActieve();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);

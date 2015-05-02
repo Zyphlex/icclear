@@ -74,35 +74,6 @@ class Planning_model extends CI_Model {
 
         return $dagen;
     }
-
-    function getAllPlanningen() {
-        $this->db->order_by('conferentiedagId, beginuur');
-        $query = $this->db->get('planning');
-        $planningen = $query->result();
-
-        $this->load->model('sessies_model');
-        foreach ($planningen as $planning) {
-            $planning->sessie = $this->sessies_model->planningenPerStatus($planning->sessieId);
-        }
-        $this->load->model('conferentiedag_model');
-        foreach ($planningen as $planning) {
-            $planning->conferentiedag = $this->conferentiedag_model->get($planning->conferentiedagId);
-        }
-
-        $this->load->model('gebruiker_model');
-
-        foreach ($planningen as $planning) {
-            $planning->spreker = $this->gebruiker_model->getSpreker($planning->sessie->gebruikerIdSpreker);
-        }
-
-        $this->load->model('zaal_model');
-
-        foreach ($planningen as $planning) {
-            $planning->zaal = $this->zaal_model->get($planning->zaalId);
-        }
-
-        return $planningen;
-    }
     
     function getOverzichtActieve() {           
         $this->load->model('conferentie_model');

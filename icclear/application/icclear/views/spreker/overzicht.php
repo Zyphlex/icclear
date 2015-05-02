@@ -5,7 +5,7 @@
 </div>
 
 <div class="row"> 
-    <?php foreach ($sprekers as $spreker) { ?>   
+    <?php foreach ($sprekers->sessie as $spreker) { ?>   
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="row">
