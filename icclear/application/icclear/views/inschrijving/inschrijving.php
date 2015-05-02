@@ -52,7 +52,6 @@ $attributes = array('name' => 'myform');
             <tr>
                 <th>Activiteit</th>
                 <th>Prijs per persoon</th>
-                <th></th>
                 <th>Aantal Personen (max. 10)</th>
             </tr>
             <?php foreach ($activiteiten as $activiteit) { ?>
@@ -61,8 +60,14 @@ $attributes = array('name' => 'myform');
                         <td><?php echo $activiteit->naam ?></td>
                         <td><?php echo $activiteit->prijs ?></td>
                     
-                        <td><input class="checkact" type="checkbox" name="aanwezig[]" id="aanwezig<?php echo $activiteit->id; ?>" value ="<?php echo $activiteit->id; ?>"/></td>
-                        <td><input type="text" name="<?php echo $activiteit->id; ?>" id="aantalPersonen" max="10" value=""/></td>
+                        <td>
+                           <div class="input-group">
+                                <span class="input-group-addon">
+                                    <?php echo form_input(array('class' => 'checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig' . $activiteit->id, 'value' => $activiteit->id)); ?>
+                                </span>
+                                <?php echo form_input(array('type' => 'number', 'class' => 'form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
+                            </div>                    
+                        </td>
                     </tr>
                 <?php }
             }

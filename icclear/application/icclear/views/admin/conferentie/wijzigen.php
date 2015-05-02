@@ -263,7 +263,12 @@
                     <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Korting:', 'korting'); ?></td>
-                    <p><?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>%</p>
+                    <p>
+                        <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>
+                        </div>
+                    </p>
                 </form>
 
             </div>
