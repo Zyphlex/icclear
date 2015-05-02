@@ -129,10 +129,8 @@
                     <p><?php echo form_label('Gebouw:', 'gebouw'); ?></p>                    
                     <?php
                     $drop = array();
-                    $teller = 1;
                     foreach ($gebouwen as $gebouw) {
-                        $drop[$teller] = $gebouw->naam;
-                        $teller++;
+                        $drop[$gebouw->id] = $gebouw->naam;
                     }
                     ?>
                     <p><?php echo form_dropdown('gebouw', $drop, '', 'id="gebouw"'); ?></p>

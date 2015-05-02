@@ -7,10 +7,8 @@
                           
         <?php
         $options = array();
-        $teller = 1;
         foreach ($statussen as $s) {
-            $options = $s->status;
-            $teller++;
+            $options[$s->id] = $s->status;
         } ?>
         <?php echo form_dropdown('status', $options, '', 'id="status"'); ?></p>
         
