@@ -22,7 +22,7 @@ class Home extends CI_Controller {
         $data['algemeneinfo'] = $this->algemeneinfo_model->get();
 
         $this->load->model('aankondiging_model');
-        $data['aankondigingen'] = $this->aankondiging_model->getAankondigingenActieve();
+        $data['aankondigingen'] = $this->aankondiging_model->getNieuwsteAankondigingenActieve();
 
         $this->load->model('inschrijving_model');
         if ($user == null) {

@@ -32,7 +32,18 @@ class Aankondiging_model extends CI_Model {
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
         
-       $this->db->where('conferentieId',$actieveConferentie->id);
+        $this->db->where('conferentieId',$actieveConferentie->id);
+        $query = $this->db->get('aankondiging');        
+       return $query->result();              
+    }
+    
+    function getNieuwsteAankondigingenActieve(){
+        $this->load->model('conferentie_model');
+        $actieveConferentie = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->where('conferentieId',$actieveConferentie->id);
+        $this->db->order_by('id','DESC');
+        $this->db->limit('3');
         $query = $this->db->get('aankondiging');        
        return $query->result();              
     }
