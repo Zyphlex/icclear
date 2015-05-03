@@ -90,14 +90,19 @@ class Profiel extends CI_Controller {
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
         }
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $this->load->model('gebruiker_activiteit_model');
-        foreach ($data['inschrijving'] as $i) {
+        foreach ($this->inschrijving_model->getInschijvingByGebruiker($user->id) as $i) {
             $confId = $i->confonderdeel->conferentieId;
             $diff = (abs(strtotime($i->conferentie->beginDatum) - strtotime($i->datum))) / 86400;
             if ($diff >= 30) {
