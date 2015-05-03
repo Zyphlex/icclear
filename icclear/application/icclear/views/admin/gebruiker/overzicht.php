@@ -13,6 +13,7 @@
                 });
             },
             error: function () {
+                $("#error").removeClass("hidden");
                 $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
             }
         });
