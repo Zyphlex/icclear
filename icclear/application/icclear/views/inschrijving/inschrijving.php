@@ -9,10 +9,12 @@ $(document).ready(function() {
     });
     
     $("#aanwezig").click(function() {
-        if ($(this).checked == false) {
+        if ($(this).checked = false) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
-        } else if($(this).checked){
+            alert('false');
+        } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
+            alert("true");
         }
     });
 });
