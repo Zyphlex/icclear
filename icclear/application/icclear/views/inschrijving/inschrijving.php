@@ -2,18 +2,18 @@
 $(document).ready(function() {
     $(".aantalPersonen").change(function() {
         if ($("#aantalPersonen").val().length == 0) {
-            $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',false);
+            $("input[class='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',false);
         } else {
-            $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',true);
+            $("input[class='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
     
     $(".aanwezig").change(function() {
         if ($(this).prop('checked') == false) {
-            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
-            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
+            $("input[class='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
+            $("input[class='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
         } else {
-            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
+            $("input[class='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
         }
     });
 });
