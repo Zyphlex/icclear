@@ -105,11 +105,11 @@ $attributes = array('name' => 'myform');
         <?php foreach ($betaaltypes as $type) { ?>
         
         <p>
-            <?php echo form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id));?>        
+            <?php echo form_radio(array('id'=>'methode'.$type->id,'name'=>'methode','value'=>$type->id));?>        
             <?php echo form_label($type->omschrijving, 'methode');?>
         </p>
     
-        <p><?php echo form_label(form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id)) . " " . $type->omschrijving, 'methode');?></p>
+        <p class="radio"><?php echo form_label(form_radio(array('id'=>'methode'.$type->id,'name'=>'methode','value'=>$type->id)) . " " . $type->omschrijving, 'methode');?></p>
             
             
         <?php } ?>
