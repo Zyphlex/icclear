@@ -85,6 +85,10 @@ class Inschrijven extends CI_Controller {
         if ($betId != 0) {
             $inschrijving->sbetalingId = $betId;
         }  
+        $inschrijving->swiltFactuur = 0;
+        if ($this->input->post('factuur')) {
+            $inschrijving->swiltFactuur = 1;
+        }
         
         $acti = array();
         $actiPer = array();
@@ -130,6 +134,10 @@ class Inschrijven extends CI_Controller {
         $inschrijving->methodeId = $this->input->post('methode');
         if ($betId != 0) {
             $inschrijving->betalingId = $betId;
+        }
+        $inschrijving->wiltFactuur = 0;
+        if ($this->input->post('factuur')) {
+            $inschrijving->wiltFactuur = 1;
         }
 
         $this->load->model('inschrijving_model');
@@ -236,43 +244,8 @@ class Inschrijven extends CI_Controller {
             
             $user = $this->authex->getUserInfo();
             
-            $betId = 0;
-            //Controleren of het geen overschrijving is. Geen overschrijving = betaling verwerken
-            if ($this->session->userdata('smethodeId') != 4) {
-                $betaling->gebruikerId = $user->id;
-                $this->load->model('betaling_model');
-                $betId = $this->betaling_model->insert($betaling);
-            }  
-            //Inschrijf gegevens uit session halen
-            $inschrijving->gebruikerId = $user->id;
-            $inschrijving->conferentieId = $this->session->userdata('sconferentieId');
-            $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
-            $inschrijving->datum = $this->session->userdata('sdatum');
-            $inschrijving->methodeId = $this->session->userdata('smethodeId');
-            //Als het geen overschrijving is, betaling linken
-            if ($betId != 0) {
-                $inschrijving->betalingId = $betId;
-            }
-        
-            $this->load->model('inschrijving_model');
-            $this->inschrijving_model->insert($inschrijving);
-                    
-            $Pers = $this->session->userdata('Pers');
-            $Acts = $this->session->userdata('ActId');
-            $i=0;
-            foreach ($Acts as $a)
-            {
-                $activiteit->activiteitId = $a;
-                $activiteit->gebruikerId = $user->id;
-                if ($betId != 0) {
-                    $activiteit->betalingId = $betId;
-                }
-                $activiteit->aantalPersonen = $Pers[$i];
-                $this->load->model('gebruiker_activiteit_model');
-                $actId = $this->gebruiker_activiteit_model->insert($activiteit);
-                
-                $i++;
-            }
+            //Verwerken van het inschrijven
+            $this->verwerkenInschrijving($user);
         
             redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
@@ -300,45 +273,7 @@ class Inschrijven extends CI_Controller {
         $user->id = $this->authex->register($user);
         
         //Verwerken van het inschrijven
-        //////////////////////////
-        //////////////////////////
-        //DUBBEL VAN aanmelden - PROBEREN WEG TE WERKEN
-        $betId = 0;
-        //Controleren of het geen overschrijving is. Geen overschrijving = betaling verwerken
-        if ($this->session->userdata('smethodeId') != 4) {
-            $betaling->gebruikerId = $user->id;
-            $this->load->model('betaling_model');
-            $betId = $this->betaling_model->insert($betaling);
-        }
-        //Inschrijf gegevens uit session halen
-        $inschrijving->gebruikerId = $user->id;
-        $inschrijving->conferentieId = $this->session->userdata('sconferentieId');
-        $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
-        $inschrijving->datum = $this->session->userdata('sdatum');
-        $inschrijving->methodeId = $this->session->userdata('smethodeId');
-        //Als het geen overschrijving is, betaling linken
-        if ($betId != 0) {
-            $inschrijving->betalingId = $betId;
-        }
-
-        $this->load->model('inschrijving_model');
-        $this->inschrijving_model->insert($inschrijving);
-
-        $Pers = $this->session->userdata('Pers');
-        $Acts = $this->session->userdata('ActId');
-        $i = 0;
-        foreach ($Acts as $a) {
-            $activiteit->activiteitId = $a;
-            $activiteit->gebruikerId = $user->id;
-            if ($betId != 0) {
-                $activiteit->betalingId = $betId;
-            }
-            $activiteit->aantalPersonen = $Pers[$i];
-            $this->load->model('gebruiker_activiteit_model');
-            $actId = $this->gebruiker_activiteit_model->insert($activiteit);
-
-            $i++;
-        }
+        $this->verwerkenInschrijving($user);
 
         redirect('inschrijven/voorkeuren');
     }
@@ -369,7 +304,50 @@ class Inschrijven extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/voorkeuren', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
+    
 
+    public function verwerkenInschrijving($user) {
+        $betId = 0;
+        //Controleren of het geen overschrijving is. Geen overschrijving = betaling verwerken
+        if ($this->session->userdata('smethodeId') != 4) {
+            $betaling->gebruikerId = $user->id;
+            $this->load->model('betaling_model');
+            $betId = $this->betaling_model->insert($betaling);
+        }
+        //Inschrijf gegevens uit session halen
+        $inschrijving->gebruikerId = $user->id;
+        $inschrijving->conferentieId = $this->session->userdata('sconferentieId');
+        $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
+        $inschrijving->datum = $this->session->userdata('sdatum');
+        $inschrijving->methodeId = $this->session->userdata('smethodeId');
+            $inschrijving->wiltFactuur = $this->session->userdata('swiltFactuur');
+        //Als het geen overschrijving is, betaling linken
+        if ($betId != 0) {
+            $inschrijving->betalingId = $betId;
+        }
+
+        $this->load->model('inschrijving_model');
+        $this->inschrijving_model->insert($inschrijving);
+
+        $Pers = $this->session->userdata('Pers');
+        $Acts = $this->session->userdata('ActId');
+        $i = 0;
+        foreach ($Acts as $a) {
+            $activiteit->activiteitId = $a;
+            $activiteit->gebruikerId = $user->id;
+            if ($betId != 0) {
+                $activiteit->betalingId = $betId;
+            }
+            $activiteit->aantalPersonen = $Pers[$i];
+            $this->load->model('gebruiker_activiteit_model');
+            $actId = $this->gebruiker_activiteit_model->insert($activiteit);
+
+            $i++;
+        }
+        
+    }
+    
 }
+
 
 ?>
