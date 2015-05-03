@@ -1,7 +1,7 @@
     
 <?php foreach ($dagen as $dag) { ?>
 <h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
-    <table class="table table-responsive table-beheer">
+    <table class="table table-beheer">
         <thead>
             <tr>
 

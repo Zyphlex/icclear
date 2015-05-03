@@ -10,7 +10,7 @@
         echo form_open('gebouw/gebouwPerDagOpslaan', $attributes);
         ?>
 
-        <table class="table table-responsive table-beheer">
+        <table class="table table-beheer">
             <thead>
                 <tr>
                     <th>Datum</th>

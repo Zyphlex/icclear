@@ -1,7 +1,7 @@
 
 <h2>Conferentie onderdelen</h2>
-
-<table class="table table-responsive table-beheer">
+<div class="table-responsive">
+<table class="table table-beheer">
     <thead>
         <tr>
             <th><label for="formule">Onderdeel</label></th>
@@ -24,5 +24,5 @@
         <?php } ?>
     </tbody>
 </table>
-
+</div>
 <button class="wijzigItem btn btn-primary" data-id="0"><span class="btn glyphicon glyphicon-plus white"></span> Toevoegen</button>

@@ -1,4 +1,5 @@
 <h2>Sponsors</h2>
+<div class="table-responsive">
 <table class = "table table-beheer">
     <thead>
         <tr>
@@ -36,8 +37,10 @@
         ?>
     </tbody>
 </table>
+</div>
 
 <h2>Partners</h2>
+<div class="table-responsive">
 <table class = "table table-beheer">
     <thead>
         <tr>
@@ -75,3 +78,4 @@
     ?>
 </tbody>
 </table>
+</div>

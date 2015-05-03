@@ -1,4 +1,5 @@
-<table class="table table-responsive">
+<div class="table-responsive">
+<table class="table table-beheer">
     <thead>
         <tr>
             <th>Naam</th>
@@ -30,3 +31,4 @@
         <?php } ?>
     </tbody>
 </table>
+</div>
