@@ -1,3 +1,12 @@
+<script type='text/javascript'>
+    $("#aanwezig10").click(function(e) {    
+            if ($(this).checked) {
+                $("#aantalPersonen").required == true;
+            }
+        });
+</script>
+
+
 <?php if ($conferentie->beginDatum <= date('Y-m-d',strtotime('-1 month'))) {  ?>
 
 <div class="row">
