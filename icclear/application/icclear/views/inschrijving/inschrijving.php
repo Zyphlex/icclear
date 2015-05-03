@@ -11,6 +11,7 @@ $(document).ready(function() {
     $("#aanwezig").change(function() {
         if ($(this).prop('checked') == false) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
         } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
         }
