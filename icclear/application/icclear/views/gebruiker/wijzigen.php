@@ -190,7 +190,7 @@
                 <div role="tabpanel" class="tab-pane" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
-                    <?php foreach ($inschrijving as $i) { ?>
+                    <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                             <table class="table table-responsive">
                                 <tr>
@@ -218,7 +218,7 @@
                     <?php } ?>
                             
                     <h1 class="margin-top">Afgelopen conferenties</h1>
-                    <?php foreach ($inschrijving as $i) { ?>
+                    <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                             <table class="table table-responsive">
                                 <tr>
@@ -242,7 +242,7 @@
                 
                 <div role="tabpanel" class="tab-pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>                    
-                    <?php foreach ($inschrijving as $i) { ?>
+                    <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
                         <table class="table table-responsive">
                             <tr>
