@@ -98,6 +98,7 @@ $attributes = array('name' => 'myform');
         <h3>Betaling</h3>
 
         <?php echo form_checkbox(array('id'=>'factuur','name'=>'factuur','value'=>'factuur')) ?>
+        <?php echo form_label('Ja, ik wil een factuur ontvangen.','factuur') ?>
         <input type="checkbox" name="factuur" id="factuur"/>
         <label> Ja, ik wil een factuur ontvangen.</label>
 
