@@ -16,7 +16,7 @@
 
         <div class="row">
             <div class="panel-body">
-                <div class="col-md-12 col-sm-6">
+                <div class="col-md-12 col-xs-6">
                 <h4>Algemeen</h4>
                 <ul class="nav nav-pills nav-stacked">
                     <li><?php echo anchor('adminbeheer' , 'Admins'); ?></li>
@@ -29,11 +29,13 @@
                     <li><?php echo anchor('hotels' , 'Hotels'); ?></li>
                     <li><?php echo anchor('sponsorbeheer', 'Sponsors'); ?></li>
                     <li><?php echo anchor('faqbeheer' , 'F.A.Q.'); ?></li>
+                </ul>
                 </div>
             
             
             <?php if($conferentieId != null) { ?>
-                    <div class="col-md-12 col-sm-6">
+                    <div class="col-md-12 col-xs-6">
+                <ul class="nav nav-pills nav-stacked">
                 <h4>Conferentie</h4>
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
                     <li><?php echo anchor('inschrijven/opvolgen', 'Inschrijvingen'); ?></li>
@@ -41,10 +43,10 @@
                     <li><?php echo anchor('aankondiging/', 'Aankondigingen'); ?></li>
                     <li><?php echo anchor('planningbeheer' , 'Planningen'); ?></li>
                     <li><?php echo anchor('gebouw/gebouwPerDag/' . $conferentieId, 'Gebouwen') ?></li>
+                </ul>
                     </div>
             <?php } ?>            
             
-                </ul>
             </div>
         </div>
         
