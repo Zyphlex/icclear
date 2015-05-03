@@ -8,7 +8,7 @@ $(document).ready(function() {
         }
     });
     
-    $("#aanwezig").change(function() {
+    $("#aanwezig").click(function() {
         alert("input[name='" + $(this).attr('value') + "']");
         if ($("#aanwezig").is(':checked')) {
             $("input[name='" + $(this).attr('value') + "']").attr('required',false);
