@@ -97,10 +97,10 @@ $attributes = array('name' => 'myform');
 
         <h3>Betaling</h3>
 
-        <?php echo form_checkbox(array('id'=>'factuur','name'=>'factuur','value'=>'factuur')) ?>
-        <?php echo form_label('Ja, ik wil een factuur ontvangen.','factuur') ?>
-        <br/>
-        <br/>
+        <div class="checkbox space-bottom">
+            <?php echo form_checkbox(array('id'=>'factuur','name'=>'factuur','value'=>'factuur')) ?>
+            <?php echo form_label('Ja, ik wil een factuur ontvangen.','factuur') ?>
+        </div>
 
         <?php foreach ($betaaltypes as $type) { ?>
         
