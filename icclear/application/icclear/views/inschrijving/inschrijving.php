@@ -99,18 +99,18 @@ $attributes = array('name' => 'myform');
 
         <?php echo form_checkbox(array('id'=>'factuur','name'=>'factuur','value'=>'factuur')) ?>
         <?php echo form_label('Ja, ik wil een factuur ontvangen.','factuur') ?>
-        <input type="checkbox" name="factuur" id="factuur"/>
-        <label> Ja, ik wil een factuur ontvangen.</label>
-
         <br/>
         <br/>
 
         <?php foreach ($betaaltypes as $type) { ?>
         
-        <p><?php echo form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id));?></p>
+        <p>
+            <?php echo form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id));?>        
+            <?php echo form_label($type->omschrijving, 'methode');?>
+        </p>
+    
         <p><?php echo form_label($type->omschrijving . form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id)), 'methode');?></p>
             
-        <p><?php echo form_label($type->omschrijving, 'methode');?></p>
             
         <?php } ?>
         
