@@ -1,7 +1,7 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
-        if ($("#aantalPersonen").val() == '0') {
+        if ($("#aantalPersonen").val().length == 0) {
             $("#aanwezig" + $(this).attr('name')).prop('checked',false);
         } else {
             $("#aanwezig" + $(this).attr('name')).prop('checked',true);
