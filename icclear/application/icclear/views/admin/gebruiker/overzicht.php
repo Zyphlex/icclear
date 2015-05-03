@@ -11,6 +11,8 @@
                 $('.table').DataTable({
                     "aaSorting": []
                 });
+            } else {
+                $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
             }
         });
     }
@@ -434,7 +436,8 @@
                 <h4 class="modal-title">OPGELET!</h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">  
+                <div class="alert alert-danger" role="alert" id="error"></div>
                 <p>Bent u zeker dat u deze gebruiker wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
