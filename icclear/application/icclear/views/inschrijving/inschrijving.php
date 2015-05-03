@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
         alert("#aanwezig" + $(this).attr('name'));
-        $("#aanwezig" + $(this).attr('name')).prop('checked');
+        $("#aanwezig" + $(this).attr('name')).prop('checked',true);
     });
 });
 </script>
