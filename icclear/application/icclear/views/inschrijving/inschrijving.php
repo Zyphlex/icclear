@@ -1,7 +1,7 @@
 <script type='text/javascript'>
     $("#aanwezig10").click(function(e) {    
             if ($(this).checked) {
-                $("#aantalPersonen").required == true;
+                $("#aantalPersonen").required = true;
             }
         });
 </script>
