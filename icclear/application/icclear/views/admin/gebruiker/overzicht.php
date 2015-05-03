@@ -23,6 +23,7 @@
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
         $(".verwijderGebruiker").click(function () {
+            $("#error").addClass("hidden");
             deleteid = $(this).data("id");
             $("#gebruikerDelete").modal('show');
         });
