@@ -1,7 +1,11 @@
 <script type='text/javascript'>       
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
-        $("#aanwezig" + $(this).attr('name')).prop('checked',true);
+        if ($("#aantalPersonen").val() = "") {
+            $("#aanwezig" + $(this).attr('name')).prop('checked',false);
+        } else {
+            $("#aanwezig" + $(this).attr('name')).prop('checked',true);
+        }
     });
 });
 </script>
