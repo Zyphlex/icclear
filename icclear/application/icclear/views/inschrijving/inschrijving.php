@@ -1,11 +1,19 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
-        alert("#aanwezig [value='" + $(this).attr('name') + "']");
         if ($("#aantalPersonen").val().length == 0) {
-            $("#aanwezig" + $(this).attr('name')).prop('checked',false);
+            $("input[value='" + $(this).attr('name') + "']").prop('checked',false);
         } else {
             $("input[value='" + $(this).attr('name') + "']").prop('checked',true);
+        }
+    });
+    
+    $("#aanwezig").change(function() {
+        alert("input[name='" + $(this).attr('value') + "']");
+        if ($("#aanwezig").is(':checked')) {
+            $("input[name='" + $(this).attr('value') + "']").attr('required',false);
+        } else {
+            $("input[name='" + $(this).attr('value') + "']").attr('required',true);
         }
     });
 });
