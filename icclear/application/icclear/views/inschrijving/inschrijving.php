@@ -11,7 +11,7 @@ $(document).ready(function() {
     
     $("#aanwezig").click(function() {
         alert("input[name='" + $(this).attr('value') + "']");
-        if ($("#aanwezig").is(':checked')) {
+        if ($(this).is(':checked')) {
             $("input[name='" + $(this).attr('value') + "']").prop('required',false);
         } else {
             $("input[name='" + $(this).attr('value') + "']").prop('required',true);
