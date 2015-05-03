@@ -5,7 +5,7 @@ $(document).ready(function() {
         if ($("#aantalPersonen").val().length == 0) {
             $("#aanwezig" + $(this).attr('name')).prop('checked',false);
         } else {
-            $("#aanwezig [value='" + $(this).attr('name') + "']").prop('checked',true);
+            $("input[value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
 });
