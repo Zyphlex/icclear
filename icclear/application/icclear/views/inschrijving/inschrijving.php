@@ -103,21 +103,29 @@ $attributes = array('name' => 'myform');
         <br/>
         <br/>
 
-        <input type="radio" name="methode" value="1"/> <label> VISA</label><br/>
-        <input type="radio" name="methode" value="2"/> <label> Mastercard</label><br/>
-        <input type="radio" name="methode" value="3"/> <label> PayPal</label><br/>
-        <input type="radio" name="methode" value="4"/> <label> Overschrijving</label><br/>
-        <br/>
+        <?php foreach ($betaaltypes as $type) { 
+        
+            echo form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id));
+            echo form_label($type->omschrijving . form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id)), 'methode');
+            
+            echo form_label($type->omschrijving, 'methode');
+            
+        } ?>
+        
+        <input type="radio" name="methode" value="1"/> <label> VISA</label>
+        <input type="radio" name="methode" value="2"/> <label> Mastercard</label>
+        <input type="radio" name="methode" value="3"/> <label> PayPal</label>
+        <input type="radio" name="methode" value="4"/> <label> Overschrijving</label>
 
-        <input type="hidden" name="datum" value="<?php date("Y-m-d") ?>" />
-
-        <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
+        <div class="btn-group">
+        <a href="<?php echo base_url(); ?>icclear.php/home" class="col-xs-3 btn btn-default">Annuleren</a>
 
         <?php if ($user == null) { ?>
-            <input type="submit" value="Aanmelden en betalen" class="btn btn-primary"/>
+            <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="col-xs-6 btn btn-primary"'); ?>
         <?php } else { ?>
-            <input type="submit" value="Inschrijven en betalen" class="btn btn-primary"/>
+            <?php echo form_submit('mysubmit', 'Inschrijven en betalen', 'class="col-xs-6 btn btn-primary"'); ?>
         <?php } ?>
+        </div>
     </div>
 </div>
 <?php echo form_close(); ?>
