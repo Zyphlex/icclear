@@ -7,6 +7,9 @@
                     $("#resultaat").html(result);
                     maakDetailClick();
                     maakDeleteClick();
+                $('.table').DataTable({
+                    "aaSorting": []
+                });
                 }
         });
     }

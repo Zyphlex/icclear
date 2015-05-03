@@ -1,8 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.table').DataTable();
-    });
-</script>
 
 <h2>Conferentie onderdelen</h2>
 

@@ -8,6 +8,9 @@
                 maakDetailClick();
                 maakDeleteClick();
                 maakMailClick();
+                $('.table').DataTable({
+                    "aaSorting": []
+                });
             }
         });
     }

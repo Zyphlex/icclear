@@ -1,10 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.table').DataTable();        
-    });
-    
-</script>
-
 <div class="table-responsive">
     <table class="table table-beheer">
         <thead>

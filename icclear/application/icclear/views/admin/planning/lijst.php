@@ -1,10 +1,5 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.table').DataTable();
-    });
-</script>
     
-    <?php foreach ($dagen as $dag) { ?>
+<?php foreach ($dagen as $dag) { ?>
 <h3><?php echo toDDMMYYYY($dag->datum) ?></h3>
     <table class="table table-responsive table-beheer">
         <thead>
