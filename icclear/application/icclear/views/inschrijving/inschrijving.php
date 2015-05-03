@@ -10,7 +10,7 @@ $(document).ready(function() {
     
     $("#aanwezig").change(function() {
         alert("input[name='" + $(this).attr('value')) + "'");
-        $("input[name='" + $(this).attr('value')) + "'").prop('required',true);        
+        $("input[name='" + $(this).attr('value')) + "'").attr('required',true);        
     });
 });
 </script>
