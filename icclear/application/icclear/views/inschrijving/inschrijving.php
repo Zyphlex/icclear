@@ -1,7 +1,6 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
-        alert("input[value='" + $(this).attr('name') + "']");
         if ($("#aantalPersonen").val().length == 0) {
             $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',false);
         } else {
@@ -10,7 +9,6 @@ $(document).ready(function() {
     });
     
     $("#aanwezig").click(function() {
-        alert("input[name='" + $(this).attr('value') + "']");
         if (this.checked) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
         } else {
