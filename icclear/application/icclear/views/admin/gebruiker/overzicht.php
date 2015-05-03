@@ -4,18 +4,13 @@
         $.ajax({type: "GET",
             url: site_url + "/gebruiker/overzicht",
             success: function (result) {
-                if (result.success) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
                 maakMailClick();
                 $('.table').DataTable({
                     "aaSorting": []
-                });
-                } else {
-                    $("#error").removeClass("hidden");
-                    $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
-                }
+                });                
             }
         });
     }
@@ -147,6 +142,10 @@
                         refreshData();
                     }
                     $("#gebruikerDelete").modal('hide');
+                },
+                error: function () {  
+                    $("#error").removeClass("hidden");
+                    $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
                 }
             });
         });
