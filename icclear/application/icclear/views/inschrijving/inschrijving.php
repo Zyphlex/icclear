@@ -52,7 +52,7 @@ $attributes = array('name' => 'myform');
                     <td><?php echo $ond->omschrijving ?></td>
                     <td>&euro; <?php echo $ond->prijs ?></td>
                     <td><?php echo $ond->korting ?> &percnt;</td>
-                    <td class="success radio">
+                    <td class="success">
                         <?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id))?>
                     </td>
                 </tr>
