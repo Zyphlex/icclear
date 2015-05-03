@@ -1,19 +1,19 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
-    $("#aantalPersonen").change(function() {
+    $(".aantalPersonen").change(function() {
         if ($("#aantalPersonen").val().length == 0) {
-            $("input[type='checkbox'][value='" + $(this).attr('name') + "']").prop('checked',false);
+            $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',false);
         } else {
-            $("input[type='checkbox'][value='" + $(this).attr('name') + "']").prop('checked',true);
+            $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
     
-    $("#aanwezig").change(function() {
+    $(".aanwezig").change(function() {
         if ($(this).prop('checked') == false) {
-            $("input[type='number'][name='" + $(this).attr('value') + "']").prop('required',false);
-            $("input[type='number'][name='" + $(this).attr('value') + "']").val('');
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
         } else {
-            $("input[type='number'][name='" + $(this).attr('value') + "']").prop('required',true);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
         }
     });
 });
@@ -104,9 +104,9 @@ $attributes = array('name' => 'myform');
                         <td class="success">
                            <div class="input-group">
                                 <span class="input-group-addon">
-                                    <?php echo form_input(array('class' => 'checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
+                                    <?php echo form_input(array('class' => 'aanwezig checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
                                 </span>
-                                <?php echo form_input(array('type' => 'number', 'class' => 'form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
+                                <?php echo form_input(array('type' => 'number', 'class' => 'aantalPersonen form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
                             </div>                    
                         </td>
                     </tr>
