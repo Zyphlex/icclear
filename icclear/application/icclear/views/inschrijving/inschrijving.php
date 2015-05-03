@@ -9,8 +9,7 @@ $(document).ready(function() {
     });
     
     $("#aanwezig").change(function() {
-        alert("input[name='" + $(this).attr('value')) + "'");
-        $("input[name='" + $(this).attr('value')) + "'").attr('required',true);        
+        alert("input[name='" + $(this).attr('value')) + "'");      
     });
 });
 </script>
