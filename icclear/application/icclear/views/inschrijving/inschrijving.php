@@ -12,9 +12,9 @@ $(document).ready(function() {
     $("#aanwezig").click(function() {
         alert("input[name='" + $(this).attr('value') + "']");
         if ($(this).prop('checked')) {
-            $("[name='" + $(this).attr('value') + "']").prop('required',false);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
         } else {
-            $("[name='" + $(this).attr('value') + "']").prop('required',true);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
         }
     });
 });
