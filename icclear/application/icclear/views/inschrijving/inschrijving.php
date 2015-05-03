@@ -12,9 +12,9 @@ $(document).ready(function() {
     $("#aanwezig").click(function() {
         alert("input[name='" + $(this).attr('value') + "']");
         if ($("#aanwezig").is(':checked')) {
-            $("input[name='" + $(this).attr('value') + "']").attr('required',false);
+            $("input[name='" + $(this).attr('value') + "']").prop('required',false);
         } else {
-            $("input[name='" + $(this).attr('value') + "']").attr('required',true);
+            $("input[name='" + $(this).attr('value') + "']").prop('required',true);
         }
     });
 });
