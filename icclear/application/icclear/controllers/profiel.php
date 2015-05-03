@@ -90,12 +90,7 @@ class Profiel extends CI_Controller {
         if ($user == null) {
             $data['inschrijving'] = null;
         } else {
-            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
-            if ($inschrijving == null) {
-                $data['inschrijving'] = null;
-            } else {
-                $data['inschrijving'] = $inschrijving;
-            }
+            $data['inschrijving'] = $this->inschrijving_model->getInschijvingByGebruiker($user->id);
         }
 
         $this->load->model('conferentie_model');
