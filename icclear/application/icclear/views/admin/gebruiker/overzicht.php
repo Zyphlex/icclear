@@ -4,7 +4,7 @@
         $.ajax({type: "GET",
             url: site_url + "/gebruiker/overzicht",
             success: function (result) {
-                if (result.success == true) {
+                if (result.success) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
