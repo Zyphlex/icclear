@@ -1,12 +1,10 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
     $(".aantalPersonen").change(function() {
-        if ($("#aantalPersonen").val().length == 0) {
+        if ($(this).val().length == 0) {
             $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',false);
-            alert("input[id='aanwezig'][value='" + $(this).attr('name') + "']");
         } else {
             $("input[id='aanwezig'][value='" + $(this).attr('name') + "']").prop('checked',true);
-            alert("input[id='aanwezig'][value='" + $(this).attr('name') + "']");
         }
     });
     
@@ -14,10 +12,8 @@ $(document).ready(function() {
         if ($(this).prop('checked') == false) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
-            alert("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']");
         } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
-            alert("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']);
         }
     });
 });
