@@ -109,7 +109,7 @@ $attributes = array('name' => 'myform');
             <?php echo form_label($type->omschrijving, 'methode');?>
         </p>
     
-        <p><?php echo form_label($type->omschrijving . form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id)), 'methode');?></p>
+        <p><?php echo form_label(form_radio(array('id'=>'methode','name'=>'methode','value'=>$type->id)) . " " . $type->omschrijving, 'methode');?></p>
             
             
         <?php } ?>
