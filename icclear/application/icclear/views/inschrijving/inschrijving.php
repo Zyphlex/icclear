@@ -1,5 +1,4 @@
-<script type='text/javascript'>       
-$(document).ready(function() {
+<script type='text/javascript'>      
     $("#aantalPersonen").change(function() {
         alert("#aanwezig [value=" + $(this).attr('name')+ "]");
         if ($("#aantalPersonen").val().length == 0) {
@@ -13,7 +12,6 @@ $(document).ready(function() {
         alert("input[name='" + $(this).attr('value')) + "'");
         $("input[name='" + $(this).attr('value')) + "'").attr('required',true);        
     });
-});
 </script>
 
 
