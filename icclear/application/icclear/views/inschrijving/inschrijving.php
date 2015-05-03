@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
     
     $("#aanwezig").click(function() {
-        if (this.checked) {
+        if ($(this).checked) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
         } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
