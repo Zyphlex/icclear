@@ -3,9 +3,9 @@ $(document).ready(function() {
     $("#aantalPersonen").change(function() {
         alert("input[value='" + $(this).attr('name') + "']");
         if ($("#aantalPersonen").val().length == 0) {
-            $("#aanwezig input[value='" + $(this).attr('name') + "']").prop('checked',false);
+            $("[#aanwezig] [value='" + $(this).attr('name') + "']").prop('checked',false);
         } else {
-            $("#aanwezig input[value='" + $(this).attr('name') + "']").prop('checked',true);
+            $("[#aanwezig] [value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
     
