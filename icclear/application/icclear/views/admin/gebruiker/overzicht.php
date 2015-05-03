@@ -438,7 +438,7 @@
             </div>
 
             <div class="modal-body">  
-                <div class="alert alert-danger" role="alert" id="error"></div>
+                <div class="hidden alert alert-danger" role="alert" id="error"></div>
                 <p>Bent u zeker dat u deze gebruiker wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
