@@ -1,6 +1,7 @@
 <script type='text/javascript'>      
 $(document).ready(function() {
     $("#aantalPersonen").change(function() {
+        alert("#aanwezig [value=" + $(this).attr('name') + "]");
         if ($("#aantalPersonen").val().length == 0) {
             $("#aanwezig" + $(this).attr('name')).prop('checked',false);
         } else {
