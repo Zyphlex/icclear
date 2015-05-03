@@ -47,15 +47,14 @@ $attributes = array('name' => 'myform');
             </thead>
             
             <tbody>
-            <?php foreach ($conferentieOnderdelen as $conferentieOnderdeel) { ?>
-                <?php if ($conferentieOnderdeel->conferentie->statusId == '2') { ?>                    
+            <?php foreach ($onderdelen as $ond) { ?>                   
                 <tr>
-                    <td> <?php echo $conferentieOnderdeel->omschrijving ?></td>
-                    <td>&euro; <?php echo $conferentieOnderdeel->prijs ?></td>
-                    <td><?php echo $conferentieOnderdeel->korting ?> &percnt;</td>
-                    <td class="success"><input type="radio" name="conferentieOnderdeelId" value="<?php echo $conferentieOnderdeel->id ?>"/></td></tr>
+                    <td> <?php echo $ond->omschrijving ?></td>
+                    <td>&euro; <?php echo $ond->prijs ?></td>
+                    <td><?php echo $ond->korting ?> &percnt;</td>
+                    <td class="success radio"><?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id)) ?>
+                        </td></tr>
                 </tr>
-                <?php } ?>
             <?php } ?>
             </tbody>
 
@@ -102,31 +101,18 @@ $attributes = array('name' => 'myform');
             <?php echo form_label('Ja, ik wil een factuur ontvangen.','factuur') ?>
         </div>
 
-        <?php foreach ($betaaltypes as $type) { ?>
-        
-        <p>
-            <?php echo form_radio(array('id'=>'methode'.$type->id,'name'=>'methode','value'=>$type->id));?>        
-            <?php echo form_label($type->omschrijving, 'methode');?>
-        </p>
-    
-        <div class="radio"><?php echo form_label(form_radio(array('id'=>'methode'.$type->id,'name'=>'methode','value'=>$type->id)) . " " . $type->omschrijving);?></div>
-            
-            
+        <?php foreach ($betaaltypes as $type) { ?>    
+            <div class="radio"><?php echo form_label(form_radio(array('required'=>'required','id'=>'methode'.$type->id,'name'=>'methode','value'=>$type->id)) . " " . $type->omschrijving);?></div>   
         <?php } ?>
-        
-        <input type="radio" name="methode" value="1"/> <label> VISA</label>
-        <input type="radio" name="methode" value="2"/> <label> Mastercard</label>
-        <input type="radio" name="methode" value="3"/> <label> PayPal</label>
-        <input type="radio" name="methode" value="4"/> <label> Overschrijving</label>
+        <div id="overschr"></div>
 
         <div class="btn-group">
-        <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
-
-        <?php if ($user == null) { ?>
-            <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="btn btn-primary"'); ?>
-        <?php } else { ?>
-            <?php echo form_submit('mysubmit', 'Inschrijven en betalen', 'class="btn btn-primary"'); ?>
-        <?php } ?>
+            <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
+            <?php if ($user == null) { ?>
+                <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="btn btn-primary"'); ?>
+            <?php } else { ?>
+                <?php echo form_submit('mysubmit', 'Inschrijven en betalen', 'class="btn btn-primary"'); ?>
+            <?php } ?>
         </div>
     </div>
 </div>

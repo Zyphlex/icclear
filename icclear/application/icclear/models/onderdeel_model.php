@@ -29,6 +29,15 @@ class Onderdeel_model extends CI_Model {
          return $conferentieOnderdelen;
     }
     
+    function getOnderdelenActieve() {
+        $this->load->model('conferentie_model');
+        $id = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->where('conferentieId', $id->id);
+        $query = $this->db->get('conferentieOnderdeel');
+        $onderdelen = $query->result();
+    }
+    
     
     
 }

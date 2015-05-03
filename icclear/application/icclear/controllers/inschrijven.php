@@ -34,6 +34,7 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('onderdeel_model');
         $data['conferentieOnderdelen'] = $this->onderdeel_model->getOnderdelenPerConferentie();
+        $data['onderdelen'] = $this->onderdeel_model->getOnderdelenActieve();
 
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getActiviteitenPerConferentie();
