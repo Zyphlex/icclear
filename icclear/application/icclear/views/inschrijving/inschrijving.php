@@ -1,6 +1,6 @@
 <script type='text/javascript'>       
 $(document).ready(function() {
-    $("#aantalPersonen").onchange(function() {
+    $("#aantalPersonen").change(function() {
         alert("#aanwezig" + $(this).attr('name'));
         $("#aanwezig" + $(this).attr('name')).prop('checked');
     });
