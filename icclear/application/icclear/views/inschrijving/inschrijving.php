@@ -104,7 +104,7 @@ $attributes = array('name' => 'myform');
                         <td class="success">
                            <div class="input-group">
                                 <span class="input-group-addon">
-                                    <?php echo form_input(array('class' => 'checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig' . $activiteit->id, 'value' => $activiteit->id)); ?>
+                                    <?php echo form_input(array('class' => 'checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
                                 </span>
                                 <?php echo form_input(array('type' => 'number', 'class' => 'form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
                             </div>                    
