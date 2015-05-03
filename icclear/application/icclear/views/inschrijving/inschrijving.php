@@ -8,11 +8,6 @@ $(document).ready(function() {
             $("input[value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
-    
-    $("#aanwezig").change(function() {
-        alert("input[name='" + $(this).attr('value')) + "']");
-        $("input[name='" + $(this).attr('value')) + "']").attr('required',true);        
-    });
 });
 </script>
 
