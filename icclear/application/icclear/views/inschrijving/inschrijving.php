@@ -7,10 +7,6 @@ $(document).ready(function() {
             $("#aanwezig" + $(this).attr('name')).prop('checked',true);
         }
     });
-    
-    $("#aanwezig").change(function() {
-        alert("input[name='" + $(this).attr('value')) + "'");      
-    });
 });
 </script>
 
