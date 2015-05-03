@@ -9,7 +9,7 @@
 <?php } else { ?>
 
 <div class="row">
-    <div class="underline col-sm-12">
+    <div class="underline-full col-sm-12">
         <h1>Inschrijven conferentie</h1>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
@@ -49,11 +49,12 @@ $attributes = array('name' => 'myform');
             <tbody>
             <?php foreach ($onderdelen as $ond) { ?>                   
                 <tr>
-                    <td> <?php echo $ond->omschrijving ?></td>
+                    <td><?php echo $ond->omschrijving ?></td>
                     <td>&euro; <?php echo $ond->prijs ?></td>
                     <td><?php echo $ond->korting ?> &percnt;</td>
-                    <td class="success radio"><?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id)) ?>
-                        </td></tr>
+                    <td class="success radio">
+                        <?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id))?>
+                    </td>
                 </tr>
             <?php } ?>
             </tbody>

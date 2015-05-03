@@ -31,11 +31,11 @@ class Onderdeel_model extends CI_Model {
     
     function getOnderdelenActieve() {
         $this->load->model('conferentie_model');
-        $id = $this->conferentie_model->getActieveConferentie();
+        $confId = $this->conferentie_model->getActieveConferentie();
         
-        $this->db->where('conferentieId', $id->id);
+        $this->db->where('conferentieId', $confId->id);
         $query = $this->db->get('conferentieOnderdeel');
-        $onderdelen = $query->result();
+        return $query->result();
     }
     
     
