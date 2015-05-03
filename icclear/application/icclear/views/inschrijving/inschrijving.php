@@ -8,7 +8,7 @@ $(document).ready(function() {
         }
     });
     
-    $("#aanwezig").change(function() {
+    $("#aanwezig").click(function() {
         if ($(this).checked = false) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
             alert('false');
