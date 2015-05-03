@@ -4,6 +4,7 @@
         $.ajax({type: "GET",
             url: site_url + "/gebruiker/overzicht",
             success: function (result) {
+                if (result.success == true) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
@@ -11,10 +12,10 @@
                 $('.table').DataTable({
                     "aaSorting": []
                 });
-            },
-            error: function () {
-                $("#error").removeClass("hidden");
-                $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
+                } else {
+                    $("#error").removeClass("hidden");
+                    $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
+                }
             }
         });
     }
