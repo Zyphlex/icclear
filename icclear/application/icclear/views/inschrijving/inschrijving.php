@@ -11,10 +11,8 @@ $(document).ready(function() {
     $("#aanwezig").change(function() {
         if ($(this).prop('checked') == false) {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',false);
-            alert('false');
         } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
-            alert("true");
         }
     });
 });
