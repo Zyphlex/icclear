@@ -1,5 +1,4 @@
 <script type='text/javascript'>       
-$(document).ready(function() {
     $("#aantalPersonen").change(function() {
         alert("input[value='" + $(this).attr('name') + "']");
         if ($("#aantalPersonen").val().length == 0) {
@@ -8,7 +7,6 @@ $(document).ready(function() {
             $("input[value='" + $(this).attr('name') + "']").prop('checked',true);
         }
     });
-});
 </script>
 
 
