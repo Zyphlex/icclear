@@ -25,7 +25,7 @@
                 var string;
                 $.each(result , function(key, val) {
                     string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
-                )};
+                });
                 alert(string);
                 $("#sessie").html(string);
                 }
