@@ -125,7 +125,7 @@
         
     //VALIDATIE
     $('#JqAjaxForm').on('submit', function(e) {
-    if(!$('#datum').val()) {
+    if(!$('#datum').val() == '') {
       $('#datum').val().removeClass('has-success').addClass('has-error');
       e.preventDefault();
     } else {
