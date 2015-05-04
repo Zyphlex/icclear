@@ -231,15 +231,17 @@
                     <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
 
                     <p class="zaal"><?php echo form_label('Zaal:', 'zaal'); ?></p>
-                    <?php
-                    $optionsZaal = array();
-                    foreach ($zalen as $d) {
-                        foreach ($d->zalen as $z) {
-                                $optionsZaal[$z->id] = $z->naam . " (" . $d->gebouw->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
+                    <p class="zaal">
+                        <?php
+                        $optionsZaal = array();
+                        foreach ($zalen as $d) {
+                            foreach ($d->zalen as $z) {
+                                    $optionsZaal[$z->id] = $z->naam . " (" . $d->gebouw->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
+                            }
                         }
-                    }
-                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
-                    ?>
+                        echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="zaal form-control"');
+                        ?>
+                    </p>
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p class="plenair">
