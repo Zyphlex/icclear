@@ -166,10 +166,10 @@
                     ?>
 
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
-                    <p><?php echo form_input(array('required'=>'required','name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time','required')); ?></p>
+                    <p><?php echo form_input(array('required'=>'required','name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
-                    <p><?php echo form_input(array('required'=>'required','name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time','required')); ?></p>
+                    <p><?php echo form_input(array('required'=>'required','name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
@@ -187,8 +187,8 @@
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p>
-                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1','required')); ?> Ja
-                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0','required')); ?> Nee
+                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
+                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
                     </p>
                 </form>
 
