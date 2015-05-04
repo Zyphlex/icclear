@@ -43,18 +43,6 @@ class Sessies_model extends CI_Model {
             }
         }
         
-        $this->load->model('zaal_model');        
-        foreach ($sessies as $sessie) {
-            $sessie->zaal = 
-                 $this->zaal_model->get($sessie->zaalId);
-        }
-        
-        $this->load->model('conferentiedag_model');        
-        foreach ($sessies as $sessie) {
-            $sessie->conferentiedag = 
-                 $this->conferentiedag_model->get($sessie->conferentiedagId);
-        }
-        
         return $sessies;
     }
     

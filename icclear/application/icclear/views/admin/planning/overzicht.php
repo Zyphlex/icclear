@@ -153,11 +153,11 @@
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php
-                    $optionsOnd = array();
+                    $optionsSes = array();
                     foreach ($sessies as $sessie) {
-                        $optionsOnd[$sessie->id] = $sessie->onderwerp;
+                        $optionsSes[$sessie->id] = $sessie->onderwerp;
                     }
-                    echo form_dropdown('sessie', $optionsOnd, '', 'id="sessie" class="form-control"');
+                    echo form_dropdown('sessie', $optionsSes, '', 'id="sessie" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
