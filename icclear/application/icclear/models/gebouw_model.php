@@ -68,8 +68,8 @@ class Gebouw_model extends CI_Model {
         foreach ($gebouwen as $g) {
             $g->gebouw = $this->get($g->gebouwId);
               
-            foreach ($g->gebouw as $g) {
-                $g->zalen = $this->zaal_model->getAllPerGebouw($g->id);
+            foreach ($g->gebouw as $z) {
+                $z->zalen = $this->zaal_model->getAllPerGebouw($z->id);
             }
         }        
         
