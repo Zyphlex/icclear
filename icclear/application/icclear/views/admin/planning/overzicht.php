@@ -93,6 +93,8 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanPlanning").click(function () {
+        e.preventDefault();
+        if (validatieOK()) {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -103,6 +105,7 @@
             });
             refreshData();
             $("#planningModal").modal('hide');
+        }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -124,45 +127,46 @@
         });
         
     //VALIDATIE
-    $('#JqAjaxForm').on('submit', function(e) {
-    if(!$('#datum').val() == '') {
+    function validatieOK() {
+    ok == true;
+    if(!$('#datum').val()) {
       $('#datum').val().removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('#datum').val().removeClass('has-error').addClass('has-success');
     }
     
     if(!$('#beginuur').val()) {
       $('#einduur').removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('#einduur').removeClass('has-error').addClass('has-success');
     }
     
     if(!$('#einduur').val()) {
       $('#einduur').removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('#einduur').removeClass('has-error').addClass('has-success');
     }
     
     if(!$('#sessie').val()) {
       $('#sessie').removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('#sessie').removeClass('has-error').addClass('has-success');
     }
     
     if(!$('#zaal').val()) {
       $('#zaal').removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('#zaal').removeClass('has-error').addClass('has-success');
     }
     
     if(!$('.plenair').val()) {
       $('.plenair').removeClass('has-success').addClass('has-error');
-      e.preventDefault();
+      ok == false;
     } else {
       $('.plenair').removeClass('has-error').addClass('has-success');
     }
