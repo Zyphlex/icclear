@@ -24,7 +24,6 @@
                 var jobject = jQuery.parseJSON(result);
                 $("#sessie").append($('<option/>').attr("value", jobject.id).text(jobject.onderwerp));
                 }
-            }
         });
     }
 
