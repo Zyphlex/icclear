@@ -14,8 +14,7 @@
             echo form_open('spreker/indienen', $attributes);
         }
 ?>  
-<div class="row">
-    <div class="col-sm-12">
+    <div class="row">
         
         <div class="col-sm-8 space-bottom">
             <h2>Sessie voorstel</h2>
@@ -25,8 +24,10 @@
                 Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
             </p>        
         </div> 
+    </div>
 
-        <label for="sessieonderwerp" class=" col-sm-2control-label">Onderwerp: </label>
+    <div class="row">
+        <label for="sessieonderwerp" class="col-sm-2 control-label">Onderwerp: </label>
         <div class="col-sm-8 space-bottom">
             <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
         </div>
@@ -40,7 +41,7 @@
 
 
 
-        <div class="btn-group">
+        <div class=" col-sm-12 btn-group">
             <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
             <?php if ($user == null) { ?>
                 <?php echo form_submit('mysubmit', 'Aanmelden en verzenden', 'class="btn btn-primary"'); ?>
@@ -49,5 +50,4 @@
             <?php } ?>
         </div>
     </div>
-</div>
 <?php echo form_close(); ?>
