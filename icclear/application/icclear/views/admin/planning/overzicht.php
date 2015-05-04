@@ -99,11 +99,10 @@
                 url: site_url + "/planningbeheer/update",
                 async: false,
                 data: dataString,
-                dataType: "json"                
+                dataType: "json"
             });
             refreshData();
-            ("#planningModal").modal('hide');
-            
+            $("#planningModal").modal('hide');
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -151,8 +150,7 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">    
-                <p class="hidden alert alert-danger" role="alert" id="msg"></p>              
+            <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
@@ -216,8 +214,7 @@
                 <h4 class="modal-title">OPGELET!</h4>
             </div>
 
-            <div class="modal-body"> 
-                <p class="hidden alert alert-danger" role="alert" id="error"></p>
+            <div class="modal-body">                  
                 <p>Bent u zeker dat u deze planning wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
