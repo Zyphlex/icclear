@@ -230,8 +230,8 @@
                     <p class="sessie"><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
 
-                    <p class="zaal"><?php echo form_label('Zaal:', 'zaal'); ?></p>
-                    <p class="zaal">
+                    <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
+                    <p>
                         <?php
                         $optionsZaal = array();
                         foreach ($zalen as $d) {
