@@ -100,9 +100,16 @@
                 async: false,
                 data: dataString,
                 dataType: "json"
+                success: function (result) {
+                    refreshData();
+                    $("#planningModal").modal('hide');
+                },
+                error: function () {
+                    $("#msg").removeClass("hidden");
+                    $("#msg").html("Oops! Het formulier is niet juist ingevuld!");
+                }
             });
-            refreshData();
-            $("#planningModal").modal('hide');
+            
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -119,6 +126,10 @@
                         refreshData();
                     }
                     $("#planningDelete").modal('hide');
+                },
+                error: function () {
+                    $("#error").removeClass("hidden");
+                    $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
                 }
             });
         });
@@ -150,7 +161,8 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">    
+                <p class="hidden alert alert-danger" role="alert" id="error"></p>              
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
@@ -162,14 +174,14 @@
                     foreach ($dagen as $dag) {
                         $optionsDag[$dag->id] = toDDMMYYYY($dag->datum);
                     }
-                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control" required');
+                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
-                    <p><?php echo form_input(array('required'=>'required','name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
-                    <p><?php echo form_input(array('required'=>'required','name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
@@ -182,13 +194,13 @@
                                 $optionsZaal[$z->id] = $z->naam . " (" . $d->gebouw->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                         }
                     }
-                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control" required');
+                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p>
-                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
-                        <?php echo form_radio(array('required'=>'required','name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
                     </p>
                 </form>
 
@@ -214,7 +226,8 @@
                 <h4 class="modal-title">OPGELET!</h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body"> 
+                <p class="hidden alert alert-danger" role="alert" id="error"></p>
                 <p>Bent u zeker dat u deze planning wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
