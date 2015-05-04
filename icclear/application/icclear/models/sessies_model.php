@@ -41,6 +41,7 @@ class Sessies_model extends CI_Model {
             if ($sessie->planning != null) {
                 $sessie->dag = $this->conferentiedag_model->get($sessie->planning->conferentiedagId);    
             }
+            $sessie->spreker = $this->gebruiker_model->get($sessie->gebruikerIdSpreker);
         }
         
         return $sessies;
