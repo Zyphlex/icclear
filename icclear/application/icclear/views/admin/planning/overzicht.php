@@ -21,7 +21,7 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
-                $.each {
+                $.each(result) {
                 $("#sessie").append($('<option>').text("test").attr('value', "0"));
                 $("#sessie").html(result);
                 }
