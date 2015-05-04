@@ -163,6 +163,126 @@ class Spreker extends CI_Controller {
         echo json_encode($spreker);
     }
 
+    
+    //Men wilt voorstel versturen zonder aangemeld te zijn
+    public function aanmeldenEnVerzenden() {  
+        //Algemene informatie nodig voor de pagina
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['title'] = 'IC Clear - Inschrijven';
+        $data['active'] = 'inschrijven';        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
+        $this->load->model('inschrijving_model');
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
+        }
+        
+        $this->load->model('conferentie_model');
+        $conf = $this->conferentie_model->getActieveConferentie();
+        
+        $voorstel->sconferentieId = $conf->id;
+        $voorstel->sonderwerp = $this->input->post('onderwerp');
+        $voorstel->sdatumIngediend = date("Y-m-d");
+        $voorstel->somschrijving = $this->input->post('omschrijving');
+        
+        $this->session->set_userdata($voorstel);         
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/aanmelden', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+    }
+    
+    
+    //Na inschrijving invullen, kiest men om in te loggen
+    //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
+    public function aanmelden() {
+        $email = $this->input->post('emaillogon');
+        $password = $this->input->post('passwordlogon');
+
+        //is geactiveerd
+        $this->load->model('logon_model');
+        $actCheck = $this->logon_model->isGeactiveerd($email);
+        if ($this->authex->login($email, sha1($password))) {            
+            
+            $user = $this->authex->getUserInfo();            
+            $this->load->model('conferentie_model');
+            $conferentie = $this->conferentie_model->getActieveConferentie();
+        
+            //Verwerken van het inschrijven
+            $this->verwerkenVoorstel($user);            
+            $this->email->from('donotreply@thomasmore.be');
+            $this->email->to($user->email);
+            $this->email->subject("Inschrijving voor " + $conferentie->naam);
+            $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
+                    " " +
+                    "Met deze mail bevestigen wij uw voorstel van voor de conferentie  " + $conferentie->naam + ".");
+            $this->email->send();
+        
+            redirect('inschrijven/voorkeuren');
+        } else if ($actCheck == flogonalse) {
+            redirect('logon/nietGeactiveerd');
+        } else {
+            redirect('logon/fout');
+        }
+    }
+    
+    //Na inschrijving invullen, kiest men om te registreren
+    //Nadat men met success registreert, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
+    //Gebruiker krijgt geen activatie mail
+    public function registreer() {
+        //Eerst nieuwe gebruiker registreren
+        $user = new stdClass();
+
+        $user->familienaam = $this->input->post('familienaam');
+        $user->voornaam = $this->input->post('voornaam');
+        $user->email = $this->input->post('emailadres');
+        $user->wachtwoord = $this->input->post('wachtwoord1');
+        $user->geslacht = $this->input->post('geslacht');
+        $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
+        $user->generatedKey = $genkey;
+
+        $user->id = $this->authex->register($user);        
+        $this->load->model('conferentie_model');
+        $conferentie = $this->conferentie_model->getActieveConferentie();
+            
+        //Verwerken van het inschrijven
+        $this->verwerkenVoorstel($user);     
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($user->email);
+        $this->email->subject("Inschrijving voor " + $conferentie->naam);
+        $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
+                " " +
+                "Met deze mail bevestigen wij uw inschrijving voor de conferentie  " + $conferentie->naam + " die loopt van " + $conferentie->beginDatum + " tot " + $conferentie->einddatum + "." +
+                " " +
+                " " +
+                'Klik op onderstaande link om uw registratie te activeren ' . "\n" . "\n " . site_url("logon/activeer/$genkey"));
+        $this->email->send();
+
+        redirect('inschrijven/voorkeuren');
+    }
+    
+    public function verwerkenVoorstel($user) {
+        //Voorstel gegevens uit session halen            
+        $voorstel->gebruikerIdSpreker = $user->id;
+        $voorstel->conferentieId = $this->session->userdata('sconferentieId');
+        $voorstel->onderwerp = $this->session->userdata('sonderwerp');
+        $voorstel->datumIngediend = $this->session->userdata('sdatumIngediend');
+        $voorstel->omschrijving = $this->session->userdata('somschrijving');
+        $voorstel->isGoedgekeurd = '0';
+        
+        $this->load->model('sessie_model');
+        $this->sessie_model->insert($voorstel);        
+    }
+    
 }
 
 ?>
