@@ -23,7 +23,7 @@
             success: function (result) {
                 $("#sessie").html('');
                 var string;
-                $.each(result , function(key, val) {
+                $.each(result , function(key, val)) {
                     string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
                 }
                 alert(string);
