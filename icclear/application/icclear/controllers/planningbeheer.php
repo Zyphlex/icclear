@@ -43,8 +43,6 @@ class Planningbeheer extends CI_Controller {
         $data['active'] = 'admin';
         
 
-        $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAllNPlanConf();
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -54,6 +52,9 @@ class Planningbeheer extends CI_Controller {
         
         $this->load->model('planning_model');
         $data['dagen'] = $this->planning_model->getAllByDag($data['conferentieId']);
+        
+        $this->load->model('sessies_model');
+        $data['sessies'] = $this->sessies_model->getAllNPlanConf($data['conferentieId']);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
