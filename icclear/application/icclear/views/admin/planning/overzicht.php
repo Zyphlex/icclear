@@ -95,7 +95,6 @@
         $(".opslaanPlanning").click(function () {
         e.preventDefault();
         if (validatieOK()) {
-            $("#JqAjaxForm").submit();
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -106,7 +105,6 @@
             });
             refreshData();
             $("#planningModal").modal('hide');
-        }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
