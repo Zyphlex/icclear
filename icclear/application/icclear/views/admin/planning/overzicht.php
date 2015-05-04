@@ -25,8 +25,8 @@
                 $("#sessie").html('');
                 $("#sessie").html(result);
                 var string;
-                $.each(jobject, function(index) {
-                    string += '<option value="' + result[index].id + '">' + result[index].onderwerp + '</option>';
+                $.each(jobject, function(index,val) {
+                    string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
                 });
                 for (var i = 0; i < result.length; i++) {
                     string += '<option value="' + result.id + '">' + result.onderwerp + '</option>';
