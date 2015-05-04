@@ -133,10 +133,10 @@
     function validatieOK() {
         ok = true;
         if($('#datum').prop('selectedIndex')==-1) {
-          $('#datum').addClass('has-error');
+          $('.datum').addClass('has-error');
           ok = false;
         } else {
-          $('#datum').removeClass('has-error');
+          $('.datum').removeClass('has-error');
         }
 
         if($('#beginuur').val() == "") {
@@ -147,24 +147,24 @@
         }
 
         if($('#einduur').val() == "") {
-          $('#einduur').addClass('has-error');
+          $('.einduur').addClass('has-error');
           ok = false;
         } else {
-          $('#einduur').removeClass('has-error');
+          $('.einduur').removeClass('has-error');
         }
 
         if($('#sessie').prop('selectedIndex')==-1) {
-          $('#sessie').addClass('has-error');
+          $('.sessie').addClass('has-error');
           ok = false;
         } else {
-          $('#sessie').removeClass('has-error');
+          $('.sessie').removeClass('has-error');
         }
 
         if($('#zaal').prop('selectedIndex')==-1) {
-          $('#zaal').addClass('has-error');
+          $('.zaal').addClass('has-error');
           ok = false;
         } else {
-          $('#zaal').removeClass('has-error');
+          $('.zaal').removeClass('has-error');
         }
         return ok;
     }
@@ -204,7 +204,7 @@
                     <input type="hidden" name="id" id="id" />
                     <input type="hidden" name="dag" id="dag" />
                     
-                    <p><?php echo form_label('Datum:', 'datum'); ?></p>
+                    <p class="datum"><?php echo form_label('Datum:', 'datum'); ?></p>
                     <?php
                     $optionsDag = array();
                     foreach ($dagen as $dag) {
@@ -213,16 +213,16 @@
                     echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
                     ?>
 
-                    <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
+                    <p class="beginuur"><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
                     <p class="beginuur"><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
-                    <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p class="einduur"><?php echo form_label('Einduur:', 'einduur'); ?></p>
+                    <p class="einduur"><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
-                    <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
+                    <p class="sessie"><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
 
-                    <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
+                    <p class="zaal"><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
                     $optionsZaal = array();
                     foreach ($zalen as $d) {
