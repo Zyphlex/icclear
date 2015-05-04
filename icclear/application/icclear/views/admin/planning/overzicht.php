@@ -32,6 +32,7 @@
                 }
                 alert(string);
                 alert(result[i].onderwerp);
+                $("#sessie").html(string);
                 }
         });
     }
