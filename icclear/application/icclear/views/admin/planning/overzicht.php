@@ -102,7 +102,7 @@
                 dataType: "json"                
             });
             refreshData();
-             ("#planningModal").modal('hide');
+            ("#planningModal").modal('hide');
             
         });
 
