@@ -162,17 +162,17 @@
                     foreach ($dagen as $dag) {
                         $optionsDag[$dag->id] = toDDMMYYYY($dag->datum);
                     }
-                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
+                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control" required="required"');
                     ?>
 
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time','required' => 'required')); ?></p>
 
                     <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time','required' => 'required')); ?></p>
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
-                    <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control"'); ?>
+                    <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required="required"'); ?>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
@@ -182,13 +182,13 @@
                                 $optionsZaal[$z->id] = $z->naam . " (" . $d->gebouw->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                         }
                     }
-                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
+                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control" required="required"');
                     ?>
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p>
-                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
-                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1','required' => 'required')); ?> Ja
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0','required' => 'required')); ?> Nee
                     </p>
                 </form>
 
