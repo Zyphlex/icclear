@@ -163,7 +163,7 @@
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
                     $optionsZaal = array();
-                    foreach ($gebouw->gebouw as $g) {
+                    foreach ($gebouwen->gebouw as $g) {
                         foreach ($g->zalen as $z) {
                             $optionsZaal[$z->id] = $z->naam . " (" . $z->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                         }
