@@ -21,10 +21,11 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
+                var jobject = jQuery.parseJSON(result);
                 $("#sessie").html('');
                 $("#sessie").html(result);
                 var string;
-                $.each(result, function(index) {
+                $.each(jobject, function(index) {
                     string += '<option value="' + result[index].id + '">' + result[index].onderwerp + '</option>';
                 });
                 for (var i = 0; i < result.length; i++) {
