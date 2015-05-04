@@ -166,6 +166,14 @@
         } else {
           $('.zaal').removeClass('has-error');
         }
+        
+        if($('input[type=radio]:checked').size() > 0) {
+          $('.plenair').addClass('has-error');
+          ok = false;
+        } else {
+          $('.plenair').removeClass('has-error');
+        }
+        
         return ok;
     }
     
@@ -234,7 +242,7 @@
                     ?>
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
-                    <p>
+                    <p class="plenair">
                         <?php echo form_radio(array('name' => 'plenair', 'class' => 'plenair', 'value' => '1')); ?> Ja
                         <?php echo form_radio(array('name' => 'plenair', 'class' => 'plenair', 'value' => '0')); ?> Nee
                     </p>
