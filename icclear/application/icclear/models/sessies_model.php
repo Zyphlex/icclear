@@ -83,7 +83,6 @@ class Sessies_model extends CI_Model {
         $this->load->model('conferentie_model');
         $conferentieId = $this->session->userdata('conferentieId');
         
-        $this->db->order_by('conferentiedagId');
         $this->db->where('isGoedgekeurd', '0');
         $this->db->where('conferentieId', $conferentieId);
         $query = $this->db->get('sessie');
