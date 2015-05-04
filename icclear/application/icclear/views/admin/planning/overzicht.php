@@ -138,13 +138,11 @@
                     
                     <p><?php echo form_label('Datum:', 'datum'); ?></p>
                     <?php
-                    $drop = array();
-                    $teller = 1;
+                    $optionsDag = array();
                     foreach ($dagen as $dag) {
-                        $drop[$dag->id] = toDDMMYYYY($dag->datum);
-                        $teller++;
+                        $optionsDag[$dag->id] = toDDMMYYYY($dag->datum);
                     }
-                    echo form_dropdown('datum', $drop, '', 'id="datum" class="form-control"');
+                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
@@ -155,27 +153,22 @@
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php
-                    $drop = array();
-                    $teller = 1;
+                    $optionsOnd = array();
                     foreach ($sessies as $sessie) {
-                        $drop[$sessie->id] = $sessie->onderwerp;
-                        $teller++;
+                        $optionsOnd[$sessie->id] = $sessie->onderwerp;
                     }
-                    echo form_dropdown('sessie', $drop, '', 'id="sessie" class="form-control"');
+                    echo form_dropdown('sessie', $optionsOnd, '', 'id="sessie" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
-                    $drop = array();
-                    $teller = 1;
-                    foreach ($dagen as $dag) {
-
-                        foreach ($dag->planning as $planning) {
-                            $drop[$planning->zaal->id] = $planning->zaal->naam . " (" . $planning->gebouw->naam . " , " . $planning->zaal->maximumAantalPersonen . " maximum aantal plaatsen)";
-                            $teller++;
+                    $optionsZaal = array();
+                    foreach ($gebouwen->gebouw as $g) {
+                        foreach ($g->zalen as $z) {
+                            $optionsZaal[$z->id] = $z->naam . " (" . $z->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                         }
                     }
-                    echo form_dropdown('zaal', $drop, '', 'id="zaal" class="form-control"');
+                    echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>

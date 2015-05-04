@@ -30,6 +30,12 @@ class Zaal_model extends CI_Model {
         return $query->result();
     }
     
+    function getAllPerGebouw($id) {
+        $this->db->where('gebouwId', $id);
+        $query = $this->db->get('zaal');
+        return $query->result();
+    }
+    
     function update($zaal)
     {
         //Html entities en extra spaties verwijderen

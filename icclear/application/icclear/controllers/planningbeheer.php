@@ -41,7 +41,7 @@ class Planningbeheer extends CI_Controller {
 
         $data['title'] = 'IC Clear - Planning';
         $data['active'] = 'admin';
-
+        
 
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAlleSessies();
@@ -49,6 +49,9 @@ class Planningbeheer extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
+        $this->load->model('gebouw_model'); //Alle gebouwen gebruikt in conferentie ophalen
+        $data['gebouwen'] = $this->gebouw_model->getPerLandGebruikt($data['conferentie']->id);
+        
         $this->load->model('planning_model');
         $data['dagen'] = $this->planning_model->getAllByDag($data['conferentieId']);
 
