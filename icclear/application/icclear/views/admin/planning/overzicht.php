@@ -132,7 +132,7 @@
     //VALIDATIE
     function validatieOK() {
         ok = true;
-        if($('#datum').prop('selectedIndex')==0) {
+        if($('#datum').prop('selectedIndex')==-1) {
           $('#datum').addClass('has-error');
           ok = false;
         } else {
@@ -153,14 +153,14 @@
           $('#einduur').removeClass('has-error');
         }
 
-        if($('#sessie').prop('selectedIndex')==0) {
+        if($('#sessie').prop('selectedIndex')==-1) {
           $('#sessie').addClass('has-error');
           ok = false;
         } else {
           $('#sessie').removeClass('has-error');
         }
 
-        if($('#zaal').prop('selectedIndex')==0) {
+        if($('#zaal').prop('selectedIndex')==-1) {
           $('#zaal').addClass('has-error');
           ok = false;
         } else {
