@@ -25,11 +25,10 @@
                 $("#sessie").html(result);
                 var string;
                 for (var i = 0; i < result.length; i++) {
-                    string += '<option value="' + result[i].id + '">' + result[i].onderwerp + '</option>';
+                    string += '<option value="' + result.id + '">' + result.onderwerp + '</option>';
                 }
                 alert(string);
                 alert(result[i].onderwerp);
-                $("#sessie").html(string);
                 }
         });
     }
