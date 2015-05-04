@@ -84,51 +84,6 @@
         });
     }
 
-    $(document).ready(function () {
-        //Link leggen met de knoppen die gemaakt worden in lijst.php
-        maakDetailClick();
-        maakDeleteClick();
-        //Lijst eerste maal ophalen en tonen
-        haaloverzicht();
-        haalsessies();
-
-        //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanPlanning").click(function () {
-        if (validatieOK()) {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/planningbeheer/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#planningModal").modal('hide');
-        } else {
-            $("#msg").removeClass("hidden");
-            $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
-        }
-        });
-
-        //Klikken op "BEVESTIG" in de Delete modal
-        $(".deletePlanning").click(function () {
-            $.ajax({
-                type: "POST",
-                url: site_url + "/planningbeheer/delete",
-                async: false,
-                data: {id: deleteid},
-                success: function (result) {
-                    if (result == '0') {
-                        alert("Er is iets foutgelopen!");
-                    } else {
-                        refreshData();
-                    }
-                    $("#planningDelete").modal('hide');
-                }
-            });
-        });
-        
     function verbergError() {
         $("#msg").addClass("hidden");
         $('.datum').removeClass('has-error');
@@ -186,6 +141,51 @@
         
         return ok;
     }
+
+    $(document).ready(function () {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php
+        maakDetailClick();
+        maakDeleteClick();
+        //Lijst eerste maal ophalen en tonen
+        haaloverzicht();
+        haalsessies();
+
+        //Klikken op "OPSLAAN" in de Detail modal
+        $(".opslaanPlanning").click(function () {
+        if (validatieOK()) {
+            var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            $.ajax({
+                type: "POST",
+                url: site_url + "/planningbeheer/update",
+                async: false,
+                data: dataString,
+                dataType: "json"
+            });
+            refreshData();
+            $("#planningModal").modal('hide');
+        } else {
+            $("#msg").removeClass("hidden");
+            $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+        }
+        });
+
+        //Klikken op "BEVESTIG" in de Delete modal
+        $(".deletePlanning").click(function () {
+            $.ajax({
+                type: "POST",
+                url: site_url + "/planningbeheer/delete",
+                async: false,
+                data: {id: deleteid},
+                success: function (result) {
+                    if (result == '0') {
+                        alert("Er is iets foutgelopen!");
+                    } else {
+                        refreshData();
+                    }
+                    $("#planningDelete").modal('hide');
+                }
+            });
+        });
     
 });
 </script>
