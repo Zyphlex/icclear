@@ -157,7 +157,7 @@
         }
 
         if($('#zaal').val() == "") {
-          $('#zaal')..addClass('has-error');
+          $('#zaal').addClass('has-error');
           ok = false;
         } else {
           $('#zaal').removeClass('has-error');
