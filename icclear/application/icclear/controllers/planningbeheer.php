@@ -54,7 +54,8 @@ class Planningbeheer extends CI_Controller {
         $data['dagen'] = $this->planning_model->getAllByDag($data['conferentieId']);
         
         $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAllNPlanConf($data['conferentieId']);
+        $data['sessies'] = $this->sessies_model->getAllNPlanConf($data['conferentieId']); //Alle sessies van een conferentie ophalen, die nog niet gepland zijn
+//        $data['sessies'] = $this->sessies_model->getAllPlanConf($data['conferentieId']); //Alle sessies  van een conferentie ophalen
         print_r($data['sessies']);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');

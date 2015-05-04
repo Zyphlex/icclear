@@ -149,6 +149,15 @@ class Sessies_model extends CI_Model {
         
     }
     
+    //Alle sessies opvragen van de gekozen conferentie
+    function getAllPlanConf($id) {        
+        $this->db->where('isGoedgekeurd', '1');
+        $this->db->where('conferentieId', $id);
+        $query = $this->db->get('sessie');
+        return $query->result();
+        
+    }
+    
     
 }
 ?>
