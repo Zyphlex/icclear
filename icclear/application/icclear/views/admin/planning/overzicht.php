@@ -22,6 +22,7 @@
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
                 $("#sessie").html('');
+                $("#sessie").html(result);
                 var string;
                 $.each(result , function(key, val) {
                     string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
@@ -89,6 +90,7 @@
         maakDeleteClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
+        haalsessies();
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanPlanning").click(function () {
@@ -172,11 +174,11 @@
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
                     <?php
-                    $optionsSes = array();
-                    foreach ($sessies as $sessie) {
-                        $optionsSes[$sessie->id] = $sessie->onderwerp;
-                    }
-                    echo form_dropdown('sessie', $optionsSes, '', 'id="sessie" class="form-control"');
+//                    $optionsSes = array();
+//                    foreach ($sessies as $sessie) {
+//                        $optionsSes[$sessie->id] = $sessie->onderwerp;
+//                    }
+                    echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control"');
                     ?>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
