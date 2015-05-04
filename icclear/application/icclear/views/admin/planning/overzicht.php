@@ -123,7 +123,7 @@
             });
         });
         
-        //VALIDATIE
+    //VALIDATIE
     $('#JqAjaxForm').on('submit', function(e) {
     if(!$('#datum').val()) {
       $('#datum').val().removeClass('has-success').addClass('has-error');
