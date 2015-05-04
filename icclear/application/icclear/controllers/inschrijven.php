@@ -162,6 +162,7 @@ class Inschrijven extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
                             
         $this->email->from('donotreply@thomasmore.be');
+        print_r($user->email);
         $this->email->to($user->email);
         $this->email->subject("Inschrijving voor " + $conferentie->naam);
         $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
