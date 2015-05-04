@@ -119,15 +119,15 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $conf = $this->conferentie_model->getActieveConferentie();
 
-        $userId = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $betId = 0;
         if ($this->input->post('methode') != 4) {
-            $betaling->gebruikerId = $userId->id;
+            $betaling->gebruikerId = $user->id;
             $this->load->model('betaling_model');
             $betId = $this->betaling_model->insert($betaling);
         }
 
-        $inschrijving->gebruikerId = $userId->id;
+        $inschrijving->gebruikerId = $user->id;
         $inschrijving->conferentieId = $conf->id;
         $inschrijving->conferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
         $inschrijving->datum = date("Y-m-d");
@@ -147,7 +147,7 @@ class Inschrijven extends CI_Controller {
         $act = $this->input->post('aanwezig');
         foreach ($act as $a) {
             $activiteit->activiteitId = $a;
-            $activiteit->gebruikerId = $userId->id;
+            $activiteit->gebruikerId = $user->id;
             if ($betId != 0) {
                 $activiteit->betalingId = $betId;
             }
@@ -160,6 +160,14 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+                            
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($user->email);
+        $this->email->subject("Inschrijving voor " + $conferentie->naam);
+        $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
+                " " +
+                "Met deze mail bevestigen wij uw inschrijving voor de conferentie  " + $conferentie->naam + " die loopt van " + $conferentie->beginDatum + " tot " + $conferentie->einddatum + "." );
+        $this->email->send();
 
         redirect('inschrijven/voorkeuren');
     }
