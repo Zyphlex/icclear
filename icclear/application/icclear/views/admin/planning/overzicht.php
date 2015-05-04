@@ -162,7 +162,7 @@
             </div>
 
             <div class="modal-body">    
-                <p class="hidden alert alert-danger" role="alert" id="error"></p>              
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p>              
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
