@@ -165,7 +165,7 @@
                     $optionsZaal = array();
                     foreach ($zalen as $d) {
                         foreach ($d->zalen as $z) {
-                                $optionsZaal[$z->id] = $z->naam . " (" . $z->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
+                                $optionsZaal[$z->id] = $z->naam . " (" . $d->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                         }
                     }
                     echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
