@@ -63,18 +63,14 @@ class Gebouw_model extends CI_Model {
     function getPerLandGebruikt($id) {        
         $this->load->model('zaal_model');
         $this->load->model('conferentiedag_model');
-        $gebouwen = $this->conferentiedag_model->getFromConferentie($id);
+        $dagen = $this->conferentiedag_model->getFromConferentie($id);
         
-        foreach ($gebouwen as $g) {
-            $g->gebouw = $this->get($g->gebouwId);
-              print_r($g->gebouw);
-            foreach ($g->gebouw as $z) {
-                print_r($g->gebouw->id);
-                $g->gebouw->zalen = $this->zaal_model->getAllPerGebouw($g->gebouw->id);
-            }
+        foreach ($dagen as $d) { //Voor elke dag info van het gebouw ophalen en alle zalen
+            $d->gebouw = $this->get($d->gebouwId);
+            $d->zalen = $this->zaal_model->getAllPerGebouw($d->gebouw->id);
         }        
         
-        return $gebouwen;
+        return $dagen;
     }
 
 }
