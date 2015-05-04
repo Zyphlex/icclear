@@ -19,19 +19,18 @@
                     <table class="table table-beheer" style="margin-left: 50px">
                         <thead>
                             <tr>
-                                <th>Naam</th>
+                                <th>Naam</th>                                
+                                <th>Periode</th>
                                 <th>Stad</th>
-                                <th>Begindatum</th>
-                                <th>Einddatum</th>
+                                <th>Land</th>
                                 <th>Beheer</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="width:250px"><?php echo $conferentie->naam ?></td>
+                                <td style="width:250px"><?php echo $conferentie->naam ?></td>                                
+                                <td style="width:200px"><?php echo toDDMMYYYY($conferentie->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
                                 <td style="width:200px"><?php echo $conferentie->stad ?></td>
-                                <td style="width:200px"><?php echo toDDMMYYYY($conferentie->beginDatum) ?></td>
-                                <td style="width:200px"><?php echo toDDMMYYYY($conferentie->eindDatum) ?></td>
                                 <td style="width:150px"><?php echo anchor('admin/dashboard/' . $conferentie->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                             </tr>
 
