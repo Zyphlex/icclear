@@ -111,15 +111,14 @@ class Inschrijven extends CI_Controller {
     //Reeds ingelogd op website
     //Inschrijving verwerken
     public function verzenden() {
-
-        $data['user'] = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
         $data['title'] = 'IC Clear - Inschrijven';
         $data['active'] = 'home';
 
         $this->load->model('conferentie_model');
         $conf = $this->conferentie_model->getActieveConferentie();
 
-        $user = $this->authex->getUserInfo();
         $betId = 0;
         if ($this->input->post('methode') != 4) {
             $betaling->gebruikerId = $user->id;
@@ -162,8 +161,7 @@ class Inschrijven extends CI_Controller {
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
                             
         $this->email->from('donotreply@thomasmore.be');
-        print_r($user->email);
-        $this->email->to($user->email);
+        $this->email->to($user->emailadres);
         $this->email->subject("Inschrijving voor " + $conferentie->naam);
         $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
                 " " +
