@@ -55,6 +55,7 @@ class Planningbeheer extends CI_Controller {
         
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAllNPlanConf($data['conferentieId']);
+        print_r($data['sessies']);
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/planning/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
