@@ -21,7 +21,7 @@ $.extend( true, DataTable.defaults, {
 	dom:
 		"<'row'<'col-sm-6'><'col-sm-6'f>>" +
 		"<'row'<'col-sm-12'tr>>" +
-		"<'row'<'col-sm-5'<p>li</p>><'col-sm-7'p>>",
+		"<'row'<'col-sm-5'<'p'>li<'/p'>><'col-sm-7'p>>",
 	renderer: 'bootstrap'
 } );
 
