@@ -161,7 +161,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
-        redirect('home');
+        redirect('inschrijven/voorkeuren');
     }
 
     public function opvolgen() {
@@ -242,10 +242,19 @@ class Inschrijven extends CI_Controller {
         $actCheck = $this->logon_model->isGeactiveerd($email);
         if ($this->authex->login($email, sha1($password))) {            
             
-            $user = $this->authex->getUserInfo();
-            
+            $user = $this->authex->getUserInfo();            
+            $this->load->model('conferentie_model');
+            $conferentie = $this->conferentie_model->getActieveConferentie();
+        
             //Verwerken van het inschrijven
-            $this->verwerkenInschrijving($user);
+            $this->verwerkenInschrijving($user);            
+            $this->email->from('donotreply@thomasmore.be');
+            $this->email->to($user->email);
+            $this->email->subject("Inschrijving voor " + $conferentie->naam);
+            $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
+                    " " +
+                    "Met deze mail bevestigen wij uw inschrijving voor de conferentie  " + $conferentie->naam + " die loopt van " + $conferentie->beginDatum + " tot " + $conferentie->einddatum + "." );
+            $this->email->send();
         
             redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
@@ -260,20 +269,32 @@ class Inschrijven extends CI_Controller {
     //Gebruiker krijgt geen activatie mail
     public function registreer() {
         //Eerst nieuwe gebruiker registreren
-        $email = $this->input->post('emailadres');
-        $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
         $user = new stdClass();
 
         $user->familienaam = $this->input->post('familienaam');
         $user->voornaam = $this->input->post('voornaam');
-        $user->email = $email;
+        $user->email = $this->input->post('emailadres');
         $user->wachtwoord = $this->input->post('wachtwoord1');
         $user->geslacht = $this->input->post('geslacht');
+        $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
+        $user->generatedKey = $genkey;
 
-        $user->id = $this->authex->register($user);
-        
+        $user->id = $this->authex->register($user);        
+        $this->load->model('conferentie_model');
+        $conferentie = $this->conferentie_model->getActieveConferentie();
+            
         //Verwerken van het inschrijven
-        $this->verwerkenInschrijving($user);
+        $this->verwerkenInschrijving($user);     
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($user->email);
+        $this->email->subject("Inschrijving voor " + $conferentie->naam);
+        $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
+                " " +
+                "Met deze mail bevestigen wij uw inschrijving voor de conferentie  " + $conferentie->naam + " die loopt van " + $conferentie->beginDatum + " tot " + $conferentie->einddatum + "." +
+                " " +
+                " " +
+                'Klik op onderstaande link om uw registratie te activeren ' . "\n" . "\n " . site_url("logon/activeer/$genkey"));
+        $this->email->send();
 
         redirect('inschrijven/voorkeuren');
     }
