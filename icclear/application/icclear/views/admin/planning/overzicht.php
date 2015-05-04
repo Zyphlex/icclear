@@ -129,38 +129,38 @@
     function validatieOK() {
         ok = true;
         if($('#datum').val() == "") {
-          $('#datum').val().removeClass('has-success').addClass('has-error');
+          $('#datum').addClass('has-error');
           ok = false;
         } else {
-          $('#datum').val().removeClass('has-error').addClass('has-success');
+          $('#datum').removeClass('has-error');
         }
 
         if($('#beginuur').val() == "") {
-          $('#einduur').removeClass('has-success').addClass('has-error');
+          $('#einduur').addClass('has-error');
           ok = false;
         } else {
-          $('#einduur').removeClass('has-error').addClass('has-success');
+          $('#einduur').removeClass('has-error');
         }
 
         if($('#einduur').val() == "") {
-          $('#einduur').removeClass('has-success').addClass('has-error');
+          $('#einduur').addClass('has-error');
           ok = false;
         } else {
-          $('#einduur').removeClass('has-error').addClass('has-success');
+          $('#einduur').removeClass('has-error');
         }
 
         if($('#sessie').val() == "") {
-          $('#sessie').removeClass('has-success').addClass('has-error');
+          $('#sessie').addClass('has-error');
           ok = false;
         } else {
-          $('#sessie').removeClass('has-error').addClass('has-success');
+          $('#sessie').removeClass('has-error');
         }
 
         if($('#zaal').val() == "") {
-          $('#zaal').removeClass('has-success').addClass('has-error');
+          $('#zaal')..addClass('has-error');
           ok = false;
         } else {
-          $('#zaal').removeClass('has-error').addClass('has-success');
+          $('#zaal').removeClass('has-error');
         }
         return ok;
     }
