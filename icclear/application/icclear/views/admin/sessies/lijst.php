@@ -1,11 +1,11 @@
 <div class="table-responsive">
 <table class="table table-beheer">
     <thead>
-        <tr>
-            <th>Naam</th>
+        <tr>            
+            <th>Onderwerp</th>
             <th>Dag</th>
             <th>Tijdstip</th>
-            <th>Omschrijving</th>
+            <th>Spreker</th>
             <th>Beheer</th>
         </tr>
     </thead>
@@ -20,7 +20,7 @@
                     <td>Nog niet ingepland</td>  
                     <td><?php echo anchor('planningbeheer', '<span class="glyphicon glyphicon-calendar white"></span> Planning','class="btn btn-primary"'); ?></td>
                 <?php } ?>
-                <td><?php echo $sessie->omschrijving ?></td>
+                <td><?php echo $sessie->spreker->voornaam ?></td>
                 <td>
                     <p>
                         <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
