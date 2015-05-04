@@ -21,7 +21,9 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
+                alert(result);
                 var jobject = jQuery.parseJSON(result);
+                alert(jobject);
                 $("#sessie").append($('<option/>').attr("value", jobject.id).text(jobject.onderwerp));
                 }
         });
