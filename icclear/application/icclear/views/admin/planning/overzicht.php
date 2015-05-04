@@ -24,6 +24,9 @@
                 $("#sessie").html('');
                 $("#sessie").html(result);
                 var string;
+                $.each(result, function(index) {
+                    string += '<option value="' + result[index].id + '">' + result[index].onderwerp + '</option>';
+                });
                 for (var i = 0; i < result.length; i++) {
                     string += '<option value="' + result.id + '">' + result.onderwerp + '</option>';
                 }
