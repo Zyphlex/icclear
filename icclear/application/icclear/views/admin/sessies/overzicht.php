@@ -41,7 +41,7 @@
                     success : function(result){
                         var jobject = jQuery.parseJSON(result);
                         $( "#onderwerp" ).val(jobject.onderwerp);
-                        $( "#spreker" ).val(jobject.spreker.voornaam + " " + jobject.spreker.achternaam);
+                        $( "#spreker" ).val(jobject.spreker.voornaam + " " + jobject.spreker.familienaam);
                         $( "#omschrijving" ).val(jobject.omschrijving);
                     }
                 });
