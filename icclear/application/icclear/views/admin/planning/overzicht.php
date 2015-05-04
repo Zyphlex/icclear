@@ -162,6 +162,7 @@
         } else {
           $('#zaal').removeClass('has-error').addClass('has-success');
         }
+        return ok;
     }
     
 });
