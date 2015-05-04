@@ -145,8 +145,8 @@ class Sessies_model extends CI_Model {
                 where s.isGoedgekeurd = 1 
                 and s.conferentieId = ?
                 and s.id NOT IN(select p.sessieId from planning p);';
-        return $this->db->query($sql, array($id));
-        
+        $query = $this->db->query($sql, array($id));
+        return $query->result();
     }
     
     //Alle sessies opvragen van de gekozen conferentie
