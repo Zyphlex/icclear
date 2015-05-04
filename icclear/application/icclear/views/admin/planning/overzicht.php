@@ -122,6 +122,53 @@
                 }
             });
         });
+        
+        //VALIDATIE
+    $('#JqAjaxForm').on('submit', function(e) {
+    if(!$('#datum').val()) {
+      $('#datum').val().removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('#datum').val().removeClass('has-error').addClass('has-success');
+    }
+    
+    if(!$('#beginuur').val()) {
+      $('#einduur').removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('#einduur').removeClass('has-error').addClass('has-success');
+    }
+    
+    if(!$('#einduur').val()) {
+      $('#einduur').removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('#einduur').removeClass('has-error').addClass('has-success');
+    }
+    
+    if(!$('#sessie').val()) {
+      $('#sessie').removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('#sessie').removeClass('has-error').addClass('has-success');
+    }
+    
+    if(!$('#zaal').val()) {
+      $('#zaal').removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('#zaal').removeClass('has-error').addClass('has-success');
+    }
+    
+    if(!$('.plenair').val()) {
+      $('.plenair').removeClass('has-success').addClass('has-error');
+      e.preventDefault();
+    } else {
+      $('.plenair').removeClass('has-error').addClass('has-success');
+    }
+    
+    
+  });
 
     });
 </script>
@@ -187,8 +234,8 @@
 
                     <p><?php echo form_label('Plenair:', 'plenair'); ?> </p>
                     <p>
-                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '1')); ?> Ja
-                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'form-horizontal', 'value' => '0')); ?> Nee
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'plenair', 'value' => '1')); ?> Ja
+                        <?php echo form_radio(array('name' => 'plenair', 'class' => 'plenair', 'value' => '0')); ?> Nee
                     </p>
                 </form>
 
