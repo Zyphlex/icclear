@@ -163,9 +163,11 @@
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
                     $optionsZaal = array();
-                    foreach ($gebouwen->gebouw as $g) {
-                        foreach ($g->zalen as $z) {
-                            $optionsZaal[$z->id] = $z->naam . " (" . $z->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
+                    foreach ($gebouwen as $d) {
+                        foreach ($d->gebouw as $g) {
+                            foreach ($g->zalen as $z) {
+                                $optionsZaal[$z->id] = $z->naam . " (" . $z->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
+                            }
                         }
                     }
                     echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
