@@ -20,8 +20,9 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
+                alert(result);
                 $("#sessie").append($('<option>').text("test").attr('value', "0"));
-                $("#sessie").append($('<option>').text(result.onderwerp).attr('value', result.id));
+                $("#sessie").html(result);
             }
         });
     }
