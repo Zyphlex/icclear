@@ -153,7 +153,7 @@
                
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {                            
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
                 url: site_url + "/email/verzenden",
@@ -377,7 +377,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
+                <form id="JqAjaxForm1">
                     <input type="hidden" name="email" id="email"/>                                        
 
                     <div class="row">
