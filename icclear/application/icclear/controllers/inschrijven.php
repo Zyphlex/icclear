@@ -163,7 +163,7 @@ class Inschrijven extends CI_Controller {
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->emailadres);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
-        $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
+        $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
         $this->email->send();
 
         redirect('inschrijven/voorkeuren');
@@ -255,8 +255,8 @@ class Inschrijven extends CI_Controller {
             $this->verwerkenInschrijving($user);            
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($user->email);
-            $this->email->subject("Inschrijving voor " + $conferentie->naam);
-            $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
+            $this->email->subject('Inschrijving voor ' + $conferentie->naam);
+            $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
             $this->email->send();
         
             redirect('inschrijven/voorkeuren');
@@ -290,13 +290,12 @@ class Inschrijven extends CI_Controller {
         $this->verwerkenInschrijving($user);     
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
-        $this->email->subject("Inschrijving voor " + $conferentie->naam);
+        $this->email->subject('Inschrijving voor ' + $conferentie->naam);
         $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
-                "\n" . "\n" .
+                "\n" .
                 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' .
-                "\n" . "\n" .
-                "\n" . "\n" .
-                'Klik op onderstaande link om uw registratie te activeren ' . '\n' . '\n ' . site_url('logon/activeer/$genkey'));
+                "\n" .
+                'Klik op onderstaande link om uw registratie te activeren ' . site_url('logon/activeer/' . $genkey));
         $this->email->send();
 
         redirect('inschrijven/voorkeuren');
