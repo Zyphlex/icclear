@@ -1,60 +1,53 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <h1>Conferentie <?php echo $conferentie->naam ?> - Voorstel voor sessie indienen</h1>
     </div>
 </div>    
 
 
     
-    
-<form action="indienen" method="POST">
+<?php
+        $attributes = array('name' => 'myform');
+        if ($user == null) {
+            echo form_open('spreker/aanmeldenEnVerzenden', $attributes);
+        } else {
+            echo form_open('spreker/indienen', $attributes);
+        }
+?>  
 <div class="row">
-    <div class="col-md-8">
-        <h2>Sessie voorstel</h2>
-        <p>
-            Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
-            Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
-            Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
-        </p>        
-    </div> 
-</div>
-
-<br/>
-
-<div class="row">
-    <div class="col-md-2">
-        <label for="sessieonderwerp" class="control-label">Onderwerp: </label>
-    </div>
-    <div class="col-md-8">
-        <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
-    </div>
-</div>
-
-<br/>
-
-<div class="row">
-    <div class="col-md-2">
-        <label for="sessieomschrijving" class="control-label">Omschrijving: </label>
-    </div>
-    <div class="col-md-8">
-        <textarea id="sessieomschrijving" name="sessieomschrijving" rows="10" class="form-control"></textarea>
-    </div>
-</div>
-
-
-
-<br/><br/>
-
-<div class="row">
-    <div class="col-md-12">        
-        <?php echo anchor('spreker', 'Annuleren','class="btn btn-default"'); ?>   
+    <div class="col-sm-12">
         
-        <?php if ($user == null) { ?>
-            <a href="<?php echo base_url(); ?>icclear.php/spreker/login" data-toggle="modal" data-target="#myModal">Aanmelden en verder</a>
-        <?php } else { ?>
-            <input type="submit" value="Bevestigen en betalen" class="btn btn-default"/>
-        <?php } ?>
+        <div class="col-sm-8 space-bottom">
+            <h2>Sessie voorstel</h2>
+            <p>
+                Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
+                Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
+                Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
+            </p>        
+        </div> 
+
+        <label for="sessieonderwerp" class=" col-sm-2control-label">Onderwerp: </label>
+        <div class="col-sm-8 space-bottom">
+            <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
+        </div>
+
+
+
+        <label for="sessieomschrijving" class="col-sm-2 control-label">Omschrijving: </label>
+        <div class="col-sm-8 space-bottom">
+            <textarea id="sessieomschrijving" name="sessieomschrijving" rows="10" class="form-control"></textarea>
+        </div>
+
+
+
+        <div class="btn-group">
+            <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
+            <?php if ($user == null) { ?>
+                <?php echo form_submit('mysubmit', 'Aanmelden en verzenden', 'class="btn btn-primary"'); ?>
+            <?php } else { ?>
+                <?php echo form_submit('mysubmit', 'Verzenden', 'class="btn btn-primary"'); ?>
+            <?php } ?>
+        </div>
     </div>
 </div>
-
-</form>
+<?php echo form_close(); ?>
