@@ -289,8 +289,8 @@ class Spreker extends CI_Controller {
         $voorstel->omschrijving = $this->session->userdata('somschrijving');
         $voorstel->isGoedgekeurd = '0';
         
-        $this->load->model('sessie_model');
-        $this->sessie_model->insert($voorstel);        
+        $this->load->model('sessies_model');
+        $this->sessies_model->insert($voorstel);        
     }
     
 }
