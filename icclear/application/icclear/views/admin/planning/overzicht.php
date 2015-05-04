@@ -48,7 +48,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigPlanning").click(function () {
-            $("#msg").addClass("hidden");
+            verbergError();
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -128,6 +128,16 @@
                 }
             });
         });
+        
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.datum').removeClass('has-error');
+        $('.beginuur').removeClass('has-error');
+        $('.einduur').removeClass('has-error');
+        $('.sessie').removeClass('has-error');
+        $('.zaal').removeClass('has-error');
+        $('.plenair').removeClass('has-error');
+    }
         
     //VALIDATIE
     function validatieOK() {
