@@ -24,10 +24,11 @@
                 $("#sessie").html('');
                 $("#sessie").html(result);
                 var string;
-                $.each(result , function(key, val) {
-                    string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
+                for (var i = 0; i < result.length; i++) {
+                    string += '<option value="' + result[i].id + '">' + result[i].onderwerp + '</option>';
                 });
                 alert(string);
+                alert(result[i].onderwerp);
                 $("#sessie").html(string);
                 }
         });
