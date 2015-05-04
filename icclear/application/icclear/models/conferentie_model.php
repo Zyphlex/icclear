@@ -53,13 +53,29 @@ class Conferentie_model extends CI_Model {
     function getVerledenConferentie() {
         $this->db->where('statusId', '1');
         $query = $this->db->get('conferentie');
-        return $query->result();
+        $conferenties = $query->result();
+        
+        $this->load->model('land_model');
+        
+        foreach ($conferenties as $conferentie) {
+            $conferentie->land = $this->land_model->get($conferentie->landId);
+        }
+        
+        return $conferenties;
     }
 
     function getToekomstConferentie() {
         $this->db->where('statusId', '3');
         $query = $this->db->get('conferentie');
-        return $query->result();
+        $conferenties = $query->result();
+        
+        $this->load->model('land_model');
+        
+        foreach ($conferenties as $conferentie) {
+            $conferentie->land = $this->land_model->get($conferentie->landId);
+        }
+        
+        return $conferenties;
     }
 
     function update($conferentie) {
