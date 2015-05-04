@@ -22,17 +22,10 @@
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
                 var jobject = jQuery.parseJSON(result);
-                $("#sessie").html('');
-                $("#sessie").html(result);
                 var string;
                 $.each(jobject, function(index,val) {
                     string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
                 });
-                for (var i = 0; i < result.length; i++) {
-                    string += '<option value="' + result.id + '">' + result.onderwerp + '</option>';
-                }
-                alert(string);
-                alert(result[i].onderwerp);
                 $("#sessie").html(string);
                 }
         });
