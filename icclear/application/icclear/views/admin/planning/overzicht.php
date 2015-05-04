@@ -13,10 +13,22 @@
             }
         });
     }
+    
+    //Niet geplande sessies ophalen
+    function haalsessies() {
+        $("#sessie").text() = "";
+        $.ajax({type: "GET",
+            url: site_url + "/planningbeheer/sessiesOver",
+            success: function (result) {
+                $("#sessie").append($('<option>').text(result.onderwerp).attr('value', result.id));
+            }
+        });
+    }
 
     //Wijzigen refreshen
     function refreshData() {
         haaloverzicht();
+        haalsessies();
     }
 
     //Klikken op de Verwijderen knop

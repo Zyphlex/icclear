@@ -78,6 +78,15 @@ class Planningbeheer extends CI_Controller {
 
         echo json_encode($planning);
     }
+    
+    public function sessiesOver() {
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        
+        $this->load->model('sessies_model');
+        $sessies = $this->sessies_model->getAllNPlanConf($data['conferentieId']); 
+
+        echo json_encode($sessies);
+    }
 
     public function update() {
         $planning->id = $this->input->post('id');
