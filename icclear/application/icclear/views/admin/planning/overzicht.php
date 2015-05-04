@@ -212,26 +212,27 @@
                     <input type="hidden" name="id" id="id" />
                     <input type="hidden" name="dag" id="dag" />
                     
-                    <p class="datum"><?php echo form_label('Datum:', 'datum'); ?></p>
-                    <?php
-                    $optionsDag = array();
-                    foreach ($dagen as $dag) {
-                        $optionsDag[$dag->id] = toDDMMYYYY($dag->datum);
-                    }
-                    echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
-                    ?>
+                    <p><?php echo form_label('Datum:', 'datum'); ?></p>
+                    <p class="datum"><?php
+                        $optionsDag = array();
+                        foreach ($dagen as $dag) {
+                            $optionsDag[$dag->id] = toDDMMYYYY($dag->datum);
+                        }
+                        echo form_dropdown('datum', $optionsDag, '', 'id="datum" class="form-control"');
+                        ?>
+                    </p>
 
-                    <p class="beginuur"><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
+                    <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
                     <p class="beginuur"><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
-                    <p class="einduur"><?php echo form_label('Einduur:', 'einduur'); ?></p>
+                    <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
                     <p class="einduur"><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
-                    <p class="sessie"><?php echo form_label('Sessie:', 'sessie'); ?></p>
-                    <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?>
+                    <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
+                    <p class="sessie"><?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control" required'); ?></p>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
-                    <p>
+                    <p class="zaal">
                         <?php
                         $optionsZaal = array();
                         foreach ($zalen as $d) {
@@ -239,7 +240,7 @@
                                     $optionsZaal[$z->id] = $z->naam . " (" . $d->gebouw->naam . " , " . $z->maximumAantalPersonen . " maximum aantal plaatsen)";
                             }
                         }
-                        echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="zaal form-control"');
+                        echo form_dropdown('zaal', $optionsZaal, '', 'id="zaal" class="form-control"');
                         ?>
                     </p>
 
