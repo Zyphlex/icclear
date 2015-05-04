@@ -162,13 +162,6 @@
         } else {
           $('#zaal').removeClass('has-error').addClass('has-success');
         }
-
-        if($('.plenair').val() == "") {
-          $('.plenair').removeClass('has-success').addClass('has-error');
-          ok = false;
-        } else {
-          $('.plenair').removeClass('has-error').addClass('has-success');
-        }
     }
     
 });
