@@ -21,8 +21,9 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
+                var jobject = jQuery.parseJSON(result);
                 var string;
-                alert(result);
+                alert(jobject);
                 foreach (var i = 0; i < result.length; i++) {
                     string += '<option value="' + jobject.id + '">' + jobject.naam + '</option>';
                 }
