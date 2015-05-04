@@ -200,9 +200,9 @@ class Spreker extends CI_Controller {
         $conf = $this->conferentie_model->getActieveConferentie();
         
         $voorstel->sconferentieId = $conf->id;
-        $voorstel->sonderwerp = $this->input->post('onderwerp');
+        $voorstel->sonderwerp = $this->input->post('sessieonderwerp');
         $voorstel->sdatumIngediend = date("Y-m-d");
-        $voorstel->somschrijving = $this->input->post('omschrijving');
+        $voorstel->somschrijving = $this->input->post('sessieomschrijving');
         
         $this->session->set_userdata($voorstel);         
         
