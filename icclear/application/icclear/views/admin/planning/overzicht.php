@@ -23,8 +23,9 @@
             success: function (result) {
                 var jobject = jQuery.parseJSON(result);
                 var string;
+                var i;
                 alert(jobject);
-                foreach (var i = 0; i < result.length; i++) {
+                foreach (i = 0; i < result.length; i++) {
                     string += '<option value="' + jobject.id + '">' + jobject.naam + '</option>';
                 }
                 alert(string);
