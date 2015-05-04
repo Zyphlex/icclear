@@ -16,7 +16,8 @@
     
     //Niet geplande sessies ophalen
     function haalsessies() {
-        $("#sessie").text() = "";
+        alert("test");
+        $("#sessie").text("");
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
