@@ -20,6 +20,7 @@
         $.ajax({type: "GET",
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
+                $("#sessie").html('');
                 var jobject = jQuery.parseJSON(result);
                 var string;
                 $.each(jobject, function(index,val) {
