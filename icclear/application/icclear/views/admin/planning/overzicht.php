@@ -48,6 +48,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigPlanning").click(function () {
+            $("#msg").addClass("hidden");
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -104,6 +105,9 @@
             });
             refreshData();
             $("#planningModal").modal('hide');
+        } else {
+            $("#msg").removeClass("hidden");
+            $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
         }
         });
 
@@ -193,7 +197,8 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">    
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p>              
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
