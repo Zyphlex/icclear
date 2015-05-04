@@ -139,7 +139,7 @@ class Sessies_model extends CI_Model {
     }
     
     //Alle sessies opvragen van de gekozen conferentie, die nog niet in de planning zitten
-    function getAllPlanConf($id) {
+    function getAllNPlanConf($id) {
         
         $sql = 'select * from sessie s 
                 where s.isGoedgekeurd = 1 
