@@ -167,7 +167,7 @@
           $('.zaal').removeClass('has-error');
         }
         
-        if($('input[type=radio]:checked').size() > 0) {
+        if($('input[type=radio]:checked').size() < 0) {
           $('.plenair').addClass('has-error');
           ok = false;
         } else {
