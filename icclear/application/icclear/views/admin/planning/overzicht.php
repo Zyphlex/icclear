@@ -140,10 +140,10 @@
         }
 
         if($('#beginuur').val() == "") {
-          $('#einduur').addClass('has-error');
+          $('.beginuur').addClass('has-error');
           ok = false;
         } else {
-          $('#einduur').removeClass('has-error');
+          $('.beginuur').removeClass('has-error');
         }
 
         if($('#einduur').val() == "") {
@@ -214,7 +214,7 @@
                     ?>
 
                     <p><?php echo form_label('Beginuur:', 'beginuur'); ?></p>
-                    <p><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
+                    <p class="beginuur"><?php echo form_input(array('name' => 'beginuur', 'id' => 'beginuur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Einduur:', 'einduur'); ?></p>
                     <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
