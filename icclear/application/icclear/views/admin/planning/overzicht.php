@@ -99,11 +99,10 @@
                 url: site_url + "/planningbeheer/update",
                 async: false,
                 data: dataString,
-                dataType: "json"
-                    refreshData();
-                    $("#planningModal").modal('hide');
-                
+                dataType: "json"                
             });
+            refreshData();
+             ("#planningModal").modal('hide');
             
         });
 
