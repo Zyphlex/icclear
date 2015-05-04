@@ -79,8 +79,8 @@ class Planningbeheer extends CI_Controller {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
                
         $this->load->model('sessies_model');
-        $sessies = $this->sessies_model->getAllNPlanConf($data['conferentieId']); //Alle sessies van een conferentie ophalen, die nog niet gepland zijn
-//        $sessies = $this->sessies_model->getAllPlanConf($data['conferentieId']); //Alle sessies  van een conferentie ophalen
+//        $sessies = $this->sessies_model->getAllNPlanConf($data['conferentieId']); //Alle sessies van een conferentie ophalen, die nog niet gepland zijn
+        $sessies = $this->sessies_model->getAllPlanConf($data['conferentieId']); //Alle sessies  van een conferentie ophalen
 
         echo json_encode($sessies);
     }
