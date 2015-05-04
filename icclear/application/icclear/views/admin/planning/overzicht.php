@@ -100,14 +100,9 @@
                 async: false,
                 data: dataString,
                 dataType: "json"
-                success: function (result) {
                     refreshData();
                     $("#planningModal").modal('hide');
-                },
-                error: function () {
-                    $("#msg").removeClass("hidden");
-                    $("#msg").html("Oops! Het formulier is niet juist ingevuld!");
-                }
+                
             });
             
         });
