@@ -20,7 +20,7 @@
                     <td>Nog niet ingepland</td>  
                     <td><?php echo anchor('planningbeheer', '<span class="glyphicon glyphicon-calendar white"></span> Planning','class="btn btn-primary"'); ?></td>
                 <?php } ?>
-                <td><?php echo $sessie->spreker->voornaam ?></td>
+                <td><?php echo $sessie->spreker->voornaam . " " . $sessie->spreker->familienaam ?></td>
                 <td>
                     <p>
                         <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigSessie glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $sessie->id ?>"></button>
