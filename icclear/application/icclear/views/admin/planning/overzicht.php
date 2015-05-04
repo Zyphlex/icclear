@@ -14,7 +14,7 @@
         });
     }
     
-    //Niet geplande sessies ophalen
+    //sessies ophalen
     function haalsessies() {
         $("#sessie").text("");
         $.ajax({type: "GET",
