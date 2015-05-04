@@ -18,7 +18,7 @@
 
                             <p><?php echo $hotel->hotel->straat . ' ' . $hotel->hotel->nummer ?></p>   
                             <p><?php echo $hotel->hotel->postcode . ' ' . $hotel->hotel->gemeente ?></p>   
-                            <p><?php echo anchor($hotel->hotel->website, 'Naar de website', ['target' => '_blank']) ?></p>  
+                            <p><?php echo anchor($hotel->hotel->website, 'Naar de website', array('target' => '_blank')) ?></p>  
                         </div>
                     </div>      
                 </div> 
