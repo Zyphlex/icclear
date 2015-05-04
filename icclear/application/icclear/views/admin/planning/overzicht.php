@@ -128,7 +128,7 @@
         
     //VALIDATIE
     function validatieOK() {
-    ok == true;
+    var ok == true;
     if(!$('#datum').val()) {
       $('#datum').val().removeClass('has-success').addClass('has-error');
       ok == false;
