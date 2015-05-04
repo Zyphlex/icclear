@@ -170,13 +170,7 @@
                     <p><?php echo form_input(array('name' => 'einduur', 'id' => 'einduur', 'class' => 'form-control', 'type' => 'time')); ?></p>
 
                     <p><?php echo form_label('Sessie:', 'sessie'); ?></p>
-                    <?php
-//                    $optionsSes = array();
-//                    foreach ($sessies as $sessie) {
-//                        $optionsSes[$sessie->id] = $sessie->onderwerp;
-//                    }
-                    echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control"');
-                    ?>
+                    <?php echo form_dropdown('sessie', array(), '', 'id="sessie" class="form-control"'); ?>
 
                     <p><?php echo form_label('Zaal:', 'zaal'); ?></p>
                     <?php
