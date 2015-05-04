@@ -70,7 +70,7 @@ class Spreker extends CI_Controller {
 
     public function indienen() {
         $this->load->model('conferentie_model');
-        $gebruiker = $this->authex->getUserInfo();
+        $user = $this->authex->getUserInfo();
         $conferentie = $this->conferentie_model->getActieveConferentie();
 
         $sessie = new stdClass();
@@ -78,11 +78,20 @@ class Spreker extends CI_Controller {
         $sessie->omschrijving = $this->input->post('sessieomschrijving');
         $sessie->datumIngediend = date('Y-m-d');
         $sessie->isGoedgekeurd = '0';
-        $sessie->gebruikerIdSpreker = $gebruiker->id;
+        $sessie->gebruikerIdSpreker = $user->id;
         $sessie->conferentieId = $conferentie->id;
 
         $this->load->model('sessies_model');
-        $this->sessies_model->insert($sessie);
+        $this->sessies_model->insert($sessie);   
+        
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($user->email);
+        $this->email->subject('Inschrijving voor ' . $conferentie->naam);
+        $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
+                    "\n" .
+                    'Met deze mail bevestigen wij uw voorstel van voor de conferentie  ' . $conferentie->naam . '.' .
+                    'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.');
+        $this->email->send();
 
         redirect('spreker');
     }
@@ -221,13 +230,14 @@ class Spreker extends CI_Controller {
             $this->verwerkenVoorstel($user);            
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($user->email);
-            $this->email->subject("Inschrijving voor " + $conferentie->naam);
-            $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
-                    " " +
-                    "Met deze mail bevestigen wij uw voorstel van voor de conferentie  " + $conferentie->naam + ".");
+            $this->email->subject('Inschrijving voor ' . $conferentie->naam);
+            $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
+                    "\n" .
+                    'Met deze mail bevestigen wij uw voorstel van voor de conferentie  ' . $conferentie->naam . '.' .
+                    'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.');
             $this->email->send();
         
-            redirect('inschrijven/voorkeuren');
+            redirect('home');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
         } else {
@@ -253,21 +263,21 @@ class Spreker extends CI_Controller {
         $user->id = $this->authex->register($user);        
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-            
+        
         //Verwerken van het inschrijven
         $this->verwerkenVoorstel($user);     
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
-        $this->email->subject("Inschrijving voor " + $conferentie->naam);
-        $this->email->message("Beste " + $user->voornaam + " " + $user->familienaam +
-                " " +
-                "Met deze mail bevestigen wij uw inschrijving voor de conferentie  " + $conferentie->naam + " die loopt van " + $conferentie->beginDatum + " tot " + $conferentie->einddatum + "." +
-                " " +
-                " " +
-                'Klik op onderstaande link om uw registratie te activeren ' . "\n" . "\n " . site_url("logon/activeer/$genkey"));
+        $this->email->subject('Inschrijving voor ' . $conferentie->naam);
+        $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
+                "\n " .
+                'Met deze mail bevestigen wij uw voorstel voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->einddatum . '.' .
+                'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.' .
+                "\n " .
+                'Klik op onderstaande link om uw registratie te activeren ' . '\n' . '\n ' . site_url('logon/activeer/' . $genkey));
         $this->email->send();
 
-        redirect('inschrijven/voorkeuren');
+        redirect('home');
     }
     
     public function verwerkenVoorstel($user) {

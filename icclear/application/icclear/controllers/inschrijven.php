@@ -255,7 +255,7 @@ class Inschrijven extends CI_Controller {
             $this->verwerkenInschrijving($user);            
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($user->email);
-            $this->email->subject('Inschrijving voor ' + $conferentie->naam);
+            $this->email->subject('Inschrijving voor ' . $conferentie->naam);
             $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
             $this->email->send();
         
@@ -290,7 +290,7 @@ class Inschrijven extends CI_Controller {
         $this->verwerkenInschrijving($user);     
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
-        $this->email->subject('Inschrijving voor ' + $conferentie->naam);
+        $this->email->subject('Inschrijving voor ' . $conferentie->naam);
         $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
                 "\n" .
                 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' .
