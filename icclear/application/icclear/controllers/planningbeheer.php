@@ -101,8 +101,6 @@ class Planningbeheer extends CI_Controller {
         } else {
             $this->planning_model->update($planning);
         }
-
-        
         
         echo $id;
     }

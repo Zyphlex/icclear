@@ -58,7 +58,7 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#dag").val(jobject.conferentiedagId);
+                        $("#datum").val(jobject.conferentiedagId);
                         $("#sessie").val(jobject.sessieId);
                         $("#beginuur").val(jobject.beginUur);
                         $("#einduur").val(jobject.eindUur);
@@ -70,11 +70,12 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                
+                $("#datum").val("");
                 $("#sessie").val("");
                 $("#beginuur").val("");
                 $("#einduur").val("");
                 $("#plenair").val("");
+                $(':radio[name="plenair"]').prop('checked', false);
                 $("#zaal").val("");
             }
             // dialoogvenster openen
