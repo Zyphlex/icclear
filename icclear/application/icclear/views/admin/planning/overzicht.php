@@ -27,6 +27,7 @@
                 foreach (var i = 0; i < result.length; i++) {
                     string += '<option value="' + jobject.id + '">' + jobject.naam + '</option>';
                 }
+                alert(string);
                 $("#sessie").html(string);
                 }
         });
