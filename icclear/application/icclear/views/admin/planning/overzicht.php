@@ -22,8 +22,8 @@
             url: site_url + "/planningbeheer/sessiesOver",
             success: function (result) {
                 var string;
-                $.each(result, function(id, onderwerp) {
-                    string += '<option value="' + id + '">' + onderwerp + '</option>';
+                $.each(result , function(key, val) {
+                    string += '<option value="' + val.id + '">' + val.onderwerp + '</option>';
                 }
                 alert(string);
                 $("#sessie").html(string);
