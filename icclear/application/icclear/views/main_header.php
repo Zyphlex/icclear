@@ -92,8 +92,7 @@ function finishAjax(id, response) {
         $('#' + id).html(unescape(response));
         $('#' + id).fadeIn();
     }
-    $(document).ready(function() {
-        var resu = 0;        
+    $(document).ready(function() {           
         function validatieOK() {
             ok = true;
             if ($("#password1").val() == "") {
@@ -143,7 +142,7 @@ function finishAjax(id, response) {
                 $("#emaildiv").removeClass("has-error");
                 $("#emaildiv").addClass("has-success");
             }
-            if ($(emailCheck() == false)) {
+            if ($(realCheck() == false)) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
@@ -157,44 +156,34 @@ function finishAjax(id, response) {
         }
 
         $("#mySubmit").click(function(e) {                 
-            e.preventDefault();
-            realCheck();
-            if (validatieOK() && validate() && emailCheck()) {
+            e.preventDefault();            
+            if (validatieOK() && validate() && realCheck()) {
                 $("#feedbackemail").hide();
                 $("#myForm").submit();
             }
 
         });
-        function emailCheck() {
-            ok = true;
-            if (resu == 0) {
-                ok = false;
-            }
-            else {
-                ok = true;
-            }
-            return ok;
-        }
-
+       
         function realCheck() {                            
+                var result = false;
                 var a = $("#emailadres").val();
                 var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                 if (filter.test(a)) {
                     $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                         email: $('#emailadres').val()
-                    }, function(response) {
-                        resu = response;                        
+                    }, function(response) {                                            
                         if (response == 0) {
                             $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                            result = false;
                         }
                         else {
                             $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                            result = true;
                         }
                     }
                     );
-                }else{
-                resu = 0;
-                }            
+                }
+                return result;
         }
 
         function validate() {
