@@ -212,14 +212,6 @@ a:hover {
     margin-bottom: 2px;
 }
 
-.footer a {
-    border-bottom: 1px dotted;
-}
-
-.footer a:hover {
-    border-bottom: 1px solid #b60717;
-}
-
 .navbar { 
     font-family:estrangelo;
     font-size:16px;
