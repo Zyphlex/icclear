@@ -19,7 +19,7 @@ class Logon extends CI_Controller {
     }
 
     public function aanmelden() {
-        $email = strtolower($this->input->post('email'));
+        $email = $this->input->post('email');
         $password = $this->input->post('password');
 
         //is geactiveerd
@@ -81,7 +81,7 @@ class Logon extends CI_Controller {
     }
 
     public function add() {
-        $email = strtolower($this->input->post('emailadres'));
+        $email = $this->input->post('emailadres');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
         $user = new stdClass();
 
