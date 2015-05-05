@@ -366,10 +366,10 @@ class Inschrijven extends CI_Controller {
     public function detail() {
         $id = $this->input->get('id');
 
-        $this->load->model('hotel_model');
-        $hotel = $this->hotel_model->get($id);
+        $this->load->model('inschrijving_model');
+        $inschrijving = $this->inschrijving_model->get($id);
 
-        echo json_encode($hotel);
+        echo json_encode($inschrijving);
     }
 
     public function update() {
