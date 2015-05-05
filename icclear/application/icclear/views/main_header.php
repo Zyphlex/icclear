@@ -221,9 +221,9 @@ function finishAjax(id, response) {
 
             <div class="row">
                 <div class=""> 
-                    <div id="emaildiv">
-                        <div id="feedbackemail"></div>
+                    <div id="emaildiv">                        
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                        <div id="feedbackemail"></div>
                         <div class="col-sm-8">   
                             <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
                         </div>
