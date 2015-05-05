@@ -18,7 +18,6 @@
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#conf1").html(jobject.conferentie.naam);  
-                        alert(iddb);
                         var object = haaloverzicht(iddb);
                         $("#activiteiten1").html(object);
                     }
@@ -30,7 +29,6 @@
     }
     
     function haaloverzicht(id) {
-        alert(id);
         $.ajax({type: "GET",
             url: site_url + "/profiel/overzicht",
             async: false,
