@@ -139,6 +139,18 @@ a:hover {
     margin-bottom: 0;
 }
 
+.divider-vertical-right {
+    height: auto;
+    margin: 0 9px;
+    border-right: 1px solid #e5e5e5;
+}
+
+.divider-vertical-left {
+    height: auto;
+    margin: 0 9px;
+    border-left: 1px solid #e5e5e5;
+}
+
 .disabled { 
     font-style: italic;
     filter: alpha(opacity=65); 

@@ -5,7 +5,7 @@
     
     <div class="col-sm-5 footer-text">
         <div class="pull-right">
-            <a class="divider" href="#">F.A.Q.</a>
+            <a class="divider-vertical-right" href="#">F.A.Q.</a>
             <a href="#">CONTACT</a>
         </div>
     </div>
