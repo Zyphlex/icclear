@@ -132,11 +132,13 @@
 
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
                     <p><?php
-                        $options = array();
+                        $drop = array();
+                        $teller = 1;
                         foreach ($gebruikers as $g) {
-                            $options[$g->id] = $g->voornaam . " " . $g->familienaam;
+                            $drop[$g->id] = $g->voornaam . $g->familienaam;
+                            $teller++;
                         }
-                        echo form_dropdown('gebruiker', $options, '', 'id="gebruiker" class="form-control"');
+                        echo form_dropdown('gebruiker', $drop, '', 'id="gebruiker" class="form-control"');
                         ?>
                     </p>
 
