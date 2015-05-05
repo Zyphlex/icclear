@@ -17,6 +17,12 @@ class Inschrijving_model extends CI_Model {
         parent::__construct();
     }
 
+    function get($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('inschrijving');
+        return $query->row();        
+    }
+    
     function getInschrijving($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('inschrijving');

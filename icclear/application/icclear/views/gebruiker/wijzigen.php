@@ -17,18 +17,23 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        alert(jobject.id[0]);
-                        $("#conf1").html(jobject.conferentie.naam);                        
-                        var tabel;
-                        $.each(jobject, function(index,val) {
-                            tabel += '<tr><td>' + val.id[0] + '</td><td>' + '</td><td>' + '</td></tr>';
-                        });
-                        $("#activiteiten1").html(tabel);
+                        $("#conf1").html(jobject.conferentie.naam);  
+                        haaloverzicht(iddb);
                     }
                 });
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
+        });
+    }
+    
+    function haaloverzicht(var id) {
+        $.ajax({type: "GET",
+            url: site_url + "/profiel/overzicht",
+            data: {id: id},
+            success: function (result) {
+                $("#activiteiten1").html(result);
+            }
         });
     }
     

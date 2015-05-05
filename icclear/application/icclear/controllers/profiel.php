@@ -128,6 +128,19 @@ class Profiel extends CI_Controller {
 
         echo json_encode($inschrijving);
     }
+        
+    public function overzicht() {
+        $id = $this->input->get('id');
+        
+        $this->load->model('inschrijving_model');
+        $inschrijving = $this->inschrijving_model->get($id);
+        
+        $this->load->model('inschrijving_model');
+        $data['act'] = $this->inschrijving_model->getAllActGebruikerConf($inschrijving->conferentieId, $inschrijving->gebruikerId);
+        print_r($data['act']);
+
+        $this->load->view('gebruiker/lijst', $data);
+    }
 
 }
 

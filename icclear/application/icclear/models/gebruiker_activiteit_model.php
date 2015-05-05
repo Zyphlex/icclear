@@ -18,6 +18,12 @@ class Gebruiker_activiteit_model extends CI_Model {
 //            return true;
 //    }
 
+    function get($id) {  
+        $this->db->where('id', $id);
+        $query = $this->db->get('gebruikerActiviteit');
+        return $query->row();
+    }
+    
     function getActiviteitPrijs() {
         $query = $this->db->get('gebruikerActiviteit');
         $gebActiviteiten = $query->result();

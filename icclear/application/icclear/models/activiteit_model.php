@@ -7,19 +7,13 @@ class Activiteit_model extends CI_Model {
     }
 
     function getAllActGebruikerConf($id, $confId) {     
-        $this->db->where('gebruikerId', $id);
-        $query = $this->db->get('gebruikerActiviteit');
-        $activiteitenGeb = $query->result();
-        
-        $this->load->model('activiteit_model');      
-        foreach ($activiteitenGeb as $a){
-            $a->activiteit = $this->activiteit_model->get($a->activiteitId);              
-            if ($a->activiteit->conferentieId == $confId)
-            {
-                $a->geld += ($a->activiteit->prijs * $a->aantalPersonen);
-            }
-        }        
-        return $activiteitenGeb;
+        $sql = 'select * from activiteit a 
+                join gebruikerActiviteit g 
+                on a.id = g.activiteitId
+                where a.conferentieId = ? 
+                and g.gebruikerId = ?';
+        $query = $this->db->query($sql, array($confId, $id));
+        return $query->result();
     }
     
     function get($id) {
