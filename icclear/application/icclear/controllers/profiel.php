@@ -137,7 +137,6 @@ class Profiel extends CI_Controller {
         
         $this->load->model('activiteit_model');
         $data['act'] = $this->activiteit_model->getAllActGebruikerConf($inschrijving->gebruikerId,$inschrijving->conferentieId);
-        print_r($data['act']);
 
         $this->load->view('gebruiker/lijst', $data);
     }

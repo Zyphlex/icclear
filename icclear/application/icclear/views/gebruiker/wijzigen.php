@@ -19,8 +19,6 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#conf1").html(jobject.conferentie.naam);  
                         alert(iddb);
-                        var object = haaloverzicht(iddb);
-                        $("#activiteiten1").html(object);
                     }
                 });
             }
