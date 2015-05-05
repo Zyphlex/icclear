@@ -18,7 +18,7 @@
 </div>
 
 
-<div class="row">    
+<div class="row hidden">    
     
     <div class="col-sm-4">
         <h4 class="red">Help</h4>
