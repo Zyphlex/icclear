@@ -251,23 +251,34 @@
                            5">Periode</th>
                                     <th class="w20">Bedrag</th>
                                     <th class="w5">Details<th class="w18">Bedrag</th>
+              <th></th>
                                 </tr>
-
-                                <tr>
+                              
+             
+                           ($i->betaling == null) { ?> ?>
+                                                          
+              <tr class="danger">
+taald!</span>
+                                        <?php } else { ?>      
+              <tr class="success">
+taald!</span>
+                                        <?php } ?>
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                  &euro; <?php echo $i->geld; ?> ?>
-                                                          
-                           ($i->betaling == null) { ?> ?>
-                                                          
-                                            <span class="right label label-danger">Nog niet betaald!</span>
-                                        <?php } else { ?>      
-                                            <span class="right label label-success">Reeds betaald!</span>
-                                        <?php } ?>
+                  &euro; <?php echo $i->geld; ?>                      <?php } ?>
                                     </td>
               <td>
                                         <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
+                                    </td>
+              <td>            php echo $i->geld; ?>
+                                                          
+                           ($i->betaling == null) { ?> ?>
+                                                          
+                                         textass="right label label-danger">Nog niet betaald!</span>
+                                        <?php } else { ?>      
+                                         textass="right label label-success">Reeds betaald!</span>
+                                        <?php } ?>
                                     </td>
                                 </tr>                                
                             </tableable>
