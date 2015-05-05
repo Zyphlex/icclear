@@ -15,7 +15,8 @@
             Kleinhoefstraat 4<br/>
             Geel, 2440 Belgium
         </div>
-        <div class="footer-icon"><span class="glyphicon glyphicon-envelope"></span> 
+        <span class="glyphicon glyphicon-envelope"></span> 
+        <div class="footer-icon">
             E-mail: <a href="mailto:support@icclear.test">support@ICClear.be</a></div>
         <p><span class="glyphicon glyphicon-phone-alt"></span> tel: 017 55 94 781</p>
     </div>
