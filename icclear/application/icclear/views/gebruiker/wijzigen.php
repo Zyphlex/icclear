@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-2">
-        <div class="panel panel-default">
+        <div class="equalizer panel panel-default">
             <div class="panel-body">
                 <div class="space-bottom15">
                 <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
@@ -38,8 +38,9 @@
         <div role="tabpanel">
 
             <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="account">
+            <div class="tab-content">class="panel panel-default">
+                    <div class="panel-body">
+                <div role="tabpanel" class="equalizer ole="tabpanel" class="tab-pane active" id="account">
                     <h1 class="margin-top">Profiel wijzigen</h1>
                     
 
@@ -207,7 +208,7 @@
                         <?php echo form_close(); ?> 
                 </div>
 
-                <div role="tabpanel" class="tab-pane" id="conferenties">
+                <div requalizer ole="tabpanel" class="tab-pane" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
@@ -260,7 +261,7 @@
                 </div>
                                 
                 
-                <div role="tabpanel" class="tab-pane" id="betalingen">
+                <div requalizer ole="tabpanel" class="tab-pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
@@ -281,6 +282,9 @@
                         <?php } ?>
                     <?php } ?>
                 </div>                        
+              </div>
             </div>
+        </div>
+    </div>
 
-        </di
+</div>
