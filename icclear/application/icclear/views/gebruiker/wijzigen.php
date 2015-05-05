@@ -253,7 +253,15 @@
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?></td>
+                                    <td><
+                                    <?php if ($i->betaling == null) { ?>            type' => 'radio')); ?>                            
+                                        <span class="right label label-danger">Nog niet betaald!</span>
+              <?php } else { ?>      
+                 
+                                            <span clasuccess">Reeds betaald!</span>
+s betaald!</span>
+                                        <?php } ?>
+                                    </td>
                                 </tr>                                
                             </table>
                         <?php } ?>
