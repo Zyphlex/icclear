@@ -133,7 +133,7 @@
                             $("#familienaamdiv").removeClass("has-error");
                             $("#familienaamdiv").addClass("has-success");
                         }
-                        if ($("#emailadres").val() == "") {
+                        if ($("#emailadres").val() == "" || !realCheck()) {
                             $("#emaildiv").addClass("has-error");
                             $("#emaildiv").removeClass("has-success");
                             ok = false;
@@ -176,9 +176,6 @@
                                 }
                             }
                             );
-                        } else {
-                            $("#emaildiv").addClass("has-error");
-                            $("#emaildiv").removeClass("has-success");
                         }
                         return result;
                     }
