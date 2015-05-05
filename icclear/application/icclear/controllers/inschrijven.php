@@ -226,15 +226,7 @@ class Inschrijven extends CI_Controller {
         }
 
         $this->load->view('admin/inschrijving/lijst', $data);
-    }
-
-    public function detail() {
-        $id = $this->input->get('id');
-
-        $data;
-
-        echo json_encode($data);
-    }
+    }   
     
     //Na inschrijving invullen, kiest men om in te loggen
     //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
@@ -368,6 +360,38 @@ class Inschrijven extends CI_Controller {
             $i++;
         }
         
+    }
+    
+    public function detail() {
+        $id = $this->input->get('id');
+
+        $this->load->model('hotel_model');
+        $hotel = $this->hotel_model->get($id);
+
+        echo json_encode($hotel);
+    }
+    
+    public function update() {
+        $hotel->id = $this->input->post('id');
+        $hotel->naam = $this->input->post('naam');
+
+        $this->load->model('hotel_model');
+        if ($hotel->id == 0) {
+            $id = $this->hotel_model->insert($hotel);
+        } else {
+            $this->hotel_model->update($hotel);
+        }
+
+        echo $id;
+    }
+
+    public function delete() {
+        $id = $this->input->post('id');
+
+        $this->load->model('hotel_model');
+        $deleted = $this->hotel_model->delete($id);
+
+        echo $deleted;
     }
     
 }
