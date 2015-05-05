@@ -12,13 +12,13 @@
             <div class="panel-body">
         <div class="space-bottom15">
         <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
-            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
+            <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
                  alt="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>" 
                  title="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>"
-                 height="150" width="auto" data-placement="top">
+                 data-placement="top">
          <?php } else { ?>
-            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
-                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="top">
+            <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
+                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="top">
          <?php } ?>
         </div>
             
