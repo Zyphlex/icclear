@@ -1,17 +1,14 @@
 <div class="row">    
-    <div class="col-sm-3">        
+    <div class="col-sm-4">        
     </div>
     
-    <div class="col-sm-3">
-    </div>
-    
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <h4 class="red">HELP</h4>
         <p><?php echo anchor('faq', 'F.A.Q.'); ?></p>
         <p>User Guide</p>
     </div>
     
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <h4 class="red">CONTACT</h4>
         <div class="footer-icon">
             Thomas More Kempen<br/>
