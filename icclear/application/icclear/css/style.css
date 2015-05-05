@@ -159,6 +159,7 @@ a:hover {
 .footer-text {
     text-transform: uppercase;
     font-weight: 400;
+    font-size:15px;
 }
 
 .footer-icon {
