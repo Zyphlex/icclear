@@ -93,8 +93,7 @@ function finishAjax(id, response) {
         $('#' + id).fadeIn();
     }
     $(document).ready(function() {
-        var resu;
-        $('#Loading').hide();
+        var resu = 0;        
         function validatieOK() {
             ok = true;
             if ($("#password1").val() == "") {
