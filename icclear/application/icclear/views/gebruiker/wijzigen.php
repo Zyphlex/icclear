@@ -250,10 +250,10 @@
 
                                 <tr>
                          w30        <th class="w35">Conferentie</th>
-                                    <th class="w20">Plaats</th>
-                           5">Periode</th>
+                          15">Plaats</th>
+                                    <th class="w20">Periode</th>
                                     <th class="w20">Bedrag</th>
-                                    <th></th>
+                                    <th class="w5"></th>
                                     <th class="w5">Details<th class="w18">Bedrag</th>
           </tr>
                                 </thead>
