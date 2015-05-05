@@ -2,8 +2,9 @@
     <table class="table table-beheer">
         <thead>
             <tr>
-                <th>Activiteit</th>
-                <th>Personen</th>      
+                <th class="w50">Activiteit</th>
+                <th class="w30">Personen</th>   
+                <th class="w20">Prijs</th>
             </tr>
         </thead>
         <tbody>
