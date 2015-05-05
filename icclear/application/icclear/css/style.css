@@ -59,6 +59,10 @@ form .my-radio {
     background-color: #b60717;
 }
 
+.blue-back {
+    background-color: #428bca;
+}
+
 a:hover { 
     color: #b60717; 
     text-decoration: none;

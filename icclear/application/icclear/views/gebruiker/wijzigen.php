@@ -26,8 +26,8 @@
 
                 <ul class="nav nav-pills nav-stacked" role="tablist">
                     <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
-                    <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conred-back ferenties<span class="pull-right badge"><?php echo count($inschrijvingen); ?></span></a></li>?php $count=0; foreach ($inschrijvingen as $i) { if ($i->betalingId != null) { $count++; }} ?en); ?></span></a></li>
-                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Bred-back etalingen<span class="pull-ri$countijvingen->betalingId)); ?></span></a></li>                        
+                    <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conblue-back ferenties<span class="pull-right badge"><?php echo count($inschrijvingen); ?></span></a></li>?php $count=0; foreach ($inschrijvingen as $i) { if ($i->betalingId != null) { $count++; }} ?en); ?></span></a></li>
+                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Bblue-back etalingen<span class="pull-ri$countijvingen->betalingId)); ?></span></a></li>                        
                 </ul>
             </div>   
         </div>
@@ -38,9 +38,9 @@
         <div role="tabpanel">
 
             <!-- Tab panes -->
-            <div class="tab-content">class="panel panel-default">
+            <div class="tab-content">role="tabpanel" class="equalizer tab-pane active" id="accou <div class="tab-content">class="panel panel-default">
                     <div class="panel-body">
-                <div role="tabpanel" class="equalizer ole="tabpanel" class="tab-pane active" id="account">
+                unt">
                     <h1 class="margin-top">Profiel wijzigen</h1>
                     
 
@@ -206,9 +206,12 @@
                         <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
                         <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-primary"'); ?>
                         <?php echo form_close(); ?> 
+                 </div>echo form_close(); ?> 
                 </div>
 
-                <div requalizer ole="tabpanel" class="tab-pane" id="conferenties">
+                <div requalizer ole="tabpanel" class="tab-pan class="tab-content">class="panel panel-default">
+                    <div class="panel-body">
+                    e" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
@@ -258,10 +261,12 @@
                             </table>
                         <?php } ?>
                     <?php } ?>
-                </div>
-                                
+                <</div>
+                </div>                      
                 
-                <div requalizer ole="tabpanel" class="tab-pane" id="betalingen">
+                <div requalizer ole="tabpanel" class="tab-pane" id="betalin<div class="panel panel-default">
+                    <div class="panel-body">
+                        pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
