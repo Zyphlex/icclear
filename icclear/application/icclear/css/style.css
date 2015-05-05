@@ -171,6 +171,9 @@ a:hover {
 .footer-text {
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.footer-text p {
     font-size:20px;
 }
 
