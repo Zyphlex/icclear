@@ -8,6 +8,8 @@
     
     <div class="col-sm-4">     
         <h4 class="red underline-full">Social Media</h4>
+        <p><span class="fa fa-twitter"></span>Twitter</p>
+        <p><span class="fa fa-facebook-square"></span>Facebook</p>
     </div>
     
     <div class="col-sm-4">
