@@ -13,12 +13,13 @@
     
     <div class="col-sm-3">
         <h4 class="red">CONTACT</h4>
-        <p>
+        <div class="footer-icon">
             Thomas More Kempen<br/>
             Kleinhoefstraat 4<br/>
             Geel, 2440 Belgium
-        </p>
-        <p class="footer-icon"><span class="glyphicon glyphicon-envelope"></span> email: <a href="mailto:support@icclear.test">support@icclear.test</a></p>
+        </div>
+        <div class="footer-icon"><span class="glyphicon glyphicon-envelope"></span> 
+            E-mail: <a href="mailto:support@icclear.test">support@ICClear.be</a></div>
         <p><span class="glyphicon glyphicon-phone-alt"></span> tel: 017 55 94 781</p>
     </div>
 </div>
