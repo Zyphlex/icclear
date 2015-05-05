@@ -40,7 +40,10 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#gebruiker").val(jobject.id);
+                        $("#gebruiker").val(jobject.gebruikerId);
+                        $("#confonderdeel").val(jobject.conferentieOnderdeelId);
+                        $("#betalingId").val(jobject.betalingId);
+                        $("#methode").val(jobject.methodeId);
                     }
                 });
             } else {
