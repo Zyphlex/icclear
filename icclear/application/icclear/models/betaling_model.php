@@ -32,6 +32,11 @@ class Betaling_model extends CI_Model {
         return $geld;
     }
     
+    function delete($id) {
+        $this->db->where('gebruikerId', $id);
+        $this->db->delete('betaling');
+    }
+    
 }
 
 ?>
