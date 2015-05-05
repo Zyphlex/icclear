@@ -134,7 +134,16 @@ function finishAjax(id, response) {
                 $("#familienaamdiv").removeClass("has-error");
                 $("#familienaamdiv").addClass("has-success");
             }
-            if (($("#emailadres").val() == "") || emailCheck() == false) {
+            if ($("#emailadres").val() == "") {
+                $("#emaildiv").addClass("has-error");
+                $("#emaildiv").removeClass("has-success");
+                ok = false;
+            }
+            else {
+                $("#emaildiv").removeClass("has-error");
+                $("#emaildiv").addClass("has-success");
+            }
+            if ($(emailCheck() == false)) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
