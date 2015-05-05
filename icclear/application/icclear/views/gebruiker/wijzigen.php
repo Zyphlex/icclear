@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-2">
-        <div class="panel-body">
+        <div class="panel panel-default">
         <div class="space-bottom15">
         <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
             <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 

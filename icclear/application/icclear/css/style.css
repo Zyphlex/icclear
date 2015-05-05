@@ -17,19 +17,13 @@
 
 }
 
-.fileUpload {
-	position: relative;
-	overflow: hidden;
-	margin:0 15px;
-}
-.fileUpload input.upload {
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 20px;
-	cursor: pointer;
-	opacity: 0;
-	filter: alpha(opacity=0);
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; 
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
 }
 
 #ic-logo { 
