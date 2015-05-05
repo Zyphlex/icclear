@@ -26,8 +26,8 @@
 
                 <ul class="nav nav-pills nav-stacked" role="tablist">
                     <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
-                    <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a><span class="pull-right badge">14</span></li>
-                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen<span class="pull-right badge">14</span></a></li>                        
+                    <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties<span class="pull-right badge"><?php echo count($inschrijvingen); ?></span></a></li>
+                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen<span class="pull-right badge"><?php echo count($inschrijvingen->betalingId != null); ?></span></a></li>                        
                 </ul>
             </div>   
         </div>
