@@ -267,7 +267,7 @@
                                         <?php } ?>
                                     </td>
               <td>
-                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem fa fa-info glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
+                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem fa fa-info btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
                                     </td>
                                 </tr>                                
                             </tableable>
