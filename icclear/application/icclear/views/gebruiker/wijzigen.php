@@ -212,8 +212,9 @@
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
-                        <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
-                            <table class="table table-responsive">
+                        <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?<div class="table-responsive">
+                            <table class="table">                </tr>
+
                                 <tr>
                                     <th class="w35">Conferentie</th>
                                     <th class="w20">Plaats</th>
@@ -234,14 +235,16 @@
                                         <?php } ?>
                                     </td>
                                 </tr>                                
-                            </table>
+                            </table</div               </table>
                         <?php } ?>
                     <?php } ?>
                             
                     <h1 class="margin-top">Afgelopen conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
-                            <table class="table table-responsive">
+       div class=" table-responsive">
+                            <table class="table">                </tr>
+
                                 <tr>
                                     <th class="profConf">Conferentie</th>
                                     <th class="profPl">Plaats</th>
@@ -264,6 +267,7 @@ s betaald!</span>
                                     </td>
                                 </tr>                                
                             </table>
+      </div               </table>
                         <?php } ?>
                     <?php } ?>
                 <</div>
@@ -276,8 +280,11 @@ s betaald!</span>
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
-                        <table class="table table-responsive">
-                            <tr>
+   div class="table-responsive">
+                        <table class="table">
+           </tr>
+
+                                <tr>
                                 <th class="profConf">Conferentie</th>
                                 <th class="profPl">Datum</th>
                                 <th class="profPer">Methode</th>
@@ -290,6 +297,7 @@ s betaald!</span>
                                 <td><?php echo $i->geld; ?></td>                                    
                             </tr>
                         </table>
+   /div               </table>
                         <?php } ?>
                     <?php } ?>
                 </div>                        
