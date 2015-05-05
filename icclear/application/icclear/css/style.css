@@ -164,6 +164,17 @@ a:hover {
   line-height: 20px;
 }
 
+.footer-icon .glyphicon {    
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 14px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
 .footer h4 {
     font-family: verdana, sans-serif;
     font-size:16px;
