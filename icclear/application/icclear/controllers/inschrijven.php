@@ -15,7 +15,7 @@ class Inschrijven extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -41,7 +41,7 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('betalingtype_model');
         $data['betaaltypes'] = $this->betalingtype_model->getAll();
-        
+
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -52,15 +52,15 @@ class Inschrijven extends CI_Controller {
     //Inschrijven voor conferentie zonder reeds ingelogd te zijn
     //Data van inschrijvingsformulier in sessie plaatsen
     //Doorverwijzen naar pagina om in te loggen/te registeren
-    public function aanmeldenEnVerzenden() {  
+    public function aanmeldenEnVerzenden() {
         //Algemene informatie nodig voor de pagina
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Inschrijven';
-        $data['active'] = 'inschrijven';        
+        $data['active'] = 'inschrijven';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -73,10 +73,10 @@ class Inschrijven extends CI_Controller {
                 $data['inschrijving'] = $inschrijving;
             }
         }
-        
+
         $this->load->model('conferentie_model');
         $conf = $this->conferentie_model->getActieveConferentie();
-        
+
         $betId = 0;
         $inschrijving->sconferentieId = $conf->id;
         $inschrijving->sconferentieOnderdeelId = $this->input->post('conferentieOnderdeelId');
@@ -84,30 +84,30 @@ class Inschrijven extends CI_Controller {
         $inschrijving->smethodeId = $this->input->post('methode');
         if ($betId != 0) {
             $inschrijving->sbetalingId = $betId;
-        }  
+        }
         $inschrijving->swiltFactuur = 0;
         if ($this->input->post('factuur')) {
             $inschrijving->swiltFactuur = 1;
         }
-        
+
         $acti = array();
         $actiPer = array();
         $act = array();
         $act = $this->input->post('aanwezig');
-        if ($act){
+        if ($act) {
             foreach ($act as $a) {
                 array_push($acti, $a);
                 array_push($actiPer, $this->input->post($a));
             }
         }
-        $this->session->set_userdata('Pers',$actiPer);
-        $this->session->set_userdata('ActId',$acti);
-        $this->session->set_userdata($inschrijving);         
-        
+        $this->session->set_userdata('Pers', $actiPer);
+        $this->session->set_userdata('ActId', $acti);
+        $this->session->set_userdata($inschrijving);
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
+
     //Reeds ingelogd op website
     //Inschrijving verwerken
     public function verzenden() {
@@ -159,11 +159,11 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-                            
+
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->emailadres);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
-        $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
+        $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.');
         $this->email->send();
 
         redirect('inschrijven/voorkeuren');
@@ -174,7 +174,7 @@ class Inschrijven extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -226,8 +226,8 @@ class Inschrijven extends CI_Controller {
         }
 
         $this->load->view('admin/inschrijving/lijst', $data);
-    }   
-    
+    }
+
     //Na inschrijving invullen, kiest men om in te loggen
     //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     public function aanmelden() {
@@ -237,20 +237,20 @@ class Inschrijven extends CI_Controller {
         //is geactiveerd
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
-        if ($this->authex->login($email, sha1($password))) {            
-            
-            $user = $this->authex->getUserInfo();            
+        if ($this->authex->login($email, sha1($password))) {
+
+            $user = $this->authex->getUserInfo();
             $this->load->model('conferentie_model');
             $conferentie = $this->conferentie_model->getActieveConferentie();
-        
+
             //Verwerken van het inschrijven
-            $this->verwerkenInschrijving($user);            
+            $this->verwerkenInschrijving($user);
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($user->email);
             $this->email->subject('Inschrijving voor ' . $conferentie->naam);
-            $this->email->message('Beste ' . $user->voornaam . ' ' .  $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.' );
+            $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.');
             $this->email->send();
-        
+
             redirect('inschrijven/voorkeuren');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
@@ -258,7 +258,7 @@ class Inschrijven extends CI_Controller {
             redirect('logon/fout');
         }
     }
-    
+
     //Na inschrijving invullen, kiest men om te registreren
     //Nadat men met success registreert, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     //Gebruiker krijgt geen activatie mail
@@ -274,12 +274,12 @@ class Inschrijven extends CI_Controller {
         $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
         $user->generatedKey = $genkey;
 
-        $user->id = $this->authex->register($user);        
+        $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-            
+
         //Verwerken van het inschrijven
-        $this->verwerkenInschrijving($user);     
+        $this->verwerkenInschrijving($user);
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -292,13 +292,13 @@ class Inschrijven extends CI_Controller {
 
         redirect('inschrijven/voorkeuren');
     }
-    
+
     //Voorkeuren doorgeven door persoon die zich net heeft ingeschreven
-    public function voorkeuren() {        
+    public function voorkeuren() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -315,14 +315,13 @@ class Inschrijven extends CI_Controller {
         $data['active'] = 'inschrijven';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getPlenaireActief();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/voorkeuren', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
 
     public function verwerkenInschrijving($user) {
         $betId = 0;
@@ -338,7 +337,7 @@ class Inschrijven extends CI_Controller {
         $inschrijving->conferentieOnderdeelId = $this->session->userdata('sconferentieOnderdeelId');
         $inschrijving->datum = $this->session->userdata('sdatum');
         $inschrijving->methodeId = $this->session->userdata('smethodeId');
-            $inschrijving->wiltFactuur = $this->session->userdata('swiltFactuur');
+        $inschrijving->wiltFactuur = $this->session->userdata('swiltFactuur');
         //Als het geen overschrijving is, betaling linken
         if ($betId != 0) {
             $inschrijving->betalingId = $betId;
@@ -362,9 +361,8 @@ class Inschrijven extends CI_Controller {
 
             $i++;
         }
-        
     }
-    
+
     public function detail() {
         $id = $this->input->get('id');
 
@@ -373,7 +371,7 @@ class Inschrijven extends CI_Controller {
 
         echo json_encode($hotel);
     }
-    
+
     public function update() {
         $hotel->id = $this->input->post('id');
         $hotel->naam = $this->input->post('naam');
@@ -390,14 +388,17 @@ class Inschrijven extends CI_Controller {
 
     public function delete() {
         $id = $this->input->post('id');
+        $betalingId = $this->input->post('betalingId');
 
         $this->load->model('inschrijving_model');
-        $deleted = $this->inschrijving_model->delete($id);
+        $this->inschrijving_model->delete($id);
 
-        echo $deleted;
+        if ($betalingId != null) {
+            $this->load->model('betaling_model');
+            $this->betaling_model->delete($betalingId);
+        }
     }
-    
-}
 
+}
 
 ?>
