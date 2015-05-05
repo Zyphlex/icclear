@@ -48,7 +48,7 @@ class Authex {
     {
         // gebruiker aanmelden met opgegeven email en wachtwoord
         $CI = & get_instance();
-        $user = $CI->logon_model->getUser(strtolower($email), $password);
+        $user = $CI->logon_model->getUser($email, $password);
         if ($user == null) {
             return false;
         } else {
