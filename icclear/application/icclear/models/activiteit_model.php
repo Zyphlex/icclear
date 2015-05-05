@@ -8,7 +8,7 @@ class Activiteit_model extends CI_Model {
 
     function getAllActGebruikerConf($id, $confId) {     
         $sql = 'select * from activiteit a 
-                left join gebruikerActiviteit g 
+                join gebruikerActiviteit g 
                 on a.id = g.activiteitId
                 where a.conferentieId = ? 
                 and g.gebruikerId = ?';
