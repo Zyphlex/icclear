@@ -147,6 +147,7 @@ a:hover {
 }
 
 .footer { 
+    text-transform: uppercase ;
     margin:10px 0;
     background-color: #fff;
     -webkit-box-shadow: 0px -3px 4px -2px rgba(0, 0, 0, 0.3);;
@@ -156,7 +157,6 @@ a:hover {
 
 .footer h4 {
     font-family: verdana, sans-serif;
-    font-weight:bold;
     font-size:16px;
     margin-bottom:0;
 }
