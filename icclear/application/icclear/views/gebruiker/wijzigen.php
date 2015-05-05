@@ -246,10 +246,10 @@
                             <table class="table">                </tr>
 
                                 <tr>
-                         w3         <th class="w35">Conferentie</th>
+                         w30        <th class="w35">Conferentie</th>
                                     <th class="w20">Plaats</th>
                            5">Periode</th>
-                                    <th class="w10">Bedrag</th>
+                                    <th class="w15">Bedrag</th>
                                     <th class="w10">Details<th class="w18">Bedrag</th>
                                 </tr>
 
