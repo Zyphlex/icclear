@@ -286,7 +286,7 @@ taald!</span>
                                          textass="right label label-success">Reeds betaald!</span>
                                         <?php } ?>
                                       </td>
-              <td>
+              <td class="center-block">
                                         <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
                                     </td>
                
