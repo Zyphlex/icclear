@@ -21,7 +21,7 @@
                         $("#conf1").html(jobject.conferentie.naam);                        
                         var tabel;
                         $.each(jobject, function(index,val) {
-                            tabel += '<tr><td>' + val.id[index] + '</td><td>' + '</td><td>' + '</td></tr>';
+                            tabel += '<tr><td>' + val.id[0] + '</td><td>' + '</td><td>' + '</td></tr>';
                         });
                         $("#activiteiten1").html(tabel);
                     }
