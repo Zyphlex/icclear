@@ -19,6 +19,8 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#conf1").html(jobject.conferentie.naam);  
                         alert(iddb);
+                        var object = haaloverzicht(iddb);
+                        $("#activiteiten1").html(object);
                     }
                 });
             }
@@ -27,6 +29,17 @@
         });
     }
     
+    function haaloverzicht(id) {
+        alert(id);
+        $.ajax({type: "GET",
+            url: site_url + "/profiel/overzicht",
+            async: false,
+            data: {id: id},
+            success: function (result) {
+                $("#activiteiten1").html(result);
+            }
+        });
+    }
     
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
