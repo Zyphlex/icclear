@@ -22,7 +22,7 @@
         <span class="glyphicon glyphicon-home"></span> 
             Thomas More Kempen<br/>
             Kleinhoefstraat 4<br/>
-            Geel, 2440 Belgium
+            2440 Geel, Belgium
         </div>
         <div class="footer-icon">
             <span class="glyphicon glyphicon-envelope"></span> 
