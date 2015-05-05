@@ -135,7 +135,7 @@ function finishAjax(id, response) {
                 $("#familienaamdiv").removeClass("has-error");
                 $("#familienaamdiv").addClass("has-success");
             }
-            if (($("#emailadres").val() == "") || $("#emailadres").empty() || emailCheck() == false) {
+            if (($("#emailadres").val() == "") || $("#emailadres").empty() || !emailCheck()) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
