@@ -17,7 +17,12 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#conf1").html(jobject.conferentie.naam);
+                        $("#conf1").html(jobject.conferentie.naam);                        
+                        var tabel;
+                        $.each(jobject, function(index,val) {
+                            tabel += '<tr><td>' + val.activiteit.naam + '</td><td>' + val.activiteit.prijs + '</td><td>' + val.aantalPersonen + '</tr>';
+                        });
+                        $("#activiteiten1").html(tabel);
                     }
                 });
             }
@@ -396,15 +401,14 @@ taald!</span>
                     <h3>Details voor <span id="conf1"></span></h3>
                 </div>   
                 
-                
-                
-                
+                <table id="activiteiten1">
+                    
+                </table>
                 
 
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
-                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
+                        <button type="button" class="col-xs-12 btn btn-primary" data-dismiss="modal">Sluiten</button>   
                     </div>
                 </div>
                 

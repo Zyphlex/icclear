@@ -16,7 +16,6 @@ class Activiteit_model extends CI_Model {
             $a->activiteit = $this->activiteit_model->get($a->activiteitId);              
             if ($a->activiteit->conferentieId == $confId)
             {
-                $a->act = $this->activiteit_model->get($a->activiteitId);
                 $a->geld += ($a->activiteit->prijs * $a->aantalPersonen);
             }
         }        
