@@ -17,7 +17,7 @@
     
     <div class="italic col-sm-12 space-top15">        
         <p><span class="bold">PHP Project - IT Ninjas - Groep 23:</span> Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou</p>
-        <p><span class="bold">Opdrachtgever:</span> Karine Nickolay</p>
+        <p><span class="bold">Opdrachtgeefster:</span> Karine Nickolay</p>
     </div>
     </div>
 </div>
