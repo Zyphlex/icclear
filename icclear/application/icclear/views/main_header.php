@@ -166,11 +166,15 @@
                             }, function (response) {
                                 if (response == 0) {
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                                    result = false;                                    
+                                    $("#emaildiv").addClass("has-error");
+                                    $("#emaildiv").removeClass("has-success");
+                                    result = false;
                                 }
                                 else {
                                     $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                                    result = true;                                    
+                                    $("#emaildiv").removeClass("has-error");
+                                    $("#emaildiv").addClass("has-success");
+                                    result = true;
                                 }
                             }
                             );
