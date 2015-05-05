@@ -135,7 +135,7 @@ function finishAjax(id, response) {
                 $("#familienaamdiv").removeClass("has-error");
                 $("#familienaamdiv").addClass("has-success");
             }
-            if (($("#email").val() == "") || $("#email").empty() || emailCheck() == false) {
+            if (($("#emailadres").val() == "") || $("#emailadres").empty() || emailCheck() == false) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
@@ -149,7 +149,7 @@ function finishAjax(id, response) {
         }
 
         $("#mySubmit").click(function(e) {    
-            alert($("#email").val());
+            alert($("#emailadres").val());
             e.preventDefault();
             realCheck();
             if (validatieOK() && validate() && emailCheck()) {
@@ -169,14 +169,13 @@ function finishAjax(id, response) {
         }
 
         function realCheck() {                            
-                var a = $("#email").val();
+                var a = $("#emailadres").val();
                 var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                 if (filter.test(a)) {
                     $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
-                        email: $('#email').val()
+                        email: $('#emailadres').val()
                     }, function(response) {
-                        resu = response;
-                        $('#Loading').hide();
+                        resu = response;                        
                         if (response == 0) {
                             $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                         }
@@ -227,7 +226,7 @@ function finishAjax(id, response) {
                         <div id="feedbackemail"></div>
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
