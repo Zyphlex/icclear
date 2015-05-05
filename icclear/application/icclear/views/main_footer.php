@@ -1,13 +1,13 @@
-<div class="row footer-text">
-    <div class="col-sm-7 space-bottom15">
+<div class="row">
+    <div class="col-sm-7 space-bottom15 footer-text">
         <p>IT Ninjas &copy; Copyright 2014-2015</p>
     </div>
     
-    <div class="col-sm-5">
-        <p class="pull-right">
-            <a href="#">F.A.Q.</a>
+    <div class="col-sm-5 footer-text">
+        <div class="pull-right">
+            <a class="divider" href="#">F.A.Q.</a>
             <a href="#">CONTACT</a>
-        </p>
+        </div>
     </div>
     
     <div class="italic col-sm-12">        
