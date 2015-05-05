@@ -388,8 +388,8 @@ class Inschrijven extends CI_Controller {
     public function delete() {
         $id = $this->input->post('id');
 
-        $this->load->model('hotel_model');
-        $deleted = $this->hotel_model->delete($id);
+        $this->load->model('inschrijving_model');
+        $deleted = $this->inschrijving_model->delete($id);
 
         echo $deleted;
     }
