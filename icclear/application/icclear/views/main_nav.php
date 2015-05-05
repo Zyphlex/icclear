@@ -31,7 +31,7 @@
                 if ($user != null) {
                     switch ($user->typeId) {                        
                         case 3: // administrator ?>
-                            <li <?php if ($active == 'admin'){ echo 'class="active"'; } ?>><?php echo anchor('admin', 'ADMIN'); ?></li>
+                            <li <?php if ($active == 'admin'){ echo 'class="pull-right active"'; } ?>><?php echo anchor('admin', 'ADMIN'); ?></li>
                         <?php break;
                     }
                 }
