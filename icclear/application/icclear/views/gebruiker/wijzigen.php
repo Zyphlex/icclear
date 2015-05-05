@@ -29,6 +29,17 @@
         });
     }
     
+    function haaloverzicht(var id) {
+        alert(id);
+        $.ajax({type: "GET",
+            url: site_url + "/profiel/overzicht",
+            async: false,
+            data: {id: id},
+            success: function (result) {
+                $("#activiteiten1").html(result);
+            }
+        });
+    }
     
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
