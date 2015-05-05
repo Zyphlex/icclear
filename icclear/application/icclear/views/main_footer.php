@@ -1,9 +1,9 @@
 <div class="space-top row">
-    <div class="col-sm-7 space-bottom15">
+    <div class="col-sm-7 space-bottom15 footer-text">
         <p>IT Ninjas &copy; Copyright 2014-2015</p>
     </div>
     
-    <div class="col-sm-5">
+    <div class="col-sm-5 footer-text">
         <p class="pull-right">
             <?php echo anchor('faq', 'F.A.Q.', 'class=""'); ?>
             <span class="">|</span>
