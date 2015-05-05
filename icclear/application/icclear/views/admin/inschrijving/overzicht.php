@@ -42,7 +42,6 @@
                         
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
-                        alert(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
                         $("#betalingId").val(jobject.betalingId);
                         $("#methode").val(jobject.methodeId);
@@ -130,7 +129,7 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <input type="hidden" name="betalingId" id="betalingId" />
+                    <input type="hidden" name="gebruikerId" id="gebruikerId" />
 
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
                     <p><?php
