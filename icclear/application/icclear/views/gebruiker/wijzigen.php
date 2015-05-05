@@ -246,17 +246,17 @@
                             <table class="table">                </tr>
 
                                 <tr>
-                                    <th class="profConf">Conferentie</th>
-                                    <th class="profPl">Plaats</th>
-                                    <th class="profPer">Periode</th>
-                                    <th class="profBed">Bedrag</th>
+                         w30        <th class="w35">Conferentie</th>
+                                    <th class="w20">Plaats</th>
+                          30">Periode</th>
+                                    <th class="w20        <th class="w18">Bedrag</th>
                                 </tr>
 
                                 <tr>
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><
+                  &euro;                   <td><
                                     <?php if ($i->betaling == null) { ?>            type' => 'radio')); ?>                            
                                         <span class="right label label-danger">Nog niet betaald!</span>
               <?php } else { ?>      
@@ -285,16 +285,16 @@ s betaald!</span>
            </tr>
 
                                 <tr>
-                                <th class="profConf">Conferentie</th>
-                                <th class="profPl">Datum</th>
-                                <th class="profPer">Methode</th>
-                                <th class="profBed">Bedrag</th>                                 
+                     w30">Conferentie</th>
+                                <th class="w25">Datum</th>
+                                <th class="w25">Methode</th>
+                                <th class="w20    <th class="profBed">Bedrag</th>                                 
                             </tr>
                             <tr>
                                 <td><?php echo $i->conferentie->naam; ?></td>
                                 <td><?php echo $i->datum; ?></td>
                                 <td><?php echo $i->type->omschrijving; ?></td>
-                                <td><?php echo $i->geld; ?></td>                                    
+              &euro;                   <td><?php echo $i->geld; ?></td>                                    
                             </tr>
                         </table>
    /div               </table>
