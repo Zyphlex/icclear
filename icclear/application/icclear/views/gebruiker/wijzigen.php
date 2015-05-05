@@ -8,10 +8,10 @@
 
 <div class="row">
     <div class="col-sm-2">
-        <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
-            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
-                 alt="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
-                 title="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>"
+        <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
+            <img class="space-bottom15 center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
+                 alt="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>" 
+                 title="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>"
                  height="150" width="auto" data-placement="bottom">
          <?php } else { ?>
             <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
