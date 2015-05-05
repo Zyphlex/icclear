@@ -17,8 +17,10 @@
         </div>
         <span class="glyphicon glyphicon-envelope"></span> 
         <div class="footer-icon">
-            E-mail: <a href="mailto:support@icclear.test">support@ICClear.be</a></div>
-        <p><span class="glyphicon glyphicon-phone-alt"></span> tel: 017 55 94 781</p>
+            E-mail: <a href="mailto:support@icclear.test">support@ICClear.be</a>
+        </div>
+        <span class="glyphicon glyphicon-phone-alt"></span>
+        <div class="footer-icon"> tel: 017 55 94 781</div>
     </div>
 </div>
 
