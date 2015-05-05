@@ -177,6 +177,10 @@ a:hover {
     font-size:15px;
 }
 
+.footer .footer-text .fa {
+    font-size:25px;
+}
+
 .footer-icon {
   padding: 0px 0px 0px 35px;
   float: left;
