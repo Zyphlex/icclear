@@ -1,15 +1,17 @@
 <div class="row">    
-    <div class="col-sm-4">        
-    </div>
     
     <div class="col-sm-4">
-        <h4 class="red">HELP</h4>
+        <h4 class="red underline-full">Help</h4>
         <p><?php echo anchor('faq', 'F.A.Q.'); ?></p>
         <p>User Guide</p>
     </div>
     
+    <div class="col-sm-4">     
+        <h4 class="red underline-full">Social Media</h4>
+    </div>
+    
     <div class="col-sm-4">
-        <h4 class="red">CONTACT</h4>
+        <h4 class="red underline-full">Contact</h4>
         <div class="footer-icon">
         <span class="glyphicon glyphicon-home"></span> 
             Thomas More Kempen<br/>
