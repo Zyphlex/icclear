@@ -17,11 +17,10 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        alert(result);
                         $("#conf1").html(jobject.conferentie.naam);                        
                         var tabel;
                         $.each(jobject, function(index,val) {
-                            tabel += '<tr><td>' + val.id + '</td><td>' + val.activiteit.prijs + '</td><td>' + val.aantalPersonen + '</td></tr>';
+                            tabel += '<tr><td>' + val.id + '</td><td>' + '</td><td>' + '</td></tr>';
                         });
                         $("#activiteiten1").html(tabel);
                     }
