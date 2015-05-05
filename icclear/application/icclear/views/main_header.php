@@ -183,7 +183,9 @@ function finishAjax(id, response) {
                         }
                     }
                     );
-                }else{resu = 0}            
+                }else{
+                resu = 0;
+                }            
         }
 
         function validate() {
