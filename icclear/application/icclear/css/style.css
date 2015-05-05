@@ -214,6 +214,7 @@ a:hover {
 .footer p {
     font-family:verdana, sans-serif; 
     margin-bottom: 2px;
+    font-size: 12px;
 }
 
 .navbar { 
