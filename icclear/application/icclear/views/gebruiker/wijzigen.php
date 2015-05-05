@@ -250,9 +250,9 @@
                                     <th class="w20">Plaats</th>
                            5">Periode</th>
                                     <th class="w20">Bedrag</th>
+                                    <th></th>
                                     <th class="w5">Details<th class="w18">Bedrag</th>
-              <th></th>
-                                </tr>
+          </tr>
                               
              
                            ($i->betaling == null) { ?> ?>
@@ -266,11 +266,7 @@ taald!</span>
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                  &euro; <?php echo $i->geld; ?>                      <?php } ?>
-                                    </td>
-              <td>
-                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
-                                    </td>
+                  &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
               <td>            php echo $i->geld; ?>
                                                           
                            ($i->betaling == null) { ?> ?>
@@ -279,6 +275,9 @@ taald!</span>
                                         <?php } else { ?>      
                                          textass="right label label-success">Reeds betaald!</span>
                                         <?php } ?>
+                                      </td>
+              <td>
+                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
                                     </td>
                                 </tr>                                
                             </tableable>
