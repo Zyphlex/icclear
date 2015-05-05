@@ -140,6 +140,9 @@ class Conferentie extends CI_Controller {
         $this->load->model('conferentie_onderdeel_model');
         $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($this->session->userdata('conferentieId'));
 
+        $this->load->model('inschrijving_model');
+        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($this->session->userdata('conferentieId'));
+
         $this->load->view('admin/conferentie/lijst', $data);
     }
 
