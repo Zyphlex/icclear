@@ -387,6 +387,9 @@ button:focus {
     vertical-align: middle;
 }
 
+.table tbody>tr>td{
+    vertical-align: middle !important;
+}
 
 //// TABELLEN BREEDTES
 
