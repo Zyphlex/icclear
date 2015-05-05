@@ -17,6 +17,7 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
+                        alert(result);
                         $("#conf1").html(jobject.conferentie.naam);                        
                         var tabel;
                         $.each(jobject, function(index,val) {
