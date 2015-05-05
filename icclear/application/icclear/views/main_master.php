@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/style.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . APPPATH; ?>css/font-awesome.css" />
     
     <link rel="icon" type="image/png" href="<?php echo base_url() . APPPATH; ?>img/default/favicon.png"/>
     
