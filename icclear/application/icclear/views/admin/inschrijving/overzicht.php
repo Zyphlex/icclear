@@ -128,7 +128,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
+                    <input type="text" name="id" id="id" />
                     <input type="text" name="gebruikerId" id="gebruiker" />
 
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
