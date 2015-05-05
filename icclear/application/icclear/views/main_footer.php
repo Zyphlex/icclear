@@ -4,10 +4,10 @@
     </div>
     
     <div class="col-sm-5 footer-text">
-        <div class="pull-right">
+        <p class="pull-right">
             <a class="divider-vertical-right" href="#">F.A.Q.</a>
             <a href="#">CONTACT</a>
-        </div>
+        </p>
     </div>
     
     <div class="italic col-sm-12">        
