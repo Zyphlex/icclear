@@ -20,7 +20,7 @@
                         $("#conf1").html(jobject.conferentie.naam);                        
                         var tabel;
                         $.each(jobject, function(index,val) {
-                            tabel += '<tr><td>' + val.activiteit.naam + '</td><td>' + val.activiteit.prijs + '</td><td>' + val.aantalPersonen + '</tr>';
+                            tabel += '<tr><td>' + val.id + '</td><td>' + val.activiteit.prijs + '</td><td>' + val.aantalPersonen + '</td></tr>';
                         });
                         $("#activiteiten1").html(tabel);
                     }
