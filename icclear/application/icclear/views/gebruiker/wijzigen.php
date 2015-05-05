@@ -18,6 +18,7 @@
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#conf1").html(jobject.conferentie.naam);  
+                        alert(iddb);
                         haaloverzicht(iddb);
                     }
                 });
@@ -28,6 +29,7 @@
     }
     
     function haaloverzicht(var id) {
+        alert(id);
         $.ajax({type: "GET",
             url: site_url + "/profiel/overzicht",
             data: {id: id},
@@ -407,9 +409,7 @@ taald!</span>
                     <h3>Details voor <span id="conf1"></span></h3>
                 </div>   
                 
-                <table id="activiteiten1">
-                    
-                </table>
+                <div id="activiteiten1"></div>
                 
 
                 <div class="col-xs-12 margin-top space-bottom15">
