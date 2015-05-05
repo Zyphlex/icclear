@@ -7,7 +7,28 @@
 </script>
 
 <div class="row">
-    <div class="col-md-12">                
+    <div class="col-sm-2">
+        <?php if ($p->spreker->foto == 'spreker' . $p->spreker->id . '.jpg') { ?>
+            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $p->spreker->foto; ?>" 
+                 alt="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>" 
+                 title="Foto <?php echo$p->spreker->familienaam . ' ' . $p->spreker->voornaam; ?>"
+                 height="150" width="auto" data-placement="bottom">
+         <?php } else { ?>
+            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
+                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="bottom">
+         <?php } ?>
+            
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+                <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
+                <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
+            </ul>
+            
+            
+    </div>
+    
+    
+    <div class="col-sm-10">                
         <div role="tabpanel">
 
             <!-- Nav tabs -->
