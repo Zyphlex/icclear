@@ -19,6 +19,8 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#conf1").html(jobject.conferentie.naam);  
                         alert(iddb);
+                        var object = haaloverzicht(iddb);
+                        $("#activiteiten1").html(object);
                     }
                 });
             }
@@ -34,7 +36,6 @@
             async: false,
             data: {id: id},
             success: function (result) {
-                $("#activiteiten1").html(result);
             }
         });
     }
