@@ -171,7 +171,7 @@ a:hover {
 .footer-text {
     text-transform: uppercase;
     font-weight: bold;
-    font-size:16px;
+    font-size:20px;
 }
 
 .footer-icon {
@@ -353,6 +353,14 @@ button:focus {
 
 .space-bottom15 {
     margin-bottom:15px;
+}
+
+.space-top {
+    margin-top:50px;
+}
+
+.space-top15 {
+    margin-top:15px;
 }
 
 .under-link td a
