@@ -133,17 +133,6 @@
                     <input type="hidden" name="id" id="id" />
                     <input type="hidden" name="gebruiker" id="gebruiker" />
 
-                    <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
-<!--                    <p><?php
-                        $drop = array();
-                        $teller = 1;
-                        foreach ($gebruikers as $g) {
-                            $drop[$g->id] = $g->voornaam . $g->familienaam;
-                            $teller++;
-                        }
-                        echo form_dropdown('', $drop, '', 'id="gebruiker" class="form-control"');
-                        ?>
-                    </p>-->
 
                 </form>
 
