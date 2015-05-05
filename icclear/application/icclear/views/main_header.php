@@ -158,18 +158,18 @@
 
                     function realCheck() {
                         var result = false;
-                        var a = $("#emailadres").val();
+                        var a = $('#emailadres').val();
                         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                         if (filter.test(a)) {
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                                 email: $('#emailadres').val()
                             }, function (response) {
                                 if (response == 0) {
-                                    $("#feedbackemail").html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                                    $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     result = false;                                    
                                 }
                                 else {
-                                    $("#feedbackemail").html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                                    $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                     result = true;                                    
                                 }
                             }
