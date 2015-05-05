@@ -6,7 +6,7 @@
     
     //Klikken op de Details knop
     function maakDetailClick() {
-        $(".wijzigItem").click(function() {
+        $(".detailsItem").click(function() {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -17,24 +17,19 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#vertrekpunt").val(jobject.vertrekPunt);
-                        $("#beschrijving").val(jobject.beschrijving);
-                        $("#gebouw").val(jobject.gebouwId);
-                        $("#url").val(jobject.url);
+                        $("#conf1").html(jobject.conferentie.naam);
                     }
                 });
-            } else {
-                // bij toevoegen gewoon vakken leeg maken
-                $("#vertrekpunt").val("");
-                $("#beschrijving").val("");
-                $("#gebouw").val("");
-                $("#url").val("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
         });
     }
     
+    $(document).ready(function() {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php
+        maakDetailClick();
+    });
 </script>
 
 <div class="row">
@@ -393,43 +388,28 @@ taald!</span>
 <div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
+            
+            <div class="row">
+                
+                <div class="text-center underline">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Details voor <span id="conf1"></span></h3>
+                </div>   
+                
+                
+                
+                
+                
 
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"></h4>
-            </div>
-
-            <div class="modal-body">                  
-
-                <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
-                    <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
-
-                    <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
-                    <p><?php echo form_textarea(array('rows'=>'10','cols'=>'50','name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
-
-                    <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
-                    <p><?php
-                        $options = array();
-                        foreach ($gebouwen as $gebouw) {
-                            $options[$gebouw->id] = $gebouw->naam;
-                        }
-                        echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
-                        ?></p>
-                    
-                    <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
-                    <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
-
-                </form>
-
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="opslaanItem btn btn-primary">Opslaan</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
-            </div>
-
-        </div>            
+                <div class="col-xs-12 margin-top space-bottom15">
+                    <div class="btn-group btn-block">
+                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
+                        <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
+                    </div>
+                </div>
+                
+            </div>       
+            
+        </div>               
     </div>
 </div>  

@@ -6,6 +6,23 @@ class Activiteit_model extends CI_Model {
         parent::__construct();
     }
 
+    function getAllActGebruikerConf($id, $confId) {     
+        $this->db->where('gebruikerId', $id);
+        $query = $this->db->get('gebruikerActiviteit');
+        $activiteitenGeb = $query->result();
+        
+        $this->load->model('activiteit_model');      
+        foreach ($activiteitenGeb as $a){
+            $a->activiteit = $this->activiteit_model->get($a->activiteitId);              
+            if ($a->activiteit->conferentieId == $confId)
+            {
+                $a->act = $this->activiteit_model->get($a->activiteitId);
+                $a->geld += ($a->activiteit->prijs * $a->aantalPersonen);
+            }
+        }        
+        return $activiteitenGeb;
+    }
+    
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('activiteit');
@@ -53,7 +70,13 @@ class Activiteit_model extends CI_Model {
         $query = $this->db->get('activiteit');
         return $query->num_rows;
     }
-
+    
+    function getActiviteitenConf($id) {
+        $this->db->where('conferentieId', $id);
+        $query = $this->db->get('activiteit');
+        return $query->result();
+    }
+    
     function getActiviteitenActieve() {
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();

@@ -17,6 +17,27 @@ class Inschrijving_model extends CI_Model {
         parent::__construct();
     }
 
+    function getInschrijving($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('inschrijving');
+        $inschrijving = $query->row();
+        
+        $this->load->model('betalingtype_model');
+        $this->load->model('gebruiker_model');
+        $this->load->model('conferentie_model');
+        $this->load->model('conferentie_onderdeel_model');
+        $this->load->model('betaling_model');
+        $this->load->model('activiteit_model');
+        $inschrijving->methode = $this->betalingtype_model->get($inschrijving->methodeId);
+        $inschrijving->gebruiker = $this->gebruiker_model->get($inschrijving->gebruikerId);
+        $inschrijving->conferentie = $this->conferentie_model->get($inschrijving->conferentieId);
+        $inschrijving->confond = $this->conferentie_onderdeel_model->get($inschrijving->conferentieOnderdeelId);
+        $inschrijving->betaling = $this->betaling_model->get($inschrijving->betalingId);        
+        $inschrijving->activiteiten = $this->activiteit_model->getAllActGebruikerConf($inschrijving->gebruiker->id,$inschrijving->conferentie->id);
+        
+        return $inschrijving;
+    }
+    
     function getAllInschijvingByConferentie($id) {
         $this->db->where('conferentieId', $id);
         $query = $this->db->get('inschrijving');
