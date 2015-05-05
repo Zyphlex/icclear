@@ -142,7 +142,7 @@ function finishAjax(id, response) {
                 $("#emaildiv").removeClass("has-error");
                 $("#emaildiv").addClass("has-success");
             }
-            if ($(realCheck() == false)) {
+            if ($(!realCheck())) {
                 $("#emaildiv").addClass("has-error");
                 $("#emaildiv").removeClass("has-success");
                 ok = false;
