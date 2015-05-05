@@ -159,7 +159,7 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u deze inschrijving wilt verwijderen?</p>  
+                <p>Bent u zeker dat u deze gebruiker wilt uitschrijven?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>
             </div>
 
