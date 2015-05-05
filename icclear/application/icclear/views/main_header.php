@@ -174,6 +174,7 @@
                                     $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                     $("#emaildiv").removeClass("has-error");
                                     $("#emaildiv").addClass("has-success");
+                                    alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
                                     result = true;
                                 }
                             }
