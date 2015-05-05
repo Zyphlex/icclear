@@ -248,26 +248,30 @@
                                 <tr>
                          w30        <th class="w35">Conferentie</th>
                                     <th class="w20">Plaats</th>
-                          30">Periode</th>
-                                    <th class="w20        <th class="w18">Bedrag</th>
+                          25">Periode</th>
+                                    <th class="w15">Bedrag</th>
+                                    <th class="w10"><th class="w18">Bedrag</th>
                                 </tr>
 
                                 <tr>
                                     <td><?php echo $i->conferentie->naam; ?></td>
                                     <td><?php echo $i->conferentie->stad; ?></td>
                                     <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                  &euro;                   <td><
-                                    <?php if ($i->betaling == null) { ?>            type' => 'radio')); ?>                            
-                                        <span class="right label label-danger">Nog niet betaald!</span>
-              <?php } else { ?>      
-                 
-                                            <span clasuccess">Reeds betaald!</span>
-s betaald!</span>
+                  &euro; <?php echo $i->geld; ?> ?>
+                                                          
+                           ($i->betaling == null) { ?> ?>
+                                                          
+                                            <span class="right label label-danger">Nog niet betaald!</span>
+                                        <?php } else { ?>      
+                                            <span class="right label label-success">Reeds betaald!</span>
                                         <?php } ?>
                                     </td>
+              <td>
+                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem fa fa-info glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
+                                    </td>
                                 </tr>                                
-                            </table>
-      </div               </table>
+                            </tableable>
+   /div               </table>
                         <?php } ?>
                     <?php } ?>
                 <</div>
