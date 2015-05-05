@@ -129,19 +129,19 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <input type="hidden" name="gebruikerId" id="gebruikerId" />
+                    <input type="text" name="gebruikerId" id="gebruiker" />
 
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
-                    <p><?php
+<!--                    <p><?php
                         $drop = array();
                         $teller = 1;
                         foreach ($gebruikers as $g) {
                             $drop[$g->id] = $g->voornaam . $g->familienaam;
                             $teller++;
                         }
-                        echo form_dropdown('gebruiker', $drop, '', 'id="gebruiker" class="form-control"');
+                        echo form_dropdown('', $drop, '', 'id="gebruiker" class="form-control"');
                         ?>
-                    </p>
+                    </p>-->
 
                 </form>
 
