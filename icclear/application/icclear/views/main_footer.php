@@ -10,7 +10,7 @@
         </p>
     </div>
     
-    <div class="col-sm-12">        
+    <div class="italic col-sm-12">        
         <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou</p>
         <p>Opdrachtgever: Karine Nickolay</p>
     </div>
