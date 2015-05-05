@@ -1,8 +1,39 @@
 <script type="text/javascript">
     $('#myTab a').click(function(e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
+        e.preventDefault();
+        $(this).tab('show');
+    });
+    
+    //Klikken op de Details knop
+    function maakDetailClick() {
+        $(".wijzigItem").click(function() {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/profiel/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function(result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#vertrekpunt").val(jobject.vertrekPunt);
+                        $("#beschrijving").val(jobject.beschrijving);
+                        $("#gebouw").val(jobject.gebouwId);
+                        $("#url").val(jobject.url);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#vertrekpunt").val("");
+                $("#beschrijving").val("");
+                $("#gebouw").val("");
+                $("#url").val("");
+            }
+            // dialoogvenster openen
+            $("#modalItemDetail").modal('show');
+        });
+    }
     
 </script>
 
@@ -212,42 +243,7 @@
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
-                        <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?<div class="table-responsive">
-                            <thead>
-                            <table class="table">                </tr>
-
-                                <tr>
-                                    <th class="w35">Conferentie</th>
-                                    <th class="w20">Plaats</th>
-                                    <th class="w27">Periode</th>
-                                    <th class="w18">Bedrag</th>
-                                            </thead>
-                            <tbody>                </tr>
-
-                                <tr>
-                                    <td><?php echo $i->conferentie->naam; ?></td>
-                                    <td><?php echo $i->conferentie->stad; ?></td>
-                                    <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-                                    <td><?php echo $i->geld; ?>
-                                                          
-                                        <?php if($i->betaling == null) {?>                                        
-                                            <span class="right label label-danger">Nog niet betaald!</span>
-                                        <?php } else { ?>      
-                                            <span class="right label label-success">Reeds betaald!</span>
-                                        <?php } ?>
-                                    </td>
-                
-                            </tbody>
-                            </table>
-         </table>
-   /div               </table>
-                        <?php } ?>
-                    <?php } ?>
-                            
-                    <h1 class="margin-top">Afgelopen conferenties</h1>
-                    <?php foreach ($inschrijvingen as $i) { ?>
-                        <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
-       div class=" table-responsive">
+                        <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?<div class=" table-responsive">
                             <table class="table">                </tr>
 
             head>                </tr>
@@ -287,7 +283,60 @@ taald!</span>
                                         <?php } ?>
                                       </td>
               <td class="center-block">
-                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
+                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->id ?>"></button>                                           <?php } ?>
+                                    </td>
+               
+                                </tbody>
+                            </table>
+                 </table>
+   /div               </table>
+                        <?php } ?>
+                    <?php } ?>
+                            
+                    <h1 class="margin-top">Afgelopen conferenties</h1>
+                    <?php foreach ($inschrijvingen as $i) { ?>
+                        <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
+       div class=" table-responsive">
+                            <table class="table">                </tr>
+
+            head>                </tr>
+
+                                <tr>
+                         w30        <th class="w35">Conferentie</th>
+                          15">Plaats</th>
+                                    <th class="w20">Periode</th>
+                                    <th class="w20">Bedrag</th>
+                                    <th class="w5"></th>
+                                    <th class="w5">Details<th class="w18">Bedrag</th>
+          </tr>
+                                </thead>
+                              
+             
+                   tbody>
+             
+                           ($i->betaling == null) { ?> ?>
+                                                          
+              <tr class="danger">
+taald!</span>
+                                        <?php } else { ?>      
+              <tr class="success">
+taald!</span>
+                                        <?php } ?>
+                                    <td><?php echo $i->conferentie->naam; ?></td>
+                                    <td><?php echo $i->conferentie->stad; ?></td>
+                                    <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
+                  &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
+              <td>            php echo $i->geld; ?>
+                                                          
+                           ($i->betaling == null) { ?> ?>
+                                                          
+                                         textass="right label label-danger">Nog niet betaald!</span>
+                                        <?php } else { ?>      
+                                         textass="right label label-success">Reeds betaald!</span>
+                                        <?php } ?>
+                                      </td>
+              <td class="center-block">
+                                        <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->id ?>"></button>                                           <?php } ?>
                                     </td>
                
                                 </tbody>
@@ -339,3 +388,48 @@ taald!</span>
     </div>
 
 </div>
+
+<!-- MODAL VOOR DETAILS -->         
+<div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm">
+                    <input type="hidden" name="id" id="id" />
+                    <p><?php echo form_label('Vertrekpunt:', 'vertrekpunt'); ?></td>
+                    <p><?php echo form_input(array('name' => 'vertrekpunt', 'id' => 'vertrekpunt', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Route beschrijving:', 'beschrijving'); ?></td>
+                    <p><?php echo form_textarea(array('rows'=>'10','cols'=>'50','name' => 'beschrijving', 'id' => 'beschrijving', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Gebouw:', 'gebouw'); ?></td>
+                    <p><?php
+                        $options = array();
+                        foreach ($gebouwen as $gebouw) {
+                            $options[$gebouw->id] = $gebouw->naam;
+                        }
+                        echo form_dropdown('gebouw', $options, '', 'id="gebouw" class="form-control"');
+                        ?></p>
+                    
+                    <p><?php echo form_label('Googlemaps URL:', 'url'); ?></td>
+                    <p><?php echo form_input(array('name' => 'url', 'id' => 'url', 'class' => 'form-control')); ?></p>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="opslaanItem btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
+</div>  
