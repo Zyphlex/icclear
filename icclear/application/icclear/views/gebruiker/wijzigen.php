@@ -213,6 +213,7 @@
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?<div class="table-responsive">
+                            <thead>
                             <table class="table">                </tr>
 
                                 <tr>
@@ -220,7 +221,8 @@
                                     <th class="w20">Plaats</th>
                                     <th class="w27">Periode</th>
                                     <th class="w18">Bedrag</th>
-                                </tr>
+                                            </thead>
+                            <tbody>                </tr>
 
                                 <tr>
                                     <td><?php echo $i->conferentie->naam; ?></td>
@@ -234,8 +236,11 @@
                                             <span class="right label label-success">Reeds betaald!</span>
                                         <?php } ?>
                                     </td>
-                                </tr>                                
-                            </table</div               </table>
+                
+                            </tbody>
+                            </table>
+         </table>
+   /div               </table>
                         <?php } ?>
                     <?php } ?>
                             
@@ -245,6 +250,8 @@
        div class=" table-responsive">
                             <table class="table">                </tr>
 
+            head>                </tr>
+
                                 <tr>
                          w30        <th class="w35">Conferentie</th>
                                     <th class="w20">Plaats</th>
@@ -253,7 +260,10 @@
                                     <th></th>
                                     <th class="w5">Details<th class="w18">Bedrag</th>
           </tr>
+                                </thead>
                               
+             
+                   tbody>
              
                            ($i->betaling == null) { ?> ?>
                                                           
@@ -279,8 +289,10 @@ taald!</span>
               <td>
                                         <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-primary" data-id="<?php echo $i->conferentie->id ?>"></button>                                           <?php } ?>
                                     </td>
-                                </tr>                                
-                            </tableable>
+               
+                                </tbody>
+                            </table>
+                 </table>
    /div               </table>
                         <?php } ?>
                     <?php } ?>
@@ -298,18 +310,24 @@ taald!</span>
                         <table class="table">
            </tr>
 
+            head>
+           </tr>
+
                                 <tr>
                      w30">Conferentie</th>
                                 <th class="w25">Datum</th>
                                 <th class="w25">Methode</th>
                                 <th class="w20    <th class="profBed">Bedrag</th>                                 
                             </tr>
+       /thead>
+                            <tbody                  </tr>
                             <tr>
                                 <td><?php echo $i->conferentie->naam; ?></td>
                                 <td><?php echo $i->datum; ?></td>
                                 <td><?php echo $i->type->omschrijving; ?></td>
               &euro;                   <td><?php echo $i->geld; ?></td>                                    
                             </tr>
+      </tbody                  </tr>
                         </table>
    /div               </table>
                         <?php } ?>
