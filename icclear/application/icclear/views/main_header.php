@@ -148,7 +148,7 @@
 
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
-                        if (validatieOK() && validate() && realCheck()) {                            
+                        if (validatieOK() && validate() && realCheck()) {
                             $("#myForm").submit();
                         }
 
@@ -176,6 +176,9 @@
                                 }
                             }
                             );
+                        } else {
+                            $("#emaildiv").addClass("has-error");
+                            $("#emaildiv").removeClass("has-success");
                         }
                         return result;
                     }
