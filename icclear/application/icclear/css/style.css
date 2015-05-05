@@ -382,6 +382,11 @@ button:focus {
     margin-top: 0;
 }
 
+.fa {
+    line-height:inherit;
+    vertical-align: middle;
+}
+
 
 //// TABELLEN BREEDTES
 
