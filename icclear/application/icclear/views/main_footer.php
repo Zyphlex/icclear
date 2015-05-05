@@ -1,10 +1,10 @@
 <div class="row">
-    <div class="pull-left">
+    <div class="col-sm-7 pull-left">
         <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou</p>
         <p>Opdrachtgever: Karine Nickolay</p>
     </div>
     
-    <div class="pull-right">
+    <div class="col-sm-5 pull-right">
         <p>
             <a href="#">F.A.Q.</a>
             <a href="#">CONTACT</a>
