@@ -174,11 +174,15 @@ a:hover {
 }
 
 .footer .footer-text p {
+    line-height:30px;
+    vertical-align: middle;
     font-size:15px;
 }
 
 .footer .footer-text .fa {
-    font-size:25px;
+    vertical-align: middle;
+    line-height:30px;
+    font-size: 30px;
 }
 
 .footer-icon {
