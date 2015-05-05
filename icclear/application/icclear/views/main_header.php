@@ -148,8 +148,7 @@
 
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
-                        if (validatieOK() && validate() && realCheck()) {
-                            $("#feedbackemail").hide();
+                        if (validatieOK() && validate() && realCheck()) {                            
                             $("#myForm").submit();
                         }
 
