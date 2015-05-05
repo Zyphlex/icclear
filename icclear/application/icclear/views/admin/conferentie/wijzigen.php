@@ -231,8 +231,10 @@
             <div class="col-md-12">   
                 <?php echo form_hidden('id', $conferentie->id); ?>
 
-                <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?>         
-                <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>            
+                <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
+                <?php if(count($inschrijvingen) < 1) { ?>
+                    <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>          
+                <?php } ?>
             </div>
         </div>
         

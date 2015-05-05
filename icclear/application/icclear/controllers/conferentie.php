@@ -49,6 +49,7 @@ class Conferentie extends CI_Controller {
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+        $data['inschrijvingen'] = $this->conferentie_model->getAllInschijvingByConferentie($this->session->userdata('conferentieId'));
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/conferentie/wijzigen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
