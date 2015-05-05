@@ -102,17 +102,17 @@
 
 <div class="col-md-10">
     <h1>Conferentie</h1>
+    
+    <?php if(count($inschrijvingen) >= 1) { ?>
+    <div class="space-bottom alert alert-warning">
+        <h3>Opgelet! De conferentie kan niet meer gewijzigd worden!</h3>
+        <p class="space-bottom15">Er zijn al <span class="bold"><?php echo count($inschrijvingen)?></span> inschrijvingen gevonden!</p>
+    </div>
+    <?php } ?>
 
     <div id="resultaat"></div>    
     
     <h2>Conferentie wijzigen</h2>
-    
-    <?php if(count($inschrijvingen) >= 1) { ?>
-    <div class="alert alert-warning">
-        <h3>Opgelet! De conferentie kan niet meer gewijzigd worden!</h3>
-        <p class="space-bottom15">Er zijn al <span class="bold"><?php echo count($inschrijvingen)?> inschrijvingen gevonden!</span></p>
-    </div>
-    <?php } ?>
         
             
         <?php
