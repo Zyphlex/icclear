@@ -17,8 +17,8 @@
                 </div>
                 <div class="col-md-8">   
                     <?php
-                    foreach ($sessies as $sessie) {
-                        echo form_radio(array('type' => 'radio', 'name' => 'sessies', 'value' => $sessie->id));
+                    foreach ($sessies as $s) {
+                        echo form_radio(array('type' => 'radio', 'name' => 'sessies', 'value' => $s->id));
                     }
                     ?>
                 </div>
