@@ -122,6 +122,7 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="betalingId" id="betalingId" />
                     
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
                     <p><?php
