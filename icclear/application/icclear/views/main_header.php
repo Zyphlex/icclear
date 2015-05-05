@@ -149,7 +149,8 @@
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
                         if (validatieOK() && validate() && realCheck()) {
-                            $("#myForm").submit();
+            alert(realCheck());                
+            $("#myForm").submit();
                         }
 
                     });
