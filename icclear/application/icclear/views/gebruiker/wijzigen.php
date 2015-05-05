@@ -9,6 +9,7 @@
 <div class="row">
     <div class="col-sm-2">
         <div class="panel panel-default">
+            <div class="panel-body">
         <div class="space-bottom15">
         <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
             <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
@@ -28,7 +29,7 @@
             <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
             <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
         </ul>
-            
+            </div>   
         </div>
     </div>
     
