@@ -1,4 +1,5 @@
-<div class="space-top row">
+<div class="row">
+    <div class="space-top ">
     <div class="col-sm-7 space-bottom15 footer-text">
         <p>IT Ninjas &copy; Copyright 2014-2015</p>
     </div>
@@ -14,6 +15,7 @@
     <div class="italic col-sm-12">        
         <p><span class="bold">PHP Project - IT Ninjas - Groep 23:</span> Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou</p>
         <p><span class="bold">Opdrachtgever:</span> Karine Nickolay</p>
+    </div>
     </div>
 </div>
 
