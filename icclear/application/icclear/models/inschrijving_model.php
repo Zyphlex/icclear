@@ -129,6 +129,19 @@ class Inschrijving_model extends CI_Model {
         $inschrijving = $query->row();        
         return $inschrijving;
     }
+    
+     function update($inschrijving) {
+        //Html entities en extra spaties verwijderen
+        $inschrijving = escape_html($inschrijving);
+        
+        $this->db->where('id', $inschrijving->id);
+        $this->db->update('inschrijving', $inschrijving);
+    }
+
+    function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('inschrijving');
+    }
 
 }
 
