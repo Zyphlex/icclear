@@ -23,6 +23,7 @@
     function maakDeleteClick() {
         $(".verwijderItem").click(function () {
             deleteid = $(this).data("id");
+            deletebetaalid = $(this).data("gebruiker");
             $("#modalItemDelete").modal('show');
         });
     }
@@ -88,8 +89,9 @@
                 type: "POST",
                 url: site_url + "/inschrijven/delete",
                 async: false,
-                data: {id: deleteid},
+                data: {id: deleteid, gebruiker: deletebetaalid},
                 success: function (result) {
+                    alert(deleteid + " " + deletebetaalid);
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -128,8 +130,8 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="text" name="id" id="id" />
-                    <input type="text" name="gebruikerId" id="gebruiker" />
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="gebruiker" id="gebruiker" />
 
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></td>
 <!--                    <p><?php
