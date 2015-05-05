@@ -8,21 +8,23 @@
 
 <div class="row">
     <div class="col-sm-2">
+        <div class="space-bottom15">
         <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
-            <img class="space-bottom15 center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
+            <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
                  alt="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>" 
                  title="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>"
-                 height="150" width="auto" data-placement="bottom">
+                 height="150" width="auto" data-placement="top">
          <?php } else { ?>
             <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
-                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="bottom">
+                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="top">
          <?php } ?>
+        </div>
             
-            <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
-                <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
-                <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
-            </ul>
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+            <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
+            <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
+        </ul>
             
             
     </div>
@@ -30,13 +32,6 @@
     
     <div class="col-sm-10">                
         <div role="tabpanel">
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
-                <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
-                <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
-            </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
