@@ -25,7 +25,7 @@ class Logon_model extends CI_Model {
     }
 
     function getUser($email, $password) {
-        $this->db->where('emailadres', $email);
+        $this->db->where('LOWER(emailadres)', $email);
         $this->db->where('paswoord', $password);
         $query = $this->db->get('gebruiker');
         if ($query->num_rows() == 1) {
