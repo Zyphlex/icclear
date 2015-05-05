@@ -1,6 +1,6 @@
 <div class="row footer-text">
-    <div class="col-sm-7 pull-left">
-        <p class="space-bottom15">IT Ninjas &copy; Copyright 2014-2015</p>
+    <div class="col-sm-7 space-bottom15">
+        <p>IT Ninjas &copy; Copyright 2014-2015</p>
     </div>
     
     <div class="col-sm-5">
