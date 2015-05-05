@@ -202,10 +202,10 @@
                                 </div>                                    
                             </div>
                         </div>         
-                        <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
-                        <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-default"'); ?>
-                        <?php echo form_close(); ?> 
                     </div>
+                        <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+                        <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-primary"'); ?>
+                        <?php echo form_close(); ?> 
                 </div>
 
                 <div role="tabpanel" class="tab-pane" id="conferenties">
