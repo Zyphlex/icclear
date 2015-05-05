@@ -38,7 +38,8 @@
         <div role="tabpanel">
 
             <!-- Tab panes -->
-            <div class="tab-content">role="tabpanel" class="equalizer tab-pane active" id="accou <div class="tab-content">class="panel panel-default">
+            <div class="tab-content">role="tabpanel" class="tab-pane active" id="account">
+                <div class="equalizer panel panel-default">
                     <div class="panel-body">
                 unt">
                     <h1 class="margin-top">Profiel wijzigen</h1>
@@ -209,9 +210,10 @@
                  </div>echo form_close(); ?> 
                 </div>
 
-                <div requalizer ole="tabpanel" class="tab-pan class="tab-content">class="panel panel-default">
+                <div rtab-pane" id="conferenties">
+                <div class="equalizer panel panel-default">
                     <div class="panel-body">
-                    e" id="conferenties">
+                unt"e" id="conferenties">
 
                     <h1 class="margin-top">Ingeschreven conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
@@ -264,9 +266,10 @@
                 <</div>
                 </div>                      
                 
-                <div requalizer ole="tabpanel" class="tab-pane" id="betalin<div class="panel panel-default">
+                <div rtab-pane" id="betalingen">
+                <div class="equalizer panel panel-default">
                     <div class="panel-body">
-                        pane" id="betalingen">
+                unt"    pane" id="betalingen">
                     <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
