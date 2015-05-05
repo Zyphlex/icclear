@@ -149,7 +149,7 @@ function finishAjax(id, response) {
         }
 
         $("#mySubmit").click(function(e) {     
-            resu = 0;
+            alert($("#feedbackemail").val());
             e.preventDefault();
             realCheck();
             if (validatieOK() && validate() && emailCheck()) {
