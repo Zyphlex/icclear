@@ -8,6 +8,7 @@
 
 <div class="row">
     <div class="col-sm-2">
+        <div class="panel-body">
         <div class="space-bottom15">
         <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
             <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
@@ -20,13 +21,15 @@
          <?php } ?>
         </div>
             
+            <div class="divider"></div>
+            
         <ul class="nav nav-pills nav-stacked" role="tablist">
             <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
             <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties</a></li>
             <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen</a></li>                        
         </ul>
             
-            
+        </div>
     </div>
     
     
