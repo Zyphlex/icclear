@@ -10,25 +10,25 @@
     <div class="col-sm-2">
         <div class="panel panel-default">
             <div class="panel-body">
-        <div class="space-bottom15">
-        <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
-            <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
-                 alt="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>" 
-                 title="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>"
-                 data-placement="top">
-         <?php } else { ?>
-            <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
-                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="top">
-         <?php } ?>
-        </div>
-            
-            <div class="divider"></div>
-            
-        <ul class="nav nav-pills nav-stacked" role="tablist">
-            <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account<span class="badge">14</span></a></li>
-            <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties<span class="badge">14</span></a></li>
-            <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen<span class="badge">14</span></a></li>                        
-        </ul>
+                <div class="space-bottom15">
+                <?php if ($gebruiker->foto == 'spreker' . $gebruiker->id . '.jpg') { ?>
+                    <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/' . $gebruiker->foto; ?>" 
+                         alt="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>" 
+                         title="Foto <?php echo$gebruiker->familienaam . ' ' . $gebruiker->voornaam; ?>"
+                         height="150" width="auto" data-placement="top">
+                 <?php } else { ?>
+                    <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
+                         alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="top">
+                 <?php } ?>
+                </div>
+
+                    <div class="divider"></div>
+
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account<span class="badge">14</span></a></li>
+                    <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conferenties<span class="badge">14</span></a></li>
+                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Betalingen<span class="badge">14</span></a></li>                        
+                </ul>
             </div>   
         </div>
     </div>
@@ -49,7 +49,8 @@
                     echo form_hidden('id', $gebruiker->id);
                     ?>
                     <div class="row">
-                        <div class="col-md-6">        
+                        <div class="col-md-6">
+                            <div class="row">            
                                 <div class="col-md-4">   
                                     <?php echo form_label('Voornaam:', 'voornaam'); ?>
                                 </div>
@@ -57,6 +58,9 @@
                                 <div class="col-md-8">
                                     <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
                                 </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Familienaam:', 'familienaam'); ?>                
                                 </div>
@@ -65,6 +69,10 @@
                                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
                                 </div>
                             </div>
+
+
+
+                            <div class="row">
                                 <div class="col-md-4">   
                                     <?php echo form_label('E-mailadres:', 'emailadres'); ?>                                
                                 </div>  
@@ -72,6 +80,9 @@
                                 <div class="col-md-8">   
                                     <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'disabled' => 'disabled')); ?>
                                 </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-md-4">
                                     <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                                                
                                 </div>
@@ -80,6 +91,8 @@
                                     <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
                                 </div>
                             </div>
+
+                            <div class="row">
                                 <div class="col-md-4">   
                                     <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
                                 </div>  
