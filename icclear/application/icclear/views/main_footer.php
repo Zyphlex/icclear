@@ -7,8 +7,9 @@
     <div class="col-sm-5 footer-text">
         <p class="pull-right">
             <?php echo anchor('faq', 'F.A.Q.', 'class=""'); ?>
-            <span class="">|</span>
+            |<
             <?php echo anchor('contact', 'CONTACT', 'class=""'); ?>
+            |
             <a href="#"><span title="Twitter" data-placement="top" class="fa fa-twitter-square"></span></a> 
             <a href="#"><span title="Facebook" data-placement="top" class="fa fa-facebook-square"></span></a>
         </p>
