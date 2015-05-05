@@ -10,8 +10,8 @@
             |
             <?php echo anchor('contact', 'CONTACT', 'class=""'); ?>
             |
-            <a href="#"><i title="Twitter" data-placement="top" class="fa fa-twitter-square"></i></a> 
-            <a href="#"><i title="Facebook" data-placement="top" class="fa fa-facebook-square"></i></a>
+            <a href="#"><i title="Twitter" data-placement="top" class="fa fa-twitter"></i></a> 
+            <a href="#"><i title="Facebook" data-placement="top" class="fa fa-facebook-official"></i></a>
         </p>
     </div>
     
