@@ -5,9 +5,9 @@
     
     <div class="col-sm-5 footer-text">
         <p class="pull-right">
-            <a href="#">F.A.Q.</a>
+            <?php echo anchor('faq', 'F.A.Q.', 'class=""'); ?>
             <span class="">|</span>
-            <a href="#">CONTACT</a>
+            <?php echo anchor('contact', 'CONTACT', 'class=""'); ?>
         </p>
     </div>
     
