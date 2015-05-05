@@ -359,10 +359,12 @@ button:focus {
 }
 
 .space-top {
+    display: block;
     margin-top:50px;
 }
 
 .space-top15 {
+    display: block;
     margin-top:15px;
 }
 
