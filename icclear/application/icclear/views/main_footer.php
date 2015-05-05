@@ -8,8 +8,12 @@
     
     <div class="col-sm-4">     
         <h4 class="red">Social Media</h4>
-        <p><span class="fa fa-twitter"></span>Twitter</p>
-        <p><span class="fa fa-facebook-square"></span>Facebook</p>
+        <div class="footer-icon">
+            <span class="fa fa-twitter"></span>Twitter
+        </div>
+        <div class="footer-icon">
+            <span class="fa fa-facebook-square"></span>Facebook
+        </div>
     </div>
     
     <div class="col-sm-4">

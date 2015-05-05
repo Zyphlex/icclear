@@ -163,7 +163,7 @@ a:hover {
   line-height: 20px;
 }
 
-.footer-icon .glyphicon {    
+.footer-icon .glyphicon, .footer-icon .fa {    
     position: absolute;
     left: 0px;
     top: 0px;
