@@ -11,7 +11,11 @@
         </thead>
         <tbody>
             <?php foreach ($gebruikers as $gebruiker) { ?>
+            <?php if ($gebruiker->activatie == "1") { ?>
                 <tr>
+            <?php } else { ?>
+                <tr class="warning">
+            <?php } ?>
                     <td><?php echo $gebruiker->familienaam ?></td>
                     <td><?php echo $gebruiker->voornaam ?></td>
                     <td>
@@ -24,8 +28,12 @@
                     <?php } ?>
                     <td>
                         <p>                                        
-                            <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigGebruiker glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebruiker->id ?>"></button>
-                            <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderGebruiker glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button> 
+                            <button data-toggle="tooltip" data-placement="bottom" title="Gebruiker wijzigen" class="wijzigGebruiker glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $gebruiker->id ?>"></button>
+                            <?php if ($gebruiker->activatie == "1") { ?>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Gebruiker deactiveren" class="verwijderGebruiker glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $gebruiker->id ?>"></button>                           
+                            <?php } else { ?>
+                            <button data-toggle="tooltip" data-placement="bottom" title="Gebruiker activeren" class="activeerGebruiker glyphicon glyphicon-ok btn btn-success" data-id="<?php echo $gebruiker->id ?>"></button> 
+                            <?php } ?>
                         </p>                                 
                     </td>
                 </tr>

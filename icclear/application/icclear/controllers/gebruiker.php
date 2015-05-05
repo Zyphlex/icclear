@@ -98,10 +98,11 @@ class Gebruiker extends CI_Controller {
     }
 
     public function delete() {
-        $id = $this->input->post('id');
-
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->activatie = 0;
+        
         $this->load->model('gebruiker_model');
-        $deleted = $this->gebruiker_model->delete($id);
+        $deleted = $this->gebruiker_model->update($gebruiker);
 
         echo $deleted;
     }
