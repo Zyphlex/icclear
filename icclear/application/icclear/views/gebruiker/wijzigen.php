@@ -20,6 +20,8 @@
                         $("#conf1").html(jobject.conferentie.naam);  
                         var object = haaloverzicht(iddb);
                         $("#activiteiten1").html(object);
+                        $("#onderdeel").html(jobject.confond.omschrijving);
+                        $("#prijs").html(jobject.confond.prijs);
                     }
                 });
             }
@@ -409,8 +411,11 @@ taald!</span>
                     <h3>Details voor <span id="conf1"></span></h3>
                 </div>   
                 
-                <div id="activiteiten1"></div>
-                
+                <div class="modal-body">        
+                    <p><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></p>  
+                    
+                    <div id="activiteiten1"></div>
+                </div>
 
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
