@@ -103,7 +103,7 @@
     
     function maakMailsClick() {
         $(".emailGebruikers").click(function () {                                                                         
-            $("#ontvanger").val("Alle gebruikers");  
+            $("#ontvangerall").val("Alle gebruikers");  
             $("#gebruikerEmails").modal('show');
         });
     }
