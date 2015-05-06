@@ -41,13 +41,13 @@
 
 
 
-        <div class=" col-sm-12 btn-group">
-            <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
+        <div class="col-sm-offset-3 col-sm-9 btn-group">
             <?php if ($user == null) { ?>
-                <?php echo form_submit('mysubmit', 'Aanmelden en verzenden', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('mysubmit', 'Aanmelden en verzenden', 'class="col-xs-6 btn btn-primary"'); ?>
             <?php } else { ?>
-                <?php echo form_submit('mysubmit', 'Verzenden', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('mysubmit', 'Verzenden', 'class="col-xs-6 btn btn-primary"'); ?>
             <?php } ?>
+            <a href="<?php echo base_url(); ?>icclear.php/home" class="col-xs-3 btn btn-default">Annuleren</a>
         </div>
     </div>
 <?php echo form_close(); ?>
