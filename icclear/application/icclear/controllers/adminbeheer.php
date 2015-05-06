@@ -57,14 +57,14 @@ class Adminbeheer extends CI_Controller {
         $this->load->view('admin/gebruiker/lijst_admin', $data);
     }
 
-    public function detail() {
+     public function detail() {
         $id = $this->input->get('id');
 
         $this->load->model('gebruiker_model');
         $admin = $this->gebruiker_model->get($id);
 
         echo json_encode($admin);
-    }
+    } 
 
     public function update() {
         $admin->id = $this->input->post('id');
