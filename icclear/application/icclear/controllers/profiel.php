@@ -140,6 +140,11 @@ class Profiel extends CI_Controller {
 
         $this->load->view('gebruiker/lijst', $data);
     }
+    
+    public function wijzigWachtwoord() {
+        
+    }
+    
 
 }
 
