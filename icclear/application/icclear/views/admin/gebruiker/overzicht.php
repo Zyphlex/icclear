@@ -516,8 +516,8 @@
 
             <div class="modal-body">  
                 <p class="hidden alert alert-danger" role="alert" id="error"></p>
-                <p>Bent u zeker dat u deze gebruiker wilt verwijderen?</p>  
-                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+                <p>Bent u zeker dat u deze gebruiker wilt deactiveren?</p>  
+                <p class="italic">Je kan deze later weer activeren!</p>                  
             </div>
 
             <div class="modal-footer">
