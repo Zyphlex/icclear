@@ -158,7 +158,31 @@
 
                     });
 
-                    function realCheck() {
+                    
+
+                    function validate() {
+                        ok = true;
+                        var password1 = $("#password1").val();
+                        var password2 = $("#password2").val();
+                        if (password1 == password2) {
+                            $("#validate-status").text("Correct");
+                            $("#validate-status").removeClass("form-note-used");
+                            $("#validate-status").addClass("form-note-ok");
+                        }
+                        else {
+                            $("#validate-status").text("Incorrect");
+                            $("#validate-status").removeClass("form-note-ok");
+                            $("#validate-status").addClass("form-note-used");
+                            ok = false;
+                        }
+                        return ok;
+                    }
+
+                    $("#password2").keyup(validate);
+
+                });
+                
+                function realCheck() {
                         ok = false;
                         var a = $('#emailadres').val();
                         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
@@ -186,28 +210,7 @@
                         //}
                         return ok;
                     }
-
-                    function validate() {
-                        ok = true;
-                        var password1 = $("#password1").val();
-                        var password2 = $("#password2").val();
-                        if (password1 == password2) {
-                            $("#validate-status").text("Correct");
-                            $("#validate-status").removeClass("form-note-used");
-                            $("#validate-status").addClass("form-note-ok");
-                        }
-                        else {
-                            $("#validate-status").text("Incorrect");
-                            $("#validate-status").removeClass("form-note-ok");
-                            $("#validate-status").addClass("form-note-used");
-                            ok = false;
-                        }
-                        return ok;
-                    }
-
-                    $("#password2").keyup(validate);
-
-                });
+                
             </script>
 
             <?php
