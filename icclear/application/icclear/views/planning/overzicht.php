@@ -153,6 +153,15 @@
 </div>
 
 
+<div class='row'>
+    <div class='col-md-12'>
+        <div class="center-block">
+        <?php echo anchor('','Inschrijven voor "' . $conferentie->naam .'"', 'class="center-block btn btn-primary"') ?>
+        </div>
+    </div>
+</div>
+
+
 <!-- MODAL VOOR DETAILS -->         
 <div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
