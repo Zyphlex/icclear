@@ -154,9 +154,7 @@
 
 
 <div class='row'>
-        <div class="center-block">
-        <?php echo anchor('','Inschrijven voor "' . $conferentie->naam .'"', 'class="col-sm-6 col-sm-offset-3 center-block btn btn-primary"') ?>
-        </div>
+    <?php echo anchor('','Inschrijven voor "' . $conferentie->naam .'"', 'class="col-sm-6 col-sm-offset-3 btn-large btn-primary"') ?>
 </div>
 
 
