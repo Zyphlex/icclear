@@ -92,8 +92,25 @@
                     $('#' + id).html(unescape(response));
                     $('#' + id).fadeIn();
                 }
-                $(document).ready(function () {
-                    function validatieOK() {
+                $(document).ready(function () {                    
+
+                    $("#mySubmit").click(function (e) {
+                        e.preventDefault();
+                        alert("validatieOK " + validatieOK());
+                        alert("realCheck " + realCheck());
+                        if (validatieOK() && validate() && realCheck()) {
+                        alert("realCheckNa " + realCheck());
+                            $("#myForm").submit();
+                        }
+
+                    });
+
+                    //$("#password2").keyup(validate);
+
+                });
+                
+                
+                function validatieOK() {
                         ok = true;
                         if ($("#password1").val() == "") {
                             $("#password1div").addClass("has-error");
@@ -144,22 +161,7 @@
                         }
 
                         return ok;
-                    }
-
-                    $("#mySubmit").click(function (e) {
-                        e.preventDefault();
-                        alert("validatieOK " + validatieOK());
-                        alert("realCheck " + realCheck());
-                        if (validatieOK() && validate() && realCheck()) {
-                        alert("realCheckNa " + realCheck());
-                            $("#myForm").submit();
-                        }
-
-                    });
-
-                    //$("#password2").keyup(validate);
-
-                });
+                }
                 
                 
                 function validate() {
