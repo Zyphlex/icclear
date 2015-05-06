@@ -212,6 +212,26 @@
                         //}
                         return ok;
                     }
+                    
+                    
+                    function realCheck1() {
+                        mail = $('#emailadres').val()
+                            $.ajax({
+                                type: "POST",
+                                url: site_url + "/logon/check_email_availablity",
+                                async: false,
+                                data: {id: mail},
+                                success: function(result) {
+                                    if (result == '0') {
+                                        alert("Er is iets foutgelopen!");
+                                    } else 
+                                        alert("ok alles goed!");
+                                    }
+                                $("#modalItemDelete").modal('hide');
+                            }
+                        });  
+                    }
+                    
             </script>
 
             <?php
