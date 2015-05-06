@@ -224,7 +224,7 @@
                                 success: function(result) {
                                     if (result == '0') {
                                         alert("Er is iets foutgelopen!");
-                                    } else 
+                                    } else {
                                         alert("ok alles goed!");
                                         ok = true;
                                     }
