@@ -7,6 +7,7 @@
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
+                maakActivatieClick();
                 maakMailClick();
                 $('.table').DataTable({
                     "aaSorting": []
@@ -20,12 +21,21 @@
         haaloverzicht();
     }
 
-    //Klikken op de Verwijderen knop
+    //Klikken op de Deactiveren knop
     function maakDeleteClick() {
         $(".verwijderGebruiker").click(function () {
             $("#error").addClass("hidden");
             deleteid = $(this).data("id");
             $("#gebruikerDelete").modal('show');
+        });
+    }
+    
+    //Klikken op de Activeren knop
+    function maakActivatieClick() {
+        $(".activeerGebruiker").click(function () {
+            $("#error").addClass("hidden");
+            deleteid = $(this).data("id");
+            $("#gebruikerActivate").modal('show');
         });
     }
 
@@ -112,6 +122,7 @@
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
+        maakActivatieClick();
         maakMailClick();
         maakMailsClick();
         //Lijst eerste maal ophalen en tonen
@@ -147,7 +158,28 @@
                 },
                 error: function () {  
                     $("#error").removeClass("hidden");
-                    $("#error").html("Oops! U kunt de gebruiker niet verwijderen!");
+                    $("#error").html("Oops! U kunt de gebruiker niet deactiveren!");
+                }
+            });
+        });
+        
+        $(".activateGebruiker").click(function () {
+            $.ajax({
+                type: "POST",
+                url: site_url + "/gebruiker/activate",
+                async: false,
+                data: {id: deleteid},
+                success: function (result) {
+                    if (result == '0') {
+                        alert("Er is iets foutgelopen!");
+                    } else {
+                        refreshData();
+                    }
+                    $("#gebruikerActivate").modal('hide');
+                },
+                error: function () {  
+                    $("#error").removeClass("hidden");
+                    $("#error").html("Oops! U kunt de gebruiker niet activeren!");
                 }
             });
         });
@@ -504,7 +536,7 @@
 </div> 
 
 
-<!-- MODAL VOOR VERWIJDEREN -->  
+<!-- MODAL VOOR DEACTIVEREN -->  
 <div class="modal fade" id="gebruikerDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -522,6 +554,31 @@
 
             <div class="modal-footer">
                 <button type="button" class="deleteGebruiker btn btn-primary">Bevestig</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
+</div>  
+
+<!-- MODAL VOOR ACTIVEREN -->  
+<div class="modal fade" id="gebruikerActivate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">OPGELET!</h4>
+            </div>
+
+            <div class="modal-body">  
+                <p class="hidden alert alert-danger" role="alert" id="error"></p>
+                <p>Bent u zeker dat u deze gebruiker wilt activeren?</p>  
+                <p class="italic">Je kan deze later weer deactiveren!</p>                  
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="activateGebruiker btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
