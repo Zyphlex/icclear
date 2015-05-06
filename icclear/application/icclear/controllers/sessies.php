@@ -108,9 +108,7 @@ class Sessies extends CI_Controller {
 
         $sessie = $this->sessies_model->get($sessieId);
 
-        $sessie->isGoedgekeurd = 1;
-        $sessie->spreker->typeId = 2;
-        
+        $sessie->isGoedgekeurd = 1;      
 
         $this->sessies_model->update($sessie);
 
