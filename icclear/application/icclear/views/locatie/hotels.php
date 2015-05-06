@@ -11,10 +11,10 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-3">
-                            <?php if ($hotel->foto == 'hotel' . $hotel->id . '.jpg') { ?>
-                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/hotels/' . $hotel->foto; ?>" 
-                                 alt="Foto <?php echo $hotel->naam; ?>" 
-                                 title="Foto <?php echo $hotel->naam; ?>"
+                            <?php if ($hotel->hotel->foto == 'hotel' . $hotel->hotel->id . '.jpg') { ?>
+                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/hotels/' . $hotel->hotel->foto; ?>" 
+                                 alt="Foto <?php echo $hotel->hotel->naam; ?>" 
+                                 title="Foto <?php echo $hotel->hotel->naam; ?>"
                                  data-placement="bottom">
                             <?php } else { ?>
                                 <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/hotels/default.jpg'; ?>" 
