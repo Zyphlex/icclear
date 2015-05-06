@@ -192,10 +192,10 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();
-        
+
         $this->load->model('betalingtype_model');
         $data['methodes'] = $this->betalingtype_model->getAll();
-        
+
         $this->load->model('conferentie_onderdeel_model');
         $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($data['conferentieId']);
 
@@ -382,7 +382,12 @@ class Inschrijven extends CI_Controller {
         $inschrijving->id = $this->input->post('id');
         $inschrijving->gebruikerId = $this->input->post('gebruiker');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
-         $inschrijving->methodeId = $this->input->post('methode');
+        $inschrijving->methodeId = $this->input->post('methode');
+        
+        if ($inschrijving->methodeId != 4) {
+            $this->load->model('betaling_model');
+            $this->betaling_model->insert($inschrijving->gebruikerId);
+        }
 
         $this->load->model('inschrijving_model');
         if ($inschrijving->id == 0) {
@@ -407,23 +412,23 @@ class Inschrijven extends CI_Controller {
             $this->betaling_model->delete($inschrijving->betalingId);
         }
     }
-        
+
     public function prijsAct() {
         $id = $this->input->get('id');
 
         $this->load->model('activiteit_model');
         $act = $this->activiteit_model->get($id);
 
-        echo json_encode($act);        
+        echo json_encode($act);
     }
-    
+
     public function prijsOnd() {
         $id = $this->input->get('id');
 
         $this->load->model('conferentie_onderdeel_model');
         $ond = $this->conferentie_onderdeel_model->get($id);
 
-        echo json_encode($ond);        
+        echo json_encode($ond);
     }
 
 }
