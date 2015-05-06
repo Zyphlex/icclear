@@ -23,6 +23,19 @@ class Gebruiker_model extends CI_Model {
         $query = $this->db->get('gebruiker');
         return $query->row();
     }
+    
+    function getAllWithType() {
+        $this->db->order_by('voornaam', 'asc');
+        $query = $this->db->get('gebruiker');
+        $gebruikers = $query->result();
+        
+        foreach ($gebruikers as $gebruiker) {
+            $this->load->model('type_model');
+           $gebruiker->type = $this->type_model->get($gebruiker->typeId);
+        }
+        
+        return $gebruikers;
+    }
 
     function getAll() {
         $this->db->where('typeId !=', 3);
