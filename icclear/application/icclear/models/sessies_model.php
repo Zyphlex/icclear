@@ -168,6 +168,11 @@ class Sessies_model extends CI_Model {
         return $query->result();
     }
     
+      function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('sessie');
+    }
+    
     
 }
 ?>
