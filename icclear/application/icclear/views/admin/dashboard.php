@@ -48,7 +48,7 @@
                 <h2 class="panel-title">Aantal inschrijvingen</h2>
             </div>
             <div class="panel-body text-center">
-                <h1 class="bold"><?php echo $aantalInschrijvingen; ?></h1> <span class="italic">inschrijvingen</span>
+                <h1 class="bold"><?php echo $aantalInschrijvingen; ?></h1> <span class="italic inline">inschrijvingen</span>
             </div>
         </div>
     </div>

@@ -17,6 +17,10 @@
 
 }
 
+.inline {
+    display: inline;
+}
+
 .divider {
   height: 1px;
   width:100%;
