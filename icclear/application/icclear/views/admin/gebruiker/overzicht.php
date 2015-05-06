@@ -154,6 +154,7 @@
                
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {              
+            alert($("#emailadres").val());
             var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
