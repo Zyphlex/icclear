@@ -153,7 +153,7 @@
 </div>
 
 
-<div class='row'>
+<div class='row space-top'>
     <?php echo anchor('','Inschrijven voor "' . $conferentie->naam .'"', 'class="col-sm-6 col-sm-offset-3 btn btn-large btn-primary"') ?>
 </div>
 
