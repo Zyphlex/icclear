@@ -439,7 +439,7 @@ taald!</span>
                     
                     <?php
                         $attributes = array('class' => 'registreer', 'id' => 'Password');
-                        echo form_open('logon/add', $attributes);
+                        echo form_open('profiel/wijzigWachtwoord', $attributes);
                     ?>
 
                     <div id="passwordN1div"> 
@@ -457,8 +457,10 @@ taald!</span>
                         </div>
                     </div>
                     
-                    <button name="mysubmit" id="VeranderPass" class="col-xs-6 btn btn-primary">Registreren</button>
-                    <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-offset-3 col-xs-3"') ?>
+                    <div class="btn-group col-xs-offset-3">
+                    <button name="mysubmit" id="VeranderPass" class="col-xs-6 btn btn-primary">Wijziging opslaan</button>
+                    <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-3"') ?>
+                    </div>
                     <?php echo form_close(); ?>
                                 <?php } ?>
                 </div>                                  </div>
