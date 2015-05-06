@@ -102,10 +102,10 @@
         });
     }
     
-    function maakMailsClick() {
-        var iddb = $(this).data("id");   
-            alert(iddb);
+    function maakMailsClick() {       
         $(".emailGebruikers").click(function () {                                                                         
+             var iddb = $(this).data("id");   
+            alert(iddb);
             $("#ontvangerall").val("Alle gebruikers");  
             $("#gebruikerEmails").modal('show');
         });
