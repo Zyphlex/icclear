@@ -127,7 +127,7 @@ class Sponsorbeheer extends CI_Controller {
             $this->sponsor_model->update($sponsor);
         }
 
-        echo $id;
+        redirect('sponsorbeheer');
     }
 
 }
