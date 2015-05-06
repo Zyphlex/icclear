@@ -48,7 +48,7 @@ $(document).ready(function() {
             });
         });
 
-        $('.aantalPersonen').onchange(function () {
+        $('.aantalPersonen').change(function () {
             var actId = $(this).attr('name');            
             var aantal = $(this).val();
             alert(actId);
