@@ -40,8 +40,7 @@
                     url: site_url + "/gebruiker/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {
-                        alert(result);
+                    success: function (result) {                        
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaamo").val(jobject.voornaam);
                         $("#familienaamo").val(jobject.familienaam);
