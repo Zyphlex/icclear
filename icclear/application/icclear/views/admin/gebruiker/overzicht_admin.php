@@ -40,6 +40,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
