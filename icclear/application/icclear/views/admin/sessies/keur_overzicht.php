@@ -1,5 +1,44 @@
+<script type="text/javascript">    
+    //Wijzigen refreshen
+    function refreshData() {
+        maakDeleteClick();                
+    }
+
+    //Klikken op de Verwijderen knop
+    function maakDeleteClick() {
+        $(".verwijderVoorstel").click(function () {
+            deleteid = $(this).data("id");
+            $("#voorstelAfkeuren").modal('show');
+        });
+    }
+    
+    $(document).ready(function () {
+        //Link leggen met de knoppen die gemaakt worden in lijst.php        
+        maakDeleteClick();
+        //Lijst eerste maal ophalen en tonen
+        haaloverzicht();
 
 
+        //Klikken op "BEVESTIG" in de Delete modal
+        $(".deleteVoorstel").click(function () {
+            $.ajax({
+                type: "POST",
+                url: site_url + "/sessies/afkeuren",
+                async: false,
+                data: {id: deleteid},
+                success: function (result) {
+                    if (result == '0') {
+                        alert("Er is iets foutgelopen!");
+                    } else {
+                        refreshData();
+                    }
+                    $("#voorstelAfkeuren").modal('hide');
+                }
+            });
+        });
+
+    });
+</script>
 <div class="col-md-10">
     
     <h1>Sessies keuren</h1>
@@ -20,7 +59,7 @@
                                 <td>
                                     <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-default">Details</a>
                                     <?php echo anchor('sessies/goedkeuren/' . $sessie->id, 'Goedkeuren','class="btn btn-default"'); ?>
-                                    <?php echo anchor('sessies/afkeuren/' . $sessie->id, 'Afkeuren','class="btn btn-warning"'); ?>
+                                    <?php echo anchor('sessies/afkeuren/' . $sessie->id, 'Afkeuren','class="btn btn-warning verwijderVoorstel"'); ?>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -40,7 +79,7 @@
 </div>
 
 <!-- MODAL VOOR VERWIJDEREN -->  
-<div class="modal fade" id="landDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="voorstelAfkeuren" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -50,12 +89,12 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u dit land wilt verwijderen?</p>  
+                <p>Bent u zeker dat u dit voorstel wilt afkeuren (en dus verwijderen)?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteLand btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteVoorstel btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
