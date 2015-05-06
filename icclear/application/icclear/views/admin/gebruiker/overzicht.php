@@ -464,7 +464,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled')); ?>                                        
+                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled', 'value' => 'Alle gebruikers')); ?>                                        
                                 </div>
                             </div>
 
