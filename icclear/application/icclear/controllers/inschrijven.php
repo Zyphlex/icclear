@@ -193,6 +193,9 @@ class Inschrijven extends CI_Controller {
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAll();
         
+        $this->load->model('betalingtype_model');
+        $data['methodes'] = $this->betalingtype_model->getAll();
+        
         $this->load->model('conferentie_onderdeel_model');
         $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($data['conferentieId']);
 
