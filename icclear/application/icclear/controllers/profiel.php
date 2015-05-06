@@ -147,7 +147,7 @@ class Profiel extends CI_Controller {
         $this->load->model('logon_model');
         $this->logon_model->changePassUser($pass,$user->id);
         
-        redirect('instellingen');
+        redirect('profiel/instellingen');
     }
     
 
