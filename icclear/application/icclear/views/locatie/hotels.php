@@ -11,7 +11,15 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-3">
-                            <img src="http://dummyimage.com/110x110/d4c1d4/ffffff&text=PLACEHOLDER" alt="placeholder image" title="placeholder">
+                            <?php if ($hotel->foto == 'hotel' . $hotel->id . '.jpg') { ?>
+                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/hotels/' . $hotel->foto; ?>" 
+                                 alt="Foto <?php echo $hotel->naam; ?>" 
+                                 title="Foto <?php echo $hotel->naam; ?>"
+                                 data-placement="bottom">
+                            <?php } else { ?>
+                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/hotels/default.jpg'; ?>" 
+                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="bottom">
+                            <?php } ?>
                         </div>
                         <div class="col-md-9">
                             <h4><?php echo $hotel->hotel->naam ?></h4>        
