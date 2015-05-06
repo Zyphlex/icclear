@@ -147,9 +147,7 @@
                     }
 
                     $("#mySubmit").click(function (e) {
-                        e.preventDefault;
-                        alert("validatieOk " + valdatieOK());
-                        alert("validatie ");
+                        e.preventDefault();
                         alert("realCheck " + realCheck());
                         if (validatieOK() && validate() && realCheck()) {
                         alert("realCheckNa " + realCheck());
@@ -182,6 +180,7 @@
 
                 });
                 
+                
                 function realCheck() {
                         ok = false;
                         var a = $('#emailadres').val();
@@ -210,7 +209,6 @@
                         //}
                         return ok;
                     }
-                
             </script>
 
             <?php
