@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row space-top">
     <div class="space-top15">
     <div class="col-sm-7 footer-text">
         <p>IT Ninjas &copy; Copyright 2014-2015</p>

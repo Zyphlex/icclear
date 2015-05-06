@@ -92,5 +92,6 @@
     <p>Aantal activiteiten: <?php echo $activiteiten; ?></p>
 </div>
 
-
+<div class="col-sm-10">
 <div id="chart1" style="width:100%; height:400px;"></div>
+</div>
