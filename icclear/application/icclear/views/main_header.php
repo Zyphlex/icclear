@@ -157,7 +157,7 @@
                     });
 
                     function realCheck() {
-                        result = false;
+                        ok = false;
                         var a = $('#emailadres').val();
                         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                         //if (filter.test(a)) {
@@ -168,8 +168,7 @@
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     $("#emaildiv").addClass("has-error");
                                     $("#emaildiv").removeClass("has-success");
-                                    result = false;
-                                    return result;
+                                    ok = false;
                                 }
                                 else 
                                 {
@@ -177,14 +176,13 @@
                                     $("#emaildiv").removeClass("has-error");
                                     $("#emaildiv").addClass("has-success");
                                     alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
-                                    result = true;
-                                    alert(result);
-                                    return result;
+                                    ok = true;
+                                    alert(ok);
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
                             });
                         //}
-                                    return result;
+                        return ok;
                     }
 
                     function validate() {
