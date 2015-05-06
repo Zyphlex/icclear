@@ -160,11 +160,11 @@
             </div>
 
             <div class="modal-footer">
-                <?php form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'opslaanHotel btn btn-primary', 'value' => 'Hotel opslaan')) ?>
+                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'opslaanHotel btn btn-primary', 'value' => 'Hotel opslaan')) ?>
                 <button type="button" class="opslaanHotel btn btn-primary">Opslaan</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
-<?php form_close() ?>
+        <?php echo form_close() ?>
         </div>            
     </div>
 </div>  
