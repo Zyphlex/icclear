@@ -10,11 +10,13 @@
                 $('.table').DataTable({
                     "aaSorting": []
                 });
+            }
         });
     }
+        
 
-    //Wijzigen refreshen
-    function refreshData() {
+        //Wijzigen refreshen
+        function refreshData() {
         haaloverzicht();
     }
 
@@ -38,7 +40,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        var jobject = jQuery.parseJSON(result);                        
+                        var jobject = jQuery.parseJSON(result);
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
                         $("#emailadres").val(jobject.emailadres);
@@ -136,7 +138,7 @@
 
                     <p><?php echo form_label('Emailadres:', 'emailadres'); ?></p>
                     <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
-                    
+
                     <p><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></p>
                     <p><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoord', 'class' => 'form-control')); ?></p>
 
