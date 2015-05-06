@@ -195,7 +195,7 @@
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     $("#emaildiv").addClass("has-error");
                                     $("#emaildiv").removeClass("has-success");
-                                    ok == false;
+                                    ok === false;
                                 }
                                 else 
                                 {
@@ -203,7 +203,7 @@
                                     $("#emaildiv").removeClass("has-error");
                                     $("#emaildiv").addClass("has-success");
                                     alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
-                                    ok == true;
+                                    ok === true;
                                     alert("beschikbaar " + ok);
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
