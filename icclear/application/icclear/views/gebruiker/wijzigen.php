@@ -63,18 +63,18 @@
     }
     
     $(document).ready(function() {
-        //Link leggen met de knoppen die gemaakt worden in lijst.php
-        maakDetailClick();
-        
-        $("#VeranderPass").click(function (e) {
-                        e.preventDefault();
-                        if (validate() {
-                            $("#Password").submit();
-                        }
+            //Link leggen met de knoppen die gemaakt worden in lijst.php
+            maakDetailClick();
 
-                    });
+            $("#VeranderPass").click(function(e) {
+                e.preventDefault();
+                if (validate() {
+                    $("#Password").submit();
+                }
 
-                    $("#passwordN2").keyup(validate);
+            });
+
+            $("#passwordN2").keyup(validate);
     });
 </script>
 
