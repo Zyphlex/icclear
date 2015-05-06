@@ -42,7 +42,15 @@
                     </div>
                     <div class = "panel-body">  
                             <div class="thumbnail">
-                                <img src="http://placehold.it/350x150" alt="placeholder image" title="placeholder">
+                                <?php if ($gebouw->gebouw->foto == 'gebouw' . $gebouw->gebouw->id . '.jpg') { ?>
+                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/gebouwen/' . $gebouw->gebouw->foto; ?>" 
+                                 alt="Foto <?php echo $gebouw->gebouw->naam; ?>" 
+                                 title="Foto <?php echo $gebouw->gebouw->naam; ?>"
+                                 data-placement="bottom">
+                            <?php } else { ?>
+                                <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/gebouwen/default.jpg'; ?>" 
+                                 alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="bottom">
+                            <?php } ?>
                             </div>
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
