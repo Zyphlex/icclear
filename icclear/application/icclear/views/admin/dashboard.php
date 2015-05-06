@@ -44,11 +44,11 @@
 <div class="row">
     
     <div class="col-sm-2">
-        <div class="equalizer panel panel-primary">
+        <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title">Aantal inschrijvingen</h2>
+                <h2 class="panel-title bold">Aantal inschrijvingen</h2>
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body">
                 <h1 class="bold"><?php echo $aantalInschrijvingen; ?></h1> <span class="italic inline">inschrijvingen</span>
             </div>
         </div>
@@ -56,11 +56,11 @@
     
     
     <div class="col-sm-2">
-        <div class="equalizer panel panel-primary">
+        <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title">Aantal sessies</h2>
+                <h2 class="panel-title bold">Aantal sessies</h2>
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body">
                 <h1 class="bold"><?php echo $gekeurdeSessies; ?></h1> <span class="italic inline">sessies</span>
             </div>
         </div>
@@ -68,11 +68,11 @@
     
     
     <div class="col-sm-2">
-        <div class="equalizer panel panel-primary">
+        <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title">Aantal ongekeurde sessies</h2>
+                <h2 class="panel-title bold">Aantal ongekeurde sessies</h2>
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body">
                 <h1 class="bold"><?php echo $ongekeurdeSessies; ?></h1> <span class="italic inline">nog te keuren</span>
             </div>
         </div>
