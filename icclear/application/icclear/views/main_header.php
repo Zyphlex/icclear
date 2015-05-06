@@ -5,9 +5,21 @@
         </a>
     </div>
 
+    <div class="col-md-4">
+            <p>
+                <span class="logon italic">
+                    <a class="red" href="#">NL</a> 
+                    / 
+                    <a href="#">EN</a> 
+                    / 
+                    <a href="#">FR</a> 
+                    / 
+                    <a href="#">GER</a> 
+                </span>
+            </p>
+            
     <?php if ($user == null) { // niet aangemeld ?>  
 
-        <div class="col-md-4">
             <p>
                 <span class="logon">
                     <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
@@ -19,7 +31,6 @@
 
     <?php } else {  // wel aangemeld ?>
 
-        <div class="col-md-4">        
             <div class="dropdown logon">
                 <span class="glyphicon glyphicon-user"></span>
                 <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
