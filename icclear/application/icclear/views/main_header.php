@@ -118,7 +118,7 @@
                             $("#password1div").removeClass("has-error");
                             $("#password1div").addClass("has-success");
                         }
-                        if ($("#password2").val() == "")) {
+                        if ($("#password2").val() == "") {
                             $("#password2div").addClass("has-error");
                             $("#password2div").removeClass("has-success");
                             ok = false;
