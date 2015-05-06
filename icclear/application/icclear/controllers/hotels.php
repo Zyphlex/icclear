@@ -112,7 +112,7 @@ class Hotels extends CI_Controller {
             $this->hotel_model->update($hotel);
         }
 
-        redirect('index');
+        redirect('hotels');
     }
 
     public function delete() {
