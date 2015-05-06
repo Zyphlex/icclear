@@ -13,10 +13,10 @@
             }
         });
     }
-        
 
-        //Wijzigen refreshen
-        function refreshData() {
+
+    //Wijzigen refreshen
+    function refreshData() {
         haaloverzicht();
     }
 
@@ -40,7 +40,6 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
@@ -131,8 +130,9 @@
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />                  
 
-                    <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>
+
+                    <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>              
+                    <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>                               
 
                     <p><?php echo form_label('Familienaam:', 'familienaam'); ?></p>
                     <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?></p>
