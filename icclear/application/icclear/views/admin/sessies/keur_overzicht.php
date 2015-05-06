@@ -2,7 +2,7 @@
     //Gegevens opvragen en tonen
     function haaloverzicht() {
         $.ajax({type: "GET",
-            url: site_url + "/sessies/keuren",
+            url: site_url + "/sessies/lijst",
             success: function (result) {
                 $("#resultaat").html(result);                
                 maakDeleteClick();                
