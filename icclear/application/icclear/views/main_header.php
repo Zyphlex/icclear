@@ -183,6 +183,7 @@
                                 }
                             });
                         //}
+                                    return result;
                     }
 
                     function validate() {
