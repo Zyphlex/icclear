@@ -97,9 +97,9 @@
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
                         alert("validatieOK " + validatieOK());
-                        alert("realCheck " + realCheck());
+                        alert("realCheck1 " + realCheck1());
                         if (validatieOK() && validate()) {
-                        alert("realCheckNa " + realCheck());
+                        alert("realCheck1Na " + realCheck1());
                             $("#myForm").submit();
                         }
 
@@ -215,7 +215,8 @@
                     
                     
                     function realCheck1() {
-                        mail = $('#emailadres').val()
+                        ok = false;
+                        mail = $('#emailadres').val();
                             $.ajax({
                                 type: "POST",
                                 url: site_url + "/logon/check_email_availablity",
@@ -226,10 +227,12 @@
                                         alert("Er is iets foutgelopen!");
                                     } else 
                                         alert("ok alles goed!");
+                                        ok = true;
                                     }
                                 $("#modalItemDelete").modal('hide');
                             }
                         });  
+                        return ok;
                     }
                     
             </script>
