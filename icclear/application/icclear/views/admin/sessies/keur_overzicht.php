@@ -25,8 +25,8 @@
                         <?php } ?>
                     </tbody>
                 </table>             
-    <?php echo anchor('admin/dashboard', 'Annuleren','class="btn btn-default"'); ?>                           
-    <?php echo anchor('sessies/index', 'Terug naar sessies','class="btn btn-default"'); ?>                           
+    <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>                           
+    <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-default"'); ?>                           
     
     
 </div>
