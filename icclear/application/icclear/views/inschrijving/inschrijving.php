@@ -35,6 +35,7 @@ $(document).ready(function() {
                     if ($('#conferentieOnderdeelId' + object.id).prop('checked')) {
                         ok = true;
                     }
+                    
                     var newPrijs = parseInt(object.prijs);
                     if (ok) {
                         prijs = prijs + newPrijs;
@@ -47,7 +48,7 @@ $(document).ready(function() {
             });
         });
 
-        $('.aantalPersonen').change(function () {
+        $('.aantalPersonen').onchange(function () {
             var actId = $(this).attr('name');            
             var aantal = $(this).val();
             alert(actId);
