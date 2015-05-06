@@ -152,7 +152,7 @@
                 <p><?php echo form_label('Postcode:', 'postcode'); ?></p>
                 <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
 
-                <p><?php echo form_label('Afbeelding:', 'oserfile'); ?></p>
+                <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
                 <?php form_close() ?>
 
