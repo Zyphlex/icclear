@@ -2,19 +2,21 @@
 
 class Algemeneinfo_model extends CI_Model {
 
-    function __construct()
-    {
+    function __construct() {
         parent::__construct();
     }
-    
-    
-    function getAll()
-    {           
-        $query = $this->db->get('type');        
-        return $query->result();        
+
+    function get($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('type');
+        return $query->row();
     }
-    
-    
+
+    function getAll() {
+        $query = $this->db->get('type');
+        return $query->result();
+    }
+
 }
 
 ?>
