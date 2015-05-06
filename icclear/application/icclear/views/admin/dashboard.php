@@ -90,6 +90,6 @@
 
 <div class="col-sm-10">
     <div class="col-sm-6">
-        <div id="chart1" style="width:100%; height:400px;"></div
+        <div id="chart1" style="width:100%; height:400px;"></div>
     </div>
 </div>
