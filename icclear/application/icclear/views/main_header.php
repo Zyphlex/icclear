@@ -98,7 +98,7 @@
                         e.preventDefault();
                         alert("validatieOK " + validatieOK());
                         alert("realCheck " + realCheck());
-                        if (validatieOK() && validate() && realCheck()) {
+                        if (validatieOK() && validate()) {
                         alert("realCheckNa " + realCheck());
                             $("#myForm").submit();
                         }
