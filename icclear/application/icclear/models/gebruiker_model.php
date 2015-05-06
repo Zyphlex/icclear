@@ -39,7 +39,7 @@ class Gebruiker_model extends CI_Model {
 
     function getAll() {
         $this->db->where('typeId !=', 3);
-        $this->db->order_by('typeId', 'asc');
+        $this->db->order_by('activatie', 'asc');
         $query = $this->db->get('gebruiker');
         return $query->result();
     }
