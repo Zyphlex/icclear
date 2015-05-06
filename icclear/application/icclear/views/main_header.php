@@ -150,7 +150,9 @@
                         e.preventDefault();
                         alert(realCheck());
                         if (validatieOK() && validate() && realCheck()) {
-                            alert(realCheck());
+                            alert("validatieOK " + validatieOK());
+                            alert("validatie " + validatie());
+                            alert("realCheck " + realCheck());
                             $("#myForm").submit();
                         }
 
@@ -164,7 +166,6 @@
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                                 email: $('#emailadres').val()
                             }, function (response) {
-                                alert(response);
                                 if (response == 0) {
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     $("#emaildiv").addClass("has-error");
@@ -179,8 +180,7 @@
                                     result = true;
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
-                            }
-                            );
+                            });
                         }
                         return result;
                     }
