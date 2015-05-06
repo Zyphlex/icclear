@@ -189,9 +189,9 @@
                         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
                         //if (filter.test(a)) {
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
-                                email: $('#emailadres').val()
-                            }, function (response) {
-                                if (response == 0) {
+                            email: $('#emailadres').val()
+                            }, function (result) {
+                                if (result == 0) {
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     $("#emaildiv").addClass("has-error");
                                     $("#emaildiv").removeClass("has-success");

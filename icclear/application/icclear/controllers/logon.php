@@ -341,6 +341,7 @@ class Logon extends CI_Controller {
         $this->load->model('email_model');
         $email = trim($this->input->post('email'));
         $result = $this->email_model->check_email_availablity($email);
+        print_r($result);
         if (!$result) {
             echo 0;
         } else {
