@@ -24,7 +24,7 @@ class Email extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -37,7 +37,7 @@ class Email extends CI_Controller {
                 $data['inschrijving'] = $inschrijving;
             }
         }
-        
+
         $data['title'] = 'IC Clear - Emails';
         $data['active'] = 'admin';
 
@@ -67,30 +67,34 @@ class Email extends CI_Controller {
 
     public function verzenden() {
         $this->load->model('gebruiker_model');
-        $gebruikers = $this->gebruiker_model->getAll();
-        $id = $this->input->post('emailid');
-        
+        $gebruikers = $this->gebruiker_model->getAll();        
+
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
-                
         $this->email->message($inhoud);
-                
-        
-        if ($id == 0) {
-            foreach ($gebruikers as $g) {
-                $ontvanger = $g->emailadres;
-                $this->email->from('donotreply@thomasmore.be');
-                $this->email->to($ontvanger);
-                $this->email->subject($onderwerp);
-                $this->email->send();
-            }
-        } else {
-            $ontvanger = $this->input->post('emailadres');
+
+        $ontvanger = $this->input->post('emailadres');
+        $this->email->from('donotreply@thomasmore.be');
+        $this->email->to($ontvanger);
+        $this->email->subject($onderwerp);
+        $this->email->send();
+    }
+
+    public function verzendenAlle() {
+        $this->load->model('gebruiker_model');
+        $gebruikers = $this->gebruiker_model->getAll();
+
+        $onderwerp = $this->input->post('onderwerp');
+        $inhoud = $this->input->post('boodschap');
+        $this->email->message($inhoud);
+
+        foreach ($gebruikers as $g) {
+            $ontvanger = $g->emailadres;
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($ontvanger);
             $this->email->subject($onderwerp);
             $this->email->send();
-        }                       
+        }
     }
 
     public function update() {
