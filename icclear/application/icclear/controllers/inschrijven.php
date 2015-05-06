@@ -191,10 +191,7 @@ class Inschrijven extends CI_Controller {
         $data['active'] = 'admin';
 
         $this->load->model('gebruiker_model');
-        $data['gebruikers'] = $this->gebruiker_model->getAll();
-        
-        $this->load->model('type_model');
-        $data['types'] = $this->type_model->getAll();
+        $data['gebruikers'] = $this->gebruiker_model->getAllWithType();
 
         $this->load->model('betalingtype_model');
         $data['methodes'] = $this->betalingtype_model->getAll();
