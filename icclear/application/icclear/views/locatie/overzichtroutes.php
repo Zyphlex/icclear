@@ -9,8 +9,7 @@
                 width="200"
                 height="200"
                 frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAiFkc15nXtE7Tx3TjKmPka06bDVVq1KOU
-                &q=Gare+de+Charleroi-Sud">
+                src="<?php echo $route->url ?>">
             </iframe>
     </div>
     <hr/>
