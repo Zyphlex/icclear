@@ -11,11 +11,6 @@ $( document ).ready(function() {
 });
 </script>
 
-<div class="row">
-    <div class="col-sm-12">
-        <h1 class="underline-full">Conferentie - <?php echo $conferentie->naam ?></h1>
-    </div>
-</div>
 
 <div class="row space-bottom">       
     <div class="col-sm-8">
@@ -30,11 +25,12 @@ $( document ).ready(function() {
     </div>
 </div>
 
+
 <div class="row space-bottom">
     <div class="col-sm-8">
+        <h1 class="underline-full">Conferentie - <?php echo $conferentie->naam ?></h1>
         <p><?php echo $conferentie->beschrijving ?></p>
     </div> 
-    
 </div>
 
 
