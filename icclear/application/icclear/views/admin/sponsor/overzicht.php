@@ -71,20 +71,6 @@
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
-        //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanSponsor").click(function() {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/sponsorbeheer/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#sponsorModal").modal('hide');
-        });
-
         //Klikken op "BEVESTIG" in de Delete modal
         $(".deleteSponsor").click(function() {
             $.ajax({
@@ -132,44 +118,51 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Naam:', 'naam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
+                <?php
+                $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
+                echo form_open('sponsorbeheer/update', $attributes);
+                ?>
+                <input type="hidden" name="id" id="id" />
+                <p><?php echo form_label('Naam:', 'naam'); ?></p>
+                <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Land:', 'land'); ?></p>
-                    <p><?php
-                        $optionsLand = array();
-                        foreach ($landen as $land) {
-                            $optionsLand[$land->id] = $land->naam;
-                        }
+                <p><?php echo form_label('Land:', 'land'); ?></p>
+                <p><?php
+                    $optionsLand = array();
+                    foreach ($landen as $land) {
+                        $optionsLand[$land->id] = $land->naam;
+                    }
 
-                        echo form_dropdown('land', $optionsLand, '', 'id="land" class="form-control"');
-                        ?></p>
+                    echo form_dropdown('land', $optionsLand, '', 'id="land" class="form-control"');
+                    ?></p>
 
-                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
+                <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
+                <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
-                    <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
+                <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
+                <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Straat:', 'straat'); ?></td>
-                    <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
+                <p><?php echo form_label('Straat:', 'straat'); ?></td>
+                <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
-                    <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
+                <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
+                <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Type:', 'type'); ?></td>
-                    <p><?php $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
-                        echo form_dropdown('type', $optionsType, '', 'class="form-control"'); ?></p>
-                </form>
+                <p><?php echo form_label('Type:', 'type'); ?></td>
+                <p><?php $optionsType = array('Sponsor' => 'Sponsor', 'Partner' => 'Partner');
+                    echo form_dropdown('type', $optionsType, '', 'class="form-control"');
+                    ?></p>
+
+                <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
+                <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
 
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="opslaanSponsor btn btn-primary">Opslaan</button>
+<?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')) ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
+<?php echo form_close(); ?>
 
         </div>            
     </div>
