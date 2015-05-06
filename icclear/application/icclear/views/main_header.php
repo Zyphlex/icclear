@@ -118,7 +118,7 @@
                             $("#password1div").removeClass("has-error");
                             $("#password1div").addClass("has-success");
                         }
-                        if ($("#password2").val() == "" && validate()) {
+                        if ($("#password2").val() == "")) {
                             $("#password2div").addClass("has-error");
                             $("#password2div").removeClass("has-success");
                             ok = false;
@@ -147,7 +147,7 @@
                             $("#familienaamdiv").removeClass("has-error");
                             $("#familienaamdiv").addClass("has-success");
                         }
-                        if ($("#emailadres").val() == "" && realCheck1()) {
+                        if ($("#emailadres").val() == "") {
                             $("#emaildiv").addClass("has-error");
                             $("#emaildiv").removeClass("has-success");
                             ok = false;
@@ -169,13 +169,17 @@
                             $("#validate-status").text("Correct");
                             $("#validate-status").removeClass("form-note-used");
                             $("#validate-status").addClass("form-note-ok");
+                            $("#password2div").removeClass("has-error");
+                            $("#password2div").addClass("has-success");
                         }
-                    else {
-                        $("#validate-status").text("Incorrect");
-                        $("#validate-status").removeClass("form-note-ok");
-                        $("#validate-status").addClass("form-note-used");
-                        ok = false;
-                    }
+                        else {
+                            $("#validate-status").text("Incorrect");
+                            $("#validate-status").removeClass("form-note-ok");
+                            $("#validate-status").addClass("form-note-used");
+                            $("#password2div").addClass("has-error");
+                            $("#password2div").removeClass("has-success");
+                            ok = false;
+                        }
                     return ok;
                 }
 
