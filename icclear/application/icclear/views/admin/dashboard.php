@@ -23,9 +23,9 @@
             <button class="btn btn-primary disabled col-sm-4" disabled>Het programma is verborgen</button>
         <?php } ?>
     </div>
-</p>
-    
+    </p>    
 </div>
+
 <div class="col-sm-10">    
     <h4><span class="glyphicon glyphicon-pushpin"></span> Conferentie </h4>
     <h5>Naam: <?php echo $conferentie->naam ?></h5>
@@ -44,8 +44,12 @@
 <div class="row">
     <div class="col-sm-4">
         <div class="panel panel-primary">
-            <div class="panel-heading">Aantal inschrijvingen</div>
-            <div class="panel-body"><?php echo $aantalInschrijvingen; ?></div>
+            <div class="panel-heading">
+                <h2>Aantal inschrijvingen</h2>
+            </div>
+            <div class="panel-body">
+                <p><?php echo $aantalInschrijvingen; ?></p>
+            </div>
         </div>
     </div>
 </div>
