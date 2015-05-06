@@ -138,6 +138,16 @@
 
                         echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control"');
                         ?></p>
+                    
+                    <p><?php echo form_label('Formule:', 'formule'); ?></p>
+                    <p><?php
+                        $optionsOnderdeel = array();
+                        foreach ($onderdelen as $onder) {
+                            $optionsOnderdeel[$onder->id] = $onder->omschrijving;
+                        }
+
+                        echo form_dropdown('confonderdeel', $optionsOnderdeel, '', 'id="confonderdeel" class="form-control"');
+                        ?></p>
                 </form>
 
             </div>
