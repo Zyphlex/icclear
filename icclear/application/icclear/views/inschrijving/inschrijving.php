@@ -25,7 +25,7 @@ $(document).ready(function() {
 
             $.ajax({type: "POST",
                 url: site_url + "inschrijven/prijsOnd",
-                data: {dagId: ondId},
+                data: {id: ondId},
                 success: function (result) {
                     var object = jQuery.parseJSON(result);                    
                     var ok = false;
@@ -50,7 +50,7 @@ $(document).ready(function() {
             var aantal = $(this).val();
             $.ajax({type: "POST",
                 url: site_url + "inschrijven/prijsAct",
-                data: {activityId : activityId},
+                data: {id : actId},
                 success: function (result) {
                     var object = jQuery.parseJSON(result);
                     var ok = false;
@@ -131,7 +131,7 @@ $attributes = array('name' => 'myform');
                     <td>&euro; <?php echo $ond->prijs ?></td>
                     <td><?php echo $ond->korting ?> &percnt;</td>
                     <td class="success">
-                        <?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id,'class'=>'conferentieOnderdeelId'.$ond->id))?>
+                        <?php echo form_radio(array('required'=>'required','class'=>'conferentieOnderdeelId','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id,'class'=>'conferentieOnderdeelId'.$ond->id))?>
                     </td>
                 </tr>
             <?php } ?>
