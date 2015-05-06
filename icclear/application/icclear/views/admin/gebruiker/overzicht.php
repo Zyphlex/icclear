@@ -103,14 +103,7 @@
     }
     
     function maakMailsClick() {
-        $(".emailGebruikers").click(function () {                                             
-                $.ajax({                   
-                    success: function () {                        
-                        $("#ontvanger").val("Alle gebruikers");                                             
-                        $("#onderwerp").val("");
-                        $("#boodschap").val("");                             
-                    }
-                });            
+        $(".emailGebruikers").click(function () {                                                                         
             // dialoogvenster openen            
             $("#gebruikerEmails").modal('show');
         });
