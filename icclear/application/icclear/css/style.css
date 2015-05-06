@@ -72,6 +72,14 @@ a:hover {
     text-decoration: none;
 }
 
+.panel-body a {
+    text-decoration: dotted;
+}
+
+.panel-body a:hover {
+    text-decoration: solid;
+}
+
 .small {
     font-size:10px;
 }

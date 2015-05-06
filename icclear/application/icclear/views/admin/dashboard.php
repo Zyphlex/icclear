@@ -61,7 +61,7 @@
                 <h2 class="panel-title bold">Aantal sessies</h2>
             </div>
             <div class="panel-body">
-                <h1 class="bold"><?php echo anchor('sessies',$gekeurdeSessies); ?></h1> <span class="italic inline">sessies</span>
+                <h1 class="bold"><?php echo anchor('sessies',$gekeurdeSessies); ?> <span class="italic inline">sessies</span></h1> 
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
                 <h2 class="panel-title bold">Aantal ongekeurde sessies</h2>
             </div>
             <div class="panel-body">
-                <h1 class="bold<?php echo anchor('sessies/keuren',$ongekeurdeSessies); ?></h1> <span class="italic inline">nog te keuren</span>
+                <h1 class="bold"><?php echo anchor('sessies/keuren',$ongekeurdeSessies); ?></h1> <span class="italic inline">nog te keuren</span>
             </div>
         </div>
     </div>
