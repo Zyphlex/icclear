@@ -1,5 +1,5 @@
 <div class="row">
-    <span class="header-conf"><h1 class="red"><?php echo $conferentie->naam ?></h1></span>
+    <span class="header-conf"><h1 class="red bold"><?php echo $conferentie->naam ?></h1></span>
     <div class="col-md-8">
         <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
     </div>
