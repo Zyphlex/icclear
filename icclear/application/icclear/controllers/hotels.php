@@ -77,8 +77,7 @@ class Hotels extends CI_Controller {
         $hotel->postcode = $this->input->post('postcode');
 
         // foto
-        //If ($this->input->post('userfile') != null) {
-            $config['upload_path'] = './application/upload/fotos/hotels';
+        $config['upload_path'] = './application/upload/fotos/hotels';
             $config['allowed_types'] = 'jpg';
             $config['file_name'] = 'hotel' . $hotel->id . '.jpg';
             $config['max_size'] = 200;
@@ -103,7 +102,6 @@ class Hotels extends CI_Controller {
             }
 
             $hotel->foto = $config['file_name'];
-        //}
 
         $this->load->model('hotel_model');
         if ($hotel->id == 0) {
