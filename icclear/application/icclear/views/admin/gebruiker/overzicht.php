@@ -179,7 +179,7 @@
             var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
-                url: site_url + "/email/verzenden",
+                url: site_url + "/email/verzendenAlle",
                 async: false,
                 data: dataString,
                 dataType: "json"
