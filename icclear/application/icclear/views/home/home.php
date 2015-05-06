@@ -19,7 +19,6 @@ $( document ).ready(function() {
 
 <div class="row space-bottom">
     <div class="col-sm-8">
-        <h2>Wat is IC Clear?</h2>
         <p><?php echo $conferentie->beschrijving ?></p>
     </div> 
     
