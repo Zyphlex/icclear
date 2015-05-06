@@ -49,12 +49,16 @@
                 $("#validate-statusN").text("Correct");
                 $("#validate-statusN").removeClass("form-note-used");
                 $("#validate-statusN").addClass("form-note-ok");
+                $("#passwordN1div").removeClass("has-error");
+                $("#passwordN1div").addClass("has-success");
                 $("#passwordN2div").removeClass("has-error");
                 $("#passwordN2div").addClass("has-success");
         } else {
                 $("#validate-statusN").text("Incorrect");
                 $("#validate-statusN").removeClass("form-note-ok");
                 $("#validate-statusN").addClass("form-note-used");
+                $("#passwordN1div").addClass("has-error");
+                $("#passwordN1div").removeClass("has-success");
                 $("#passwordN2div").addClass("has-error");
                 $("#passwordN2div").removeClass("has-success");
                 ok = false;
