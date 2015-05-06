@@ -191,7 +191,8 @@
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                             email: $('#emailadres').val()
                             }, function (result) {
-                                if (result == 0) {
+                                alert(result);
+                                if (result == "0") {
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                     $("#emaildiv").addClass("has-error");
                                     $("#emaildiv").removeClass("has-success");
