@@ -71,14 +71,14 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanHotel").click(function() {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
+            /*var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
                 url: site_url + "/hotels/update",
                 async: false,
                 data: dataString,
                 dataType: "json"
-            });
+            });*/
             refreshData();
             $("#hotelModal").modal('hide');
         });
