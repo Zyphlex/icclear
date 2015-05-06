@@ -133,7 +133,7 @@
                             $("#familienaamdiv").removeClass("has-error");
                             $("#familienaamdiv").addClass("has-success");
                         }
-                        if ($("#emailadres").val() == "" || !realCheck()) {
+                        if ($("#emailadres").val() == "") {
                             $("#emaildiv").addClass("has-error");
                             $("#emaildiv").removeClass("has-success");
                             ok = false;
