@@ -393,7 +393,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm1">
-                    <input type="hidden" name="emailadres" id="emailadres"/>                                                            
+                    <input type="hidden" name="emailadresdan" id="emailadres"/>                                                            
                     <div class="row">
                         <div class="col-md-12">  
 
