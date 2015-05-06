@@ -113,6 +113,7 @@
         maakDetailClick();
         maakDeleteClick();
         maakMailClick();
+        maakMailsClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();        
         //Klikken op "OPSLAAN" in de Detail modal
