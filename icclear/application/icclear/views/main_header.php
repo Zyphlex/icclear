@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-md-8">                         
         <a href="<?php echo base_url();?>icclear.php/home">
-        <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
-        <span class="header-conf"><h1 class="red bold">Conferentie <?php echo $conferentie->naam ?></h1></span>
+            <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
         </a>
     </div>
 
