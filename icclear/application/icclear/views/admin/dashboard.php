@@ -45,7 +45,7 @@
     <div class="col-sm-2">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h2>Aantal inschrijvingen</h2>
+                <h1>Aantal inschrijvingen</h1>
             </div>
             <div class="panel-body">
                 <p><?php echo $aantalInschrijvingen; ?></p>
