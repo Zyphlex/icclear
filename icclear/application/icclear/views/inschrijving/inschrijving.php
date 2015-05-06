@@ -21,7 +21,8 @@ $(document).ready(function() {
     
         var prijs = parseInt($("#totaalPrijs").html());
         $('.conferentieOnderdeelId').click(function () {
-            var ondId = $(this).data("id");
+            var ondId = $(this).val();
+            alert(ondId);
 
             $.ajax({type: "POST",
                 url: site_url + "/inschrijven/prijsOnd",
@@ -49,6 +50,9 @@ $(document).ready(function() {
         $('.aantalPersonen').change(function () {
             var actId = $(this).attr('name');            
             var aantal = $(this).val();
+            alert(actId);
+            alert(aantal);
+            
             $.ajax({type: "POST",
                 url: site_url + "/inschrijven/prijsAct",
                 data: {id : actId},
