@@ -43,7 +43,7 @@
 
 <div class="row">
     
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold">Aantal inschrijvingen</h2>
@@ -55,7 +55,7 @@
     </div>
     
     
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold">Aantal sessies</h2>
@@ -67,7 +67,7 @@
     </div>
     
     
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold">Aantal ongekeurde sessies</h2>
