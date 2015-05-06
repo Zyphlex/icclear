@@ -68,7 +68,7 @@
 
             $("#VeranderPass").click(function(e) {
                 e.preventDefault();
-                if (validate() {
+                if (validate()) {
                     $("#Password").submit();
                 }
 
