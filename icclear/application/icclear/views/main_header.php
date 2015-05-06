@@ -221,7 +221,7 @@
                                 type: "POST",
                                 url: site_url + "/logon/check_email_availablity",
                                 async: false,
-                                data: {id: mail},
+                                data: {email: mail},
                                 success: function(result) {
                                     if (result == '0') {
                                         alert("Er is iets foutgelopen!");
