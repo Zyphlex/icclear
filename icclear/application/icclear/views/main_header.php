@@ -163,7 +163,7 @@
                         if (filter.test(a)) {
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                                 email: $('#emailadres').val()
-                                }, function (response) 
+                            }, function (response) {
                                 alert(response);
                                 if (response == 0) {
                                     $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
