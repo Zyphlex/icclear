@@ -177,6 +177,7 @@
                                     $("#emaildiv").addClass("has-success");
                                     alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
                                     result = true;
+                                    alert(result);
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
                             });
