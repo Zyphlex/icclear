@@ -67,6 +67,8 @@
                 $("#geslacht").val("");
                 $("#type").val("");
                 $("#land").val("");
+                $(':radio[name="geslacht"]').prop('checked', false);
+                $(':radio[name="type"]').prop('checked', false);
                 $("#gemeente").val("");
                 $("#postcode").val("");
                 $("#straat").val("");
