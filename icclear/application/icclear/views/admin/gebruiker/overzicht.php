@@ -91,8 +91,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
-                        $("#emailadres").val(jobject.emailadres);
-                        $("#emailid").val(iddb);
+                        $("#emailadres").val(jobject.emailadres);                        
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
                     }
@@ -401,9 +400,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm1">
-                    <input type="hidden" name="emailadres" id="emailadres"/>                                        
-                    <input type="hidden" name="emailid" id="emailid"/>    
-
+                    <input type="hidden" name="emailadres" id="emailadres"/>                                                            
                     <div class="row">
                         <div class="col-md-12">  
 
