@@ -43,12 +43,12 @@
 
 <div class="row">
     <div class="col-sm-2">
-        <div class="panel panel-primary">
+        <div class="equalizer panel panel-primary">
             <div class="panel-heading">
                 <h2 class="panel-title">Aantal inschrijvingen</h2>
             </div>
             <div class="panel-body">
-                <p><?php echo $aantalInschrijvingen; ?></p>
+                <h1 class="bold"><?php echo $aantalInschrijvingen; ?></h3> <span class="italic">inschrijvingen</span>
             </div>
         </div>
     </div>
