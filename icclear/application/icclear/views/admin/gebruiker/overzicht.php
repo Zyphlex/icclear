@@ -80,8 +80,7 @@
 
     function maakMailClick() {
         $(".emailGebruiker").click(function () {            
-            var iddb = $(this).data("id");   
-            alert(iddb);
+            var iddb = $(this).data("id");               
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
@@ -103,9 +102,7 @@
     }
     
     function maakMailsClick() {       
-        $(".emailGebruikers").click(function () {                                                                         
-             var iddb = $(this).data("id");   
-            alert(iddb);
+        $(".emailGebruikers").click(function () {                                                                                      
             $("#ontvangerall").val("Alle gebruikers");  
             $("#gebruikerEmails").modal('show');
         });
