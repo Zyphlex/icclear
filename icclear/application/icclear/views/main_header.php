@@ -212,8 +212,7 @@
                         //}
                         return ok;
                     }
-                    
-                    
+                                        
                     function realCheck1() {
                         ok = false;
                         mail = $('#emailadres').val();
@@ -229,8 +228,7 @@
                                         alert("ok alles goed!");
                                         ok = true;
                                     }
-                                $("#modalItemDelete").modal('hide');
-                            }
+                                //$("#modalItemDelete").modal('hide');
                         });  
                         return ok;
                     }
