@@ -444,7 +444,7 @@ taald!</span>
 
                     <div id="passwordN1div"> 
                         <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-3 control-label')); ?>    
-                        <div class="col-sm-9">                       
+                        <div class="col-sm-8">                       
                             <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'passwordN1', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
@@ -452,12 +452,12 @@ taald!</span>
                     <div id="passwordN2div">
                         <?php echo form_label('Wachtwoord bevestigen:', 'bevestigww', array('class' => 'col-sm-3 control-label')); ?>
                         <span id="validate-statusN" class="form-note"></span>              
-                        <div class="col-sm-9">                                        
+                        <div class="col-sm-8">                                        
                             <?php echo form_password(array('name' => 'bevestigww', 'id' => 'passwordN2', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
                     
-                    <div class="btn-group col-xs-offset-3 col-xs-9">
+                    <div class="btn-group col-xs-offset-3 col-xs-8">
                         <button name="mysubmit" id="VeranderPass" class="col-xs-6 btn btn-primary">Wijziging opslaan</button>
                         <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-3"') ?>
                     </div>
