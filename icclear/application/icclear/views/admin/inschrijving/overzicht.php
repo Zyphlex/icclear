@@ -42,6 +42,7 @@
                     success: function (result) {
                         
                         var jobject = jQuery.parseJSON(result);
+                        alert(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
                         $("#betalingId").val(jobject.betalingId);
@@ -91,7 +92,7 @@
                 async: false,
                 data: {id: deleteid, gebruiker: deletebetaalid},
                 success: function (result) {
-                    alert(deleteid + " " + deletebetaalid);
+                    alert(deletebetaalid);
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
