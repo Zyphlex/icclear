@@ -27,15 +27,15 @@
     </div>
 
     <div class="row">
-        <label for="sessieonderwerp" class="col-sm-2 control-label">Onderwerp: </label>
-        <div class="col-sm-8 space-bottom">
+        <label for="sessieonderwerp" class="col-sm-3 control-label">Onderwerp: </label>
+        <div class="col-sm-9 space-bottom">
             <input id="sessieonderwerp" type="text" name="sessieonderwerp" class="form-control"/>
         </div>
 
 
 
-        <label for="sessieomschrijving" class="col-sm-2 control-label">Omschrijving: </label>
-        <div class="col-sm-8 space-bottom">
+        <label for="sessieomschrijving" class="col-sm-3 control-label">Omschrijving: </label>
+        <div class="col-sm-9 space-bottom">
             <textarea id="sessieomschrijving" name="sessieomschrijving" rows="10" class="form-control"></textarea>
         </div>
 
