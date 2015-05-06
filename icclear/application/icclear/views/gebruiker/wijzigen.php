@@ -457,9 +457,9 @@ taald!</span>
                         </div>
                     </div>
                     
-                    <div class="btn-group">
-                    <button name="mysubmit" id="VeranderPass" class=" col-xs-offset-3 col-xs-6 btn btn-primary">Wijziging opslaan</button>
-                    <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-3"') ?>
+                    <div class="btn-group col-xs-offset-3 col-xs-9">
+                        <button name="mysubmit" id="VeranderPass" class="col-xs-6 btn btn-primary">Wijziging opslaan</button>
+                        <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-3"') ?>
                     </div>
                     <?php echo form_close(); ?>
                                 <?php } ?>
