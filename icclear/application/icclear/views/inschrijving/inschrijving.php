@@ -58,7 +58,8 @@ $attributes = array('name' => 'myform');
 
         <h3>Selecteer formule</h3>
 
-        <table class="space-bottom table table-responsive">
+        <div class=" table-responsive">
+        <table class="space-bottom table">
             <thead>
             <tr>
                 <th class="w50">Formule</th>
@@ -82,9 +83,11 @@ $attributes = array('name' => 'myform');
             </tbody>
 
         </table>
+        </div>
 
         <h3>Extra activiteiten</h3>
         <p class="help-block">Activiteiten zijn extra en dus niet verplicht</p>
+        <div class=" table-responsive">
         <table class="space-bottom table table-responsive">
             <thead>
             <tr>
@@ -116,6 +119,7 @@ $attributes = array('name' => 'myform');
             </tbody>
 
         </table>
+        </div>
 
         <h3>Betaling</h3>
 
