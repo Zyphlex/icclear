@@ -65,10 +65,7 @@ class Email extends CI_Controller {
         redirect('admin/index');
     }
 
-    public function verzenden() {
-        $this->load->model('gebruiker_model');
-        $gebruikers = $this->gebruiker_model->getAll();        
-
+    public function verzenden() {               
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
         $this->email->message($inhoud);
@@ -84,8 +81,8 @@ class Email extends CI_Controller {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
 
-        $onderwerp = $this->input->post('onderwerp');
-        $inhoud = $this->input->post('boodschap');
+        $onderwerp = $this->input->post('onderwerpall');
+        $inhoud = $this->input->post('boodschapall');
         $this->email->message($inhoud);
 
         foreach ($gebruikers as $g) {
