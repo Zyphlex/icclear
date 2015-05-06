@@ -18,7 +18,7 @@
                     <?php if($conferentie->isPlanningZichtbaar) { ?>
                         <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('programma/', 'PROGRAMMA'); ?></li>
                     <?php } else { ?>
-                        <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/voorstel', 'WORDT SPREKER'); ?></li>
+                        <li <?php if ($active == 'programma'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/voorstel', 'WORD SPREKER'); ?></li>
                     <?php } ?>
                     <?php if ($inschrijving == null && $conferentie->beginDatum >= date('Y-m-d',strtotime('-1 month'))){ ?>
                         <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
