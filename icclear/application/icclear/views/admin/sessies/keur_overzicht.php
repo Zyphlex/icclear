@@ -67,10 +67,7 @@
                 </table>             
     <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>                           
     <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-default"'); ?>                           
-    
-    
-    <button data-toggle="tooltip" data-placement="bottom" title="Verwijderen" class="verwijderLand glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $land->id ?>"></button>                                 
-    
+                
 </div>
 
 <!--      Modal voor details       -->
