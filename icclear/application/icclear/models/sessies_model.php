@@ -162,7 +162,7 @@ class Sessies_model extends CI_Model {
     
     function getPlenaireActief(){
         $conferentieId = $this->session->userdata('conferentieId');
-        $this->db->where('isPlenair', '1');
+        $this->db->where('isPlenair', 1);
         $this->db->where('conferentieId', $conferentieId);
         $query = $this->db->get('sessie');
         return $query->result();
