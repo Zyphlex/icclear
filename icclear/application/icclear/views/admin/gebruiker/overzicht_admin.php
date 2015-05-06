@@ -41,18 +41,18 @@
                     data: {id: iddb},
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#voornaam").val(jobject.voornaam);
-                        $("#familienaam").val(jobject.familienaam);
-                        $("#emailadres").val(jobject.emailadres);
-                        $("#wachtwoord").val(jobject.paswoord);
+                        $("#voornaama").val(jobject.voornaam);
+                        $("#familienaama").val(jobject.familienaam);
+                        $("#emailadresa").val(jobject.emailadres);
+                        $("#wachtwoorda").val(jobject.paswoord);
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken                
-                $("#voornaam").val("");
-                $("#familienaam").val("");
-                $("#emailadres").val("");
-                $("#wachtwoord").val("");
+                $("#voornaama").val("");
+                $("#familienaama").val("");
+                $("#emailadresa").val("");
+                $("#wachtwoorda").val("");
             }
             // dialoogvenster openen
             $("#adminModal").modal('show');
@@ -132,16 +132,16 @@
 
 
                     <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>              
-                    <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?></p>                               
+                    <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaama', 'class' => 'form-control')); ?></p>                               
 
                     <p><?php echo form_label('Familienaam:', 'familienaam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaama', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Emailadres:', 'emailadres'); ?></p>
-                    <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadresa', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></p>
-                    <p><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoord', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoorda', 'class' => 'form-control')); ?></p>
 
                 </form>
 
