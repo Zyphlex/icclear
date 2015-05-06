@@ -148,7 +148,6 @@
 
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
-                        alert("validatie ");
                         alert("realCheck " + realCheck());
                         if (validatieOK() && validate() && realCheck()) {
                             $("#myForm").submit();
@@ -169,19 +168,21 @@
                                     $("#emaildiv").addClass("has-error");
                                     $("#emaildiv").removeClass("has-success");
                                     result = false;
+                                    return result;
                                 }
-                                else {
+                                else 
+                                {
                                     $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                     $("#emaildiv").removeClass("has-error");
                                     $("#emaildiv").addClass("has-success");
                                     alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
                                     result = true;
                                     alert(result);
+                                    return result;
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
                             });
                         }
-                        return result;
                     }
 
                     function validate() {
