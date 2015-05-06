@@ -1,7 +1,18 @@
 <script type="text/javascript">    
+    //Gegevens opvragen en tonen
+    function haaloverzicht() {
+        $.ajax({type: "GET",
+            url: site_url + "/sessies/keuren",
+            success: function (result) {
+                $("#resultaat").html(result);                
+                maakDeleteClick();                
+            }
+        });
+    }
+
     //Wijzigen refreshen
     function refreshData() {
-        maakDeleteClick();                
+        haaloverzicht();
     }
 
     //Klikken op de Verwijderen knop
@@ -43,28 +54,8 @@
     
     <h1>Sessies keuren</h1>
     
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Onderwerp</th>
-                            <th>Spreker</th>
-                            <th>Beheer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($sessies as $sessie) { ?>
-                            <tr>
-                                <td><?php echo $sessie->onderwerp; ?></td>
-                                <td><?php echo $sessie->spreker->familienaam . ' ' . $sessie->spreker->voornaam; ?></td>
-                                <td>
-                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-default">Details</a>
-                                    <?php echo anchor('sessies/goedkeuren/' . $sessie->id, 'Goedkeuren','class="btn btn-success"'); ?>                                    
-                                    <button class="verwijderVoorstel btn btn-danger" data-id="<?php echo $sessie->id ?>">Afkeuren</button>   
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>             
+    <div id="resultaat"></div>
+        
     <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>                           
     <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-default"'); ?>                           
                 
