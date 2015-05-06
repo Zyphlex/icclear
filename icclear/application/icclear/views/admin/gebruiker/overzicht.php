@@ -382,8 +382,8 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm1">
-                    <input type="hidden" name="email" id="emailadres"/>                                        
-                    <input type="hidden" name="id" id="emailid"/>    
+                    <input type="hidden" name="emailadres" id="emailadres"/>                                        
+                    <input type="hidden" name="emailid" id="emailid"/>    
 
                     <div class="row">
                         <div class="col-md-12">  
