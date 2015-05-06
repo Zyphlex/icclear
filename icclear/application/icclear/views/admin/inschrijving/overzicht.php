@@ -42,7 +42,6 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
-                        $("#betalingId").val(jobject.betalingId);
                         $("#methode").val(jobject.methodeId);
                     }
                 });
@@ -50,7 +49,6 @@
                 // bij toevoegen gewoon vakken leeg maken
                 $("#gebruiker").val("");
                 $("#confonderdeel").val("");
-                $("#betalingId").val("");
                 $("#methode").val("");
             }
             // dialoogvenster openen
