@@ -32,7 +32,7 @@ $(document).ready(function() {
                     var object = jQuery.parseJSON(result);                    
                     var ok = false;
                     
-                    if ($('#conferentieOnderdeelId' + object.id).prop('checked')) {
+                    if ($('#conferentieOnderdeelId' + object.id).prop('checked',true)) {
                         ok = true;
                     }
                     
@@ -62,7 +62,7 @@ $(document).ready(function() {
                     var object = jQuery.parseJSON(result);
                     var ok = false;
                     
-                    if ($('.activiteit' + actId).prop('checked')) {
+                    if ($('.activiteit' + actId).prop('checked',true)) {
                         ok = true;
                     }
                     var newPrijs = parseInt(object.prijs);
