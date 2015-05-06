@@ -414,7 +414,7 @@ class Inschrijven extends CI_Controller {
     }
 
     public function prijsAct() {
-        $id = $this->input->get('id');
+        $id = $this->input->post('id');
 
         $this->load->model('activiteit_model');
         $act = $this->activiteit_model->get($id);
@@ -423,7 +423,7 @@ class Inschrijven extends CI_Controller {
     }
 
     public function prijsOnd() {
-        $id = $this->input->get('id');
+        $id = $this->input->post('id');
 
         $this->load->model('conferentie_onderdeel_model');
         $ond = $this->conferentie_onderdeel_model->get($id);
