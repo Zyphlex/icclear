@@ -41,7 +41,7 @@
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
-                        $("#land").val(jobject.land);
+                        $("#land").val(jobject.landId);
                         $("#postcode").val(jobject.postcode);
                         $("#gemeente").val(jobject.gemeente);
                         $("#straat").val(jobject.straat);
