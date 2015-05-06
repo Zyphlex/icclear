@@ -149,7 +149,7 @@
                     $("#mySubmit").click(function (e) {
                         e.preventDefault;
                         alert("validatieOk " + valdatieOK());
-                        alert("validatie " + validate());
+                        alert("validatie ");
                         alert("realCheck " + realCheck());
                         if (validatieOK() && validate() && realCheck()) {
                         alert("realCheckNa " + realCheck());
