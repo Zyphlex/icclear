@@ -69,8 +69,8 @@ class Email extends CI_Controller {
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
         $this->email->message($inhoud);
-
         $ontvanger = $this->input->post('emailadres');
+        
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($ontvanger);
         $this->email->subject($onderwerp);
