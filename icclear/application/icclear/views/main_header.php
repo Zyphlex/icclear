@@ -7,7 +7,7 @@
 
     <div class="col-md-4">
             <p>
-                <span class="logon italic">
+                <span class="inline logon italic">
                     <a class="red" href="#">NL</a> 
                     / 
                     <a href="#">EN</a> 
