@@ -141,8 +141,13 @@ class Profiel extends CI_Controller {
         $this->load->view('gebruiker/lijst', $data);
     }
     
-    public function wijzigWachtwoord() {
+    public function wijzigWachtwoord() {        
+        $user = $this->authex->getUserInfo();
+        $pass = $this->input->post('bevestigwwN');
+        $this->load->model('logon_model');
+        $this->logon->model->changePassUser($pass,$user->id);
         
+        redirect('instellingen');
     }
     
 

@@ -443,18 +443,18 @@ taald!</span>
                     ?>
 
                     <div id="passwordN1div"> 
-                        <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-3 control-label')); ?>    
+                        <?php echo form_label('Wachtwoord:', 'passwordN', array('class' => 'col-sm-3 control-label')); ?>    
                         <div class="col-sm-8">                       
-                            <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'passwordN1', 'class' => 'form-control')); ?> 
+                            <?php echo form_password(array('name' => 'passwordN', 'id' => 'passwordN1', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
                     <div id="passwordN2div">
-                        <?php echo form_label('Wachtwoord bevestigen:', 'bevestigww', array('class' => 'col-sm-3 control-label')); ?>
+                        <?php echo form_label('Wachtwoord bevestigen:', 'bevestigwwN', array('class' => 'col-sm-3 control-label')); ?>
                         <span id="validate-statusN" class="form-note"></span>              
                         <div class="col-sm-8">                                        
-                            <?php echo form_password(array('name' => 'bevestigww', 'id' => 'passwordN2', 'class' => 'form-control')); ?>                    
-                        </div>
+                            <?php echo form_password(array('name' => 'bevestigwwN', 'id' => 'passwordN2'> $gebruiker->postcode, 'class' => 'form-control')); ?>                    
+  </div>
                     </div>
                     
                     <div class="btn-group col-xs-offset-3 col-xs-8">

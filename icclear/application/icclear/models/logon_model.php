@@ -133,6 +133,15 @@ class Logon_model extends CI_Model {
         $this->db->update('gebruiker', $user);
     }
     
+    function changePassUser($wachtwoord, $id) {  
+        //Html entities en extra spaties verwijderen en dan naar sha1 hashen
+        $pass = escape_html($wachtwoord);        
+        $user->paswoord = sha1($pass);        
+        $this->db->where('id', $id);
+        
+        $this->db->update('gebruiker', $user);
+    }
+    
     function updateKey($generatedKey, $newKey) {        
         $user->generatedKey = $newKey;        
         $this->db->where('generatedKey', $generatedKey);
