@@ -188,7 +188,7 @@
                     }
 
                     function validate() {
-                        var ok = true;
+                        ok = true;
                         var password1 = $("#password1").val();
                         var password2 = $("#password2").val();
                         if (password1 == password2) {
