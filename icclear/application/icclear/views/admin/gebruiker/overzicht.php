@@ -495,7 +495,7 @@
             </div>                 
 
             <div class="modal-footer"> 
-                Het verzenden kan langer duren bij meer gebruikers.
+                <span class="text-muted">Het verzenden kan langer duren bij meer ontvangers</span>
                 <button type="button" class="verstuurEmails btn btn-primary">Verzend</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
