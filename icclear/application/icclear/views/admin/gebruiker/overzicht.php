@@ -45,17 +45,17 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaamo").val(jobject.voornaam);
                         $("#familienaamo").val(jobject.familienaam);
-                        $("#geboortedatum").val(jobject.geboortedatum);
+                        $("#geboortedatumo").val(jobject.geboortedatum);
                         $("#emailadreso").val(jobject.emailadres);
-                        $("#geslacht").val(jobject.geslacht);
+                        $("#geslachto").val(jobject.geslacht);
                         $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
-                        $("#type").val(jobject.typeId);
+                        $("#typeo").val(jobject.typeId);
                         $(':radio[name="type"][value="' + jobject.typeId + '"]').prop('checked', 'checked');
-                        $("#land").val(jobject.landId);
-                        $("#gemeente").val(jobject.gemeente);
-                        $("#postcode").val(jobject.postcode);
-                        $("#straat").val(jobject.straat);
-                        $("#nummer").val(jobject.nummer);
+                        $("#lando").val(jobject.landId);
+                        $("#gemeenteo").val(jobject.gemeente);
+                        $("#postcodeo").val(jobject.postcode);
+                        $("#straato").val(jobject.straat);
+                        $("#nummero").val(jobject.nummer);
                     }
                 });
             } else {
@@ -63,16 +63,16 @@
                 $("#voornaamo").val("");
                 $("#familienaamo").val("");
                 $("#geboortedatumo").val("");
-                $("#emailadres").val("");
-                $("#geslacht").val("");
-                $("#type").val("");
-                $("#land").val("");
+                $("#emailadreso").val("");
+                $("#geslachto").val("");
+                $("#typeo").val("");
+                $("#lando").val("");
                 $(':radio[name="geslacht"]').prop('checked', false);
                 $(':radio[name="type"]').prop('checked', false);
-                $("#gemeente").val("");
-                $("#postcode").val("");
-                $("#straat").val("");
-                $("#nummer").val("");
+                $("#gemeenteo").val("");
+                $("#postcodeo").val("");
+                $("#straato").val("");
+                $("#nummero").val("");
             }
             // dialoogvenster openen
             $("#gebruikerModal").modal('show');
@@ -252,7 +252,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
+                                    <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatumo', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
                                     <!--                    width 185 px-->
                                 </div>
                             </div>
@@ -320,7 +320,7 @@
                                         $drop[$land->id] = $land->naam;
                                         $teller++;
                                     }
-                                    echo form_dropdown('land', $drop, '', 'id="land" class="form-control"');
+                                    echo form_dropdown('land', $drop, '', 'id="lando" class="form-control"');
                                     ?>
                                 </div>
                             </div>
@@ -331,7 +331,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeenteo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -341,7 +341,7 @@
                                 </div>
 
                                 <div class="col-md-8"> 
-                                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'postcode', 'id' => 'postcodeo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -352,7 +352,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'straat', 'id' => 'straato', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -362,7 +362,7 @@
                                 </div>
 
                                 <div class="col-md-8">  
-                                    <?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'nummer', 'id' => 'nummero', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
                         </div>
