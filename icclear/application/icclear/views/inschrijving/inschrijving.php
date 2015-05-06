@@ -24,7 +24,7 @@ $(document).ready(function() {
             var ondId = $(this).data("id");
 
             $.ajax({type: "POST",
-                url: site_url + "inschrijven/prijsOnd",
+                url: site_url + "/inschrijven/prijsOnd",
                 data: {id: ondId},
                 success: function (result) {
                     var object = jQuery.parseJSON(result);                    
@@ -49,7 +49,7 @@ $(document).ready(function() {
             var actId = $(this).attr('name');            
             var aantal = $(this).val();
             $.ajax({type: "POST",
-                url: site_url + "inschrijven/prijsAct",
+                url: site_url + "/inschrijven/prijsAct",
                 data: {id : actId},
                 success: function (result) {
                     var object = jQuery.parseJSON(result);
