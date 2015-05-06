@@ -165,9 +165,9 @@
         $("#gebruikerEmail").modal('hide');            
         });
         
-        //Verzenden in de Emalis modal
+        //Verzenden in de Emails modal
         $(".verstuurEmails").click(function () {                            
-            var dataString = $("#JqAjaxForm1:eq(0)").serialize();
+            var dataString = $("#JqAjaxForm2:eq(0)").serialize();
             $.ajax({
                 type: "POST",
                 url: site_url + "/email/verzendenAlle",
@@ -453,7 +453,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm1">
+                <form id="JqAjaxForm2">
                     
                     <div class="row">
                         <div class="col-md-12">  
@@ -464,7 +464,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled', 'value' => 'Alle gebruikers')); ?>                                        
+                                    <?php echo form_input(array('name' => 'ontvangerall', 'id' => 'ontvangerall', 'class' => 'form-control', 'disabled' => 'disabled')); ?>                                        
                                 </div>
                             </div>
 
@@ -474,7 +474,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'onderwerpall', 'id' => 'onderwerpall', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -484,7 +484,7 @@
                                 </div>
 
                                 <div class="col-md-8">                                      
-                                    <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
+                                    <?php echo form_textarea(array('name' => 'boodschapall', 'id' => 'boodschapall', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
                                 </div>
                             </div>
 
@@ -492,8 +492,6 @@
                     </div>
                 </form>        
             </div>                 
-
-
 
             <div class="modal-footer">                                
                 <button type="button" class="verstuurEmails btn btn-primary">Verzend</button>
