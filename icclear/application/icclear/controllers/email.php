@@ -68,7 +68,7 @@ class Email extends CI_Controller {
     public function verzenden() {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
-        $id = $this->input->get('id');
+        $id = $this->input->post('id');
         
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
