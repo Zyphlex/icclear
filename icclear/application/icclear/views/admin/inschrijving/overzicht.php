@@ -148,6 +148,16 @@
 
                         echo form_dropdown('confonderdeel', $optionsOnderdeel, '', 'id="confonderdeel" class="form-control"');
                         ?></p>
+                    
+                    <p><?php echo form_label('Methode:', 'methode'); ?></p>
+                    <p><?php
+                        $optionsMethode = array();
+                        foreach ($methodes as $methode) {
+                            $optionsMethode[$methode->id] = $methode->omschrijving;
+                        }
+
+                        echo form_dropdown('methode', $optionsMethode, '', 'id="methode" class="form-control"');
+                        ?></p>
                 </form>
 
             </div>
