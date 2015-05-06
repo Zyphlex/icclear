@@ -173,70 +173,39 @@
                             $("#validate-status").removeClass("form-note-used");
                             $("#validate-status").addClass("form-note-ok");
                         }
-                        else {
-                            $("#validate-status").text("Incorrect");
-                            $("#validate-status").removeClass("form-note-ok");
-                            $("#validate-status").addClass("form-note-used");
-                            ok = false;
-                        }
-                        return ok;
-                }
-                
-                
-//                function realCheck() {
-//                        ok = false;
-//                        var a = $('#emailadres').val();
-//                        var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-//                        //if (filter.test(a)) {
-//                            $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
-//                            email: $('#emailadres').val()
-//                            }, function (result) {
-//                                alert(result);
-//                                if (result == "0") {
-//                                    $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-//                                    $("#emaildiv").addClass("has-error");
-//                                    $("#emaildiv").removeClass("has-success");
-//                                    ok = false;
-//                                }
-//                                else 
-//                                {
-//                                    $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-//                                    $("#emaildiv").removeClass("has-error");
-//                                    $("#emaildiv").addClass("has-success");
-//                                    alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
-//                                    ok = true;
-//                                    alert("beschikbaar " + ok);
-//                                    //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
-//                                }
-//                            });
-//                        //}
-//                        return ok;
-//                    }
-                                        
-                    function realCheck1() {
+                    else {
+                        $("#validate-status").text("Incorrect");
+                        $("#validate-status").removeClass("form-note-ok");
+                        $("#validate-status").addClass("form-note-used");
                         ok = false;
-                        mail = $('#emailadres').val();
-                            $.ajax({
-                                type: "POST",
-                                url: site_url + "/logon/check_email_availablity",
-                                async: false,
-                                data: {email: mail},
-                                success: function(result) {
-                                    if (result == '0') {
-                                        $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                                        $("#emaildiv").addClass("has-error");
-                                        $("#emaildiv").removeClass("has-success");
-                                    } else {
-                                        $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                                        $("#emaildiv").removeClass("has-error");
-                                        $("#emaildiv").addClass("has-success");
-                                        ok = true;
-                                    }
-                                }
-                        });  
-                        return ok;
                     }
-                    
+                    return ok;
+                }
+
+                function realCheck1() {
+                    ok = false;
+                    mail = $('#emailadres').val();
+                    $.ajax({
+                        type: "POST",
+                        url: site_url + "/logon/check_email_availablity",
+                        async: false,
+                        data: {email: mail},
+                        success: function(result) {
+                            if (result == '0') {
+                                $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                                $("#emaildiv").addClass("has-error");
+                                $("#emaildiv").removeClass("has-success");
+                            } else {
+                                $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                                $("#emaildiv").removeClass("has-error");
+                                $("#emaildiv").addClass("has-success");
+                                ok = true;
+                            }
+                        }
+                    });
+                    return ok;
+                }
+
             </script>
 
             <?php
