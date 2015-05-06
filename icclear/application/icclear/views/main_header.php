@@ -96,10 +96,7 @@
 
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
-                        alert("validatieOK " + validatieOK());
-                        alert("realCheck1 " + realCheck1());
                         if (validatieOK() && validate() && realCheck1()) {
-                        alert("realCheck1Na " + realCheck1());
                             $("#myForm").submit();
                         }
 
