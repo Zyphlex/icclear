@@ -41,6 +41,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaam").val(jobject.voornaam);
                         $("#familienaam").val(jobject.familienaam);
@@ -367,7 +368,7 @@
 
 <!--EMAIL VERSTUREN-->
 <div class="modal fade" id="gebruikerEmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
 
             <div class="modal-header">
