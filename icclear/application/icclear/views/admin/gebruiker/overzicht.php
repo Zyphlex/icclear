@@ -80,7 +80,8 @@
 
     function maakMailClick() {
         $(".emailGebruiker").click(function () {            
-            var iddb = $(this).data("id");            
+            var iddb = $(this).data("id");   
+            alert(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
@@ -102,6 +103,8 @@
     }
     
     function maakMailsClick() {
+        var iddb = $(this).data("id");   
+            alert(iddb);
         $(".emailGebruikers").click(function () {                                                                         
             $("#ontvangerall").val("Alle gebruikers");  
             $("#gebruikerEmails").modal('show');
@@ -153,7 +156,7 @@
         });
                
         //Verzenden in de Email modal
-        $(".verstuurEmail").click(function () {                            
+        $(".verstuurEmail").click(function () {              
             var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
