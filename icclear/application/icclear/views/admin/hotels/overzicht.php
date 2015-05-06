@@ -69,20 +69,6 @@
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
-        //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanHotel").click(function() {
-            /*var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/hotels/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });*/
-            refreshData();
-            $("#hotelModal").modal('hide');
-        });
-
         //Klikken op "BEVESTIG" in de Delete modal
         $(".deleteHotel").click(function() {
             $.ajax({
@@ -160,8 +146,7 @@
             </div>
 
             <div class="modal-footer">
-                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'opslaanHotel btn btn-primary', 'value' => 'Hotel opslaan')) ?>
-                <button type="button" class="opslaanHotel btn btn-primary">Opslaan</button>
+                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'opslaanHotel btn btn-primary', 'value' => 'Opslaan')) ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
         <?php echo form_close() ?>
