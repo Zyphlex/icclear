@@ -38,11 +38,14 @@
     <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
     <p>Aantal sessies: <?php echo $gekeurdeSessies; ?></p> 
     <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>     
-    <p>Aantal activiteiten: <?php echo $activiteiten; ?></p
-    
-    <div class="panel panel-primary">
-        <div class="panel-heading">Aantal inschrijvingen</div>
-        <div class="panel-body"><?php echo $aantalInschrijvingen; ?></div>
-    </div>
+    <p>Aantal activiteiten: <?php echo $activiteiten; ?></p>
+</div>
 
+<div class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Aantal inschrijvingen</div>
+            <div class="panel-body"><?php echo $aantalInschrijvingen; ?></div>
+        </div>
+    </div>
 </div>
