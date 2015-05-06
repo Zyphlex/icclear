@@ -157,11 +157,7 @@
 
                     });
 
-                    
-
-                    
-
-                    $("#password2").keyup(validate);
+                    //$("#password2").keyup(validate);
 
                 });
                 
