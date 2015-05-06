@@ -1,9 +1,4 @@
 <h1>Voorkeuren</h1>
-<form>
-
-</form>
-
-
 <div class="col-md-10">    
     <?php
     $attributes = array('name' => 'myform', 'id' => 'myform');
