@@ -148,6 +148,7 @@
 
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
+                        alert("validatieOK " + validatieOK());
                         alert("realCheck " + realCheck());
                         if (validatieOK() && validate() && realCheck()) {
                         alert("realCheckNa " + realCheck());
@@ -158,7 +159,14 @@
 
                     
 
-                    function validate() {
+                    
+
+                    $("#password2").keyup(validate);
+
+                });
+                
+                
+                function validate() {
                         ok = true;
                         var password1 = $("#password1").val();
                         var password2 = $("#password2").val();
@@ -174,11 +182,7 @@
                             ok = false;
                         }
                         return ok;
-                    }
-
-                    $("#password2").keyup(validate);
-
-                });
+                }
                 
                 
                 function realCheck() {
@@ -202,7 +206,7 @@
                                     $("#emaildiv").addClass("has-success");
                                     alert('ALLEZ NU MOET HET NORMAAL TRUE ZIJN GODVERDOMME');
                                     ok = true;
-                                    alert(ok);
+                                    alert("beschikbaar " + ok);
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
                             });
