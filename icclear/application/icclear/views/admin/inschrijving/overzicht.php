@@ -38,7 +38,7 @@
                     url: site_url + "/inschrijven/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {                        
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
@@ -127,9 +127,17 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="id" id="id" />                
 
+                    <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></p>
+                    <p><?php
+                        $optionsGebruiker = array();
+                        foreach ($gebruikers as $gebruiker) {
+                            $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam;
+                        }
 
+                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control"');
+                        ?></p>
                 </form>
 
             </div>
