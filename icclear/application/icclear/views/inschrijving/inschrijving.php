@@ -30,8 +30,11 @@ $(document).ready(function() {
                 success: function (result) {
                     alert(result);
                     var object = jQuery.parseJSON(result);                    
-                    var ok = true;
+                    var ok = false;
                     
+                    if ($('#conferentieOnderdeelId' + object.id).prop('checked',true)) {
+                        ok = true;
+                    }
                     
                     var newPrijs = parseInt(object.prijs);
                     if (ok) {
@@ -39,6 +42,7 @@ $(document).ready(function() {
                     } else {
                         prijs = prijs - newPrijs;
                     }
+                    alert(prijs);
                     
                     $("#totaalPrijs").html(prijs);
                 }
@@ -57,8 +61,11 @@ $(document).ready(function() {
                 success: function (result) {
                     alert(result);
                     var object = jQuery.parseJSON(result);
-                    var ok = true;
+                    var ok = false;
                     
+                    if ($('.activiteit' + actId).prop('checked',true)) {
+                        ok = true;
+                    }
                     
                     var newPrijs = parseInt(object.prijs);
                     if (ok) {
@@ -67,6 +74,7 @@ $(document).ready(function() {
                         prijs = prijs - (newPrijs * aantal);
 
                     }
+                    alert(prijs);
                     
                     $("#totaalPrijs").html(prijs);
                 }
