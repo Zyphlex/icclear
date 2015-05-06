@@ -89,19 +89,7 @@ class Email extends CI_Controller {
             $this->email->to($ontvanger);
             $this->email->subject($onderwerp);
             $this->email->send();
-        }
-               
-        echo $onderwerp;
-        
-        echo $inhoud;
-        
-        if($onderwerp == null){
-            echo "onderwerp is leeg";
-        }
-        
-        if($inhoud == null){
-            echo "inhoud is leeg";
-        }
+        }                       
     }
 
     public function update() {
