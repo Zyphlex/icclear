@@ -82,8 +82,8 @@ class Hotels extends CI_Controller {
             $config['allowed_types'] = 'jpg';
             $config['file_name'] = 'hotel' . $hotel->id . '.jpg';
             $config['max_size'] = 200;
-            $config['max_height'] = 1280;
-            $config['max_width'] = 700;
+            $config['max_height'] = 700;
+            $config['max_width'] = 1280;
             $config['overwrite'] = true;
 
             if (!is_dir($config['upload_path'])) {
