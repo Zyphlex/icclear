@@ -3,7 +3,7 @@
     function haaloverzicht() {
         $.ajax({type: "GET",
             url: site_url + "/hotels/overzicht",
-            success: function (result) {
+            success: function(result) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
@@ -21,7 +21,7 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderHotel").click(function () {
+        $(".verwijderHotel").click(function() {
             deleteid = $(this).data("id");
             $("#hotelDelete").modal('show');
         });
@@ -29,7 +29,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigHotel").click(function () {
+        $(".wijzigHotel").click(function() {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -38,7 +38,7 @@
                     url: site_url + "/hotels/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {
+                    success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
                         $("#website").val(jobject.website);
@@ -62,7 +62,7 @@
         });
     }
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
@@ -70,7 +70,7 @@
         haaloverzicht();
 
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanHotel").click(function () {
+        $(".opslaanHotel").click(function() {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -84,13 +84,13 @@
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteHotel").click(function () {
+        $(".deleteHotel").click(function() {
             $.ajax({
                 type: "POST",
                 url: site_url + "/hotels/delete",
                 async: false,
                 data: {id: deleteid},
-                success: function (result) {
+                success: function(result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -130,29 +130,31 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm" enctype="multipart/form-data">
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Naam:', 'naam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
+                <?php $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
+                echo form_open('hotels/update', $attributes);
+                ?>
+                <input type="hidden" name="id" id="id" />
+                <p><?php echo form_label('Naam:', 'naam'); ?></p>
+                <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Website:', 'website'); ?></td>
-                    <p><?php echo form_textarea(array('name' => 'website', 'id' => 'website', 'class' => 'form-control', 'rows' => '2', 'cols' => '10')); ?></p>
-                    
-                    <p><?php echo form_label('Straat:', 'straat'); ?></p>
-                    <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Nummer:', 'nummer'); ?></p>
-                    <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
-                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Postcode:', 'postcode'); ?></p>
-                    <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Afbeelding:', 'oserfile'); ?></p>
-                    <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
-                </form>
+                <p><?php echo form_label('Website:', 'website'); ?></td>
+                <p><?php echo form_textarea(array('name' => 'website', 'id' => 'website', 'class' => 'form-control', 'rows' => '2', 'cols' => '10')); ?></p>
+
+                <p><?php echo form_label('Straat:', 'straat'); ?></p>
+                <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Nummer:', 'nummer'); ?></p>
+                <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Gemeente:', 'gemeente'); ?></p>
+                <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Postcode:', 'postcode'); ?></p>
+                <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Afbeelding:', 'oserfile'); ?></p>
+                <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
+                <?php form_close() ?>
 
             </div>
 
