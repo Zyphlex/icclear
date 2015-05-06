@@ -69,7 +69,6 @@ class Gebruiker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $gebruiker = $this->gebruiker_model->get($id);
-        print_r($gebruiker);
 
         echo json_encode($gebruiker);
     }      
