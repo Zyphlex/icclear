@@ -379,14 +379,16 @@ class Inschrijven extends CI_Controller {
     }
 
     public function update() {
-        $hotel->id = $this->input->post('id');
-        $hotel->naam = $this->input->post('naam');
+        $inschrijving->id = $this->input->post('id');
+        $inschrijving->gebruikerId = $this->input->post('gebruiker');
+        $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
+         $inschrijving->methodeId = $this->input->post('methode');
 
-        $this->load->model('hotel_model');
-        if ($hotel->id == 0) {
-            $id = $this->hotel_model->insert($hotel);
+        $this->load->model('inschrijving_model');
+        if ($inschrijving->id == 0) {
+            $id = $this->inschrijving_model->insert($inschrijving);
         } else {
-            $this->hotel_model->update($hotel);
+            $this->inschrijving_model->update($inschrijving);
         }
 
         echo $id;
