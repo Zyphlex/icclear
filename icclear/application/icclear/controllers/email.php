@@ -67,13 +67,13 @@ class Email extends CI_Controller {
 
     public function verzenden() {               
         $onderwerp = $this->input->post('onderwerp');
-        $inhoud = $this->input->post('boodschap');
-        $this->email->message($inhoud);
+        $inhoud = $this->input->post('boodschap');        
         $ontvanger = $this->input->post('emailadres');
         
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($ontvanger);
         $this->email->subject($onderwerp);
+        $this->email->message($inhoud);
         $this->email->send();
     }
 
