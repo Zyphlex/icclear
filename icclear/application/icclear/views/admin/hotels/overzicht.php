@@ -130,7 +130,8 @@
 
             <div class="modal-body">                  
 
-                <?php $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
+                <?php
+                $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
                 echo form_open('hotels/update', $attributes);
                 ?>
                 <input type="hidden" name="id" id="id" />
@@ -154,15 +155,16 @@
 
                 <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
-                <?php form_close() ?>
+
 
             </div>
 
             <div class="modal-footer">
+                <?php form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'opslaanHotel btn btn-primary', 'value' => 'Hotel opslaan')) ?>
                 <button type="button" class="opslaanHotel btn btn-primary">Opslaan</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
-
+<?php form_close() ?>
         </div>            
     </div>
 </div>  
