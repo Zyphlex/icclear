@@ -228,6 +228,7 @@
                                         alert("ok alles goed!");
                                         ok = true;
                                     }
+                                }
                                 //$("#modalItemDelete").modal('hide');
                         });  
                         return ok;
