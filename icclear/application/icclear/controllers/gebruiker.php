@@ -106,6 +106,16 @@ class Gebruiker extends CI_Controller {
 
         echo $deleted;
     }
+    
+    public function activate() {
+        $gebruiker->id = $this->input->post('id');
+        $gebruiker->activatie = 1;
+        
+        $this->load->model('gebruiker_model');
+        $deleted = $this->gebruiker_model->update($gebruiker);
+
+        echo $deleted;
+    }
 
 }
 
