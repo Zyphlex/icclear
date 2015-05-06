@@ -23,7 +23,6 @@
     function maakDeleteClick() {
         $(".verwijderItem").click(function () {
             deleteid = $(this).data("id");
-            deletebetaalid = $(this).data("gebruiker");
             $("#modalItemDelete").modal('show');
         });
     }
@@ -39,8 +38,7 @@
                     url: site_url + "/inschrijven/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {
-                        
+                    success: function (result) {                        
                         var jobject = jQuery.parseJSON(result);
                         alert(result);
                         $("#gebruiker").val(jobject.gebruikerId);
@@ -90,9 +88,8 @@
                 type: "POST",
                 url: site_url + "/inschrijven/delete",
                 async: false,
-                data: {id: deleteid, gebruiker: deletebetaalid},
+                data: {id: deleteid},
                 success: function (result) {
-                    alert(deletebetaalid);
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -132,7 +129,6 @@
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <input type="hidden" name="gebruiker" id="gebruiker" />
 
 
                 </form>
