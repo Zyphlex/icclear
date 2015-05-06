@@ -150,6 +150,7 @@
                         e.preventDefault();
                         alert("realCheck " + realCheck());
                         if (validatieOK() && validate() && realCheck()) {
+                        alert("realCheckNa " + realCheck());
                             $("#myForm").submit();
                         }
 
