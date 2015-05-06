@@ -16,6 +16,61 @@ $(document).ready(function() {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
         }
     });
+    
+    
+    
+        var prijs = parseInt($("#totaalPrijs").html());
+        $('.conferentieOnderdeelId').click(function () {
+            var ondId = $(this).data("id");
+
+            $.ajax({type: "POST",
+                url: site_url + "inschrijven/prijsOnd",
+                data: {dagId: ondId},
+                success: function (result) {
+                    var object = jQuery.parseJSON(result);                    
+                    var ok = false;
+                    
+                    if ($('.conferentieOnderdeelId' + object.id).prop('checked')) {
+                        ok = true;
+                    }
+                    var newPrijs = parseInt(object.prijs);
+                    if (ok) {
+                        prijs = prijs + newPrijs;
+                    } else {
+                        prijs = prijs - newPrijs;
+                    }
+                    
+                    $("#totaalPrijs").html(prijs);
+                }
+            });
+        });
+
+        $('.aantalPersonen').change(function () {
+            var actId = $(this).attr('name');            
+            var aantal = $(this).val();
+            $.ajax({type: "POST",
+                url: site_url + "inschrijven/prijsAct",
+                data: {activityId : activityId},
+                success: function (result) {
+                    var object = jQuery.parseJSON(result);
+                    var ok = false;
+                    
+                    if ($('.activiteit' + actId).prop('checked')) {
+                        ok = true;
+                    }
+                    var newPrijs = parseInt(object.prijs);
+                    if (ok) {
+                        prijs = prijs + (newPrijs * aantal);
+                    } else {
+                        prijs = prijs - (newPrijs * aantal);
+
+                    }
+                    
+                    $("#totaalPrijs").html(prijs);
+                }
+            });
+        });  
+    
 });
 </script>
 
@@ -31,7 +86,7 @@ $(document).ready(function() {
 <?php } else { ?>
 
 <div class="row">
-    <div class="underline-full col-sm-12">
+    <div class="underline col-sm-12">
         <h1>Inschrijven conferentie</h1>
 
         <p>Door dit formulier in te vullen schrijft u zichzelf in voor de volgende conferentie en de geselecteerde opties.</p>
@@ -76,7 +131,7 @@ $attributes = array('name' => 'myform');
                     <td>&euro; <?php echo $ond->prijs ?></td>
                     <td><?php echo $ond->korting ?> &percnt;</td>
                     <td class="success">
-                        <?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id))?>
+                        <?php echo form_radio(array('required'=>'required','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id,'class'=>'conferentieOnderdeelId'.$ond->id))?>
                     </td>
                 </tr>
             <?php } ?>
@@ -107,7 +162,7 @@ $attributes = array('name' => 'myform');
                         <td class="success">
                            <div class="input-group">
                                 <span class="input-group-addon">
-                                    <?php echo form_input(array('class' => 'aanwezig checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
+                                    <?php echo form_input(array('class' => 'aanwezig checkact','class'=>'activiteit'.$activiteit->id, 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
                                 </span>
                                 <?php echo form_input(array('type' => 'number', 'class' => 'aantalPersonen form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
                             </div>                    
@@ -144,5 +199,7 @@ $attributes = array('name' => 'myform');
     </div>
 </div>
 <?php echo form_close(); ?>
+
+<h1 class="bold">Totaal bedrag te betalen: <span id="totaalPrijs" class="italic"></span></h1>
 
 <?php } ?>

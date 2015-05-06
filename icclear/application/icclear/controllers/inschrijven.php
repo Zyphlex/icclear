@@ -405,6 +405,24 @@ class Inschrijven extends CI_Controller {
             $this->betaling_model->delete($inschrijving->betalingId);
         }
     }
+        
+    public function prijsAct() {
+        $id = $this->input->get('id');
+
+        $this->load->model('activiteit_model');
+        $act = $this->activiteit_model->get($id);
+
+        echo json_encode($act);        
+    }
+    
+    public function prijsOnd() {
+        $id = $this->input->get('id');
+
+        $this->load->model('conferentie_onderdeel_model');
+        $ond = $this->conferentie_onderdeel_model->get($id);
+
+        echo json_encode($ond);        
+    }
 
 }
 
