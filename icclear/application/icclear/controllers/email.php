@@ -68,7 +68,7 @@ class Email extends CI_Controller {
     public function verzenden() {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
-        $id = $this->input->post('id');
+        $id = $this->input->post('emailid');
         
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');
@@ -85,7 +85,7 @@ class Email extends CI_Controller {
                 $this->email->send();
             }
         } else {
-            $ontvanger = $this->input->post('email');
+            $ontvanger = $this->input->post('emailadres');
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($ontvanger);
             $this->email->subject($onderwerp);
