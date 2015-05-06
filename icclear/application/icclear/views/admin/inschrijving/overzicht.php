@@ -40,7 +40,6 @@
                     data: {id: iddb},
                     success: function (result) {                        
                         var jobject = jQuery.parseJSON(result);
-                        alert(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
                         $("#betalingId").val(jobject.betalingId);
