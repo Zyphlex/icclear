@@ -30,11 +30,8 @@ $(document).ready(function() {
                 success: function (result) {
                     alert(result);
                     var object = jQuery.parseJSON(result);                    
-                    var ok = false;
+                    var ok = true;
                     
-                    if ($('#conferentieOnderdeelId' + object.id).prop('checked',true)) {
-                        ok = true;
-                    }
                     
                     var newPrijs = parseInt(object.prijs);
                     if (ok) {
@@ -60,11 +57,9 @@ $(document).ready(function() {
                 success: function (result) {
                     alert(result);
                     var object = jQuery.parseJSON(result);
-                    var ok = false;
+                    var ok = true;
                     
-                    if ($('.activiteit' + actId).prop('checked',true)) {
-                        ok = true;
-                    }
+                    
                     var newPrijs = parseInt(object.prijs);
                     if (ok) {
                         prijs = prijs + (newPrijs * aantal);
