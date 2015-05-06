@@ -72,16 +72,20 @@ class Sessies extends CI_Controller {
         
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
-
-        $this->load->model('sessies_model');
-        $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
-
+        
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
+        
+    public function lijst() {
+        $this->load->model('sessies_model');
+        $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
+        $this->load->view('admin/sessies/lijst_voorstellen', $data);
+    }
+
 
     public function toonDetails($sessieId) {
         $data['user'] = $this->authex->getUserInfo();
