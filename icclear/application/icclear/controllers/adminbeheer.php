@@ -73,6 +73,7 @@ class Adminbeheer extends CI_Controller {
         $admin->emailadres = strtolower($this->input->post('emailadres'));
         $wachtwoord = $this->input->post('wachtwoord');
         $admin->paswoord = sha1($wachtwoord);
+        $admin->activatie = 1;
 
         $this->load->model('gebruiker_model');
         if ($admin->id == 0) {
