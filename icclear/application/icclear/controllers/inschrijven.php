@@ -392,15 +392,13 @@ class Inschrijven extends CI_Controller {
         $inschrijving = $this->inschrijving_model->get($id);
 
 
-        if ($inschrijving->gebruikerId != null) {
+        if ($inschrijving->betalingId != null) {
             $this->load->model('betaling_model');
-            $this->betaling_model->delete($inschrijving->gebruikerId);
+            $this->betaling_model->delete($inschrijving->betalingId);
 
             $this->inschrijving_model->delete($id);
-        } else {
-            $this->load->model('inschrijving_model');
-            $this->inschrijving_model->delete($id);
         }
+        $this->inschrijving_model->delete($id);
     }
 
 }
