@@ -32,7 +32,7 @@ $(document).ready(function() {
                     var object = jQuery.parseJSON(result);                    
                     var ok = false;
                     
-                    if ($('.conferentieOnderdeelId' + object.id).prop('checked')) {
+                    if ($('#conferentieOnderdeelId' + object.id).prop('checked')) {
                         ok = true;
                     }
                     var newPrijs = parseInt(object.prijs);
@@ -137,7 +137,7 @@ $attributes = array('name' => 'myform');
                     <td>&euro; <?php echo $ond->prijs ?></td>
                     <td><?php echo $ond->korting ?> &percnt;</td>
                     <td class="success">
-                        <?php echo form_radio(array('required'=>'required','class'=>'conferentieOnderdeelId','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id,'class'=>'conferentieOnderdeelId'.$ond->id))?>
+                        <?php echo form_radio(array('required'=>'required','class'=>'conferentieOnderdeelId','id'=>'conferentieOnderdeelId'.$ond->id,'name'=>'conferentieOnderdeelId','value'=>$ond->id))?>
                     </td>
                 </tr>
             <?php } ?>
