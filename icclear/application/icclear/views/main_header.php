@@ -159,7 +159,7 @@
                         var result = false;
                         var a = $('#emailadres').val();
                         var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-                        if (filter.test(a)) {
+                        //if (filter.test(a)) {
                             $.post("<?php echo base_url() ?>icclear.php/logon/check_email_availablity", {
                                 email: $('#emailadres').val()
                             }, function (response) {
@@ -182,7 +182,7 @@
                                     //die alert wordt wel geactiveerd maar die result wilt nooit op true gaan
                                 }
                             });
-                        }
+                        //}
                     }
 
                     function validate() {
