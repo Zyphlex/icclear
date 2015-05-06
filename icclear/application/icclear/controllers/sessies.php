@@ -123,6 +123,13 @@ class Sessies extends CI_Controller {
 
         redirect('sessies/keuren');
     }
+    
+    public function afkeuren() {
+        $id = $this->input->post('id');
+        $this->load->model('sessies_model');
+        $deleted = $this->sessies_model->delete($id);
+        echo $deleted;
+    }
 
     private function sendmail($to, $id, $generatedKey) {
         $this->email->from('donotreply@thomasmore.be');
