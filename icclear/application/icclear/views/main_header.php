@@ -121,7 +121,7 @@
                             $("#password1div").removeClass("has-error");
                             $("#password1div").addClass("has-success");
                         }
-                        if ($("#password2").val() == "") {
+                        if ($("#password2").val() == "" || validate()) {
                             $("#password2div").addClass("has-error");
                             $("#password2div").removeClass("has-success");
                             ok = false;
@@ -150,7 +150,7 @@
                             $("#familienaamdiv").removeClass("has-error");
                             $("#familienaamdiv").addClass("has-success");
                         }
-                        if ($("#emailadres").val() == "") {
+                        if ($("#emailadres").val() == "" || realCheck1()) {
                             $("#emaildiv").addClass("has-error");
                             $("#emaildiv").removeClass("has-success");
                             ok = false;
