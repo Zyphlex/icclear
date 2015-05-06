@@ -131,7 +131,7 @@
                     <p><?php
                         $optionsGebruiker = array();
                         foreach ($gebruikers as $gebruiker) {
-                            $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . "(" . $gebruiker->type->omschrijving . ")";
+                            $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . " (" . $gebruiker->type->omschrijving . ")";
                         }
 
                         echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control"');
