@@ -130,7 +130,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm" enctype="multipart">
+                <form id="JqAjaxForm" enctype="multipart/form-data">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
