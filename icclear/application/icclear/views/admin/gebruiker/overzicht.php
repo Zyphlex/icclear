@@ -102,7 +102,7 @@
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
-                        $("#emailadres").val(0);
+                        $("#emailadres").val("0");
                     }
                 });
             }

@@ -74,8 +74,10 @@ class Email extends CI_Controller {
         $inhoud = $this->input->post('boodschap');
                 
         $this->email->message($inhoud);
-
-        if ($id == 0) {
+        
+        print_r($id);
+        
+        if ($id == "0") {
             foreach ($gebruikers as $g) {
                 $ontvanger = $g->emailadres;
                 $this->email->from('donotreply@thomasmore.be');
