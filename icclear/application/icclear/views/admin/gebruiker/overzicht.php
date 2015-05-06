@@ -97,18 +97,23 @@
                         $("#boodschap").val("");
                     }
                 });
-            }else{
+            }
+            // dialoogvenster openen            
+            $("#gebruikerEmail").modal('show');
+        });
+    }
+    
+    function maakMailsClick() {
+        $(".emailGebruikers").click(function () {                                             
                 $.ajax({                   
                     success: function () {                        
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
-                        $("#boodschap").val("");     
-                        $("#emailid").val(0);
+                        $("#boodschap").val("");                             
                     }
-                });
-            }
+                });            
             // dialoogvenster openen            
-            $("#gebruikerEmail").modal('show');
+            $("#gebruikerEmails").modal('show');
         });
     }
     
@@ -167,6 +172,20 @@
             });
             refreshData();                      
         $("#gebruikerEmail").modal('hide');            
+        });
+        
+        //Verzenden in de Emalis modal
+        $(".verstuurEmails").click(function () {                            
+            var dataString = $("#JqAjaxForm1:eq(0)").serialize();
+            $.ajax({
+                type: "POST",
+                url: site_url + "/email/verzenden",
+                async: false,
+                data: dataString,
+                dataType: "json"
+            });
+            refreshData();                      
+        $("#gebruikerEmails").modal('hide');            
         });
 
     });
@@ -427,6 +446,68 @@
 
             <div class="modal-footer">                                
                 <button type="button" class="verstuurEmail btn btn-primary">Verzend</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+        </div>
+    </div>            
+</div> 
+
+<!--EMAILS VERSTUREN-->
+<div class="modal fade" id="gebruikerEmails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">E-mail opstellen</h4>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm1">
+                    
+                    <div class="row">
+                        <div class="col-md-12">  
+
+                            <div class="row" id="ontvangerdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Ontvanger:', 'ontvanger'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'ontvanger', 'id' => 'ontvanger', 'class' => 'form-control', 'disabled' => 'disabled')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="onderwerpdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Onderwerp:', 'onderwerp'); ?>                    
+                                </div>
+
+                                <div class="col-md-8">   
+                                    <?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?>                                        
+                                </div>
+                            </div>
+
+                            <div class="row" id="boodschapdiv">
+                                <div class="col-md-4">   
+                                    <?php echo form_label('Boodschap:', 'boodschap'); ?>                                        
+                                </div>
+
+                                <div class="col-md-8">                                      
+                                    <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>        
+            </div>                 
+
+
+
+            <div class="modal-footer">                                
+                <button type="button" class="verstuurEmails btn btn-primary">Verzend</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
         </div>
