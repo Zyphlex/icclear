@@ -101,8 +101,7 @@
                     success: function () {                        
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
-                        $("#boodschap").val("");
-                        $("#emailadres").val("0");
+                        $("#boodschap").val("");                        
                     }
                 });
             }
