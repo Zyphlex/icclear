@@ -43,10 +43,10 @@
                     success: function (result) {
                         alert(result);
                         var jobject = jQuery.parseJSON(result);
-                        $("#voornaam").val(jobject.voornaam);
-                        $("#familienaam").val(jobject.familienaam);
+                        $("#voornaamo").val(jobject.voornaam);
+                        $("#familienaamo").val(jobject.familienaam);
                         $("#geboortedatum").val(jobject.geboortedatum);
-                        $("#emailadres").val(jobject.emailadres);
+                        $("#emailadreso").val(jobject.emailadres);
                         $("#geslacht").val(jobject.geslacht);
                         $(':radio[name="geslacht"][value="' + jobject.geslacht + '"]').prop('checked', 'checked');
                         $("#type").val(jobject.typeId);
@@ -60,9 +60,9 @@
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
-                $("#voornaam").val("");
-                $("#familienaam").val("");
-                $("#geboortedatum").val("");
+                $("#voornaamo").val("");
+                $("#familienaamo").val("");
+                $("#geboortedatumo").val("");
                 $("#emailadres").val("");
                 $("#geslacht").val("");
                 $("#type").val("");
@@ -222,7 +222,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaamo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -232,7 +232,7 @@
                                 </div>
 
                                 <div class="col-md-8">  
-                                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaamo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
@@ -242,7 +242,7 @@
                                 </div>
 
                                 <div class="col-md-8">   
-                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                                        
+                                    <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadreso', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
 
