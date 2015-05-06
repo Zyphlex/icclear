@@ -206,6 +206,6 @@ $attributes = array('name' => 'myform');
 </div>
 <?php echo form_close(); ?>
 
-<h1 class="bold">Totaal bedrag te betalen: <span id="totaalPrijs" class="italic"></span></h1>
+<h1 class="bold">Totaal bedrag te betalen:</h1> <p id="totaalPrijs" class="italic"></p>
 
 <?php } ?>
