@@ -130,7 +130,7 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
+                <form id="JqAjaxForm" enctype="multipart">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
@@ -150,6 +150,8 @@
                     <p><?php echo form_label('Postcode:', 'postcode'); ?></p>
                     <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
                     
+                    <p><?php echo form_label('Afbeelding:', 'Afbeelding'); ?></p>
+                    <p><?php echo form_upload(array('name' => 'foto', 'id' => 'foto', 'class' => 'form-control')); ?></p>
                 </form>
 
             </div>
