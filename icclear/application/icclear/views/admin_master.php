@@ -30,6 +30,7 @@
     <script src="<?php echo base_url() . APPPATH; ?>js/bootstrap.js"></script>
     <script src="<?php echo base_url() . APPPATH; ?>js/jquery.dataTables.js"></script>    
     <script src="<?php echo base_url() . APPPATH; ?>js/dataTables.bootstrap.js"></script>   
+    <script src="<?php echo base_url() . APPPATH; ?>js/highcharts.js"></script>
     <script src="<?php echo base_url() . APPPATH; ?>js/script.js"></script>
     
     <script type="text/javascript">
