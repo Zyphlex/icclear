@@ -386,7 +386,6 @@ class Inschrijven extends CI_Controller {
 
         $this->load->model('betaling_model');
 
-
         $this->load->model('inschrijving_model');
         if ($inschrijving->id == 0) {
             $id = $this->inschrijving_model->insert($inschrijving);
