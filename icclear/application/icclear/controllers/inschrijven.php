@@ -383,16 +383,20 @@ class Inschrijven extends CI_Controller {
         $inschrijving->gebruikerId = $this->input->post('gebruiker');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
         $inschrijving->methodeId = $this->input->post('methode');
-        
-        if ($inschrijving->methodeId != 4) {
-            $this->load->model('betaling_model');
-            $this->betaling_model->insert($inschrijving->gebruikerId);
-        }
+
+        $this->load->model('betaling_model');
+
 
         $this->load->model('inschrijving_model');
         if ($inschrijving->id == 0) {
             $id = $this->inschrijving_model->insert($inschrijving);
+            if ($inschrijving->methodeId != 4) {
+                $this->betaling_model->insert($inschrijving->gebruikerId);
+            }
         } else {
+            if ($inschrijving->methodeId != 4) {
+                $this->betaling_model->insert($inschrijving->gebruikerId);
+            }
             $this->inschrijving_model->update($inschrijving);
         }
 
