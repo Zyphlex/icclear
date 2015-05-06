@@ -91,7 +91,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
-                        $("#email").val(jobject.emailadres);
+                        $("#emailadres").val(jobject.emailadres);
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
                     }
@@ -102,7 +102,7 @@
                         $("#ontvanger").val("Alle gebruikers");                                             
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
-                        $("#email").val(0);
+                        $("#emailadres").val(0);
                     }
                 });
             }
@@ -381,7 +381,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm1">
-                    <input type="hidden" name="email" id="email"/>                                        
+                    <input type="hidden" name="email" id="emailadres"/>                                        
 
                     <div class="row">
                         <div class="col-md-12">  
