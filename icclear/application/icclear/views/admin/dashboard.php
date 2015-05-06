@@ -42,6 +42,7 @@
 </div>
 
 <div class="row">
+    
     <div class="col-sm-2">
         <div class="equalizer panel panel-primary">
             <div class="panel-heading">
@@ -52,4 +53,29 @@
             </div>
         </div>
     </div>
+    
+    
+    <div class="col-sm-2">
+        <div class="equalizer panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Aantal sessies</h2>
+            </div>
+            <div class="panel-body text-center">
+                <h1 class="bold"><?php echo $gekeurdeSessies; ?></h1> <span class="italic inline">sessies</span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col-sm-2">
+        <div class="equalizer panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Aantal ongekeurde sessies</h2>
+            </div>
+            <div class="panel-body text-center">
+                <h1 class="bold"><?php echo $ongekeurdeSessies; ?></h1> <span class="italic inline">nog te keuren</span>
+            </div>
+        </div>
+    </div>
+    
 </div>
