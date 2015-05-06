@@ -4,18 +4,6 @@
     
     <h1>Sessies keuren</h1>
     
-<!--    <div class="panel panel-default" role="tablist">
-
-        <div class="panel-heading" role="tab" id="collapseListGroupHeading1">
-            <h4 class="panel-title">
-                <span href="#collapseListGroup1" aria-expanded="false" aria-controls="collapseListGroup1">
-                    Sessies
-                </span>
-            </h4>
-        </div>
-
-        <div id="collapseListGroup1"  role="tabpanel" aria-labelledby="collapseListGroupHeading1">
-            <div class="panel-body">-->
                 <table class="table table-responsive">
                     <thead>
                         <tr>
@@ -36,13 +24,9 @@
                             </tr>
                         <?php } ?>
                     </tbody>
-                </table>
-<!--            </div>
-        </div>
-
-    </div>-->
-    
-    <?php echo anchor('sessies/index', 'Annuleren','class="btn btn-default"'); ?>                           
+                </table>             
+    <?php echo anchor('admin/dashboard', 'Annuleren','class="btn btn-default"'); ?>                           
+    <?php echo anchor('sessies/index', 'Terug naar sessies','class="btn btn-default"'); ?>                           
     
     
 </div>
