@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-8">
         <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
+        <span><?php echo $conferentie->naam ?></span>
     </div>
 
     <?php if ($user == null) { // niet aangemeld ?>  

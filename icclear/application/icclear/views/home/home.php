@@ -17,32 +17,26 @@ $( document ).ready(function() {
     </div>
 </div>
 
+<div class="row space-bottom">       
+    <div class="col-sm-8">
+        <h2>Wat is IC Clear?</h2>
+        <p><?php echo $algemeneinfo->omschrijving ?></p>
+    </div> 
+    
+    <div class="col-sm-4 col-xs-12">
+        <div class="thumbnail">
+            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICClear clarity logo" title="Home Afbeelding">
+        </div>
+    </div>
+</div>
+
 <div class="row space-bottom">
     <div class="col-sm-8">
         <p><?php echo $conferentie->beschrijving ?></p>
     </div> 
     
-    <div class="col-sm-4 col-xs-12">
-        <div class="thumbnail">
-            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICClear clarity logo" title="Home Afbeelding">
-        </div>
-    </div>
 </div>
 
-<div class="row">   
-    <div class="col-sm-4 col-xs-12">
-        <div class="thumbnail">
-            <img src="<?php echo base_url() . APPPATH; ?>img/default/home.jpg" alt="ICClear clarity logo" title="Home Afbeelding">
-        </div>
-    </div>
-    
-    <div class="col-sm-8">
-        <h2>Wat is IC Clear?</h2>
-        <p><?php echo $algemeneinfo->omschrijving ?></p>
-    </div> 
-</div>
-
-<br/><br/>
 
 <div class="row">
     <div class="col-xs-12">
