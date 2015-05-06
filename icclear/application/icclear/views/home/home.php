@@ -27,7 +27,7 @@ $( document ).ready(function() {
 
 
 <div class="row space-bottom">
-    <div class="col-sm-8 col-sm-offset-4">
+    <div class="col-sm-8 space-bottom">
         <h2 class="underline-full">Conferentie - <?php echo $conferentie->naam ?></h2>
         <p><?php echo $conferentie->beschrijving ?></p>
     </div> 

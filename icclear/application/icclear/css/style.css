@@ -23,6 +23,8 @@
 
 .header-conf {
     position: absolute;
+    bottom: 10px;
+    left: 50px;
 }
 
 .divider {
