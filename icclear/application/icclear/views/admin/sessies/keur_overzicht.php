@@ -20,6 +20,7 @@
                                 <td>
                                     <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-default">Details</a>
                                     <?php echo anchor('sessies/goedkeuren/' . $sessie->id, 'Goedkeuren','class="btn btn-default"'); ?>
+                                    <?php echo anchor('sessies/afkeuren/' . $sessie->id, 'Afkeuren','class="btn btn-warning"'); ?>
                                 </td>
                             </tr>
                         <?php } ?>
