@@ -80,7 +80,8 @@ class Hotels extends CI_Controller {
         //If ($this->input->post('userfile') != null) {
             $config['upload_path'] = './application/upload/fotos/hotels';
             $config['allowed_types'] = 'jpg';
-            $config['file_name'] = 'hotel' . $hotel->id . '.jpg';
+            //$config['file_name'] = 'hotel' . $hotel->id . '.jpg';
+            $config['file_name'] = 'default.jpg';
             $config['max_size'] = 200;
             $config['max_height'] = 700;
             $config['max_width'] = 1280;
@@ -105,12 +106,12 @@ class Hotels extends CI_Controller {
             $hotel->foto = $config['file_name'];
         //}
 
-        $this->load->model('hotel_model');
+        /*$this->load->model('hotel_model');
         if ($hotel->id == 0) {
             $id = $this->hotel_model->insert($hotel);
         } else {
             $this->hotel_model->update($hotel);
-        }
+        }*/
 
         redirect('hotels');
     }
