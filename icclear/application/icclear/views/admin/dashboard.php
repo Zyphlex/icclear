@@ -42,7 +42,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h2>Aantal inschrijvingen</h2>
