@@ -27,6 +27,7 @@ $(document).ready(function() {
                 url: site_url + "/inschrijven/prijsOnd",
                 data: {id: ondId},
                 success: function (result) {
+                    alert(result);
                     var object = jQuery.parseJSON(result);                    
                     var ok = false;
                     
@@ -52,6 +53,7 @@ $(document).ready(function() {
                 url: site_url + "/inschrijven/prijsAct",
                 data: {id : actId},
                 success: function (result) {
+                    alert(result);
                     var object = jQuery.parseJSON(result);
                     var ok = false;
                     
