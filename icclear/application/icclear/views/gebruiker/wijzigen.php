@@ -434,27 +434,27 @@ taald!</span>
                     <h1>Wachtwoord veranderen</h1>                    
                     
                     <?php
-                        $attributes = array('class' => 'registreer', 'id' => 'Password', 'class' => 'form-horizontal');
+                        $attributes = array('class' => 'registreer', 'id' => 'Password');
                         echo form_open('logon/add', $attributes);
                     ?>
 
                     <div id="passwordN1div"> 
-                        <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
+                        <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-3 control-label')); ?>    
                         <div class="col-sm-8">                       
                             <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'passwordN1', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
                     <div id="passwordN2div">
-                        <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
+                        <?php echo form_label('Wachtwoord bevestigen:', 'bevestigww', array('class' => 'col-sm-3 control-label')); ?>
                         <span id="validate-statusN" class="form-note"></span>              
                         <div class="col-sm-8">e:', 'postcode'); ?>                                          
       <?php echo form_password(array('name' => 'bevestigww', 'id' => 'passwordN2', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
                     
-                    <a class="btn btn-default col-xs-4" href="#account" aria-controls="account" role="tab" data-toggle="tab">Annuleren</a>
-                    <button name="mysubmit" id="VeranderPass" class="col-xs-8 btn btn-primary">Registreren</button>
+                    <button name="mysubmit" id="VeranderPass" class="col-xs-6 btn btn-primary">Registreren</button>
+                    <?php echo anchor('profiel/instellingen','Annuleren','class="btn btn-default col-xs-offset-3 col-xs-3"') ?>
                     <?php echo form_close(); ?>
                                 <?php } ?>
                 </div>                                  </div>
