@@ -24,7 +24,7 @@ class Hotels extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = null;
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -76,6 +76,35 @@ class Hotels extends CI_Controller {
         $hotel->gemeente = $this->input->post('gemeente');
         $hotel->postcode = $this->input->post('postcode');
 
+        // foto
+        If ($this->input->post('userfile') != null) {
+            $config['upload_path'] = './application/upload/fotos/hotels';
+            $config['allowed_types'] = 'jpg';
+            $config['file_name'] = 'hotel' . $hotel->id . '.jpg';
+            $config['max_size'] = 200;
+            $config['max_height'] = 250;
+            $config['max_width'] = 400;
+            $config['overwrite'] = true;
+
+            if (!is_dir($config['upload_path'])) {
+                mkdir($config['upload_path'], 0777, TRUE);
+            }
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            $fieldname = 'userfile';
+
+            if (!$this->upload->do_upload($fieldname)) {
+                $error = array('error' => $this->upload->display_errors());
+                echo print_r($config);
+                echo print_r($error);
+                echo realpath($config['upload_path']);
+            }
+
+            $hotel->foto = $config['file_name'];
+        }
+
         $this->load->model('hotel_model');
         if ($hotel->id == 0) {
             $id = $this->hotel_model->insert($hotel);
@@ -97,6 +126,3 @@ class Hotels extends CI_Controller {
 
     // TEST
 }
-
- 
- 
