@@ -39,11 +39,42 @@
                 $("#activiteiten1").html(result);
             }
         });
+    }    
+    
+    function validate() {
+        ok = true;
+        var password1 = $("#passwordN1").val();
+        var password2 = $("#passwordN2").val();
+        if (password1 == password2) {
+                $("#validate-statusN").text("Correct");
+                $("#validate-statusN").removeClass("form-note-used");
+                $("#validate-statusN").addClass("form-note-ok");
+                $("#passwordN2div").removeClass("has-error");
+                $("#passwordN2div").addClass("has-success");
+        } else {
+                $("#validate-statusN").text("Incorrect");
+                $("#validate-statusN").removeClass("form-note-ok");
+                $("#validate-statusN").addClass("form-note-used");
+                $("#passwordN2div").addClass("has-error");
+                $("#passwordN2div").removeClass("has-success");
+                ok = false;
+        }
+       return ok;
     }
     
     $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
+        
+        $("#VeranderPass").click(function (e) {
+                        e.preventDefault();
+                        if (validate() {
+                            $("#Password").submit();
+                        }
+
+                    });
+
+                    $("#passwordN2").keyup(validate);
     });
 </script>
 
@@ -61,14 +92,18 @@
                     <img class="center-block" src="<?php echo base_url() . 'application/upload/fotos/sprekers/default.jpg'; ?>" 
                          alt="Foto niet beschikbaar" title="Foto niet beschikbaar" height="150" width="auto" data-placement="top">
                  <?php } ?>
-                </div>
+                </
 
                     <div class="divider"></div>
 
                 <ul class="nav nav-pills nav-stacked" role="tablist">
                     <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
                     <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conblue-back ferenties<span class="pull-right badge"><?php echo count($inschrijvingen); ?></span></a></li>?php $count=0; foreach ($inschrijvingen as $i) { if ($i->betalingId != null) { $count++; }} ?en); ?></span></a></li>
-                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Bblue-back etalingen<span class="pull-ri$countijvingen->betalingId)); ?></span></a></li>                        
+                    <li role="presentation"><a href="#betalingen" aria-controls="betalingen" role="tab" data-toggle="tab">Bblue-back etalingen<span class="pull-ri$countijvingen->betalingId)); ?></span></a></li>                       <li class="divider"></li>
+                    <li role="presentation"><a href="#wwwijzigen" aria-controls="account" role="tab" data-toggle="tab">Wachtwoord veranderen</a></li>
+                </ul>                    
+                    
+                    
                 </ul>
             </div>   
         </div>
@@ -83,7 +118,7 @@
                 <div class="equalizer panel panel-default">
                     <div class="panel-body">
                 unt">
-                    <h1 class="margin-top">Profiel wijzigen</h1>
+ <h1 class="margin-top">Profiel wijzigen</h1>
                     
 
                     <?php
@@ -251,7 +286,7 @@
                     <div class="panel-body">
                 unt"e" id="conferenties">
 
-                    <h1 class="margin-top">Ingeschreven conferenties</h1>
+ >Ingeschrevs="margin-top">Afgelopen conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?<div class=" table-responsive">
                             <table class="table">                </tr>
@@ -303,7 +338,7 @@ taald!</span>
                         <?php } ?>
                     <?php } ?>
                             
-                    <h1 class="margin-top">Afgelopen conferenties</h1>
+         space     <h1 class="margin-top">Afgelopen conferenties</h1>
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
        div class=" table-responsive">
@@ -362,7 +397,7 @@ taald!</span>
                 <div class="equalizer panel panel-default">
                     <div class="panel-body">
                 unt"    pane" id="betalingen">
-                    <h1 class="margin-top">Betalingen</h1>                    
+ <h1 class="margin-top">Betalingen</h1>                    
                     <?php foreach ($inschrijvingen as $i) { ?>
                         <?php if ($i != null && $i->betaling != null) { ?>
    div class="table-responsive">
@@ -391,8 +426,40 @@ taald!</span>
    /div               </table>
                         <?php } ?>
                     <?php } ?>
-                </div>                        
-              </div>
+                </div>                                  </div>
+                
+            <div role="tabpanel" class="tab-pane" id="wwwijzigen">
+            <div class="equalizer panel panel-default">
+                <div class="panel-body">                        
+                    <h1>Wachtwoord veranderen</h1>                    
+                    
+                    <?php
+                        $attributes = array('class' => 'registreer', 'id' => 'Password', 'class' => 'form-horizontal');
+                        echo form_open('logon/add', $attributes);
+                    ?>
+
+                    <div id="passwordN1div"> 
+                        <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
+                        <div class="col-sm-8">                       
+                            <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'passwordN1', 'class' => 'form-control')); ?> 
+                        </div>
+                    </div>
+
+                    <div id="passwordN2div">
+                        <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
+                        <span id="validate-statusN" class="form-note"></span>              
+                        <div class="col-sm-8">e:', 'postcode'); ?>                                          
+      <?php echo form_password(array('name' => 'bevestigww', 'id' => 'passwordN2', 'class' => 'form-control')); ?>                    
+                        </div>
+                    </div>
+                    
+                    <a class="btn btn-default col-xs-4" href="#account" aria-controls="account" role="tab" data-toggle="tab">Annuleren</a>
+                    <button name="mysubmit" id="VeranderPass" class="col-xs-8 btn btn-primary">Registreren</button>
+                    <?php echo form_close(); ?>
+                                <?php } ?>
+                </div>                                  </div>
+                
+                
             </div>
         </div>
     </div>
