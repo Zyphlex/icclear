@@ -388,6 +388,10 @@ button:focus {
     margin-top:15px;
 }
 
+.space-right15 {
+    margin-right: 15px;
+}
+
 .under-link td a
 {
     text-decoration-line:underline;
