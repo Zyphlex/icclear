@@ -21,7 +21,7 @@
     <?php if ($user == null) { // niet aangemeld ?>  
 
             <p>
-                <span class="logon">
+                <span class="inline logon">
                     <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                     / 
                     <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
