@@ -423,8 +423,8 @@
     if ($inschrijvingen == null) { ?>
                                 <p>Er zijn geen conferenties gevonden.</p>
                                 
-                            }
-                                            <?php foreach ($inschrijvingen as $i) { ?>
+                            <?php }
+                                             <?php foreach ($inschrijvingen as $i) { ?>
           <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                                     <div class=" table-responsive">
                                         <table class="table">
