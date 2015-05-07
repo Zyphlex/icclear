@@ -39,6 +39,7 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
+                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
                         $("#conferentie").val(jobject.conferentieId);
@@ -64,7 +65,7 @@
         haaloverzicht();
 
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanActiviteit").click(function () {
+        $(".opslaanActiviteit").click(function () {            
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
