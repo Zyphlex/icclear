@@ -2,11 +2,11 @@
 <table class="table table-beheer">
     <thead>
         <tr>
-            <th>Naam</th>
-            <th>Te betalen</th>
-            <th>Datum</th>
-            <th>Betaling</th>
-            <th></th>
+            <th class="w30">Naam</th>
+            <th class="w20">Te betalen</th>
+            <th class="w20">Datum</th>
+            <th class="w15">Betaling</th>
+            <th class="w15">Beheer</th>
         </tr>
     </thead>
     <tbody>
