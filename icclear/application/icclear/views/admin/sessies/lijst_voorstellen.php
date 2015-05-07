@@ -7,7 +7,13 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($sessies as $sessie) { ?>
+        <?php if ($sessies == null) { ?>
+        <br>
+        <p>Er zijn geen sessies om gekeurd te worden.</p>
+        <br>
+    <?php } else {
+        foreach ($sessies as $sessie) {
+            ?>
             <tr>
                 <td><?php echo $sessie->onderwerp; ?></td>
                 <td><?php echo $sessie->spreker->familienaam . ' ' . $sessie->spreker->voornaam; ?></td>
@@ -17,6 +23,8 @@
                     <button title="Afkeuren" class="verwijderVoorstel glyphicon glyphicon-remove  btn btn-danger" data-id="<?php echo $sessie->id ?>"></button>   
                 </td>
             </tr>
-        <?php } ?>
-    </tbody>
+        <?php }
+    }
+    ?>
+</tbody>
 </table>          
