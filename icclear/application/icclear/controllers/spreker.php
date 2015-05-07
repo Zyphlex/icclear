@@ -39,56 +39,6 @@ class Spreker extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
-    //alle sprekers per conferentie ophalen samen met hun sessies
-    public function sprekerConf() {
-        $user = $this->authex->getUserInfo();
-        $data['user'] = $user;
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['user'] = $user;
-        $data['title'] = 'IC Clear - Sprekers';
-        $data['active'] = 'admin';
-        
-        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
-        $this->load->model('inschrijving_model');
-        if ($user == null) {
-            $data['inschrijving'] = null;
-        } else {
-            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
-            if ($inschrijving == null) {
-                $data['inschrijving'] = null;
-            } else {
-                $data['inschrijving'] = $inschrijving;
-            }
-        }
-        
-        $this->load->model('planning_model');
-        $data['programma'] = $this->planning_model->getOverzichtActieve();
-        
-        $this->load->model('gebruiker_model');
-        $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
-        
-        $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/spreker/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
-        
-    }
-    
-    public function overzicht() {
-        $user = $this->authex->getUserInfo();
-        $data['conferentieId'] = $this->session->userdata('conferentieId');
-        $data['user'] = $user;
-        $data['title'] = 'IC Clear - Sprekers';
-        $data['active'] = 'admin';
-        
-        $this->load->model('planning_model');
-        $data['programma'] = $this->planning_model->getOverzichtActieve();
-        
-        $this->load->view('admin/spreker/lijst', $data);
-        
-    }
-
     public function voorstel() {
 
         $user = $this->authex->getUserInfo();
