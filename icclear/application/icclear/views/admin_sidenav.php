@@ -40,7 +40,6 @@
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
                     <li><?php echo anchor('inschrijven/opvolgen', 'Inschrijvingen'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
-                    <li><?php echo anchor('spreker/sprekerConf', 'Sprekers'); ?></li>
                     <li><?php echo anchor('aankondiging/', 'Aankondigingen'); ?></li>
                     <li><?php echo anchor('planningbeheer' , 'Planningen'); ?></li>
                     <li><?php echo anchor('gebouw/gebouwPerDag/' . $conferentieId, 'Gebouwen') ?></li>
