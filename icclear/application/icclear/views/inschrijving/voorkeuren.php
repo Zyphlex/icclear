@@ -19,7 +19,7 @@
                         <?php foreach ($sessies as $s) { ?>
                             <tr>
                                 <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id)); ?></td>
-                                <td><?php echo $s->onderwerp; ?><a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $s->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign btn btn-info"></a></td> 
+                                <td><a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $s->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon"></a><?php echo $s->onderwerp; ?></td> 
                                 <td><?php echo $s->omschrijving; ?></td>                                
                                 <td><?php echo $s->spreker->voornaam . " " . $s->spreker->familienaam; ?></td>
                             </tr>
