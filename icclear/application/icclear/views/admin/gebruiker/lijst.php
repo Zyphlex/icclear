@@ -20,7 +20,7 @@
                     <td><?php echo $gebruiker->voornaam ?></td>
                     <td>
                         <?php if ($gebruiker->activatie == "1") { ?>
-                        <button data-toggle="tooltip" data-placement="bottom" title="Email versturen" class="emailGebruiker glyphicon glyphicon-envelope btn btn-success white" data-id="<?php echo $gebruiker->id ?>"></button>
+                        <button data-toggle="tooltip" data-placement="bottom" title="Email versturen" class="pull-right emailGebruiker glyphicon glyphicon-envelope btn btn-success white" data-id="<?php echo $gebruiker->id ?>"></button>
                         <?php } ?>
                         <?php echo $gebruiker->emailadres ?></td>
                     <?php if ($gebruiker->typeId == 1) { ?>
