@@ -6,8 +6,8 @@
     </div>
 
     <div class="col-md-4 logon-container">
-            <p>
-                <span class="inline logon italic">
+           
+                <span class="logon italic">
                     <a class="red" href="#">NL</a> 
                     / 
                     <a href="#">EN</a> 
@@ -16,22 +16,19 @@
                     / 
                     <a href="#">GER</a> 
                 </span>
-            </p>
             
     <?php if ($user == null) { // niet aangemeld ?>  
 
-            <p>
-                <span class="inline logon">
+                <span class="logon">
                     <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                     / 
                     <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
                 </span>
-            </p>
         </div>
 
     <?php } else {  // wel aangemeld ?>
 
-            <div class="dropdown inline logon">
+            <div class="dropdown logon">
                 <span class="glyphicon glyphicon-user"></span>
                 <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
