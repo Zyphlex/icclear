@@ -21,21 +21,21 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderLand").click(function () {
+        $(".verwijderSpreker").click(function () {
             deleteid = $(this).data("id");
-            $("#landDelete").modal('show');
+            $("#sprekerDelete").modal('show');
         });
     }
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigLand").click(function () {
+        $(".wijzigSpreker").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/land/detail",
+                    url: site_url + "/spreker/detailMetSessie",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -48,7 +48,7 @@
                 $("#naam").val("");                
             }
             // dialoogvenster openen
-            $("#landModal").modal('show');
+            $("#sprekerModal").modal('show');
         });
     }
 
@@ -60,24 +60,24 @@
         haaloverzicht();
 
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanLand").click(function () {
+        $(".opslaanSpreker").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
-                url: site_url + "/land/update",
+                url: site_url + "/spreker/update",
                 async: false,
                 data: dataString,
                 dataType: "json"
             });
             refreshData();
-            $("#landModal").modal('hide');
+            $("#sprekerModal").modal('hide');
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteLand").click(function () {
+        $(".deleteSpreker").click(function () {
             $.ajax({
                 type: "POST",
-                url: site_url + "/land/delete",
+                url: site_url + "/spreker/delete",
                 async: false,
                 data: {id: deleteid},
                 success: function (result) {
@@ -86,7 +86,7 @@
                     } else {
                         refreshData();
                     }
-                    $("#landDelete").modal('hide');
+                    $("#sprekerDelete").modal('hide');
                 }
             });
         });
@@ -101,12 +101,12 @@
         <div id="resultaat"></div>
         
         <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>        
-    <button class="wijzigLand btn btn-primary" data-id="0">Nieuw spreker toevoegen</button>
+    <button class="wijzigSpreker btn btn-primary" data-id="0">Nieuwe spreker toevoegen</button>
         
     </div>
 
 <!-- MODAL VOOR DETAILS -->         
-<div class="modal fade" id="landModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="sprekerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -126,7 +126,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="opslaanLand btn btn-primary">Opslaan</button>
+                <button type="button" class="opslaanSpreker btn btn-primary">Opslaan</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
@@ -136,7 +136,7 @@
 
 
 <!-- MODAL VOOR VERWIJDEREN -->  
-<div class="modal fade" id="landDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="sprekerDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -146,12 +146,12 @@
             </div>
 
             <div class="modal-body">                  
-                <p>Bent u zeker dat u dit land wilt verwijderen?</p>  
+                <p>Bent u zeker dat u deze spreker en sessie wilt verwijderen?</p>  
                 <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteLand btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteSpreker btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
