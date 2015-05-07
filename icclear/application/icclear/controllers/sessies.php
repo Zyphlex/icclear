@@ -102,6 +102,7 @@ class Sessies extends CI_Controller {
 
     public function goedkeuren() {
         $id = $this->input->post('id');
+        print_r($id);
         $data['user'] = $this->authex->getUserInfo();
 
         $data['conferentieId'] = $this->session->userdata('conferentieId');
