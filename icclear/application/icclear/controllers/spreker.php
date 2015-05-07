@@ -38,7 +38,8 @@ class Spreker extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-
+    
+    //alle sprekers per conferentie ophalen samen met hun sessies
     public function sprekerConf() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
