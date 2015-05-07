@@ -1,5 +1,10 @@
 <table class="table table-responsive">
     <thead>
+        <?php if ($sessies == null) { ?>
+        <br>
+        <p>Er zijn geen sessies om gekeurd te worden.</p>
+        <br>
+    <?php } else { ?>
         <tr>
             <th>Onderwerp</th>
             <th>Spreker</th>
@@ -7,12 +12,8 @@
         </tr>
     </thead>
     <tbody>
-        <?php if ($sessies == null) { ?>
-        <br>
-        <p>Er zijn geen sessies om gekeurd te worden.</p>
-        <br>
-    <?php } else {
-        foreach ($sessies as $sessie) {
+
+        <?php foreach ($sessies as $sessie) {
             ?>
             <tr>
                 <td><?php echo $sessie->onderwerp; ?></td>
@@ -23,7 +24,8 @@
                     <button title="Afkeuren" class="verwijderVoorstel glyphicon glyphicon-remove  btn btn-danger" data-id="<?php echo $sessie->id ?>"></button>   
                 </td>
             </tr>
-        <?php }
+        <?php
+        }
     }
     ?>
 </tbody>
