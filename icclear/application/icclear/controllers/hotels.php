@@ -85,10 +85,12 @@ class Hotels extends CI_Controller {
         $config['max_width'] = 1280;
         $config['overwrite'] = true;
 
+        // Map aanmaken als deze nog niet bestaat
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, TRUE);
         }
 
+        // Uploaden
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
@@ -103,6 +105,7 @@ class Hotels extends CI_Controller {
 
         $hotel->foto = $config['file_name'];
 
+        // Toevoegen als record nog niet bestaat, anders updaten
         $this->load->model('hotel_model');
         if ($hotel->id == 0) {
             $id = $this->hotel_model->insert($hotel);
