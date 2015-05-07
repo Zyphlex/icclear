@@ -70,7 +70,7 @@
                     data: {id: iddb},
                     success: function(result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#conf1").html(jobject.conferentie.naam);  
+                        $("#conf1").html(jobject.gebruiker.voornaam + " " + jobject.gebruiker.familienaam);  
                         var object = haaloverzicht(iddb);
                         $("#activiteiten1").html(object);
                         $("#onderdeel").html(jobject.confond.omschrijving);
@@ -235,7 +235,7 @@
                 </div>   
                 
                 <div class="modal-body">        
-                    <h3><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></3>  
+                    <h3><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></h3>  
                     
                     <div id="activiteiten1"></div>
                 </div>
