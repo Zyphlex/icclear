@@ -134,7 +134,7 @@ $attributes = array('name' => 'myform');
         <?php } ?>
         <div id="overschr"></div>
 
-        <div class="btn-group">
+        <div class="col-sm-12 btn-group">
             <a href="<?php echo base_url(); ?>icclear.php/home/" class="col-sm-3 btn btn-default">Annuleren</a>
             <?php if ($user == null) { ?>
                 <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="col-sm-6 btn btn-primary"'); ?>
