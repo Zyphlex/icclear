@@ -492,9 +492,15 @@
                     <div class="equalizer panel panel-default">
                         <div class="panel-body">
 
-                            <h1>Betalingen</h1>                    
+                            <h1>Betalingen</h1>  
         pen conferenties</h1>
-                    <?php foreach ($inschrijvingen as $i) { ?>
+    if ($inschrijvingen == null) { ?>
+                            <br>
+                                <p>Er zijn geen conferenties gevonden.</p>
+                                <br>
+                                
+                            <?php }
+                                            <?php foreach ($inschrijvingen as $i) { ?>
           <?php if ($i != null && $i->betaling != null) { ?>
                                     <div class="table-responsive">
                                         <table class="table">
