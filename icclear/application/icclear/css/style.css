@@ -77,11 +77,11 @@ a:hover {
     text-decoration: none;
 }
 
-.panel-body a {
-    border-bottom: #428BCA dotted;
+.stats a {
+    border-bottom: #428BCA dotted thin;
 }
 
-.panel-body a:hover {
+.stats a:hover {
     text-decoration: solid;
 }
 
