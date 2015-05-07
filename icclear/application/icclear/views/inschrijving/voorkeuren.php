@@ -1,3 +1,4 @@
+<div class="row">
 <h1>Voorkeuren</h1>
 <div class="col-md-12">    
     <?php
@@ -37,4 +38,4 @@
     </div>    
     <?php echo form_close(); ?>                                     
 </div>
-
+</div>
