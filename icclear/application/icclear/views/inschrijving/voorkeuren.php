@@ -17,7 +17,7 @@
                                 <th>Spreker</th>
                             </tr>
                             <?php foreach ($dagen as $d) { ?>
-                            <?php foreach ($d->planning as $planning) { ?>
+                            <?php foreach ($d->planning as $p) { ?>
                                 <tr>
                                     <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?></td>
                                     <td>
