@@ -21,7 +21,7 @@
                                 <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id)); ?></td>
                                 <td><?php echo $s->onderwerp; ?></td> 
                                 <td><?php echo $s->omschrijving; ?></td>
-                                <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign btn btn-info"></a>
+                                <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $s->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign btn btn-info"></a>
                                 <td><?php echo $s->spreker->voornaam . " " . $s->spreker->familienaam; ?></td>
                             </tr>
                             <?php } ?>
