@@ -8,8 +8,8 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($programma as $prog) {
-                foreach ($prog as $p) {
+            <?php foreach ($programma as $d) {
+                foreach ($d->programma as $p) {
                     ?>
 
                     <tr>
