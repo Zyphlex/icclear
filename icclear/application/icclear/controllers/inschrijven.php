@@ -387,7 +387,6 @@ class Inschrijven extends CI_Controller {
         $this->load->model('betaling_model');
 
         $inschrijving->id = $this->input->post('id');
-        $inschrijving->gebruikerId = $this->input->post('gebruiker');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
         $inschrijving->methodeId = $this->input->post('methode');
 
