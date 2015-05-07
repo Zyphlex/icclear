@@ -30,8 +30,7 @@ class Voorkeur extends CI_Controller {
             $sessie->gebruikerId = $gebruikerId;
             $this->sessies_model->insert($sessie);
         }
-                                                       
-        redirect('home');
+       
     }
     
 }
