@@ -77,11 +77,11 @@ a:hover {
     text-decoration: none;
 }
 
-.stats a {
+.stats {
     border-bottom: #428BCA dotted thin;
 }
 
-.stats a:hover {
+.stats :hover {
     text-decoration: solid;
 }
 
