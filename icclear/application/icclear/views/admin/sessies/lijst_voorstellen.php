@@ -12,9 +12,9 @@
                 <td><?php echo $sessie->onderwerp; ?></td>
                 <td><?php echo $sessie->spreker->familienaam . ' ' . $sessie->spreker->voornaam; ?></td>
                 <td>
-                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="btn btn-default">Details</a>
-                    <?php echo anchor('sessies/goedkeuren/' . $sessie->id, 'Goedkeuren', 'class="btn btn-success"'); ?>                                    
-                    <button class="verwijderVoorstel btn btn-danger" data-id="<?php echo $sessie->id ?>">Afkeuren</button>   
+                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $sessie->id; ?>" data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-info-sign btn btn-info">Details</a>
+                    <button class="goedVoorstel glyphicon glyphicon-ok btn btn-success" data-id="<?php echo $sessie->id ?>"></button>                                    
+                    <button class="verwijderVoorstel glyphicon glyphicon-remove  btn btn-danger" data-id="<?php echo $sessie->id ?>"></button>   
                 </td>
             </tr>
         <?php } ?>
