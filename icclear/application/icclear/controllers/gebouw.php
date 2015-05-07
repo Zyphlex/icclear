@@ -86,10 +86,12 @@ class Gebouw extends CI_Controller {
         $config['max_width'] = 1280;
         $config['overwrite'] = true;
 
+        // Map aanmaken als deze nog niet bestaat
         if (!is_dir($config['upload_path'])) { 
             mkdir($config['upload_path'], 0777, TRUE);
         }
 
+        // Uploaden
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
