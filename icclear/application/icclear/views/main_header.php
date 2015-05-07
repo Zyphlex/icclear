@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-md-4">
-
+        <div class="logonheader">
         <span class="italic logon">
             <a class="red" href="#">NL</a> 
             / 
@@ -41,6 +41,7 @@
             </div>
 
         <?php } ?>
+    </div>
     </div>
 </div>
 
