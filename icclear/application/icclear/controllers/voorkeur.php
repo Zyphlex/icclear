@@ -20,7 +20,7 @@ class Voorkeur extends CI_Controller {
         $ids = array();
         $ids = $this->input->post('sessie');
         
-        print_r($ids);
+        echo print_r($ids);
         
         $this->load->model('sessies_model');
         
