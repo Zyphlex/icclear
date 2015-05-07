@@ -136,11 +136,13 @@ a:hover {
 .logonheader {
     float:right; 
     font-size:14px;
+    font-size:14px;
     border-radius:5px;
     margin-top:10px; 
 }
 
 .logon { 
+    float:right; 
     font-size:14px;
     border-radius:5px;
     margin-top:10px; 
