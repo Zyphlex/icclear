@@ -330,7 +330,9 @@ class Inschrijven extends CI_Controller {
         $dagen = $this->planning_model->getOverzichtActieveNietPlenaire();
         $data['dagen'] = $dagen;
         
+        $programma = array();
         $programma = $dagen->programma;
+        
         
         print_r($programma);
         print_r($dagen);
