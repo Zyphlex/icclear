@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-md-4">
-        <div class="headernav">
+        <div class="headnav">
 
             <span class="logon italic talen">
                 <a class="red" href="#">NL</a> 
