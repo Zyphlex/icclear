@@ -289,6 +289,7 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    // Mail sturen zodat nieuwe ghebruikers hun account kunnen activeren
     private function sendmail($to, $generatedKey) {
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($to);
