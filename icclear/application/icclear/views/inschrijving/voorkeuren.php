@@ -30,7 +30,7 @@
             <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>
         </div>      
     </div>
-    <div class="row" style="margin-top: 15px;">
+    <div class="row">
         <div class="col-md-1"> </div>
         <div class="col-md-3">
             <input type="submit" value="Bevestigen" class="btn btn-default"/>
