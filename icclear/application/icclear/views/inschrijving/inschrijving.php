@@ -135,11 +135,11 @@ $attributes = array('name' => 'myform');
         <div id="overschr"></div>
 
         <div class="btn-group">
-            <a href="<?php echo base_url(); ?>icclear.php/dashboard/"<?php $conferentie->id ?> class="btn btn-default">Annuleren</a>
+            <a href="<?php echo base_url(); ?>icclear.php/home/" class="btn btn-default">Annuleren</a>
             <?php if ($user == null) { ?>
-                <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="col-xs-3 btn btn-primary"'); ?>
             <?php } else { ?>
-                <?php echo form_submit('mysubmit', 'Inschrijven en betalen', 'class="btn btn-primary"'); ?>
+                <?php echo form_submit('mysubmit', 'Inschrijven en betalen', 'class="col-xs-6 btn btn-primary"'); ?>
             <?php } ?>
         </div>
     </div>
