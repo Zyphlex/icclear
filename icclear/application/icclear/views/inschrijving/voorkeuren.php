@@ -83,6 +83,7 @@
                                 <table class = "table-hover table-condensed table">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th class="w15">Tijdstip</th>
                                             <th class="w65">Onderwerp</th>                                                                                                                
                                             <th class="w20">Spreker</th>
