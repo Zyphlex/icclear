@@ -20,7 +20,7 @@
                         foreach ($sessies as $s) {
                             ?>
                         <tr>
-                            <td><?php echo form_checkbox(array('name' => 'sessies', 'value' => $s->id));?></td>
+                            <td><?php echo form_checkbox(array('name' => 'sessies[]', 'value' => $s->id));?></td>
                             <td><?php echo $s->onderwerp;?></td>                                                                
                         </tr>
                         <?php
