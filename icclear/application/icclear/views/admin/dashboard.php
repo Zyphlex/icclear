@@ -78,9 +78,7 @@
         </div>
     </div>
     
-</div>
 
-<div class="row">
        <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
