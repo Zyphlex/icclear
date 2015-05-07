@@ -327,7 +327,8 @@ class Inschrijven extends CI_Controller {
 //        $data['sessies'] = $this->sessies_model->getNietPlenaireActief($conferentie->id);    
         
         $this->load->model('planning_model');
-        $data['planningen'] = $this->planning_model->getOverzichtActieveNietPlenaire();
+        $dagen = $this->planning_model->getOverzichtActieveNietPlenaire();
+        $data['planningen'] = $dagen->programma;
 
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/voorkeuren', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
