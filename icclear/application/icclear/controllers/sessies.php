@@ -100,7 +100,8 @@ class Sessies extends CI_Controller {
         $this->load->view('admin/sessies/keur_detail', $data);
     }
 
-    public function goedkeuren($sessieId) {
+    public function goedkeuren() {
+        $id = $this->input->post('id');
         $data['user'] = $this->authex->getUserInfo();
 
         $data['conferentieId'] = $this->session->userdata('conferentieId');
@@ -110,7 +111,7 @@ class Sessies extends CI_Controller {
         $this->load->model('sessies_model');
         $this->load->model('gebruiker_model');
 
-        $sessie = $this->sessies_model->get($sessieId);
+        $sessie = $this->sessies_model->get($id);
 
         // Sessie goedkeuren
         $sessie->isGoedgekeurd = 1;      
