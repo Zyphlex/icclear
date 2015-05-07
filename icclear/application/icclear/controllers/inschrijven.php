@@ -322,15 +322,14 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
         $data['conferentie'] = $conferentie;
-        
+
 //        $this->load->model('sessies_model');
 //        $data['sessies'] = $this->sessies_model->getNietPlenaireActief($conferentie->id);    
-        
-        $this->load->model('planning_model');
-        $data['dagen'] = $this->planning_model->getOverzichtActieveNietPlenaire();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/voorkeuren', 'footer' => 'main_footer');
-        $this->template->load('main_master', $partials, $data);
+        $this->load->model('planning_model');
+        $dagen = $this->planning_model->getOverzichtActieveNietPlenaire();
+        $data['dagen'] = $dagen;
+        print_r($dagen);
     }
 
     public function verwerkenInschrijving($user) {
@@ -386,13 +385,13 @@ class Inschrijven extends CI_Controller {
         $inschrijving->id = $this->input->post('id');
         $inschrijving->gebruikerId = $this->input->post('gebruiker');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
-        $inschrijving->methodeId = $this->input->post('methode');  
-        
+        $inschrijving->methodeId = $this->input->post('methode');
+
         $this->load->model('betaling_model');
         if ($inschrijving->methodeId != 4) {
             $inschrijving->betalingId = $this->betaling_model->insert($inschrijving->gebruikerId);
-        }            
-        
+        }
+
 
         $this->load->model('inschrijving_model');
         if ($inschrijving->id == 0) {
@@ -408,7 +407,7 @@ class Inschrijven extends CI_Controller {
         $id = $this->input->post('id');
         $this->load->model('inschrijving_model');
         $inschrijving = $this->inschrijving_model->get($id);
-        
+
         $this->load->model('gebruiker_activiteit_model');
         $this->gebruiker_activiteit_model->delete($inschrijving->gebruikerId);
 
@@ -421,18 +420,17 @@ class Inschrijven extends CI_Controller {
         }
     }
 
-   public function actDetail() {       
+    public function actDetail() {
         $id = $this->input->get('id');
-        
+
         $this->load->model('inschrijving_model');
         $inschrijving = $this->inschrijving_model->get($id);
-        
+
         $this->load->model('activiteit_model');
-        $data['act'] = $this->activiteit_model->getAllActGebruikerConf($inschrijving->gebruikerId,$inschrijving->conferentieId);
+        $data['act'] = $this->activiteit_model->getAllActGebruikerConf($inschrijving->gebruikerId, $inschrijving->conferentieId);
 
         $this->load->view('admin/inschrijving/details', $data);
-   }
-     
+    }
 
 }
 
