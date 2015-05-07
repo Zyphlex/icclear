@@ -5,7 +5,7 @@
         </a>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4 logon-container">
             <p>
                 <span class="inline logon italic">
                     <a class="red" href="#">NL</a> 
