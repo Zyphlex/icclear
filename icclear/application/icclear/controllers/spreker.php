@@ -119,6 +119,7 @@ class Spreker extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $conferentie = $this->conferentie_model->getActieveConferentie();
 
+        // Sessie aan database toevoegen
         $sessie = new stdClass();
         $sessie->onderwerp = $this->input->post('sessieonderwerp');
         $sessie->omschrijving = $this->input->post('sessieomschrijving');
@@ -130,6 +131,7 @@ class Spreker extends CI_Controller {
         $this->load->model('sessies_model');
         $this->sessies_model->insert($sessie);
 
+        // Bevestigingsmail sturen naar spreker
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -185,10 +187,12 @@ class Spreker extends CI_Controller {
         $config['max_width'] = 250;
         $config['overwrite'] = true;
 
+        // Map aanmaken als deze nog niet bestaat
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, TRUE);
         }
 
+        // Uploaden
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
