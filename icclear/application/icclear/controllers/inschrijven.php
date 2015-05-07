@@ -326,7 +326,7 @@ class Inschrijven extends CI_Controller {
         $this->load->model('sessies_model');
         $sessies = $this->sessies_model->getNietPlenaireActief($conferentie->id);         
 $data['sessies'] = $sessies;
-print_r($sessies);
+echo print_r($sessies);
         
     }
 
