@@ -1,17 +1,7 @@
 <?php
 
 class Logon_model extends CI_Model {
-
-    // +----------------------------------------------------------
-    // | Beershop - product_model
-    // +----------------------------------------------------------
-    // | Thomas More Kempen - 2 TI - 201x-201x
-    // +----------------------------------------------------------
-    // | Product model
-    // |
-    // +----------------------------------------------------------
-    // | K. Vangeel
-    // +----------------------------------------------------------
+    
 
     function __construct() {
         parent::__construct();
@@ -134,10 +124,10 @@ class Logon_model extends CI_Model {
     }
     
     function changePassUser($wachtwoord, $id) {  
-        //Html entities en extra spaties verwijderen en dan naar sha1 hashen
-        $pass = escape_html($wachtwoord);        
-        $user->paswoord = sha1($pass);        
-        $this->db->where('id', $id);
+        //Html entities en extra spaties verwijderen en dan naar sha1 hashen    
+        $user->paswoord = sha1($wachtwoord);        
+        $this->db->where('id', $id);        
+        $pass = escape_html($user);  
         
         $this->db->update('gebruiker', $user);
     }
