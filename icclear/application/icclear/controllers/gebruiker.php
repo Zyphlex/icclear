@@ -100,6 +100,7 @@ class Gebruiker extends CI_Controller {
     public function delete() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->activatie = 0;
+        $gebruiker->generatedKey = null;
         
         $this->load->model('gebruiker_model');
         $deleted = $this->gebruiker_model->update($gebruiker);
