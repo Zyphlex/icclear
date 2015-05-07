@@ -160,8 +160,7 @@ class Sessies_model extends CI_Model {
         
     }
     
-    function getNietPlenaireActief(){
-        $conferentieId = $this->session->userdata('conferentieId');
+    function getNietPlenaireActief($conferentieId){        
         $this->db->where('isPlenair', 0);
         $this->db->where('conferentieId', $conferentieId);
         $query = $this->db->get('sessie');
