@@ -25,8 +25,11 @@
                                         </tr>
                                     </thead>  
                                     <tbody>                        
-    <?php foreach ($d->programma as $p) { ?>                             
+                                        <?php foreach ($d->programma as $p) { ?>                             
                                             <tr class="under-link">
+                                                <td>
+                                                  <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
+                                                </td>
                                                 <td>
                                                     <p>
                                                         <span class="label label-warning">
@@ -35,7 +38,7 @@
                                                     </p>
                                                 </td> 
                                                 <td>
-                                                    <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
+                                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $p->sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon">
                                                         <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->sessie->onderwerp ?>
                                                     </a>
                                                 </td>                                    
@@ -45,11 +48,11 @@
                                                     </a>
                                                 </td>
                                             </tr> 
-    <?php } ?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>   
                             </div>
-<?php } ?>
+                        <?php } ?>
 
                     </div>
                 </div>            
@@ -61,10 +64,10 @@
             <div class="col-md-1"> </div>
             <div class="col-md-3">
                 <input type="submit" value="Bevestigen" class="btn btn-default"/>
-        <?php echo anchor('home/', 'Annuleer', 'class="btn btn-default"'); ?>
+                <?php echo anchor('home/', 'Annuleer', 'class="btn btn-default"'); ?>
             </div>
         </div>    
-<?php echo form_close(); ?>                                     
+        <?php echo form_close(); ?>                                     
     </div>
 </div>
 
