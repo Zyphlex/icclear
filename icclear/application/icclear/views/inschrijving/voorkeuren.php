@@ -6,10 +6,7 @@
     ?>             
     <div class="row">
         <div class="col-md-6">  
-            <div class="row">
-                <div class="col-md-4">                       
-                    <?php echo form_label('Plenaire sessies:', 'sessies') ?>
-                </div>
+            <div class="row">                
                 <div class="col-md-8"> 
                     <table class="table table-bordered">
                         <tr>
