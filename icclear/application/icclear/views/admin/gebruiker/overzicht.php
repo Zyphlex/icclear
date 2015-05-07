@@ -25,7 +25,7 @@
     //Klikken op de Verberg Tonen knop
     function maakVerberg() {
         $(".verbergInactive").click(function () {
-            if (!$(this).hasClass('verberg')) {
+            if ($(this).hasClass('verberg')) {
                 $(".warning").show('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
