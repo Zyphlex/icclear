@@ -498,7 +498,7 @@
         pen conferenties</h1>
     if ($inschrijvingen == null) { ?>
                             <br>
-                                <p>Er zijn geen conferenties gevonden.</p>
+                                <p>Er zijn geen betalingen gevonden.</p>
                                 
                                 
                             <?php }
