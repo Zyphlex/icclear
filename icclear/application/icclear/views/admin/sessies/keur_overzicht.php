@@ -5,7 +5,8 @@
             url: site_url + "/sessies/lijst",
             success: function (result) {
                 $("#resultaat").html(result);                
-                maakDeleteClick();                
+                maakDeleteClick();  
+                goedkeurenClick();
             }
         });
     }
@@ -23,9 +24,17 @@
         });
     }
     
+    function goedkeurenClick() {
+        $(".goedVoorstel").click(function () {
+            deleteid = $(this).data("id");
+            $("#voorstelGoedkeuren").modal('show');
+        });
+    }
+    
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php        
         maakDeleteClick();
+        goedkeurenClick()
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
@@ -47,6 +56,23 @@
                 }
             });
         });
+        
+        $(".goedVoorstel").click(function () {
+            $.ajax({
+                type: "POST",
+                url: site_url + "/sessies/goedkeuren",
+                async: false,
+                data: {id: deleteid},
+                success: function (result) {
+                    if (result == '0') {
+                        alert("Er is iets foutgelopen!");
+                    } else {
+                        refreshData();
+                    }
+                    $("#voorstelGoedkeuren").modal('hide');
+                }
+            });
+        });
 
     });
 </script>
@@ -56,7 +82,7 @@
     
     <div id="resultaat"></div>
         
-    <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>                           
+    <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
     <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-default"'); ?>                           
                 
 </div>
@@ -66,7 +92,7 @@
     <div class="modal-dialog"><div class="modal-content"></div></div>
 </div>
 
-<!-- MODAL VOOR VERWIJDEREN -->  
+<!-- MODAL VOOR AFKEUREN -->  
 <div class="modal fade" id="voorstelAfkeuren" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -89,3 +115,27 @@
         </div>            
     </div>
 </div>  
+
+<!-- MODAL VOOR GOEDKEUREN -->  
+<div class="modal fade" id="voorstelGoedkeuren" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">OPGELET!</h4>
+            </div>
+
+            <div class="modal-body">                  
+                <p>Bent u zeker dat u dit voorstel wilt goedkeuren?</p>  
+                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="goedVoorstel btn btn-primary">Bevestig</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+            </div>
+
+        </div>            
+    </div>
+</div> 
