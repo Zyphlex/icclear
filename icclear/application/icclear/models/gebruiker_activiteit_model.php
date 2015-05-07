@@ -96,7 +96,7 @@ class Gebruiker_activiteit_model extends CI_Model {
     
     function delete($id) {
         $this->db->where('gebruikerId', $id);
-        $this->db->delete('gebruiker_activiteit');
+        $this->db->delete('gebruikerActiviteit');
     }
     
 }
