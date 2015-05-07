@@ -14,12 +14,14 @@
                             <th></th>
                             <th>Sessie</th>
                             <th>Omschrijving</th>
+                            <th>Spreker</th>
                         </tr>
                         <?php foreach ($sessies as $s) { ?>
                             <tr>
                                 <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id)); ?></td>
                                 <td><?php echo $s->onderwerp; ?></td> 
-                                <td><?php echo $s->omschrijving; ?></td> 
+                                <td><?php echo $s->omschrijving; ?></td>
+                                <td><?php echo $s->spreker->voornaam . " " . $s->spreker->familienaam; ?></td>
                             </tr>
                             <?php } ?>
                     </table>
