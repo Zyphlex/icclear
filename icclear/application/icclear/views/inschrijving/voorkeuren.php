@@ -1,3 +1,67 @@
+<script type="text/javascript">
+    //Link leggen met de knoppen die gemaakt worden in lijst.php
+
+    $(document).ready(function () {
+        $(".toonItem").click(function () {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/programma/detailSessie",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#onderwerp").html(jobject.onderwerp);
+                        $("#omschrijving").html(jobject.omschrijving);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#onderwerp").val("");
+                $("#omschrijving").val("");
+            }
+            // dialoogvenster openen
+            $("#itemModal").modal('show');
+        });
+
+        $(".toonSpreker").click(function () {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/programma/detailSpreker",
+                    async: false,
+                    data: {id: iddb},
+                    success: function (result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#naam").html(jobject.voornaam + " " + jobject.familienaam);
+
+                        if (jobject.foto == "") {
+                            $("#foto").attr("src", jobject.url + "default.jpg");
+                        } else {
+                            $("#foto").attr("src", jobject.url + jobject.foto);
+                        }
+
+                        $("#biografie").html(jobject.biografie);
+                    }
+                });
+            } else {
+                // bij toevoegen gewoon vakken leeg maken
+                $("#naam").val("");
+                $("#foto").val("");
+                $("#biografie").val("");
+            }
+            // dialoogvenster openen
+            $("#sprekerModal").modal('show');
+        });
+    });
+
+
+
+</script>
 <div class="row">
     <h1>Voorkeuren</h1>
     <div class="col-md-12">    
@@ -38,7 +102,7 @@
                                                     </p>
                                                 </td> 
                                                 <td>
-                                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $p->sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="">
+                                                    <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
                                                         <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->sessie->onderwerp ?>
                                                     </a>
                                                 </td>                                    
@@ -71,7 +135,61 @@
     </div>
 </div>
 
-<!--      Modal voor details       -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog"><div class="modal-content"></div></div>
-</div>
+
+<!-- MODAL VOOR DETAILS -->         
+<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title" id="onderwerp"></h3>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm">                     
+<?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3>Omschrijving:</h3> 
+                            <p id="omschrijving"></p> 
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>            
+    </div>
+</div>  
+
+<div class="modal fade" id="sprekerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 id="naam" class="modal-title"></h3>
+            </div>
+
+            <div class="modal-body">                  
+
+                <form id="JqAjaxForm">                     
+<?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
+                    <div class="row">
+                        <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
+
+                        <div class="col-sm-8">
+                            <h3>Biografie:</h3> 
+                            <p id="biografie"></p> 
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>            
+    </div>
+</div> 
+
