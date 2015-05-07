@@ -78,7 +78,7 @@ a:hover {
 }
 
 .panel-body a {
-    text-decoration: dotted;
+    text-decoration: underline #428BCA dotted;
 }
 
 .panel-body a:hover {
@@ -99,7 +99,6 @@ a:hover {
 
 .bold { 
     font-weight:bold;
-    text-decoration: underline #428BCA dotted;
 }
 
 .modal-lg {
