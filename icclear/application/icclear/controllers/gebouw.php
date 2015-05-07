@@ -76,6 +76,33 @@ class Gebouw extends CI_Controller {
         $gebouw->gemeente = $this->input->post('gemeente');
         $gebouw->straat = $this->input->post('straat');
         $gebouw->nummer = $this->input->post('nummer');
+        
+        // foto
+        $config['upload_path'] = './application/upload/fotos/gebouwen';
+            $config['allowed_types'] = 'jpg';
+            $config['file_name'] = 'gebouw' . $gebouw->id . '.jpg';
+            $config['max_size'] = 200;
+            $config['max_height'] = 700;
+            $config['max_width'] = 1280;
+            $config['overwrite'] = true;
+
+            if (!is_dir($config['upload_path'])) {
+                mkdir($config['upload_path'], 0777, TRUE);
+            }
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+
+            $fieldname = 'userfile';
+
+            if (!$this->upload->do_upload($fieldname)) {
+                $error = array('error' => $this->upload->display_errors());
+                echo print_r($config);
+                echo print_r($error);
+                echo realpath($config['upload_path']);
+            }
+
+            $gebouw->foto = $config['file_name'];
 
         //gebouw toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('gebouw_model');
@@ -85,7 +112,7 @@ class Gebouw extends CI_Controller {
             $this->gebouw_model->update($gebouw);
         }
 
-        echo $id;
+        redirect('gebouw');
     }
 
     public function delete() {
