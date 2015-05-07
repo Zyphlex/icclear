@@ -45,6 +45,7 @@
                         $("#gemeente").val(jobject.gemeente);
                         $("#straat").val(jobject.straat);
                         $("#nummer").val(jobject.nummer);
+                        $("#land").val(jobject.landId);
                     }
                 });
             } else {
@@ -54,6 +55,7 @@
                 $("#gemeente").val("");
                 $("#straat").val("");
                 $("#nummer").val("");
+                $("#land").val("");
             }
             // dialoogvenster openen
             $("#gebouwModal").modal('show');
@@ -134,6 +136,15 @@
                 <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
                 <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
 
+                <p><?php echo form_label('Land:', 'land'); ?></p>
+                <p><?php
+                   $opties = array();
+                   foreach ($landen as $land) {
+                       $opties[$land->id] = $land->naam;
+                   } ?>
+                <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control"'); ?>
+                </p>
+                
                 <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
 

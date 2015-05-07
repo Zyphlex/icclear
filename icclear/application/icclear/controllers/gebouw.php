@@ -42,9 +42,11 @@ class Gebouw extends CI_Controller {
         $data['active'] = 'admin';
 
         $this->load->model('gebouw_model');
-
         $data['gebouwen'] = $this->gebouw_model->getAll();
-
+        
+        $this->load->model('land_model');
+        $data['landen'] = $this->land_model->getAll();
+        
         //Actieve conferentie ophalen
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -76,6 +78,7 @@ class Gebouw extends CI_Controller {
         $gebouw->gemeente = $this->input->post('gemeente');
         $gebouw->straat = $this->input->post('straat');
         $gebouw->nummer = $this->input->post('nummer');
+        $gebouw->landId = $this->input->post('land');
 
         // foto
         $config['upload_path'] = './application/upload/fotos/gebouwen';

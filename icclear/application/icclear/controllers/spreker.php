@@ -103,7 +103,8 @@ class Spreker extends CI_Controller {
 
         $data['title'] = 'IC Clear - Biografie';
         $data['active'] = 'spreker';
-
+        
+        
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
@@ -148,6 +149,19 @@ class Spreker extends CI_Controller {
 
         // Uploaden
         $this->load->library('upload', $config);
+        //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
+        $this->load->model('inschrijving_model');
+        if ($user == null) {
+            $data['inschrijving'] = null;
+        } else {
+            $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            if ($inschrijving == null) {
+                $data['inschrijving'] = null;
+            } else {
+                $data['inschrijving'] = $inschrijving;
+            }
+        }
+        
         $this->upload->initialize($config);
 
         $fieldname = 'userfile';
