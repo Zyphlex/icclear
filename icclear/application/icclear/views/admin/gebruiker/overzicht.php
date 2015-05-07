@@ -9,6 +9,7 @@
                 maakDeleteClick();
                 maakActivatieClick();
                 maakMailClick();
+                maakVerberg();
                 $('.table').DataTable({
                     "aaSorting": []
                 });                
@@ -20,7 +21,14 @@
     function refreshData() {
         haaloverzicht();
     }
-
+    
+    //Klikken op de Verberg Tonen knop
+    function maakVerberg() {
+        $(".verbergInactive").click(function () {
+            $(".warning").hide('900');
+        });
+    }
+    
     //Klikken op de Deactiveren knop
     function maakDeleteClick() {
         $(".verwijderGebruiker").click(function () {
@@ -221,6 +229,7 @@
     <h1>Gebruiker beheren</h1>      
 
 
+    <button class="verbergInactive btn btn-warning" data-id="0">N<span class="fa fa-eye"></span></button>
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
