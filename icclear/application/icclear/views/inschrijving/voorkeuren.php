@@ -10,12 +10,23 @@
                 <div class="col-md-4">                       
                     <?php echo form_label('Plenaire sessies:', 'sessies') ?>
                 </div>
-                <div class="col-md-8">   
-                    <?php
-                    foreach ($sessies as $s) {
-                        echo form_checkbox(array('name' => 'sessies', 'value' => $s->id));
-                    }
-                    ?>
+                <div class="col-md-8"> 
+                    <table class="table table-bordered">
+                        <tr>
+                            <th></th>
+                            <th>Sessie</th>
+                        </tr>
+                        <?php
+                        foreach ($sessies as $s) {
+                            ?>
+                        <tr>
+                            <td><?php echo form_checkbox(array('name' => 'sessies', 'value' => $s->id));?></td>
+                            <td><?php echo $s->naam;?></td>                                                                
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </table>
                 </div>
             </div>            
             <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>
