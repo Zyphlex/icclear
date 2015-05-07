@@ -3,7 +3,7 @@
     function haaloverzicht() {
         $.ajax({type: "GET",
             url: site_url + "/gebouw/overzicht",
-            success: function (result) {
+            success: function(result) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
@@ -21,7 +21,7 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderGebouw").click(function () {
+        $(".verwijderGebouw").click(function() {
             deleteid = $(this).data("id");
             $("#gebouwDelete").modal('show');
         });
@@ -29,7 +29,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigGebouw").click(function () {
+        $(".wijzigGebouw").click(function() {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -38,7 +38,7 @@
                     url: site_url + "/gebouw/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {
+                    success: function(result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
                         $("#postcode").val(jobject.postcode);
@@ -60,7 +60,7 @@
         });
     }
 
-    $(document).ready(function () {
+    $(document).ready(function() {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
@@ -68,13 +68,13 @@
         haaloverzicht();
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteGebouw").click(function () {
+        $(".deleteGebouw").click(function() {
             $.ajax({
                 type: "POST",
                 url: site_url + "/gebouw/delete",
                 async: false,
                 data: {id: deleteid},
-                success: function (result) {
+                success: function(result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -118,30 +118,30 @@
                 $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
                 echo form_open('gebouw/update', $attributes);
                 ?>
-                    <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Naam:', 'naam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
+                <input type="hidden" name="id" id="id" />
+                <p><?php echo form_label('Naam:', 'naam'); ?></p>
+                <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
-                    <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
-                
-                    <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
-                    <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Straat:', 'straat'); ?></td>
-                    <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
-                    <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
-                    
-                    <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
+                <p><?php echo form_label('Gemeente:', 'gemeente'); ?></td>
+                <p><?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Postcode:', 'postcode'); ?></td>
+                <p><?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Straat:', 'straat'); ?></td>
+                <p><?php echo form_input(array('name' => 'straat', 'id' => 'straat', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
+                <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
+
+                <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
                 </form>
 
             </div>
 
             <div class="modal-footer">
-                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')); ?>
+                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')) ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
             <?php echo form_close(); ?>
