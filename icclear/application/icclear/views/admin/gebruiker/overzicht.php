@@ -27,14 +27,14 @@
         $(".verbergInactive").click(function () {
             if ($(this).hasClass('verberg')) {
                 $(".warning").hide('400');
-                $("#oog").addClass('fa-eye-slash');
-                $("#oog").removeClass('fa-eye');
-                $(this).addClass('verberg');
-            } else {
-                $(".warning").show('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
                 $(this).removeClass('verberg');
+            } else {
+                $(".warning").show('400');
+                $("#oog").addClass('fa-eye-slash');
+                $("#oog").removeClass('fa-eye');
+                $(this).addClass('verberg');
             }
         });
     }
