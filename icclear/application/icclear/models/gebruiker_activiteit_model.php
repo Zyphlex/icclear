@@ -94,6 +94,11 @@ class Gebruiker_activiteit_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    function delete($id) {
+        $this->db->where('gebruikerId', $id);
+        $this->db->delete('gebruiker_activiteit');
+    }
+    
 }
 
 ?>
