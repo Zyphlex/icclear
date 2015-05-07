@@ -102,10 +102,12 @@ class Sponsorbeheer extends CI_Controller {
         $config['max_width'] = 350;
         $config['overwrite'] = true;
 
+        // Map aanmaken als deze nog niet bestaat
         if (!is_dir($config['upload_path'])) {
             mkdir($config['upload_path'], 0777, TRUE);
         }
 
+        // Uploaden
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
 
@@ -120,6 +122,7 @@ class Sponsorbeheer extends CI_Controller {
 
         $sponsor->logo = $config['file_name'];
 
+        // Toevoegen als record nog niet bestaat, anders updaten
         $this->load->model('sponsor_model');
         if ($sponsor->id == 0) {
             $id = $this->sponsor_model->insert($sponsor);
