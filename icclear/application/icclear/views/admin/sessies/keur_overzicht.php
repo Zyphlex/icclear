@@ -45,7 +45,7 @@
                 type: "POST",
                 url: site_url + "/sessies/afkeuren",
                 async: false,
-                data: {id: deletedid},
+                data: {id: deleteid},
                 success: function (result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
