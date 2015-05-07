@@ -6,43 +6,41 @@
     </div>
 
     <div class="col-md-4">
-        <div class="headnav">
 
-            <span class="logon italic talen">
-                <a class="red" href="#">NL</a> 
+        <span class="italic">
+            <a class="red" href="#">NL</a> 
+            / 
+            <a href="#">EN</a> 
+            / 
+            <a href="#">FR</a> 
+            / 
+            <a href="#">GER</a> 
+        </span>
+
+        <?php if ($user == null) { // niet aangemeld ?>  
+
+            <span class="logon">
+                <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                 / 
-                <a href="#">EN</a> 
-                / 
-                <a href="#">FR</a> 
-                / 
-                <a href="#">GER</a> 
+                <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
             </span>
 
-            <?php if ($user == null) { // niet aangemeld ?>  
+        <?php } else {  // wel aangemeld ?>
 
-                <span class="logon">
-                    <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
-                    / 
-                    <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
-                </span>
+            <div class="dropdown logon">
+                <span class="glyphicon glyphicon-user"></span>
+                <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
+                    <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
+                    <li class="divider"></li>
+                    <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
+                </ul>
+            </div>
 
-            <?php } else {  // wel aangemeld ?>
-
-                <div class="dropdown logon">
-                    <span class="glyphicon glyphicon-user"></span>
-                    <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
-                        <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        <li><a href="<?php echo base_url(); ?>icclear.php/profiel/instellingen"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  Instellingen</a></li>     
-                        <li class="divider"></li>
-                        <li class="small">  <?php echo anchor('logon/logout', 'LOGOUT'); ?></li>
-                    </ul>
-                </div>
-
-            <?php } ?>
-        </div>
+        <?php } ?>
     </div>
 </div>
 

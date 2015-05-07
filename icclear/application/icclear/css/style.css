@@ -133,24 +133,11 @@ a:hover {
     margin:0;
 }
 
-.headnav {    
+.logon { 
     float:right; 
     font-size:14px;
-    margin-top:10px; 
-}
-
-.talen a {
-    text-decoration-line:underline;
-    text-decoration-style: dotted;
-}
-
-.talen a:hover {
-    color: #b60717;
-    text-decoration-style: solid;
-}
-
-.logon { 
     border-radius:5px;
+    margin-top:10px; 
     padding:2px 15px; 
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(top, rgba(255,255,255,1) 50%, rgba(233,233,233,1) 100%);
