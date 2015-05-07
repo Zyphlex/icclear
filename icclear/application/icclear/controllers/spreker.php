@@ -63,6 +63,9 @@ class Spreker extends CI_Controller {
         $this->load->model('planning_model');
         $data['programma'] = $this->planning_model->getOverzichtActieve();
         
+        $this->load->model('gebruiker_model');
+        $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
         
