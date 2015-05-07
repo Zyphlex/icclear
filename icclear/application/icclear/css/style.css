@@ -78,7 +78,7 @@ a:hover {
 }
 
 .panel-body a {
-    text-decoration: underline #428BCA dotted !important;
+    border-bottom: #428BCA dotted;
 }
 
 .panel-body a:hover {
