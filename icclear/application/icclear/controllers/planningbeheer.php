@@ -95,6 +95,7 @@ class Planningbeheer extends CI_Controller {
         $planning->plenair = $this->input->post('plenair');
         $planning->zaalId = $this->input->post('zaal');
 
+        // Toevoegen als record nog niet bestaat, anders updaten
         $this->load->model('planning_model');
         if ($planning->id == 0) {
             $id = $this->planning_model->insert($planning);
