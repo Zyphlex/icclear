@@ -39,7 +39,6 @@
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
-                        alert(result);
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
                         $("#conferentie").val(jobject.conferentieId);
@@ -133,10 +132,8 @@
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></p>                    
                     <?php
                     $drop = array();
-                    $teller = 1;
                     foreach ($conferenties as $conferentie) {
-                        $drop[$teller] = $conferentie->naam;
-                        $teller++;
+                        $drop[$conferentie->id] = $conferentie->naam;
                     }
                     ?>
                     <p><?php echo form_dropdown('conferentie', $drop, '', 'id="conferentie" class="form-control"'); ?></p>
