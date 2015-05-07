@@ -26,7 +26,7 @@
                 <td>
                     <button data-toggle="tooltip" data-placement="bottom" title="Details bekijken" class="detailsItem glyphicon glyphicon-info-sign btn btn-info" data-id="<?php echo $i->id ?>"></button>                               
                     <button data-toggle="tooltip" data-placement="bottom" title="Wijzigen" class="wijzigItem glyphicon glyphicon-pencil btn btn-primary" data-id="<?php echo $i->id ?>"></button>
-                    <button data-toggle="tooltip" data-placement="bottom" title="Uitschrijven" class="verwijderItem glyphicon glyphicon-trash btn btn-danger" data-id="<?php echo $i->id ?>"></button>   
+                    <button data-toggle="tooltip" data-placement="bottom" title="Uitschrijven" class="verwijderItem glyphicon glyphicon-remove btn btn-danger" data-id="<?php echo $i->id ?>"></button>   
                 </td>
             </tr>
         <?php } ?>
