@@ -58,7 +58,7 @@
             });
         });
         
-        $(".goedVoorstel").click(function () {
+        $(".goedkeurVoorstel").click(function () {
             $.ajax({
                 type: "POST",
                 url: site_url + "/sessies/goedkeuren",
@@ -133,7 +133,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="goedVoorstel btn btn-primary">Bevestig</button>
+                <button type="button" class="goedkeurVoorstel btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
