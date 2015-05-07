@@ -88,6 +88,9 @@ class Admin extends CI_Controller {
         $this->load->model('sessies_model');
         $data['ongekeurdeSessies'] = $this->sessies_model->countOngekeurde($id);
         $data['gekeurdeSessies'] = $this->sessies_model->countGekeurde($id);
+        
+        $this->load->model('planning_model');
+        $data['sprekers'] = $this->planning_model->getOverzichtActieve();
 
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->countActiviteiten($id);
