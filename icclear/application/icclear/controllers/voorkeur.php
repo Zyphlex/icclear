@@ -13,7 +13,7 @@ class Voorkeur extends CI_Controller {
         }
     }
    
-    public function insert() {
+    public function doorgeven() {
         $user = $this->authex->getUserInfo();
         
         $gebruikerId = $user->id;
