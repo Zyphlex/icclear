@@ -133,8 +133,17 @@ a:hover {
     margin:0;
 }
 
+.talen a {
+    color: #fff;
+    text-decoration:underline dotted;
+}
+
+.talen a:hover {
+    color: #b60717;
+    text-decoration:underline solid;
+}
+
 .logon { 
-    float:right; 
     font-size:14px;
     border-radius:5px;
     margin-top:10px; 
