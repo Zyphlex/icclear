@@ -84,7 +84,7 @@
             <div class="panel-heading">
                 <h2 class="panel-title bold">Aantal sprekers</h2>
             </div>
-            <div class="panel-body">
+            <div class="panel-body stats">
                 <h1 class="bold"><?php echo count($sprekers); ?></h1> <span class="italic inline">met ingeplande sessie</span>
             </div>
         </div>
