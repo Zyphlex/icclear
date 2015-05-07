@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-3">
-                            <?php if ($sponsor->logo == 'hotel' . $sponsor->id . '.jpg') { ?>
+                            <?php if ($sponsor->logo == 'sponsor' . $sponsor->id . '.jpg') { ?>
                                 <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sponsors/' . $sponsor->logo; ?>" 
                                  alt="Logo <?php echo $sponsor->naam; ?>" 
                                  title="Logo <?php echo $sponsor->naam; ?>"
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-3">
-                            <?php if ($sponsor->logo == 'hotel' . $sponsor->id . '.jpg') { ?>
+                            <?php if ($sponsor->logo == 'sponsor' . $sponsor->id . '.jpg') { ?>
                                 <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sponsors/' . $sponsor->logo; ?>" 
                                  alt="Logo <?php echo $sponsor->naam; ?>" 
                                  title="Logo <?php echo $sponsor->naam; ?>"
