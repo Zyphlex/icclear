@@ -80,7 +80,8 @@ class Gebouw extends CI_Controller {
         // foto
         $config['upload_path'] = './application/upload/fotos/gebouwen';
         $config['allowed_types'] = 'jpg';
-        $config['file_name'] = 'gebouw' . $gebouw->id . '.jpg';
+        $config['file_name'] = 'default.jpg';
+        //$config['file_name'] = 'gebouw' . $gebouw->id . '.jpg';
         $config['max_size'] = 200;
         $config['max_height'] = 700;
         $config['max_width'] = 1280;
@@ -102,7 +103,7 @@ class Gebouw extends CI_Controller {
             echo realpath($config['upload_path']);
         }
 
-        $gebouw->foto = $config['file_name'];
+        //$gebouw->foto = $config['file_name'];
 
         //gebouw toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('gebouw_model');
