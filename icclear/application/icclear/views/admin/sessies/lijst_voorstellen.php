@@ -1,4 +1,4 @@
-<table class="table table-responsive">
+<table class="table table-responsive table-beheer">
     <thead>
         <tr>
             <th>Onderwerp</th>
