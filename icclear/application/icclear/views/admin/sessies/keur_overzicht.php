@@ -83,7 +83,7 @@
     <div id="resultaat"></div>
         
     <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren','class="btn btn-default"'); ?>                           
-    <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-default"'); ?>                           
+    <?php echo anchor('sessies', 'Terug naar sessies','class="btn btn-primary"'); ?>                           
                 
 </div>
 
