@@ -17,6 +17,7 @@ class Voorkeur extends CI_Controller {
         $user = $this->authex->getUserInfo();
         
         $gebruikerId = $user->id;
+        $ids = array();
         $ids = $this->input->post('sessie');         
         $this->load->model('sessies_model');
         
