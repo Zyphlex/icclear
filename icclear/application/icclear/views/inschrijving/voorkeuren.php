@@ -38,7 +38,7 @@
                                                     </p>
                                                 </td> 
                                                 <td>
-                                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $p->sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon">
+                                                    <a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $p->sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="">
                                                         <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->sessie->onderwerp ?>
                                                     </a>
                                                 </td>                                    
