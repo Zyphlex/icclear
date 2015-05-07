@@ -142,7 +142,7 @@ a:hover {
 }
 
 .talen { 
-    clear:both;
+    float:left; 
     font-size:14px;
     font-size:14px;
     border-radius:5px;
