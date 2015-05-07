@@ -169,6 +169,7 @@ class Sessies_model extends CI_Model {
         foreach ($sessies as $s){
             $s->spreker = $this->gebruiker_model->get($s->gebruikerIdSpreker);
         }
+        return $sessies;
     }
     
       function delete($id) {
