@@ -115,6 +115,30 @@ class Planning_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->delete('planning');
     }
+    
+    function getAllPlanningNietPlenair($id) {
+        $this->db->order_by('conferentiedagId, beginuur');    
+        $this->db->where('conferentiedagId', $id);
+        $query = $this->db->get('planning');
+        return $query->result();
+    }
+    
+    function getOverzichtActieveNietPlenaire() {           
+        $this->load->model('conferentie_model');
+        $confId = $this->conferentie_model->getActieveConferentie();
+        $this->db->where('conferentieId', $confId->id);
+        $query = $this->db->get('conferentiedag');
+        $dagen = $query->result();
+         
+        $this->load->model('sessies_model');        
+        foreach ($dagen as $d) {
+            $d->programma = $this->getAllPlanningNietPlenair($d->id);
+            foreach ($d->programma as $p) {                
+                $p->sessie = $this->sessies_model->get($p->sessieId);
+            }
+        }     
+        return $dagen;
+    }
 
 }
 
