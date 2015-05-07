@@ -2,8 +2,8 @@
     <table class="table table-beheer">
         <thead>
             <tr>                                
-                <th>Naam</th>
-                <th>Sessie</th>
+                <th class="w35">Naam</th>
+                <th class="w65">Sessie</th>
             </tr>
         </thead>
         <tbody>
