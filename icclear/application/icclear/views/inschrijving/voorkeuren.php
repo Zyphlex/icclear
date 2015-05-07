@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">  
             <div class="row">                
-                <div class="col-md-8"> 
+                <div class="col-md-12"> 
                     <table class="table table-striped">
                         <tr>
                             <th></th>
