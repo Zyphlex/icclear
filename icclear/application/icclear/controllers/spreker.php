@@ -42,6 +42,7 @@ class Spreker extends CI_Controller {
     //alle sprekers per conferentie ophalen samen met hun sessies
     public function sprekerConf() {
         $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Sprekers';
@@ -65,6 +66,9 @@ class Spreker extends CI_Controller {
         
         $this->load->model('gebruiker_model');
         $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
+        
+        $this->load->model('conferentie_model');
+        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
         
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
