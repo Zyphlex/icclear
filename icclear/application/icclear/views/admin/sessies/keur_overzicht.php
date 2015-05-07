@@ -35,7 +35,7 @@
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php        
         maakDeleteClick();
-        goedkeurenClick()
+        goedkeurenClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
