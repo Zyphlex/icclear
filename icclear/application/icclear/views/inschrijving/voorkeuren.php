@@ -8,7 +8,7 @@
         <div class="col-md-6">  
             <div class="row">                
                 <div class="col-md-8"> 
-                    <table class="table table-bordered">
+                    <table class="table table-striped">
                         <tr>
                             <th></th>
                             <th>Sessie</th>
