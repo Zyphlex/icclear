@@ -353,7 +353,13 @@
 
                             <h1>Ingeschreven conferenties</h1>
         pen conferenties</h1>
-                    <?php foreach ($inschrijvingen as $i) { ?>
+    if ($inschrijvingen == null) { ?>
+                                <p>Er zijn geen conferenties gevonden.</p>
+                                <?php
+                            }
+
+                            foreach ($inschrijvingen as $i) {
+                               nschrijvingen as $i) { ?>
           <?php if ($i != null && $i->conferentieId == $conferentie->id) { ?>
                                     <div class=" table-responsive">
                                         <table class="table">
@@ -409,11 +415,7 @@
                                             </tbody>
                                         </table>?>                    
                                     </div>
-           ?php } else {
-                }
-                                        ?>
-               p>Er zijn geen inschrijvigen gevonden.</p>
-                                <?php } ?>
+           ?php } ?>
                             <?php } ?>
 
                             <h1 class="space-top">Afgelopen conferenties</h1>
@@ -474,11 +476,7 @@
                                             </tbody>
                                         </table>?>                    
                                     </div>
-           ?php } else {
-                }
-                                        ?>
-               p>Er zijn geen inschrijvigen gevonden.</p>
-                                <?php } ?>
+           ?php } ?>
                             <?php } ?>
                         </div>
                     </div>
