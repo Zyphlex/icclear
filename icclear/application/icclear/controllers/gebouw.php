@@ -86,7 +86,7 @@ class Gebouw extends CI_Controller {
         $config['max_width'] = 1280;
         $config['overwrite'] = true;
 
-        if (!is_dir($config['upload_path'])) {
+        if (!is_dir($config['upload_path'])) { 
             mkdir($config['upload_path'], 0777, TRUE);
         }
 
@@ -104,7 +104,7 @@ class Gebouw extends CI_Controller {
 
         $gebouw->foto = $config['file_name'];
 
-        //gebouw toevoegen als het nog niet bestaat, anders updaten
+        // gebouw toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('gebouw_model');
         if ($gebouw->id == 0) {
             $id = $this->gebouw_model->insert($gebouw);
