@@ -136,7 +136,6 @@
 
                 <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
-                </form>
 
             </div>
 
