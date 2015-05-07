@@ -54,6 +54,20 @@ class Spreker extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
         
     }
+    
+    public function overzicht() {
+        $user = $this->authex->getUserInfo();
+        $data['conferentieId'] = $this->session->userdata('conferentieId');
+        $data['user'] = $user;
+        $data['title'] = 'IC Clear - Sprekers';
+        $data['active'] = 'admin';
+        
+        $this->load->model('planning_model');
+        $data['programma'] = $this->planning_model->getOverzichtActieve();
+        
+        $this->load->view('admin/spreker/lijst', $data);
+        
+    }
 
     public function voorstel() {
 
