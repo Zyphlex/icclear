@@ -421,7 +421,9 @@
                             <h1 class="space-top">Afgelopen conferenties</h1>
         pen conferenties</h11>
     if ($inschrijvingen == null) { ?>
+                            <br>
                                 <p>Er zijn geen conferenties gevonden.</p>
+                                <br>
                                 
                             <?php }
                                              <?php foreach ($inschrijvingen as $i) { ?>
