@@ -79,3 +79,16 @@
     </div>
     
 </div>
+
+<div class="row">
+       <div class="col-sm-3">
+        <div class="equalizer panel panel-primary text-center">
+            <div class="panel-heading">
+                <h2 class="panel-title bold">Aantal sprekers</h2>
+            </div>
+            <div class="panel-body">
+                <h1 class="bold"><?php echo count($sprekers); ?></h1> <span class="italic inline">nog te keuren</span>
+            </div>
+        </div>
+    </div>
+</div>
