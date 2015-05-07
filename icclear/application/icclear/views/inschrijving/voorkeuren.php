@@ -12,15 +12,15 @@
                     <table class="table">
                         <tr>
                             <th></th>
-                            <th>Sessie</th>
-                            <th>Omschrijving</th>
+                            <th>Tijdstip</th>
+                            <th>Sessie</th>                            
                             <th>Spreker</th>
                         </tr>
                         <?php foreach ($sessies as $s) { ?>
                             <tr>
                                 <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id)); ?></td>
-                                <td><a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $s->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon"></a><?php echo $s->onderwerp; ?></td> 
-                                <td><?php echo $s->omschrijving; ?></td>                                
+                                <td></td>
+                                <td><a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $s->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon"></a><?php echo $s->onderwerp; ?></td>                                 
                                 <td><?php echo $s->spreker->voornaam . " " . $s->spreker->familienaam; ?></td>
                             </tr>
                             <?php } ?>
