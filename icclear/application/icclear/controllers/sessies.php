@@ -112,6 +112,7 @@ class Sessies extends CI_Controller {
 
         $sessie = $this->sessies_model->get($sessieId);
 
+        // Sessie goedkeuren
         $sessie->isGoedgekeurd = 1;      
 
         $this->sessies_model->update($sessie);
@@ -119,6 +120,7 @@ class Sessies extends CI_Controller {
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $sessie->spreker->emailadres);
         $this->sendmail($sessie->spreker->emailadres, $sessie->spreker->id, $generatedKey);
 
+        // Gebruiker veranderen naar type 2 (spreker)
         $gebruiker->generatedKey = $generatedKey;
         $gebruiker->id = $sessie->spreker->id;
         $gebruiker->typeId = 2;
@@ -135,6 +137,7 @@ class Sessies extends CI_Controller {
         echo $deleted;
     }
 
+    // Mail sturen naar de spreker na het goedkeuren van een sessievoorstel
     private function sendmail($to, $id, $generatedKey) {
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($to);
