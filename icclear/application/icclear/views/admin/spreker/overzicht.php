@@ -151,7 +151,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="deleteSpreker btn btn-primary">Bevestig</button>
+                <button type="button" class="deleteSpreker² btn btn-primary">Bevestig</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 
