@@ -29,12 +29,12 @@
                 $(".warning").hide('400');
                 $("#oog").addClass('fa-eye-slash');
                 $("#oog").removeClass('fa-eye');
-                $(this).removeClass('verberg');
+                $(this).addClass('verberg');
             } else {
                 $(".warning").show('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
-                $(this).addClass('verberg');
+                $(this).removeClass('verberg');
             }
         });
     }
