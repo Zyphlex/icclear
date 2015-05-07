@@ -26,7 +26,7 @@
     
     function goedkeurenClick() {
         $(".goedVoorstel").click(function () {
-            deleteid = $(this).data("id");
+            deletedid = $(this).data("id");
             $("#voorstelGoedkeuren").modal('show');
         });
     }
@@ -45,7 +45,7 @@
                 type: "POST",
                 url: site_url + "/sessies/afkeuren",
                 async: false,
-                data: {id: deleteid},
+                data: {id: deletedid},
                 success: function (result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
@@ -62,7 +62,7 @@
                 type: "POST",
                 url: site_url + "/sessies/goedkeuren",
                 async: false,
-                data: {id: deleteid},
+                data: {id: deletedid},
                 success: function (result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
