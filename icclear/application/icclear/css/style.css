@@ -99,6 +99,7 @@ a:hover {
 
 .bold { 
     font-weight:bold;
+    text-decoration: underline #428BCA dotted;
 }
 
 .modal-lg {
