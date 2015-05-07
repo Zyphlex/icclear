@@ -56,6 +56,7 @@ class Gebruiker_model extends CI_Model {
         $confId = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId', $confId->id);
+        $this->db->where('isGoedgekeurd', 1);
         $this->db->group_by('gebruikerIdSpreker');
         $query = $this->db->get('sessie');
         $sessies = $query->result();    
