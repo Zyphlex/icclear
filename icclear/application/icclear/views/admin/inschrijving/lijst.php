@@ -3,9 +3,9 @@
     <thead>
         <tr>
             <th class="w30">Naam</th>
-            <th class="w20">Te betalen</th>
+            <th class="w25">Te betalen</th>
             <th class="w15">Datum</th>
-            <th class="w18">Betaling</th>
+            <th class="w15">Betaling</th>
             <th class="w18">Beheer</th>
         </tr>
     </thead>
