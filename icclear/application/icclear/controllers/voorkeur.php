@@ -21,6 +21,7 @@ class Voorkeur extends CI_Controller {
         $this->load->model('sessies_model');
         
         foreach ($ids as $i){
+            $sessie  = new stdClass();
             $sessie->sessieId = $i;
             $sessie->gebruikerId = $gebruikerId;
             $this->sessies_model->insert($sessie);
