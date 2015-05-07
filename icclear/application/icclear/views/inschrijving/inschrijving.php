@@ -14,6 +14,7 @@ $(document).ready(function() {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('');
         } else {
             $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").prop('required',true);
+            $("input[id='aantalPersonen'][name='" + $(this).attr('value') + "']").val('1');
         }
     });
 });
@@ -109,7 +110,7 @@ $attributes = array('name' => 'myform');
                                 <span class="input-group-addon">
                                     <?php echo form_input(array('class' => 'aanwezig checkact', 'type' => 'checkbox', 'name' => 'aanwezig[]', 'id' => 'aanwezig', 'value' => $activiteit->id)); ?>
                                 </span>
-                                <?php echo form_input(array('type' => 'number', 'class' => 'aantalPersonen form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10')) ?>
+                                <?php echo form_input(array('type' => 'number', 'class' => 'aantalPersonen form-control', 'name' => $activiteit->id, 'id' => 'aantalPersonen', 'placeholder' => 'Aantal personen', 'max' => '10','min'=>'0')) ?>
                             </div>                    
                         </td>
                     </tr>
@@ -134,7 +135,7 @@ $attributes = array('name' => 'myform');
         <div id="overschr"></div>
 
         <div class="btn-group">
-            <a href="<?php echo base_url(); ?>icclear.php/home" class="btn btn-default">Annuleren</a>
+            <a href="<?php echo base_url(); ?>icclear.php/dashboard/"<?php $conferentie->id ?> class="btn btn-default">Annuleren</a>
             <?php if ($user == null) { ?>
                 <?php echo form_submit('mysubmit', 'Aanmelden en betalen', 'class="btn btn-primary"'); ?>
             <?php } else { ?>
