@@ -397,7 +397,7 @@ class Inschrijven extends CI_Controller {
         $inschrijving->methodeId = $this->input->post('methode');
 
         $nieuw = $inschrijving->methodeId;
-        $oud = $this->inschijving_model->get($inschijving->id);
+        $oud = $this->inschrijving_model->get($inschrijving->id);
 
         if ($nieuw != 4) {
             if ($oud->methodeId == 4) {
