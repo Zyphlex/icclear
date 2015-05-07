@@ -129,7 +129,7 @@
 
             <div class="modal-body">                  
                 <p>Bent u zeker dat u dit voorstel wilt goedkeuren?</p>  
-                <p class="italic">Dit kan niet ongedaan gemaakt worden!</p>                  
+                <p class="italic">U kan deze later verwijderen!</p>                  
             </div>
 
             <div class="modal-footer">
