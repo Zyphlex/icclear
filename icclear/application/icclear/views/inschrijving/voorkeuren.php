@@ -15,9 +15,8 @@
                                 <th>Tijdstip</th>
                                 <th>Sessie</th>                            
                                 <th>Spreker</th>
-                            </tr>
-                            <?php foreach ($dagen as $d) { ?>
-                            <?php foreach ($d->planning as $p) { ?>
+                            </tr>                            
+                            <?php foreach ($dagen->planning as $p) { ?>
                                 <tr>
                                     <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?></td>
                                     <td>
@@ -28,7 +27,7 @@
                                     <td><a href="<?php echo base_url(); ?>icclear.php/sessies/toonDetails/<?php echo $p->sessie->id; ?>" data-toggle="modal" data-target="#myModal" title="Details" class="glyphicon glyphicon-info-sign link-icon"></a><?php echo $s->onderwerp; ?></td>                                 
                                     <td><?php echo $p->sessie->spreker->voornaam . " " . $p->sessie->spreker->familienaam; ?></td>
                                 </tr>
-                            <?php } } ?>
+                            <?php }  ?>
                                 
                         </table>
                     </div>
