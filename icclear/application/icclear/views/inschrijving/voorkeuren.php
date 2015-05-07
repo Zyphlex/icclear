@@ -2,7 +2,7 @@
 <div class="col-md-10">    
     <?php
     $attributes = array('name' => 'myform', 'id' => 'myform');
-    echo form_open('voorkeur/updat', $attributes);
+    echo form_open('voorkeur/doorgeven', $attributes);
     ?>             
     <div class="row">
         <div class="col-md-6">  
