@@ -13,7 +13,7 @@
                 <div class="col-md-8">   
                     <?php
                     foreach ($sessies as $s) {
-                        echo form_radio(array('type' => 'radio', 'name' => 'sessies', 'value' => $s->id));
+                        echo form_radio(array('type' => 'checkbox', 'name' => 'sessies', 'value' => $s->id));
                     }
                     ?>
                 </div>
