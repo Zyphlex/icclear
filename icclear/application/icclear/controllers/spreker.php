@@ -217,6 +217,9 @@ class Spreker extends CI_Controller {
 
         echo json_encode($spreker);
     }
+    
+     public function detailMetSpreker() {
+    }
 
     //Men wilt voorstel versturen zonder aangemeld te zijn
     public function aanmeldenEnVerzenden() {
