@@ -19,9 +19,7 @@ class Voorkeur extends CI_Controller {
         $gebruikerId = $user->id;
         $ids = array();
         $ids = $this->input->post('gekozensessies');
-        
-        echo print_r($ids);
-        
+                        
         $this->load->model('voorkeur_model');
         
         foreach ($ids as $i){
@@ -30,6 +28,8 @@ class Voorkeur extends CI_Controller {
             $voorkeur->gebruikerId = $gebruikerId;
             $this->voorkeur_model->insert($voorkeur);
         }
+        
+        redirect('home');
        
     }
     
