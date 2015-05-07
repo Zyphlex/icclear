@@ -67,20 +67,6 @@
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
-        //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanGebouw").click(function () {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/gebouw/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#gebouwModal").modal('hide');
-        });
-
         //Klikken op "BEVESTIG" in de Delete modal
         $(".deleteGebouw").click(function () {
             $.ajax({
