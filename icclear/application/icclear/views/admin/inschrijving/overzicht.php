@@ -7,7 +7,7 @@
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
-                maakDetailClick();
+                maakInfoClick();
                 $('.table').DataTable({
                     "aaSorting": []
                 });
@@ -58,7 +58,7 @@
     }
 
     //Klikken op de Details knop
-    function maakDetailClick() {
+    function maakInfoClick() {
         $(".detailsItem").click(function() {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
@@ -87,7 +87,7 @@
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
-        maakDetailClick();
+        maakInfoClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
