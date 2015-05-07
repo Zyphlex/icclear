@@ -8,7 +8,7 @@
     <div class="col-md-4">
         <div class="right">
 
-            <span class="italic talen">
+            <span class="logon italic talen">
                 <a class="red" href="#">NL</a> 
                 / 
                 <a href="#">EN</a> 
