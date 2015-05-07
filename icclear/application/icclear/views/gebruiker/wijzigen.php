@@ -354,7 +354,9 @@
                             <h1>Ingeschreven conferenties</h1>
         pen conferenties</h1>
     if ($inschrijvingen == null) { ?>
+                            <br>
                                 <p>Er zijn geen conferenties gevonden.</p>
+                                <br>
                                 <?php
                             }
 
@@ -497,7 +499,7 @@
     if ($inschrijvingen == null) { ?>
                             <br>
                                 <p>Er zijn geen conferenties gevonden.</p>
-                                <br>
+                                
                                 
                             <?php }
                                             <?php foreach ($inschrijvingen as $i) { ?>
