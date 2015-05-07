@@ -1,11 +1,11 @@
 <h1>Voorkeuren</h1>
-<div class="col-md-10">    
+<div class="col-md-12">    
     <?php
     $attributes = array('name' => 'myform', 'id' => 'myform');
     echo form_open('voorkeur/doorgeven', $attributes);
     ?>             
     <div class="row">
-        <div class="col-md-6">  
+        <div class="col-md-12">  
             <div class="row">                
                 <div class="col-md-12"> 
                     <table class="table">
@@ -14,17 +14,13 @@
                             <th>Sessie</th>
                             <th>Omschrijving</th>
                         </tr>
-                        <?php
-                        foreach ($sessies as $s) {
-                            ?>
-                        <tr>
-                            <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id));?></td>
-                            <td><?php echo $s->onderwerp;?></td> 
-                            <td><?php echo $s->omschrijving;?></td> 
-                        </tr>
-                        <?php
-                            }
-                        ?>
+                        <?php foreach ($sessies as $s) { ?>
+                            <tr>
+                                <td><?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $s->id)); ?></td>
+                                <td><?php echo $s->onderwerp; ?></td> 
+                                <td><?php echo $s->omschrijving; ?></td> 
+                            </tr>
+                            <?php } ?>
                     </table>
                 </div>
             </div>            
