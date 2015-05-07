@@ -320,10 +320,11 @@ class Inschrijven extends CI_Controller {
         $data['title'] = 'IC Clear - Sessie voorkeuren';
         $data['active'] = 'inschrijven';
         $this->load->model('conferentie_model');
-        $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
+        $conferentie = $this->conferentie_model->getActieveConferentie();
+        $data['conferentie'] = $conferentie;
+        
         $this->load->model('sessies_model');
-        $sessies = $this->sessies_model->getNietPlenaireActief();
+        $sessies = $this->sessies_model->getNietPlenaireActief($conferentie->id);
         
         print_r($sessies);
 
