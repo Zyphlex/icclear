@@ -18,7 +18,7 @@ class Spreker extends CI_Controller {
         $data['active'] = 'spreker';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -34,9 +34,23 @@ class Spreker extends CI_Controller {
 
         $this->load->model('gebruiker_model');
         $data['sprekers'] = $this->gebruiker_model->getSprekersActieve();
-        
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/overzicht', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
+    }
+
+    public function sprekerConf() {
+        $user = $this->authex->getUserInfo();
+        $data['user'] = $user;
+        $data['title'] = 'IC Clear - Sprekers';
+        $data['active'] = 'admin';
+        
+        $this->load->model('planning_model');
+        $data['programma'] = $this->planning_model->getOverzichtActieve();
+        
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'admin/spreker/overzicht', 'footer' => 'main_footer');
+        $this->template->load('main_master', $partials, $data);
+        
     }
 
     public function voorstel() {
@@ -44,7 +58,7 @@ class Spreker extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -82,15 +96,15 @@ class Spreker extends CI_Controller {
         $sessie->conferentieId = $conferentie->id;
 
         $this->load->model('sessies_model');
-        $this->sessies_model->insert($sessie);   
-        
+        $this->sessies_model->insert($sessie);
+
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
         $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam .
-                    "\n" .
-                    'Met deze mail bevestigen wij uw voorstel van voor de conferentie  ' . $conferentie->naam . '.' .
-                    'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.');
+                "\n" .
+                'Met deze mail bevestigen wij uw voorstel van voor de conferentie  ' . $conferentie->naam . '.' .
+                'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.');
         $this->email->send();
 
         redirect('spreker');
@@ -162,7 +176,7 @@ class Spreker extends CI_Controller {
 
         redirect('profiel/instellingen');
     }
-    
+
     public function detail() {
         $id = $this->input->get('id');
 
@@ -172,17 +186,16 @@ class Spreker extends CI_Controller {
         echo json_encode($spreker);
     }
 
-    
     //Men wilt voorstel versturen zonder aangemeld te zijn
-    public function aanmeldenEnVerzenden() {  
+    public function aanmeldenEnVerzenden() {
         //Algemene informatie nodig voor de pagina
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['title'] = 'IC Clear - Inschrijven';
-        $data['active'] = 'inschrijven';        
+        $data['active'] = 'inschrijven';
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -195,22 +208,21 @@ class Spreker extends CI_Controller {
                 $data['inschrijving'] = $inschrijving;
             }
         }
-        
+
         $this->load->model('conferentie_model');
         $conf = $this->conferentie_model->getActieveConferentie();
-        
+
         $voorstel->sconferentieId = $conf->id;
         $voorstel->sonderwerp = $this->input->post('sessieonderwerp');
         $voorstel->sdatumIngediend = date("Y-m-d");
         $voorstel->somschrijving = $this->input->post('sessieomschrijving');
-        
-        $this->session->set_userdata($voorstel);         
-        
+
+        $this->session->set_userdata($voorstel);
+
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/aanmelden', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
-    
-    
+
     //Na inschrijving invullen, kiest men om in te loggen
     //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     public function aanmelden() {
@@ -220,14 +232,14 @@ class Spreker extends CI_Controller {
         //is geactiveerd
         $this->load->model('logon_model');
         $actCheck = $this->logon_model->isGeactiveerd($email);
-        if ($this->authex->login($email, sha1($password))) {            
-            
-            $user = $this->authex->getUserInfo();            
+        if ($this->authex->login($email, sha1($password))) {
+
+            $user = $this->authex->getUserInfo();
             $this->load->model('conferentie_model');
             $conferentie = $this->conferentie_model->getActieveConferentie();
-        
+
             //Verwerken van het inschrijven
-            $this->verwerkenVoorstel($user);            
+            $this->verwerkenVoorstel($user);
             $this->email->from('donotreply@thomasmore.be');
             $this->email->to($user->email);
             $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -236,7 +248,7 @@ class Spreker extends CI_Controller {
                     'Met deze mail bevestigen wij uw voorstel van voor de conferentie  ' . $conferentie->naam . '.' .
                     'U ontvangt een bericht zodra uw voorstel is goedgekeurd of afgekeurd.');
             $this->email->send();
-        
+
             redirect('home');
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
@@ -244,7 +256,7 @@ class Spreker extends CI_Controller {
             redirect('logon/fout');
         }
     }
-    
+
     //Na inschrijving invullen, kiest men om te registreren
     //Nadat men met success registreert, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     //Gebruiker krijgt geen activatie mail
@@ -260,12 +272,12 @@ class Spreker extends CI_Controller {
         $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
         $user->generatedKey = $genkey;
 
-        $user->id = $this->authex->register($user);        
+        $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-        
+
         //Verwerken van het inschrijven
-        $this->verwerkenVoorstel($user);     
+        $this->verwerkenVoorstel($user);
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -279,7 +291,7 @@ class Spreker extends CI_Controller {
 
         redirect('home');
     }
-    
+
     public function verwerkenVoorstel($user) {
         //Voorstel gegevens uit session halen            
         $voorstel->gebruikerIdSpreker = $user->id;
@@ -288,11 +300,11 @@ class Spreker extends CI_Controller {
         $voorstel->datumIngediend = $this->session->userdata('sdatumIngediend');
         $voorstel->omschrijving = $this->session->userdata('somschrijving');
         $voorstel->isGoedgekeurd = '0';
-        
+
         $this->load->model('sessies_model');
-        $this->sessies_model->insert($voorstel);        
+        $this->sessies_model->insert($voorstel);
     }
-    
+
 }
 
 ?>
