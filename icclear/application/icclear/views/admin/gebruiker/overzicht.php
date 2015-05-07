@@ -239,7 +239,7 @@
     <h1>Gebruiker beheren</h1>      
 
 
-    <button class="verberg verbergInactive btn btn-warning" data-id="0"><span id="oog" class="fa fa-eye-slash"></span></button>
+    <button class="verberg verbergInactive btn btn-warning" data-id="0"><span id="oog" class="white bold fa fa-eye-slash"></span></button>
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
