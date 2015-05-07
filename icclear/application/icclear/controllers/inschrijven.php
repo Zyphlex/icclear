@@ -405,6 +405,9 @@ class Inschrijven extends CI_Controller {
         $id = $this->input->post('id');
         $this->load->model('inschrijving_model');
         $inschrijving = $this->inschrijving_model->get($id);
+        
+        $this->load->model('gebruiker_activiteit_model');
+        $this->gebruiker_activiteit_model->delete($inschrijving->gebruikerId);
 
         $this->inschrijving_model->delete($id);
 
