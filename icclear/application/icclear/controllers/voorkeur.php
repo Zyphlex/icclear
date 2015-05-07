@@ -21,7 +21,9 @@ class Voorkeur extends CI_Controller {
         $this->load->model('sessies_model');
         
         foreach ($ids as $i){
-            $this->sessies_model->insert($gebruikerId, $i);
+            $sessie->sessieId = $i;
+            $sessie->gebruikerId = $gebruikerId;
+            $this->sessies_model->insert($sessie);
         }
                                                        
         redirect('home');
