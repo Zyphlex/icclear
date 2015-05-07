@@ -159,7 +159,7 @@
             </div>
 
             <div class="modal-footer">
-<?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')) ?>
+<?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')); ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
 <?php echo form_close(); ?>
