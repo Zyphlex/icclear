@@ -419,8 +419,12 @@
                             <?php } ?>
 
                             <h1 class="space-top">Afgelopen conferenties</h1>
-        pen conferenties</h1>
-                    <?php foreach ($inschrijvingen as $i) { ?>
+        pen conferenties</h11>
+    if ($inschrijvingen == null) { ?>
+                                <p>Er zijn geen conferenties gevonden.</p>
+                                
+                            }
+                                            <?php foreach ($inschrijvingen as $i) { ?>
           <?php if ($i != null && $i->conferentieId != $conferentie->id) { ?>
                                     <div class=" table-responsive">
                                         <table class="table">
