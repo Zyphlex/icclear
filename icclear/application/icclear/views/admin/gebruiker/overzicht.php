@@ -25,7 +25,17 @@
     //Klikken op de Verberg Tonen knop
     function maakVerberg() {
         $(".verbergInactive").click(function () {
-            $(".warning").hide('900');
+            if (!$(this).hasClass('verberg')) {
+                $(".warning").show('400');
+                $("#oog").removeClass('fa-eye-slash');
+                $("#oog").addClass('fa-eye');
+                $(this).removeClass('verberg');
+            } else {
+                $(".warning").hide('400');
+                $("#oog").addClass('fa-eye-slash');
+                $("#oog").removeClass('fa-eye');
+                $(this).addClass('verberg');
+            }
         });
     }
     
@@ -229,7 +239,7 @@
     <h1>Gebruiker beheren</h1>      
 
 
-    <button class="verbergInactive btn btn-warning" data-id="0">N<span class="fa fa-eye"></span></button>
+    <button class="verberg verbergInactive btn btn-warning" data-id="0"><span id="oog" class="fa fa-eye-slash"></span></button>
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
