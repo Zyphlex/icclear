@@ -38,7 +38,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").html(jobject.voornaam + " " + jobject.familienaam);
-                        
+
                         if (jobject.foto == "") {
                             $("#foto").attr("src", jobject.url + "default.jpg");
                         } else {
@@ -75,7 +75,7 @@
             Sed nec tincidunt tortor, ac fermentum sem. 
             Aliquam dignissim, tellus id tincidunt facilisis, massa lectus tincidunt lacus, in pellentesque nulla magna vel neque.
         </p>       
-        </div>
+    </div>
 </div>
 
 
@@ -83,8 +83,10 @@
     <div class='col-md-12'>
         <h2 class="underline-full">Sessies</h2>        
 
-        <?php $teller = 0; foreach ($programma as $d) { $teller++; ?>
-        <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
+        <?php $teller = 0;
+        foreach ($programma as $d) {
+            $teller++; ?>
+            <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
             <div class="table-responsive space-bottom">
                 <table class = "table-hover table-condensed table">
                     <thead>
@@ -95,7 +97,7 @@
                         </tr>
                     </thead>  
                     <tbody>                        
-                        <?php foreach ($d->programma as $p) { ?>                             
+    <?php foreach ($d->programma as $p) { ?>                             
                             <tr class="under-link">
                                 <td>
                                     <p>
@@ -115,19 +117,19 @@
                                     </a>
                                 </td>
                             </tr> 
-                        <?php } ?>
+    <?php } ?>
                     </tbody>
                 </table>   
             </div>
-        <?php } ?>
-        
+<?php } ?>
+
     </div>
 </div>
 
 <div class='row space-bottom'>
     <div class='col-md-12'>
         <h2 class="underline-full">Activiteiten</h2>        
-        
+
         <div class="table-responsive">
             <table class = "table-condensed table">
                 <thead>
@@ -138,23 +140,23 @@
                     </tr>
                 </thead>  
                 <tbody>            
-                    <?php foreach ($activiteiten as $activiteit) { ?>
+<?php foreach ($activiteiten as $activiteit) { ?>
                         <tr>
                             <td><?php echo $activiteit->naam ?></td>
                             <td><?php echo $activiteit->omschrijving ?></td>
                             <td>&euro; <?php echo toKomma($activiteit->prijs) ?></td>
                         </tr>
-                    <?php } ?>
+<?php } ?>
                 </tbody>
             </table> 
         </div>    
-        
+
     </div>
 </div>
 
 
 <div class='row space-top'>
-    <?php echo anchor('','Inschrijven voor "' . $conferentie->naam .'"', 'class="col-sm-6 col-sm-offset-3 btn btn-large btn-primary"') ?>
+<?php echo anchor('', 'Inschrijven voor "' . $conferentie->naam . '"', 'class="col-sm-6 col-sm-offset-3 btn btn-large btn-primary"') ?>
 </div>
 
 
@@ -171,7 +173,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
-                    <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
+<?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <div class="row">
                         <div class="col-sm-12">
                             <h3>Omschrijving:</h3> 
@@ -198,7 +200,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">                     
-                    <?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
+<?php echo form_input(array('name' => 'id', 'type' => 'hidden', 'id' => 'id')); ?>
                     <div class="row">
                         <div class="col-sm-4"><img width="100%" height="auto" id="foto" src=""></div>
 
