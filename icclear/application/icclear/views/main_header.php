@@ -31,7 +31,7 @@
 
     <?php } else {  // wel aangemeld ?>
 
-            <div class="dropdown logon">
+            <div class="dropdown inline logon">
                 <span class="glyphicon glyphicon-user"></span>
                 <a href="#" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">                    
                     <span class="login-user"><?php echo strtoupper($user->voornaam) . " " . strtoupper($user->familienaam); ?></span>
