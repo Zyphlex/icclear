@@ -7,7 +7,7 @@
 
     <div class="col-md-4">
         <div class="logonheader">
-        <span class="italic logon space-right15">
+        <span class="italic talen space-right15">
             <a class="red" href="#">NL</a> 
             / 
             <a href="#">EN</a> 
