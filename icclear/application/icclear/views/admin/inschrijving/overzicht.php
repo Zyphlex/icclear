@@ -79,7 +79,7 @@
                 });
             }
             // dialoogvenster openen
-            $("#modalItemDetail").modal('show');
+            $("#modalItemInfo").modal('show');
         });
     }
 
@@ -223,7 +223,7 @@
 </div>  
 
 <!-- MODAL VOOR DETAILS -->         
-<div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalItemInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             
