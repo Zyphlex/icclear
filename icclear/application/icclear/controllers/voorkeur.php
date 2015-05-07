@@ -22,13 +22,13 @@ class Voorkeur extends CI_Controller {
         
         echo print_r($ids);
         
-        $this->load->model('sessies_model');
+        $this->load->model('voorkeur_model');
         
         foreach ($ids as $i){
-            $sessie  = new stdClass();
-            $sessie->sessieId = $i;
-            $sessie->gebruikerId = $gebruikerId;
-            $this->sessies_model->insert($sessie);
+            $voorkeur  = new stdClass();
+            $voorkeur->sessieId = $i;
+            $voorkeur->gebruikerId = $gebruikerId;
+            $this->voorkeur_model->insert($voorkeur);
         }
        
     }
