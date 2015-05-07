@@ -235,7 +235,7 @@
                 </div>   
                 
                 <div class="modal-body">        
-                    <p><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></p>  
+                    <h3><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></3>  
                     
                     <div id="activiteiten1"></div>
                 </div>

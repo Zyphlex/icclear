@@ -138,7 +138,7 @@ class Profiel extends CI_Controller {
         $this->load->model('activiteit_model');
         $data['act'] = $this->activiteit_model->getAllActGebruikerConf($inschrijving->gebruikerId,$inschrijving->conferentieId);
 
-        $this->load->view('gebruiker/lijst', $data);
+        $this->load->view('gebruiker/details', $data);
     }
     
     public function wijzigWachtwoord() {        
