@@ -24,7 +24,7 @@ class Sponsorbeheer extends CI_Controller {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = null;
-        
+
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -95,31 +95,31 @@ class Sponsorbeheer extends CI_Controller {
 
         // foto
         $config['upload_path'] = './application/upload/fotos/sponsors';
-            $config['allowed_types'] = 'jpg';
-            $config['file_name'] = 'sponsor' . $sponsor->id . '.jpg';
-            $config['max_size'] = 200;
-            $config['max_height'] = 350;
-            $config['max_width'] = 350;
-            $config['overwrite'] = true;
+        $config['allowed_types'] = 'jpg';
+        $config['file_name'] = 'sponsor' . $sponsor->id . '.jpg';
+        $config['max_size'] = 200;
+        $config['max_height'] = 350;
+        $config['max_width'] = 350;
+        $config['overwrite'] = true;
 
-            if (!is_dir($config['upload_path'])) {
-                mkdir($config['upload_path'], 0777, TRUE);
-            }
+        if (!is_dir($config['upload_path'])) {
+            mkdir($config['upload_path'], 0777, TRUE);
+        }
 
-            $this->load->library('upload', $config);
-            $this->upload->initialize($config);
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
 
-            $fieldname = 'userfile';
+        $fieldname = 'userfile';
 
-            if (!$this->upload->do_upload($fieldname)) {
-                $error = array('error' => $this->upload->display_errors());
-                echo print_r($config);
-                echo print_r($error);
-                echo realpath($config['upload_path']);
-            }
+        if (!$this->upload->do_upload($fieldname)) {
+            $error = array('error' => $this->upload->display_errors());
+            echo print_r($config);
+            echo print_r($error);
+            echo realpath($config['upload_path']);
+        }
 
-            $sponsor->logo = $config['file_name'];
-        
+        $sponsor->logo = $config['file_name'];
+
         $this->load->model('sponsor_model');
         if ($sponsor->id == 0) {
             $id = $this->sponsor_model->insert($sponsor);
@@ -131,6 +131,3 @@ class Sponsorbeheer extends CI_Controller {
     }
 
 }
-
- 
- 
