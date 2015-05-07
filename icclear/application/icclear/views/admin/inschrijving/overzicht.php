@@ -7,6 +7,7 @@
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
+                maakDetailClick();
                 $('.table').DataTable({
                     "aaSorting": []
                 });
@@ -56,10 +57,37 @@
         });
     }
 
+    //Klikken op de Details knop
+    function maakDetailClick() {
+        $(".detailsItem").click(function() {
+            var iddb = $(this).data("id");
+            $("#id").val(iddb);
+            if (iddb != 0) {
+                // gegevens ophalen via ajax (doorgeven van server met json)
+                $.ajax({type: "GET",
+                    url: site_url + "/profiel/detail",
+                    async: false,
+                    data: {id: iddb},
+                    success: function(result) {
+                        var jobject = jQuery.parseJSON(result);
+                        $("#conf1").html(jobject.conferentie.naam);  
+                        var object = haaloverzicht(iddb);
+                        $("#activiteiten1").html(object);
+                        $("#onderdeel").html(jobject.confond.omschrijving);
+                        $("#prijs").html(jobject.confond.prijs);
+                    }
+                });
+            }
+            // dialoogvenster openen
+            $("#modalItemDetail").modal('show');
+        });
+    }
+
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
+        maakDetailClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
 
@@ -191,5 +219,35 @@
             </div>
 
         </div>            
+    </div>
+</div>  
+
+<!-- MODAL VOOR DETAILS -->         
+<div class="modal fade" id="modalItemDetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+            <div class="row">
+                
+                <div class="text-center underline">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Details voor <span id="conf1"></span></h3>
+                </div>   
+                
+                <div class="modal-body">        
+                    <p><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></p>  
+                    
+                    <div id="activiteiten1"></div>
+                </div>
+
+                <div class="col-xs-12 margin-top space-bottom15">
+                    <div class="btn-group btn-block">
+                        <button type="button" class="col-xs-12 btn btn-primary" data-dismiss="modal">Sluiten</button>   
+                    </div>
+                </div>
+                
+            </div>       
+            
+        </div>               
     </div>
 </div>  
