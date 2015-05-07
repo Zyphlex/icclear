@@ -164,7 +164,11 @@ class Sessies_model extends CI_Model {
         $this->db->where('isPlenair', 0);
         $this->db->where('conferentieId', $conferentieId);
         $query = $this->db->get('sessie');
-        return $query->result();
+        $sessies = $query->result();
+        $this->load->model('gebruiker_model');        
+        foreach ($sessies as $s){
+            $s->spreker = $this->gebruiker_model->get($s->gebruikerIdSpreker);
+        }
     }
     
       function delete($id) {
