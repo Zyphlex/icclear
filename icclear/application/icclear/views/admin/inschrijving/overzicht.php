@@ -145,8 +145,7 @@
 
     <div id="resultaat"></div>
 
-    <?php echo anchor('admin/dashboard' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
-    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe inschrijving toevoegen</button>
+    <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
 
 </div>
 
