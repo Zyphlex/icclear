@@ -128,7 +128,10 @@
 
             <div class="modal-body">                  
 
-                <form id="JqAjaxForm">
+                <?php
+                $attributes = array('id' => 'JqAjaxForm', 'name' => 'JqAjaxForm', 'enctype' => 'multipart/form-data');
+                echo form_open('gebouw/update', $attributes);
+                ?>
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Naam:', 'naam'); ?></p>
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
@@ -144,14 +147,18 @@
                     
                     <p><?php echo form_label('Nummer:', 'nummer'); ?></td>
                     <p><?php echo form_input(array('name' => 'nummer', 'id' => 'nummer', 'class' => 'form-control')); ?></p>
+                    
+                    <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
+                <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
                 </form>
 
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="opslaanGebouw btn btn-primary">Opslaan</button>
+                <?php echo form_submit(array('name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-primary', 'value' => 'Opslaan')); ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
             </div>
+            <?php echo form_close(); ?>
 
         </div>            
     </div>
