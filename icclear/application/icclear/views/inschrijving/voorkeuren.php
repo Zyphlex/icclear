@@ -4,7 +4,8 @@
     $attributes = array('name' => 'myform', 'id' => 'myform');
     echo form_open('voorkeur/doorgeven', $attributes);
     ?>             
-    <div class="row">          
+    <div class="row">
+        <div class="col-md-6">  
             <div class="row">                
                 <div class="col-md-12"> 
                     <table class="table">
@@ -28,7 +29,8 @@
                 </div>
             </div>            
             <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>
-            <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>          
+            <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>
+        </div>      
     </div>
     <div class="row">
         <div class="col-md-1"> </div>
