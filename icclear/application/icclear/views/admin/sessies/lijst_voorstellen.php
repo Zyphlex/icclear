@@ -24,7 +24,7 @@
                     <button title="Afkeuren" class="verwijderVoorstel glyphicon glyphicon-remove  btn btn-danger" data-id="<?php echo $sessie->id ?>"></button>   
                 </td>
             </tr>
-        <?php
+            <?php
         }
     }
     ?>
