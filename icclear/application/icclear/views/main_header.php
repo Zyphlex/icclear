@@ -5,10 +5,9 @@
         </a>
     </div>
 
-    <div class="col-xs-4">
-        <div class="">
-            
-        <div class="logon italic">
+    <div class="col-md-4">
+            <p>
+                <span class="logon italic">
             <a class="red" href="#">NL</a> 
             / 
             <a href="#">EN</a> 
@@ -16,16 +15,19 @@
             <a href="#">FR</a> 
             / 
             <a href="#">GER</a> 
-        </div>
+                </span>
+            </p>
             
 
         <?php if ($user == null) { // niet aangemeld ?>  
 
+            <p>
             <span class="logon">
                 <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                 / 
                 <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
             </span>
+            </p>
 
         <?php } else {  // wel aangemeld ?>
 
