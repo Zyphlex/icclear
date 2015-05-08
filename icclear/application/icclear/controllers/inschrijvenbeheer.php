@@ -120,6 +120,7 @@ class Inschrijvenbeheer extends CI_Controller {
             $activiteiten = $this->activiteit_model->getAllActGebruikerConf($oud->gebruikerId, $confId);
             
             foreach ($activiteiten as $act) {
+                $activiteit->id = $act->id;
                 $activiteit->betalingId = null;
                 $this->gebruiker_activiteit_model->update($activiteit);
             }
