@@ -284,11 +284,11 @@
                             if (result == '0') {
                                 $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                 $("#emaildiv").addClass("has-error");
-                                $("#mailTaken").html("Oops! Dit email adres is reeds in gebruik!");
+                                $("#mailTaken").text("Oops! Dit email adres is reeds in gebruik!");
                             } else {
                                 $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                 $("#emaildiv").removeClass("has-error");
-                                $("#mailTaken").html("");
+                                $("#mailTaken").text("");
                                 ok = true;
                             }
                         }
