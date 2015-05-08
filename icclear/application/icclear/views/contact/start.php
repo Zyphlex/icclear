@@ -12,7 +12,7 @@
         <p>1000 Brussel</p>
     </div>
 </div>
-
+<br>
 <div class="row">
     <div class="col-lg-offset-1">
         <form action="contact/insturen" method="post">        
