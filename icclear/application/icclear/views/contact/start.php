@@ -34,8 +34,10 @@
                 <p class="col-sm-8"><?php echo form_label('Boodschap/vraag:', 'boodschapcontact'); ?></p>
                 <p class="col-sm-12"><?php echo form_textarea(array('name' => 'boodschapcontact', 'id' => 'boodschapcontact', 'rows' => '10', 'cols' => '50', 'class' => 'form-control', 'required' => 'required')); ?></p>
                 
-                <?php echo form_submit('mysubmit', 'Bericht versturen', 'class="col-xs-8 btn btn-primary"'); ?>   
-                <?php echo anchor('home','Annuleren','class="col-xs-4 btn btn-default"') ?>     
+                <div class="btn-group">
+                    <?php echo form_submit('mysubmit', 'Bericht versturen', 'class="col-xs-8 btn btn-primary"'); ?>   
+                    <?php echo anchor('home','Annuleren','class="col-xs-4 btn btn-default"') ?>     
+                </div>
             <?php echo form_close(); ?>
         </div>
     </div>
