@@ -309,7 +309,9 @@
             </div>
 
             <div class="row">
+                <div class="col-sm-12">
                 <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgReg"></p>  
+                </div>
                 <div class=""> 
                     <div id="emaildiv">                        
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
@@ -394,7 +396,9 @@
                     <h3>Wachtwoord vergeten</h3>
                 </div>   
 
+                <div class="col-sm-12">
                 <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgVer"></p>  
+                </div>
                 <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
                     <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
