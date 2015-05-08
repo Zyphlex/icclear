@@ -32,7 +32,7 @@
         });
 
 
-        $("#password2").keyup(validate);
+        $("#password21").keyup(validate);
 
     });
 
