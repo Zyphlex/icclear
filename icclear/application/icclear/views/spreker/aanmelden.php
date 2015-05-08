@@ -49,7 +49,127 @@
         </div>
     </div>
 
+<script language="javascript">
+                function finishAjax(id, response) {
+                    $('#' + id).html(unescape(response));
+                    $('#' + id).fadeIn();
+                }
+                $(document).ready(function () {                    
 
+                    $("#mySubmit").click(function (e) {
+                        e.preventDefault();
+                        if (validatieOK() && validate() && realCheck1()) {
+                            $("#myForm").submit();
+                        }
+
+                    });
+
+                    $("#password2").keyup(validate);
+
+                });
+                
+                
+                function validatieOK() {
+                        ok = true;
+                        if ($("#password1").val() == "") {
+                            $("#password1div").addClass("has-error");
+                            $("#password1div").removeClass("has-success");
+                            ok = false;
+                        }
+                        else {
+                            $("#password1div").removeClass("has-error");
+                            $("#password1div").addClass("has-success");
+                        }
+                        if ($("#password2").val() == "") {
+                            $("#password2div").addClass("has-error");
+                            $("#password2div").removeClass("has-success");
+                            ok = false;
+                        }
+                        else {
+                            $("#password2div").removeClass("has-error");
+                            $("#password2div").addClass("has-success");
+                        }
+
+                        if ($("#voornaam").val() == "") {
+                            $("#voornaamdiv").addClass("has-error");
+                            $("#voornaamdiv").removeClass("has-success");
+                            ok = false;
+                        }
+                        else {
+                            $("#voornaamdiv").removeClass("has-error");
+                            $("#voornaamdiv").addClass("has-success");
+                        }
+
+                        if ($("#familienaam").val() == "") {
+                            $("#familienaamdiv").addClass("has-error");
+                            $("#familienaamdiv").removeClass("has-success");
+                            ok = false;
+                        }
+                        else {
+                            $("#familienaamdiv").removeClass("has-error");
+                            $("#familienaamdiv").addClass("has-success");
+                        }
+                        if ($("#emailadres").val() == "") {
+                            $("#emaildiv").addClass("has-error");
+                            $("#emaildiv").removeClass("has-success");
+                            ok = false;
+                        }
+                        else {
+                            $("#emaildiv").removeClass("has-error");
+                            $("#emaildiv").addClass("has-success");
+                        }
+
+                        return ok;
+                }
+                
+                
+                function validate() {
+                        ok = true;
+                        var password1 = $("#password1").val();
+                        var password2 = $("#password2").val();
+                        if (password1 == password2) {
+                            $("#validate-status").text("Correct");
+                            $("#validate-status").removeClass("form-note-used");
+                            $("#validate-status").addClass("form-note-ok");
+                            $("#password2div").removeClass("has-error");
+                            $("#password2div").addClass("has-success");
+                        }
+                        else {
+                            $("#validate-status").text("Incorrect");
+                            $("#validate-status").removeClass("form-note-ok");
+                            $("#validate-status").addClass("form-note-used");
+                            $("#password2div").addClass("has-error");
+                            $("#password2div").removeClass("has-success");
+                            ok = false;
+                        }
+                    return ok;
+                }
+
+                function realCheck1() {
+                    ok = false;
+                    mail = $('#emailadres').val();
+                    $.ajax({
+                        type: "POST",
+                        url: site_url + "/logon/check_email_availablity",
+                        async: false,
+                        data: {email: mail},
+                        success: function(result) {
+                            if (result == '0') {
+                                $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                                $("#emaildiv").addClass("has-error");
+                                $("#emaildiv").removeClass("has-success");
+                            } else {
+                                $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                                $("#emaildiv").removeClass("has-error");
+                                $("#emaildiv").addClass("has-success");
+                                ok = true;
+                            }
+                        }
+                    });
+                    return ok;
+                }
+
+            </script>
 
 
 
