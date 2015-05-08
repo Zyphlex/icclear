@@ -8,6 +8,7 @@ class Algemeneinfo_model extends CI_Model {
     }
     
     
+    // Een item van algemene info ophalen
     function get()
     {           
         $query = $this->db->get('algemeneInfo');        
