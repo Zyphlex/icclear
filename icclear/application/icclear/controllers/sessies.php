@@ -17,8 +17,7 @@ class Sessies extends CI_Controller {
                 redirect('logon/aanmelden');
                 //voorlopig
             }
-        }
-        $this->load->library('email');
+        }        
     }
 
     public function index() {
