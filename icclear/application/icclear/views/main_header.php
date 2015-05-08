@@ -66,13 +66,13 @@
                     <h3>Aanmelden</h3>
                 </div>   
 
-                <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                <?php echo form_label('Emailadres:', 'email', array('class' => 'mailI col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
-                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'mailI form-control', 'size' => '30')); ?>        
                 </div>
 
-                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
-                <div class="col-sm-8">
+                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'passwordI col-sm-4 control-label')); ?>           
+                <div class="passwordI col-sm-8">
                     <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
                 </div>
 
@@ -135,21 +135,21 @@
                 function inloggenOK() {
                     ok = true;
                         if ($("#password").val() == "") {
-                            $("#password").addClass("has-error");
-                            $("#password").removeClass("has-success");
+                            $("#passwordI").addClass("has-error");
+                            $("#passwordI").removeClass("has-success");
                             ok = false;
                         } else {
-                            $("#password").removeClass("has-error");
-                            $("#password").addClass("has-success");
+                            $("#passwordI").removeClass("has-error");
+                            $("#passwordI").addClass("has-success");
                         }
                         
                         if ($("#email").val() == "") {
-                            $("#email").addClass("has-error");
-                            $("#email").removeClass("has-success");
+                            $("#emailI").addClass("has-error");
+                            $("#emailI").removeClass("has-success");
                             ok = false;
                         } else {
-                            $("#email").removeClass("has-error");
-                            $("#email").addClass("has-success");
+                            $("#emailI").removeClass("has-error");
+                            $("#emailI").addClass("has-success");
                         }
                     return ok;
                 }
@@ -158,12 +158,12 @@
                     ok = true;
                     
                         if ($("#emailVergeten").val() == "") {
-                            $("#emailVergeten").addClass("has-error");
-                            $("#emailVergeten").removeClass("has-success");
+                            $("#emailVergetenI").addClass("has-error");
+                            $("#emailVergetenI").removeClass("has-success");
                             ok = false;
                         } else {
-                            $("#emailVergeten").removeClass("has-error");
-                            $("#emailVergeten").addClass("has-success");
+                            $("#emailVergetenI").removeClass("has-error");
+                            $("#emailVergetenI").addClass("has-success");
                         }
                         
                     return ok;
