@@ -190,8 +190,6 @@ class Inschrijven extends CI_Controller {
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
 
-        $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($data['conferentieId']);
-
         $this->load->model('gebruiker_model');
         $data['gebruikers'] = $this->gebruiker_model->getAllWithType();
 
