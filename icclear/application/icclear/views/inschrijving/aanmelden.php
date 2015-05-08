@@ -1,13 +1,13 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        $("#mySubmit").click(function(e) {
+        $("#mySubmit1").click(function(e) {
             e.preventDefault();
             if (validatieOK() && validate() && realCheck1()) {
-                $("#FormRegistreren").submit();
+                $("#FormRegistreren1").submit();
             } else {
-                $("#msgReg").removeClass("hidden");
-                $("#msgReg").html("Oops! U hebt niet alle velden ingevuld!");
+                $("#msgReg1").removeClass("hidden");
+                $("#msgReg1").html("Oops! U hebt niet alle velden ingevuld!");
             }
         });
 
@@ -32,32 +32,15 @@
         });
 
 
-        $(".modalHeader").click(function() {
-            verbergError();
-        });
-
         $("#password2").keyup(validate);
 
     });
 
-    function verbergError() {
-        $("#msgVer1").addClass("hidden");
-        $("#msgInl").addClass("hidden");
-        $("#msgReg").addClass("hidden");
-        $('.passwordI1').removeClass('has-error');
-        $('.emailI1').removeClass('has-error');
-        $('.emailVergetenI1').removeClass('has-error');
-        $('#password1div').removeClass('has-error');
-        $('#password2div').removeClass('has-error');
-        $('#voornaamdiv').removeClass('has-error');
-        $('#familienaamdiv').removeClass('has-error');
-        $('#emaildiv').removeClass('has-error');
-    }
 
 //Alle velden bij inloggen ingevuld controle
     function inloggenOK() {
         ok = true;
-        if ($("#password1").val() == "") {
+        if ($("#passwordI11").val() == "") {
             $(".passwordI1").addClass("has-error");
             ok = false;
         } else {
@@ -91,48 +74,39 @@
     function validatieOK() {
         ok = true;
 
-        if ($("#password1").val() == "") {
-            $("#password1div").addClass("has-error");
+        if ($("#password11").val() == "") {
+            $("#password1div1").addClass("has-error");
             ok = false;
         } else {
-            $("#password1div").removeClass("has-error");
-            $("#password1div").addClass("has-success");
+            $("#password1div1").removeClass("has-error");
         }
 
-        if ($("#password2").val() == "") {
-            $("#password2div").addClass("has-error");
-            $("#password2div").removeClass("has-success");
+        if ($("#password21").val() == "") {
+            $("#password2div1").addClass("has-error");
             ok = false;
         } else {
-            $("#password2div").removeClass("has-error");
-            $("#password2div").addClass("has-success");
+            $("#password2div1").removeClass("has-error");
         }
 
-        if ($("#voornaam").val() == "") {
-            $("#voornaamdiv").addClass("has-error");
-            $("#voornaamdiv").removeClass("has-success");
+        if ($("#voornaam1").val() == "") {
+            $("#voornaamdiv1").addClass("has-error");
             ok = false;
         } else {
-            $("#voornaamdiv").removeClass("has-error");
-            $("#voornaamdiv").addClass("has-success");
+            $("#voornaamdiv1").removeClass("has-error");
         }
 
-        if ($("#familienaam").val() == "") {
-            $("#familienaamdiv").addClass("has-error");
-            $("#familienaamdiv").removeClass("has-success");
+        if ($("#familienaam1").val() == "") {
+            $("#familienaamdiv1").addClass("has-error");
             ok = false;
         } else {
-            $("#familienaamdiv").removeClass("has-error");
-            $("#familienaamdiv").addClass("has-success");
+            $("#familienaamdiv1").removeClass("has-error");
         }
 
-        if ($("#emailadres").val() == "") {
-            $("#emaildiv").addClass("has-error");
-            $("#emaildiv").removeClass("has-success");
+        if ($("#emailadres1").val() == "") {
+            $("#emaildiv1").addClass("has-error");
             ok = false;
         } else {
-            $("#emaildiv").removeClass("has-error");
-            $("#emaildiv").addClass("has-success");
+            $("#emaildiv1").removeClass("has-error");
         }
 
         return ok;
@@ -141,21 +115,19 @@
 //Zijn de 2 wachtwoord velden gelijk
     function validate() {
         ok = true;
-        var password1 = $("#password1").val();
-        var password2 = $("#password2").val();
+        var password1 = $("#password11").val();
+        var password2 = $("#password21").val();
         if (password1 == password2) {
-            $("#validate-status").text("Correct");
-            $("#validate-status").removeClass("form-note-used");
-            $("#validate-status").addClass("form-note-ok");
-            $("#password2div").removeClass("has-error");
-            $("#password2div").addClass("has-success");
+            $("#validate-status1").text("Correct");
+            $("#validate-status1").removeClass("form-note-used");
+            $("#validate-status1").addClass("form-note-ok");
+            $("#password2div1").removeClass("has-error");
         }
         else {
-            $("#validate-status").text("Incorrect");
-            $("#validate-status").removeClass("form-note-ok");
-            $("#validate-status").addClass("form-note-used");
-            $("#password2div").addClass("has-error");
-            $("#password2div").removeClass("has-success");
+            $("#validate-status1").text("Incorrect");
+            $("#validate-status1").removeClass("form-note-ok");
+            $("#validate-status1").addClass("form-note-used");
+            $("#password2div1").addClass("has-error");
             ok = false;
         }
         return ok;
@@ -164,7 +136,7 @@
 //Controleren of de email al gebruikt is of niet
     function realCheck1() {
         ok = false;
-        mail = $('#emailadres').val();
+        mail = $('#emailadres1').val();
         $.ajax({
             type: "POST",
             url: site_url + "/logon/check_email_availablity",
@@ -172,13 +144,13 @@
             data: {email: mail},
             success: function(result) {
                 if (result == '0') {
-                    $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                    $("#emaildiv").addClass("has-error");
-                    $("#emaildiv").removeClass("has-success");
+                    $('#feedbackemail1').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                    $("#emaildiv1").addClass("has-error");
+                    $("#emaildiv1").removeClass("has-success");
                 } else {
-                    $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                    $("#emaildiv").removeClass("has-error");
-                    $("#emaildiv").addClass("has-success");
+                    $('#feedbackemail1').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                    $("#emaildiv1").removeClass("has-error");
+                    $("#emaildiv1").addClass("has-success");
                     ok = true;
                 }
             }
@@ -225,7 +197,7 @@
                 <div class="passwordI1">
                     <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
                     <div class="col-sm-8">
-                        <?php echo form_password(array('name' => 'password', 'id' => 'password11', 'class' => 'form-control', 'size' => '30')); ?> 
+                        <?php echo form_password(array('name' => 'password', 'id' => 'passwordI11', 'class' => 'form-control', 'size' => '30')); ?> 
                     </div>
                 </div>
                 
@@ -253,7 +225,7 @@
         <div class="panel panel-default">            
 
             <?php
-            $attributes = array('class' => 'registreer', 'id' => 'myForm', 'class' => 'form-horizontal');
+            $attributes = array('class' => 'registreer', 'id' => 'FormRegistreren1', 'class' => 'form-horizontal');
             echo form_open('inschrijven/registreer', $attributes);
             ?>
 
@@ -263,68 +235,71 @@
             </div>
 
             <div class="row">
+                <div class="col-sm-12">
+                <p class="hidden alert alert-danger" role="alert" id="msgReg1"></p>  
+                </div>
                 <div class=""> 
-                    <div id="emaildiv">
-                        <div id="feedbackemail"></div>
-                        <?php echo form_label('Emailadres:', 'emailadres', array('class' => 'col-sm-4 control-label')); ?> 
+                    <div id="emaildiv1">                        
+                        <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
+                        <span id="feedbackemail" class="form-note"></span> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadresI', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('type'=>'email', 'name' => 'emailadres', 'id' => 'emailadres1', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
-                    <div id="password1div"> 
+                    <div id="password1div1"> 
                         <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
                         <div class="col-sm-8">                       
-                            <?php echo form_password(array('name' => 'wachtwoord1I', 'id' => 'password1', 'class' => 'form-control')); ?> 
+                            <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password11', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
-                    <div id="password2div">
+                    <div id="password2div1">
                         <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
-                        <span id="validate-status" class="form-note"></span>              
+                        <span id="validate-status1" class="form-note"></span>              
                         <div class="col-sm-8">                                        
-                            <?php echo form_password(array('name' => 'bevestigwwI', 'id' => 'password2', 'class' => 'form-control')); ?>                    
+                            <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password21', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
-                    <div id="voornaamdiv">
+                    <div id="voornaamdiv1">
                         <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>   
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'voornaamI', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam1', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
-                    <div id="familienaamdiv">
+                    <div id="familienaamdiv1">
                         <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>  
                         <div class="col-sm-8">  
-                            <?php echo form_input(array('name' => 'familienaamI', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam1', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
-                    <div id="geslachtdiv">     
+                    <div id="geslachtdiv1">     
                         <?php echo form_label('Geslacht:', 'geslacht', array('class' => 'col-sm-4 control-label')); ?>       
                         <div class="col-sm-8">  
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslachtI', 'value' => 'Man', 'type' => 'radio')); ?>   
+                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'type' => 'radio')); ?>   
                                 <span class="option-title">Man</span>
                             </div> 
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslachtI', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
+                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
                                 <span class="option-title">Vrouw</span>
                             </div>
                         </div>
                     </div>
 
                 </div>    
-                
-            <div class="col-xs-12 margin-top">
-                <div class="btn-group btn-block">
-                    <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
-                    <button name="mysubmit" id="mySubmit" class="col-xs-8 btn btn-primary">Registreren</button>
-                </div>
-            </div>
 
-            </div>     
+                <div class="col-xs-12 margin-top space-bottom15">
+                    <div class="btn-group btn-block">
+                        <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
+                        <button name="mysubmit" id="mySubmit1" class="col-xs-8 btn btn-primary">Registreren</button>
+                    </div>
+                </div>
+
+            </div>      
             <?php echo form_close(); ?>
         </div>
     </div>
