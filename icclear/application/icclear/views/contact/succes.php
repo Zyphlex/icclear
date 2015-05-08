@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-offset-3">
         <h1 style="text-align: center;">Succesvol verzonden</h1>
     </div>
 </div>
