@@ -59,7 +59,7 @@
 
     //Klikken op de Details knop
     function maakInfoClick() {
-        $(".detailsItem").click(function() {
+        $(".detailsItem").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -68,9 +68,9 @@
                     url: site_url + "/profiel/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function(result) {
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
-                        $("#conf1").html(jobject.gebruiker.voornaam + " " + jobject.gebruiker.familienaam);  
+                        $("#conf1").html(jobject.gebruiker.voornaam + " " + jobject.gebruiker.familienaam);
                         var object = haalActOverzicht(iddb);
                         $("#activiteiten1").html(object);
                         $("#onderdeel").html(jobject.confond.omschrijving);
@@ -92,7 +92,7 @@
                 $("#activiteiten1").html(result);
             }
         });
-    } 
+    }
 
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
@@ -172,9 +172,9 @@
                             $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . " (" . $gebruiker->type->omschrijving . ")";
                         }
 
-                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control" disabled="disabled"' );
+                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control" disabled="disabled"');
                         ?></p>
-                    
+
                     <p><?php echo form_label('Formule:', 'formule'); ?></p>
                     <p><?php
                         $optionsOnderdeel = array();
@@ -184,7 +184,7 @@
 
                         echo form_dropdown('confonderdeel', $optionsOnderdeel, '', 'id="confonderdeel" class="form-control"');
                         ?></p>
-                    
+
                     <p><?php echo form_label('Methode:', 'methode'); ?></p>
                     <p><?php
                         $optionsMethode = array();
@@ -194,6 +194,20 @@
 
                         echo form_dropdown('methode', $optionsMethode, '', 'id="methode" class="form-control"');
                         ?></p>
+
+                    <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
+                    <div class="">
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?>                            
+                        <span class="option-title">
+                            Reeds betaald
+                        </span>
+                    </div> 
+                     <div class="">
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>                            
+                        <span class="option-title">
+                            Nog niet betaald
+                        </span>
+                    </div> 
                 </form>
 
             </div>
@@ -236,17 +250,17 @@
 <div class="modal fade" id="modalItemInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            
+
             <div class="row">
-                
+
                 <div class="text-center underline">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Details voor <span id="conf1"></span></h3>
                 </div>   
-                
+
                 <div class="modal-body">        
                     <h3><span class="bold" id="onderdeel"></span>: &euro; <span id="prijs"></span></h3>  
-                    
+
                     <div id="activiteiten1"></div>
                 </div>
 
@@ -255,9 +269,9 @@
                         <button type="button" class="col-xs-12 btn btn-primary" data-dismiss="modal">Sluiten</button>   
                     </div>
                 </div>
-                
+
             </div>       
-            
+
         </div>               
     </div>
 </div>  
