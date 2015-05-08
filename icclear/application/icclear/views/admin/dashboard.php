@@ -76,7 +76,7 @@
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sprekers</h2>
             </div>
-            <div class="panel-body stats">
+            <div class="panel-body">
                 <h1 class="bold"><?php echo count($sprekers); ?></h1> <span class="italic inline">met ingeplande sessie</span>
             </div>
         </div>
@@ -88,7 +88,7 @@
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal Activiteiten</h2>
             </div>
-            <div class="panel-body stats">
+            <div class="panel-body">
                 <h1 class="bold"><?php echo $activiteiten; ?></h1> <span class="italic inline">activiteien</span>
             </div>
         </div>
