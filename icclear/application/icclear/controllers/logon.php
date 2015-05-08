@@ -18,6 +18,7 @@ class Logon extends CI_Controller {
         $this->load->view('logon/login', $data);
     }
 
+    //Gewoon aanmelden
     public function aanmelden() {
         $email = strtolower($this->input->post('email'));
         $password = $this->input->post('password');
@@ -34,6 +35,7 @@ class Logon extends CI_Controller {
         }
     }
 
+    //Er is een fout bij het aanmelden
     public function fout() {
         $data['title'] = 'IC Clear - Fout';
         $user = $this->authex->getUserInfo();
@@ -232,6 +234,7 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //Een account is met success aangemaakt
     public function klaar() {
         $data['title'] = 'IC Clear - Register';
         $user = $this->authex->getUserInfo();
@@ -259,15 +262,19 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //Zoeken of een username al bestaat
+    //Niet meer nodig
     public function ajax() {
         $zoekstring = $this->input->get('zoekstring');
         $this->load->model('logon_model');
         $this->logon_model->user_exists($zoekstring);
     }
 
+    //Een user laten activeren via een key die ze in een mail ontvingen
     public function activeer($generatedKey) {
         $data['title'] = 'Succesvol geactiveerd';
 
+        //Activeren met de key
         $this->authex->activate($generatedKey);
 
         $user = $this->authex->getUserInfo();
@@ -304,6 +311,7 @@ class Logon extends CI_Controller {
         $this->email->send();
     }
 
+    //Wachtwoord resetten via de "wachtwoord vergeten optie"
     public function resetPass() {
 
         $data['active'] = '';

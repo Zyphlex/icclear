@@ -41,6 +41,7 @@ class Programma extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
+    //Sessie details tonen in programma
     public function detailSessie() {
         $id = $this->input->get('id');
 
@@ -50,7 +51,7 @@ class Programma extends CI_Controller {
         echo json_encode($sessie);
     }
     
-    
+    //Spreker details tonen in programma
     public function detailSpreker() {
         $id = $this->input->get('id');
 
