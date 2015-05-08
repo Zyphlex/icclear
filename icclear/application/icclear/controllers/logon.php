@@ -60,17 +60,19 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //wachtwoord vergeten
     public function vergeten() {
         $data['user'] = '';
-
         $this->load->view('logon/wwvergeten', $data);
     }
 
+    //uitloggen
     public function logout() {
         $this->authex->logout();
         redirect('home');
     }
 
+    //registreren
     public function register() {
         $data['user'] = '';
 
@@ -80,6 +82,7 @@ class Logon extends CI_Controller {
         $this->load->view('logon/registreer', $data);
     }
 
+    //gebruiker toevoegen aan database en email versturen
     public function add() {
         $email = strtolower($this->input->post('emailadres'));
         $genkey = sha1(mt_rand(10000, 99999) . time() . $email);
@@ -100,7 +103,7 @@ class Logon extends CI_Controller {
             $this->bestaat();
         }
     }
-
+    //nieuw passwoord instellen
     public function nieuwPass() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -137,6 +140,7 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //paswoord resetten
     public function passReset($generatedKey) {
         $this->load->model('logon_model');
 
@@ -172,6 +176,7 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //wat er gebeurt als gebruiker nog niet geactiveerd is
     public function nietGeactiveerd() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -199,6 +204,7 @@ class Logon extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //wat er gebeurt als emailadres al bestaat
     public function bestaat() {
         $data['title'] = 'IC Clear - Register';
         $user = $this->authex->getUserInfo();
