@@ -31,6 +31,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigAdmin").click(function () {
+            verbergError();
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -59,6 +60,49 @@
         });
     }
 
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.voornaama').removeClass('has-error');
+        $('.familienaama').removeClass('has-error');
+        $('.emailadresa').removeClass('has-error');
+        $('.wachtwoorda').removeClass('has-error');
+    }
+
+    //VALIDATIE
+    function validatieOKoo() {
+        ok = true;
+
+        if ($('#voornaama').val() == "") {
+            $('.voornaama').addClass('has-error');
+            ok = false;
+        } else {
+            $('.voornaama').removeClass('has-error');
+        }
+
+        if ($('#familienaama').val() == "") {
+            $('.familienaama').addClass('has-error');
+            ok = false;
+        } else {
+            $('.familienaama').removeClass('has-error');
+        }
+
+        if ($('#emailadresa').val() == "") {
+            $('.emailadresa').addClass('has-error');
+            ok = false;
+        } else {
+            $('.emailadresa').removeClass('has-error');
+        }
+
+        if ($('#wachtwoorda').val() == "") {
+            $('.wachtwoorda').addClass('has-error');
+            ok = false;
+        } else {
+            $('.wachtwoorda').removeClass('has-error');
+        }
+
+        return ok;
+    }
+
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
@@ -69,19 +113,19 @@
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanAdmin").click(function () {
             if (validatieOK()) {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/adminbeheer/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#adminModal").modal('hide');
+                var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/adminbeheer/update",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#adminModal").modal('hide');
             } else {
-                $("#msgo").removeClass("hidden");
-                $("#msgo").html("Oops! U hebt niet alle velden ingevuld!");
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
             }
         });
 
