@@ -125,7 +125,7 @@
                 <?php echo form_label('Naam:', 'naam'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "value"=>$conferentie->naam)); ?>
+                <?php echo form_input(array("class" => "form-control", "required" => "required", "type" => "text", "name" => "naam", "value"=>$conferentie->naam)); ?>
             </div>
         </div>
 
@@ -160,14 +160,14 @@
                     $opties[$land->id] = $land->naam;
                 }
                 ?>
-            <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control"'); ?>
+            <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control" required="required"'); ?>
             </div>            
 
             <div class="col-md-2 control-label border-left">   
             <?php echo form_label('Stad:', 'stad') ?>
             </div>
             <div class="col-md-4">
-            <?php echo form_input(array('value' => $conferentie->stad, 'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control')); ?>
+            <?php echo form_input(array('value' => $conferentie->stad, 'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control', "required" => "required")); ?>
             </div>
         </div>
 
@@ -178,7 +178,7 @@
             <?php echo form_label('Max inschrijvingen', 'maxinschrijvingen') ?>
             </div>
             <div class="col-md-2">
-            <?php echo form_input(array('value' => $conferentie->maxInschrijvingen, 'type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen')) ?>               
+            <?php echo form_input(array('value' => $conferentie->maxInschrijvingen, 'type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen', "required" => "required")) ?>               
             </div>
         </div>
 
@@ -189,17 +189,17 @@
             <div class="col-md-2">    
                     <?php if ($conferentie->seminarieDag == 1) { ?>
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', 'checked' => 'checked')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', 'checked' => 'checked', "required" => "required")); ?>
                         Ja</label>
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', "required" => "required")); ?>
                         Nee</label>    
                     <?php } else { ?>
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', "required" => "required")); ?>
                         Ja</label>
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', 'checked' => 'checked')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', 'checked' => 'checked', "required" => "required")); ?>
                         Nee</label>
                     <?php } ?>
             </div>
@@ -216,7 +216,7 @@
             </div>
 
             <div class="col-md-12">
-                <?php echo form_textarea(array('value' => $conferentie->beschrijving, 'rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control')) ?>
+                <?php echo form_textarea(array('value' => $conferentie->beschrijving, 'rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control', "required" => "required")) ?>
             </div>
         </div>        
 
@@ -277,7 +277,7 @@
                     <p><?php echo form_label('Korting:', 'korting'); ?></td>
                     <p>
                         <div class="input-group">
-                        <span class="input-group-addon">$</span>
+                        <span class="input-group-addon">€</span>
                         <?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>
                         </div>
                     </p>
