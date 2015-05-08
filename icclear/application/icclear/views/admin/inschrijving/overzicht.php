@@ -4,7 +4,6 @@
         $.ajax({type: "GET",
             url: site_url + "/inschrijvenbeheer/overzicht",
             success: function (result) {
-                alert(result);
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
