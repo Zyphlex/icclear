@@ -424,6 +424,11 @@ button:focus {
     margin-top: 0;
 }
 
+.contact h3 {
+    line-height: inherit;
+    vertical-align: middle;
+}
+
 .fa {
     line-height:inherit;
     vertical-align: middle;
