@@ -95,8 +95,11 @@ class Inschrijvenbeheer extends CI_Controller {
     }
 
     public function update() {
+        $confId = $this->session->userdata('conferentieId');
+        
         $this->load->model('inschrijving_model');
         $this->load->model('betaling_model');
+        $this->load->model('activiteit_model');
 
         $inschrijving->id = $this->input->post('id');
         $id = $inschrijving->id;
@@ -111,13 +114,15 @@ class Inschrijvenbeheer extends CI_Controller {
             $bet->id = 0;
             $bet->gebruikerId = $oud->gebruikerId;
             $inschrijving->betalingId = $this->betaling_model->insert($bet);
-        }
-        else
-        {
-            if ($oud->betalingId != null && $betaling == "nee") {                
-                $inschrijving->betalingId = null;
-                $this->betaling_model->delete($oud->betalingId);
+            
+        } elseif ($oud->betalingId != null && $betaling == "nee") {
+            $activiteiten = $this->activiteit_model->getAllActGebruikerConf($oud->gebruikerId, $confId);
+            
+            foreach ($activiteiten as $act) {
+                $act->betalingId = null;
             }
+            $inschrijving->betalingId = null;
+            $this->betaling_model->delete($oud->betalingId);
         }
 
         $this->inschrijving_model->update($inschrijving);
