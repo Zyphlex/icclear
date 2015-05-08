@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h1 style="text-align: center;">Contactpagina</h1>
+        <h1>Contactpagina</h1>
     </div>
 </div>
 <div class="row">
@@ -17,7 +17,7 @@
 <br>
 <div class="row">
     <div class="col-md-12">
-        <h1 style="text-align: center;">Neem contact op met ons</h1>
+        <h1>Neem contact op met ons</h1>
     </div>
 </div>
 <div class="row">
