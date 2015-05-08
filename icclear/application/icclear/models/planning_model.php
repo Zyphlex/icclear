@@ -2,32 +2,25 @@
 
 class Planning_model extends CI_Model {
 
-    // +----------------------------------------------------------
-    // | Beershop - product_model
-    // +----------------------------------------------------------
-    // | Thomas More Kempen - 2 TI - 201x-201x
-    // +----------------------------------------------------------
-    // | Product model
-    // |
-    // +----------------------------------------------------------
-    // | K. Vangeel
-    // +----------------------------------------------------------
 
     function __construct() {
         parent::__construct();
     }
 
+    // Een gepland item ophalen
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('planning');
         return $query->row();
     }
 
+    // Alle geplande items ophalen
     function getAll() {
         $query = $this->db->get('planning');
         return $query->result();
     }
     
+    // Alle geplande items van een conferentiedag ophalen
     function getAllPlanning($id) {
         $this->db->order_by('conferentiedagId, beginuur');    
         $this->db->where('conferentiedagId', $id);
@@ -35,12 +28,14 @@ class Planning_model extends CI_Model {
         return $query->result();
     }
     
+    // De planning van een bepaalde sessie ophalen
     function getSessie($id) {
         $this->db->where('sessieId', $id);
         $query = $this->db->get('planning');
         return $query->row();
     }
 
+    // Alle items van een conferentiedag ophalen, samen met info over de sessie, de zaal, het gebouw en het land
     function getVanDag($id) {
         $this->db->where('conferentiedagId', $id);
         $query = $this->db->get('planning');
@@ -61,6 +56,7 @@ class Planning_model extends CI_Model {
         return $planningen;
     }
 
+    // Alle conferentiedagen ophalen en deze opvullen met de planning van die dag
     function getAllByDag($id) {
 
         $this->db->where('conferentieId', $id);
@@ -75,6 +71,7 @@ class Planning_model extends CI_Model {
         return $dagen;
     }
     
+    // De planning van elke conferentiedag van de actieve conferentie ophalen
     function getOverzichtActieve() {           
         $this->load->model('conferentie_model');
         $confId = $this->conferentie_model->getActieveConferentie();
@@ -84,8 +81,10 @@ class Planning_model extends CI_Model {
          
         $this->load->model('sessies_model');
         $this->load->model('zaal_model');
+        // Alle geplande items van een dag ophalen
         foreach ($dagen as $d) {
             $d->programma = $this->getAllPlanning($d->id);
+            // Meer info over elk ingepland item ophalen
             foreach ($d->programma as $p) {
                 $p->zaal = $this->zaal_model->get($p->zaalId);
                 $p->sessie = $this->sessies_model->get($p->sessieId);
@@ -94,7 +93,7 @@ class Planning_model extends CI_Model {
         return $dagen;
     }
     
-
+    // Een gepland item updaten
     function update($planning) {
         //Html entities en extra spaties verwijderen
         $planning = escape_html($planning);
@@ -103,6 +102,7 @@ class Planning_model extends CI_Model {
         $this->db->update('planning', $planning);
     }
 
+    // Een nieuw gepland item toevoegen
     function insert($planning) {
         //Html entities en extra spaties verwijderen
         $planning = escape_html($planning);
@@ -111,11 +111,14 @@ class Planning_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+    // Een gepland item verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('planning');
     }
     
+    // Alle niet-plenaire geplande items ophalen van een conferentiedag
+    // EDIT: Controle plenair/niet-plenair gebeurt in view
     function getAllPlanningNietPlenair($id) {
         $this->db->order_by('conferentiedagId, beginuur');    
         $this->db->where('conferentiedagId', $id);
@@ -123,7 +126,8 @@ class Planning_model extends CI_Model {
         return $query->result();
     }
     
-    
+    // Alle niet-plenaire geplande items ophalen van elke dag van de actieve conferentie
+    // EDIT: Controle plenair/niet-plenair gebeurt in view
     function getOverzichtActieveNietPlenaire() {           
         $this->load->model('conferentie_model');
         $confId = $this->conferentie_model->getActieveConferentie();
@@ -131,10 +135,13 @@ class Planning_model extends CI_Model {
         $query = $this->db->get('conferentiedag');
         $dagen = $query->result();
          
-        $this->load->model('sessies_model');        
+        $this->load->model('sessies_model'); 
+        // Alle niet-plenaire geplande items per dag ophalen
+        // EDIT: Controle plenair/niet-plenair gebeurt in view
         foreach ($dagen as $d) {
             $d->programma = $this->getAllPlanningNietPlenair($d->id);
-            foreach ($d->programma as $p) {                
+            foreach ($d->programma as $p) { 
+                // De gegevens van de ingeplande sessie ophalen
                 $p->sessie = $this->sessies_model->get($p->sessieId);
             }
         }     
