@@ -43,7 +43,7 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
-                        if (jobject.betalingId == null) {
+                        if (jobject.betalingId === null) {
                            $(':radio[name="geslacht"][value="nee"]').prop('checked', 'checked'); 
                         }
                         else
