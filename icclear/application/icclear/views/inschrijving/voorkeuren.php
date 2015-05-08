@@ -109,7 +109,7 @@
                                                 </td>                                    
                                                 <td>
                                                     <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->gebruikerIdSpreker ?>"> 
-                                                        <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $p->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
+                                                        <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $p->spreker->voornaam . ' ' . $p->spreker->familienaam ?>
                                                     </a>
                                                 </td>
                                             </tr> 
