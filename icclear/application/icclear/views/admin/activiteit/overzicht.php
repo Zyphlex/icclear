@@ -133,7 +133,7 @@
                     <p><?php echo form_input(array('name' => 'naam', 'id' => 'naam', 'class' => 'form-control')); ?></p>
                     
                     <p><?php echo form_label('Omschrijving:', 'omschrijving'); ?></p>
-                    <p><?php echo form_textarea(array('name' => 'omdchrijving', 'id' => 'omschrijving', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_textarea(array('name' => 'omschrijving', 'id' => 'omschrijving', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Conferentie:', 'conferentie'); ?></p>                    
                     <?php
