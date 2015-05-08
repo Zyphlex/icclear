@@ -303,7 +303,7 @@ class Logon extends CI_Controller {
         $data['active'] = '';
         $data['title'] = 'IC Clear - Email verzonden';
 
-        $email = $this->input->post('emailadres');
+        $email = strtolower($this->input->post('emailadres'));
         $generatedKey = sha1(mt_rand(10000, 99999) . time() . $email);
 
         $this->authex->new_genKey($email, $generatedKey);
