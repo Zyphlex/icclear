@@ -253,7 +253,7 @@
             $('.boodschap').addClass('has-error');
             ok = false;
         } else {
-            $('.onderwerp').removeClass('has-error');
+            $('.boodschap').removeClass('has-error');
         }
 
         return ok;
@@ -263,11 +263,18 @@
     function validatieOKoo() {
         ok = true;
         
-        if ($('#voornaamo').val() == "") {
-            $('.voornaam').addClass('has-error');
+        if ($('#onderwerpall').val() == "") {
+            $('.onderwerpall').addClass('has-error');
             ok = false;
         } else {
-            $('.voornaam').removeClass('has-error');
+            $('.onderwerpall').removeClass('has-error');
+        }
+        
+         if ($('#boodschapall').val() == "") {
+            $('.boodschapall').addClass('has-error');
+            ok = false;
+        } else {
+            $('.boodschapall').removeClass('has-error');
         }
 
         return ok;
