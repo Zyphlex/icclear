@@ -33,7 +33,7 @@
 
                 <p><?php echo form_label('Boodschap/vraag:', 'boodschapcontact'); ?></p>
                 <p><?php echo form_textarea(array('name' => 'boodschapcontact', 'id' => 'boodschapcontact', 'rows' => '10', 'cols' => '50', 'class' => 'form-control', 'required' => 'required')); ?></p>
-                <p><input type="submit" value="Verzenden" class="btn btn-default"/></p>    
+                <?php echo anchor('home','Annuleren','class="col-xs-4 btn btn-default"') ?>
                 <?php echo form_submit('mysubmit', 'Bericht versturen', 'class="col-xs-8 btn btn-primary"'); ?>        
             <?php echo form_close(); ?>
         </div>
