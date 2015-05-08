@@ -3,7 +3,7 @@
         <div class="row">
             <h1 class="underline">Contactgegevens</h1>
 
-            <div class="col-sm-10 space-bottom">
+            <div>
                 <h3><i class="fa fa-home"></i>&nbsp; Adres</h3>
                 <p>ICClear Geel</p>
                 <p>014/404040</p>
