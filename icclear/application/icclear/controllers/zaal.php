@@ -55,6 +55,7 @@ class Zaal extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //overzicht van zalen die je kan beheren
     public function overzicht() {
         $this->load->model('zaal_model');
         $data['zalen'] = $this->zaal_model->getGebouw();
@@ -65,6 +66,7 @@ class Zaal extends CI_Controller {
         $this->load->view('admin/zaal/lijst', $data);
     }
 
+    //details per zaal
     public function detail() {
         $id = $this->input->get('id');
 
@@ -74,6 +76,7 @@ class Zaal extends CI_Controller {
         echo json_encode($zaal);
     }
 
+    //zaal updaten
     public function update() {
         $zaal->id = $this->input->post('id');
         $zaal->naam = $this->input->post('naam');
@@ -90,6 +93,7 @@ class Zaal extends CI_Controller {
         echo $id;
     }
 
+    //zaal deleten
     public function delete() {
         $id = $this->input->post('id');
 
