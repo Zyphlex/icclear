@@ -50,7 +50,8 @@ class Sessies extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //hier kan een sessie gekeurd worden om in het programma opgenomen te worden
     public function keuren() {
          $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -78,14 +79,16 @@ class Sessies extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sessies/keur_overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-        
+      
+    //lijst van alle ongekeurde sessies
     public function lijst() {
         $this->load->model('sessies_model');
         $data['sessies'] = $this->sessies_model->getAllOngekeurdeMetSpreker();
         $this->load->view('admin/sessies/lijst_voorstellen', $data);
     }
 
-
+    
+    //details per sessie
     public function toonDetails($sessieId) {
         $data['user'] = $this->authex->getUserInfo();
 
@@ -98,7 +101,8 @@ class Sessies extends CI_Controller {
 
         $this->load->view('admin/sessies/keur_detail', $data);
     }
-
+    
+    //sessies goedkeuren
     public function goedkeuren() {
         $id = $this->input->post('id');
         $data['user'] = $this->authex->getUserInfo();
@@ -130,6 +134,7 @@ class Sessies extends CI_Controller {
         redirect('sessies/keuren');
     }
     
+    //sessies afkeuren
     public function afkeuren() {
         $id = $this->input->post('id');
         $this->load->model('sessies_model');
@@ -153,7 +158,8 @@ class Sessies extends CI_Controller {
 
         $this->load->view('admin/sessies/lijst', $data);
     }
-
+    
+    //details per sessie
     public function detail() {
         $id = $this->input->get('id');
 
@@ -163,6 +169,7 @@ class Sessies extends CI_Controller {
         echo json_encode($sessie);
     }
 
+    //sessie wijzigen
     public function update() {
         $sessie->id = $this->input->post('id');
         $sessie->onderwerp = $this->input->post('onderwerp');
@@ -175,6 +182,7 @@ class Sessies extends CI_Controller {
         echo $id;
     }
 
+    //sessie verwijderen
     public function delete() {
         $id = $this->input->post('id');
 
