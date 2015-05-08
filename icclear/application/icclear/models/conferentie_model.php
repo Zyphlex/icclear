@@ -6,17 +6,20 @@ class Conferentie_model extends CI_Model {
         parent::__construct();
     }
 
+    // alle conferenties ophalen
     function getAll() {
         $this->db->order_by('beginDatum');
         $query = $this->db->get('conferentie');
         return $query->result();
     }
 
+    // Een conferentie ophalen
     function getById() {
         $query = $this->db->get('conferentie');
         return $query->result();
     }
 
+    // Een conferentie ophalen met het bijbehorende land
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('conferentie');
@@ -28,6 +31,7 @@ class Conferentie_model extends CI_Model {
         return $conferentie;
     }
 
+    // De actieve conferentie ophalen met het bijbehorend land
     function getActieveConferentie() {
         $this->db->where('statusId', '2');
         $query = $this->db->get('conferentie');
@@ -39,6 +43,7 @@ class Conferentie_model extends CI_Model {
         return $conferentie;
     }
 
+    // Alle conferenties van het verleden ophalen met de bijbehorende landen
     function getVerledenConferentie() {
         $this->db->where('statusId', '1');
         $query = $this->db->get('conferentie');
@@ -53,6 +58,7 @@ class Conferentie_model extends CI_Model {
         return $conferenties;
     }
 
+    // Alle toekomstige conferenties ophalen let bijbehorende landen
     function getToekomstConferentie() {
         $this->db->where('statusId', '3');
         $query = $this->db->get('conferentie');
@@ -67,6 +73,7 @@ class Conferentie_model extends CI_Model {
         return $conferenties;
     }
 
+    // Een conferentie updaten
     function update($conferentie) {
         //Html entities en extra spaties verwijderen
         $conferentie = escape_html($conferentie);
@@ -75,6 +82,7 @@ class Conferentie_model extends CI_Model {
         $this->db->update('conferentie', $conferentie);
     }
 
+    // Nieuwe conferentie toevoegen
     function insert($conferentie) {
         //Html entities en extra spaties verwijderen
         $conferentie = escape_html($conferentie);
