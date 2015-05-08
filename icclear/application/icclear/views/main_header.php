@@ -114,7 +114,19 @@
                         }
                     });
 
+                    $("#submitInlog").click(function (e) {
+                        e.preventDefault();
+                        if (inloggenOK()) {
+                            $("#FormInloggen").submit();
+                        }
+                    });
                     
+                    $("#submitVergeten").click(function (e) {
+                        e.preventDefault();
+                        if (vergetenOK() {
+                            $("#FormVergeten").submit();
+                        }
+                    });
 
                     $("#password2").keyup(validate);
 
