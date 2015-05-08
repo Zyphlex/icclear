@@ -60,6 +60,7 @@
             echo form_open('logon/aanmelden', $attributes);
             ?>
             <div class="row">
+                <p class="hidden alert alert-danger" role="alert" id="msgInl"></p>  
 
                 <div class="text-center underline">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -67,17 +68,17 @@
                 </div>   
 
                 <div class="emailI">
-                <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
-                <div class="col-sm-8">
-                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
-                </div>
+                    <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                    <div class="col-sm-8">
+                        <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                    </div>
                 </div>
 
                 <div class="passwordI">
-                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
-                <div class="col-sm-8">
-                    <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
-                </div>
+                    <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
+                    <div class="col-sm-8">
+                        <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
+                    </div>
                 </div>
 
                 <div class="col-sm-8 col-sm-offset-4">  
@@ -138,21 +139,17 @@
                 function inloggenOK() {
                     ok = true;
                         if ($("#password").val() == "") {
-                            $("#passwordI").addClass("has-error");
-                            $("#passwordI").removeClass("has-success");
+                            $(".passwordI").addClass("has-error");
                             ok = false;
                         } else {
-                            $("#passwordI").removeClass("has-error");
-                            $("#passwordI").addClass("has-success");
+                            $(".passwordI").removeClass("has-error");
                         }
                         
                         if ($("#email").val() == "") {
-                            $("#emailI").addClass("has-error");
-                            $("#emailI").removeClass("has-success");
+                            $(".emailI").addClass("has-error");
                             ok = false;
                         } else {
-                            $("#emailI").removeClass("has-error");
-                            $("#emailI").addClass("has-success");
+                            $(".emailI").removeClass("has-error");
                         }
                     return ok;
                 }
@@ -161,12 +158,10 @@
                     ok = true;
                     
                         if ($("#emailVergeten").val() == "") {
-                            $("#emailVergetenI").addClass("has-error");
-                            $("#emailVergetenI").removeClass("has-success");
+                            $(".emailVergetenI").addClass("has-error");
                             ok = false;
                         } else {
-                            $("#emailVergetenI").removeClass("has-error");
-                            $("#emailVergetenI").addClass("has-success");
+                            $(".emailVergetenI").removeClass("has-error");
                         }
                         
                     return ok;
@@ -178,7 +173,6 @@
                         
                         if ($("#password1").val() == "") {
                             $("#password1div").addClass("has-error");
-                            $("#password1div").removeClass("has-success");
                             ok = false;
                         } else {
                             $("#password1div").removeClass("has-error");
@@ -284,6 +278,7 @@
             </div>
 
             <div class="row">
+                <p class="hidden alert alert-danger" role="alert" id="msgReg"></p>  
                 <div class=""> 
                     <div id="emaildiv">                        
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
