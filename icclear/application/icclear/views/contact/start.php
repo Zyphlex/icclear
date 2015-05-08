@@ -22,8 +22,6 @@
     </div>
 
     <div class="col-sm-6">
-
-
         <div class="col-md-8">            
             <?php
             $attributes = array('name' => 'myform');
