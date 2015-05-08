@@ -76,7 +76,7 @@
             </div>
             
              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                <button type="button" class="col-sm-12 btn btn-default" data-dismiss="modal">Sluiten</button>
             </div>
             
         </div>            
