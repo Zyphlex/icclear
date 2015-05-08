@@ -399,11 +399,13 @@
                 <div class="col-sm-12">
                 <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgVer"></p>  
                 </div>
+                <div class="EmailVergetenI">
                 <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
                     <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
                 </div>
-
+                </div>
+                    
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>  
