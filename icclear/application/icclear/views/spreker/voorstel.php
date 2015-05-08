@@ -19,9 +19,9 @@
         <div class="col-sm-8 space-bottom">
             <h2>Sessie voorstel</h2>
             <p>
-                Praesent sed est id leo molestie malesuada. Pellentesque interdum elit eu neque facilisis, eget elementum ante tempor. 
-                Nunc dictum venenatis magna non tincidunt. Vestibulum vitae faucibus odio, et posuere est. Sed ac nisi ex. 
-                Donec porttitor vitae sapien nec laoreet. Maecenas dignissim dignissim justo a maximus.
+                Een conferentie kan niet doorgaan zonder sprekers. Misschien heeft u wel kennis over een onderdeel van klare
+                taal die u wil delen? Vul in dat geval onderstaand formulier zeker in. Onze organisatoren zullen uw voorstel 
+                bekijken en keuren. U wordt via e-mail op de hoogte gebracht als uw voorstel goed wordt gekeurd.
             </p>        
         </div> 
     </div>
