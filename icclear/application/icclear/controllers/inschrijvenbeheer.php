@@ -100,7 +100,7 @@ class Inschrijvenbeheer extends CI_Controller {
 
         $inschrijving->id = $this->input->post('id');
         $id = $inschrijving->id;
-        $inschrijving->gebruikerId = $this->input->post('gebruiker');
+        $inschrijving->gebruikerId = $this->input->post('gebruikerId');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
         $inschrijving->methodeId = $this->input->post('methode');
         $betaling = $this->input->post('betaling');
