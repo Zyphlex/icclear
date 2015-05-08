@@ -50,6 +50,7 @@ class Admin extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //dashboard openen en statistieken weergeven
     public function dashboard($id) {
         $this->session->set_userdata('conferentieId', $id);
 
