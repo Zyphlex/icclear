@@ -54,7 +54,8 @@ class Sponsorbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/sponsor/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //overzicht van alle sponsors die je kan beheren
     public function overzicht() {
         $this->load->model('sponsor_model');
         $data['sponsors'] = $this->sponsor_model->getAll();
@@ -65,6 +66,7 @@ class Sponsorbeheer extends CI_Controller {
         $this->load->view('admin/sponsor/lijst', $data);
     }
 
+    //details per sponsor
     public function detail() {
         $id = $this->input->get('id');
 
@@ -74,6 +76,7 @@ class Sponsorbeheer extends CI_Controller {
         echo json_encode($sponsor);
     }
 
+    //sponsor verwijderen
     public function delete($id) {
         $id = $this->input->post('id');
 
@@ -83,6 +86,7 @@ class Sponsorbeheer extends CI_Controller {
         echo $deleted;
     }
 
+    //sponsor wijzigen
     public function update() {
         $sponsor->id = $this->input->post('id');
         $sponsor->naam = $this->input->post('naam');
