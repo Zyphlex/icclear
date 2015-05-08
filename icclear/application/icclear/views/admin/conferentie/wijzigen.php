@@ -80,7 +80,7 @@
         } else {
             $('.prijs').removeClass('has-error');
         }
-        
+
         if ($('#korting').val() == "") {
             $('.korting').addClass('has-error');
             ok = false;
@@ -103,16 +103,21 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function () {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/conferentie/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#modalItemDetail").modal('hide');
+            if (validatieOK()) {
+                var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/conferentie/update",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#modalItemDetail").modal('hide');
+            } else {
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
