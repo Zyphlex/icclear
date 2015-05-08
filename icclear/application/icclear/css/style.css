@@ -127,6 +127,10 @@ a:hover {
     margin-top:0; 
 }
 
+.contact h1 {
+    margin-bottom:0;
+}
+
 .content .row {
     margin:0;
 }
