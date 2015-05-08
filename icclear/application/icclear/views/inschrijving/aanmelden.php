@@ -192,14 +192,14 @@
                 <div class="emailI1">
                     <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                     <div class="col-sm-8">
-                        <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email1', 'class' => 'form-control', 'size' => '30')); ?>        
+                        <?php echo form_input(array('type' => 'email', 'name' => 'emaillogon', 'id' => 'email1', 'class' => 'form-control', 'size' => '30')); ?>        
                     </div>
                 </div>
                 
                 <div class="passwordI1">
                     <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
                     <div class="col-sm-8">
-                        <?php echo form_password(array('name' => 'password', 'id' => 'passwordI11', 'class' => 'form-control', 'size' => '30')); ?> 
+                        <?php echo form_password(array('name' => 'passwordlogon', 'id' => 'passwordI11', 'class' => 'form-control', 'size' => '30')); ?> 
                     </div>
                 </div>
                 
