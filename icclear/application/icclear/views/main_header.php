@@ -405,7 +405,7 @@
                 <div class="EmailVergetenI">
                 <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
-                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
+                    <?php echo form_input(array('type' => 'email', 'name' => 'emailVergeten', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
                 </div>
                 </div>
                     
