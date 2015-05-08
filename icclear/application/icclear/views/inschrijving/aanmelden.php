@@ -6,6 +6,10 @@
             if (validatieOK() && validate() && realCheck1()) {
                 $("#FormRegistreren1").submit();
             } else {
+                if (realCheck1()) {
+                    $("#mailTaken1").removeClass("hidden");
+                    $("#mailTaken1").html("Oops! Dit email adres is reeds in gebruik!");
+                }
                 $("#msgReg1").removeClass("hidden");
                 $("#msgReg1").html("Oops! U hebt niet alle velden ingevuld!");
             }
@@ -146,8 +150,6 @@
                 if (result == '0') {
                     $('#feedbackemail1').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                     $("#emaildiv1").addClass("has-error");
-                    $("#mailTaken1").removeClass("hidden");
-                    $("#mailTaken1").html("Oops! Dit email adres is reeds in gebruik!");
                 } else {
                     $('#feedbackemail1').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                     $("#emaildiv1").removeClass("has-error");
