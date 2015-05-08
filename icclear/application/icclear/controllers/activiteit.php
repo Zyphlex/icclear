@@ -94,8 +94,7 @@ class Activiteit extends CI_Controller {
 
         echo $deleted;
     }
-
-    // TEST
+    
 }
 
  
