@@ -63,7 +63,7 @@
 <br/><br/>
 
 <div class="row hidden">
-    <div class="col-sm-10 col-md-offset-2">       
+    <div class="col-sm-10 col-md-offset-2 hidden-xs">       
         <p>PHP Project - IT Ninjas - Groep 23: Frederik Van Hooghten, Rob Oosthoek, Leslie Milants & Abderrahmane Ikrou - Opdrachtgever: Karine Nickolay</p>        
     </div>
 </div>
