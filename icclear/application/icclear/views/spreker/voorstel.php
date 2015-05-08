@@ -20,7 +20,7 @@
             <h2>Sessie voorstel</h2>
             <p>
                 Een conferentie kan niet doorgaan zonder sprekers. Misschien heeft u wel kennis over een onderdeel van klare
-                taal die u wil delen? Vul in dat geval onderstaand formulier zeker in. Onze organisatoren zullen uw voorstel 
+                taal die u wilt delen? Vul in dat geval onderstaand formulier zeker in. Onze organisatoren zullen uw voorstel 
                 bekijken en keuren. U wordt via e-mail op de hoogte gebracht als uw voorstel goed wordt gekeurd.
             </p>        
         </div> 
