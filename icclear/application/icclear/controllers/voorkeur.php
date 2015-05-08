@@ -12,6 +12,9 @@ class Voorkeur extends CI_Controller {
    
     public function doorgeven() {
         $user = $this->authex->getUserInfo();
+        if($user == null){
+            $user = $this->session->userdata('geregistreerde');            
+        }  
         
         $gebruikerId = $user->id;
         $ids = array();
