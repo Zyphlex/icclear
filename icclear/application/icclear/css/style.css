@@ -3,6 +3,7 @@
 }
 .dataTables_filter {float:left !important; margin-top:20px;}
 .dataTables_info {display:inline !important;}
+.dataTables_length::before {content: " | ";}
 .dataTables_length {display:inline !important;}
 .margin-top {margin-top:20px !important;}
 
