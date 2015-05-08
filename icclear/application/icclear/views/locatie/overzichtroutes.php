@@ -7,7 +7,7 @@
     <div class="google-maps space-bottom15 col-sm-6">
             <iframe class="img-responsive"
                 src="<?php echo $route->url ?>"
-                width="100%" height="100%" frameborder="0" style="border:0">
+                width="600" height="450" frameborder="0" style="border:0">
             </iframe>
     </div>
     <hr/>
