@@ -89,7 +89,7 @@ class Gebruiker_activiteit_model extends CI_Model {
     function update($activiteit) {
         $activiteit = escape_html($activiteit);
         
-        $this->db->where('gebruikerId', $activiteit->gebruikerId);
+        $this->db->where('id', $activiteit->id);
         $this->db->update('gebruikerActiviteit', $activiteit);
     }
         
