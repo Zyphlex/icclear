@@ -1,13 +1,13 @@
 <div class="row">
-    <div class="col-lg-offset-1">
+    <div class="col-md-8">
         <h1>Contactpagina</h1>
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-offset-1">
+    <div class="col-md-8">
         <h3>Adres:</h3>
     </div>
-    <div class="col-lg-offset-1">
+    <div class="col-md-8">
         <p>ICClear Brussel</p>
         <p>014/404040</p>
         <p>Nieuwstraat 1</p>
@@ -16,12 +16,12 @@
 </div>
 
 <div class="row space-top15">
-    <div class="col-lg-offset-1">
+    <div class="col-md-8">
         <h1>Neem contact op met ons</h1>
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-offset-1">
+    <div class="col-md-8">
         <form action="contact/insturen" method="post">        
             <p><?php echo form_label('Uw emailadres:', 'emailadresverzender'); ?></p>
             <p><?php echo form_input(array('name' => 'emailadresverzender', 'id' => 'emailadresverzender', 'class' => 'form-control', 'required' => 'required')); ?></p>
