@@ -281,6 +281,7 @@ class Inschrijven extends CI_Controller {
         $user->geslacht = $this->input->post('geslachtI');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
         $user->generatedKey = $genkey;
+        $user->typeId = 1;
 
         $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
