@@ -55,7 +55,7 @@
                         <p><?php echo $gebouw->gebouw->gemeente ?> (<?php echo $gebouw->gebouw->postcode ?>)</p>
                         <p><?php echo $gebouw->gebouw->straat ?> <?php echo $gebouw->gebouw->nummer ?></p>
                     
-                        <button data-id="<?php echo $gebouw->gebouw->id ?>" class="zoekRoutes btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
+                        <button data-id="<?php echo $gebouw->gebouw->id ?>" class="col-sm-12 zoekRoutes btn btn-primary" data-toggle="modal" data-target="#routesModal">Toon routes</button>
                     </div>
                 </div>  
             </div>
@@ -76,7 +76,7 @@
             </div>
             
              <div class="modal-footer">
-                <button type="button" class="col-sm-12 btn btn-default" data-dismiss="modal">Sluiten</button>
+                <button type="button" class="col-sm-12 btn btn-primary" data-dismiss="modal">Sluiten</button>
             </div>
             
         </div>            
