@@ -101,9 +101,10 @@ class Hotels extends CI_Controller {
             echo print_r($config);
             echo print_r($error);
             echo realpath($config['upload_path']);
+        } else {            
+            $hotel->foto = $config['file_name'];
         }
 
-        $hotel->foto = $config['file_name'];
 
         // Toevoegen als record nog niet bestaat, anders updaten
         $this->load->model('hotel_model');

@@ -109,9 +109,10 @@ class Gebouw extends CI_Controller {
             echo print_r($config);
             echo print_r($error);
             echo realpath($config['upload_path']);
+        } else {            
+            $gebouw->foto = $config['file_name'];
         }
 
-        $gebouw->foto = $config['file_name'];
 
         // gebouw toevoegen als het nog niet bestaat, anders updaten
         $this->load->model('gebouw_model');

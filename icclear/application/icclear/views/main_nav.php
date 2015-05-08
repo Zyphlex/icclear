@@ -24,7 +24,7 @@
                         <li <?php if ($active == 'inschrijven'){ echo 'class="active"'; } ?>><?php echo anchor('inschrijven/', 'INSCHRIJVEN'); ?></li>
                     <?php } ?>
                     <li <?php if ($active == 'spreker'){ echo 'class="active"'; } ?>><?php echo anchor('spreker/', 'SPREKERS'); ?></li>
-                    <li <?php if ($active == 'venue'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'VENUES/ROUTES'); ?></li>
+                    <li <?php if ($active == 'venue'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/', 'LOCATIES/ROUTES'); ?></li>
                     <li <?php if ($active == 'hotel'){ echo 'class="active"'; } ?>><?php echo anchor('locatie/hotel', 'HOTELS'); ?></li>
                     <li <?php if ($active == 'sponsors'){ echo 'class="active"'; } ?>><?php echo anchor('sponsor/', 'SPONSORS'); ?></li>
                     <?php
