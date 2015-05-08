@@ -93,8 +93,10 @@
                                         <?php foreach ($d->programma as $p) { ?>       
                                         <?php if ($p->plenair == '0') { ?>
                                             <tr class="under-link">
-                                                <td>
-                                                  <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
+                                                <td class="success">
+                                                    <div class="checkbox">
+                                                        <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
+                                                    </div>
                                                 </td>
                                                 <td>
                                                     <p>
