@@ -283,7 +283,7 @@ class Inschrijven extends CI_Controller {
         $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-    print_r($user);
+        
         //Verwerken van het inschrijven
         $this->verwerkenInschrijving($user);
         $this->email->from('donotreply@thomasmore.be');
