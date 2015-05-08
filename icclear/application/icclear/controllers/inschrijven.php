@@ -308,7 +308,7 @@ class Inschrijven extends CI_Controller {
     public function voorkeuren() {
         $user = $this->authex->getUserInfo();
         if($user == null){
-            $user = $this->session->get_userdata('geregistreerde');
+            $user = $this->session->userdata('geregistreerde');
         }
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
