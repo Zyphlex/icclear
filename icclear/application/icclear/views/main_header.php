@@ -56,7 +56,7 @@
         <div class="modal-content">
 
             <?php
-            $attributes = array('name' => 'FormInloggen', 'class' => 'form-horizontal');
+            $attributes = array('name' => 'FormInloggen','id'=>'FormInloggen' , 'class' => 'form-horizontal');
             echo form_open('logon/aanmelden', $attributes);
             ?>
             <div class="row">
@@ -355,7 +355,7 @@
         <div class="modal-content">
 
             <?php
-            $attributes = array('name' => 'FormVergeten', 'method' => 'post', 'class' => 'form-horizontal');
+            $attributes = array('name' => 'FormVergeten', 'id' => 'FormVergeten','method' => 'post', 'class' => 'form-horizontal');
             echo form_open('logon/resetPass', $attributes);
             ?>   
 
