@@ -184,8 +184,7 @@ class Sessies extends CI_Controller {
 
         echo $deleted;
     }
-
-    // TEST
+    
 }
 
  
