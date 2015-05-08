@@ -140,17 +140,6 @@ class Sessies_model extends CI_Model {
         return $this->db->insert_id();
     }
     
-    //Alle sessies opvragen van de gekozen conferentie, die nog niet in de planning zitten
-    function getAllNPlanConf($id) {
-        
-        $sql = 'select * from sessie s 
-                where s.isGoedgekeurd = 1 
-                and s.conferentieId = ?
-                and s.id NOT IN(select p.sessieId from planning p);';
-        $query = $this->db->query($sql, array($id));
-        return $query->result();
-    }
-    
     //Alle sessies opvragen van de gekozen conferentie
     function getAllPlanConf($id) {        
         $this->db->where('isGoedgekeurd', '1');
