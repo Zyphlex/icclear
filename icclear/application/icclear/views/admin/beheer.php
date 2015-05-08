@@ -9,14 +9,14 @@
                 <h3 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 
-                        <b>Huidige Conferentie</b>
+                        <span class="bold">Huidige Conferentie</span>
                     </a>
                 </h3>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                
+                <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table table-beheer" style="margin-left: 50px">
+                        <table class="table table-beheer">
                             <thead>
                                 <tr>
                                     <th class="w25">Naam</th>                                
@@ -38,7 +38,7 @@
                             </tbody>
                         </table>
                     </div>
-                
+                </div>
             </div>
         </div>
         <div class="panel panel-default">
@@ -46,7 +46,7 @@
                 <h3 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-                        Aankomende Conferenties
+                        <span class="bold">Aankomende Conferenties</span>
                     </a>
                 </h3>
             </div>
@@ -84,31 +84,31 @@
                 <h3 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 
-                        Verleden Conferenties
+                        <span class="bold">Verleden Conferenties</span>
                     </a>
                 </h3>
             </div>
             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table table-beheer" style="margin-left: 50px">
+                        <table class="table table-beheer">
                             <thead>
                                 <tr>
-                                    <th>Naam</th>                                
-                                    <th>Periode</th>
-                                    <th>Stad</th>
-                                    <th>Land</th>
-                                    <th>Beheer</th>
+                                    <th class="w25">Naam</th>                                
+                                    <th class="w30">Periode</th>
+                                    <th class="w15">Stad</th>
+                                    <th class="w15">Land</th>
+                                    <th class="w15">Beheer</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($verleden as $ver) { ?>
                                     <tr>
-                                        <td style="width:200px"><?php echo $ver->naam ?></td>                                
-                                        <td style="width:250px"><?php echo toDDMMYYYY($ver->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
-                                        <td style="width:150px"><?php echo $ver->stad ?></td>
-                                        <td style="width:150px"><?php echo $ver->land->naam ?></td>
-                                        <td style="width:150px"><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                                        <td><?php echo $ver->naam ?></td>                                
+                                        <td><?php echo toDDMMYYYY($ver->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
+                                        <td><?php echo $ver->stad ?></td>
+                                        <td><?php echo $ver->land->naam ?></td>
+                                        <td><?php echo anchor('admin/dashboard/' . $ver->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
