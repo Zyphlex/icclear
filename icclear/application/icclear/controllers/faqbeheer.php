@@ -50,7 +50,8 @@ class Faqbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/faq/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //overzicht van alle vragen die je kan beheren
     public function overzicht() {
         $this->load->model('faq_model');
         $data['vragen'] = $this->faq_model->getAll();
@@ -58,6 +59,7 @@ class Faqbeheer extends CI_Controller {
         $this->load->view('admin/faq/lijst', $data);
     }
 
+    //details per vraag
     public function detail() {
         $id = $this->input->get('id');
 
@@ -66,7 +68,7 @@ class Faqbeheer extends CI_Controller {
 
         echo json_encode($vraag);
     }
-
+//updaten van een vraag
     public function update() {
         $faq->id = $this->input->post('id');
         $faq->vraag = $this->input->post('vraag');
@@ -81,7 +83,7 @@ class Faqbeheer extends CI_Controller {
 
         echo $id;
     }
-
+//deleten van een vraag
     public function delete() {
         $id = $this->input->post('id');
 
