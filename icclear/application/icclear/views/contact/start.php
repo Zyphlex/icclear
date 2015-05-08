@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-6">
-        <div class="row">
+        <div class="row contact">
             <h1 class="underline">Contactgegevens</h1>
 
             <div class="col-sm-12">
