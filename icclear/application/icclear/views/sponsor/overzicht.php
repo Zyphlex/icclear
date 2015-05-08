@@ -11,7 +11,7 @@
             <div class="panel panel-default">
                 <div class="row">
                     <div class="panel-body">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <?php if ($sponsor->logo == 'sponsor' . $sponsor->id . '.jpg') { ?>
                                 <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sponsors/' . $sponsor->logo; ?>" 
                                  alt="Logo <?php echo $sponsor->naam; ?>" 
@@ -22,7 +22,7 @@
                                  alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="bottom">
                             <?php } ?>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-7">
                             <h3><?php echo $sponsor->naam ?></h3>        
  
                         </div>
@@ -46,7 +46,7 @@
             <div class="panel panel-default">
                 <div class="row">
                     <div class="panel-body">
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <?php if ($sponsor->logo == 'sponsor' . $sponsor->id . '.jpg') { ?>
                                 <img class="img-responsive center-block" src="<?php echo base_url() . 'application/upload/fotos/sponsors/' . $sponsor->logo; ?>" 
                                  alt="Logo <?php echo $sponsor->naam; ?>" 
@@ -57,7 +57,7 @@
                                  alt="Foto niet beschikbaar" title="Foto niet beschikbaar" data-placement="bottom">
                             <?php } ?>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-7">
                             <h3><?php echo $sponsor->naam ?></h3>        
  
                         </div>
