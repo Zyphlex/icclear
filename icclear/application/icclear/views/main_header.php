@@ -66,7 +66,7 @@
                     <h3>Aanmelden</h3>
                 </div>   
 
-                <p class="hidden alert alert-danger" role="alert" id="msgInl"></p>                  
+                <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgInl"></p>                  
                 
                 <div class="emailI">
                     <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
