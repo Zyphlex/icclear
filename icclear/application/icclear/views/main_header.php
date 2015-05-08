@@ -1,14 +1,14 @@
 <div class="row">
-    <div class="col-sm-8">                         
+    <div class="col-xs-8">                         
         <a href="<?php echo base_url(); ?>icclear.php/home">
             <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
         </a>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-xs-4">
         <div class="">
-            <p>
-        <span class="logon italic space-right15">
+            
+        <div class="logon italic">
             <a class="red" href="#">NL</a> 
             / 
             <a href="#">EN</a> 
@@ -16,8 +16,8 @@
             <a href="#">FR</a> 
             / 
             <a href="#">GER</a> 
-        </span>
-            </p>
+        </div>
+            
 
         <?php if ($user == null) { // niet aangemeld ?>  
 
