@@ -97,7 +97,8 @@ class Email extends CI_Controller {
             $this->email->send();
         }
     }
-
+    
+   
     public function update() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->voornaam = $this->input->post('voornaam');
