@@ -6,12 +6,14 @@ class Zaal_model extends CI_Model {
         parent::__construct();
     }
     
+    // Een bepaalde zaal ophalen m.b.v. een id
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('zaal');
         return $query->row();
     }
     
+    // Alle zalen met het bijbehorende gebouw ophalen
     function getGebouw() {
         $query = $this->db->get('zaal');
         $zalen = $query->result();
@@ -25,17 +27,20 @@ class Zaal_model extends CI_Model {
         return $zalen;
     }
     
+    // Alle zalen ophalen
     function getAll() {
         $query = $this->db->get('zaal');
         return $query->result();
     }
     
+    // Alle zalen van eenzelfde gebouw ophalen
     function getAllPerGebouw($id) {
         $this->db->where('gebouwId', $id);
         $query = $this->db->get('zaal');
         return $query->result();
     }
     
+    // Een bestaande zaal updaten
     function update($zaal)
     {
         //Html entities en extra spaties verwijderen
@@ -45,6 +50,7 @@ class Zaal_model extends CI_Model {
         $this->db->update('zaal', $zaal);
     }
     
+    // Een nieuwe zaal toevoegen
     function insert($zaal)
     {
         //Html entities en extra spaties verwijderen
@@ -54,6 +60,7 @@ class Zaal_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    // Een zaal verwijderen
      function delete($id)
     {
         $this->db->where('id', $id);
