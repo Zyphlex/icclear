@@ -53,7 +53,7 @@
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 
                     <div class="table-responsive">
-                        <table class="table table-beheer" style="margin-left: 50px">
+                        <table class="table table-beheer">
                             <thead>
                                 <tr>
                                     <th class="w25">Naam</th>                                
