@@ -80,6 +80,7 @@ class Gebouw extends CI_Controller {
         $gebouw->nummer = $this->input->post('nummer');
         $gebouw->landId = $this->input->post('land');
 
+        
         // foto
         $config['upload_path'] = './application/upload/fotos/gebouwen';
         $config['allowed_types'] = 'jpg';
@@ -100,6 +101,8 @@ class Gebouw extends CI_Controller {
 
         $fieldname = 'userfile';
 
+    print_r($fieldname);
+        
         if (!$this->upload->do_upload($fieldname)) {
             $error = array('error' => $this->upload->display_errors());
             echo print_r($config);
@@ -117,7 +120,7 @@ class Gebouw extends CI_Controller {
             $this->gebouw_model->update($gebouw);
         }
 
-        redirect('gebouw');
+        //redirect('gebouw');
     }
 
     public function delete() {
