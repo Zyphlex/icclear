@@ -108,7 +108,9 @@ class Inschrijvenbeheer extends CI_Controller {
         $oud = $this->inschrijving_model->get($id);
 
         if ($oud->betalingId == null && $betaling == "ja") {
-            $inschrijving->betalingId = $this->betaling_model->insert($inschrijving->gebruikerId);
+            $bet->id = 0;
+            $bet->gebruikerId = $inschrijving->gebruikerId;
+            $inschrijving->betalingId = $this->betaling_model->insert($bet);
         }
 
         $this->inschrijving_model->update($inschrijving);
