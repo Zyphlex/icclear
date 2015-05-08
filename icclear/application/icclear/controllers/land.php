@@ -86,8 +86,7 @@ class Land extends CI_Controller {
 
         echo $deleted;
     }
-
-    // TEST
+ 
 }
 
  
