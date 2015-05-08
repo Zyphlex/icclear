@@ -133,42 +133,7 @@
 
                 });
                 
-                function inloggenOK() {
-                    ok = true;
-                        if ($("#password").val() == "") {
-                            $("#passworddiv").addClass("has-error");
-                            $("#passworddiv").removeClass("has-success");
-                            ok = false;
-                        } else {
-                            $("#passworddiv").removeClass("has-error");
-                            $("#passworddiv").addClass("has-success");
-                        }
-                        
-                        if ($("#email").val() == "") {
-                            $("#emaildiv1").addClass("has-error");
-                            $("#emaildiv1").removeClass("has-success");
-                            ok = false;
-                        } else {
-                            $("#emaildiv1").removeClass("has-error");
-                            $("#emaildiv1").addClass("has-success");
-                        }
-                    return ok;
-                }
                 
-                function vergetenOK() {
-                    ok = true;
-                    
-                        if ($("#emailVergeten").val() == "") {
-                            $("#emailVergeten").addClass("has-error");
-                            $("#emailVergeten").removeClass("has-success");
-                            ok = false;
-                        } else {
-                            $("#emailVergeten").removeClass("has-error");
-                            $("#emailVergeten").addClass("has-success");
-                        }
-                        
-                    return ok;
-                }
                 
                 
                 function validatieOK() {
