@@ -7,13 +7,14 @@ class Betaling_model extends CI_Model {
         parent::__construct();
     }
     
+    // Een betaling ophalen
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('betaling');
         return $query->row();
     }
     
-    
+    // Een betaling toevoegen
     function insert($betaling)
     {
         $betaling = escape_html($betaling);
@@ -23,6 +24,7 @@ class Betaling_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    // De te betalen prijs van een gebruiker ophalen
     function getPrijsByGebruiker($id){
         $this->db->where('id', $id);
         $query = $this->db->get('betaling');
@@ -32,6 +34,7 @@ class Betaling_model extends CI_Model {
         return $geld;
     }
     
+    // Een betaling verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('betaling');
