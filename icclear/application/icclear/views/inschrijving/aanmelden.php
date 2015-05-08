@@ -236,7 +236,7 @@
 
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
-                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
+                        <a href="javascript:history.go(-1)" class="col-xs-4 btn btn-default">Terug</a>
                         <button name="submitInlog" id="submitInlog1" class="col-xs-8 btn btn-primary">Aanmelden</button>
                     </div>
                 </div>
