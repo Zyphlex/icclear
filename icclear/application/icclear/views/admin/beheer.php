@@ -19,11 +19,11 @@
                         <table class="table table-beheer" style="margin-left: 50px">
                             <thead>
                                 <tr>
-                                    <th>Naam</th>                                
-                                    <th>Periode</th>
-                                    <th>Stad</th>
-                                    <th>Land</th>
-                                    <th>Beheer</th>
+                                    <th class="w25">Naam</th>                                
+                                    <th class="w30">Periode</th>
+                                    <th class="w15">Stad</th>
+                                    <th class="w15">Land</th>
+                                    <th class="w15">Beheer</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +51,7 @@
                 </h3>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                
+                <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-beheer">
                             <thead>
@@ -66,17 +66,17 @@
                             <tbody>
                                 <?php foreach ($toekomenden as $toe) { ?>
                                     <tr>
-                                        <td style="width:200px"><?php echo $toe->naam ?></td>                                
-                                        <td style="width:250px"><?php echo toDDMMYYYY($toe->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
-                                        <td style="width:150px"><?php echo $toe->stad ?></td>
-                                        <td style="width:150px"><?php echo $toe->land->naam ?></td>
-                                        <td style="width:150px"><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                                        <td><?php echo $toe->naam ?></td>                                
+                                        <td><?php echo toDDMMYYYY($toe->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
+                                        <td><?php echo $toe->stad ?></td>
+                                        <td><?php echo $toe->land->naam ?></td>
+                                        <td><?php echo anchor('admin/dashboard/' . $toe->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
                     </div>
-                    
+                </div>
             </div>
         </div>
         <div class="panel panel-default">
