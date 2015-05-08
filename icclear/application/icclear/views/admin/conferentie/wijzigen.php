@@ -277,7 +277,7 @@
                     <p><?php echo form_label('Korting:', 'korting'); ?></td>
                     <p>
                         <div class="input-group">
-                        <span class="input-group-addon">%</span>
+                            <span class="input-group-addon">&percnt;</span>
                         <?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>
                         </div>
                     </p>
