@@ -58,7 +58,6 @@
     function verbergError() {
         $("#msg").addClass("hidden");
         $('.titel').removeClass('has-error');
-        $('.inhoud').removeClass('has-error');
     }
 
     //VALIDATIE
@@ -70,13 +69,6 @@
             ok = false;
         } else {
             $('.titel').removeClass('has-error');
-        }
-
-        if ($('#inhoud').val().length() < 0) {
-            $('.inhoud').addClass('has-error');
-            ok = false;
-        } else {
-            $('.inhoud').removeClass('has-error');
         }
 
         return ok;
