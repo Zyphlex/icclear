@@ -68,6 +68,7 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanAdmin").click(function () {
+            if (validatieOK()) {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -78,6 +79,10 @@
             });
             refreshData();
             $("#adminModal").modal('hide');
+            } else {
+                $("#msgo").removeClass("hidden");
+                $("#msgo").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
