@@ -242,14 +242,14 @@
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
                         <span id="feedbackemail" class="form-note"></span> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('type'=>'email', 'name' => 'emailadres', 'id' => 'emailadres1', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('type'=>'email', 'name' => 'emailadresI', 'id' => 'emailadres1', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
                     <div id="password1div1"> 
                         <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
                         <div class="col-sm-8">                       
-                            <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password11', 'class' => 'form-control')); ?> 
+                            <?php echo form_password(array('name' => 'wachtwoord1I', 'id' => 'password11', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
@@ -257,21 +257,21 @@
                         <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
                         <span id="validate-status1" class="form-note"></span>              
                         <div class="col-sm-8">                                        
-                            <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password21', 'class' => 'form-control')); ?>                    
+                            <?php echo form_password(array('name' => 'bevestigwwI', 'id' => 'password21', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
                     <div id="voornaamdiv1">
                         <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>   
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam1', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'voornaamI', 'id' => 'voornaam1', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
                     <div id="familienaamdiv1">
                         <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>  
                         <div class="col-sm-8">  
-                            <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam1', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'familienaamI', 'id' => 'familienaam1', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
@@ -279,11 +279,11 @@
                         <?php echo form_label('Geslacht:', 'geslacht', array('class' => 'col-sm-4 control-label')); ?>       
                         <div class="col-sm-8">  
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'type' => 'radio')); ?>   
+                                <?php echo form_input(array('name' => 'geslachtI', 'value' => 'Man', 'type' => 'radio')); ?>   
                                 <span class="option-title">Man</span>
                             </div> 
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
+                                <?php echo form_input(array('name' => 'geslachtI', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
                                 <span class="option-title">Vrouw</span>
                             </div>
                         </div>
