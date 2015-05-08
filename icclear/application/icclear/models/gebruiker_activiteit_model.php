@@ -85,6 +85,13 @@ class Gebruiker_activiteit_model extends CI_Model {
         }        
         return $geld;
     }
+    
+    function update($activiteit) {
+        $activiteit = escape_html($activiteit);
+        
+        $this->db->where('id', $activiteit->gebruikerId);
+        $this->db->update('gebruikerActiviteit', $activiteit);
+    }
         
     function insert($activiteit) {
         //Html entities en extra spaties verwijderen
