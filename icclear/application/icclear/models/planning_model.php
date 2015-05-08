@@ -127,7 +127,7 @@ class Planning_model extends CI_Model {
         $this->load->model('conferentie_model');
         $confId = $this->conferentie_model->getActieveConferentie();
         $this->db->where('conferentieId', $confId->id);
-        $this->db->where('isPlenair', 0);
+        $this->db->where('isPlenair', '0');
         $query = $this->db->get('conferentiedag');
         $dagen = $query->result();
          
