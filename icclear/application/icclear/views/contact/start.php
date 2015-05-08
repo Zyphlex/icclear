@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row space-top15">
     <div class="col-lg-offset-1">
         <h1>Neem contact op met ons</h1>
     </div>
