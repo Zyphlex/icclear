@@ -55,6 +55,7 @@ class Aankondiging extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //overzicht van alle aankondigingen die je kan beheren
     public function overzicht() {
         $this->load->model('aankondiging_model');
         $data['aankondigingen'] = $this->aankondiging_model->getAllPerConferentie($this->session->userdata('conferentieId'));
@@ -62,6 +63,7 @@ class Aankondiging extends CI_Controller {
         $this->load->view('admin/aankondiging/lijst', $data);
     }
 
+    //Details per aankondiging
     public function detail() {
         $id = $this->input->get('id');
 
@@ -71,6 +73,7 @@ class Aankondiging extends CI_Controller {
         echo json_encode($aankondiging);
     }
 
+    //aankondiging verwijderen
     public function delete($id) {
         $id = $this->input->post('id');
 
@@ -80,6 +83,7 @@ class Aankondiging extends CI_Controller {
         echo $deleted;
     }
 
+    //aankondiging wijzigen
     public function update() {
         $user = $this->authex->getUserInfo();
         
