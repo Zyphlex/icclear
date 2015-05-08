@@ -206,21 +206,18 @@ span>
         div class="my-radio">
   <div class="col-md-6">         
                                     <div class="col-md-4 voornaamp  <div class="col-md-4">   
-                                        <Voornaam:', 'voornaam', 'class="voornaamp"'); ?>
-             
-                      </div>
+                                        <Voornaam:', 'voornaam', array('class'=>'voornaampdisabled' => 'disabled')); ?>
+              </div>
 
-                      </div>
-
-      <div class="col-md-8 voornaamp">div class="col-md-8"> 
+                                    <div class="col-md-8 voornaamp">div class="col-md-8"> 
                                         <?php echo form_ivoornaam', 'id' => 'voornaampnaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
               </div>
      <div class="row">
                                    familienaamp  <div class="col-md-4">   
-                                        <?php echo form_label('Famili, 'class="familienaamp"''0', 'type' => 'date')); ?>                
+                                        <?php echo form_label('Famili, array('class'=>'familienaamp')); ?>                d' => 'disabled')); ?>
               </div>
-     <div class="row">
-                                   familienaamp">                  <div class="col-md-8"> 
+
+                                    <div class="col-md-  familienaamp">                  <div class="col-md-8"> 
                                         <?php echo form_ifamilienaam', 'id' => 'familienaamp, 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
               </div>
 
@@ -237,12 +234,14 @@ span>
 
                                     <div class="col-md-4 geboortedatump">
 col-md-4">   
-                                                <?pboortedatum:', 'geboortedatum', 'class="geboortedatump"'); ?>         ?>
-                                                          
+                                                <?pboortedatum:', 'geboortedatum', array('class'=>'geboortedatump')); ?>      ode:', 'postcode'); ?>                                          
               </div>
 
-                                    <div class="col-md-8 geboortedatump  <div class="col-md-8"> 
-                                        <?php echo form_input(array('name' => 'geboortedatum', p'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
+                      </div>
+
+      <div class="col-md-8 geboortedatump"> 
+div class="">
+                                                <?php echo form_input(array('name' => 'geboortedatum', p'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
               </div>
      <div class="row">
                                    geslachtp">   
