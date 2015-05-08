@@ -41,6 +41,14 @@ class Contact extends CI_Controller {
     public function insturen(){
         $email = $this->input->post('emailadresverzender');
         $boodschap = $this->input->post('boodschapcontact');
+        $onderwerp = $this->input->post('onderwerpcontact');
+        
+        $this->email->from($email);
+        $this->email->to('vragen@icclear.be');
+        $this->email->subject($onderwerp);
+        $this->email->message($boodschap);
+        $this->email->send();
+        
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'contact/succes', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
