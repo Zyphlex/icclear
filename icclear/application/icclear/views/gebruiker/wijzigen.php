@@ -29,7 +29,58 @@
             $("#modalItemDetail").modal('show');
         });
     }
+    
+    //VALIDATIE
+    function validatieOK() {
+        ok = true;
+        
+        if ($('#voornaamp').val() == "") {
+            $('.voornaamp').addClass('has-error');
+            ok = false;
+        } else {
+            $('.voornaamp').removeClass('has-error');
+        }
+        
+        if ($('#familienaamp').val() == "") {
+            $('.familienaamp').addClass('has-error');
+            ok = false;
+        } else {
+            $('.familienaamp').removeClass('has-error');
+        }
+        
+         if ($('#emailadresp').val() == "") {
+            $('.emailadresp').addClass('has-error');
+            ok = false;
+        } else {
+            $('.emailadresp').removeClass('has-error');
+        }
+        
+        if ($('#geboortedatump').val() == "") {
+            $('.geboortedatump').addClass('has-error');
+            ok = false;
+        } else {
+            $('.geboortedatump').removeClass('has-error');
+        }
+        
+        if ($('input[type=radio]:checked').size() < 0) {
+            $('.geslacht').addClass('has-error');
+            ok = false;
+        } else {
+            $('.geslacht').removeClass('has-error');
+        }
 
+        return ok;
+    }
+    
+    function verbergError() {
+        $("#msgp").addClass("hidden");
+        $('.voornaamp').removeClass('has-error');
+        $('.familienaamp').removeClass('has-error');
+        $('.emailadresp').removeClass('has-error');
+        $('.geboortedatump').removeClass('has-error');
+        $('.geslachtp').removeClass('has-error');
+    }
+    
     function haaloverzicht(id) {
         $.ajax({type: "GET",
             url: site_url + "/profiel/overzicht",
@@ -69,13 +120,26 @@
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
-
+        
+        $("#Profiel").click(function (e) {
+            verbergError();
+        });
+        
         $("#VeranderPass").click(function (e) {
             e.preventDefault();
             if (validate()) {
                 $("#Password").submit();
             }
-
+        });
+        
+        $(".opslaanGebruiker").click(function (e) {
+            e.preventDefault();
+            if (validatieOK()) {
+                $("#GebruikerWijzig").submit();
+            } else {
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         $("#passwordN2").keyup(validate);
@@ -101,7 +165,7 @@
                     <div class="divider"></div>
 
                 <ul class="nav nav-pills nav-stacked" role="tablist">
-                    <li role="presentation" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
+                    <li role="presentatiid="Profiel"ion" class="active"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">Account</a></li>
                     <li role="presentation"><a href="#conferenties" aria-controls="conferenties" role="tab" data-toggle="tab">Conblue-back ferenties<span class="pull-right badge"><?php echo count($inschrijvingen); ?></span></a></li>?php
                     $count = 0;
                     foreach ($inschrijvingen as $i) {
@@ -134,7 +198,7 @@
 
 
                             <?php
-                            $attributes = array('name' => 'myform', 'id' => 'myform');
+                            $attributes = array('name' => 'GebruikerWijzig', 'id' => 'GebruikerWijzig');
         ', 'id' => 'myform');
                     echo form_open('profiel/update', $attributes)        echo form_hidden('id', $gebruiker->id);
                             ?>
@@ -143,52 +207,56 @@
 
 
                                 <div class="row">
-          <div class="col-md-6">              <div class="row">
-                                    <div class="col-md-4">   
+          <div class="col-sm-12">
+                                    <p class="hidden alert alert-danger" role="alert" id="msgp"></p>  
+span>
+                          </div>
+        div class="my-radio">
+  <div class="col-md-6">         
+                                    <div class="col-md-4 voornaamp  <div class="col-md-4">   
                                         <Voornaam:', 'voornaam'); ?>                      
                                     </div>
 
-                                    v class="col-md-8">   
-                                        <?php echo form_input(array('name' => 'voornaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
+                                   voornaamp">v class="col-md-8">   
+                                        <?php echo form_ivoornaam', 'id' => 'voornaampnaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
               </div>
      <div class="row">
-                                    <div class="col-md-4">   
+                                   familienaamp  <div class="col-md-4">   
                                         <?php echo form_label('Familienaam:', 'familienaam'); ?>                
                                     </div>
 
-                                    <di             <div class="col-md-8">   
-                                        <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
+                                   familienaamp">                  <div class="col-md-8"> 
+                                        <?php echo form_ifamilienaam', 'id' => 'familienaamp, 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
               </div>
 
 
 
      <div class="row">
-                                    <div class="col-md-4">   
+                                   emailadresp  <div class="col-md-4">   
                                         <E-mailadres:', 'emailadres'); ?>                                                      
               </div>                  </div>
 
-                                    <div class="col-md-8">   
-                                        <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'disabled' => 'disabled')); ?>
+                                   emailadresp">  <div class="col-md-8"> 
+                                        <?php echo form_iemailadres', 'id' => 'emailadresp', 'id' => 'emailadres', 'value' => $gebruiker->emailadres, 'class' => 'form-control', 'disabled' => 'disabled')); ?>
               </div>
 
-                                    <div class="col-md-4">
-    div class="col-md-4">
-                                    <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                                                
+                                    <div class="col-md-4 geboortedatump">
+col-md-4">   
+                                                <?pboortedatum:', 'geboortedatum'); ?>      ode:', 'postcode'); ?>                                          
               </div>
 
-                  </div>
-
-                                <div class="col-md-8"> 
-                                        <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
+                                    <div class="col-md-8 geboortedatump  <div class="col-md-8"> 
+                                        <?php echo form_input(array('name' => 'geboortedatum', p'id' => 'geboortedatum', 'value' => $gebruiker->geboortedatum, 'class' => 'form-control', 'style' => 'width: 158px;', 'tabindex' => '0', 'type' => 'date')); ?>                
               </div>
      <div class="row">
-                                    <div class="col-md-4">   
-                                        <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
+                                   geslachtp">   
+col-md-4">   
+                                                <?php echo form_label('Geslacht:', 'geslacht'); ?>                                                                
               </div>  
 
                 </div>  
 
-                                <div class="col-md-8">        
+                               geslachtp  <div class="col-md-8">        
                   <div class="my-radio">
     div class="my-radio">
                                         <?php
@@ -256,7 +324,7 @@
                           $options[$land->id] = $land->naam;
         d->id] = $land->naam;
                                     }
-                                            echo form_dropdown('land', $options, $gebruiker->landId, 'class="form-control" id="field9"');
+                                            echo form_dropdown('land', $options, $gebruiker->landId, 'clalandprm-control" id="field9"');
                       ?>
                                         </div>
 
@@ -266,15 +334,15 @@
 
 
 
-                                <div class="row">
+                          gemeentep       <div class="row">
                                             <div class="col-md-4">   
-                                                <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
+                          <                     <?php echo form_label('Gemeente:', 'gemeente'); ?>                       
                       </div>
 
                       </div>
 
                                     <div class="col-md-8">   
-                                                <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
+                                                <?php echo form_input(array('name' => 'gemeenpte', 'id' => 'gemeente', 'value' => $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
                       </div>
                                         </div>
 
@@ -284,15 +352,15 @@
 
 
 
-                                <div class="row">
+                          postcodep       <div class="row">
                                             <div class="col-md-4">   
-                                                <?php echo form_label('Postcode:', 'postcode'); ?>                                          
+                          <                     <?php echo form_label('Postcode:', 'postcode'); ?>                                          
                       </div>
 
                       </div>
 
                                     <div class="col-md-8">   
-                                                <?php echo form_input(array('name' => 'postcode', 'id' => 'postcode', 'value' => $gebruiker->postcode, 'class' => 'form-control')); ?>                    
+                                                <?php echo form_input(array('name' => 'postcop', 'value' => $gebruiker->postcod=> $gebruiker->gemeente, 'class' => 'form-control')); ?>                    
                       </div>
                                         </div>
 
@@ -302,17 +370,18 @@
 
 
 
-                                <div class="row">
+                          straatp       <div class="row">
                                             <div class="col-md-4">   
-                                                <?php echo form_label('Straat:', 'straat'); ?>                       
+                          <?php echo form_label('Straat:', 'straat'); ?>                                             
                       </div>
 
                       </div>
 
                                     <div class="col-md-8">   
-                                                <input type="text" name="straat" value="<?php echo $gebruiker->straat; ?>" id="field11" class="form-control">
-                      </div>
-                                        </div>
+                                                <input type="text" name="straat" value="<?php echo $gebrustraatp" class="form-control">
+        >                    
+                                    </div>
+                  </div>
 
 
 
@@ -320,7 +389,7 @@
 
 
 
-                                <div class="row">
+                          huisnummerp       <div class="row">
                                             <div class="col-md-4">   
                           <label for="huisnummer">
         bel for="huisnummer">
@@ -331,17 +400,17 @@
                       </div>
 
                                     <div class="col-md-8">   
-                                                <input type="number" name="huisnummer" value="<?php echo $gebruiker->nummer; ?>" id="field12" class="form-control">
-                      </div>
-                       ?>
-                                                                        </div>
+                                                <input type="number" name="huisnummer" value="<?php echo $gebruhuisnummerp" class="form-control">
+        >                    
+                                    </div>
+                                                                            </div>
               </div>
                                 </div>         
                             </div>
                    </div>
                         <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
   >
-                        <?php echo form_submit('profiel/update', 'Opslaan', 'class="btn btn-primary"'); ?>
+   button type="button" class="opslaanGebruiker btn btn-primary">Wijzigingen opslaan</button"btn btn-primary"'); ?>
       <?php echo form_close(); ?> 
                         </div>
                     </div>echo form_close(); ?> 
