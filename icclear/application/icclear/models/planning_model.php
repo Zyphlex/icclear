@@ -133,7 +133,10 @@ class Planning_model extends CI_Model {
         $query = $this->db->get('planning');
         $planning = $query->result();
         
-        
+        $this->load->model('conferentiedag_model');        
+        foreach ($planning as $p) {              
+            $p->dag = $this->conferentiedag_model->get($p->sessieId);
+        } 
         
         $this->load->model('sessies_model');        
         foreach ($planning as $d) {              
