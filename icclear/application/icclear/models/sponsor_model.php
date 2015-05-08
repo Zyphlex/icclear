@@ -6,6 +6,7 @@ class Sponsor_model extends CI_Model {
         parent::__construct();
     }
     
+    // Een sponsor met het bijbehorende land ophalen
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('sponsor');
@@ -17,6 +18,7 @@ class Sponsor_model extends CI_Model {
         return $sponsor;
     }
     
+    // Alle sponsors met het bijbehorende land ophalen
     function getAll() {
         $query = $this->db->get('sponsor');
         $sponsors = $query->result();
@@ -31,12 +33,14 @@ class Sponsor_model extends CI_Model {
         return $sponsors;
     }
     
+    // Een sponsor updaten
     function update($sponsor)
     {
         $this->db->where('id', $sponsor->id);
         $this->db->update('sponsor', $sponsor);
     }
     
+    // Een nieuwe sponsor toevoegen
     function insert($sponsor)
     {
         //Html entities en extra spaties verwijderen
@@ -46,6 +50,7 @@ class Sponsor_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    // Een sponsor verwijderen
     function delete($id)
     {
         //Html entities en extra spaties verwijderen
