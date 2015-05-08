@@ -6,6 +6,7 @@ class Email_model extends CI_Model {
         parent::__construct();
     }
 
+    // Controleren of een emailadres nog beschikbaar is
     function check_email_availablity($email) {        
         $email = strtolower($email);        
         $this->db->where('LOWER(emailadres)', $email);
