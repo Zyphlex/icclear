@@ -116,14 +116,13 @@ class Sponsorbeheer extends CI_Controller {
         $this->upload->initialize($config);
 
         $fieldname = 'userfile';
-        if (!empty($_FILES['userfile'])) {
-            if (!$this->upload->do_upload($fieldname)) {
-                $error = array('error' => $this->upload->display_errors());
-                echo print_r($config);
-                echo print_r($error);
-                echo realpath($config['upload_path']);
-            }
-            
+
+        if (!$this->upload->do_upload($fieldname)) {
+            $error = array('error' => $this->upload->display_errors());
+            echo print_r($config);
+            echo print_r($error);
+            echo realpath($config['upload_path']);
+        } else {
             $sponsor->logo = $config['file_name'];
         }
 
