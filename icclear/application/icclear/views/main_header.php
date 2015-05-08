@@ -306,7 +306,7 @@
             </div>
 
             <div class="row">
-                <p class="hidden alert alert-danger" role="alert" id="msgReg"></p>  
+                <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgReg"></p>  
                 <div class=""> 
                     <div id="emaildiv">                        
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
