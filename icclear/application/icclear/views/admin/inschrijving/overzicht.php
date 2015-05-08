@@ -43,12 +43,12 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
-                        if (jobject.betalingId === null) {
-                           $(':radio[name="geslacht"][value="nee"]').prop('checked', 'checked'); 
+                        if (jobject.betalingId == null) {
+                           $(':radio[name="betaling"][value="nee"]').prop('checked', 'checked'); 
                         }
                         else
                         {
-                            $(':radio[name="geslacht"][value="ja"]').prop('checked', 'checked');
+                            $(':radio[name="betaling"][value="ja"]').prop('checked', 'checked');
                         }
     
 }
