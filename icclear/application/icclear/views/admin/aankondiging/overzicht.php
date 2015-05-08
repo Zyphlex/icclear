@@ -42,7 +42,7 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
                         $("textarea[name=inhoud]").html(jobject.inhoud);
-                        
+
                     }
                 });
             } else {
@@ -53,6 +53,33 @@
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
         });
+    }
+
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.titel').removeClass('has-error');
+        $('.inhoud').removeClass('has-error');
+    }
+
+    //VALIDATIE
+    function validatieOK() {
+        ok = true;
+
+        if ($('#titel').val() == "") {
+            $('.titel').addClass('has-error');
+            ok = false;
+        } else {
+            $('.titel').removeClass('has-error');
+        }
+
+        if ($('#inhoud').val() == "") {
+            $('.inhoud').addClass('has-error');
+            ok = false;
+        } else {
+            $('.inhoud').removeClass('has-error');
+        }
+
+        return ok;
     }
 
     $(document).ready(function () {
@@ -66,16 +93,21 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function () {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/aankondiging/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#modalItemDetail").modal('hide');
+            if (validatieOK()) {
+                var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/aankondiging/update",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#modalItemDetail").modal('hide');
+            } else {
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -123,15 +155,16 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">  
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p> 
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
                     <p><?php echo form_label('Titel:', 'titel'); ?></p>
-                    <p><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
+                    <p class="titel"><?php echo form_input(array('name' => 'titel', 'id' => 'titel', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Inhoud:', 'inhoud'); ?></p>
-                    <p><?php echo form_textarea(array('name' => 'inhoud', 'id' => 'inhoud', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
+                    <p class="inhoud"><?php echo form_textarea(array('name' => 'inhoud', 'id' => 'inhoud', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
 
                 </form>
 
