@@ -29,7 +29,7 @@
 <div class="col-sm-10">    
     <h4><span class="glyphicon glyphicon-pushpin"></span> Conferentie </h4>
     <h5>Naam: <?php echo $conferentie->naam ?></h5>
-    <p>Periode: <?php echo $conferentie->beginDatum; ?> tot <?php echo $conferentie->eindDatum; ?></p>    
+    <p>Periode: <?php echo toDDMMYYYY($conferentie->beginDatum); ?> tot <?php echo toDDMMYYYY($conferentie->eindDatum); ?></p>    
     <p>Stad: <?php echo $conferentie->stad; ?></p>
     <p>Maximum aantal inschrijvingen: <?php echo $conferentie->maxInschrijvingen; ?></p>
     <p>Status: <?php echo $status->status; ?></p>
