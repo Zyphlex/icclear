@@ -111,14 +111,14 @@
     //VALIDATIE
     function validatieOK() {
         ok = true;
-        
+
         if ($('#confonderdeel').prop('selectedIndex') == -1) {
             $('.confonderdeel').addClass('has-error');
             ok = false;
         } else {
             $('.confonderdeel').removeClass('has-error');
         }
-        
+
         if ($('#methode').prop('selectedIndex') == -1) {
             $('.methode').addClass('has-error');
             ok = false;
@@ -237,13 +237,15 @@
                     <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
                     <div class="betaling">
                         <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?> 
-                        
-                        Reeds betaald                     
-                        
-                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?> 
-                        
-                        Nog niet betaald                           
-                        
+                        <span class="option-title">
+                            Reeds betaald
+                        </span>                     
+
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>
+                        <span class="option-title">
+                            Nog niet betaald
+                        </span>                         
+
                     </div> 
 
 
