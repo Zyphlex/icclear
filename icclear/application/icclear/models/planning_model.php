@@ -123,22 +123,42 @@ class Planning_model extends CI_Model {
         return $query->result();
     }
     
-    function getOverzichtActieveNietPlenaire() {           
+    function getOverzichtActieveNietPlenaire() {
         $this->load->model('conferentie_model');
-        $confId = $this->conferentie_model->getActieveConferentie();
-        $this->db->where('conferentieId', $confId->id);
-        $query = $this->db->get('conferentiedag');
-        $dagen = $query->result();
-         
+        $conf = $this->conferentie_model->getActieveConferentie();
+        
+        $this->db->order_by('conferentiedagId, beginuur');  
+        $this->db->where('plenair','0');
+        $this->db->where('conferentiedagId', $conf->id);
+        $query = $this->db->get('planning');
+        $planning = $query->result();
+        
+        
+        
         $this->load->model('sessies_model');        
-        foreach ($dagen as $d) {
-            $d->programma = $this->getAllPlanningNietPlenair($d->id);
-            foreach ($d->programma as $p) {                
-                $p->sessie = $this->sessies_model->get($p->sessieId);
-            }
+        foreach ($planning as $d) {              
+            $d->sessie = $this->sessies_model->get($d->sessieId);
         }     
-        return $dagen;
+        
+        return $planning;
     }
+    
+//    function getOverzichtActieveNietPlenaire() {           
+//        $this->load->model('conferentie_model');
+//        $confId = $this->conferentie_model->getActieveConferentie();
+//        $this->db->where('conferentieId', $confId->id);
+//        $query = $this->db->get('conferentiedag');
+//        $dagen = $query->result();
+//         
+//        $this->load->model('sessies_model');        
+//        foreach ($dagen as $d) {
+//            $d->programma = $this->getAllPlanningNietPlenair($d->id);
+//            foreach ($d->programma as $p) {                
+//                $p->sessie = $this->sessies_model->get($p->sessieId);
+//            }
+//        }     
+//        return $dagen;
+//    }
 
 }
 
