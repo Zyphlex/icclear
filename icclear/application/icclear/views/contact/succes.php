@@ -1,16 +1,11 @@
-<div class="row">
-    <div class="col-md-12">
-        <h1 style="text-align: center;">Succesvol verzonden</h1>
+
+
+<div class="space-bottom alert alert-success">        
+        <h1 class="space-bottom15 text-center">Uw bericht is verzonden!</h1>
+        <p class="success italic text-center">Wanneer we uw vraag/boodschap verwerkt hebben, </p>    
+        <p class="space-bottom success italic text-center">zal u een antwoord ontvangen in uw mailbox.</p>      
+        
+        <p><a href="javascript:history.go(-1)" class="col-xs-offset-4 col-xs-4 btn btn-default">Terug</a></p>
     </div>
-</div>
-
-<div class="row">  
-    <div class="col-lg-offset-3">
-    <p>Uw vraag/boodschap is succesvol verzonden!<p>
-    <p>Wanneer we uw vraag/boodschap verwerkt hebben zal u een email ontvangen in uw mailbox.</p>
-    </div>
-</div>
-
-
 
 
