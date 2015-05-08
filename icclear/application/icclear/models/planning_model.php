@@ -52,7 +52,7 @@ class Planning_model extends CI_Model {
         $this->load->model('land_model');
         
         foreach ($planningen as $planning) {
-            $planning->sessie = $this->sessies_model->planningenPerStatus($planning->sessieId);
+            $planning->sessie = $this->sessies_model->get($planning->sessieId);
             $planning->zaal = $this->zaal_model->get($planning->zaalId);
             $planning->gebouw = $this->gebouw_model->get($planning->zaal->gebouwId);
             $planning->land = $this->land_model->get($planning->gebouw->landId);

@@ -6,6 +6,7 @@ class Sessies_model extends CI_Model {
         parent::__construct();
     }
     
+    //Get 1 sessie met spreker
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('sessie');
@@ -17,17 +18,20 @@ class Sessies_model extends CI_Model {
         return $sessie;
     }
     
-     function getAlleSessies() {
+    //Alle sessies ophalen
+    function getAlleSessies() {
         $query = $this->db->get('sessie');
         return $query->result();
     }
     
+    //Alle sessies van 1 spreker ophalen
     function getSessiesVanSpreker($id) {
         $this->db->where('gebruikerIdSpreker', $id);
         $query = $this->db->get('sessie');
         return $query->row();
     }
     
+    //Alle sessies van 1 conferentie ophalen, die zijn goedgekeurd + de planning erbij nemen
     function getAll($id) {
         $this->db->where('conferentieId',$id);
         $this->db->where('isGoedgekeurd', '1');
@@ -48,6 +52,7 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
     
+    //Alle sessies ophalen van de actieve conferentie die zijn goedgekeurd met hun spreker en planningmoment
     function getAllMetSpreker() {        
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
@@ -62,14 +67,7 @@ class Sessies_model extends CI_Model {
         foreach ($sessies as $sessie) {
             $sessie->planning = 
                  $this->planning_model->getSessie($sessie->id);
-        }
-        
-        $this->load->model('zaal_model');
-        
-        foreach ($sessies as $sessie) {
-            $sessie->zaal = 
-                 $this->zaal_model->get($sessie->zaalId);
-        }
+        }        
         
         $this->load->model('gebruiker_model');
         
@@ -81,6 +79,7 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
        
+    //Alle sessies ophalen die nog NIET zijn goedgekeurd
     function getAllOngekeurdeMetSpreker() {        
         $this->load->model('conferentie_model');
         $conferentieId = $this->session->userdata('conferentieId');
@@ -100,6 +99,7 @@ class Sessies_model extends CI_Model {
         return $sessies;
     }
     
+    //Tellen hoeveel ongekeurde sessies er zijn
     function countOngekeurde($id) {        
         $this->load->model('conferentie_model');                      
         $this->db->where('isGoedgekeurd', '0');
@@ -108,6 +108,7 @@ class Sessies_model extends CI_Model {
         return $query->num_rows();
     }
     
+    //Tellen hoeveel gekeurde sessies er zijn
     function countGekeurde($id) {        
         $this->load->model('conferentie_model');                      
         $this->db->where('isGoedgekeurd', '1');
@@ -116,11 +117,12 @@ class Sessies_model extends CI_Model {
         return $query->num_rows();
     }
     
-    function planningenPerStatus($sessieId){
-        $this->db->where('id', $sessieId);
-        $query = $this->db->get('sessie');
-        return $query->row();            
-    }
+    //1 sessie ophalen
+//    function planningenPerStatus($sessieId){
+//        $this->db->where('id', $sessieId);
+//        $query = $this->db->get('sessie');
+//        return $query->row();            
+//    }
     
     function update($sessie)
     {
