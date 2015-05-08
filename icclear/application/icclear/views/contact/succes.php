@@ -5,8 +5,10 @@
 </div>
 
 <div class="row">  
+    <div class="col-md-6">
     <p>Uw vraag/boodschap is succesvol verzonden!<p>
     <p>Wanneer we uw vraag/boodschap verwerkt hebben zal u een email ontvangen in uw mailbox.</p>
+    </div>
 </div>
 
 
