@@ -2,6 +2,7 @@
     color: #333;
 }
 .dataTables_filter {float:left !important; margin-top:20px;}
+.dataTables_info {display:inline !important;}
 .margin-top {margin-top:20px !important;}
 
 @font-face {
