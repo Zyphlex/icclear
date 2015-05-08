@@ -47,7 +47,9 @@ class Email extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/email/opstellen', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    
+    //email verzenden naar 1 persoon met standaard onderwerp per conferentie waarbij je emailadressen manueel moet ingeven
     public function verzend() {
         $onderwerp = $this->input->post('onderwerp');
         $ontvanger = $this->input->post('ontvanger');
@@ -65,6 +67,7 @@ class Email extends CI_Controller {
         redirect('admin/index');
     }
 
+    //email verzenden naar 1 gebruiker
     public function verzenden() {               
         $onderwerp = $this->input->post('onderwerp');
         $inhoud = $this->input->post('boodschap');        
@@ -77,6 +80,7 @@ class Email extends CI_Controller {
         $this->email->send();
     }
 
+    //emails versturen naar alle gebruikers in 1 keer
     public function verzendenAlle() {
         $this->load->model('gebruiker_model');
         $gebruikers = $this->gebruiker_model->getAll();
