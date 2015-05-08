@@ -14,7 +14,7 @@
         <p>1000 Brussel</p>
     </div>
 </div>
-<br>
+
 <div class="row">
     <div class="col-lg-offset-1">
         <h1>Neem contact op met ons</h1>
