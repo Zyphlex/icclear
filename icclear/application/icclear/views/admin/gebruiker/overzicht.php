@@ -149,11 +149,6 @@
         $('.geboortedatum').removeClass('has-error');
         $('.geslacht').removeClass('has-error');
         $('.type').removeClass('has-error');
-        $('.land').removeClass('has-error');
-        $('.gemeente').removeClass('has-error');
-        $('.postcode').removeClass('has-error');
-        $('.straat').removeClass('has-error');
-        $('.nummer').removeClass('has-error');
     }
     
     function verbergErroro() {
@@ -207,42 +202,7 @@
         } else {
             $('.geslacht').removeClass('has-error');
         }
-
-        if ($('#lando').prop('selectedIndex') == -1) {
-            $('.land').addClass('has-error');
-            ok = false;
-        } else {
-            $('.land').removeClass('has-error');
-        }
-
-        if ($('#gemeenteo').val() == "") {
-            $('.gemeente').addClass('has-error');
-            ok = false;
-        } else {
-            $('.gemeente').removeClass('has-error');
-        }
-
-        if ($('#postcodeo').val() == "") {
-            $('.postcode').addClass('has-error');
-            ok = false;
-        } else {
-            $('.postcode').removeClass('has-error');
-        }
-
-        if ($('#straato').val() == "") {
-            $('.straat').addClass('has-error');
-            ok = false;
-        } else {
-            $('.straat').removeClass('has-error');
-        }
-
-        if ($('#nummero').val() == "") {
-            $('.nummer').addClass('has-error');
-            ok = false;
-        } else {
-            $('.nummer').removeClass('has-error');
-        }
-
+       
         return ok;
     }
 
