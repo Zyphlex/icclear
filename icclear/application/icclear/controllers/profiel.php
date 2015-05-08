@@ -73,6 +73,7 @@ class Profiel extends CI_Controller {
     }
 
     public function instellingen() {
+        //persoonlijk dossier van een gebruiker ophalen, ook om alles persoonlijke gegevens aan te kunnen passen
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
 
