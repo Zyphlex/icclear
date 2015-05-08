@@ -124,21 +124,21 @@
                 function inloggenOK() {
                     ok = true;
                         if ($("#password").val() == "") {
-                            $("#passworddiv").addClass("has-error");
-                            $("#passworddiv").removeClass("has-success");
+                            $("#password").addClass("has-error");
+                            $("#password").removeClass("has-success");
                             ok = false;
                         } else {
-                            $("#passworddiv").removeClass("has-error");
-                            $("#passworddiv").addClass("has-success");
+                            $("#password").removeClass("has-error");
+                            $("#password").addClass("has-success");
                         }
                         
                         if ($("#email").val() == "") {
-                            $("#emaildiv1").addClass("has-error");
-                            $("#emaildiv1").removeClass("has-success");
+                            $("#email").addClass("has-error");
+                            $("#email").removeClass("has-success");
                             ok = false;
                         } else {
-                            $("#emaildiv1").removeClass("has-error");
-                            $("#emaildiv1").addClass("has-success");
+                            $("#email").removeClass("has-error");
+                            $("#email").addClass("has-success");
                         }
                     return ok;
                 }
