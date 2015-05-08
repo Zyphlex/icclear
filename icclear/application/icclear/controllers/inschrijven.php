@@ -297,7 +297,8 @@ class Inschrijven extends CI_Controller {
                 "\n" .
                 'Klik op onderstaande link om uw registratie te activeren ' . site_url('logon/activeer/' . $genkey));
         $this->email->send();
-
+        
+        //user meegeven voor geval gebruiker nog niet aangemeld is
         $this->session->set_userdata('geregistreerde', $user);
 
         redirect('inschrijven/voorkeuren');
