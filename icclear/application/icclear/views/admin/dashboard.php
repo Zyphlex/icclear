@@ -33,15 +33,7 @@
     <p>Stad: <?php echo $conferentie->stad; ?></p>
     <p>Maximum aantal inschrijvingen: <?php echo $conferentie->maxInschrijvingen; ?></p>
     <p>Status: <?php echo $status->status; ?></p>
-    <br>
-    <h4><span class="glyphicon glyphicon-stats"></span> Statistieken </h4>
-    <p>Aantal inschrijvingen: <?php echo $aantalInschrijvingen; ?></p>
-    <p>Aantal sessies: <?php echo $gekeurdeSessies; ?></p> 
-    <p>Aantal ongekeurde sessies: <?php echo $ongekeurdeSessies; ?></p>     
-    <p>Aantal activiteiten: <?php echo $activiteiten; ?></p>
-</div>
 
-<div class="col-sm-10">
     
     <div class="col-sm-6">
         <div class="equalizer panel panel-primary text-center">
