@@ -125,7 +125,7 @@ class Inschrijvenbeheer extends CI_Controller {
 //                $this->gebruiker_activiteit_model->update($activiteit);
 //            }
             
-            $inschrijving->betalingId = null;
+            //$inschrijving->betalingId = null;
             $this->betaling_model->delete($oud->betalingId);
         }
 
