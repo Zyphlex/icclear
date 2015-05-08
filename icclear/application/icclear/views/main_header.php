@@ -123,7 +123,7 @@
                     
                     $("#submitVergeten").click(function (e) {
                         e.preventDefault();
-                        if (vergetenOK() {
+                        if (vergetenOK()) {
                             $("#FormVergeten").submit();
                         }
                     });
