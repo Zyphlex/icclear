@@ -74,10 +74,10 @@
             </div>
             <div class="col-md-2">  
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', "required" => "required")); ?>
                         Ja</label>
                     <label class="radio">
-                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0')); ?>
+                    <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', "required" => "required")); ?>
                         Nee</label>
             </div>
         </div>       
