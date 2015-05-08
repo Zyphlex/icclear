@@ -146,11 +146,11 @@
                 if (result == '0') {
                     $('#feedbackemail1').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                     $("#emaildiv1").addClass("has-error");
-                    $("#msgReg1 #mailTaken1").text("Oops! Dit email adres is reeds in gebruik!");
+                    $("#mailTaken1").html("Oops! Dit email adres is reeds in gebruik!");
                 } else {
                     $('#feedbackemail1').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                     $("#emaildiv1").removeClass("has-error");
-                    $("#msgReg1 #mailTaken1").text("");
+                    $("#mailTaken1").html("");
                     ok = true;
                 }
             }
@@ -235,7 +235,8 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                <p class="hidden alert alert-danger" role="alert" id="msgReg1"><span id="mailTaken1"></span></p>  
+                <p class="hidden alert alert-danger" role="alert" id="msgReg1"></p>  
+                <p class="hidden alert alert-danger" role="alert" id="mailTaken1"></p>  
                 </div>
                 <div class=""> 
                     <div id="emaildiv1">                        
