@@ -156,6 +156,7 @@
 
                 <p><?php echo form_label('Afbeelding:', 'userfile'); ?></p>
                 <p><?php echo form_upload(array('name' => 'userfile', 'id' => 'userfile', 'class' => 'form-control')); ?></p>
+                <div>JPG, max grootte 200kB, 350x350 pixels</div>
 
             </div>
 
