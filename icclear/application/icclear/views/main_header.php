@@ -60,13 +60,13 @@
             echo form_open('logon/aanmelden', $attributes);
             ?>
             <div class="row">
-                <p class="hidden alert alert-danger" role="alert" id="msgInl"></p>  
 
                 <div class="text-center underline">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Aanmelden</h3>
                 </div>   
 
+                <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgInl"></p>  
                 <div class="emailI">
                     <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                     <div class="col-sm-8">
@@ -312,7 +312,7 @@
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?>                         
                         <span id="feedbackemail" class="form-note"></span> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('type'=>'email', 'name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
@@ -386,12 +386,12 @@
             ?>   
 
             <div class="row">
-                <p class="hidden alert alert-danger" role="alert" id="msgVer"></p>  
                 <div class="text-center underline">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Wachtwoord vergeten</h3>
                 </div>   
 
+                <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgVer"></p>  
                 <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
                     <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
