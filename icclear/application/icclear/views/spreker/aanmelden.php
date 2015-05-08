@@ -56,67 +56,67 @@
                 }
                 $(document).ready(function () {                    
 
-                    $("#mySubmit").click(function (e) {
+                    $("#mySubmits").click(function (e) {
                         e.preventDefault();
                         if (validatieOK() && validate() && realCheck1()) {
-                            $("#myForm").submit();
+                            $("#myForms").submit();
                         }
 
                     });
 
-                    $("#password2").keyup(validate);
+                    $("#password2s").keyup(validate);
 
                 });
                 
                 
                 function validatieOK() {
                         ok = true;
-                        if ($("#password1").val() == "") {
-                            $("#password1div").addClass("has-error");
-                            $("#password1div").removeClass("has-success");
+                        if ($("#password1s").val() == "") {
+                            $("#password1divs").addClass("has-error");
+                            $("#password1divs").removeClass("has-success");
                             ok = false;
                         }
                         else {
-                            $("#password1div").removeClass("has-error");
-                            $("#password1div").addClass("has-success");
+                            $("#password1divs").removeClass("has-error");
+                            $("#password1divs").addClass("has-success");
                         }
-                        if ($("#password2").val() == "") {
-                            $("#password2div").addClass("has-error");
-                            $("#password2div").removeClass("has-success");
+                        if ($("#password2s").val() == "") {
+                            $("#password2divs").addClass("has-error");
+                            $("#password2divs").removeClass("has-success");
                             ok = false;
                         }
                         else {
-                            $("#password2div").removeClass("has-error");
-                            $("#password2div").addClass("has-success");
+                            $("#password2divs").removeClass("has-error");
+                            $("#password2divs").addClass("has-success");
                         }
 
-                        if ($("#voornaam").val() == "") {
-                            $("#voornaamdiv").addClass("has-error");
-                            $("#voornaamdiv").removeClass("has-success");
+                        if ($("#voornaams").val() == "") {
+                            $("#voornaamdivs").addClass("has-error");
+                            $("#voornaamdivs").removeClass("has-success");
                             ok = false;
                         }
                         else {
-                            $("#voornaamdiv").removeClass("has-error");
-                            $("#voornaamdiv").addClass("has-success");
+                            $("#voornaamdivs").removeClass("has-error");
+                            $("#voornaamdivs").addClass("has-success");
                         }
 
-                        if ($("#familienaam").val() == "") {
-                            $("#familienaamdiv").addClass("has-error");
-                            $("#familienaamdiv").removeClass("has-success");
+                        if ($("#familienaams").val() == "") {
+                            $("#familienaamdivs").addClass("has-error");
+                            $("#familienaamdivs").removeClass("has-success");
                             ok = false;
                         }
                         else {
-                            $("#familienaamdiv").removeClass("has-error");
-                            $("#familienaamdiv").addClass("has-success");
+                            $("#familienaamdivs").removeClass("has-error");
+                            $("#familienaamdivs").addClass("has-success");
                         }
-                        if ($("#emailadres").val() == "") {
-                            $("#emaildiv").addClass("has-error");
-                            $("#emaildiv").removeClass("has-success");
+                        if ($("#emailadress").val() == "") {
+                            $("#emaildivs").addClass("has-error");
+                            $("#emaildivs").removeClass("has-success");
                             ok = false;
                         }
                         else {
-                            $("#emaildiv").removeClass("has-error");
-                            $("#emaildiv").addClass("has-success");
+                            $("#emaildivs").removeClass("has-error");
+                            $("#emaildivs").addClass("has-success");
                         }
 
                         return ok;
@@ -125,21 +125,21 @@
                 
                 function validate() {
                         ok = true;
-                        var password1 = $("#password1").val();
-                        var password2 = $("#password2").val();
+                        var password1 = $("#password1s").val();
+                        var password2 = $("#password2s").val();
                         if (password1 == password2) {
-                            $("#validate-status").text("Correct");
-                            $("#validate-status").removeClass("form-note-used");
-                            $("#validate-status").addClass("form-note-ok");
-                            $("#password2div").removeClass("has-error");
-                            $("#password2div").addClass("has-success");
+                            $("#validate-statuss").text("Correct");
+                            $("#validate-statuss").removeClass("form-note-used");
+                            $("#validate-statuss").addClass("form-note-ok");
+                            $("#password2divs").removeClass("has-error");
+                            $("#password2divs").addClass("has-success");
                         }
                         else {
-                            $("#validate-status").text("Incorrect");
-                            $("#validate-status").removeClass("form-note-ok");
-                            $("#validate-status").addClass("form-note-used");
-                            $("#password2div").addClass("has-error");
-                            $("#password2div").removeClass("has-success");
+                            $("#validate-statuss").text("Incorrect");
+                            $("#validate-statuss").removeClass("form-note-ok");
+                            $("#validate-statuss").addClass("form-note-used");
+                            $("#password2divs").addClass("has-error");
+                            $("#password2divs").removeClass("has-success");
                             ok = false;
                         }
                     return ok;
@@ -147,7 +147,7 @@
 
                 function realCheck1() {
                     ok = false;
-                    mail = $('#emailadres').val();
+                    mail = $('#emailadress').val();
                     $.ajax({
                         type: "POST",
                         url: site_url + "/logon/check_email_availablity",
@@ -155,13 +155,13 @@
                         data: {email: mail},
                         success: function(result) {
                             if (result == '0') {
-                                $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
-                                $("#emaildiv").addClass("has-error");
-                                $("#emaildiv").removeClass("has-success");
+                                $('#feedbackemails').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
+                                $("#emaildivs").addClass("has-error");
+                                $("#emaildivs").removeClass("has-success");
                             } else {
-                                $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
-                                $("#emaildiv").removeClass("has-error");
-                                $("#emaildiv").addClass("has-success");
+                                $('#feedbackemails').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
+                                $("#emaildivs").removeClass("has-error");
+                                $("#emaildivs").addClass("has-success");
                                 ok = true;
                             }
                         }
@@ -179,7 +179,7 @@
         <div class="panel panel-default">            
 
             <?php
-            $attributes = array('class' => 'registreer', 'id' => 'myForm', 'class' => 'form-horizontal');
+            $attributes = array('class' => 'registreer', 'id' => 'myForms', 'class' => 'form-horizontal');
             echo form_open('spreker/registreer', $attributes);
             ?>
 
@@ -190,40 +190,40 @@
 
             <div class="row">
                 <div class=""> 
-                    <div id="emaildiv">
-                        <div id="feedbackemail"></div>
-                        <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                    <div id="emaildivs">
+                        <div id="feedbackemails"></div>
+                        <?php echo form_label('Emailadres:', 'emails', array('class' => 'col-sm-4 control-label')); ?> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadresV', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('name' => 'emailadresV', 'id' => 'emails', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
-                    <div id="password1div"> 
-                        <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
+                    <div id="password1divs"> 
+                        <?php echo form_label('Wachtwoord:', 'passwords', array('class' => 'col-sm-4 control-label')); ?>    
                         <div class="col-sm-8">                       
-                            <?php echo form_password(array('name' => 'wachtwoord1V', 'id' => 'password1', 'class' => 'form-control')); ?> 
+                            <?php echo form_password(array('name' => 'wachtwoord1V', 'id' => 'password1s', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
-                    <div id="password2div">
-                        <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
+                    <div id="password2divs">
+                        <?php echo form_label('Bevestigen:', 'bevestigwws', array('class' => 'col-sm-4 control-label')); ?>
                         <span id="validate-status" class="form-note"></span>              
                         <div class="col-sm-8">                                        
-                            <?php echo form_password(array('name' => 'bevestigwwV', 'id' => 'password2', 'class' => 'form-control')); ?>                    
+                            <?php echo form_password(array('name' => 'bevestigwwV', 'id' => 'password2s', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
-                    <div id="voornaamdiv">
-                        <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>   
+                    <div id="voornaamdivs">
+                        <?php echo form_label('Voornaam:', 'voornaams', array('class' => 'col-sm-4 control-label')); ?>   
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'voornaamV', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'voornaamV', 'id' => 'voornaams', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
-                    <div id="familienaamdiv">
-                        <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>  
+                    <div id="familienaamdivs">
+                        <?php echo form_label('Familienaam:', 'familienaams', array('class' => 'col-sm-4 control-label')); ?>  
                         <div class="col-sm-8">  
-                            <?php echo form_input(array('name' => 'familienaamV', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'familienaamV', 'id' => 'familienaams', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
