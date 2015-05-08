@@ -7,7 +7,7 @@
     <div class="col-sm-12">
             <iframe class="img-responsive"
                 src="<?php echo $route->url ?>"
-                frameborder="0" style="border:0">
+                width="100%" height="auto" frameborder="0" style="border:0">
             </iframe>
     </div>
     <hr/>
