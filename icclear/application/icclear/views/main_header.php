@@ -66,16 +66,19 @@
                     <h3>Aanmelden</h3>
                 </div>   
 
-                <?php echo form_label('Emailadres:', 'email', array('class' => 'mailI col-sm-4 control-label')); ?> 
+                <div class="emailI">
+                <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
-                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'mailI form-control', 'size' => '30')); ?>        
+                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                </div>
                 </div>
 
-                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'passwordI col-sm-4 control-label')); ?>           
-                <div class="passwordI col-sm-8">
+                <div class="passwordI">
+                <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
+                <div class="col-sm-8">
                     <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
                 </div>
-
+                </div>
 
                 <div class="col-sm-8 col-sm-offset-4">  
                     <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#vergetenModal">Wachtwoord vergeten?</a>
