@@ -41,6 +41,7 @@ class Locatie extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //lijst van hotels
     public function hotel() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -73,6 +74,7 @@ class Locatie extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //lijst van routes
     public function route() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -105,6 +107,7 @@ class Locatie extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //overzicht van routes
     public function overzichtRoutes() {
         $gebouwId = $this->input->get('gebouwId');
 
