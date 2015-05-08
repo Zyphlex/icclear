@@ -151,6 +151,14 @@
         $('.postcode').removeClass('has-error');
         $('.straat').removeClass('has-error');
         $('.huisnummer').removeClass('has-error');
+        
+        $("#msgo").addClass("hidden");
+        $('.onderwerp').removeClass('has-error');
+        $('.boodschap').removeClass('has-error');
+        
+        $("#msgoo").addClass("hidden");
+        $('.onderwerpall').removeClass('has-error');
+        $('.boodschapall').removeClass('has-error');
     }
 
     //VALIDATIE
@@ -229,6 +237,41 @@
 
         return ok;
     }
+    
+    //VALIDATIE
+    function validatieOKo() {
+        ok = true;
+        
+        if ($('#onderwerp').val() == "") {
+            $('.onderwerp').addClass('has-error');
+            ok = false;
+        } else {
+            $('.onderwerp').removeClass('has-error');
+        }
+        
+         if ($('#boodschap').val() == "") {
+            $('.boodschap').addClass('has-error');
+            ok = false;
+        } else {
+            $('.onderwerp').removeClass('has-error');
+        }
+
+        return ok;
+    }
+    
+     //VALIDATIE
+    function validatieOKoo() {
+        ok = true;
+        
+        if ($('#voornaamo').val() == "") {
+            $('.voornaam').addClass('has-error');
+            ok = false;
+        } else {
+            $('.voornaam').removeClass('has-error');
+        }
+
+        return ok;
+    }
 
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
@@ -303,6 +346,7 @@
 
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {
+            if (validatieOKo()) {
             var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -313,10 +357,16 @@
             });
             refreshData();
             $("#gebruikerEmail").modal('hide');
+            } else {
+                $("#msgo").removeClass("hidden");
+                $("#msgo").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Verzenden in de Emails modal
         $(".verstuurEmails").click(function () {
+            if (validatieOKoo()) {
+        
             var dataString = $("#JqAjaxForm2:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -327,6 +377,10 @@
             });
             refreshData();
             $("#gebruikerEmails").modal('hide');
+            } else {
+                $("#msgoo").removeClass("hidden");
+                $("#msgoo").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
     });
@@ -540,7 +594,9 @@
                 <h4 class="modal-title">E-mail opstellen</h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">  
+                
+                <p class="hidden alert alert-danger" role="alert" id="msgo"></p> 
 
                 <form id="JqAjaxForm1">
                     <input type="hidden" name="emailadreszend" id="emailzend"/>                                                            
@@ -562,7 +618,7 @@
                                     <?php echo form_label('Onderwerp:', 'onderwerp'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 onderwerp">   
                                     <?php echo form_input(array('name' => 'onderwerp', 'id' => 'onderwerp', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -572,7 +628,7 @@
                                     <?php echo form_label('Boodschap:', 'boodschap'); ?>                                        
                                 </div>
 
-                                <div class="col-md-8">                                      
+                                <div class="col-md-8 boodschap">                                      
                                     <?php echo form_textarea(array('name' => 'boodschap', 'id' => 'boodschap', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
                                 </div>
                             </div>
@@ -602,7 +658,9 @@
                 <h4 class="modal-title">E-mail opstellen</h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body"> 
+                
+                <p class="hidden alert alert-danger" role="alert" id="msgoo"></p> 
 
                 <form id="JqAjaxForm2">
 
@@ -624,7 +682,7 @@
                                     <?php echo form_label('Onderwerp:', 'onderwerp'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 onderwerpall">   
                                     <?php echo form_input(array('name' => 'onderwerpall', 'id' => 'onderwerpall', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -634,7 +692,7 @@
                                     <?php echo form_label('Boodschap:', 'boodschap'); ?>                                        
                                 </div>
 
-                                <div class="col-md-8">                                      
+                                <div class="col-md-8 boodschapall">                                      
                                     <?php echo form_textarea(array('name' => 'boodschapall', 'id' => 'boodschapall', 'class' => 'form-control', 'rows' => '10', 'cols' => '150')); ?>                                    
                                 </div>
                             </div>
