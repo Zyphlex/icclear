@@ -10708,7 +10708,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Toont _START_ tot _END_ van _TOTAL_ rijen",
+			"sInfo": "Toont _TOTAL_ rij(en)",
 	
 	
 			/**
