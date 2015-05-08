@@ -1,10 +1,4 @@
 <div class="row">
-    <div class="col-md-12">
-        <h1 style="text-align: center;">Neem contact op met ons</h1>
-    </div>
-</div>
-
-<div class="row">
     <div class="col-lg-offset-1">
         <h3>Adres:</h3>
     </div>
@@ -16,6 +10,11 @@
     </div>
 </div>
 <br>
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="text-align: center;">Neem contact op met ons</h1>
+    </div>
+</div>
 <div class="row">
     <div class="col-lg-offset-1">
         <form action="contact/insturen" method="post">        
