@@ -88,7 +88,7 @@
         ok = true;
         var password1 = $("#passwordN1").val();
         var password2 = $("#passwordN2").val();
-        if (password1 == password2) {
+        if (password1 == password2 && $("#passwordN2").val() != "") {
             $("#validate-statusN").text("Correct");
             $("#validate-statusN").removeClass("form-note-used");
             $("#validate-statusN").addClass("form-note-ok");
