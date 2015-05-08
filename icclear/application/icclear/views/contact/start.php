@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">  
-    <form id="JqAjaxForm">        
+    <form action="contact/insturen" method="post">        
         <p><?php echo form_label('Uw emailadres:', 'emailadresverzender'); ?></p>
         <p><?php echo form_input(array('name' => 'emailadresverzender', 'id' => 'emailadresverzender', 'class' => 'form-control')); ?></p>
 
