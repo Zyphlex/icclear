@@ -56,11 +56,11 @@
                         <table class="table table-beheer" style="margin-left: 50px">
                             <thead>
                                 <tr>
-                                    <th>Naam</th>                                
-                                    <th>Periode</th>
-                                    <th>Stad</th>
-                                    <th>Land</th>
-                                    <th>Beheer</th>
+                                    <th class="w25">Naam</th>                                
+                                    <th class="w30">Periode</th>
+                                    <th class="w15">Stad</th>
+                                    <th class="w15">Land</th>
+                                    <th class="w15">Beheer</th>
                                 </tr>
                             </thead>
                             <tbody>
