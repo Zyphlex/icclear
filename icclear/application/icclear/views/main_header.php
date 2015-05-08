@@ -115,6 +115,9 @@
                         e.preventDefault();
                         if (validatieOK() && validate() && realCheck1()) {
                             $("#FormRegistreren").submit();
+                        } else {
+                            $("#msgReg").removeClass("hidden");
+                            $("#msgReg").html("Oops! U hebt niet alle velden ingevuld!");
                         }
                     });
 
@@ -122,6 +125,9 @@
                         e.preventDefault();
                         if (inloggenOK()) {
                             $("#FormInloggen").submit();
+                        } else {
+                            $("#msgInl").removeClass("hidden");
+                            $("#msgInl").html("Oops! U hebt niet alle velden ingevuld!");
                         }
                     });
                     
@@ -129,6 +135,9 @@
                         e.preventDefault();
                         if (vergetenOK()) {
                             $("#FormVergeten").submit();
+                        } else {
+                            $("#msgVer").removeClass("hidden");
+                            $("#msgVer").html("Oops! U hebt niet alle velden ingevuld!");
                         }
                     });
 
@@ -171,9 +180,6 @@
                             $(".emailI").removeClass("has-error");
                         }
                     return ok;
-                } else {
-                    $("#msg").removeClass("hidden");
-                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 function vergetenOK() {
@@ -187,9 +193,6 @@
                         }
                         
                     return ok;
-                } else {
-                    $("#msg").removeClass("hidden");
-                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 
@@ -241,9 +244,6 @@
                         }
 
                         return ok;
-                } else {
-                    $("#msg").removeClass("hidden");
-                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 
