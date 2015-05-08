@@ -101,9 +101,6 @@ class Gebouw extends CI_Controller {
         $this->upload->initialize($config);
         $fieldname = 'userfile';
         
-    print_r($this->input->post('userfile'));
-    print_r($fieldname);
-        
         if (!$this->upload->do_upload($fieldname)) {
             $error = array('error' => $this->upload->display_errors());
             echo print_r($config);
@@ -121,7 +118,7 @@ class Gebouw extends CI_Controller {
             $this->gebouw_model->update($gebouw);
         }
 
-        //redirect('gebouw');
+        redirect('gebouw');
     }
 
     public function delete() {
