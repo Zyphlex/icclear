@@ -97,8 +97,7 @@ class Aankondiging extends CI_Controller {
         }
 
         echo $id;
-    }
-    // TEST
+    }    
 }
 
  
