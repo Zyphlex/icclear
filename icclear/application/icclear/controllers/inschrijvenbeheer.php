@@ -114,9 +114,9 @@ class Inschrijvenbeheer extends CI_Controller {
         }
         else
         {
-            if ($oud->betalingId != null && $betaling == "nee") {
-                $this->betaling_model->delete($oud->betalingId);
+            if ($oud->betalingId != null && $betaling == "nee") {                
                 $inschrijving->betalingId = null;
+                $this->betaling_model->delete($oud->betalingId);
             }
         }
 
