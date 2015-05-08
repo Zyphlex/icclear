@@ -73,7 +73,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/inschrijvenbeheer/actDetail",
+                    url: site_url + "/profiel/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
