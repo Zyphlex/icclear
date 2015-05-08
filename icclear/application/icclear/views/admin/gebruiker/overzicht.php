@@ -62,6 +62,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigGebruiker").click(function () {
+            verbergError();
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -110,6 +111,7 @@
 
     function maakMailClick() {
         $(".emailGebruiker").click(function () {
+            verbergErroro();
             var iddb = $(this).data("id");
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
@@ -133,6 +135,7 @@
 
     function maakMailsClick() {
         $(".emailGebruikers").click(function () {
+            verbergErroroo();
             $("#ontvangerall").val("Alle gebruikers");
             $("#gebruikerEmails").modal('show');
         });
@@ -151,11 +154,16 @@
         $('.postcode').removeClass('has-error');
         $('.straat').removeClass('has-error');
         $('.huisnummer').removeClass('has-error');
-        
+    }
+    
+    function verbergErroro() {
+
         $("#msgo").addClass("hidden");
         $('.onderwerp').removeClass('has-error');
         $('.boodschap').removeClass('has-error');
-        
+    }
+    
+    function verbergErroroo() {
         $("#msgoo").addClass("hidden");
         $('.onderwerpall').removeClass('has-error');
         $('.boodschapall').removeClass('has-error');
@@ -164,71 +172,71 @@
     //VALIDATIE
     function validatieOK() {
         ok = true;
-        
+
         if ($('#voornaamo').val() == "") {
             $('.voornaam').addClass('has-error');
             ok = false;
         } else {
             $('.voornaam').removeClass('has-error');
         }
-        
+
         if ($('#familienaamo').val() == "") {
             $('.familienaam').addClass('has-error');
             ok = false;
         } else {
             $('.familienaam').removeClass('has-error');
         }
-        
-         if ($('#emailadreso').val() == "") {
+
+        if ($('#emailadreso').val() == "") {
             $('.emailadres').addClass('has-error');
             ok = false;
         } else {
             $('.emailadres').removeClass('has-error');
         }
-        
+
         if ($('#geboortedatumo').val() == "") {
             $('.geboortedatum').addClass('has-error');
             ok = false;
         } else {
             $('.geboortedatum').removeClass('has-error');
         }
-        
+
         if ($('input[type=radio]:checked').size() < 0) {
             $('.geslacht').addClass('has-error');
             ok = false;
         } else {
             $('.geslacht').removeClass('has-error');
         }
-        
+
         if ($('#lando').prop('selectedIndex') == -1) {
             $('.land').addClass('has-error');
             ok = false;
         } else {
             $('.land').removeClass('has-error');
         }
-        
-         if ($('#gemeenteo').val() == "") {
+
+        if ($('#gemeenteo').val() == "") {
             $('.gemeente').addClass('has-error');
             ok = false;
         } else {
             $('.gemeente').removeClass('has-error');
         }
-        
-         if ($('#postcodeo').val() == "") {
+
+        if ($('#postcodeo').val() == "") {
             $('.postcode').addClass('has-error');
             ok = false;
         } else {
             $('.postcode').removeClass('has-error');
         }
-        
-         if ($('#straato').val() == "") {
+
+        if ($('#straato').val() == "") {
             $('.straat').addClass('has-error');
             ok = false;
         } else {
             $('.straat').removeClass('has-error');
         }
-        
-         if ($('#nummero').val() == "") {
+
+        if ($('#nummero').val() == "") {
             $('.nummer').addClass('has-error');
             ok = false;
         } else {
@@ -237,19 +245,19 @@
 
         return ok;
     }
-    
+
     //VALIDATIE
     function validatieOKo() {
         ok = true;
-        
+
         if ($('#onderwerp').val() == "") {
             $('.onderwerp').addClass('has-error');
             ok = false;
         } else {
             $('.onderwerp').removeClass('has-error');
         }
-        
-         if ($('#boodschap').val() == "") {
+
+        if ($('#boodschap').val() == "") {
             $('.boodschap').addClass('has-error');
             ok = false;
         } else {
@@ -258,19 +266,19 @@
 
         return ok;
     }
-    
-     //VALIDATIE
+
+    //VALIDATIE
     function validatieOKoo() {
         ok = true;
-        
+
         if ($('#onderwerpall').val() == "") {
             $('.onderwerpall').addClass('has-error');
             ok = false;
         } else {
             $('.onderwerpall').removeClass('has-error');
         }
-        
-         if ($('#boodschapall').val() == "") {
+
+        if ($('#boodschapall').val() == "") {
             $('.boodschapall').addClass('has-error');
             ok = false;
         } else {
@@ -354,16 +362,16 @@
         //Verzenden in de Email modal
         $(".verstuurEmail").click(function () {
             if (validatieOKo()) {
-            var dataString = $("#JqAjaxForm1:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/email/verzenden",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#gebruikerEmail").modal('hide');
+                var dataString = $("#JqAjaxForm1:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/email/verzenden",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#gebruikerEmail").modal('hide');
             } else {
                 $("#msgo").removeClass("hidden");
                 $("#msgo").html("Oops! U hebt niet alle velden ingevuld!");
@@ -373,17 +381,17 @@
         //Verzenden in de Emails modal
         $(".verstuurEmails").click(function () {
             if (validatieOKoo()) {
-        
-            var dataString = $("#JqAjaxForm2:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/email/verzendenAlle",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#gebruikerEmails").modal('hide');
+
+                var dataString = $("#JqAjaxForm2:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/email/verzendenAlle",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#gebruikerEmails").modal('hide');
             } else {
                 $("#msgoo").removeClass("hidden");
                 $("#msgoo").html("Oops! U hebt niet alle velden ingevuld!");
@@ -602,7 +610,7 @@
             </div>
 
             <div class="modal-body">  
-                
+
                 <p class="hidden alert alert-danger" role="alert" id="msgo"></p> 
 
                 <form id="JqAjaxForm1">
@@ -666,7 +674,7 @@
             </div>
 
             <div class="modal-body"> 
-                
+
                 <p class="hidden alert alert-danger" role="alert" id="msgoo"></p> 
 
                 <form id="JqAjaxForm2">
