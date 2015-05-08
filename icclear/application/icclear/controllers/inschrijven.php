@@ -191,7 +191,8 @@ class Inschrijven extends CI_Controller {
         $data['active'] = 'admin';
 
         $this->load->model('gebruiker_model');
-        $data['gebruikers'] = $this->gebruiker_model->getAllWithType();
+        $gebruikers = $this->gebruiker_model->getAllWithType();
+$data['gebruikers'] = $gebruikers;
 
         $this->load->model('betalingtype_model');
         $data['methodes'] = $this->betalingtype_model->getAll();
@@ -202,8 +203,8 @@ class Inschrijven extends CI_Controller {
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
-        $this->template->load('admin_master', $partials, $data);
+        print_r($gebruikers);
+       
     }
 
     public function overzicht() {
