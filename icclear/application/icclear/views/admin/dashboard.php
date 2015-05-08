@@ -46,7 +46,7 @@
     <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title bold"><span class="glyphicon glyphicon-stats"></span>Aantal inschrijvingen</h2>
+                <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal inschrijvingen</h2>
             </div>
             <div class="panel-body">
                 <h1 class="bold"><?php echo anchor('inschrijvenbeheer/opvolgen',$aantalInschrijvingen); ?></h1> <span class="italic inline">inschrijvingen</span>
@@ -58,7 +58,7 @@
     <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title bold"><span class="glyphicon glyphicon-stats"></span>Aantal sessies</h2>
+                <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sessies</h2>
             </div>
             <div class="panel-body">
                 <h1 class="bold"><?php echo anchor('sessies',$gekeurdeSessies); ?></h1><span class="italic inline">sessies</span> 
@@ -70,7 +70,7 @@
     <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title bold"><span class="glyphicon glyphicon-stats"></span>Aantal ongekeurde sessies</h2>
+                <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal ongekeurde sessies</h2>
             </div>
             <div class="panel-body">
                 <h1 class="bold"><?php echo anchor('sessies/keuren',$ongekeurdeSessies); ?></h1> <span class="italic inline">nog te keuren</span>
@@ -82,7 +82,7 @@
     <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title bold"><span class="glyphicon glyphicon-stats"></span>Aantal sprekers</h2>
+                <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sprekers</h2>
             </div>
             <div class="panel-body stats">
                 <h1 class="bold"><?php echo count($sprekers); ?></h1> <span class="italic inline">met ingeplande sessie</span>
@@ -94,7 +94,7 @@
     <div class="col-sm-3">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
-                <h2 class="panel-title bold"><span class="glyphicon glyphicon-stats"></span>Aantal Activiteiten</h2>
+                <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal Activiteiten</h2>
             </div>
             <div class="panel-body stats">
                 <h1 class="bold"><?php echo $activiteiten; ?></h1> <span class="italic inline">activiteien</span>
