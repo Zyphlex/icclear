@@ -96,8 +96,7 @@ class Sponsorbeheer extends CI_Controller {
         // foto
         $config['upload_path'] = './application/upload/fotos/sponsors';
         $config['allowed_types'] = 'jpg';
-        //$config['file_name'] = 'sponsor' . $sponsor->id . '.jpg';
-        $config['file_name'] = 'default.jpg';
+        $config['file_name'] = 'sponsor' . $sponsor->id . '.jpg';
         $config['max_size'] = 200;
         $config['max_height'] = 350;
         $config['max_width'] = 350;
