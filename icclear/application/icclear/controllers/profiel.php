@@ -13,6 +13,7 @@ class Profiel extends CI_Controller {
         }
     }
 
+    //
     public function wijzig($id) {
 
         $user = $this->authex->getUserInfo();
@@ -49,6 +50,7 @@ class Profiel extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //profiel wijzigen
     public function update() {
         $gebruiker = new stdClass();
 
@@ -71,9 +73,9 @@ class Profiel extends CI_Controller {
 
         redirect('profiel/instellingen');
     }
-
+    
+            //persoonlijk dossier van een gebruiker ophalen, ook om alles persoonlijke gegevens aan te kunnen passen
     public function instellingen() {
-        //persoonlijk dossier van een gebruiker ophalen, ook om alles persoonlijke gegevens aan te kunnen passen
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
 
