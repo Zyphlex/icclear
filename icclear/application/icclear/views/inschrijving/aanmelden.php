@@ -208,7 +208,6 @@
             <div class="row">
 
                 <div class="text-center underline">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Aanmelden</h3>
                 </div>   
 
