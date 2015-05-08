@@ -8,7 +8,7 @@
     <?php foreach ($sponsors as $sponsor) { 
         if ($sponsor->type == 'Sponsor'){?>        
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="equalizer panel panel-default">
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-5">
@@ -43,7 +43,7 @@
     <?php foreach ($sponsors as $sponsor) { 
         if ($sponsor->type == 'Partner'){?>        
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="equalizer panel panel-default">
                 <div class="row">
                     <div class="panel-body">
                         <div class="col-md-5">
