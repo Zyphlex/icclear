@@ -38,6 +38,7 @@ class Contact extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
+    //gegevens die op contact formulier zijn ingevuld emailen naar helpdesk
     public function insturen(){
         $email = $this->input->post('emailadresverzender');
         $boodschap = $this->input->post('boodschapcontact');
