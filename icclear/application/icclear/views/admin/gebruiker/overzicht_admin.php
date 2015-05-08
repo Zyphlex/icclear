@@ -126,23 +126,24 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body"> 
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p>
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />                  
 
 
                     <p><?php echo form_label('Voornaam:', 'voornaam'); ?></p>              
-                    <p><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaama', 'class' => 'form-control')); ?></p>                               
+                    <p class="voornaama"><?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaama', 'class' => 'form-control')); ?></p>                               
 
                     <p><?php echo form_label('Familienaam:', 'familienaam'); ?></p>
-                    <p><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaama', 'class' => 'form-control')); ?></p>
+                    <p class="familienaama"><?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaama', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Emailadres:', 'emailadres'); ?></p>
-                    <p><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadresa', 'class' => 'form-control')); ?></p>
+                    <p class="emailadresa"><?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadresa', 'class' => 'form-control')); ?></p>
 
                     <p><?php echo form_label('Wachtwoord:', 'wachtwoord'); ?></p>
-                    <p><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoorda', 'class' => 'form-control')); ?></p>
+                    <p class="wachtwoorda"><?php echo form_password(array('name' => 'wachtwoord', 'id' => 'wachtwoorda', 'class' => 'form-control')); ?></p>
 
                 </form>
 
