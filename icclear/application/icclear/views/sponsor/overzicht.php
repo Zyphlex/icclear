@@ -7,7 +7,7 @@
 <div class="row">  
     <?php foreach ($sponsors as $sponsor) { 
         if ($sponsor->type == 'Sponsor'){?>        
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="row">
                     <div class="panel-body">
@@ -42,7 +42,7 @@
 <div class="row">  
     <?php foreach ($sponsors as $sponsor) { 
         if ($sponsor->type == 'Partner'){?>        
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="row">
                     <div class="panel-body">
