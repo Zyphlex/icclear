@@ -177,7 +177,7 @@
                             $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . " (" . $gebruiker->type->omschrijving . ")";
                         }
 
-                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control" disabled="disabled"');
+                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control"');
                         ?></p>
 
                     <p><?php echo form_label('Formule:', 'formule'); ?></p>
