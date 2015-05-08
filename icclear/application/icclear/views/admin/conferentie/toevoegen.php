@@ -11,7 +11,7 @@
                 <?php echo form_label('Naam:', 'naam'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam")); ?>
+                <?php echo form_input(array("class" => "form-control", "type" => "text", "name" => "naam", "required" => "required")); ?>
             </div>
         </div>
 
@@ -22,14 +22,14 @@
                 <?php echo form_label('Begin datum:', 'begindatum'); ?>
             </div>
             <div class="col-md-4">    
-                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "begindatum")); ?>
+                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "begindatum", "required" => "required")); ?>
             </div>
 
             <div class="col-md-2 control-label  border-left">
                 <?php echo form_label('Eind datum:', 'einddatum'); ?>
             </div>
             <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "einddatum")); ?>
+                <?php echo form_input(array("class" => "form-control", "type" => "date", "name" => "einddatum", "required" => "required")); ?>
             </div>
         </div>
 
@@ -46,14 +46,14 @@
                     $opties[$land->id] = $land->naam;
                 }
                 ?>
-            <?php echo form_dropdown('land', $opties, '' , 'id="land" class="form-control"'); ?>
+            <?php echo form_dropdown('land', $opties, '' , 'id="land" class="form-control" required="required"'); ?>
             </div>            
 
             <div class="col-md-2 control-label border-left">   
             <?php echo form_label('Stad:', 'stad') ?>
             </div>
             <div class="col-md-4">
-            <?php echo form_input(array('type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control')); ?>
+            <?php echo form_input(array('type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control', "required" => "required")); ?>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
             <?php echo form_label('Max inschrijvingen', 'maxinschrijvingen') ?>
             </div>
             <div class="col-md-2">
-            <?php echo form_input(array('type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen')) ?>               
+            <?php echo form_input(array('type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen', "required" => "required")) ?>               
             </div>
         </div>
 
@@ -93,7 +93,7 @@
             </div>
 
             <div class="col-md-12">
-                <?php echo form_textarea(array('rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control')) ?>
+                <?php echo form_textarea(array('rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control', "required" => "required")) ?>
             </div>
         </div>        
 
