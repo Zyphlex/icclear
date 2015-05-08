@@ -189,7 +189,7 @@ class Inschrijven extends CI_Controller {
         }
         $data['title'] = 'IC Clear - Beheer';
         $data['active'] = 'admin';
-        
+
         $data['inschrijvingen'] = $this->inschrijving_model->getAllInschijvingByConferentie($data['conferentieId']);
 
         $this->load->model('gebruiker_model');
@@ -285,7 +285,7 @@ class Inschrijven extends CI_Controller {
         $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-        
+
         //Verwerken van het inschrijven
         $this->verwerkenInschrijving($user);
         $this->email->from('donotreply@thomasmore.be');
@@ -297,6 +297,8 @@ class Inschrijven extends CI_Controller {
                 "\n" .
                 'Klik op onderstaande link om uw registratie te activeren ' . site_url('logon/activeer/' . $genkey));
         $this->email->send();
+
+        $this->session->set_userdata('geregistreerde', $user);
 
         redirect('inschrijven/voorkeuren');
     }
@@ -401,14 +403,10 @@ class Inschrijven extends CI_Controller {
             } else {
                 $inschrijving->methodeId = $this->input->post('methode');
             }
-        }
-        else
-        {
+        } else {
             if ($oud->methodeId == 4) {
                 $inschrijving->methodeId = 4;
-            }
-            else
-            {                
+            } else {
                 $this->betaling_model->delete($inschrijving->betalingId);
                 $inschrijving->methodeId = 4;
             }
