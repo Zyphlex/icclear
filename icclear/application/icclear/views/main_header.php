@@ -73,7 +73,7 @@
                         <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
                     </div>
                 </div>
-
+                
                 <div class="passwordI">
                     <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>           
                     <div class="col-sm-8">
