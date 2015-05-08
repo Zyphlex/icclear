@@ -44,8 +44,13 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
-                        
-    
+                        if (jobject.betalingId == null) {
+                            $(':radio[name="betaling"][value="nee"]').prop('checked', 'checked');
+                        }
+                        else
+                        {
+                            $(':radio[name="betaling"][value="ja"]').prop('checked', 'checked');
+                        }
 
                         $("#methode").val(jobject.methodeId);
                     }
@@ -105,7 +110,7 @@
         maakInfoClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
-        
+
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
@@ -195,8 +200,22 @@
 
                         echo form_dropdown('methode', $optionsMethode, '', 'id="methode" class="form-control"');
                         ?></p>
-
                     
+                    <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
+                    <div class="">
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?>                            
+                        <span class="option-title">
+                            Reeds betaald
+                        </span>
+                    </div> 
+                     <div class="">
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>                            
+                        <span class="option-title">
+                            Nog niet betaald
+                        </span>
+                    </div> 
+
+
                 </form>
 
             </div>
