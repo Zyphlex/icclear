@@ -74,14 +74,14 @@
                         <div id="feedbackemail"></div>
                         <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('name' => 'emailadresV', 'id' => 'email', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
                     <div id="password1div"> 
                         <?php echo form_label('Wachtwoord:', 'password', array('class' => 'col-sm-4 control-label')); ?>    
                         <div class="col-sm-8">                       
-                            <?php echo form_password(array('name' => 'wachtwoord1', 'id' => 'password1', 'class' => 'form-control')); ?> 
+                            <?php echo form_password(array('name' => 'wachtwoord1V', 'id' => 'password1', 'class' => 'form-control')); ?> 
                         </div>
                     </div>
 
@@ -89,21 +89,21 @@
                         <?php echo form_label('Bevestigen:', 'bevestigww', array('class' => 'col-sm-4 control-label')); ?>
                         <span id="validate-status" class="form-note"></span>              
                         <div class="col-sm-8">                                        
-                            <?php echo form_password(array('name' => 'bevestigww', 'id' => 'password2', 'class' => 'form-control')); ?>                    
+                            <?php echo form_password(array('name' => 'bevestigwwV', 'id' => 'password2', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
                     <div id="voornaamdiv">
                         <?php echo form_label('Voornaam:', 'voornaam', array('class' => 'col-sm-4 control-label')); ?>   
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'voornaamV', 'id' => 'voornaam', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
                     <div id="familienaamdiv">
                         <?php echo form_label('Familienaam:', 'familienaam', array('class' => 'col-sm-4 control-label')); ?>  
                         <div class="col-sm-8">  
-                            <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
+                            <?php echo form_input(array('name' => 'familienaamV', 'id' => 'familienaam', 'class' => 'form-control')); ?>                                        
                         </div>
                     </div>
 
@@ -111,11 +111,11 @@
                         <?php echo form_label('Geslacht:', 'geslacht', array('class' => 'col-sm-4 control-label')); ?>       
                         <div class="col-sm-8">  
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Man', 'type' => 'radio')); ?>   
+                                <?php echo form_input(array('name' => 'geslachtV', 'value' => 'Man', 'type' => 'radio')); ?>   
                                 <span class="option-title">Man</span>
                             </div> 
                             <div class="checkbox">
-                                <?php echo form_input(array('name' => 'geslacht', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
+                                <?php echo form_input(array('name' => 'geslachtV', 'value' => 'Vrouw', 'type' => 'radio')); ?>                                
                                 <span class="option-title">Vrouw</span>
                             </div>
                         </div>

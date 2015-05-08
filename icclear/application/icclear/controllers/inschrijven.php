@@ -237,7 +237,7 @@ class Inschrijven extends CI_Controller {
     //Na inschrijving invullen, kiest men om in te loggen
     //Nadat men met success inlogt, moeten de gegevens die werden opgeslagen verwerkt worden tot een inschrijving
     public function aanmelden() {
-        $email = $this->input->post('emaillogon');
+        $email = strtolower($this->input->post('emaillogon'));
         $password = $this->input->post('passwordlogon');
 
         //is geactiveerd
@@ -272,18 +272,18 @@ class Inschrijven extends CI_Controller {
         //Eerst nieuwe gebruiker registreren
         $user = new stdClass();
 
-        $user->familienaam = $this->input->post('familienaam');
-        $user->voornaam = $this->input->post('voornaam');
-        $user->email = $this->input->post('emailadres');
-        $user->wachtwoord = $this->input->post('wachtwoord1');
-        $user->geslacht = $this->input->post('geslacht');
+        $user->familienaam = $this->input->post('familienaamI');
+        $user->voornaam = $this->input->post('voornaamI');
+        $user->email = strtolower($this->input->post('emailadresI'));
+        $user->wachtwoord = $this->input->post('wachtwoord1I');
+        $user->geslacht = $this->input->post('geslachtI');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
         $user->generatedKey = $genkey;
 
         $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
         $conferentie = $this->conferentie_model->getActieveConferentie();
-
+    print_r($user);
         //Verwerken van het inschrijven
         $this->verwerkenInschrijving($user);
         $this->email->from('donotreply@thomasmore.be');
