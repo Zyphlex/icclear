@@ -100,6 +100,7 @@ class Inschrijvenbeheer extends CI_Controller {
         $this->load->model('inschrijving_model');
         $this->load->model('betaling_model');
         $this->load->model('activiteit_model');
+        $this->load->model('gebruiker_activiteit_model');
 
         $inschrijving->id = $this->input->post('id');
         $id = $inschrijving->id;
@@ -121,6 +122,7 @@ class Inschrijvenbeheer extends CI_Controller {
             foreach ($activiteiten as $act) {
                 $act->betalingId = null;
             }
+            $this->gebruiker_activiteit_model->update($act->gebruikerId);
             $inschrijving->betalingId = null;
             $this->betaling_model->delete($oud->betalingId);
         }
