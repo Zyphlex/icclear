@@ -16,12 +16,10 @@
         </div>
 
 
-        <div class="col-md-8">
-            <h1>Neem contact op met ons</h1>
-        </div>
     </div>
 
     <div class="col-sm-6">
+        <h1 class="underline">Neem contact op met ons</h1>
         <div class="col-md-8">            
             <?php
             $attributes = array('name' => 'myform');
