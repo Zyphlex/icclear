@@ -146,11 +146,11 @@
                 if (result == '0') {
                     $('#feedbackemail1').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                     $("#emaildiv1").addClass("has-error");
-                    $("#emaildiv1").removeClass("has-success");
+                    $("#msgReg1").removeClass("hidden");
+                    $("#msgReg1").html("Oops! Dit email adres is reeds in gebruik!");
                 } else {
                     $('#feedbackemail1').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                     $("#emaildiv1").removeClass("has-error");
-                    $("#emaildiv1").addClass("has-success");
                     ok = true;
                 }
             }
