@@ -96,6 +96,7 @@
 <div class="col-md-10">
 
     <h1>Sponsor beheren</h1>  
+    <button class="wijzigSponsor btn btn-primary" data-id="0">Nieuwe Sponsor Toevoegen</button>
 
     <div id="resultaat"></div>        
 

@@ -103,11 +103,11 @@
 <div class="col-md-10">
 
     <h1>Aankondigingen beheren</h1>  
+    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Aankondiging Toevoegen</button>
 
     <div id="resultaat"></div>        
 
-    <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-
+    <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?>
     <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Aankondiging Toevoegen</button>
 
 </div>

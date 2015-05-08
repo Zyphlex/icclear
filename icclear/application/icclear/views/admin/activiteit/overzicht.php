@@ -101,12 +101,13 @@
 <div class="col-md-10">
 
     <h1>Activiteiten beheren </h1>  
+    <button class="wijzigActiviteit btn btn-primary" data-id="0">Nieuwe activiteit toevoegen</button>
 
     <div id="resultaat"></div>
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?> 
-
     <button class="wijzigActiviteit btn btn-primary" data-id="0">Nieuwe activiteit toevoegen</button>
+
 </div>
 
 

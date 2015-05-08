@@ -195,11 +195,11 @@
 <div class="col-md-10">
 
     <h1>Planning beheren</h1>  
+    <button class="wijzigPlanning btn btn-primary" data-id="0">Nieuwe Planning Toevoegen</button>
 
     <div id="resultaat"></div>        
 
-    <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-
+    <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?>
     <button class="wijzigPlanning btn btn-primary" data-id="0">Nieuwe Planning Toevoegen</button>
 
 </div>

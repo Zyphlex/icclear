@@ -102,6 +102,7 @@
 <div class="col-md-10">
 
     <h1>Zaal beheren</h1>  
+    <button class="wijzigZaal btn btn-primary" data-id="0">Nieuwe Zaal Toevoegen</button>
 
     <div id="resultaat"></div>        
 

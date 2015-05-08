@@ -105,12 +105,13 @@
 <div class="col-md-10">
 
     <h1>Admin beheren</h1>  
+    <button class="wijzigAdmin btn btn-primary" data-id="0">Nieuwe Admin Toevoegen</button>
 
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-
     <button class="wijzigAdmin btn btn-primary" data-id="0">Nieuwe Admin Toevoegen</button>
+
 
 </div>
 

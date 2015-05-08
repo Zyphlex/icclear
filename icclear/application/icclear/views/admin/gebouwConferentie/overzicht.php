@@ -48,7 +48,8 @@
                 ?>
             </tbody>
         </table>  
-        <?php echo form_submit('gebouw/gebouwPerDagOpslaan', 'Opslaan', 'class="btn btn-default"'); ?>
+        <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?>
+        <?php echo form_submit('gebouw/gebouwPerDagOpslaan', 'Opslaan', 'class="btn btn-primary"'); ?>
 <?php echo form_close(); ?>
     </div>
 </div>

@@ -106,6 +106,7 @@
 <div class="col-md-10">
 
     <h1>Routes beheren</h1>  
+    <button class="wijzigItem btn btn-primary" data-id="0">Nieuwe Route Toevoegen</button>
 
     <div id="resultaat"></div>        
 

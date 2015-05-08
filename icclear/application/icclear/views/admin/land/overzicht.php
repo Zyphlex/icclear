@@ -97,11 +97,12 @@
     <div class="col-md-10">
         
         <h1>Landen beheren</h1>  
+        <button class="wijzigLand btn btn-primary" data-id="0">Nieuw land toevoegen</button>
         
         <div id="resultaat"></div>
         
-        <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>        
-    <button class="wijzigLand btn btn-primary" data-id="0">Nieuw land toevoegen</button>
+        <?php echo anchor('admin', 'Annuleren','class="btn btn-default"'); ?>     
+        <button class="wijzigLand btn btn-primary" data-id="0">Nieuw land toevoegen</button>   
         
     </div>
 

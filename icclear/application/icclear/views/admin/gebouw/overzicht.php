@@ -94,6 +94,7 @@
 <div class="col-md-10">
 
     <h1>Gebouw beheren</h1>  
+    <button class="wijzigGebouw btn btn-primary" data-id="0">Nieuwe Gebouw Toevoegen</button>
 
     <div id="resultaat"></div>        
 

@@ -100,6 +100,7 @@
 <div class="col-md-10">
 
     <h1>FAQ beheren</h1>  
+    <button class="wijzigFaq btn btn-primary" data-id="0">Nieuwe FAQ Toevoegen</button>
             
     <div id="resultaat"></div>        
 
