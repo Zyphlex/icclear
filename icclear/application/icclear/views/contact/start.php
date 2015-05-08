@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-offset-6">
+    <div class="col-lg-offset-3">
     <form action="contact/insturen" method="post">        
         <p><?php echo form_label('Uw emailadres:', 'emailadresverzender'); ?></p>
         <p><?php echo form_input(array('name' => 'emailadresverzender', 'id' => 'emailadresverzender', 'class' => 'form-control')); ?></p>
