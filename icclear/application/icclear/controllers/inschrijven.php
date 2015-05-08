@@ -279,7 +279,7 @@ class Inschrijven extends CI_Controller {
         $user->geslacht = $this->input->post('geslachtI');
         $genkey = sha1(mt_rand(10000, 99999) . time() . $user->email);
         $user->generatedKey = $genkey;
-        $user->typeId = 1;
+        
 
         $user->id = $this->authex->register($user);
         $this->load->model('conferentie_model');
@@ -298,7 +298,7 @@ class Inschrijven extends CI_Controller {
         $this->email->send();
         
         //user meegeven voor geval gebruiker nog niet aangemeld is
-        $this->session->set_userdata('geregistreerde', $user);
+        
 
         redirect('inschrijven/voorkeuren');
     }
@@ -306,12 +306,7 @@ class Inschrijven extends CI_Controller {
     //Voorkeuren doorgeven door persoon die zich net heeft ingeschreven
     public function voorkeuren() {
         $user = $this->authex->getUserInfo();
-        $data['user'] = $user;
-        if($user == null){
-            $user = $this->session->userdata('geregistreerde');
-            $data['user'] = '';
-            $data['geregistreerde'] = $user;
-        }        
+        $data['user'] = $user;               
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
