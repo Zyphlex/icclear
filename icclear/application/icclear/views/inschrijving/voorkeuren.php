@@ -120,8 +120,12 @@
                         <?php } ?>
 
                     </div>
-                </div>            
+                </div>
+                <?php if($user != null){?>
                 <input type="hidden" name="gebruiker" value="<?php echo $user->id ?>"/>
+                <?php } else { ?>
+                <input type="hidden" name="gebruiker" value="<?php echo $geregistreerde->id ?>"/>
+                <?php } ?>
                 <input type="hidden" name="conferentie" value="<?php echo $conferentieId; ?>"/>
             </div>      
         </div>
