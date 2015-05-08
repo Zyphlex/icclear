@@ -36,7 +36,7 @@
 
     
     <div class="">
-        <div class="col-sm-6equalizer panel panel-primary text-center">
+        <div class="col-sm-6 equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal inschrijvingen</h2>
             </div>
