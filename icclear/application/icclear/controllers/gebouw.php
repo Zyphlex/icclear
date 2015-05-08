@@ -55,6 +55,7 @@ class Gebouw extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //overzicht van alle gebouwen die je kan beheren
     public function overzicht() {
         $this->load->model('gebouw_model');
         $data['gebouwen'] = $this->gebouw_model->getAll();
@@ -62,6 +63,7 @@ class Gebouw extends CI_Controller {
         $this->load->view('admin/gebouw/lijst', $data);
     }
 
+    //details per gebouw
     public function detail() {
         $id = $this->input->get('id');
 
@@ -71,6 +73,7 @@ class Gebouw extends CI_Controller {
         echo json_encode($gebouw);
     }
 
+    //gebouw wijzigen
     public function update() {
         $gebouw->id = $this->input->post('id');
         $gebouw->naam = $this->input->post('naam');
@@ -168,6 +171,7 @@ class Gebouw extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+  
     public function gebouwPerDagOpslaan() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
