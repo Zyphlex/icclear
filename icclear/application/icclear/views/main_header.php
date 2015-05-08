@@ -85,7 +85,7 @@
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('submitInlog', 'Aanmelden', 'id="submitInlog" class="col-xs-8 btn btn-primary"'); ?>
+                        <button name="submitInlog" id="submitInlog" class="col-xs-8 btn btn-primary">Aanmelden</button>
                     </div>
                 </div>
 
@@ -114,8 +114,19 @@
                         }
                     });
 
+                    $("#submitInlog").click(function (e) {
+                        e.preventDefault();
+                        if (inloggenOK()) {
+                            $("#FormInloggen").submit();
+                        }
+                    });
                     
-
+                    $("#submitVergeten").click(function (e) {
+                        e.preventDefault();
+                        if (vergetenOK() {
+                            $("#FormVergeten").submit();
+                        }
+                    });
 
                     $("#password2").keyup(validate);
 
@@ -361,8 +372,8 @@
 
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
-                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('submitVergeten', 'Verstuur Email', 'id="submitVergeten"  class="col-xs-8 btn btn-primary"'); ?>
+                        <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>  
+                        <button name="submitVergeten" id="submitVergeten" class="col-xs-8 btn btn-primary">Verstuur Email</button>
                     </div>
                 </div>
 
