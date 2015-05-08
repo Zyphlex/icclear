@@ -448,7 +448,7 @@ button:focus {
 
 
 
-@media (min-width: 500px) {
+@media (min-width: 850px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
