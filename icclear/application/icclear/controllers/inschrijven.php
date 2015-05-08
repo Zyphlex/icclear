@@ -181,18 +181,48 @@ class Inschrijven extends CI_Controller {
         if ($this->authex->login($email, sha1($password))) {
 
             $user = $this->authex->getUserInfo();
-            $this->load->model('conferentie_model');
-            $conferentie = $this->conferentie_model->getActieveConferentie();
+            
+            $this->load->model('inschrijving_model');
+            $check = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+            
+            //Controleren of er een inschrijving is. Als er nog geen is, inschrijven verwerken
+            if ($check == null) {             
+                $this->load->model('conferentie_model');
+                $conferentie = $this->conferentie_model->getActieveConferentie();
 
-            //Verwerken van het inschrijven
-            $this->verwerkenInschrijving($user);
-            $this->email->from('donotreply@thomasmore.be');
-            $this->email->to($user->email);
-            $this->email->subject('Inschrijving voor ' . $conferentie->naam);
-            $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.');
-            $this->email->send();
+                //Verwerken van het inschrijven
+                $this->verwerkenInschrijving($user);
+                $this->email->from('donotreply@thomasmore.be');
+                $this->email->to($user->email);
+                $this->email->subject('Inschrijving voor ' . $conferentie->naam);
+                $this->email->message('Beste ' . $user->voornaam . ' ' . $user->familienaam . "\n" . 'Met deze mail bevestigen wij uw inschrijving voor de conferentie  ' . $conferentie->naam . ' die loopt van ' . $conferentie->beginDatum . ' tot ' . $conferentie->eindDatum . '.');
+                $this->email->send();
 
-            redirect('inschrijven/voorkeuren');
+                redirect('inschrijven/voorkeuren');
+            } else { //Als er al een inschrijving gevonden is, doorsturen naar andere pagina ipv opnieuw in te schrijven
+                //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
+                $this->load->model('inschrijving_model');
+                if ($user == null) {
+                    $data['inschrijving'] = null;
+                } else {
+                    $inschrijving = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);
+                    if ($inschrijving == null) {
+                        $data['inschrijving'] = null;
+                    } else {
+                        $data['inschrijving'] = $inschrijving;
+                    }
+                }
+                $user = $this->authex->getUserInfo();
+                $data['user'] = $user;
+                $data['conferentieId'] = $this->session->userdata('conferentieId');
+                $data['title'] = 'IC Clear - Inschrijven';
+                $data['active'] = 'inschrijven';
+                $this->load->model('conferentie_model');
+                $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
+                
+                $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'inschrijving/inschrijving', 'footer' => 'main_footer');
+                $this->template->load('main_master', $partials, $data);
+            }
         } else if ($actCheck == flogonalse) {
             redirect('logon/nietGeactiveerd');
         } else {
