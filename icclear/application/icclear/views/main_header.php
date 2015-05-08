@@ -284,11 +284,11 @@
                             if (result == '0') {
                                 $('#feedbackemail').html("<p class='form-note form-note-used'>Niet beschikbaar</p>");
                                 $("#emaildiv").addClass("has-error");
-                                $("#msgReg #mailTaken").text("Oops! Dit email adres is reeds in gebruik!");
+                                $("#mailTaken").html("Oops! Dit email adres is reeds in gebruik!");
                             } else {
                                 $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                 $("#emaildiv").removeClass("has-error");
-                                $("#msgReg #mailTaken").text("");
+                                $("#mailTaken").html("");
                                 ok = true;
                             }
                         }
@@ -310,7 +310,8 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <p class="hidden alert alert-danger" role="alert" id="msgReg"><span id="mailTaken"></span></p>  
+                    <p class="hidden alert alert-danger" role="alert" id="msgReg"></p>  
+                    <p class="hidden alert alert-danger" role="alert" id="mailTaken"></p>  
                 </div>
                 <div class=""> 
                     <div id="emaildiv">                        
