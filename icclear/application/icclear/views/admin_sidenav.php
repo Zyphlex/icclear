@@ -38,7 +38,7 @@
                 <ul class="nav nav-pills nav-stacked">
                 <h4>Conferentie</h4>
                     <li><?php echo anchor('conferentie', 'Conferentie'); ?></li>
-                    <li><?php echo anchor('inschrijven/opvolgen', 'Inschrijvingen'); ?></li>
+                    <li><?php echo anchor('inschrijvenbeheer/opvolgen', 'Inschrijvingen'); ?></li>
                     <li><?php echo anchor('sessies', 'Sessies'); ?></li>
                     <li><?php echo anchor('aankondiging/', 'Aankondigingen'); ?></li>
                     <li><?php echo anchor('planningbeheer' , 'Planningen'); ?></li>
