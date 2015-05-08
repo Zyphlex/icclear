@@ -13,8 +13,8 @@
         <table class="table table-beheer">
             <thead>
                 <tr>
-                    <th class="w50">Datum</th>
-                    <th class="w50">Gebouw</th>
+                    <th class="w65">Datum</th>
+                    <th class="w35">Gebouw</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
                     echo form_hidden('id' . $teller, $conferentiedag->id);
                     ?>                
                     <tr>
-                        <td><?php echo $conferentiedag->datum ?></td>
+                        <td><?php echo toDDMMYYYY($conferentiedag->datum) ?></td>
                         <td>
                             <?php
                             $options[0] = '-- Kies een gebouw --';
