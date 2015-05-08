@@ -127,7 +127,7 @@ class Spreker extends CI_Controller {
         if ($id == $spreker->id && $key == $spreker->generatedKey) {
             $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/biografie', 'footer' => 'main_footer');
         } else {
-            
+            $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'spreker/error', 'footer' => 'main_footer');
         }
         $this->template->load('main_master', $partials, $data);
     }
