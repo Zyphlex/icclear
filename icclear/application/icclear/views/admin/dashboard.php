@@ -41,7 +41,7 @@
     <p>Aantal activiteiten: <?php echo $activiteiten; ?></p>
 </div>
 
-<div class="row">
+<div class="col-sm-10">
     
     <div class="col-sm-6">
         <div class="equalizer panel panel-primary text-center">
