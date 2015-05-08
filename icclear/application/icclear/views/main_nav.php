@@ -2,7 +2,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -11,7 +11,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="nav navbar-nav">
                     <li <?php if ($active == 'home'){ echo 'class="active"'; } ?>><?php echo anchor('home', 'HOME'); ?></li>
                     
@@ -31,7 +31,7 @@
                 if ($user != null) {
                     switch ($user->typeId) {                        
                         case 3: // administrator ?>
-                            <li class="pull-right <?php if ($active == 'admin'){ echo "active"; }?>"><?php echo anchor('admin', 'ADMIN'); ?></li>
+                            <li class="<?php if ($active == 'admin'){ echo "active"; }?>"><?php echo anchor('admin', 'ADMIN'); ?></li>
                         <?php break;
                     }
                 }
