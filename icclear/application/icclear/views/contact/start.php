@@ -6,6 +6,9 @@
 
 <div class="row">
     <div class="col-lg-offset-1">
+        <h3>Adres:</h3>
+    </div>
+    <div class="col-lg-offset-1">
         <p>ICClear Brussel</p>
         <p>014/404040</p>
         <p>Nieuwstraat 1</p>
