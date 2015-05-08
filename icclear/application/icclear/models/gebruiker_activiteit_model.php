@@ -18,12 +18,14 @@ class Gebruiker_activiteit_model extends CI_Model {
 //            return true;
 //    }
 
+    // Een gebruiker-activiteit ophalen
     function get($id) {  
         $this->db->where('id', $id);
         $query = $this->db->get('gebruikerActiviteit');
         return $query->row();
     }
     
+    // Elke gebruiker-activiteit ophalen met info over de betaling en activiteit
     function getActiviteitPrijs() {
         $query = $this->db->get('gebruikerActiviteit');
         $gebActiviteiten = $query->result();
@@ -51,6 +53,7 @@ class Gebruiker_activiteit_model extends CI_Model {
 //        return $geb_act;
 //    }
     
+    // Elke activiteit waarvoor een gebruiker is ingeschreven opzoeken en de totaalplrijs berekenen
     function getPrijsByGebruiker($id)
     {
         $geld = 0;
@@ -66,6 +69,7 @@ class Gebruiker_activiteit_model extends CI_Model {
         return $geld;
     }
     
+    // Alle activiteiten ophalen van een conferentie waarvoor de gebruiker is ingeschreven en de prijs ervan berekenen
     function getPrijsByConfGebruiker($id,$confId)
     {        
         $geld = 0;
@@ -76,7 +80,8 @@ class Gebruiker_activiteit_model extends CI_Model {
         
         $this->load->model('activiteit_model');      
         foreach ($activiteitenGeb as $a){
-            $a->activiteit = $this->activiteit_model->get($a->activiteitId);              
+            $a->activiteit = $this->activiteit_model->get($a->activiteitId);  
+            // Controleren of de activiteit wel bij de juiste conferentie hoort
             if ($a->activiteit->conferentieId == $confId)
             {
                 $g->activiteit = $this->activiteit_model->get($a->activiteitId);
@@ -86,13 +91,15 @@ class Gebruiker_activiteit_model extends CI_Model {
         return $geld;
     }
     
+    // Een gebruiker-activiteit updaten
     function update($activiteit) {
         $activiteit = escape_html($activiteit);
         
         $this->db->where('id', $activiteit->id);
         $this->db->update('gebruikerActiviteit', $activiteit);
     }
-        
+      
+    // Gebruiker-activiteit toevoegen
     function insert($activiteit) {
         //Html entities en extra spaties verwijderen
         $activiteit = escape_html($activiteit);
@@ -101,6 +108,7 @@ class Gebruiker_activiteit_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    // een gebruiker-activiteit berekenen
     function delete($id) {
         $this->db->where('gebruikerId', $id);
         $this->db->delete('gebruikerActiviteit');
