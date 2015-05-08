@@ -100,16 +100,15 @@ class Inschrijvenbeheer extends CI_Controller {
 
         $inschrijving->id = $this->input->post('id');
         $id = $inschrijving->id;
+        $inschrijving->gebruikerId = $this->input->post('gebruiker');
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
         $inschrijving->methodeId = $this->input->post('methode');
-        $betaald = $this->input->post('betaling');
+        $betaling = $this->input->post('betaling');
 
         $oud = $this->inschrijving_model->get($id);
 
-        if ($oud->betalingId == null && $betaald == "ja") {
-            $betaling->id = 0;
-            $betaling->gebruikerId = $inschrijving->gebruikerId;
-            $inschrijving->betalingId = $this->betaling_model->insert($betaling);
+        if ($oud->betalingId == null && $betaling == "ja") {
+            $inschrijving->betalingId = $this->betaling_model->insert($inschrijving->gebruikerId);
         }
 
         $this->inschrijving_model->update($inschrijving);
