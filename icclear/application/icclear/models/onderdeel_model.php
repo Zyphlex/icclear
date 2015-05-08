@@ -7,6 +7,7 @@ class Onderdeel_model extends CI_Model {
         parent::__construct();
     }
     
+    // Een conferentie onderdeel ophalen
     function get($id)
     {
         $this->db->where('id', $id);
@@ -15,7 +16,7 @@ class Onderdeel_model extends CI_Model {
         
     }
      
-    
+    // Alle conferentie onderdelen ophalen, met de conferentie waar ze bij horen
     function getOnderdelenPerConferentie()
     {
         $query = $this->db->get('conferentieOnderdeel');
@@ -29,6 +30,7 @@ class Onderdeel_model extends CI_Model {
          return $conferentieOnderdelen;
     }
     
+    // Alle conferentie onderdelen van de actieve conferentie ophalen
     function getOnderdelenActieve() {
         $this->load->model('conferentie_model');
         $confId = $this->conferentie_model->getActieveConferentie();
