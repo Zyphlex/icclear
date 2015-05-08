@@ -29,13 +29,13 @@
                 $(".warning").hide('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
-                $("#oog").attr('tooltip', 'Verberg inactieve gebruikers');
+                $("#oog").attr('title', 'Verberg inactieve gebruikers');
                 $(this).removeClass('verberg');
             } else {
                 $(".warning").show('400');
                 $("#oog").addClass('fa-eye-slash');
                 $("#oog").removeClass('fa-eye');
-                $("#oog").attr('tooltip', 'Toon alle gebruikers');
+                $("#oog").attr('title', 'Toon alle gebruikers');
                 $(this).addClass('verberg');
             }
         });
