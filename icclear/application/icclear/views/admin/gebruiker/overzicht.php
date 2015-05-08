@@ -171,6 +171,13 @@
             $('.familienaam').removeClass('has-error');
         }
         
+         if ($('#emailadreso').val() == "") {
+            $('.emailadres').addClass('has-error');
+            ok = false;
+        } else {
+            $('.emailadres').removeClass('has-error');
+        }
+        
         if ($('#geboortedatumo').val() == "") {
             $('.geboortedatum').addClass('has-error');
             ok = false;
