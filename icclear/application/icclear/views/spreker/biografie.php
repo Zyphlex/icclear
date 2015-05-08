@@ -37,7 +37,7 @@ echo form_open('spreker/updateBiografie', $attributes);
         <label for="biografie" class="control-label">Biografie: </label>
     </div>
     <div class="col-md-8">
-        <textarea id="biografie" name="biografie" rows="10" class="form-control"></textarea>
+        <textarea required id="biografie" name="biografie" rows="10" class="form-control"></textarea>
     </div>
 </div>
 <input type="submit" value="Bevestigen" class="btn btn-default"/>
