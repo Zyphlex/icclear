@@ -459,9 +459,9 @@ col-md-4">
                                 <td><?php echo $i->conferentie->naam; ?></td>
                               <td><?php echo $i->conferentie->stad; ?></td>
                 rentie->stad; ?></td>
-                                    <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-              >
-                  &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
+                             toDDMMYYYY($i->conferentie->beginDatum) . " - " . toDDMMYYYY($i->conferentie->eindDatum); ?></td>
+                    ho $i->datum; ?></td>
+              &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
               >
               <td>            php echo $i->geld; ?>
                                                           
@@ -526,9 +526,9 @@ col-md-4">
                                 <td><?php echo $i->conferentie->naam; ?></td>
                               <td><?php echo $i->conferentie->stad; ?></td>
                 rentie->stad; ?></td>
-                                    <td><?php echo $i->conferentie->beginDatum . " - " . $i->conferentie->eindDatum; ?></td>
-              >
-                  &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
+                             toDDMMYYYY($i->conferentie->beginDatum) . " - " . toDDMMYYYY($i->conferentie->eindDatum); ?></td>
+                    ho $i->datum; ?></td>
+              &euro; <?php echo toKomma($i->geld); ?></td>                   </td>
               >
               <td>            php echo $i->geld; ?>
                                                           
@@ -551,10 +551,10 @@ col-md-4">
            ?php } ?>
                             <?php } ?>
                         </div>
-                    </div>
+                    </div>echo form_close(); ?> 
                 </div>
 
-                <div role="tabpanel" class="tab-pane" id="betalingen">
+                <div rtab-pane" id="betalingen">
                     <div class="equalizer panel panel-default">
                         <div class="panel-body">
 
@@ -589,7 +589,7 @@ col-md-4">
                                 <tr>
                <tr>
                                 <td><?php echo $i->conferentie->naam; ?></td>
-                              <td><?php echo $i->datum; ?></td>
+                              <td><?php echo toDDMMYYYY($i->datum); ?></td>
                     ho $i->datum; ?></td>
                                 <td><?php echo $i->type->omschrijving; ?></td>
           ; ?></td>
