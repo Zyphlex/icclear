@@ -78,7 +78,7 @@
                         foreach ($programma as $d) {
                             $teller++;
                             ?>
-                            <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->dag->datum); ?>)</span></h4>
+                            <h4>Conferentiedag <?php echo $teller ?> <span class="italic">(<?php echo toDDMMYYYY($d->datum); ?>)</span></h4>
                             <div class="table-responsive space-bottom">
                                 <table class = "table-hover table-condensed table">
                                     <thead>
@@ -90,10 +90,10 @@
                                         </tr>
                                     </thead>  
                                     <tbody>                        
-                                        <?php foreach ($d->sessie as $p) { ?>                             
+                                        <?php foreach ($d->programma as $p) { ?>                             
                                             <tr class="under-link">
                                                 <td>
-                                                  <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->id)); ?>  
+                                                  <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
                                                 </td>
                                                 <td>
                                                     <p>
@@ -104,12 +104,12 @@
                                                 </td> 
                                                 <td>
                                                     <a href="" data-toggle="modal" class="toonItem" data-id="<?php echo $p->sessieId ?>">
-                                                        <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->onderwerp ?>
+                                                        <span class="glyphicon glyphicon-info-sign link-icon"></span> <?php echo $p->sessie->onderwerp ?>
                                                     </a>
                                                 </td>                                    
                                                 <td>
-                                                    <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->gebruikerIdSpreker ?>"> 
-                                                        <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $p->spreker->voornaam . ' ' . $p->spreker->familienaam ?>
+                                                    <a href="" data-toggle="modal" class="toonSpreker" data-id="<?php echo $p->sessie->gebruikerIdSpreker ?>"> 
+                                                        <span class="glyphicon glyphicon-user link-icon"></span> <?php echo $p->sessie->spreker->voornaam . ' ' . $p->sessie->spreker->familienaam ?>
                                                     </a>
                                                 </td>
                                             </tr> 
