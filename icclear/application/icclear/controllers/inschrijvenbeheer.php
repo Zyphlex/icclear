@@ -20,6 +20,7 @@ class Inschrijvenbeheer extends CI_Controller {
         }
     }
 
+        
     public function opvolgen() {
 
         $user = $this->authex->getUserInfo();
@@ -150,7 +151,8 @@ class Inschrijvenbeheer extends CI_Controller {
             $this->betaling_model->delete($inschrijving->betalingId);
         }
     }
-
+    
+//details van een activiteit
     public function actDetail() {
         $id = $this->input->get('id');
 
