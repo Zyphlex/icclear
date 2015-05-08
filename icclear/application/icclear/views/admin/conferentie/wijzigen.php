@@ -58,57 +58,34 @@
 
     function verbergError() {
         $("#msg").addClass("hidden");
-        $('.datum').removeClass('has-error');
-        $('.beginuur').removeClass('has-error');
-        $('.einduur').removeClass('has-error');
-        $('.sessie').removeClass('has-error');
-        $('.zaal').removeClass('has-error');
-        $('.plenair').removeClass('has-error');
+        $('.onderdeel').removeClass('has-error');
+        $('.prijs').removeClass('has-error');
+        $('.korting').removeClass('has-error');
     }
 
     //VALIDATIE
     function validatieOK() {
         ok = true;
-        if ($('#datum').prop('selectedIndex') == -1) {
-            $('.datum').addClass('has-error');
+
+        if ($('#onderdeel').val() == "") {
+            $('.onderdeel').addClass('has-error');
             ok = false;
         } else {
-            $('.datum').removeClass('has-error');
+            $('.onderdeel').removeClass('has-error');
         }
 
-        if ($('#beginuur').val() == "") {
-            $('.beginuur').addClass('has-error');
+        if ($('#prijs').val() == "") {
+            $('.prijs').addClass('has-error');
             ok = false;
         } else {
-            $('.beginuur').removeClass('has-error');
+            $('.prijs').removeClass('has-error');
         }
-
-        if ($('#einduur').val() == "") {
-            $('.einduur').addClass('has-error');
+        
+        if ($('#korting').val() == "") {
+            $('.korting').addClass('has-error');
             ok = false;
         } else {
-            $('.einduur').removeClass('has-error');
-        }
-
-        if ($('#sessie').prop('selectedIndex') == -1) {
-            $('.sessie').addClass('has-error');
-            ok = false;
-        } else {
-            $('.sessie').removeClass('has-error');
-        }
-
-        if ($('#zaal').prop('selectedIndex') == -1) {
-            $('.zaal').addClass('has-error');
-            ok = false;
-        } else {
-            $('.zaal').removeClass('has-error');
-        }
-
-        if ($('input[type=radio]:checked').size() < 0) {
-            $('.plenair').addClass('has-error');
-            ok = false;
-        } else {
-            $('.plenair').removeClass('has-error');
+            $('.korting').removeClass('has-error');
         }
 
         return ok;
