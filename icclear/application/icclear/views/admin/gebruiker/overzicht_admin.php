@@ -69,7 +69,7 @@
     }
 
     //VALIDATIE
-    function validatieOKoo() {
+    function validatieOK() {
         ok = true;
 
         if ($('#voornaama').val() == "") {
