@@ -4,7 +4,7 @@
             <h1 class="underline">Contactgegevens</h1>
 
             <div class="col-sm-10 space-bottom">
-                <h3><span class="fa fa-home"></span>Adres</h3>
+                <span class="fa fa-home"></span><h3>Adres</h3>
                 <p>ICClear Geel</p>
                 <p>014/404040</p>
                 <p>Kleinhoefstraat 4</p>
