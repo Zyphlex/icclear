@@ -18,7 +18,7 @@ class Inschrijvenbeheer extends CI_Controller {
                 //voorlopig
             }
         }
-    }    
+    }
 
     public function opvolgen() {
 
@@ -102,20 +102,14 @@ class Inschrijvenbeheer extends CI_Controller {
         $inschrijving->conferentieOnderdeelId = $this->input->post('confonderdeel');
         $inschrijving->methodeId = $this->input->post('methode');
         $betaling = $this->input->post('betaling');
-        
+
         $oud = $this->inschrijving_model->get($inschrijving->id);
-        
+
         if ($oud->betalingId == null && $betaling == "ja") {
             $inschrijving->betalingId = $this->betaling_model->insert($inschrijving->gebruikerId);
-        }     
-        
-        if ($inschrijving->id == 0) {
-            $id = $this->inschrijving_model->insert($inschrijving);
-        } else {
-            $this->inschrijving_model->update($inschrijving);
         }
 
-        echo $id;
+        $this->inschrijving_model->update($inschrijving);
     }
 
     public function delete() {
