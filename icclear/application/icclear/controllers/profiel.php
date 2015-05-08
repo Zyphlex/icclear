@@ -13,7 +13,7 @@ class Profiel extends CI_Controller {
         }
     }
 
-    //
+    //wijzigen van gebruiker
     public function wijzig($id) {
 
         $user = $this->authex->getUserInfo();
@@ -123,6 +123,7 @@ class Profiel extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
+    //details van inschrijving
     public function detail() {
         $id = $this->input->get('id');
 
@@ -132,6 +133,7 @@ class Profiel extends CI_Controller {
         echo json_encode($inschrijving);
     }
         
+    //overzicht van inschrijvingen
     public function overzicht() {
         $id = $this->input->get('id');
         
@@ -144,6 +146,7 @@ class Profiel extends CI_Controller {
         $this->load->view('gebruiker/lijst', $data);
     }
     
+    //wachtwoord wijzigen
     public function wijzigWachtwoord() {        
         $user = $this->authex->getUserInfo();
         $pass = $this->input->post('bevestigwwN');
