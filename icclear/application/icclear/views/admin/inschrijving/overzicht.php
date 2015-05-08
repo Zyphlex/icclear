@@ -50,7 +50,7 @@
                         {
                             $(':radio[name="betaling"][value="ja"]').prop('checked', 'checked');
                         }
-
+                        $("#hiddenGeb").val(jobject.gebruikerId);
                         $("#methode").val(jobject.methodeId);
                     }
                 });
@@ -168,8 +168,9 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm">
-                    <input type="hidden" name="id" id="id" />                
+                    <input type="hidden" name="id" id="id" />  
 
+                    <input type="hidden" name="gebruikerId" id="hiddenGeb" />  
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></p>
                     <p><?php
                         $optionsGebruiker = array();
@@ -177,7 +178,7 @@
                             $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . " (" . $gebruiker->type->omschrijving . ")";
                         }
 
-                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control"');
+                        echo form_dropdown('gebruiker', $optionsGebruiker, '', 'id="gebruiker" class="form-control" disabled="disabled"');
                         ?></p>
 
                     <p><?php echo form_label('Formule:', 'formule'); ?></p>
@@ -199,7 +200,7 @@
 
                         echo form_dropdown('methode', $optionsMethode, '', 'id="methode" class="form-control"');
                         ?></p>
-                    
+
                     <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
                     <div class="">
                         <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?>                            
@@ -207,7 +208,7 @@
                             Reeds betaald
                         </span>
                     </div> 
-                     <div class="">
+                    <div class="">
                         <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>                            
                         <span class="option-title">
                             Nog niet betaald
