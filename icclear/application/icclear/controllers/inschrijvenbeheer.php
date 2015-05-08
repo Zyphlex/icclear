@@ -56,7 +56,8 @@ class Inschrijvenbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/inschrijving/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //toont overzicht van alle inschrijvingen die aan te passen zijn
     public function overzicht() {
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
@@ -85,6 +86,7 @@ class Inschrijvenbeheer extends CI_Controller {
         $this->load->view('admin/inschrijving/lijst', $data);
     }
 
+    //toont details van elke inschrijving
     public function detail() {
         $id = $this->input->get('id');
 
@@ -94,6 +96,7 @@ class Inschrijvenbeheer extends CI_Controller {
         echo json_encode($inschrijving);
     }
 
+    //functie om inschrijving te updaten
     public function update() {
         $confId = $this->session->userdata('conferentieId');
         
@@ -133,7 +136,8 @@ class Inschrijvenbeheer extends CI_Controller {
 
         $this->inschrijving_model->update($inschrijving);
     }
-
+    
+    //inschrijving deleten
     public function delete() {
         $id = $this->input->post('id');
         $this->load->model('inschrijving_model');
