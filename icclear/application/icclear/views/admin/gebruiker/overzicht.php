@@ -153,7 +153,7 @@
         $('.gemeente').removeClass('has-error');
         $('.postcode').removeClass('has-error');
         $('.straat').removeClass('has-error');
-        $('.huisnummer').removeClass('has-error');
+        $('.nummer').removeClass('has-error');
     }
     
     function verbergErroro() {
