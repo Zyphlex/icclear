@@ -53,6 +53,7 @@ class Activiteit extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //overzicht van alle activiteiten die je kan beheren
     public function overzicht() {
         $this->load->model('activiteit_model');
         $data['activiteiten'] = $this->activiteit_model->getAllActiviteiten();
@@ -60,6 +61,7 @@ class Activiteit extends CI_Controller {
         $this->load->view('admin/activiteit/lijst', $data);
     }
 
+    //activiteit updaten
     public function update() {
         $activiteit->id = $this->input->post('id');
         $activiteit->naam = $this->input->post('naam');
@@ -77,6 +79,7 @@ class Activiteit extends CI_Controller {
         echo $id;
     }
 
+    //details per activiteit
     public function detail() {
         $id = $this->input->get('id');
 
@@ -86,6 +89,7 @@ class Activiteit extends CI_Controller {
         echo json_encode($activiteit);
     }
 
+    //activiteit deleten
     public function delete() {
         $id = $this->input->post('id');
 
