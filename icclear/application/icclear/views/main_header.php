@@ -56,7 +56,7 @@
         <div class="modal-content">
 
             <?php
-            $attributes = array('name' => 'myform', 'class' => 'form-horizontal');
+            $attributes = array('name' => 'FormInloggen', 'class' => 'form-horizontal');
             echo form_open('logon/aanmelden', $attributes);
             ?>
             <div class="row">
@@ -85,7 +85,7 @@
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('mysubmit', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
+                        <?php echo form_submit('submitInlog', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
                     </div>
                 </div>
 
@@ -110,7 +110,23 @@
                     $("#mySubmit").click(function (e) {
                         e.preventDefault();
                         if (validatieOK() && validate() && realCheck1()) {
-                            $("#myForm").submit();
+                            $("#FormRegistreren").submit();
+                        }
+
+                    });
+                    
+                    ("#submitInlog").click(function (e) {
+                        e.preventDefault();
+                        if (inloggenOK()) {
+                            $("#FormInloggen").submit();
+                        }
+
+                    });
+                    
+                    ("#submitVergeten").click(function (e) {
+                        e.preventDefault();
+                        if (vergetenOK() {
+                            $("#FormVergeten").submit();
                         }
 
                     });
@@ -119,24 +135,61 @@
 
                 });
                 
+                function inloggenOK() {
+                    ok = true;
+                        if ($("#password").val() == "") {
+                            $("#passworddiv").addClass("has-error");
+                            $("#passworddiv").removeClass("has-success");
+                            ok = false;
+                        } else {
+                            $("#passworddiv").removeClass("has-error");
+                            $("#passworddiv").addClass("has-success");
+                        }
+                        
+                        if ($("#email").val() == "") {
+                            $("#emaildiv1").addClass("has-error");
+                            $("#emaildiv1").removeClass("has-success");
+                            ok = false;
+                        } else {
+                            $("#emaildiv1").removeClass("has-error");
+                            $("#emaildiv1").addClass("has-success");
+                        }
+                    return ok;
+                }
+                
+                function vergetenOK() {
+                    ok = true;
+                    
+                        if ($("#emailVergeten").val() == "") {
+                            $("#emailVergeten").addClass("has-error");
+                            $("#emailVergeten").removeClass("has-success");
+                            ok = false;
+                        } else {
+                            $("#emailVergeten").removeClass("has-error");
+                            $("#emailVergeten").addClass("has-success");
+                        }
+                        
+                    return ok;
+                }
+                
                 
                 function validatieOK() {
                         ok = true;
+                        
                         if ($("#password1").val() == "") {
                             $("#password1div").addClass("has-error");
                             $("#password1div").removeClass("has-success");
                             ok = false;
-                        }
-                        else {
+                        } else {
                             $("#password1div").removeClass("has-error");
                             $("#password1div").addClass("has-success");
                         }
+                        
                         if ($("#password2").val() == "") {
                             $("#password2div").addClass("has-error");
                             $("#password2div").removeClass("has-success");
                             ok = false;
-                        }
-                        else {
+                        } else {
                             $("#password2div").removeClass("has-error");
                             $("#password2div").addClass("has-success");
                         }
@@ -145,8 +198,7 @@
                             $("#voornaamdiv").addClass("has-error");
                             $("#voornaamdiv").removeClass("has-success");
                             ok = false;
-                        }
-                        else {
+                        } else {
                             $("#voornaamdiv").removeClass("has-error");
                             $("#voornaamdiv").addClass("has-success");
                         }
@@ -155,17 +207,16 @@
                             $("#familienaamdiv").addClass("has-error");
                             $("#familienaamdiv").removeClass("has-success");
                             ok = false;
-                        }
-                        else {
+                        } else {
                             $("#familienaamdiv").removeClass("has-error");
                             $("#familienaamdiv").addClass("has-success");
-                        }
+                        } 
+                        
                         if ($("#emailadres").val() == "") {
                             $("#emaildiv").addClass("has-error");
                             $("#emaildiv").removeClass("has-success");
                             ok = false;
-                        }
-                        else {
+                        } else {
                             $("#emaildiv").removeClass("has-error");
                             $("#emaildiv").addClass("has-success");
                         }
@@ -223,7 +274,7 @@
             </script>
 
             <?php
-            $attributes = array('class' => 'registreer', 'id' => 'myForm', 'class' => 'form-horizontal');
+            $attributes = array('class' => 'registreer', 'id' => 'FormRegistreren', 'class' => 'form-horizontal');
             echo form_open('logon/add', $attributes);
             ?>
 
@@ -307,7 +358,7 @@
         <div class="modal-content">
 
             <?php
-            $attributes = array('name' => 'myform', 'method' => 'post', 'class' => 'form-horizontal');
+            $attributes = array('name' => 'FormVergeten', 'method' => 'post', 'class' => 'form-horizontal');
             echo form_open('logon/resetPass', $attributes);
             ?>   
 
@@ -319,13 +370,13 @@
 
                 <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
                 <div class="col-sm-8">
-                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'email', 'class' => 'form-control', 'size' => '30')); ?>        
+                    <?php echo form_input(array('type' => 'email', 'name' => 'email', 'id' => 'emailVergeten', 'class' => 'form-control', 'size' => '30')); ?>        
                 </div>
 
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('mysubmit', 'Verstuur Email', 'class="col-xs-8 btn btn-primary"'); ?>
+                        <?php echo form_submit('submitVergeten', 'Verstuur Email', 'class="col-xs-8 btn btn-primary"'); ?>
                     </div>
                 </div>
 
