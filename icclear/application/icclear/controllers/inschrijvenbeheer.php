@@ -111,21 +111,23 @@ class Inschrijvenbeheer extends CI_Controller {
 
         $oud = $this->inschrijving_model->get($id);
 
+        //Als er geen betaling was en nu wel, nieuwe betaling aanmaken
         if ($oud->betalingId == null && $betaling == "ja") {
             $bet->id = 0;
             $bet->gebruikerId = $oud->gebruikerId;
-            $inschrijving->betalingId = $this->betaling_model->insert($bet);
+            $betId = $this->betaling_model->insert($bet);
+            $inschrijving->betalingId = $betId;
             
-        } elseif ($oud->betalingId != null && $betaling == "nee") {
+            //Activiteiten van de gebruiker ophalen, dan aflopen in foreach en de betalingId updaten
             $activiteiten = $this->activiteit_model->getAllActGebruikerConf($oud->gebruikerId, $confId);
-            print_r($activiteiten);
-//            foreach ($activiteiten as $act) {
-//                $activiteit->id = $act->id;
-//                $activiteit->betalingId = null;
-//                $this->gebruiker_activiteit_model->update($activiteit);
-//            }
+            foreach ($activiteiten as $act) {
+                $activiteit->id = $act->id;
+                $activiteit->betalingId = $betId;
+                $this->gebruiker_activiteit_model->update($activiteit);
+            }
             
-            //$inschrijving->betalingId = null;
+        //Als er wel een betaling wasn en men nu niet betaald kiest -> Database heeft ON DELETE - SET NULL staan, enkel betaling moet dus verwijderd worden
+        } elseif ($oud->betalingId != null && $betaling == "nee") {
             $this->betaling_model->delete($oud->betalingId);
         }
 
