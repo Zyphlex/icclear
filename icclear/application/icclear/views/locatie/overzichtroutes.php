@@ -1,8 +1,8 @@
 <?php foreach ($routes as $route) { ?>
-<div class="row">
+<div class="row underline">
     <div class="col-sm-12">
-    <h3><?php echo $route->vertrekPunt ?></h3>
-    <p><?php echo $route->beschrijving ?></p>
+        <h3><?php echo $route->vertrekPunt ?></h3>
+        <p><?php echo $route->beschrijving ?></p>
     </div>
     <div class="col-sm-12">
             <iframe class="img-responsive"
