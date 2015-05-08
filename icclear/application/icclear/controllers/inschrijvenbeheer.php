@@ -20,9 +20,8 @@ class Inschrijvenbeheer extends CI_Controller {
         }
     }
 
-        
+        //toont een overzicht van de gebruikers die ingeschreven zijn voor de geselecteerde conferentie 
     public function opvolgen() {
-
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
         $data['conferentieId'] = $this->session->userdata('conferentieId');
