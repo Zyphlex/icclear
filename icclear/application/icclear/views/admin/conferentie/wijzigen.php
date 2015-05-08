@@ -30,6 +30,7 @@
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
         $(".wijzigItem").click(function () {
+            verbergError();
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
