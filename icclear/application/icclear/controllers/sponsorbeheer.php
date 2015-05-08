@@ -123,9 +123,10 @@ class Sponsorbeheer extends CI_Controller {
                 echo print_r($error);
                 echo realpath($config['upload_path']);
             }
+            
+            $sponsor->logo = $config['file_name'];
         }
 
-        $sponsor->logo = $config['file_name'];
 
         // Toevoegen als record nog niet bestaat, anders updaten
         $this->load->model('sponsor_model');
