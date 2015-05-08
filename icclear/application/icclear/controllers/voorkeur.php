@@ -10,6 +10,7 @@ class Voorkeur extends CI_Controller {
         $this->load->helper(array('form', 'url'));      
     }
    
+//de sessie voorkeuren van de gebruiker in de database opslaan
     public function doorgeven() {
         $user = $this->authex->getUserInfo();
         if($user == null){
