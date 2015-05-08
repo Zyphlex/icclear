@@ -12,18 +12,15 @@ class Contact extends CI_Controller {
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
-        $data['title'] = 'IC Clear - Home';
+        if($user == null){
+            $data['user'] = '';
+        }
+        $data['title'] = 'IC Clear - Contact';
         $data['active'] = 'home';
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
-
-        $this->load->model('algemeneinfo_model');
-        $data['algemeneinfo'] = $this->algemeneinfo_model->get();
-
-        $this->load->model('aankondiging_model');
-        $data['aankondigingen'] = $this->aankondiging_model->getNieuwsteAankondigingenActieve();
-
+        
         //Kijken of user reeds is ingeschreven, als dit zo is, knop verbergen op view
         $this->load->model('inschrijving_model');
         if ($user == null) {
@@ -37,7 +34,7 @@ class Contact extends CI_Controller {
             }
         }
 
-        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'home/home', 'footer' => 'main_footer');
+        $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'contact/start', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
 
