@@ -35,8 +35,8 @@
     <p>Status: <?php echo $status->status; ?></p>
 
     
-    <div class="col-sm-6">
-        <div class="equalizer panel panel-primary text-center">
+    <div class="">
+        <div class="col-sm-6equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal inschrijvingen</h2>
             </div>
@@ -47,8 +47,8 @@
     </div>
     
     
-    <div class="col-sm-6">
-        <div class="equalizer panel panel-primary text-center">
+    <div class="">
+        <div class="col-sm-6 equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sessies</h2>
             </div>
