@@ -41,6 +41,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#naam").val(jobject.naam);
+                        $("#omschrijving").val(jobject.omschrijving);
                         $("#conferentie").val(jobject.conferentieId);
                         $("#prijs").val(jobject.prijs);
                     }
@@ -48,6 +49,7 @@
             } else {
                 // bij toevoegen gewoon vakken leeg maken                
                 $("#naam").val("");
+                $("#omschrijving").val("");
                 $("#conferentie").val("");
                 $("#prijs").val("");
             }
