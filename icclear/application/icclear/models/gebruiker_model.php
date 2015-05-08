@@ -18,12 +18,14 @@ class Gebruiker_model extends CI_Model {
 //            return true;
 //    }
     
+    // Een gebruiker ophalen
      function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('gebruiker');
         return $query->row();
     }
     
+    // een gebruiker ophalen met zijn type
     function getAllWithType() {
         $this->db->order_by('voornaam', 'asc');
         $query = $this->db->get('gebruiker');
@@ -37,6 +39,7 @@ class Gebruiker_model extends CI_Model {
         return $gebruikers;
     }
 
+    // Alle gebruikers ophalen, maar geen admins (typeId = 3)
     function getAll() {
         $this->db->where('typeId !=', 3);
         $this->db->order_by('activatie', 'desc');
@@ -44,6 +47,7 @@ class Gebruiker_model extends CI_Model {
         return $query->result();
     }
     
+    // Alle admins ophalen (typeId = 3)
     function getAllAdmins() {
         $this->db->where('typeId', 3);
         $this->db->order_by('familienaam', 'asc');
@@ -51,16 +55,19 @@ class Gebruiker_model extends CI_Model {
         return $query->result();
     }
     
+    // Alle gebruikers ophalen die spreker zijn op de actieve conferentie
     function getSprekersActieve(){
         $this->load->model('conferentie_model');
         $confId = $this->conferentie_model->getActieveConferentie();
         
         $this->db->where('conferentieId', $confId->id);
+        // Alle goedgekeurde sessie voor de conferentie ophalen
         $this->db->where('isGoedgekeurd', 1);
         $this->db->group_by('gebruikerIdSpreker');
         $query = $this->db->get('sessie');
         $sessies = $query->result();    
         
+        // Voor elke sessie de gegevens van de spreker ophalen
         foreach ($sessies as $s) {
             $s->spreker = $this->get($s->gebruikerIdSpreker);
         }
@@ -68,12 +75,14 @@ class Gebruiker_model extends CI_Model {
         return $sessies;
     }
     
+    // Een spreker ophalen
     function getSpreker($sprekerId){
         $this->db->where('id', $sprekerId);
         $query = $this->db->get('gebruiker');
         return $query->row();                
     }
     
+    // Een nieuwe gebruiker toevoegen
     function insert($gebruiker)
     {
         //Html entities en extra spaties verwijderen
@@ -83,6 +92,7 @@ class Gebruiker_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    // Een gebruiker updaten
     function update($gebruiker)
     {
         //Html entities en extra spaties verwijderen
@@ -92,6 +102,7 @@ class Gebruiker_model extends CI_Model {
         $this->db->update('gebruiker', $gebruiker);
     }
     
+    // Een gebruiker verwijderen
     function delete($id)
     {
         $this->db->where('id', $id);
