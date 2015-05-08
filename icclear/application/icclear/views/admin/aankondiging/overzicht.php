@@ -72,7 +72,7 @@
             $('.titel').removeClass('has-error');
         }
 
-        if ($('#inhoud').html() == "") {
+        if ($('#inhoud').val() == "") {
             $('.inhoud').addClass('has-error');
             ok = false;
         } else {
