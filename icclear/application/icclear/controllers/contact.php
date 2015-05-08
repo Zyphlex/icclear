@@ -16,7 +16,7 @@ class Contact extends CI_Controller {
             $data['user'] = '';
         }
         $data['title'] = 'IC Clear - Contact';
-        $data['active'] = 'home';
+        $data['active'] = '';
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
@@ -55,7 +55,7 @@ class Contact extends CI_Controller {
             $data['user'] = '';
         }
         $data['title'] = 'IC Clear - Succesvol';
-        $data['active'] = 'home';
+        $data['active'] = '';
 
         $this->load->model('conferentie_model');
         $data['conferentie'] = $this->conferentie_model->getActieveConferentie();
