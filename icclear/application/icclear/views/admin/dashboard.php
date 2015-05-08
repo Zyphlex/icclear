@@ -43,7 +43,7 @@
 
 <div class="row">
     
-    <div class="col-sm-3">
+    <div class="col-sm-6">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal inschrijvingen</h2>
@@ -55,7 +55,7 @@
     </div>
     
     
-    <div class="col-sm-3">
+    <div class="col-sm-6">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sessies</h2>
@@ -67,7 +67,7 @@
     </div>
     
     
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal ongekeurde sessies</h2>
@@ -79,7 +79,7 @@
     </div>
     
 
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal sprekers</h2>
@@ -91,7 +91,7 @@
     </div>
     
 
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div class="equalizer panel panel-primary text-center">
             <div class="panel-heading">
                 <h2 class="panel-title bold"><span class="pull-left white glyphicon glyphicon-stats"></span>Aantal Activiteiten</h2>
