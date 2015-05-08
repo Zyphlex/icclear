@@ -51,7 +51,7 @@
                 </h3>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
+                
                     <div class="table-responsive">
                         <table class="table table-beheer" style="margin-left: 50px">
                             <thead>
@@ -76,7 +76,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                    
             </div>
         </div>
         <div class="panel panel-default">
