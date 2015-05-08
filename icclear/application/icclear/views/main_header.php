@@ -310,7 +310,7 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                <p class="col-sm-12 hidden alert alert-danger" role="alert" id="msgReg"></p>  
+                <p class="hidden alert alert-danger" role="alert" id="msgReg"></p>  
                 </div>
                 <div class=""> 
                     <div id="emaildiv">                        
