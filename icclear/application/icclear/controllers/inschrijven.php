@@ -310,6 +310,7 @@ class Inschrijven extends CI_Controller {
         if($user == null){
             $user = $this->session->userdata('geregistreerde');
             $data['user'] = '';
+            $data['geregistreerde'] = $user;
         }        
         $data['conferentieId'] = $this->session->userdata('conferentieId');
 
