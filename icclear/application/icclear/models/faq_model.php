@@ -2,32 +2,24 @@
 
 class Faq_model extends CI_Model {
 
-    // +----------------------------------------------------------
-    // | Beershop - product_model
-    // +----------------------------------------------------------
-    // | Thomas More Kempen - 2 TI - 201x-201x
-    // +----------------------------------------------------------
-    // | Product model
-    // |
-    // +----------------------------------------------------------
-    // | K. Vangeel
-    // +----------------------------------------------------------
-
     function __construct() {
         parent::__construct();
     }
 
+    // Alle FAQ items ophalen
     function getAll() {
         $query = $this->db->get('faq');
         return $query->result();
     }
 
+    // Een FAQ item ophalen
     function get($id) {
         $this->db->where('id', $id);
         $query = $this->db->get('faq');
         return $query->row();
     }
 
+    // Een FAQ item ophalen
     function update($faq) {
         //Html entities en extra spaties verwijderen
         $faq = escape_html($faq);
@@ -36,11 +28,13 @@ class Faq_model extends CI_Model {
         $this->db->update('faq', $faq);
     }
 
+    // Een FAQ item verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('faq');
     }
     
+    // Een FAQ item toevoegen
     function insert($faq)
     {
         //Html entities en extra spaties verwijderen
