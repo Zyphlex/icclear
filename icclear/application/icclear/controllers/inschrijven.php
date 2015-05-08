@@ -187,7 +187,7 @@ class Inschrijven extends CI_Controller {
                 $data['inschrijving'] = $inschrijving;
             }
         }
-        $data['title'] = 'IC Clear - Beheer';
+        $data['title'] = 'IC Clear - Boer';
         $data['active'] = 'admin';
 
         $this->load->model('gebruiker_model');
