@@ -3,7 +3,7 @@
     function haaloverzicht() {
         $.ajax({type: "GET",
             url: site_url + "/conferentie/overzicht",
-            success: function(result) {
+            success: function (result) {
                 $("#resultaat").html(result);
                 maakDetailClick();
                 maakDeleteClick();
@@ -21,7 +21,7 @@
 
     //Klikken op de Verwijderen knop
     function maakDeleteClick() {
-        $(".verwijderItem").click(function() {
+        $(".verwijderItem").click(function () {
             deleteid = $(this).data("id");
             $("#modalItemDelete").modal('show');
         });
@@ -29,7 +29,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigItem").click(function() {
+        $(".wijzigItem").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -38,7 +38,7 @@
                     url: site_url + "/conferentie/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function(result) {
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#onderdeel").val(jobject.omschrijving);
                         $("#prijs").val(jobject.prijs);
@@ -56,17 +56,76 @@
         });
     }
 
-    $(document).ready(function() {
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.datum').removeClass('has-error');
+        $('.beginuur').removeClass('has-error');
+        $('.einduur').removeClass('has-error');
+        $('.sessie').removeClass('has-error');
+        $('.zaal').removeClass('has-error');
+        $('.plenair').removeClass('has-error');
+    }
+
+    //VALIDATIE
+    function validatieOK() {
+        ok = true;
+        if ($('#datum').prop('selectedIndex') == -1) {
+            $('.datum').addClass('has-error');
+            ok = false;
+        } else {
+            $('.datum').removeClass('has-error');
+        }
+
+        if ($('#beginuur').val() == "") {
+            $('.beginuur').addClass('has-error');
+            ok = false;
+        } else {
+            $('.beginuur').removeClass('has-error');
+        }
+
+        if ($('#einduur').val() == "") {
+            $('.einduur').addClass('has-error');
+            ok = false;
+        } else {
+            $('.einduur').removeClass('has-error');
+        }
+
+        if ($('#sessie').prop('selectedIndex') == -1) {
+            $('.sessie').addClass('has-error');
+            ok = false;
+        } else {
+            $('.sessie').removeClass('has-error');
+        }
+
+        if ($('#zaal').prop('selectedIndex') == -1) {
+            $('.zaal').addClass('has-error');
+            ok = false;
+        } else {
+            $('.zaal').removeClass('has-error');
+        }
+
+        if ($('input[type=radio]:checked').size() < 0) {
+            $('.plenair').addClass('has-error');
+            ok = false;
+        } else {
+            $('.plenair').removeClass('has-error');
+        }
+
+        return ok;
+    }
+
+
+    $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
         //Lijst eerste maal ophalen en tonen
         haaloverzicht();
-        
+
         $('.table').DataTable();
-        
+
         //Klikken op "OPSLAAN" in de Detail modal
-        $(".opslaanItem").click(function() {
+        $(".opslaanItem").click(function () {
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -80,13 +139,13 @@
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
-        $(".deleteItem").click(function() {
+        $(".deleteItem").click(function () {
             $.ajax({
                 type: "POST",
                 url: site_url + "/conferentie/delete",
                 async: false,
                 data: {id: deleteid},
-                success: function(result) {
+                success: function (result) {
                     if (result == '0') {
                         alert("Er is iets foutgelopen!");
                     } else {
@@ -102,154 +161,154 @@
 
 <div class="col-md-10">
     <h1>Conferentie</h1>
-    
-    <?php if(count($inschrijvingen) >= 1) { ?>
-    <div class="space-bottom alert alert-warning">
-        <h3>Opgelet! De conferentie kan niet meer gewijzigd worden!</h3>
-        <p class="space-bottom15">Er zijn al <span class="bold"><?php echo count($inschrijvingen)?></span> inschrijvingen gevonden!</p>
-    </div>
+
+    <?php if (count($inschrijvingen) >= 1) { ?>
+        <div class="space-bottom alert alert-warning">
+            <h3>Opgelet! De conferentie kan niet meer gewijzigd worden!</h3>
+            <p class="space-bottom15">Er zijn al <span class="bold"><?php echo count($inschrijvingen) ?></span> inschrijvingen gevonden!</p>
+        </div>
     <?php } ?>
 
     <div id="resultaat"></div>    
-    
+
     <h2>Conferentie wijzigen</h2>
-        
-            
-        <?php
-        $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
-        echo form_open('conferentie/opslaan', $attributes);
-        ?>
 
-        <div class="row">  
-            <div class="col-md-2 control-label">
-                <?php echo form_label('Naam:', 'naam'); ?>
-            </div>
-            <div class="col-md-4">
-                <?php echo form_input(array("class" => "form-control", "required" => "required", "type" => "text", "name" => "naam", "value"=>$conferentie->naam)); ?>
-            </div>
+
+    <?php
+    $attributes = array('class' => 'registreer', 'id' => 'myForm', 'method' => 'post');
+    echo form_open('conferentie/opslaan', $attributes);
+    ?>
+
+    <div class="row">  
+        <div class="col-md-2 control-label">
+            <?php echo form_label('Naam:', 'naam'); ?>
+        </div>
+        <div class="col-md-4">
+            <?php echo form_input(array("class" => "form-control", "required" => "required", "type" => "text", "name" => "naam", "value" => $conferentie->naam)); ?>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">    
+        <div class="col-md-2 control-label">
+            <?php echo form_label('Begin datum:', 'begindatum'); ?>
+        </div>
+        <div class="col-md-4">    
+            <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
         </div>
 
-        <br/>
-
-        <div class="row">    
-            <div class="col-md-2 control-label">
-                <?php echo form_label('Begin datum:', 'begindatum'); ?>
-            </div>
-            <div class="col-md-4">    
-                <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "begindatum", "value" => $conferentie->beginDatum)); ?>
-            </div>
-
-            <div class="col-md-2 control-label  border-left">
-                <?php echo form_label('Eind datum:', 'einddatum'); ?>
-            </div>
-            <div class="col-md-4">
-                <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
-            </div>
+        <div class="col-md-2 control-label  border-left">
+            <?php echo form_label('Eind datum:', 'einddatum'); ?>
         </div>
+        <div class="col-md-4">
+            <?php echo form_input(array("disabled" => "true", "class" => "form-control", "type" => "date", "name" => "einddatum", "value" => $conferentie->eindDatum)); ?>
+        </div>
+    </div>
 
-        <br/>
+    <br/>
 
-        <div class="row">     
-            <div class="col-md-2 control-label">    
-                <?php echo form_label('Land:', 'land'); ?>   
-            </div>
-            <div class="col-md-4">                  
-                <?php
-                $opties = array();
-                foreach ($landen as $land) {
-                    $opties[$land->id] = $land->naam;
-                }
-                ?>
+    <div class="row">     
+        <div class="col-md-2 control-label">    
+            <?php echo form_label('Land:', 'land'); ?>   
+        </div>
+        <div class="col-md-4">                  
+            <?php
+            $opties = array();
+            foreach ($landen as $land) {
+                $opties[$land->id] = $land->naam;
+            }
+            ?>
             <?php echo form_dropdown('land', $opties, $conferentie->landId, 'id="land" class="form-control" required="required"'); ?>
-            </div>            
+        </div>            
 
-            <div class="col-md-2 control-label border-left">   
+        <div class="col-md-2 control-label border-left">   
             <?php echo form_label('Stad:', 'stad') ?>
-            </div>
-            <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
             <?php echo form_input(array('value' => $conferentie->stad, 'type' => 'text', 'id' => 'stad', 'name' => 'stad', 'class' => 'form-control', "required" => "required")); ?>
-            </div>
         </div>
+    </div>
 
-        <br/>
+    <br/>
 
-        <div class="row">    
-            <div class="col-md-3 control-label">  
+    <div class="row">    
+        <div class="col-md-3 control-label">  
             <?php echo form_label('Max inschrijvingen', 'maxinschrijvingen') ?>
-            </div>
-            <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
             <?php echo form_input(array('value' => $conferentie->maxInschrijvingen, 'type' => 'number', 'class' => 'form-control', 'name' => 'maxinschrijvingen', "required" => "required")) ?>               
-            </div>
         </div>
+    </div>
 
-        <div class="row">      
-            <div class="col-md-3 control-label">       
-                <?php echo form_label('Seminariedag:', 'seminariedag') ?>
-            </div>
-            <div class="col-md-2">    
-                    <?php if ($conferentie->seminarieDag == 1) { ?>
-                    <label class="radio">
+    <div class="row">      
+        <div class="col-md-3 control-label">       
+            <?php echo form_label('Seminariedag:', 'seminariedag') ?>
+        </div>
+        <div class="col-md-2">    
+            <?php if ($conferentie->seminarieDag == 1) { ?>
+                <label class="radio">
                     <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', 'checked' => 'checked', "required" => "required")); ?>
-                        Ja</label>
-                    <label class="radio">
+                    Ja</label>
+                <label class="radio">
                     <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', "required" => "required")); ?>
-                        Nee</label>    
-                    <?php } else { ?>
-                    <label class="radio">
+                    Nee</label>    
+            <?php } else { ?>
+                <label class="radio">
                     <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '1', "required" => "required")); ?>
-                        Ja</label>
-                    <label class="radio">
+                    Ja</label>
+                <label class="radio">
                     <?php echo form_radio(array('type' => 'radio', 'name' => 'seminariedag', 'value' => '0', 'checked' => 'checked', "required" => "required")); ?>
-                        Nee</label>
-                    <?php } ?>
-            </div>
-        </div>       
+                    Nee</label>
+            <?php } ?>
+        </div>
+    </div>       
 
-        <br/><br/>
+    <br/><br/>
 
 
-        <br/><br/>
+    <br/><br/>
 
-        <div class="row">
-            <div class="col-md-12">
-                <?php echo form_label('Beschrijving:', 'beschrijving') ?> 
-            </div>
-
-            <div class="col-md-12">
-                <?php echo form_textarea(array('value' => $conferentie->beschrijving, 'rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control', "required" => "required")) ?>
-            </div>
-        </div>        
-
-        <br/><br/>
-
-        <div class="row">
-            <div class="col-md-12">
-
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <?php echo form_label('Beschrijving:', 'beschrijving') ?> 
         </div>
 
-
-
-
-
-        <br/>
-
-        <div class="row">
-            <div class="col-md-12">   
-                <?php echo form_hidden('id', $conferentie->id); ?>
-
-                <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
-                <?php if(count($inschrijvingen) < 1) { ?>
-                    <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>          
-                <?php } ?>
-            </div>
+        <div class="col-md-12">
+            <?php echo form_textarea(array('value' => $conferentie->beschrijving, 'rows' => '10', 'name' => 'beschrijving', 'class' => 'form-control', "required" => "required")) ?>
         </div>
-        
-        <br/>
+    </div>        
 
-        <?php echo form_close(); ?>
+    <br/><br/>
 
-        
+    <div class="row">
+        <div class="col-md-12">
+
+        </div>
+    </div>
+
+
+
+
+
+    <br/>
+
+    <div class="row">
+        <div class="col-md-12">   
+            <?php echo form_hidden('id', $conferentie->id); ?>
+
+            <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
+            <?php if (count($inschrijvingen) < 1) { ?>
+                <?php echo form_submit(array('value' => 'Opslaan', 'class' => 'btn btn-default')) ?>          
+            <?php } ?>
+        </div>
+    </div>
+
+    <br/>
+
+    <?php echo form_close(); ?>
+
+
 
 </div>
 
@@ -264,22 +323,28 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">   
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p> 
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />
-                    <p><?php echo form_label('Onderdeel omschrijving:', 'onderdeel'); ?></td>
-                    <p><?php echo form_input(array('name' => 'onderdeel', 'id' => 'onderdeel', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Onderdeel omschrijving:', 'onderdeel'); ?></p>
+                    <p class="onderdeel"><?php echo form_input(array('name' => 'onderdeel', 'id' => 'onderdeel', 'class' => 'form-control')); ?></p>
 
-                    <p><?php echo form_label('Prijs:', 'prijs'); ?></td>
-                    <p><?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?></p>
+                    <p><?php echo form_label('Prijs:', 'prijs'); ?></p>
+                    <p class="prijs">
+                    <div class="input-group">
+                        <span class="input-group-addon">&euro;</span>
+                        <?php echo form_input(array('name' => 'prijs', 'id' => 'prijs', 'class' => 'form-control')); ?>
+                    </div>
+                    </p>
 
-                    <p><?php echo form_label('Korting:', 'korting'); ?></td>
-                    <p>
-                        <div class="input-group">
-                            <span class="input-group-addon">&percnt;</span>
+                    <p><?php echo form_label('Korting:', 'korting'); ?></p>
+                    <p class="korting">
+                    <div class="input-group">
+                        <span class="input-group-addon">&percnt;</span>
                         <?php echo form_input(array('name' => 'korting', 'id' => 'korting', 'class' => 'form-control')); ?>
-                        </div>
+                    </div>
                     </p>
                 </form>
 
