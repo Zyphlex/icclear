@@ -49,7 +49,8 @@ class Adminbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/gebruiker/overzicht_admin', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //overzicht van alle admins die je kan beheren
     public function overzicht() {
         $this->load->model('gebruiker_model');
         $data['admins'] = $this->gebruiker_model->getAllAdmins();
@@ -57,6 +58,7 @@ class Adminbeheer extends CI_Controller {
         $this->load->view('admin/gebruiker/lijst_admin', $data);
     }
 
+    //details per admin
     public function detail() {
         $id = $this->input->get('id');
 
@@ -66,6 +68,7 @@ class Adminbeheer extends CI_Controller {
         echo json_encode($admin);
     }
 
+    //gegevens van admin wijzigen
     public function update() {
         $admin->id = $this->input->post('id');
         $admin->voornaam = $this->input->post('voornaam');
@@ -94,6 +97,7 @@ class Adminbeheer extends CI_Controller {
         echo $id;
     }
 
+    //admin verwijderen
     public function delete() {
         $id = $this->input->post('id');
 
