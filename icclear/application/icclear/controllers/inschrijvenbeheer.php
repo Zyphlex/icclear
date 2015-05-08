@@ -112,6 +112,13 @@ class Inschrijvenbeheer extends CI_Controller {
             $bet->gebruikerId = $oud->gebruikerId;
             $inschrijving->betalingId = $this->betaling_model->insert($bet);
         }
+        else
+        {
+            if ($oud->betalingId != null && $betaling == "nee") {
+                $this->betaling_model->delete($oud->betalingId);
+                $inschrijving->betalingId = null;
+            }
+        }
 
         $this->inschrijving_model->update($inschrijving);
     }
