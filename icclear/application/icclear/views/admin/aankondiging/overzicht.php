@@ -41,14 +41,14 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#titel").val(jobject.titel);
-                        $("#inhoud").val(jobject.inhoud);
+                        $("textarea[name=inhoud]").html(jobject.inhoud);
 
                     }
                 });
             } else {
                 // bij toevoegen gewoon vakken leeg maken
                 $("#titel").val("");
-                $("#inhoud").val("");
+                $("textarea[name=inhoud]").html("");
             }
             // dialoogvenster openen
             $("#modalItemDetail").modal('show');
@@ -72,7 +72,7 @@
             $('.titel').removeClass('has-error');
         }
 
-        if ($('#inhoud').val() == "") {
+        if ($('#inhoud').html() == "") {
             $('.inhoud').addClass('has-error');
             ok = false;
         } else {
