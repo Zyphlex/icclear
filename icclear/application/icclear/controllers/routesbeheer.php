@@ -51,7 +51,8 @@ class Routesbeheer extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'sidenav' => 'admin_sidenav', 'content' => 'admin/routes/overzicht', 'footer' => 'main_footer');
         $this->template->load('admin_master', $partials, $data);
     }
-
+    
+    //overzicht van alle routes die je kan beheren
     public function overzicht() {
         $this->load->model('routes_model');
         $data['routes'] = $this->routes_model->getRoutes();
@@ -59,6 +60,7 @@ class Routesbeheer extends CI_Controller {
         $this->load->view('admin/routes/lijst', $data);
     }
 
+    //details per route
     public function detail() {
         $id = $this->input->get('id');
 
@@ -68,6 +70,7 @@ class Routesbeheer extends CI_Controller {
         echo json_encode($route);
     }
 
+    //route deleten
     public function delete($id) {
         $id = $this->input->post('id');
 
@@ -77,6 +80,7 @@ class Routesbeheer extends CI_Controller {
         echo $deleted;
     }
 
+    //route wijzigen
     public function update() {
         $route->id = htmlentities($this->input->post('id'));
         $route->vertrekpunt = htmlentities($this->input->post('vertrekpunt'));
