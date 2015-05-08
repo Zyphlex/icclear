@@ -39,6 +39,7 @@ class Spreker extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
     
+    //opent pagina waar je een voorstel kan indienen
     public function voorstel() {
 
         $user = $this->authex->getUserInfo();
