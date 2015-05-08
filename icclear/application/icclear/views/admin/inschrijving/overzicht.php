@@ -43,6 +43,15 @@
                         var jobject = jQuery.parseJSON(result);
                         $("#gebruiker").val(jobject.gebruikerId);
                         $("#confonderdeel").val(jobject.conferentieOnderdeelId);
+                        if (jobject.betalingId == null) {
+                           $(':radio[name="geslacht"][value="nee"]').prop('checked', 'checked'); 
+                        }
+                        else
+                        {
+                            $(':radio[name="geslacht"][value="ja"]').prop('checked', 'checked');
+                        }
+    
+}
                         $("#methode").val(jobject.methodeId);
                     }
                 });
