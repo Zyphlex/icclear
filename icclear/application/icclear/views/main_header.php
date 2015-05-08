@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-xs-8">                         
+    <div class="col-sm-8 col-xs-12">                         
         <a href="<?php echo base_url(); ?>icclear.php/home">
             <img id="ic-logo" src="<?php echo base_url() . APPPATH; ?>img/default/icclear.png" />
         </a>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-4 col-xs-12">
             <p>
                 <span class="logon italic">
                     <a class="red" href="#">NL</a> 
