@@ -112,7 +112,6 @@
                         if (validatieOK() && validate() && realCheck1()) {
                             $("#FormRegistreren").submit();
                         }
-
                     });
                     
                     ("#submitInlog").click(function (e) {
@@ -120,7 +119,6 @@
                         if (inloggenOK()) {
                             $("#FormInloggen").submit();
                         }
-
                     });
                     
                     ("#submitVergeten").click(function (e) {
@@ -128,7 +126,6 @@
                         if (vergetenOK() {
                             $("#FormVergeten").submit();
                         }
-
                     });
 
                     $("#password2").keyup(validate);
