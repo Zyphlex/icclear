@@ -95,7 +95,7 @@
                                             <tr class="under-link">
                                                 <td class="success">
                                                     <div class="checkbox">
-                                                        <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
+                                                        <?php echo form_checkbox(array('class'=>'center-block', 'name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
                                                     </div>
                                                 </td>
                                                 <td>
