@@ -54,6 +54,7 @@ class Conferentie extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //conferentie toevoegen
     public function toevoegen() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -85,6 +86,7 @@ class Conferentie extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
 
+    //conferentie opslaan
     public function nieuwopslaan() {
         //ingevoerde gegevens ophalen
         $conferentie->stad = $this->input->post('stad');
@@ -119,6 +121,7 @@ class Conferentie extends CI_Controller {
         redirect('gebouw/gebouwPerDag/' . $conferentieId);
     }
 
+    //conferentie opslaan
     public function opslaan() {
         $conferentie->id = $this->input->post('id');
         $conferentie->stad = $this->input->post('stad');
@@ -136,6 +139,7 @@ class Conferentie extends CI_Controller {
         redirect('admin/dashboard/' . $conferentie->id);
     }
 
+    //overzicht van alle conferenties die je kan aanpassen
     public function overzicht() {
         $this->load->model('conferentie_onderdeel_model');
         $data['onderdelen'] = $this->conferentie_onderdeel_model->getAllConferentie($this->session->userdata('conferentieId'));
@@ -146,6 +150,7 @@ class Conferentie extends CI_Controller {
         $this->load->view('admin/conferentie/lijst', $data);
     }
 
+    //details per conferentie
     public function detail() {
         $id = $this->input->get('id');
 
@@ -155,6 +160,7 @@ class Conferentie extends CI_Controller {
         echo json_encode($onderdeel);
     }
 
+    //conferentie deleten
     public function delete($id) {
         $id = $this->input->post('id');
 
@@ -164,6 +170,7 @@ class Conferentie extends CI_Controller {
         echo $deleted;
     }
 
+    //conferentie wijzigen
     public function update() {
         $onderdeel->id = htmlentities($this->input->post('id'));
         $onderdeel->conferentieId = $this->session->userdata('conferentieId');
