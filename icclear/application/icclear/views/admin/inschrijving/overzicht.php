@@ -102,6 +102,33 @@
         });
     }
 
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.confonderdeel').removeClass('has-error');
+        $('.methode').removeClass('has-error');
+    }
+
+    //VALIDATIE
+    function validatieOK() {
+        ok = true;
+        
+        if ($('#confonderdeel').prop('selectedIndex') == -1) {
+            $('.confonderdeel').addClass('has-error');
+            ok = false;
+        } else {
+            $('.confonderdeel').removeClass('has-error');
+        }
+        
+        if ($('#methode').prop('selectedIndex') == -1) {
+            $('.methode').addClass('has-error');
+            ok = false;
+        } else {
+            $('.methode').removeClass('has-error');
+        }
+
+        return ok;
+    }
+
     $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
@@ -112,16 +139,21 @@
 
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanItem").click(function () {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/inschrijvenbeheer/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#modalItemDetail").modal('hide');
+            if (validatieOK()) {
+                var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/inschrijvenbeheer/update",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#modalItemDetail").modal('hide');
+            } else {
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -165,14 +197,15 @@
                 <h4 class="modal-title"></h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body"> 
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p> 
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id" />  
 
                     <input type="hidden" name="gebruikerId" id="hiddenGeb" />  
                     <p><?php echo form_label('Gebruiker:', 'gebruiker'); ?></p>
-                    <p><?php
+                    <p class="gebruiker"><?php
                         $optionsGebruiker = array();
                         foreach ($gebruikers as $gebruiker) {
                             $optionsGebruiker[$gebruiker->id] = $gebruiker->voornaam . " " . $gebruiker->familienaam . " (" . $gebruiker->type->omschrijving . ")";
@@ -182,7 +215,7 @@
                         ?></p>
 
                     <p><?php echo form_label('Formule:', 'formule'); ?></p>
-                    <p><?php
+                    <p class="confonderdeel"><?php
                         $optionsOnderdeel = array();
                         foreach ($onderdelen as $onder) {
                             $optionsOnderdeel[$onder->id] = $onder->omschrijving;
@@ -192,7 +225,7 @@
                         ?></p>
 
                     <p><?php echo form_label('Methode:', 'methode'); ?></p>
-                    <p><?php
+                    <p class="methode"><?php
                         $optionsMethode = array();
                         foreach ($methodes as $methode) {
                             $optionsMethode[$methode->id] = $methode->omschrijving;
@@ -202,17 +235,11 @@
                         ?></p>
 
                     <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
-                    <div class="">
-                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?>                            
-                        <span class="option-title">
-                            Reeds betaald
-                        </span>
-                    </div> 
-                    <div class="">
-                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>                            
-                        <span class="option-title">
-                            Nog niet betaald
-                        </span>
+                    <div class="betaling">
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?> Reeds betaald                     
+                        
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?> Nog niet betaald                           
+                        
                     </div> 
 
 
