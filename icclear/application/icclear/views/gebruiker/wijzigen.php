@@ -403,7 +403,7 @@ col-md-4">
                                 </div>         
                             </div>
                    </div>
-                        <?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
+                     profiel/instellingen?php echo anchor('home', 'Annuleer', 'class="btn btn-default"'); ?>
   >
    button type="button" class="opslaanGebruiker btn btn-primary">Wijzigingen opslaan</button"btn btn-primary"'); ?>
       <?php echo form_close(); ?> 
