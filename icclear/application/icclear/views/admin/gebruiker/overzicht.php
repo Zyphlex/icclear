@@ -29,11 +29,13 @@
                 $(".warning").hide('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
+                $("#oog").attr('tooltip','Verberg inactieve gebruikers');
                 $(this).removeClass('verberg');
             } else {
                 $(".warning").show('400');
                 $("#oog").addClass('fa-eye-slash');
                 $("#oog").removeClass('fa-eye');
+                $("#oog").attr('tooltip','Toon alle gebruikers');
                 $(this).addClass('verberg');
             }
         });
@@ -238,14 +240,12 @@
 
     <h1>Gebruiker beheren</h1>      
 
-
-    <button class="verberg verbergInactive btn btn-primary" data-id="0"><span id="oog" class="white fa fa-eye-slash"></span></button>
+    <button class="wijzigGebruiker btn btn-primary" data-id="0">Nieuwe gebruiker Toevoegen</button>
+    <button class="emailGebruikers btn btn-warning" data-id="0">Email naar alle gebruikers versturen</button>
+    <button class="verberg verbergInactive btn btn-primary" data-id="0"><span data-toggle="tooltip" data-placement="bottom" title="Verberg inactieve gebruikers"  id="oog" class="white fa fa-eye-slash"></span></button>
     <div id="resultaat"></div>        
 
     <?php echo anchor('admin', 'Annuleren', 'class="btn btn-default"'); ?>
-
-    <button class="wijzigGebruiker btn btn-primary" data-id="0">Nieuwe gebruiker Toevoegen</button>
-    <button class="emailGebruikers btn btn-warning" data-id="0">Email naar alle gebruikers versturen</button>
 </div>
 
 
