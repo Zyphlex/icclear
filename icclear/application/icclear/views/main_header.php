@@ -289,7 +289,7 @@
                             } else {
                                 $('#feedbackemail').html("<p class='form-note form-note-ok'>Beschikbaar</p>");
                                 $("#emaildiv").removeClass("has-error");
-                                $("#mailTaken").removeClass("hidden");
+                                $("#mailTaken").addClass("hidden");
                                 $("#mailTaken").html("");
                                 ok = true;
                             }
