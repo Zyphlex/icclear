@@ -85,7 +85,7 @@
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('submitInlog', 'Aanmelden', 'class="col-xs-8 btn btn-primary"'); ?>
+                        <?php echo form_submit('submitInlog', 'Aanmelden', 'id="submitInlog" class="col-xs-8 btn btn-primary"'); ?>
                     </div>
                 </div>
 
@@ -324,7 +324,7 @@
                 <div class="col-xs-12 margin-top space-bottom15">
                     <div class="btn-group btn-block">
                         <button type="button" class="col-xs-4 btn btn-default" data-dismiss="modal">Annuleren</button>   
-                        <?php echo form_submit('submitVergeten', 'Verstuur Email', 'class="col-xs-8 btn btn-primary"'); ?>
+                        <?php echo form_submit('submitVergeten', 'Verstuur Email', 'id="submitVergeten"  class="col-xs-8 btn btn-primary"'); ?>
                     </div>
                 </div>
 
