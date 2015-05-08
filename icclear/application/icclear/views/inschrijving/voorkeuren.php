@@ -90,7 +90,8 @@
                                         </tr>
                                     </thead>  
                                     <tbody>                        
-                                        <?php foreach ($d->programma as $p) { ?>                             
+                                        <?php foreach ($d->programma as $p) { ?>       
+                                        <?php if ($p->plenair == '0') { ?>
                                             <tr class="under-link">
                                                 <td>
                                                   <?php echo form_checkbox(array('name' => 'gekozensessies[]', 'value' => $p->sessie->id)); ?>  
@@ -113,6 +114,7 @@
                                                     </a>
                                                 </td>
                                             </tr> 
+                                        <?php } ?>
                                         <?php } ?>
                                     </tbody>
                                 </table>   
