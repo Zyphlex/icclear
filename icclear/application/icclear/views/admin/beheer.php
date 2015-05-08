@@ -14,7 +14,7 @@
                 </h3>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
+                
                     <div class="table-responsive">
                         <table class="table table-beheer" style="margin-left: 50px">
                             <thead>
@@ -28,17 +28,17 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="width:200px"><?php echo $conferentie->naam ?></td>                                
-                                    <td style="width:250px"><?php echo toDDMMYYYY($conferentie->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
-                                    <td style="width:150px"><?php echo $conferentie->stad ?></td>
-                                    <td style="width:150px"><?php echo $conferentie->land->naam ?></td>
-                                    <td style="width:150px"><?php echo anchor('admin/dashboard/' . $conferentie->id, 'Beheren', 'class="btn btn-default"'); ?></td>
+                                    <td><?php echo $conferentie->naam ?></td>                                
+                                    <td><?php echo toDDMMYYYY($conferentie->beginDatum) . " - " . toDDMMYYYY($conferentie->eindDatum) ?></td>
+                                    <td><?php echo $conferentie->stad ?></td>
+                                    <td><?php echo $conferentie->land->naam ?></td>
+                                    <td><?php echo anchor('admin/dashboard/' . $conferentie->id, 'Beheren', 'class="btn btn-default"'); ?></td>
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
-                </div>
+                
             </div>
         </div>
         <div class="panel panel-default">
