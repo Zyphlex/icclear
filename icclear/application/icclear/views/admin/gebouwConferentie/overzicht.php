@@ -13,8 +13,8 @@
         <table class="table table-beheer">
             <thead>
                 <tr>
-                    <th>Datum</th>
-                    <th>Gebouw</th>
+                    <th class="w50">Datum</th>
+                    <th class="w50">Gebouw</th>
                 </tr>
             </thead>
             <tbody>
