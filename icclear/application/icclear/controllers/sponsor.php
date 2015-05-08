@@ -9,6 +9,7 @@ class Sponsor extends CI_Controller {
         parent::__construct();
     }
 
+    //sponsorpagina tonen
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
