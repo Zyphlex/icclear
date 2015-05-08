@@ -72,9 +72,9 @@
                 <div class=""> 
                     <div id="emaildiv">
                         <div id="feedbackemail"></div>
-                        <?php echo form_label('Emailadres:', 'email', array('class' => 'col-sm-4 control-label')); ?> 
+                        <?php echo form_label('Emailadres:', 'emailadres', array('class' => 'col-sm-4 control-label')); ?> 
                         <div class="col-sm-8">   
-                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'email', 'class' => 'form-control')); ?>                    
+                            <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadres', 'class' => 'form-control')); ?>                    
                         </div>
                     </div>
 
