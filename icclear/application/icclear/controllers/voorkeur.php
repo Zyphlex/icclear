@@ -7,10 +7,7 @@ class Voorkeur extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
-        if (!$this->authex->loggedIn()) {
-            redirect('logon/aanmelden');
-        }
+        $this->load->helper(array('form', 'url'));      
     }
    
     public function doorgeven() {
