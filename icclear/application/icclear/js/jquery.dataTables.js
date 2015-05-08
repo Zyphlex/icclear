@@ -10708,7 +10708,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Toont _START_ tot _END_ van _TOTAL_ rijen",
+			//"sInfo": "Toont _START_ tot _END_ van _TOTAL_ rijen",
 	
 	
 			/**
@@ -10751,7 +10751,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(Gefiltert van _MAX_ rijen)",
+			//"sInfoFiltered": "(Gefiltert van _MAX_ rijen)",
 	
 	
 			/**
