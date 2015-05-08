@@ -133,7 +133,8 @@ class Spreker extends CI_Controller {
         }
         $this->template->load('main_master', $partials, $data);
     }
-
+    
+    //biografie wijzigen
     public function updateBiografie() {
         $data['user'] = $this->authex->getUserInfo();
         $data['title'] = 'IC Clear - Biografie';
