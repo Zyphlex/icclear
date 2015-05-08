@@ -8,7 +8,7 @@
     <div class="col-md-4">
         <div class="">
             <p>
-        <span class="logonheader italic space-right15">
+        <span class="logon italic space-right15">
             <a class="red" href="#">NL</a> 
             / 
             <a href="#">EN</a> 
