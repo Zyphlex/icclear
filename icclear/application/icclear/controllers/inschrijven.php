@@ -299,7 +299,7 @@ class Inschrijven extends CI_Controller {
         $this->email->send();
         
         //user meegeven voor geval gebruiker nog niet aangemeld is
-        $this->session->set_userdata('geregistreerde', $user);
+        //$this->session->set_userdata('geregistreerde', $user);
 
         redirect('inschrijven/voorkeuren');
     }
