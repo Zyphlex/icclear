@@ -37,6 +37,11 @@ class Contact extends CI_Controller {
         $partials = array('header' => 'main_header', 'nav' => 'main_nav', 'content' => 'contact/start', 'footer' => 'main_footer');
         $this->template->load('main_master', $partials, $data);
     }
+    
+    public function insturen(){
+        $email = $this->input->post('emailadresverzender');
+        $boodschap = $this->input->post('boodschapcontact');
+    }
 
 }
 
