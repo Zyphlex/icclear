@@ -49,7 +49,7 @@
                 <h2 class="panel-title bold">Aantal inschrijvingen</h2>
             </div>
             <div class="panel-body">
-                <h1 class="bold"><?php echo anchor('inschrijven/opvolgen',$aantalInschrijvingen); ?></h1> <span class="italic inline">inschrijvingen</span>
+                <h1 class="bold"><?php echo anchor('inschrijvenbeheer/opvolgen',$aantalInschrijvingen); ?></h1> <span class="italic inline">inschrijvingen</span>
             </div>
         </div>
     </div>
