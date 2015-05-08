@@ -9,6 +9,7 @@ class Faq extends CI_Controller {
         parent::__construct();
     }
 
+    //Alle faq tonen in view
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;

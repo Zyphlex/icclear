@@ -191,6 +191,8 @@ class Inschrijven extends CI_Controller {
 
                 //Verwerken van het inschrijven
                 $this->verwerkenInschrijving($user);
+                
+                //Mail sturen als bevestiging
                 $this->email->from('donotreply@thomasmore.be');
                 $this->email->to($user->email);
                 $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -251,6 +253,8 @@ class Inschrijven extends CI_Controller {
 
         //Verwerken van het inschrijven
         $this->verwerkenInschrijving($user);
+        
+        //Mail sturen als bevestiging
         $this->email->from('donotreply@thomasmore.be');
         $this->email->to($user->email);
         $this->email->subject('Inschrijving voor ' . $conferentie->naam);
@@ -332,10 +336,11 @@ class Inschrijven extends CI_Controller {
         $Pers = $this->session->userdata('Pers');
         $Acts = $this->session->userdata('ActId');
         $i = 0;
+        //Voor elke activiteit, een rij invoegen in database.
         foreach ($Acts as $a) {
             $activiteit->activiteitId = $a;
             $activiteit->gebruikerId = $user->id;
-            if ($betId != 0) {
+            if ($betId != 0) { //Als er een betaling is, ook een betalingId erbij zetten
                 $activiteit->betalingId = $betId;
             }
             $activiteit->aantalPersonen = $Pers[$i];

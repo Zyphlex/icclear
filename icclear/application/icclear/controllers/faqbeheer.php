@@ -20,6 +20,7 @@ class Faqbeheer extends CI_Controller {
         }
     }
 
+    //Alle FAQ tonen in overzicht
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;

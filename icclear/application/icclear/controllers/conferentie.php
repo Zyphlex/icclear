@@ -20,6 +20,7 @@ class Conferentie extends CI_Controller {
         }
     }
 
+    //Gevens van de conferentie laden, via de session conferentieId. Deze kan me ndan  wijzigen
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;

@@ -96,12 +96,13 @@ class Hotels extends CI_Controller {
 
         $fieldname = 'userfile';
 
+        //Kijken of uploaden is gelukt
         if (!$this->upload->do_upload($fieldname)) {
             $error = array('error' => $this->upload->display_errors());
             echo print_r($config);
             echo print_r($error);
             echo realpath($config['upload_path']);
-        } else {            
+        } else { //als het lukt, de naam van foto in database schrijven           
             $hotel->foto = $config['file_name'];
         }
 

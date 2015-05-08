@@ -20,6 +20,7 @@ class Adminbeheer extends CI_Controller {
         }
     }
 
+    //Alle admins laden en tonen in view
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;

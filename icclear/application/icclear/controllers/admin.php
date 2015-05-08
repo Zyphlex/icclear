@@ -20,6 +20,8 @@ class Admin extends CI_Controller {
         }
     }
 
+    //Overzicht van alle conferenties laden, onderverdeeld in "Huidig, Toekomstig en Verleden".
+    //Dit is als men op Admin drukt. Hier moeten ze dan een conferentie kiezen om te beheren.
     public function index() {
         $user = $this->authex->getUserInfo();
         $data['user'] = $user;
@@ -100,6 +102,7 @@ class Admin extends CI_Controller {
         $this->template->load('admin_master', $partials, $data);
     }
     
+    //De status van de conferentie wijzigen (huidig, toekomstig, afgelopen)
     public function wijzigStatus() {        
         $confId = $this->session->userdata('conferentieId');
         $this->load->model('conferentie_model');  
@@ -123,6 +126,8 @@ class Admin extends CI_Controller {
         redirect('admin/dashboard/' . $confId);
     }
     
+    //Programma verbergen of zichtbaar maken voor bezoekers
+    //Als het programma zichtbaar is, dan is "word spreker" verborgen. Dit wordt gedaan in de main_nav.php
     public function toonProgramma($id) {
         $confId = $this->session->userdata('conferentieId');
         $this->load->model('conferentie_model');  

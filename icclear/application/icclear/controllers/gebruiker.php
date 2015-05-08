@@ -97,6 +97,7 @@ class Gebruiker extends CI_Controller {
         echo $id;
     }
 
+    //Een gebruiker deactiveren, niet werkelijk verwijderen
     public function delete() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->activatie = 0;
@@ -108,6 +109,7 @@ class Gebruiker extends CI_Controller {
         echo $deleted;
     }
     
+    //Een gebruiker als geactiveerd zetten
     public function activate() {
         $gebruiker->id = $this->input->post('id');
         $gebruiker->activatie = 1;
