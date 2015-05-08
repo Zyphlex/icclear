@@ -83,7 +83,7 @@ class Gebouw extends CI_Controller {
         
         // foto
         $config['upload_path'] = './application/upload/fotos/gebouwen';
-        //$config['allowed_types'] = 'jpg';
+        $config['allowed_types'] = 'jpg';
         $config['file_name'] = 'gebouw' . $gebouw->id . '.jpg';
         $config['max_size'] = 200;
         $config['max_height'] = 700;
@@ -97,10 +97,11 @@ class Gebouw extends CI_Controller {
 
         // Uploaden
         $this->load->library('upload', $config);
+        
         $this->upload->initialize($config);
-
         $fieldname = 'userfile';
-
+        
+    print_r($this->input->post('userfile'));
     print_r($fieldname);
         
         if (!$this->upload->do_upload($fieldname)) {
