@@ -27,8 +27,8 @@
             $attributes = array('name' => 'myform');
             echo form_open('contact/insturen', $attributes);
             ?>    
-                <p class="col-sm-4"><?php echo form_label('Uw emailadres:', 'emailadresverzender'); ?></p>
-                <p class="col-sm-8"><?php echo form_input(array('name' => 'emailadresverzender', 'id' => 'emailadresverzender', 'class' => 'form-control', 'required' => 'required')); ?></p>
+                <p><?php echo form_label('Uw emailadres:', 'emailadresverzender'); ?></p>
+                <p><?php echo form_input(array('name' => 'emailadresverzender', 'id' => 'emailadresverzender', 'class' => 'form-control', 'required' => 'required')); ?></p>
 
                 <p><?php echo form_label('Onderwerp:', 'onderwerpverzender'); ?></p>
                 <p><?php echo form_input(array('name' => 'onderwerpverzender', 'id' => 'onderwerpverzender', 'class' => 'form-control', 'required' => 'required')); ?></p>
