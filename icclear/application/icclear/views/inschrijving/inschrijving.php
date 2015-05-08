@@ -21,16 +21,9 @@ $(document).ready(function() {
 </script>
 
 
-            $user = $this->authex->getUserInfo();            
-            $this->load->model('inschrijving_model');
-            $check = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);            
-            //Controleren of er een inschrijving is. Als er al 1 is, niet erop laten
-            if ($check != null) { 
-                redirect('home');
-            }
 
 <?php if ($inschrijving != null) { //Kijken of de gebruiker al is ingeschreven voor de conferentie, als dit zo is, foutmelding tonen?>       
-<div class="space-bottom alert alert-danger">        
+    <div class="space-bottom alert alert-danger">        
         <h1 class="space-bottom15 text-center">Er is een fout opgetreden.</h1>
         <p class="danger italic text-center">U bent reeds ingeschreven voor deze conferentie!</p>  
         <p class="space-bottom danger italic text-center">Als u aangemeld bent, kunt u naar uw instellingen gaan en kijken naar uw inschrijvingen.</p>    
