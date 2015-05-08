@@ -15,7 +15,7 @@
         
         <p><?php echo form_label('Boodschap/vraag:', 'boodschapcontact'); ?></p>
         <p><?php echo form_textarea(array('name' => 'boodschapcontact', 'id' => 'boodschapcontact', 'rows' => '10', 'cols' => '50', 'class' => 'form-control')); ?></p>
-        <p><input type="submit" value="Verzenden"/></p>
+        <p><input type="submit" value="Verzenden" class="btn btn-default"/></p>
     </form>
         </div>
 </div>
