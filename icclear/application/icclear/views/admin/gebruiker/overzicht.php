@@ -12,7 +12,7 @@
                 maakVerberg();
                 $('.table').DataTable({
                     "aaSorting": []
-                });                
+                });
             }
         });
     }
@@ -21,7 +21,7 @@
     function refreshData() {
         haaloverzicht();
     }
-    
+
     //Klikken op de Verberg Tonen knop
     function maakVerberg() {
         $(".verbergInactive").click(function () {
@@ -29,18 +29,18 @@
                 $(".warning").hide('400');
                 $("#oog").removeClass('fa-eye-slash');
                 $("#oog").addClass('fa-eye');
-                $("#oog").attr('tooltip','Verberg inactieve gebruikers');
+                $("#oog").attr('tooltip', 'Verberg inactieve gebruikers');
                 $(this).removeClass('verberg');
             } else {
                 $(".warning").show('400');
                 $("#oog").addClass('fa-eye-slash');
                 $("#oog").removeClass('fa-eye');
-                $("#oog").attr('tooltip','Toon alle gebruikers');
+                $("#oog").attr('tooltip', 'Toon alle gebruikers');
                 $(this).addClass('verberg');
             }
         });
     }
-    
+
     //Klikken op de Deactiveren knop
     function maakDeleteClick() {
         $(".verwijderGebruiker").click(function () {
@@ -49,7 +49,7 @@
             $("#gebruikerDelete").modal('show');
         });
     }
-    
+
     //Klikken op de Activeren knop
     function maakActivatieClick() {
         $(".activeerGebruiker").click(function () {
@@ -61,7 +61,7 @@
 
     //Klikken op de Wijzig knop/Toevoeg knop
     function maakDetailClick() {
-        $(".wijzigGebruiker").click(function () {            
+        $(".wijzigGebruiker").click(function () {
             var iddb = $(this).data("id");
             $("#id").val(iddb);
             if (iddb != 0) {
@@ -70,7 +70,7 @@
                     url: site_url + "/gebruiker/detail",
                     async: false,
                     data: {id: iddb},
-                    success: function (result) {                        
+                    success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#voornaamo").val(jobject.voornaam);
                         $("#familienaamo").val(jobject.familienaam);
@@ -109,8 +109,8 @@
     }
 
     function maakMailClick() {
-        $(".emailGebruiker").click(function () {            
-            var iddb = $(this).data("id");               
+        $(".emailGebruiker").click(function () {
+            var iddb = $(this).data("id");
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
@@ -120,7 +120,7 @@
                     success: function (result) {
                         var jobject = jQuery.parseJSON(result);
                         $("#ontvanger").val(jobject.voornaam + " " + jobject.familienaam + " (" + jobject.emailadres + ")");
-                        $("#emailzend").val(jobject.emailadres);                        
+                        $("#emailzend").val(jobject.emailadres);
                         $("#onderwerp").val("");
                         $("#boodschap").val("");
                     }
@@ -130,15 +130,100 @@
             $("#gebruikerEmail").modal('show');
         });
     }
-    
-    function maakMailsClick() {       
-        $(".emailGebruikers").click(function () {                                                                                      
-            $("#ontvangerall").val("Alle gebruikers");  
+
+    function maakMailsClick() {
+        $(".emailGebruikers").click(function () {
+            $("#ontvangerall").val("Alle gebruikers");
             $("#gebruikerEmails").modal('show');
         });
     }
-    
-    $(document).ready(function () {         
+
+    function verbergError() {
+        $("#msg").addClass("hidden");
+        $('.voornaam').removeClass('has-error');
+        $('.familienaam').removeClass('has-error');
+        $('.emailadres').removeClass('has-error');
+        $('.geboortedatum').removeClass('has-error');
+        $('.geslacht').removeClass('has-error');
+        $('.type').removeClass('has-error');
+        $('.land').removeClass('has-error');
+        $('.gemeente').removeClass('has-error');
+        $('.postcode').removeClass('has-error');
+        $('.straat').removeClass('has-error');
+        $('.huisnummer').removeClass('has-error');
+    }
+
+    //VALIDATIE
+    function validatieOK() {
+        ok = true;
+        
+        if ($('#voornaamo').val() == "") {
+            $('.voornaam').addClass('has-error');
+            ok = false;
+        } else {
+            $('.voornaam').removeClass('has-error');
+        }
+        
+        if ($('#familienaamo').val() == "") {
+            $('.familienaam').addClass('has-error');
+            ok = false;
+        } else {
+            $('.familienaam').removeClass('has-error');
+        }
+        
+        if ($('#geboortedatumo').val() == "") {
+            $('.geboortedatum').addClass('has-error');
+            ok = false;
+        } else {
+            $('.geboortedatum').removeClass('has-error');
+        }
+        
+        if ($('input[type=radio]:checked').size() < 0) {
+            $('.geslacht').addClass('has-error');
+            ok = false;
+        } else {
+            $('.geslacht').removeClass('has-error');
+        }
+        
+        if ($('#lando').prop('selectedIndex') == -1) {
+            $('.land').addClass('has-error');
+            ok = false;
+        } else {
+            $('.land').removeClass('has-error');
+        }
+        
+         if ($('#gemeenteo').val() == "") {
+            $('.gemeente').addClass('has-error');
+            ok = false;
+        } else {
+            $('.gemeente').removeClass('has-error');
+        }
+        
+         if ($('#postcodeo').val() == "") {
+            $('.postcode').addClass('has-error');
+            ok = false;
+        } else {
+            $('.postcode').removeClass('has-error');
+        }
+        
+         if ($('#straato').val() == "") {
+            $('.straat').addClass('has-error');
+            ok = false;
+        } else {
+            $('.straat').removeClass('has-error');
+        }
+        
+         if ($('#nummero').val() == "") {
+            $('.nummer').addClass('has-error');
+            ok = false;
+        } else {
+            $('.nummer').removeClass('has-error');
+        }
+
+        return ok;
+    }
+
+    $(document).ready(function () {
         //Link leggen met de knoppen die gemaakt worden in lijst.php
         maakDetailClick();
         maakDeleteClick();
@@ -146,19 +231,24 @@
         maakMailClick();
         maakMailsClick();
         //Lijst eerste maal ophalen en tonen
-        haaloverzicht();        
+        haaloverzicht();
         //Klikken op "OPSLAAN" in de Detail modal
         $(".opslaanGebruiker").click(function () {
-            var dataString = $("#JqAjaxForm:eq(0)").serialize();
-            $.ajax({
-                type: "POST",
-                url: site_url + "/gebruiker/update",
-                async: false,
-                data: dataString,
-                dataType: "json"
-            });
-            refreshData();
-            $("#gebruikerModal").modal('hide');
+            if (validatieOK()) {
+                var dataString = $("#JqAjaxForm:eq(0)").serialize();
+                $.ajax({
+                    type: "POST",
+                    url: site_url + "/gebruiker/update",
+                    async: false,
+                    data: dataString,
+                    dataType: "json"
+                });
+                refreshData();
+                $("#gebruikerModal").modal('hide');
+            } else {
+                $("#msg").removeClass("hidden");
+                $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
+            }
         });
 
         //Klikken op "BEVESTIG" in de Delete modal
@@ -176,13 +266,13 @@
                     }
                     $("#gebruikerDelete").modal('hide');
                 },
-                error: function () {  
+                error: function () {
                     $("#error").removeClass("hidden");
                     $("#error").html("Oops! U kunt de gebruiker niet deactiveren!");
                 }
             });
         });
-        
+
         $(".activateGebruiker").click(function () {
             $.ajax({
                 type: "POST",
@@ -197,15 +287,15 @@
                     }
                     $("#gebruikerActivate").modal('hide');
                 },
-                error: function () {  
+                error: function () {
                     $("#error").removeClass("hidden");
                     $("#error").html("Oops! U kunt de gebruiker niet activeren!");
                 }
             });
         });
-               
+
         //Verzenden in de Email modal
-        $(".verstuurEmail").click(function () {                          
+        $(".verstuurEmail").click(function () {
             var dataString = $("#JqAjaxForm1:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -214,12 +304,12 @@
                 data: dataString,
                 dataType: "json"
             });
-            refreshData();                      
-        $("#gebruikerEmail").modal('hide');            
+            refreshData();
+            $("#gebruikerEmail").modal('hide');
         });
-        
+
         //Verzenden in de Emails modal
-        $(".verstuurEmails").click(function () {                            
+        $(".verstuurEmails").click(function () {
             var dataString = $("#JqAjaxForm2:eq(0)").serialize();
             $.ajax({
                 type: "POST",
@@ -228,8 +318,8 @@
                 data: dataString,
                 dataType: "json"
             });
-            refreshData();                      
-        $("#gebruikerEmails").modal('hide');            
+            refreshData();
+            $("#gebruikerEmails").modal('hide');
         });
 
     });
@@ -260,7 +350,8 @@
                 <h4 class="modal-title">Gebruiker beheren</h4>
             </div>
 
-            <div class="modal-body">                  
+            <div class="modal-body">
+                <p class="hidden alert alert-danger" role="alert" id="msg"></p> 
 
                 <form id="JqAjaxForm">
                     <input type="hidden" name="id" id="id"/>                                        
@@ -273,7 +364,7 @@
                                     <?php echo form_label('Voornaam:', 'voornaam'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 voornaam">   
                                     <?php echo form_input(array('name' => 'voornaam', 'id' => 'voornaamo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -283,7 +374,7 @@
                                     <?php echo form_label('Familienaam:', 'familienaam'); ?>                                        
                                 </div>
 
-                                <div class="col-md-8">  
+                                <div class="col-md-8 familienaam">  
                                     <?php echo form_input(array('name' => 'familienaam', 'id' => 'familienaamo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -293,7 +384,7 @@
                                     <?php echo form_label('Emailadres:', 'emailadres'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 emailadres">   
                                     <?php echo form_input(array('name' => 'emailadres', 'id' => 'emailadreso', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -303,7 +394,7 @@
                                     <?php echo form_label('Geboortedatum:', 'geboortedatum'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 geboortedatum">   
                                     <?php echo form_input(array('name' => 'geboortedatum', 'id' => 'geboortedatumo', 'class' => 'form-control', 'maxLength' => '52488', 'type' => 'date')); ?>                    
                                     <!--                    width 185 px-->
                                 </div>
@@ -315,7 +406,7 @@
                                 </div>  
 
                                 <div class="col-md-8">        
-                                    <div class="my-radio">
+                                    <div class="my-radio geslacht">
                                         <div class="">
                                             <?php echo form_radio(array('name' => 'geslacht', 'class' => 'form-horizontal', 'value' => 'man')); ?>                            
                                             <span class="option-title">
@@ -338,7 +429,7 @@
                                 </div>  
 
                                 <div class="col-md-8">        
-                                    <div class="my-radio">
+                                    <div class="my-radio type">
                                         <div class="">
                                             <?php echo form_radio(array('name' => 'type', 'class' => 'form-horizontal', 'value' => '1')); ?>                            
                                             <span class="option-title">
@@ -364,7 +455,7 @@
                                     <?php echo form_label('Land:', 'land'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">                          
+                                <div class="col-md-8 land">                          
                                     <?php
                                     $drop = array();
                                     $teller = 1;
@@ -382,7 +473,7 @@
                                     <?php echo form_label('Gemeente:', 'gemeente'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 gemeente">   
                                     <?php echo form_input(array('name' => 'gemeente', 'id' => 'gemeenteo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -392,7 +483,7 @@
                                     <?php echo form_label('Postcode:', 'postcode'); ?>                    
                                 </div>
 
-                                <div class="col-md-8"> 
+                                <div class="col-md-8 postcode"> 
                                     <?php echo form_input(array('name' => 'postcode', 'id' => 'postcodeo', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -403,7 +494,7 @@
                                     <?php echo form_label('Straat:', 'straat'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">   
+                                <div class="col-md-8 straat">   
                                     <?php echo form_input(array('name' => 'straat', 'id' => 'straato', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -413,7 +504,7 @@
                                     <?php echo form_label('Huisnummer:', 'huisnummer'); ?>                    
                                 </div>
 
-                                <div class="col-md-8">  
+                                <div class="col-md-8 nummer">  
                                     <?php echo form_input(array('name' => 'nummer', 'id' => 'nummero', 'class' => 'form-control')); ?>                                        
                                 </div>
                             </div>
@@ -507,7 +598,7 @@
             <div class="modal-body">                  
 
                 <form id="JqAjaxForm2">
-                    
+
                     <div class="row">
                         <div class="col-md-12">  
 
