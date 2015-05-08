@@ -7,7 +7,7 @@ class Aankondiging_model extends CI_Model {
         parent::__construct();
     }
     
-    
+    // Een aankondiging ophalen
     function getAankondiging($id)
     {        
         $this->db->where('id', $id);
@@ -16,6 +16,7 @@ class Aankondiging_model extends CI_Model {
         
     }
     
+    // alle aankondigingen van eenzelfde conferentie ophalen, samen met info van de persoon die deze plaatste
     function getAllPerConferentie($id)
     {        
         $this->db->where('conferentieId',$id);
@@ -28,6 +29,7 @@ class Aankondiging_model extends CI_Model {
         return $aankondigingen;
     }
     
+    // Alle aankondigingen van de actieve conferentie ophalen
     function getAankondigingenActieve(){
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
@@ -37,6 +39,7 @@ class Aankondiging_model extends CI_Model {
        return $query->result();              
     }
     
+    // De drie meest recente aankondigingen van de actieve conferentie ophalen
     function getNieuwsteAankondigingenActieve(){
         $this->load->model('conferentie_model');
         $actieveConferentie = $this->conferentie_model->getActieveConferentie();
@@ -48,6 +51,7 @@ class Aankondiging_model extends CI_Model {
        return $query->result();              
     }
     
+    // Een aankondiging updaten
     function update($aankondiging) {
         //Html entities en extra spaties verwijderen
         $aankondiging = escape_html($aankondiging);
@@ -56,11 +60,13 @@ class Aankondiging_model extends CI_Model {
         $this->db->update('aankondiging', $aankondiging);
     }
 
+    // Een aankondiging verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('aankondiging');
     }
     
+    // Een aankondiging toevoegen
     function insert($aankondiging)
     {
         //Html entities en extra spaties verwijderen
