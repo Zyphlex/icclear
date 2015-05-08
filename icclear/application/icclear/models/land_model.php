@@ -18,7 +18,7 @@ class Land_model extends CI_Model {
         parent::__construct();
     }
 
-       
+    // Alle landen ophalen
     function getAll()
     {        
         $this->db->order_by('naam');
@@ -26,6 +26,7 @@ class Land_model extends CI_Model {
         return $query->result();
     }
     
+    // Een land ophalen
     function get($id)
     {
         $this->db->where('id', $id);
@@ -33,6 +34,7 @@ class Land_model extends CI_Model {
         return $query->row();
     }
     
+    // Een land updaten
     function update($land) {
         //Html entities en extra spaties verwijderen
         $land = escape_html($land);
@@ -41,6 +43,7 @@ class Land_model extends CI_Model {
         $this->db->update('land', $land);
     }
 
+    // Een nieuw land toevoegen
     function insert($land) {
         //Html entities en extra spaties verwijderen
         $land = escape_html($land);
@@ -49,6 +52,7 @@ class Land_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+    // Een land verwijderen uit de database
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('land');
