@@ -7,7 +7,13 @@ class Inschrijven extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-
+            $user = $this->authex->getUserInfo();            
+            $this->load->model('inschrijving_model');
+            $check = $this->inschrijving_model->IsGebruikerIngeschreven($user->id);            
+            //Controleren of er een inschrijving is. Als er nog geen is, inschrijven verwerken
+            if ($check != null) { 
+                redirect('home');
+            }
         $this->load->helper('form');
     }
 
