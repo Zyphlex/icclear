@@ -119,11 +119,11 @@ class Inschrijvenbeheer extends CI_Controller {
         } elseif ($oud->betalingId != null && $betaling == "nee") {
             $activiteiten = $this->activiteit_model->getAllActGebruikerConf($oud->gebruikerId, $confId);
             print_r($activiteiten);
-            foreach ($activiteiten as $act) {
-                $activiteit->id = $act->id;
-                $activiteit->betalingId = null;
-                $this->gebruiker_activiteit_model->update($activiteit);
-            }
+//            foreach ($activiteiten as $act) {
+//                $activiteit->id = $act->id;
+//                $activiteit->betalingId = null;
+//                $this->gebruiker_activiteit_model->update($activiteit);
+//            }
             
             $inschrijving->betalingId = null;
             $this->betaling_model->delete($oud->betalingId);
