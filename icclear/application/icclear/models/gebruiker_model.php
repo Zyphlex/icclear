@@ -42,7 +42,7 @@ class Gebruiker_model extends CI_Model {
     // Alle gebruikers ophalen, maar geen admins (typeId = 3)
     function getAll() {
         $this->db->where('typeId !=', 3);
-        $this->db->order_by('activatie', 'desc');
+        $this->db->order_by('familienaam', 'asc');
         $query = $this->db->get('gebruiker');
         return $query->result();
     }
