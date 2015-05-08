@@ -89,18 +89,21 @@ class Activiteit_model extends CI_Model {
         return $query->result();
     }
 
+    // Een activiteit updaten
     function update($activiteit) {
         $activiteit = escape_html($activiteit); //Alle witruimte en html chars wegahlen
         $this->db->where('id', $activiteit->id);
         $this->db->update('activiteit', $activiteit);
     }
 
+    // Een activiteit toevoegen
     function insert($activiteit) {
         $activiteit = escape_html($activiteit);
         $this->db->insert('activiteit', $activiteit);
         return $this->db->insert_id();
     }
 
+    // Een activiteit verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('activiteit');
