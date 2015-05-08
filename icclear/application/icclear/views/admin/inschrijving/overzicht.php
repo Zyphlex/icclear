@@ -2,7 +2,7 @@
     //Gegevens opvragen en tonen
     function haaloverzicht() {
         $.ajax({type: "GET",
-            url: site_url + "/inschrijven/overzicht",
+            url: site_url + "/inschrijvenbeheer/overzicht",
             success: function (result) {
                 alert(result);
                 $("#resultaat").html(result);
@@ -37,7 +37,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/inschrijven/detail",
+                    url: site_url + "/inschrijvenbeheer/detail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -74,7 +74,7 @@
             if (iddb != 0) {
                 // gegevens ophalen via ajax (doorgeven van server met json)
                 $.ajax({type: "GET",
-                    url: site_url + "/profiel/detail",
+                    url: site_url + "/inschrijvenbeheer/actDetail",
                     async: false,
                     data: {id: iddb},
                     success: function (result) {
@@ -94,7 +94,7 @@
 
     function haalActOverzicht(id) {
         $.ajax({type: "GET",
-            url: site_url + "/inschrijven/actDetail",
+            url: site_url + "/inschrijvenbeheer/actDetail",
             async: false,
             data: {id: id},
             success: function (result) {
@@ -116,7 +116,7 @@
             var dataString = $("#JqAjaxForm:eq(0)").serialize();
             $.ajax({
                 type: "POST",
-                url: site_url + "/inschrijven/update",
+                url: site_url + "/inschrijvenbeheer/update",
                 async: false,
                 data: dataString,
                 dataType: "json"
@@ -129,7 +129,7 @@
         $(".deleteItem").click(function () {
             $.ajax({
                 type: "POST",
-                url: site_url + "/inschrijven/delete",
+                url: site_url + "/inschrijvenbeheer/delete",
                 async: false,
                 data: {id: deleteid},
                 success: function (result) {
