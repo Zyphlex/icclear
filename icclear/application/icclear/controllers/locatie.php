@@ -107,7 +107,7 @@ class Locatie extends CI_Controller {
         $this->template->load('main_master', $partials, $data);
     }
 
-    //overzicht van routes
+    //overzicht van routes voor een bepaald gebouw
     public function overzichtRoutes() {
         $gebouwId = $this->input->get('gebouwId');
 
