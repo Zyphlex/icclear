@@ -235,11 +235,13 @@
                         ?></p>
 
                     <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
-                    <div class="betaling">
+                    <div class="">
                         <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?> 
                         <span class="option-title">
                             Reeds betaald
-                        </span>                     
+                        </span> 
+                    </div>
+                    <div class="" >
 
                         <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?>
                         <span class="option-title">
