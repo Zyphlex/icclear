@@ -148,7 +148,6 @@
     <h1>Ingeschrevenen</h1>  
 
     <div id="resultaat"></div>
-    <p>ik ben een boer </p>
     <?php echo anchor('admin/dashboard/' . $conferentieId, 'Annuleren', 'class="btn btn-default"'); ?> 
 
 </div>
