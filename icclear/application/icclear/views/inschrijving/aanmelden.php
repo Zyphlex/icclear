@@ -6,7 +6,7 @@
             if (validatieOK() && validate() && realCheck1()) {
                 $("#FormRegistreren1").submit();
             } else {
-                if (realCheck1()) {
+                if (!realCheck1()) {
                     $("#mailTaken1").removeClass("hidden");
                     $("#mailTaken1").html("Oops! Dit email adres is reeds in gebruik!");
                 }
