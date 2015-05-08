@@ -23,9 +23,9 @@
 
             <p>
                 <span class="logon">
-                    <a href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
+                    <a class="modalHeader" href="#" data-toggle="modal" data-target="#loginModal">Aanmelden</a> 
                     / 
-                    <a href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
+                    <a class="modalHeader" href="#" data-toggle="modal" data-target="#registreerModal">Registreer</a>
                 </span>
             </p>
 
@@ -80,7 +80,7 @@
                         <?php echo form_password(array('name' => 'password', 'id' => 'password', 'class' => 'form-control', 'size' => '30')); ?> 
                     </div>
                 </div>
-
+                
                 <div class="col-sm-8 col-sm-offset-4">  
                     <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#vergetenModal">Wachtwoord vergeten?</a>
                 </div>
@@ -132,10 +132,29 @@
                         }
                     });
 
+
+                    $(".modalHeader").click(function () {
+                        verbergError();
+                    });
+                    
                     $("#password2").keyup(validate);
 
                 });
                 
+                function verbergError() {
+                $("#msgVer").addClass("hidden");
+                $("#msgInl").addClass("hidden");
+                $("#msgReg").addClass("hidden");
+                $('.passwordI').removeClass('has-error');
+                $('.emailI').removeClass('has-error');
+                $('.emailVergetenI').removeClass('has-error');
+                $('#password1div').removeClass('has-error');
+                $('#password2div').removeClass('has-error');
+                $('#voornaamdiv').removeClass('has-error');
+                $('#familienaamdiv').removeClass('has-error');
+                $('#emaildiv').removeClass('has-error');
+            }
+    
                 function inloggenOK() {
                     ok = true;
                         if ($("#password").val() == "") {
@@ -152,6 +171,9 @@
                             $(".emailI").removeClass("has-error");
                         }
                     return ok;
+                } else {
+                    $("#msg").removeClass("hidden");
+                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 function vergetenOK() {
@@ -165,6 +187,9 @@
                         }
                         
                     return ok;
+                } else {
+                    $("#msg").removeClass("hidden");
+                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 
@@ -216,6 +241,9 @@
                         }
 
                         return ok;
+                } else {
+                    $("#msg").removeClass("hidden");
+                    $("#msg").html("Oops! U hebt niet alle velden ingevuld!");
                 }
                 
                 
@@ -358,6 +386,7 @@
             ?>   
 
             <div class="row">
+                <p class="hidden alert alert-danger" role="alert" id="msgVer"></p>  
                 <div class="text-center underline">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h3>Wachtwoord vergeten</h3>
