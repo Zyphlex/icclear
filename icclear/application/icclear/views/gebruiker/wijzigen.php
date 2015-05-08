@@ -48,13 +48,6 @@
             $('.familienaamp').removeClass('has-error');
         }
         
-         if ($('#emailadresp').val() == "") {
-            $('.emailadresp').addClass('has-error');
-            ok = false;
-        } else {
-            $('.emailadresp').removeClass('has-error');
-        }
-        
         if ($('#geboortedatump').val() == "") {
             $('.geboortedatump').addClass('has-error');
             ok = false;
@@ -76,7 +69,6 @@
         $("#msgp").addClass("hidden");
         $('.voornaamp').removeClass('has-error');
         $('.familienaamp').removeClass('has-error');
-        $('.emailadresp').removeClass('has-error');
         $('.geboortedatump').removeClass('has-error');
         $('.geslachtp').removeClass('has-error');
     }
@@ -214,17 +206,20 @@ span>
         div class="my-radio">
   <div class="col-md-6">         
                                     <div class="col-md-4 voornaamp  <div class="col-md-4">   
-                                        <Voornaam:', 'voornaam'); ?>                      
-                                    </div>
+                                        <Voornaam:', 'voornaam', 'class="voornaamp"'); ?>
+             
+                      </div>
 
-                                   voornaamp">v class="col-md-8">   
+                      </div>
+
+      <div class="col-md-8 voornaamp">div class="col-md-8"> 
                                         <?php echo form_ivoornaam', 'id' => 'voornaampnaam', 'id' => 'field2', 'value' => $gebruiker->voornaam, 'class' => 'form-control')); ?>
               </div>
      <div class="row">
                                    familienaamp  <div class="col-md-4">   
-                                        <?php echo form_label('Familienaam:', 'familienaam'); ?>                
-                                    </div>
-
+                                        <?php echo form_label('Famili, 'class="familienaamp"''0', 'type' => 'date')); ?>                
+              </div>
+     <div class="row">
                                    familienaamp">                  <div class="col-md-8"> 
                                         <?php echo form_ifamilienaam', 'id' => 'familienaamp, 'id' => 'familienaam', 'value' => $gebruiker->familienaam, 'class' => 'form-control')); ?>
               </div>
@@ -242,7 +237,8 @@ span>
 
                                     <div class="col-md-4 geboortedatump">
 col-md-4">   
-                                                <?pboortedatum:', 'geboortedatum'); ?>      ode:', 'postcode'); ?>                                          
+                                                <?pboortedatum:', 'geboortedatum', 'class="geboortedatump"'); ?>         ?>
+                                                          
               </div>
 
                                     <div class="col-md-8 geboortedatump  <div class="col-md-8"> 
