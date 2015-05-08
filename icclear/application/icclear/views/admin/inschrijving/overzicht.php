@@ -236,9 +236,13 @@
 
                     <p><?php echo form_label('Betaling:', 'betaling'); ?></p>
                     <div class="betaling">
-                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?> Reeds betaald                     
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'ja')); ?> 
                         
-                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?> Nog niet betaald                           
+                        Reeds betaald                     
+                        
+                        <?php echo form_radio(array('name' => 'betaling', 'class' => 'form-horizontal', 'value' => 'nee')); ?> 
+                        
+                        Nog niet betaald                           
                         
                     </div> 
 
