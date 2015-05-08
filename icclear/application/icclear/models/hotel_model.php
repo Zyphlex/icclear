@@ -2,22 +2,13 @@
 
 class Hotel_model extends CI_Model {
 
-    // +----------------------------------------------------------
-    // | Beershop - product_model
-    // +----------------------------------------------------------
-    // | Thomas More Kempen - 2 TI - 201x-201x
-    // +----------------------------------------------------------
-    // | Product model
-    // |
-    // +----------------------------------------------------------
-    // | K. Vangeel
-    // +----------------------------------------------------------
 
     function __construct()
     {
         parent::__construct();
     }
-    
+
+    // Een hotel ophalen
     function get($id)
     {
         $this->db->where('id', $id);
@@ -25,13 +16,14 @@ class Hotel_model extends CI_Model {
         return $query->row();
     }
     
+    // Alle hotels ophalen
     function getAll()
     {        
         $query = $this->db->get('hotel');
         return $query->result();
     }
        
-    
+    // Alle hotels die bij een conferentie passen ophalen
     function getHotelsConferentie()
     {
         $this->load->model('conferentie_model');
@@ -42,6 +34,7 @@ class Hotel_model extends CI_Model {
         $query = $this->db->get('hotelConferentie');
         $hotelConferenties = $query->result();
         
+        // De gegevens van elk gevonden hotel ophalen
         foreach ($hotelConferenties as $hotelConferentie)
         {
             //$hotelConferentie->conferentie = $this->conferentie_model->get($hotelConferentie->conferentieId);
@@ -51,6 +44,7 @@ class Hotel_model extends CI_Model {
         return $hotelConferenties;
     }
     
+    // Een hotel updaten
     function update($hotel) {
         //Html entities en extra spaties verwijderen
         $hotel = escape_html($hotel);
@@ -59,11 +53,13 @@ class Hotel_model extends CI_Model {
         $this->db->update('hotel', $hotel);
     }
 
+    // Een hotel verwijderen
     function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('hotel');
     }
     
+    // Nieuw hotel toevoegen
     function insert($hotel)
     {
         //Html entities en extra spaties verwijderen
