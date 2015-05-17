@@ -27,7 +27,6 @@
     function goedkeurenClick() {
         $(".goedVoorstel").click(function () {
             goedid = $(this).data("id");
-            alert(goedid);
             $("#voorstelGoedkeuren").modal('show');
         });
     }
